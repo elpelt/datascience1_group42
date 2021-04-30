@@ -1,0 +1,17 @@
+\begin{thebibliography}{1}
+
+\bibitem{okman2011security}
+Lior Okman, Nurit Gal-Oz, Yaron Gonen, Ehud Gudes, and Jenny Abramov.
+\newblock Security issues in nosql databases.
+\newblock In {\em 10th International Conference on Trust, Security and Privacy
+  in Computing and Communications (TrustCom)}, pages 541--547. IEEE, 2011.
+
+\bibitem{borthakur2011apache}
+Dhruba Borthakur, Jonathan Gray, Joydeep~Sen Sarma, Kannan
+  Muthu{\-}kka{\-}ruppan, Nicolas Spiegelberg, Hairong Kuang, Karthik
+  Ranganathan, Dmytro Molkov, Aravind Menon, Samuel Rash, et~al.
+\newblock Apache hadoop goes realtime at facebook.
+\newblock In {\em Proceedings of the 2011 ACM SIGMOD International Conference
+  on Management of data}, pages 1071--1080. ACM, 2011.
+
+\end{thebibliography}

@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}Problem Description}{4}{}%
+\contentsline {section}{\numberline {2}Description of Specific Methods and Algorithms}{4}{}%
+\contentsline {section}{\numberline {3}Data Set Description}{4}{}%
+\contentsline {section}{\numberline {4}Description of Python libraries used}{4}{}%
+\contentsline {section}{\numberline {5}Description of Evaluation Module}{4}{}%
+\contentsline {section}{\numberline {6}Web Frontend and User Manual}{5}{}%
+\contentsline {section}{\numberline {7}Conclusion}{5}{}%
