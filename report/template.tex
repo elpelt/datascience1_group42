@@ -84,9 +84,9 @@ Authors: & \textsc{Franziska Hicking} \\
 &{\small  your.email@ddre.ss}\\
 & {\small branch of study (Bachelor/Master, semester count)} \\
 & \textsc{Julian Rummel} \\
-&{\small  your Student ID}\\
-& {\small your.email@ddre.ss }\\
-&{\small  branch of study (Bachelor/Master, semester count)} \\
+&{\small  6673334}\\
+& {\small s9594673@stud.uni-frankfurt.de}\\
+&{\small  Master Bioinformatics, 2} \\
 & \textsc{Niklas Conen}\\
 & {\small your Student ID}\\
 & {\small your.email@ddre.ss}\\
@@ -120,16 +120,6 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
 
 \newpage
 
-
-
-\section{Problem Description}
-
-
-\begin{itemize}
-\item What general problem is addressed?
-\item What is the general methodology that is used?
-\end{itemize}
-
 Some Latex-specific hints:
 
 
@@ -140,46 +130,77 @@ Some Latex-specific hints:
 \item Do not forget to cite related work, like \cite{okman2011security} or \cite{borthakur2011apache}.
 \end{itemize}
 
+\section{Definition of Distance Measure}
+\label{def_DM}
+ANMERKUNGEN:
+\begin{itemize}
+\item What general problem is addressed?
+\item What is the general methodology that is used?
+\end{itemize}
+A distance measure is a function $d(x, y)$ that calculates a real value between two points in a space, containing two sets of points. This function must satisfy the four following axioms:
+\begin{enumerate}
+\item No negative distances:\\
+$d(x, y) \geq 0$
+\item Identity of indiscernibles:\\
+$d(x, y) = 0$, iff $x = y$
+\item Symmetry: \\
+$d(x, y) = d(y, x)$
+\item Triangle inequality: \\
+$d(x, y) \leq d(x, z) + d(z, y)$
+\end{enumerate}
+The triangle-inequality impose the condition that a distance reflects the shortest path between two points. Thus, it is not possible to achieve a distance improvement by traveling via an intermediate point $z$. \cite{MMDS}
 
-
-\section{Description of Specific Methods and Algorithms}
-
-
+\section{Different Distance Measurements}
+ANMERKUNGEN:
 \begin{itemize}
 \item What specific problem is addressed?
 \item What is the specific methodology that is used?
 \item What improvement is shown?
-
 \end{itemize}
+\subsection{Euclidean Distances}
+The Euclidean distance calculates the distance of two points, represented as vectors of $n$ real numbers, in an $n$-dimensional euclidean space. In general, a Euclidean distance measure $d$ is called $L_r$\textit{-norm}, for arbitrary constants r. 
+$$d([x_1,x_2,...,x_n], [y_1,y_2,...,y_n])=\sum_{i=1}^{n}(|x_i-y_i|^r)^\frac{1}{r}$$
+The typical euclidean norm refers to the $L_2$\textit{-norm} and is calculated as the positive square root of the sum of all squared distances in each dimension.
+$$d([x_1,x_2,...,x_n], [y_1,y_2,...,y_n])=\sqrt{\sum_{i=1}^{n}(|x_i-y_i|)^2}$$
+It is simple to verify three of the aforementioned axioms (\ref{def_DM}).
+\begin{enumerate}
+\item No negative distances:\\
+The nonnegative values are given by the positive square root. let $x \neq y$, then the square of any real number is always positive.
+\item Identity of indiscernibles:\\
+For $x = y$ the value is obviously $0$. Let $x = y$, then $(|x - y|)^2 = 0$ and $\sqrt{0} = 0$.
+\item Symmetry: \\
+Symmetrie is cleary given by the square of each distance.\\
+$(x - y)^2 = (y - x)^2$.
+\item Triangle inequality: \\
+As a matter of fact, this axiom requires a more difficult proof. However, to keep it simple, the Euclidean space possesses the property that the sum of the lengths of Cathetus and Ancathetus is always longer than the length of the Hypothenuse. \cite{MMDS}
+\end{enumerate}
 
 \section{Data Set Description}
-
+ANMERKUNGEN:
 \begin{itemize}
-
 \item What benchmark data sets are used?
 \end{itemize}
 
 \section{Description of Python libraries used}
-
+ANMERKUNGEN:
 \begin{itemize}
 \item Describe in detail what technology/library is used.
 \end{itemize}
 
 \section{Description of Evaluation Module}
-
+ANMERKUNGEN:
 \begin{itemize}
 \item What are the results and how are they measured?
 \end{itemize}
 
 \section{Web Frontend and User Manual}
-
-
+ANMERKUNGEN:
 \begin{itemize}
 \item Describe the implementation and write a brief user manual with screenshots.
 \end{itemize}
 
 \section{Conclusion}
-
+ANMERKUNGEN:
 \begin{itemize}
 \item Summarize the main points and achievements
 \item Add your own assessment/criticism on the topic
