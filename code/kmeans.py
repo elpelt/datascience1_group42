@@ -9,8 +9,14 @@ class kmeansClustering(Clustering):
         self.data = self.load_data()
         self.metric = self.pyc_metric(metric)
     
-    def cluster(self):
-        initial_centers = kmeans_plusplus_initializer(self.data, 2).initialize()
+    def cluster(self, k, plusplus=True):
+
+        if plusplus:
+            # k++ center initialiser
+            initial_centers = kmeans_plusplus_initializer(self.data, k).initialize()
+        else:
+            # random initialiser
+            initial_centers = random_center_initializer(self.data, k).initialize()
 
         kmeans_instance = kmeans(self.data, initial_centers, metric=self.metric)
 
@@ -18,10 +24,10 @@ class kmeansClustering(Clustering):
         clusters = kmeans_instance.get_clusters()
         final_centers = kmeans_instance.get_centers()
 
-        print(clusters)
-        print(final_centers)
+        return clusters, final_centers
 
 if __name__ == "__main__":
     c = kmeansClustering("manhattan", "wine")
     c.load_data()
-    c.cluster()
+    print(c.cluster(4))
+    

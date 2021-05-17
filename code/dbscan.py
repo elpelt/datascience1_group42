@@ -9,6 +9,7 @@ class DBSCANClustering(Clustering):
     def __init__(self, metric, dataset, path=""):
         super().__init__(metric, dataset)
         self.metric = metric
+        self.data = self.load_data()
 
     def cluster(self, eps, minPts):
         """
@@ -20,11 +21,25 @@ class DBSCANClustering(Clustering):
 
         clustering = DBSCAN(metric=self.metric, eps=eps, min_samples=minPts)
         clustering.fit(self.data)
+ 
+        return self.package(clustering.labels_)
+    
+    def package(self, labels):
+        noise = []
+        m = max(labels)
+        clusters = [list() for i in range(m+1)]
 
+        for i in range(len(labels)):
+            if labels[i] == -1:
+                noise.append([i])
+            else:
+                clusters[labels[i]].append(i)
+
+        return clusters + noise
 
 
 if __name__ == "__main__":
     flarepath = "../datasets/solar_flares/flare.data1"
-    c = DBSCANClustering("manhattan", "wine")
+    c = DBSCANClustering("euclidean", "wine")
     c.load_data()
-    c.cluster()
+    print(c.cluster(50, 3))
