@@ -1,0 +1,20 @@
+The solar flare dataset is taken from the UCI Machine Learning Repository \cite{Dua2019}. Each point contains data recorded for on active region of the sun.
+The first three attributes are the McIntosh classification of sunspot groups:
+\begin{enumerate}
+    \item Z-value: modified Zurich sunspot class, $\{A, B, C, D, E, F, H\}$
+    \item p-value: description of the penumbra of the largest spot. A penumbra is a part of a sunspot that is darker than the suns surface. $\{x, r, s, a, h, k\}$
+    \item c-value: description of the distribution of sunspots in a group $\{x, o, i, c\}$
+\end{enumerate}
+A detailed descriptions of the letter codes can be found in the original paper by McIntosh \cite{McIntosh1990}.
+The following entries are as follows:
+\begin{enumerate}
+    \setcounter{enumi}{3}
+    \item Activity (1: reduced, 2: unchanged)
+    \item Evolution (1: decay, 2: no growth, 3: growth)
+    \item Code for the previous 24h flare activity
+    \item Is the region historically complex? (1: yes, 2: no)
+    \item Todoooooo
+    \item Area (1: small, 2: large)
+    \item Area of the largest spot (1: $\geq 5$ deg$^2$, 2: $>5$ deg$^2$)
+\end{enumerate}
+The last three entries are a predicted flare classes 

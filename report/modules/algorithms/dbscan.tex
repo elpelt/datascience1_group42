@@ -1,0 +1,41 @@
+DBSCAN was developed by Martin Ester, Hans-Peter Kriegel, Jiirg Sander and Xiaowei Xu. All following definitions and descriptions are taken from their original publication \cite{dbscan} or their revisit of DBSCAN \cite{dbscanrevisited}.\\
+Contrary to the aforementioned centroid-based partitioning algorithms (k-means, k-medoids and k-median) the DBSCAN (\textit{Density Based Spatial Clustering of Applications with Noise}) algorithm uses point densities to determine clusters.\\
+To introduce the definition of the density of a cluster, first the Eps-neighbourhood of a point is defined:\\
+\ \\
+\textbf{Definition 1:} \textit{Eps-neighbourhood}\\
+A point q is part of the Eps-neighbourhood $N_{Eps}$ of point p if the distance between them is smaller than a threshold distance called Eps.\\
+The Eps-neighbourhood therefore is defined as $N_{Eps} = \{q \in D \ | \ ||p, q|| \leq Eps \}$ with $D$ denoting the entirety of points that are supposed to be clustered and $||p, q||$ being the distance between p and q for an arbitrary distance measure.\\
+\ \\
+The Eps-neighbourhood fails at being a reliable measure for the point density if a point is located at the border of a cluster. These points are called \textit{border point}. Points that are located on the inside of a cluster are called \textit{core points}. Hence the following definition is made:\\
+\ \\
+\textbf{Definition 2:} \textit{directly density-reachable and density-reachable}\\
+A point p is directly density-reachable from a point q when
+\begin{enumerate}
+    \item $p \in N_{Eps}(q)$
+    \item $|N_{Eps}(q)| \geq \text{MinPts}$
+\end{enumerate}
+with MinPts being the minimal number of points that $N_{eps}(q)$ should contain so that q is considered a core point of a cluster.\\
+A point is \textit{density-reachable} if there is a chain of points between $p$ and $q$ so that all neighbouring points in the chain are directly density reachable.\\
+\ \\
+To complete the definition of what is considered part of a cluster density-connectivity is defined:\\
+\ \\
+\textbf{Definition 3:} \textit{density-connected}\\
+Two points $p$ and $q$ are considered density-connected if there is a common point $o$ which is density-reachable from $p$ and $q$.\\
+\ \\
+Now a cluster can be described as:\\
+\ \\
+\textbf{Definition 4:} \textit{cluster}\\
+A cluster is a non empty subset $C \in D$ so that:
+\begin{enumerate}
+    \item $\forall p, q: p \in C \wedge q \text{ is density reachable from } p \Rightarrow q \in C$
+    \item $\forall p, q \in C: \ p$ is density-connected to q
+\end{enumerate}
+\textit{Noise} is easily defined as every point that is not part of a Cluster $C_i$.\\
+\ \\
+Using these definitions DBSCAN can begin the clustering process with given values for Eps and MinPts. In the beginning all points are not labeled. Beginning with an arbitrary point $p$ all points are iterated in a linear fashion. For each point a \texttt{RangeQuery} function is executed finding all density-reachable neighbours of $p$. If \texttt{RangeQuery} finds more than MinPts neighbours then $p$ is a core point and is labeled as such. Otherwise $p$ is marked as Noise.\\
+In the next step every point in the Neighbourhood excluding $p$ is expanded. Unlabled Points get checked for the core point condition (which equals a \texttt{RangeQuery} call). Points that got labeled as Noise before are labeled as core points.
+When the expansion comes to an end a cluster is yielded and the next unlabeled point is chosen as $p$.\\
+\\
+Two clusters may be merged if their distance is below Eps. The distance between two clusters $C_1$ and $C_2$ is defined as $||C_1, C_2|| = \min \{ ||q, p|| \ | \ p \in C_1, q \in C_2\}$.\\
+\ \\
+The runtime complexity of DBSCAN heavily depends on the runtime of the \texttt{RangeQuery} function and the distance measure. Thus the runtime can exceed $\mathcal{O}(n^2)$ depending on the chosen implementations. A detailed discussion of DBSCANs runtime can be found in \cite{dbscanrevisited}. 
