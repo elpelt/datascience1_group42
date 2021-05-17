@@ -1,21 +1,3 @@
-@inproceedings{okman2011security,
-  title={Security issues in nosql databases},
-  author={Okman, Lior and Gal-Oz, Nurit and Gonen, Yaron and Gudes, Ehud and Abramov, Jenny},
-  booktitle={10th International Conference on Trust, Security and Privacy in Computing and Communications (TrustCom)},
-  pages={541--547},
-  year={2011},
-  organization={IEEE}
-}
-
-@inproceedings{borthakur2011apache,
-  title={Apache Hadoop goes realtime at Facebook},
-  author={Borthakur, Dhruba and Gray, Jonathan and Sarma, Joydeep Sen and Muthu{\-}kka{\-}ruppan, Kannan and Spiegelberg, Nicolas and Kuang, Hairong and Ranganathan, Karthik and Molkov, Dmytro and Menon, Aravind and Rash, Samuel and others},
-  booktitle={Proceedings of the 2011 ACM SIGMOD International Conference on Management of data},
-  pages={1071--1080},
-  year={2011},
-  organization={ACM}
-}
-
 @inproceedings{MMDS,
   title={Definition of a Distance Measure},
   author={Leskovec, Jure and Rajaraman, Anand and Ullman, Jeffrey David},
@@ -23,4 +5,89 @@
   pages={97},
   year={2020},
   organization={Infolab Stanford EDU}
+}
+
+@article{Novikov2019,
+    doi         = {10.21105/joss.01230},
+    url         = {https://doi.org/10.21105/joss.01230},
+    year        = 2019,
+    month       = {apr},
+    publisher   = {The Open Journal},
+    volume      = {4},
+    number      = {36},
+    pages       = {1230},
+    author      = {Andrei Novikov},
+    title       = {{PyClustering}: {D}ata {M}ining {L}ibrary},
+    journal     = {Journal of Open Source Software}
+}
+
+@article{scikitlearn,
+ title={Scikit-learn: Machine Learning in {P}ython},
+ author={Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel, V.
+         and Thirion, B. and Grisel, O. and Blondel, M. and Prettenhofer, P.
+         and Weiss, R. and Dubourg, V. and Vanderplas, J. and Passos, A. and
+         Cournapeau, D. and Brucher, M. and Perrot, M. and Duchesnay, E.},
+ journal={Journal of Machine Learning Research},
+ volume={12},
+ pages={2825--2830},
+ year={2011}
+}
+
+
+@inproceedings{dbscan,
+author = {Ester, Martin and Kriegel, Hans-Peter and Sander, J\"{o}rg and Xu, Xiaowei},
+title = {A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise},
+year = {1996},
+publisher = {AAAI Press},
+abstract = {Clustering algorithms are attractive for the task of class identification in spatial databases. However, the application to large spatial databases rises the following requirements for clustering algorithms: minimal requirements of domain knowledge to determine the input parameters, discovery of clusters with arbitrary shape and good efficiency on large databases. The well-known clustering algorithms offer no solution to the combination of these requirements. In this paper, we present the new clustering algorithm DBSCAN relying on a density-based notion of clusters which is designed to discover clusters of arbitrary shape. DBSCAN requires only one input parameter and supports the user in determining an appropriate value for it. We performed an experimental evaluation of the effectiveness and efficiency of DBSCAN using synthetic data and real data of the SEQUOIA 2000 benchmark. The results of our experiments demonstrate that (1) DBSCAN is significantly more effective in discovering clusters of arbitrary shape than the well-known algorithm CLAR-ANS, and that (2) DBSCAN outperforms CLARANS by a factor of more than 100 in terms of efficiency.},
+booktitle = {Proceedings of the Second International Conference on Knowledge Discovery and Data Mining},
+pages = {226–231},
+numpages = {6},
+keywords = {handling nlj4-275oise, arbitrary shape of clusters, efficiency on large spatial databases, clustering algorithms},
+location = {Portland, Oregon},
+series = {KDD'96}
+}
+
+@article{dbscanrevisited,
+author = {Schubert, Erich and Sander, J\"{o}rg and Ester, Martin and Kriegel, Hans Peter and Xu, Xiaowei},
+title = {{DBSCAN Revisited}, {Revisited: Why and How You Should (Still) Use DBSCAN}},
+year = {2017},
+issue_date = {August 2017},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {42},
+number = {3},
+issn = {0362-5915},
+url = {https://doi.org/10.1145/3068335},
+doi = {10.1145/3068335},
+abstract = {At SIGMOD 2015, an article was presented with the title “DBSCAN Revisited: Mis-Claim, Un-Fixability, and Approximation” that won the conference’s best paper award. In this technical correspondence, we want to point out some inaccuracies in the way DBSCAN was represented, and why the criticism should have been directed at the assumption about the performance of spatial index structures such as R-trees and not at an algorithm that can use such indexes. We will also discuss the relationship of DBSCAN performance and the indexability of the dataset, and discuss some heuristics for choosing appropriate DBSCAN parameters. Some indicators of bad parameters will be proposed to help guide future users of this algorithm in choosing parameters such as to obtain both meaningful results and good performance. In new experiments, we show that the new SIGMOD 2015 methods do not appear to offer practical benefits if the DBSCAN parameters are well chosen and thus they are primarily of theoretical interest. In conclusion, the original DBSCAN algorithm with effective indexes and reasonably chosen parameter values performs competitively compared to the method proposed by Gan and Tao.},
+journal = {ACM Trans. Database Syst.},
+month = jul,
+articleno = {19},
+numpages = {21},
+keywords = {DBSCAN, range-search complexity, density-based clustering}
+}
+
+@misc{Dua2019,
+author = {Dua, Dheeru and Graff, Casey},
+year = {2017},
+title = {{UCI} {M}achine {L}earning {R}epository},
+url = {http://archive.ics.uci.edu/ml},
+institution = {University of California, Irvine, School of Information and Computer Sciences} 
+}
+
+﻿@Article{McIntosh1990,
+author={McIntosh, Patrick S.},
+title={The classification of sunspot groups},
+journal={Solar Physics},
+year={1990},
+month={Sep},
+day={01},
+volume={125},
+number={2},
+pages={251-267},
+abstract={The 3-component McIntosh classification of sunspots was introduced in 1966, adopted for interchange and publication of data in 1969, and has been used increasingly in recent years. The McIntosh classification uses a modified Zurich evolutionary sequence as its first component, class, where two of the Zurich classes are omitted and more quantitative definitions are used. It then adds descriptions of the largest spot (second component) and the degree of spottedness in the group interior (third component) to define 60 distinct types of sunspot groups. Definitions of the McIntosh classification system and their rationale are presented herein. Correlations with solar flares excel those with the earlier Zurich classification, prompting the use of the McIntosh classification in an expert system (Theo) for predicting X-ray solar flares.},
+issn={1573-093X},
+doi={10.1007/BF00158405},
+url={https://doi.org/10.1007/BF00158405}
 }

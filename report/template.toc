@@ -1,7 +1,14 @@
-\contentsline {section}{\numberline {1}Problem Description}{4}{}%
-\contentsline {section}{\numberline {2}Description of Specific Methods and Algorithms}{4}{}%
-\contentsline {section}{\numberline {3}Data Set Description}{4}{}%
-\contentsline {section}{\numberline {4}Description of Python libraries used}{4}{}%
-\contentsline {section}{\numberline {5}Description of Evaluation Module}{4}{}%
-\contentsline {section}{\numberline {6}Web Frontend and User Manual}{5}{}%
-\contentsline {section}{\numberline {7}Conclusion}{5}{}%
+\contentsline {section}{\numberline {1}Definition of Distance Measure}{4}{}%
+\contentsline {section}{\numberline {2}Different Distance Measurements}{4}{}%
+\contentsline {subsection}{\numberline {2.1}Euclidean Distances}{5}{}%
+\contentsline {section}{\numberline {3}Data Set Description}{5}{}%
+\contentsline {subsection}{\numberline {3.1}Solar Flare}{6}{}%
+\contentsline {section}{\numberline {4}Clustering Algorithms}{6}{}%
+\contentsline {subsection}{\numberline {4.1}K-Means}{6}{}%
+\contentsline {subsection}{\numberline {4.2}K-Medoids}{6}{}%
+\contentsline {subsection}{\numberline {4.3}K-Median}{6}{}%
+\contentsline {subsection}{\numberline {4.4}DBSCAN}{6}{}%
+\contentsline {section}{\numberline {5}Description of Python libraries used}{8}{}%
+\contentsline {section}{\numberline {6}Description of Evaluation Module}{9}{}%
+\contentsline {section}{\numberline {7}Web Frontend and User Manual}{9}{}%
+\contentsline {section}{\numberline {8}Conclusion}{9}{}%

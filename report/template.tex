@@ -88,9 +88,9 @@ Authors: & \textsc{Franziska Hicking} \\
 & {\small s9594673@stud.uni-frankfurt.de}\\
 &{\small  Master Bioinformatics, 2} \\
 & \textsc{Niklas Conen}\\
-& {\small your Student ID}\\
-& {\small your.email@ddre.ss}\\
-& {\small branch of study (Bachelor/Master, semester count)}\\
+& {\small 6599913}\\
+& {\small conen@stud.uni-frankfurt.de}\\
+& {\small branch of study (Bachelor Computer Science, 8)}\\
 Date: & \today \\		
 \end{tabular}
 
@@ -124,10 +124,7 @@ Some Latex-specific hints:
 
 
 \begin{itemize}
-\item You can use abbreviations, like \gls{AD}, \gls{MS} or \gls{CD}.
-\item There are also symbols like for example \gls{symb:Pi}, \gls{symb:Phi} and \gls{symb:Lambda}.
-\item Last but not least, use glossary entries like \gls{glos:AD} and \gls{glos:F}.
-\item Do not forget to cite related work, like \cite{okman2011security} or \cite{borthakur2011apache}.
+\item a
 \end{itemize}
 
 \section{Definition of Distance Measure}
@@ -180,11 +177,24 @@ ANMERKUNGEN:
 \begin{itemize}
 \item What benchmark data sets are used?
 \end{itemize}
+\subsection{Solar Flare}
+\input{modules/datasets/solarflare}
+
+\section{Clustering Algorithms}
+\subsection{K-Means}
+\subsection{K-Medoids}
+\subsection{K-Median}
+\subsection{DBSCAN}
+\input{modules/algorithms/dbscan}
+
 
 \section{Description of Python libraries used}
-ANMERKUNGEN:
+ANMERKUNGEN:\\
+Libraries:
 \begin{itemize}
-\item Describe in detail what technology/library is used.
+\item pyclustering
+\item sklearn
+%\input{modules/libraries/sklearn}
 \end{itemize}
 
 \section{Description of Evaluation Module}
@@ -219,7 +229,9 @@ ANMERKUNGEN:
 
 \newpage
 
-\bibliography{bib}
+
+\bibliography{bib.bib}
 \bibliographystyle{unsrt}
+\nocite{*}
 
 \end{document}

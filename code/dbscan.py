@@ -10,9 +10,15 @@ class DBSCANClustering(Clustering):
         super().__init__(metric, dataset)
         self.metric = metric
 
-    def cluster(self):
-        clustering = DBSCAN(metric=self.metric, eps=3, min_samples=2)
-        print(clustering)
+    def cluster(self, eps, minPts):
+        """
+        params are the same as in the DBSCAN paper
+        @param eps Distance for the Eps-Neighbourhood
+        @param minPts Minmal number of points in a cluster
+
+        """
+
+        clustering = DBSCAN(metric=self.metric, eps=eps, min_samples=minPts)
         clustering.fit(self.data)
 
 
