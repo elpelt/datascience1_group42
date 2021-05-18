@@ -15,6 +15,7 @@ class Clustering():
         self.path = path
         self.dataset = dataset
         self.encoding = "integer"
+        self.path = path
     
     def pyc_metric(self, metric):
         # distance for plotting
