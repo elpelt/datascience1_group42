@@ -7,7 +7,9 @@ import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
+from sklearn.decomposition import PCA
 
+st.set_page_config(page_title="Group 42", page_icon=":koala:")
 st.title('Datascience: Group 42')
 c = kmeansClustering("manhattan", "wine")
 
@@ -23,29 +25,37 @@ cluster_algo_class = {'kmeans': kmeansClustering, 'kmedians': kmediansClustering
 cluster = cluster_algo_class[cluster_algo](cluster_dist, dataset)
 cluster.load_data()
 if cluster_algo == 'DBSCAN':
-    epsilon = st.slider("Choose a nice value for epsilon", 1, 50, 3)
-    minpts = st.slider("Choose a minimal number of nearest points", 1, 20, 1)
+    epsilon = st.slider("Choose a nice value for epsilon", min_value=1, max_value=50, step=0.5)
+    minpts = st.slider("Choose a minimal number of nearest points", min_value=1, max_value=20, step=1, value=5)
     clusters, stuff = cluster.cluster(epsilon, minpts)
 else:
-    k_value = st.slider("Choose a nice value for k", 1, 10, 1)
+    k_value = st.slider("Choose a nice value for k", min_value=1, max_value=10, step=1, value=3)
 
     if cluster_algo in  ['kmedoids', 'kmeans']:
-        clusters, stuff = cluster.cluster(k_value, plusplus=True)
+        clusters, stuff = cluster.cluster(k_value)
     elif cluster_algo == 'kmedians':
         clusters, stuff = cluster.cluster(k_value, initial_medians=[])
 
 clustered_data = np.zeros(len(cluster.data))
 for ic,c in enumerate(clusters):
-    print(ic)
     clustered_data[c] = ic+1
-print(len(clustered_data))
-print(clustered_data)
 
 
-st.text('Here are the results!!!!')
+
+st.success('Here are the results!!!!')
 st.balloons()
-perp = st.slider("Perplexity for TSNE", 5, 50, 5)
+col1, col2 = st.beta_columns(2)
+col1.header("Projection with TSNE")
+perp = col1.slider("Perplexity for TSNE", 5, 50, 5)
 projected_data = TSNE(random_state=42, perplexity=perp).fit_transform(cluster.data)
 fig, ax = plt.subplots()
 sns.scatterplot(x=projected_data[:,0], y=projected_data[:,1], hue=clustered_data, ax=ax)
-st.pyplot(fig)
+col1.pyplot(fig)
+
+col2.header("Projection with PCA")
+col2.markdown("#")
+col2.markdown("#")
+projected_data = PCA(random_state=42, n_components=2).fit_transform(cluster.data)
+fig, ax = plt.subplots()
+sns.scatterplot(x=projected_data[:,0], y=projected_data[:,1], hue=clustered_data, ax=ax)
+col2.pyplot(fig)

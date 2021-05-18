@@ -1,27 +1,26 @@
 from clustering import Clustering
-from pyclustering.cluster.kmedoids import kmedoids
-from pyclustering.cluster.center_initializer import kmeans_plusplus_initializer, random_center_initializer
+from sklearn_extra.cluster import KMedoids
 
 
 class kmedoidsClustering(Clustering):
     def __init__(self, metric, dataset, path=""):
         super().__init__(metric, dataset, path)
         self.data = self.load_data()
-        self.metric = self.pyc_metric(metric)
+        self.metric = metric
     
-    def cluster(self, k, plusplus=True):
+    def cluster(self, k, init="k-medoids++"):
 
-        if plusplus:
-            # k++ center initialiser
-            initial_medoids = kmeans_plusplus_initializer(self.data, k).initialize()
-        else:
-            # random initialiser
-            initial_medoids = random_center_initializer(self.data, k).initialize()
-
-        kmedoids_instance = kmedoids(self.data, initial_medoids, metric=self.metric)
  
-        # Run cluster analysis and obtain results.
-        kmedoids_instance.process()
-        clusters = kmedoids_instance.get_clusters()
-        medoids = kmedoids_instance.get_medoids()
-        return clusters, medoids
+        kmedoids = KMedoids(n_clusters=k, random_state=42, init=init, metric=self.metric)
+        kmedoids.fit(self.data)
+
+        return self.package(kmedoids.labels_), kmedoids.cluster_centers_
+
+    def package(self, labels):
+        m = max(labels)
+        clusters = [list() for i in range(m+1)]
+
+        for i in range(len(labels)):
+            clusters[labels[i]].append(i)
+
+        return clusters

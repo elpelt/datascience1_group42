@@ -10,7 +10,7 @@ from sklearn.datasets import load_diabetes, load_iris, load_wine
 
 
 class Clustering():
-    def __init__(self, metric, dataset, path="../datasets/solar_flares/flare.data1"):
+    def __init__(self, metric, dataset, path=""):
         self.data = []
         self.path = path
         self.dataset = dataset
@@ -81,7 +81,7 @@ class Clustering():
     def solar_load(self, skip=1):
         groups = set()
 
-        with open(self.path, 'r') as f:
+        with open("../datasets/solar_flares/flare.data2", 'r') as f:
             n = 0
             data = [i.split(" ") for i in f.read().splitlines()[skip:]]
 
