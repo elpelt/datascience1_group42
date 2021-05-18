@@ -7,7 +7,7 @@ metrics can be given as a string, so no metric selection needed
 """
 class DBSCANClustering(Clustering):
     def __init__(self, metric, dataset, path=""):
-        super().__init__(metric, dataset)
+        super().__init__(metric, dataset, path)
         self.metric = metric
         self.data = self.load_data()
 
@@ -39,7 +39,7 @@ class DBSCANClustering(Clustering):
 
 
 if __name__ == "__main__":
-    flarepath = "../datasets/solar_flares/flare.data1"
-    c = DBSCANClustering("euclidean", "wine")
+    flarepath = "../datasets/solar_flares/flare.data2"
+    c = DBSCANClustering("chebyshev", "solarflare", flarepath)
     c.load_data()
-    print(c.cluster(50, 3))
+    print(c.cluster(2, 10))
