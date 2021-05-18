@@ -35,7 +35,7 @@ class DBSCANClustering(Clustering):
             else:
                 clusters[labels[i]].append(i)
 
-        return clusters + noise
+        return clusters, noise
 
 
 if __name__ == "__main__":

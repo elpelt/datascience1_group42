@@ -1,9 +1,9 @@
 from clustering import Clustering
 from pyclustering.cluster.kmedoids import kmedoids
-from pyclustering.cluster.center_initializer import kmeans_plusplus_initializer
+from pyclustering.cluster.center_initializer import kmeans_plusplus_initializer, random_center_initializer
 
 
-class kmeansClustering(Clustering):
+class kmedoidsClustering(Clustering):
     def __init__(self, metric, dataset, path=""):
         super().__init__(metric, dataset, path)
         self.data = self.load_data()
@@ -18,7 +18,7 @@ class kmeansClustering(Clustering):
             # random initialiser
             initial_medoids = random_center_initializer(self.data, k).initialize()
 
-        kmedoids_instance = kmedoids(sample, initial_medoids, metric=self.metric)
+        kmedoids_instance = kmedoids(self.data, initial_medoids, metric=self.metric)
  
         # Run cluster analysis and obtain results.
         kmedoids_instance.process()

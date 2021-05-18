@@ -10,7 +10,7 @@ from sklearn.datasets import load_diabetes, load_iris, load_wine
 
 
 class Clustering():
-    def __init__(self, metric, dataset, path=""):
+    def __init__(self, metric, dataset, path="../datasets/solar_flares/flare.data1"):
         self.data = []
         self.path = path
         self.dataset = dataset

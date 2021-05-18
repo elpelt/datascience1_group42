@@ -1,6 +1,6 @@
 from clustering import Clustering
 from pyclustering.cluster.kmeans import kmeans, kmeans_visualizer
-from pyclustering.cluster.center_initializer import kmeans_plusplus_initializer
+from pyclustering.cluster.center_initializer import kmeans_plusplus_initializer, random_center_initializer
 
 
 class kmeansClustering(Clustering):

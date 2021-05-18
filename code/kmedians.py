@@ -8,7 +8,7 @@ class kmediansClustering(Clustering):
         self.metric = self.pyc_metric(metric)
     
     def cluster(self, k, initial_medians):
-        kmedians_instance = kmedians(sample, initial_medians, metric=self.metric)
+        kmedians_instance = kmedians(self.data, initial_medians, metric=self.metric)
         kmedians_instance.process()
 
         clusters = kmedians_instance.get_clusters()
