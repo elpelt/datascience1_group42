@@ -25,7 +25,7 @@ cluster_algo_class = {'kmeans': kmeansClustering, 'kmedians': kmediansClustering
 cluster = cluster_algo_class[cluster_algo](cluster_dist, dataset)
 cluster.load_data()
 if cluster_algo == 'DBSCAN':
-    epsilon = st.slider("Choose a nice value for epsilon", min_value=1, max_value=50, step=0.5)
+    epsilon = st.slider("Choose a nice value for epsilon", min_value=1.0, max_value=50.0, step=0.5)
     minpts = st.slider("Choose a minimal number of nearest points", min_value=1, max_value=20, step=1, value=5)
     clusters, stuff = cluster.cluster(epsilon, minpts)
 else:
