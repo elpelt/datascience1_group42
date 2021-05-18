@@ -10,12 +10,11 @@ from sklearn.datasets import load_diabetes, load_iris, load_wine
 
 
 class Clustering():
-    def __init__(self, metric, dataset, path=""):
+    def __init__(self, metric, dataset):
         self.data = []
-        self.path = path
         self.dataset = dataset
         self.encoding = "integer"
-        self.path = path
+        self.labels = None
     
     def pyc_metric(self, metric):
         # distance for plotting
@@ -52,16 +51,26 @@ class Clustering():
         """
         # sklearn data import
         if self.dataset == "diabetes":
-            return load_diabetes()["data"]
+            s = load_diabetes()
+            self.labels = s["feature_names"]
+            self.data = s["data"]
         
         elif self.dataset == "iris":
-            return load_iris()["data"]
+            s = load_iris()
+            self.labels = s["feature_names"]
+            self.data = s["data"]
         
         elif self.dataset == "wine":
-            return load_wine()["data"]
+            s = load_wine()
+            self.labels = s["feature_names"]
+            self.data = s["data"]
         
         elif self.dataset == "solarflare":
-            return self.solar_load()
+            path = "../datasets/solar_flares/flare.data2"
+            self.labels = ["Z-value", "p-value", "c-value", "Activity", "Evolution", "Previous Activity", 
+                           "Historically Complex", "Became Historically Complex", "Area", "Area Largest Spot", 
+                           "C-Class Production", "M-Class Production", "X-Class Production"]
+            self.data = self.solar_load(path)
 
     def integer_encoding(self, objects):
         self.replacement = {}
@@ -78,24 +87,22 @@ class Clustering():
     def one_hot_encoding(self):
         pass
 
-    def solar_load(self, skip=1):
+    def solar_load(self, path, skip=1):
         groups = set()
 
-        with open("../datasets/solar_flares/flare.data2", 'r') as f:
+        with open(path, 'r') as f:
             n = 0
-            data = [i.split(" ") for i in f.read().splitlines()[skip:]]
+            self.data = [i.split(" ") for i in f.read().splitlines()[skip:]]
 
-        for i in range(len(data)):
-            for j in range(len(data[-1])):
+        for i in range(len(self.data)):
+            for j in range(len(self.data[-1])):
                 try:
-                    data[i][j] = int(data[i][j])
+                    self.data[i][j] = int(self.data[i][j])
                 except:
-                    groups.add(data[i][j])
+                    groups.add(self.data[i][j])
         
         if self.encoding == "integer":
             self.integer_encoding(groups)
-        
-        return data
         
     def cluster(self):
         pass

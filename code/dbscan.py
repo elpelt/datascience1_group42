@@ -6,8 +6,8 @@ from sklearn.cluster import DBSCAN
 metrics can be given as a string, so no metric selection needed
 """
 class DBSCANClustering(Clustering):
-    def __init__(self, metric, dataset, path=""):
-        super().__init__(metric, dataset, path)
+    def __init__(self, metric, dataset):
+        super().__init__(metric, dataset)
         self.metric = metric
         self.data = self.load_data()
 
@@ -18,7 +18,6 @@ class DBSCANClustering(Clustering):
         @param minPts Minmal number of points in a cluster
 
         """
-
         clustering = DBSCAN(metric=self.metric, eps=eps, min_samples=minPts)
         clustering.fit(self.data)
  
@@ -40,6 +39,7 @@ class DBSCANClustering(Clustering):
 
 if __name__ == "__main__":
     flarepath = "../datasets/solar_flares/flare.data2"
-    c = DBSCANClustering("chebyshev", "solarflare", flarepath)
+    c = DBSCANClustering("chebyshev", "solarflare")
     c.load_data()
-    print(c.cluster(2, 10))
+    #print(c.data)
+    #print(c.cluster(2, 10))
