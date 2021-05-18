@@ -5,7 +5,7 @@ from pyclustering.cluster.center_initializer import kmeans_plusplus_initializer,
 
 class kmeansClustering(Clustering):
     def __init__(self, metric, dataset, path=""):
-        super().__init__(metric, dataset, path)
+        super().__init__(metric, dataset)
         self.data = self.load_data()
         self.metric = self.pyc_metric(metric)
     
@@ -25,9 +25,4 @@ class kmeansClustering(Clustering):
         final_centers = kmeans_instance.get_centers()
 
         return clusters, final_centers
-
-if __name__ == "__main__":
-    c = kmeansClustering("manhattan", "wine")
-    c.load_data()
-    print(c.cluster(4))
     
