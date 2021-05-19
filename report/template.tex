@@ -120,20 +120,10 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
 
 \newpage
 
-Some Latex-specific hints:
-
-
-\begin{itemize}
-\item a
-\end{itemize}
 
 \section{Definition of Distance Measure}
 \label{def_DM}
-ANMERKUNGEN:
-\begin{itemize}
-\item What general problem is addressed?
-\item What is the general methodology that is used?
-\end{itemize}
+
 A distance measure is a function $d(x, y)$ that calculates a real value between two points in a space, containing two sets of points. This function must satisfy the four following axioms:
 \begin{enumerate}
 \item No negative distances:\\
@@ -148,12 +138,7 @@ $d(x, y) \leq d(x, z) + d(z, y)$
 The triangle-inequality impose the condition that a distance reflects the shortest path between two points. Thus, it is not possible to achieve a distance improvement by traveling via an intermediate point $z$. \cite{MMDS}
 
 \section{Different Distance Measurements}
-ANMERKUNGEN:
-\begin{itemize}
-\item What specific problem is addressed?
-\item What is the specific methodology that is used?
-\item What improvement is shown?
-\end{itemize}
+
 \subsection{Euclidean Distances}
 The Euclidean distance calculates the distance of two points, represented as vectors of $n$ real numbers, in an $n$-dimensional euclidean space. In general, a Euclidean distance measure $d$ is called $L_r$\textit{-norm}, for arbitrary constants r. 
 $$d([x_1,x_2,...,x_n], [y_1,y_2,...,y_n])=\sum_{i=1}^{n}(|x_i-y_i|^r)^\frac{1}{r}$$
@@ -172,24 +157,26 @@ $(x - y)^2 = (y - x)^2$.
 As a matter of fact, this axiom requires a more difficult proof. However, to keep it simple, the Euclidean space possesses the property that the sum of the lengths of Cathetus and Ancathetus is always longer than the length of the Hypothenuse. \cite{MMDS}
 \end{enumerate}
 
+\subsection{Cosine Distance}
+\input{modules/distances/cosine}
+
 \section{Data Set Description}
-ANMERKUNGEN:
-\begin{itemize}
-\item What benchmark data sets are used?
-\end{itemize}
+
 \subsection{Solar Flare}
 \input{modules/datasets/solarflare}
+\subsection{UCI ML Wine recognition dataset}
+\input{modules/datasets/wine}
 
 \section{Clustering Algorithms}
 \subsection{K-Means}
 \subsection{K-Medoids}
+\input{modules/algorithms/kmedoids}
 \subsection{K-Median}
 \subsection{DBSCAN}
 \input{modules/algorithms/dbscan}
 
 
 \section{Description of Python libraries used}
-ANMERKUNGEN:\\
 Libraries:
 \begin{itemize}
 \item pyclustering

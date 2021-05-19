@@ -25,9 +25,4 @@ class kmeansClustering(Clustering):
         final_centers = kmeans_instance.get_centers()
 
         return clusters, final_centers
-
-if __name__ == "__main__":
-    c = kmeansClustering("manhattan", "wine")
-    c.load_data()
-    print(c.cluster(4))
     

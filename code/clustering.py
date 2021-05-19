@@ -7,6 +7,7 @@ from pyclustering.samples.definitions import FCPS_SAMPLES
 
 # datasets, maybe replace this, to reduce a dependency later
 from sklearn.datasets import load_diabetes, load_iris, load_wine
+from sklearn.preprocessing import StandardScaler
 
 """
 Meta Class for all subsequent clustering algorithms
@@ -55,25 +56,25 @@ class Clustering():
         # sklearn data import
         if self.dataset == "diabetes":
             s = load_diabetes()
-            self.labels = s["feature_names"]
+            self.labels = s["target"]
             self.data = s["data"]
         
         elif self.dataset == "iris":
             s = load_iris()
-            self.labels = s["feature_names"]
+            self.labels = s["target"]
             self.data = s["data"]
         
         elif self.dataset == "wine":
             s = load_wine()
-            self.labels = s["feature_names"]
+            self.labels = s["target"]
             self.data = s["data"]
         
         elif self.dataset == "solarflare":
             path = "../datasets/solar_flares/flare.data2"
-            self.labels = ["Z-value", "p-value", "c-value", "Activity", "Evolution", "Previous Activity", 
-                           "Historically Complex", "Became Historically Complex", "Area", "Area Largest Spot", 
-                           "C-Class Production", "M-Class Production", "X-Class Production"]
             self.data = self.solar_load(path)
+
+
+        self.data = StandardScaler().fit_transform(self.data)
 
     def integer_encoding(self, objects):
         self.replacement = {}
