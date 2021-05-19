@@ -4,7 +4,7 @@
 \contentsline {subsection}{\numberline {2.2}Cosine Distance}{5}{}%
 \contentsline {section}{\numberline {3}Data Set Description}{6}{}%
 \contentsline {subsection}{\numberline {3.1}Solar Flare}{6}{}%
-\contentsline {subsection}{\numberline {3.2}UCI ML Wine recognition dataset}{7}{}%
+\contentsline {subsection}{\numberline {3.2}Wine recognition dataset}{7}{}%
 \contentsline {section}{\numberline {4}Clustering Algorithms}{7}{}%
 \contentsline {subsection}{\numberline {4.1}K-Means}{7}{}%
 \contentsline {subsection}{\numberline {4.2}K-Medoids}{7}{}%

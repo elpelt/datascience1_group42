@@ -14,6 +14,7 @@ from sklearn.metrics import silhouette_score, homogeneity_score, completeness_sc
 st.set_page_config(page_title="Group 42", page_icon=":koala:")
 st.title('Datascience: Group 42')
 
+
 st.header("Settings")
 col1, col2 = st.beta_columns(2)
 dataset = col1.selectbox('Choose a beautiful dataset',['iris', 'wine', 'diabetes', 'solarflare1', 'solarflare2'])
@@ -36,47 +37,72 @@ if cluster_algo == 'DBSCAN':
     minpts = col2.slider("Choose a minimal number of nearest points", min_value=1, max_value=20, step=1, value=5)
     clusters, stuff = cluster.cluster(epsilon, minpts)
 else:
-    k_value = col2.slider("Choose a nice value for k", min_value=1, max_value=10, step=1, value=3)
+    k_value = col2.slider("Choose a nice value for k (number of clusters)", min_value=1, max_value=10, step=1, value=3)
 
     if cluster_algo in  ['kmedoids', 'kmeans']:
         clusters, stuff = cluster.cluster(k_value)
     elif cluster_algo == 'kmedians':
         clusters, stuff = cluster.cluster(k_value, initial_medians=[])
 
-clustered_data = np.zeros_like(cluster.labels)
+clustered_data = np.zeros(len(cluster.data))
 for ic,c in enumerate(clusters):
     clustered_data[c] = ic+1
 
-color_palette = sns.color_palette("husl", len(set(clustered_data)))
+if cluster_algo == 'DBSCAN':
+    color_palette = ['black'] + sns.color_palette("husl", len(set(clustered_data))-1)
+else:
+    color_palette = sns.color_palette("husl", len(set(clustered_data)))
 
-st.success('Here are the results!!!!')
+st.success('Great choice! Here are the results!!!!')
 st.balloons()
 col1, col2 = st.beta_columns(2)
 col1.header("Projection with TSNE")
 perp = col1.slider("Perplexity for TSNE", 5, 50, 5)
 col1.write("TSNE is a nonlinear dimension reduction. The outcome will depend on the perplexity you have chosen. ")
-projected_data_tsne = TSNE(random_state=42, perplexity=perp).fit_transform(cluster.data)
+
 
 col2.header("Projection with PCA")
 col2.markdown("#")
-col2.write("PCA is a linear dimension reduction. The data will be projected on the first 2 principal components. ")
+col2.write("PCA is a linear dimension reduction. The data will be projected on the first 2 principal components, "
+           "which capture the most variance in the data. ")
 
 
 col1, col2 = st.beta_columns(2)
 fig, ax = plt.subplots()
-sns.scatterplot(x=projected_data_tsne[:,0], y=projected_data_tsne[:,1], hue=clustered_data, ax=ax, palette=color_palette)
+with st.spinner('Please wait a second. Some colorful plots are generated...'):
+    projected_data_tsne = TSNE(random_state=42, perplexity=perp).fit_transform(cluster.data)
+    sns.scatterplot(x=projected_data_tsne[:,0], y=projected_data_tsne[:,1], hue=clustered_data, ax=ax, palette=color_palette)
 col1.pyplot(fig)
 
-projected_data_pca = PCA(random_state=42, n_components=3).fit_transform(cluster.data)
+
 fig, ax = plt.subplots()
-sns.scatterplot(x=projected_data_pca[:,0], y=projected_data_pca[:,1], hue=clustered_data, ax=ax, palette=color_palette)
+with st.spinner('Please wait a second. Some colorful plots are generated...'):
+    projected_data_pca = PCA(random_state=42, n_components=3).fit_transform(cluster.data)
+    sns.scatterplot(x=projected_data_pca[:,0], y=projected_data_pca[:,1], hue=clustered_data, ax=ax, palette=color_palette)
 col2.pyplot(fig)
 
 if cluster_algo == 'DBSCAN':
-    st.write("*Please notice for DBSCAN clustering algorithm: Noise is labeled with 0 in the plots.*")
+    st.write("*Please notice for DBSCAN clustering algorithm: Noise is labeled with 0 (black points) in the plots.*")
+
+col1, col2 = st.beta_columns(2)
+add_result = col1.button('Add')
+reset_tmp = col2.button('Reset')
+
+if reset_tmp:
+    with open("tmp.txt", "w") as f:
+        f.write('')
+
+if add_result:
+    with open("tmp.txt", "a") as f:
+        np.savetxt(f, clustered_data)
+t = np.loadtxt('tmp.txt')
+st.write(t)
+
+
+
 
 st.header("Clustering evaluation")
-true_labels = cluster.labels
-pred_labels = clustered_data
-st.write('homogeneity_score', homogeneity_score(true_labels, pred_labels))
-st.write('completeness_score', completeness_score(true_labels, pred_labels))
+#true_labels = cluster.labels
+#pred_labels = clustered_data
+#st.write('homogeneity_score', homogeneity_score(true_labels, pred_labels))
+#st.write('completeness_score', completeness_score(true_labels, pred_labels))
