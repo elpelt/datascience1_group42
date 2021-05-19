@@ -69,10 +69,13 @@ class Clustering():
             self.labels = s["target"]
             self.data = s["data"]
         
-        elif self.dataset == "solarflare":
-            path = "../datasets/solar_flares/flare.data2"
-            self.data = self.solar_load(path)
-
+        elif self.dataset == "solarflare1":
+            path = "./datasets/solar_flares/flare.data1"
+            self.solar_load(path)
+        
+        elif self.dataset == "solarflare2":
+            path = "./datasets/solar_flares/flare.data2"
+            self.solar_load(path)
 
         self.data = StandardScaler().fit_transform(self.data)
 
