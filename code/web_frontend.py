@@ -84,6 +84,23 @@ col2.pyplot(fig)
 if cluster_algo == 'DBSCAN':
     st.write("*Please notice for DBSCAN clustering algorithm: Noise is labeled with 0 (black points) in the plots.*")
 
+col1, col2 = st.beta_columns(2)
+add_result = col1.button('Add')
+reset_tmp = col2.button('Reset')
+
+if reset_tmp:
+    with open("tmp.txt", "w") as f:
+        f.write('')
+
+if add_result:
+    with open("tmp.txt", "a") as f:
+        np.savetxt(f, clustered_data)
+t = np.loadtxt('tmp.txt')
+st.write(t)
+
+
+
+
 st.header("Clustering evaluation")
 #true_labels = cluster.labels
 #pred_labels = clustered_data
