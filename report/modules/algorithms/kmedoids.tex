@@ -1,4 +1,3 @@
-\subsection{K-Medoids}
 The K-Medoids clustering method is related to the well-known K-means algorithm, but uses medoids (representative points for each cluster) instead of means to define new cluster centers, which makes it more robust to outliers. It partitions the dataset by assigning each data point to the closest of $k$ cluster centers, which are defined by the most centrally located medoids. A medoid is a point with a minimal average dissimilarity to all other data points in the same cluster. The most commonly used algorithm to solve this NP-hard problem heuristically is the PAM (Partitoning Around Medoids) algorithm, that works as following: \\
 \begin{enumerate}
 	\item First initialize the algorithm by selecting $k$ data points to be the medoids and assigning every data point to its closest medoid. \\

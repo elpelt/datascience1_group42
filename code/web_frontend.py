@@ -15,10 +15,11 @@ st.set_page_config(page_title="Group 42", page_icon=":koala:")
 st.title('Datascience: Group 42')
 
 st.header("Settings")
-dataset = st.selectbox('Choose a beautiful dataset',['iris', 'wine', 'diabetes', 'solarflare'])
-cluster_dist = st.selectbox('Choose an awesome distance measure',['euclidean', 'manhattan', 'chebyshev', 'cosine'])
+col1, col2 = st.beta_columns(2)
+dataset = col1.selectbox('Choose a beautiful dataset',['iris', 'wine', 'diabetes', 'solarflare'])
+cluster_dist = col1.selectbox('Choose an awesome distance measure',['euclidean', 'manhattan', 'chebyshev', 'cosine'])
 
-cluster_algo = st.selectbox('Choose a lovely clustering algorithm',['kmeans', 'kmedians', 'kmedoids', 'DBSCAN'])
+cluster_algo = col2.selectbox('Choose a lovely clustering algorithm',['kmeans', 'kmedians', 'kmedoids', 'DBSCAN'])
 
 
 cluster_algo_class = {'kmeans': kmeansClustering, 'kmedians': kmediansClustering, 'kmedoids': kmedoidsClustering, 'DBSCAN': DBSCANClustering}
@@ -27,11 +28,11 @@ cluster = cluster_algo_class[cluster_algo](cluster_dist, dataset)
 cluster.load_data()
 
 if cluster_algo == 'DBSCAN':
-    epsilon = st.slider("Choose a nice value for epsilon", min_value=1.0, max_value=2.0, step=0.1)
-    minpts = st.slider("Choose a minimal number of nearest points", min_value=1, max_value=20, step=1, value=5)
+    epsilon = col2.slider("Choose a nice value for epsilon", min_value=1.0, max_value=2.0, step=0.1)
+    minpts = col2.slider("Choose a minimal number of nearest points", min_value=1, max_value=20, step=1, value=5)
     clusters, stuff = cluster.cluster(epsilon, minpts)
 else:
-    k_value = st.slider("Choose a nice value for k", min_value=1, max_value=10, step=1, value=3)
+    k_value = col2.slider("Choose a nice value for k", min_value=1, max_value=10, step=1, value=3)
 
     if cluster_algo in  ['kmedoids', 'kmeans']:
         clusters, stuff = cluster.cluster(k_value)
