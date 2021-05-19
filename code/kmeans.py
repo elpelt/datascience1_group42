@@ -4,8 +4,8 @@ from pyclustering.cluster.center_initializer import kmeans_plusplus_initializer,
 
 
 class kmeansClustering(Clustering):
-    def __init__(self, metric, dataset, path=""):
-        super().__init__(metric, dataset, path)
+    def __init__(self, metric, dataset):
+        super().__init__(metric, dataset)
         self.data = self.load_data()
         self.metric = self.pyc_metric(metric)
     

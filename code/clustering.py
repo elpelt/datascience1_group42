@@ -8,7 +8,10 @@ from pyclustering.samples.definitions import FCPS_SAMPLES
 # datasets, maybe replace this, to reduce a dependency later
 from sklearn.datasets import load_diabetes, load_iris, load_wine
 
-
+"""
+Meta Class for all subsequent clustering algorithms
+implements all functions needed for 
+"""
 class Clustering():
     def __init__(self, metric, dataset):
         self.data = []
