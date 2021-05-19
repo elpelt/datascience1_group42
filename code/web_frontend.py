@@ -17,12 +17,16 @@ st.title('Datascience: Group 42')
 st.header("Settings")
 col1, col2 = st.beta_columns(2)
 dataset = col1.selectbox('Choose a beautiful dataset',['iris', 'wine', 'diabetes', 'solarflare'])
-cluster_dist = col1.selectbox('Choose an awesome distance measure',['euclidean', 'manhattan', 'chebyshev', 'cosine'])
 
-cluster_algo = col2.selectbox('Choose a lovely clustering algorithm',['kmeans', 'kmedians', 'kmedoids', 'DBSCAN'])
-
+cluster_dist_desc = {'euclidean': 'd(x,y)=\sqrt{\sum_{i=1}^{n}(|x_i-y_i|)^2}',
+                     'manhattan': '',
+                     'chebyshev': '',
+                     'cosine': 'd(x,y) = \\frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}}'}
+cluster_dist = col1.selectbox('Choose an awesome distance measure',list(cluster_dist_desc.keys()))
+col1.latex(cluster_dist_desc[cluster_dist])
 
 cluster_algo_class = {'kmeans': kmeansClustering, 'kmedians': kmediansClustering, 'kmedoids': kmedoidsClustering, 'DBSCAN': DBSCANClustering}
+cluster_algo = col2.selectbox('Choose a lovely clustering algorithm',list(cluster_algo_class.keys()))
 
 cluster = cluster_algo_class[cluster_algo](cluster_dist, dataset)
 cluster.load_data()
