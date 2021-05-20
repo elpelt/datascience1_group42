@@ -24,7 +24,7 @@ dataset = col1.selectbox('Choose a beautiful dataset',['iris', 'wine', 'diabetes
 cluster_dist_desc = {'euclidean': 'd(x,y)=\sqrt{\sum_{i=1}^{n}(|x_i-y_i|)^2}',
                      'manhattan': '',
                      'chebyshev': 'd(x,y)=\max(|x_i - y_i|)',
-                     'cosine': 'd(x,y) = \\frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}}'}
+                     'cosine': 'd(x,y) = \\frac{\\arccos(\\frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}})}{\pi}'}
 cluster_dist = col1.selectbox('Choose an awesome distance measure',list(cluster_dist_desc.keys()))
 col1.latex(cluster_dist_desc[cluster_dist])
 
@@ -32,7 +32,6 @@ cluster_algo_class = {'kmeans': kmeansClustering, 'kmedians': kmediansClustering
 cluster_algo = col2.selectbox('Choose a lovely clustering algorithm',list(cluster_algo_class.keys()))
 
 cluster = cluster_algo_class[cluster_algo](cluster_dist, dataset)
-print(cluster_algo_class)
 cluster.load_data()
 
 if cluster_algo == 'DBSCAN':

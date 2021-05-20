@@ -35,6 +35,10 @@ class Clustering():
         elif metric == "cosine":
             
             def cosine(x, y):
+
+                if np.all((x == 0)) or np.all((y==0)): # case for 0-vectors (otherwise division by 0!)
+                    return 1
+
                 def dot(x, y):
                     return sum([x[i]*y[i] for i in range(len(x))])
 

@@ -10,7 +10,7 @@ class kmedoidsClustering(Clustering):
     
     def cluster(self, k, init="k-medoids++"):
 
-        kmedoids = KMedoids(n_clusters=k, random_state=42, init=init, metric=self.metric)
+        kmedoids = KMedoids(n_clusters=k, random_state=42, init=init, metric=self.metric, method='pam')
         kmedoids.fit(self.data)
 
         return self.package(kmedoids.labels_), kmedoids.cluster_centers_
