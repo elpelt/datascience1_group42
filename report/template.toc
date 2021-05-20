@@ -1,16 +1,17 @@
 \contentsline {section}{\numberline {1}Definition of Distance Measure}{4}{}%
 \contentsline {section}{\numberline {2}Different Distance Measurements}{4}{}%
 \contentsline {subsection}{\numberline {2.1}Euclidean Distances}{4}{}%
-\contentsline {subsection}{\numberline {2.2}Cosine Distance}{5}{}%
-\contentsline {section}{\numberline {3}Data Set Description}{6}{}%
-\contentsline {subsection}{\numberline {3.1}Solar Flare}{6}{}%
-\contentsline {subsection}{\numberline {3.2}Wine recognition dataset}{7}{}%
-\contentsline {section}{\numberline {4}Clustering Algorithms}{7}{}%
-\contentsline {subsection}{\numberline {4.1}K-Means}{7}{}%
-\contentsline {subsection}{\numberline {4.2}K-Medoids}{7}{}%
-\contentsline {subsection}{\numberline {4.3}K-Median}{8}{}%
-\contentsline {subsection}{\numberline {4.4}DBSCAN}{8}{}%
-\contentsline {section}{\numberline {5}Description of Python libraries used}{10}{}%
-\contentsline {section}{\numberline {6}Description of Evaluation Module}{10}{}%
-\contentsline {section}{\numberline {7}Web Frontend and User Manual}{10}{}%
-\contentsline {section}{\numberline {8}Conclusion}{10}{}%
+\contentsline {subsection}{\numberline {2.2}Angular cosine Distance}{5}{}%
+\contentsline {subsection}{\numberline {2.3}Chebyshev Distance}{6}{}%
+\contentsline {section}{\numberline {3}Data Set Description}{7}{}%
+\contentsline {subsection}{\numberline {3.1}Solar Flare}{7}{}%
+\contentsline {subsection}{\numberline {3.2}Wine recognition dataset}{8}{}%
+\contentsline {section}{\numberline {4}Clustering Algorithms}{8}{}%
+\contentsline {subsection}{\numberline {4.1}K-Means}{8}{}%
+\contentsline {subsection}{\numberline {4.2}K-Medoids}{8}{}%
+\contentsline {subsection}{\numberline {4.3}K-Median}{9}{}%
+\contentsline {subsection}{\numberline {4.4}DBSCAN}{9}{}%
+\contentsline {section}{\numberline {5}Description of Python libraries used}{11}{}%
+\contentsline {section}{\numberline {6}Description of Evaluation Module}{11}{}%
+\contentsline {section}{\numberline {7}Web Frontend and User Manual}{11}{}%
+\contentsline {section}{\numberline {8}Conclusion}{11}{}%

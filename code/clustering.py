@@ -3,11 +3,11 @@
 # own metrics: https://github.com/annoviko/pyclustering/issues/471
 from pyclustering.utils import read_sample
 from pyclustering.utils.metric import type_metric, distance_metric
-from pyclustering.samples.definitions import FCPS_SAMPLES
 
 # datasets, maybe replace this, to reduce a dependency later
 from sklearn.datasets import load_diabetes, load_iris, load_wine
 from sklearn.preprocessing import StandardScaler
+import numpy as np
 
 """
 Meta Class for all subsequent clustering algorithms
@@ -40,10 +40,21 @@ class Clustering():
 
                 def length(x):
                     return dot(x, x)**0.5
-                
-                return dot(x, y)/(length(x) * length(y))
 
-            return distance_metric(type_metric.USER_DEFINED, func=cosine);
+
+                cos_similarity = dot(x, y)/(length(x) * length(y))
+
+                if cos_similarity > 1: # due to some rounding errors with floating point values
+                    cos_similarity = 1
+
+                if np.any(x<0) or np.any(y<0):
+                    factor = 2
+                else:
+                    factor = 1
+
+                return factor*np.arccos(cos_similarity)/np.pi
+
+            return distance_metric(type_metric.USER_DEFINED, func=cosine)
         
         else:
             print("wrong distance measure given")

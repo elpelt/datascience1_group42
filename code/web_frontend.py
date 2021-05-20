@@ -22,9 +22,12 @@ dataset = col1.selectbox('Choose a beautiful dataset',['iris', 'wine', 'diabetes
 cluster_dist_desc = {'euclidean': 'd(x,y)=\sqrt{\sum_{i=1}^{n}(|x_i-y_i|)^2}',
                      'manhattan': '',
                      'chebyshev': 'd(x,y)=\max(|x_i - y_i|)',
-                     'cosine': 'd(x,y) = \\frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}}'}
+                     'cosine': 'd(x,y) = \\frac{\\arccos( \\frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}} )}{\pi}'}
 cluster_dist = col1.selectbox('Choose an awesome distance measure',list(cluster_dist_desc.keys()))
 col1.latex(cluster_dist_desc[cluster_dist])
+my_expander = col1.beta_expander('More information')
+with my_expander:
+    st.write('More detailed information about some interesting stuff!')
 
 cluster_algo_class = {'kmeans': kmeansClustering, 'kmedians': kmediansClustering, 'kmedoids': kmedoidsClustering, 'DBSCAN': DBSCANClustering}
 cluster_algo = col2.selectbox('Choose a lovely clustering algorithm',list(cluster_algo_class.keys()))
@@ -43,6 +46,7 @@ else:
         clusters, stuff = cluster.cluster(k_value)
     elif cluster_algo == 'kmedians':
         clusters, stuff = cluster.cluster(k_value, initial_medians=[])
+
 
 clustered_data = np.zeros(len(cluster.data))
 for ic,c in enumerate(clusters):

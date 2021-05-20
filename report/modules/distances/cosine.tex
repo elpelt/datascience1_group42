@@ -1,8 +1,17 @@
-The Cosine distance gives the angle between two points $x$ and $y$ represented as vectors in an $n$-dimensional space. It does not make a difference between a vector and a multiple of that vector. The cosine distance can be calculated by applying the arc-cosine function to the cosine of the angle $\theta$ between $x$ and $y$ \cite{MMDS}. \\
+The angular cosine distance gives the (normalized) angle between two points $x$ and $y$ represented as vectors in an $n$-dimensional space. It does not make a difference between a vector and a multiple of that vector. The cosine distance can be calculated by applying the arc-cosine function to the cosine of the angle $\theta$ between $x$ and $y$ \cite{MMDS}. \\
+It is based on the cosine similarity (cosine between two vectors), which is definied as: \\
 
-$$ d(x,y) = cos(\theta) = \frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}} $$
+\begin{equation}
+	\text{cosine similarity} = \frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}}
+\end{equation}  
 
-The requirements for a distance measure are fulfilled for the Cosine distance:
+The cosine similarity, however, is not a distance as it is defined for positive values only. Therefore it has to be converted to the normalized angle between $x$ and $y$ as followed: \\
+
+\begin{equation}
+	\text{angular cosine distance} = \frac{\arccos({\text{cosine similarity})}}{\pi}
+\end{equation}  
+
+
 \begin{enumerate}
 	\item No negative distances:\\
 	Regardless of the dimensionality of the space the values of the cosine distance are between 0 and 180 degrees, therefore no negative distances can occur. 
@@ -13,3 +22,4 @@ The requirements for a distance measure are fulfilled for the Cosine distance:
 	\item Triangle inequality: \\
 	A rotation from $x$ to $y$ can be explained by a rotation from $x$ to $z$ and then to $y$. Therefore a sum of these two rotations is always bigger or equal than the rotation directly from $x$ to $y$ \cite{MMDS}. 
 \end{enumerate}
+
