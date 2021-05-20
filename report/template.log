@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  20 MAY 2021 10:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  20 MAY 2021 11:21
 entering extended mode
 **./template.tex
 (template.tex
@@ -501,10 +501,10 @@ No file template.acr.
 No file template.syi.
 [12] (template.bbl) [13] (template.aux) ) 
 Here is how much of TeX's memory you used:
- 8395 strings out of 479334
- 133345 string characters out of 2857559
- 515697 words of memory out of 3000000
- 25553 multiletter control sequences out of 15000+200000
+ 8396 strings out of 479334
+ 133354 string characters out of 2857559
+ 515700 words of memory out of 3000000
+ 25554 multiletter control sequences out of 15000+200000
  415082 words of font info for 118 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,10n,102p,1008b,266s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -528,7 +528,7 @@ ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users
 /T460/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><
 C:/Users/T460/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt
 12.pfb>
-Output written on template.pdf (14 pages, 241134 bytes).
+Output written on template.pdf (14 pages, 241212 bytes).
 PDF statistics:
  118 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

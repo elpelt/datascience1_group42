@@ -42,17 +42,8 @@ if cluster_algo == 'DBSCAN':
 else:
     k_value = col2.slider("Choose a nice value for k (number of clusters)", min_value=1, max_value=10, step=1, value=3)
 
-    if cluster_algo in  ['kmedoids', 'kmeans']:
+    if cluster_algo in  ['kmedoids', 'kmeans', 'kmedians']:
         clusters, stuff = cluster.cluster(k_value)
-    elif cluster_algo == 'kmedians':
-        initial_medians = np.zeros([k_value, 4])
-        for x in range(k_value):
-            for y in range(4):
-                initial_medians[x][y]=uniform(0.0, 100.0)
-        print(initial_medians.shape)
-        print(cluster.data.shape)
-        initial_medians = initial_medians.tolist()
-        clusters, stuff = cluster.cluster(k_value, initial_medians=initial_medians)
 
 
 clustered_data = np.zeros(len(cluster.data))
@@ -68,7 +59,7 @@ st.success('Great choice! Here are the results!!!!')
 st.balloons()
 col1, col2 = st.beta_columns(2)
 col1.header("Projection with TSNE")
-perp = col1.slider("Perplexity for TSNE", 5, 50, 5)
+perp = col1.slider("Perplexity for TSNE", 5, 50, 25)
 col1.write("TSNE is a nonlinear dimension reduction. The outcome will depend on the perplexity you have chosen. ")
 
 

@@ -6,6 +6,10 @@ Jure Leskovec, Anand Rajaraman, and Jeffrey~David Ullman.
 \newblock In {\em Mining of Massive Datasets - THIRD EDITION}, page~97. Infolab
   Stanford EDU, 2020.
 
+\bibitem{cosdist}
+Cosine distance, cosine similarity, angular cosine distance, angular cosine
+  similarity, Jul 2017.
+
 \bibitem{Dua2019}
 Dheeru Dua and Casey Graff.
 \newblock {UCI} {M}achine {L}earning {R}epository, 2017.

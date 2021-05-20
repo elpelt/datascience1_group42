@@ -5,7 +5,7 @@ It is based on the cosine similarity (cosine between two vectors), which is defi
 	\text{cosine similarity} = \frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}}
 \end{equation}  
 
-The cosine similarity, however, is not a distance as it is defined for positive values only. Therefore it has to be converted to the normalized angle between $x$ and $y$ as followed: \\
+The cosine similarity, however, is not a distance as it is defined for positive values only. Therefore it has to be converted to the normalized angle between $x$ and $y$ as followed \cite{cosdist}: \\
 
 \begin{equation}
 	\text{angular cosine distance} = \frac{\arccos({\text{cosine similarity})}}{\pi}
