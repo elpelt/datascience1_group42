@@ -1,8 +1,10 @@
 import streamlit as st
+import pandas as pd
 from kmeans import kmeansClustering
 from kmedians import kmediansClustering
 from kmedoids import kmedoidsClustering
 from dbscan import DBSCANClustering
+from random import uniform
 from indices import Indices
 import seaborn as sns
 import numpy as np
@@ -22,17 +24,15 @@ dataset = col1.selectbox('Choose a beautiful dataset',['iris', 'wine', 'diabetes
 cluster_dist_desc = {'euclidean': 'd(x,y)=\sqrt{\sum_{i=1}^{n}(|x_i-y_i|)^2}',
                      'manhattan': '',
                      'chebyshev': 'd(x,y)=\max(|x_i - y_i|)',
-                     'cosine': 'd(x,y) = \\frac{\\arccos( \\frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}} )}{\pi}'}
+                     'cosine': 'd(x,y) = \\frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}}'}
 cluster_dist = col1.selectbox('Choose an awesome distance measure',list(cluster_dist_desc.keys()))
 col1.latex(cluster_dist_desc[cluster_dist])
-my_expander = col1.beta_expander('More information')
-with my_expander:
-    st.write('More detailed information about some interesting stuff!')
 
 cluster_algo_class = {'kmeans': kmeansClustering, 'kmedians': kmediansClustering, 'kmedoids': kmedoidsClustering, 'DBSCAN': DBSCANClustering}
 cluster_algo = col2.selectbox('Choose a lovely clustering algorithm',list(cluster_algo_class.keys()))
 
 cluster = cluster_algo_class[cluster_algo](cluster_dist, dataset)
+print(cluster_algo_class)
 cluster.load_data()
 
 if cluster_algo == 'DBSCAN':
@@ -45,7 +45,14 @@ else:
     if cluster_algo in  ['kmedoids', 'kmeans']:
         clusters, stuff = cluster.cluster(k_value)
     elif cluster_algo == 'kmedians':
-        clusters, stuff = cluster.cluster(k_value, initial_medians=[])
+        initial_medians = np.zeros([k_value, 4])
+        for x in range(k_value):
+            for y in range(4):
+                initial_medians[x][y]=uniform(0.0, 100.0)
+        print(initial_medians.shape)
+        print(cluster.data.shape)
+        initial_medians = initial_medians.tolist()
+        clusters, stuff = cluster.cluster(k_value, initial_medians=initial_medians)
 
 
 clustered_data = np.zeros(len(cluster.data))
@@ -93,13 +100,23 @@ add_result = col1.button('Add')
 reset_tmp = col2.button('Reset')
 
 if reset_tmp:
-    with open("tmp.txt", "w") as f:
+    with open("tmp.csv", "w") as f:
         f.write('')
 
 if add_result:
-    with open("tmp.txt", "a") as f:
-        np.savetxt(f, clustered_data)
-t = np.loadtxt('tmp.txt')
+    try:
+        df = pd.read_csv("tmp.csv", delim_whitespace=True)
+        df[cluster_algo] = pd.Series(clustered_data)
+        df.to_csv("tmp.csv", index=False, sep=",")
+    except:
+        with open("tmp.csv", "a") as f:
+            np.savetxt(f, clustered_data, delimiter=",", header=cluster_algo)
+    #df["cluster_algo"] = "clustered_data"
+    #df.insert(column="Hi", value="abc")
+    #clustered_data.to_csv("tmp.csv", index=False)
+    #with open("tmp.csv", "a") as f:
+    #    np.savetxt(f, clustered_data, delimiter=",", header=cluster_algo)
+t = np.loadtxt('tmp.csv')
 st.write(t)
 
 
