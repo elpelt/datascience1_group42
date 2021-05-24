@@ -72,18 +72,18 @@ col1, col2 = st.beta_columns(2)
 fig, ax = plt.subplots()
 with st.spinner('Please wait a second. Some colorful plots are generated...'):
     projected_data_tsne = TSNE(random_state=42, perplexity=perp).fit_transform(cluster.data)
-    sns.scatterplot(x=projected_data_tsne[:,0], y=projected_data_tsne[:,1], hue=clustered_data, ax=ax, palette=color_palette)
+    sns.scatterplot(x=projected_data_tsne[:,0], y=projected_data_tsne[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
 col1.pyplot(fig)
 
 
 fig, ax = plt.subplots()
 with st.spinner('Please wait a second. Some colorful plots are generated...'):
     projected_data_pca = PCA(random_state=42, n_components=3).fit_transform(cluster.data)
-    sns.scatterplot(x=projected_data_pca[:,0], y=projected_data_pca[:,1], hue=clustered_data, ax=ax, palette=color_palette)
+    sns.scatterplot(x=projected_data_pca[:,0], y=projected_data_pca[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
 col2.pyplot(fig)
 
 if cluster_algo == 'DBSCAN':
-    st.write("*Please notice for DBSCAN clustering algorithm: Noise is labeled with 0 (black points) in the plots.*")
+    st.write("*Please notice for the DBSCAN clustering algorithm: Data points classified as noise are plotted as black points*")
 
 col1, col2 = st.beta_columns(2)
 add_result = col1.button('Add')

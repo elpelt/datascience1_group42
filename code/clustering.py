@@ -36,8 +36,7 @@ class Clustering():
             
             def cosine(x, y):
 
-                if np.all((x == 0)) or np.all((y==0)): # case for 0-vectors (otherwise division by 0!)
-                    return 1
+
 
                 def dot(x, y):
                     return sum([x[i]*y[i] for i in range(len(x))])
@@ -46,10 +45,12 @@ class Clustering():
                     return dot(x, x)**0.5
 
 
-                cos_similarity = dot(x, y)/(length(x) * length(y))
-
-                if cos_similarity > 1: # due to some rounding errors with floating point values
+                if np.all((x == 0)) or np.all((y==0)): # case for 0-vectors (otherwise division by 0!)
                     cos_similarity = 1
+                else:
+                    cos_similarity = dot(x, y)/(length(x) * length(y))
+                    if cos_similarity > 1: # due to some rounding errors with floating point values
+                        cos_similarity = 1
 
                 if np.any(x<0) or np.any(y<0):
                     factor = 2
