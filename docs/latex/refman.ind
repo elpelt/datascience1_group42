@@ -1,53 +1,47 @@
 \begin{theindex}
 
   \item {cluster}
-    \subitem {clustering.Clustering}, \hyperpage{5}
-    \subitem {dbscan.DBSCANClustering}, \hyperpage{7}
-    \subitem {kmeans.kmeansClustering}, \hyperpage{8}
-    \subitem {kmedians.kmediansClustering}, \hyperpage{9}
-    \subitem {kmedoids.kmedoidsClustering}, \hyperpage{10}
-  \item {clustering.Clustering}, \hyperpage{5}
-    \subitem {cluster}, \hyperpage{5}
-    \subitem {house\_load}, \hyperpage{5}
-    \subitem {load\_data}, \hyperpage{6}
-    \subitem {pyc\_metric}, \hyperpage{6}
+    \subitem {clustering.Clustering}, \hyperpage{8}
+    \subitem {dbscan.DBSCANClustering}, \hyperpage{9}
+    \subitem {kmeans.kmeansClustering}, \hyperpage{11}
+    \subitem {kmedians.kmediansClustering}, \hyperpage{12}
+    \subitem {kmedoids.kmedoidsClustering}, \hyperpage{14}
+  \item {clustering.Clustering}, \hyperpage{7}
+    \subitem {cluster}, \hyperpage{8}
+    \subitem {house\_load}, \hyperpage{8}
+    \subitem {pyc\_metric}, \hyperpage{8}
 
   \indexspace
 
-  \item {dbscan.DBSCANClustering}, \hyperpage{6}
-    \subitem {cluster}, \hyperpage{7}
-    \subitem {package}, \hyperpage{7}
+  \item {dbscan.DBSCANClustering}, \hyperpage{9}
+    \subitem {cluster}, \hyperpage{9}
+    \subitem {package}, \hyperpage{10}
 
   \indexspace
 
   \item {house\_load}
-    \subitem {clustering.Clustering}, \hyperpage{5}
+    \subitem {clustering.Clustering}, \hyperpage{8}
 
   \indexspace
 
-  \item {indices.Indices}, \hyperpage{8}
+  \item {indices.Indices}, \hyperpage{10}
 
   \indexspace
 
-  \item {kmeans.kmeansClustering}, \hyperpage{8}
-    \subitem {cluster}, \hyperpage{8}
-  \item {kmedians.kmediansClustering}, \hyperpage{9}
-    \subitem {cluster}, \hyperpage{9}
-  \item {kmedoids.kmedoidsClustering}, \hyperpage{10}
-    \subitem {cluster}, \hyperpage{10}
-    \subitem {package}, \hyperpage{11}
-
-  \indexspace
-
-  \item {load\_data}
-    \subitem {clustering.Clustering}, \hyperpage{6}
+  \item {kmeans.kmeansClustering}, \hyperpage{11}
+    \subitem {cluster}, \hyperpage{11}
+  \item {kmedians.kmediansClustering}, \hyperpage{12}
+    \subitem {cluster}, \hyperpage{12}
+  \item {kmedoids.kmedoidsClustering}, \hyperpage{13}
+    \subitem {cluster}, \hyperpage{14}
+    \subitem {package}, \hyperpage{14}
 
   \indexspace
 
   \item {package}
-    \subitem {dbscan.DBSCANClustering}, \hyperpage{7}
-    \subitem {kmedoids.kmedoidsClustering}, \hyperpage{11}
+    \subitem {dbscan.DBSCANClustering}, \hyperpage{10}
+    \subitem {kmedoids.kmedoidsClustering}, \hyperpage{14}
   \item {pyc\_metric}
-    \subitem {clustering.Clustering}, \hyperpage{6}
+    \subitem {clustering.Clustering}, \hyperpage{8}
 
 \end{theindex}

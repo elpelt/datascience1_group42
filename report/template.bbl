@@ -14,11 +14,6 @@ Cosine distance, cosine similarity, angular cosine distance, angular cosine
 Dheeru Dua and Casey Graff.
 \newblock {UCI} {M}achine {L}earning {R}epository, 2017.
 
-\bibitem{McIntosh1990}
-Patrick~S. McIntosh.
-\newblock The classification of sunspot groups.
-\newblock {\em Solar Physics}, 125(2):251--267, Sep 1990.
-
 \bibitem{winedata}
 Moshe Lichman.
 \newblock {UCI} {M}achine {L}earning {R}epository, 2013.
@@ -38,16 +33,20 @@ Erich Schubert, J\"{o}rg Sander, Martin Ester, Hans~Peter Kriegel, and Xiaowei
   DBSCAN}.
 \newblock {\em ACM Trans. Database Syst.}, 42(3), July 2017.
 
-\bibitem{Novikov2019}
-Andrei Novikov.
-\newblock {PyClustering}: {D}ata {M}ining {L}ibrary.
-\newblock {\em Journal of Open Source Software}, 4(36):1230, apr 2019.
-
 \bibitem{scikitlearn}
 F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
   M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
   D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay.
 \newblock Scikit-learn: Machine learning in {P}ython.
 \newblock {\em Journal of Machine Learning Research}, 12:2825--2830, 2011.
+
+\bibitem{Novikov2019}
+Andrei Novikov.
+\newblock {PyClustering}: {D}ata {M}ining {L}ibrary.
+\newblock {\em Journal of Open Source Software}, 4(36):1230, apr 2019.
+
+\bibitem{heuser2000lehrbuch}
+Harro Heuser.
+\newblock Lehrbuch der analysis : Teil 2, 2000.
 
 \end{thebibliography}

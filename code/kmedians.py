@@ -2,12 +2,13 @@ from clustering import Clustering
 from pyclustering.cluster.kmedians import kmedians
 from pyclustering.cluster.center_initializer import kmeans_plusplus_initializer, random_center_initializer
 
-"""
-Class implementing k-Medians Clustering
-uses the pyclustering k-medians implementation
-centers are initialised using the random initialiser
-"""
 class kmediansClustering(Clustering):
+    """
+    implements k-Medians Clustering
+    uses the pyclustering k-medians implementation
+    centers are initialised using the random initialiser
+    """
+
     def __init__(self, metric, dataset):
         super().__init__(metric, dataset)
         self.data = self.load_data()

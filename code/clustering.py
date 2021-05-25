@@ -7,12 +7,13 @@ from sklearn.preprocessing import OneHotEncoder
 
 import numpy as np
 
-"""
-Meta Class for all subsequent clustering algorithms
-implements all functions needed for running the different
-cluster algorithms
-"""
+
 class Clustering():
+    """
+    Meta Class for all subsequent clustering algorithms
+    implements all functions needed for running the different
+    cluster algorithms
+    """
     def __init__(self, metric, dataset):
         self.data = []
         self.dataset = dataset

@@ -1,5 +1,10 @@
 \hypertarget{classkmeans_1_1kmeansClustering}{}\doxysection{kmeans.\+kmeans\+Clustering Class Reference}
 \label{classkmeans_1_1kmeansClustering}\index{kmeans.kmeansClustering@{kmeans.kmeansClustering}}
+
+
+Class implementing k-\/\+Means Clustering uses the pyclustering k-\/means implementation centers can be initialised using the k++ or the random initialiser.  
+
+
 Inheritance diagram for kmeans.\+kmeans\+Clustering\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,7 +18,7 @@ Inheritance diagram for kmeans.\+kmeans\+Clustering\+:\begin{figure}[H]
 def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, metric, dataset)
 \item 
 def \mbox{\hyperlink{classkmeans_1_1kmeansClustering_a255814fdb68c24e337b3bd6ed3ecc367}{cluster}} (self, k, plusplus=True)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em clustering method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,6 +30,9 @@ def \mbox{\hyperlink{classkmeans_1_1kmeansClustering_a255814fdb68c24e337b3bd6ed3
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Class implementing k-\/\+Means Clustering uses the pyclustering k-\/means implementation centers can be initialised using the k++ or the random initialiser. 
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a255814fdb68c24e337b3bd6ed3ecc367}\label{classkmeans_1_1kmeansClustering_a255814fdb68c24e337b3bd6ed3ecc367}} 
 \index{kmeans.kmeansClustering@{kmeans.kmeansClustering}!cluster@{cluster}}
@@ -32,13 +40,21 @@ def \mbox{\hyperlink{classkmeans_1_1kmeansClustering_a255814fdb68c24e337b3bd6ed3
 \doxysubsubsection{\texorpdfstring{cluster()}{cluster()}}
 {\footnotesize\ttfamily def kmeans.\+kmeans\+Clustering.\+cluster (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{k,  }\item[{}]{plusplus = {\ttfamily True} }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}clustering method. Will execute clustering on the data saved in self.data with the metric
-given in self.metric
-@param k number of clusters that are generated
-@param plusplus will use k++ initialiser if true
-@returns clusters as list of lists of indices of points and final cluster centers
-\end{DoxyVerb}
- 
+
+
+clustering method. 
+
+Will execute clustering on the data saved in self.\+data with the metric given in self.\+metric 
+\begin{DoxyParams}{Parameters}
+{\em k} & number of clusters that are generated \\
+\hline
+{\em plusplus} & will use k++ initialiser if true \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+clusters as list of lists of indices of points and final cluster centers 
+\end{DoxyReturn}
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

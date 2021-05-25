@@ -9,9 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +35,21 @@
    </div>
    <div id="projectbrief">Clustering Application done by Group T4-2</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +61,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('classclustering_1_1Clustering.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +92,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>clustering</b></li><li class="navelem"><a class="el" href="classclustering_1_1Clustering.html">Clustering</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -75,16 +101,19 @@ $(function() {
 <div class="title">clustering.Clustering Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Meta Class for all subsequent clustering algorithms implements all functions needed for running the different cluster algorithms.  
+ <a href="classclustering_1_1Clustering.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for clustering.Clustering:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classclustering_1_1Clustering.png" usemap="#clustering.Clustering_map" alt=""/>
   <map id="clustering.Clustering_map" name="clustering.Clustering_map">
-<area href="classdbscan_1_1DBSCANClustering.html" alt="dbscan.DBSCANClustering" shape="rect" coords="0,56,177,80"/>
-<area href="classkmeans_1_1kmeansClustering.html" alt="kmeans.kmeansClustering" shape="rect" coords="187,56,364,80"/>
-<area href="classkmedians_1_1kmediansClustering.html" alt="kmedians.kmediansClustering" shape="rect" coords="374,56,551,80"/>
-<area href="classkmedoids_1_1kmedoidsClustering.html" alt="kmedoids.kmedoidsClustering" shape="rect" coords="561,56,738,80"/>
+<area href="classdbscan_1_1DBSCANClustering.html" title="implements DBSCAN Clustering uses the scikit-learn DBSCAN implementation" alt="dbscan.DBSCANClustering" shape="rect" coords="0,56,177,80"/>
+<area href="classkmeans_1_1kmeansClustering.html" title="Class implementing k-Means Clustering uses the pyclustering k-means implementation centers can be ini..." alt="kmeans.kmeansClustering" shape="rect" coords="187,56,364,80"/>
+<area href="classkmedians_1_1kmediansClustering.html" title="implements k-Medians Clustering uses the pyclustering k-medians implementation centers are initialise..." alt="kmedians.kmediansClustering" shape="rect" coords="374,56,551,80"/>
+<area href="classkmedoids_1_1kmedoidsClustering.html" title="implements k-Medians Clustering uses the scikit-learn-extra k-medoids implementation centers are set ..." alt="kmedoids.kmedoidsClustering" shape="rect" coords="561,56,738,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -94,12 +123,17 @@ Public Member Functions</h2></td></tr>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b> (self, metric, dataset)</td></tr>
 <tr class="separator:a59129e84c5d072bf02d0a8a89779760b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a350095d3e797e2cac62e08adbfe75da9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a350095d3e797e2cac62e08adbfe75da9">pyc_metric</a> (self, metric)</td></tr>
+<tr class="memdesc:a350095d3e797e2cac62e08adbfe75da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a distance metric which is usable by the pyclustering algorithms  <a href="classclustering_1_1Clustering.html#a350095d3e797e2cac62e08adbfe75da9">More...</a><br /></td></tr>
 <tr class="separator:a350095d3e797e2cac62e08adbfe75da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66e74662b64e031f887cb3d46f065a06"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a66e74662b64e031f887cb3d46f065a06">load_data</a> (self)</td></tr>
+<tr class="memitem:a66e74662b64e031f887cb3d46f065a06"><td class="memItemLeft" align="right" valign="top"><a id="a66e74662b64e031f887cb3d46f065a06"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a66e74662b64e031f887cb3d46f065a06">load_data</a> (self)</td></tr>
+<tr class="memdesc:a66e74662b64e031f887cb3d46f065a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">loads in a dataset, standardises it and sets it as self.data attribute <br /></td></tr>
 <tr class="separator:a66e74662b64e031f887cb3d46f065a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8540163639557e9527c0b2f363a4cd46"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a8540163639557e9527c0b2f363a4cd46">house_load</a> (self, path, skip=1)</td></tr>
+<tr class="memdesc:a8540163639557e9527c0b2f363a4cd46"><td class="mdescLeft">&#160;</td><td class="mdescRight">loads the housevotes dataset and encodes it using One-Hot-Encoding  <a href="classclustering_1_1Clustering.html#a8540163639557e9527c0b2f363a4cd46">More...</a><br /></td></tr>
 <tr class="separator:a8540163639557e9527c0b2f363a4cd46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f27f7a08bea76922d9a8edc7be84b16"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a6f27f7a08bea76922d9a8edc7be84b16">cluster</a> (self)</td></tr>
+<tr class="memdesc:a6f27f7a08bea76922d9a8edc7be84b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">does nothing in the meta class.  <a href="classclustering_1_1Clustering.html#a6f27f7a08bea76922d9a8edc7be84b16">More...</a><br /></td></tr>
 <tr class="separator:a6f27f7a08bea76922d9a8edc7be84b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -114,7 +148,9 @@ Public Attributes</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>labels</b></td></tr>
 <tr class="separator:a9e5a4547b2d7836c84b6e9ef2f30ab03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Meta Class for all subsequent clustering algorithms implements all functions needed for running the different cluster algorithms. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6f27f7a08bea76922d9a8edc7be84b16"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6f27f7a08bea76922d9a8edc7be84b16">&#9670;&nbsp;</a></span>cluster()</h2>
 
@@ -130,9 +166,10 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">does nothing in the meta class. 
-needs to be implemented in the inheriting cluster algorithm classes
-</pre> 
+
+<p>does nothing in the meta class. </p>
+<p>needs to be implemented in the inheriting cluster algorithm classes </p>
+
 </div>
 </div>
 <a id="a8540163639557e9527c0b2f363a4cd46"></a>
@@ -166,30 +203,17 @@ needs to be implemented in the inheriting cluster algorithm classes
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">loads the housevotes dataset and encodes it using One-Hot-Encoding
-@param path filepath to the dataset
-@param skip number of lines that get skipped when reading in a file
-@return One-Hot-Encoded housevotes dataset
-</pre> 
-</div>
-</div>
-<a id="a66e74662b64e031f887cb3d46f065a06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66e74662b64e031f887cb3d46f065a06">&#9670;&nbsp;</a></span>load_data()</h2>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def clustering.Clustering.load_data </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">loads in a dataset, standardises it and sets it as self.data attribute
-</pre> 
+<p>loads the housevotes dataset and encodes it using One-Hot-Encoding </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>filepath to the dataset </td></tr>
+    <tr><td class="paramname">skip</td><td>number of lines that get skipped when reading in a file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>One-Hot-Encoded housevotes dataset </dd></dl>
+
 </div>
 </div>
 <a id="a350095d3e797e2cac62e08adbfe75da9"></a>
@@ -217,19 +241,29 @@ needs to be implemented in the inheriting cluster algorithm classes
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">returns a distance metric which is usable by the pyclustering algorithms
-@param distance metric string. allowed: "euclidean", "manhattan", "chebyshev", "cosine"
-@returns pyclustering distance_metric object, None when distance is not supported
-</pre> 
+
+<p>returns a distance metric which is usable by the pyclustering algorithms </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">distance</td><td>metric string. allowed: "euclidean", "manhattan", "chebyshev", "cosine" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>pyclustering distance_metric object, None when distance is not supported </dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>clustering.py</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>clustering</b></li><li class="navelem"><a class="el" href="classclustering_1_1Clustering.html">Clustering</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

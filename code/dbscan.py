@@ -2,11 +2,12 @@ from clustering import Clustering
 
 from sklearn.cluster import DBSCAN
 
-"""
-implements DBSCAN Clustering
-uses the scikit-learn DBSCAN implementation
-"""
 class DBSCANClustering(Clustering):
+    """
+    implements DBSCAN Clustering
+    uses the scikit-learn DBSCAN implementation
+    """
+    
     def __init__(self, metric, dataset):
         super().__init__(metric, dataset)
         self.metric = metric

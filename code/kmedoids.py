@@ -1,12 +1,13 @@
 from clustering import Clustering
 from sklearn_extra.cluster import KMedoids
 
-"""
-Class implementing k-Medians Clustering
-uses the scikit-learn-extra k-medoids implementation
-centers are set using the k++ initialiser if not set differently
-"""
 class kmedoidsClustering(Clustering):
+    """
+    implements k-Medians Clustering
+    uses the scikit-learn-extra k-medoids implementation
+    centers are set using the k++ initialiser if not set differently
+    """
+
     def __init__(self, metric, dataset):
         super().__init__(metric, dataset)
         self.data = self.load_data()

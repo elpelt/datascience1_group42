@@ -1,5 +1,10 @@
 \hypertarget{classclustering_1_1Clustering}{}\doxysection{clustering.\+Clustering Class Reference}
 \label{classclustering_1_1Clustering}\index{clustering.Clustering@{clustering.Clustering}}
+
+
+Meta Class for all subsequent clustering algorithms implements all functions needed for running the different cluster algorithms.  
+
+
 Inheritance diagram for clustering.\+Clustering\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,13 +18,14 @@ Inheritance diagram for clustering.\+Clustering\+:\begin{figure}[H]
 def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, metric, dataset)
 \item 
 def \mbox{\hyperlink{classclustering_1_1Clustering_a350095d3e797e2cac62e08adbfe75da9}{pyc\+\_\+metric}} (self, metric)
-\item 
+\begin{DoxyCompactList}\small\item\em returns a distance metric which is usable by the pyclustering algorithms \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classclustering_1_1Clustering_a66e74662b64e031f887cb3d46f065a06}\label{classclustering_1_1Clustering_a66e74662b64e031f887cb3d46f065a06}} 
 def \mbox{\hyperlink{classclustering_1_1Clustering_a66e74662b64e031f887cb3d46f065a06}{load\+\_\+data}} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em loads in a dataset, standardises it and sets it as self.\+data attribute \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{classclustering_1_1Clustering_a8540163639557e9527c0b2f363a4cd46}{house\+\_\+load}} (self, path, skip=1)
-\item 
+\begin{DoxyCompactList}\small\item\em loads the housevotes dataset and encodes it using One-\/\+Hot-\/\+Encoding \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{classclustering_1_1Clustering_a6f27f7a08bea76922d9a8edc7be84b16}{cluster}} (self)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em does nothing in the meta class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -34,6 +40,9 @@ def \mbox{\hyperlink{classclustering_1_1Clustering_a6f27f7a08bea76922d9a8edc7be8
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Meta Class for all subsequent clustering algorithms implements all functions needed for running the different cluster algorithms. 
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classclustering_1_1Clustering_a6f27f7a08bea76922d9a8edc7be84b16}\label{classclustering_1_1Clustering_a6f27f7a08bea76922d9a8edc7be84b16}} 
 \index{clustering.Clustering@{clustering.Clustering}!cluster@{cluster}}
@@ -41,39 +50,49 @@ def \mbox{\hyperlink{classclustering_1_1Clustering_a6f27f7a08bea76922d9a8edc7be8
 \doxysubsubsection{\texorpdfstring{cluster()}{cluster()}}
 {\footnotesize\ttfamily def clustering.\+Clustering.\+cluster (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}does nothing in the meta class. 
-needs to be implemented in the inheriting cluster algorithm classes
-\end{DoxyVerb}
- \mbox{\Hypertarget{classclustering_1_1Clustering_a8540163639557e9527c0b2f363a4cd46}\label{classclustering_1_1Clustering_a8540163639557e9527c0b2f363a4cd46}} 
+
+
+does nothing in the meta class. 
+
+needs to be implemented in the inheriting cluster algorithm classes \mbox{\Hypertarget{classclustering_1_1Clustering_a8540163639557e9527c0b2f363a4cd46}\label{classclustering_1_1Clustering_a8540163639557e9527c0b2f363a4cd46}} 
 \index{clustering.Clustering@{clustering.Clustering}!house\_load@{house\_load}}
 \index{house\_load@{house\_load}!clustering.Clustering@{clustering.Clustering}}
 \doxysubsubsection{\texorpdfstring{house\_load()}{house\_load()}}
 {\footnotesize\ttfamily def clustering.\+Clustering.\+house\+\_\+load (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path,  }\item[{}]{skip = {\ttfamily 1} }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}loads the housevotes dataset and encodes it using One-Hot-Encoding
-@param path filepath to the dataset
-@param skip number of lines that get skipped when reading in a file
-@return One-Hot-Encoded housevotes dataset
-\end{DoxyVerb}
- \mbox{\Hypertarget{classclustering_1_1Clustering_a66e74662b64e031f887cb3d46f065a06}\label{classclustering_1_1Clustering_a66e74662b64e031f887cb3d46f065a06}} 
-\index{clustering.Clustering@{clustering.Clustering}!load\_data@{load\_data}}
-\index{load\_data@{load\_data}!clustering.Clustering@{clustering.Clustering}}
-\doxysubsubsection{\texorpdfstring{load\_data()}{load\_data()}}
-{\footnotesize\ttfamily def clustering.\+Clustering.\+load\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}loads in a dataset, standardises it and sets it as self.data attribute
-\end{DoxyVerb}
- \mbox{\Hypertarget{classclustering_1_1Clustering_a350095d3e797e2cac62e08adbfe75da9}\label{classclustering_1_1Clustering_a350095d3e797e2cac62e08adbfe75da9}} 
+
+loads the housevotes dataset and encodes it using One-\/\+Hot-\/\+Encoding 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & filepath to the dataset \\
+\hline
+{\em skip} & number of lines that get skipped when reading in a file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+One-\/\+Hot-\/\+Encoded housevotes dataset 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classclustering_1_1Clustering_a350095d3e797e2cac62e08adbfe75da9}\label{classclustering_1_1Clustering_a350095d3e797e2cac62e08adbfe75da9}} 
 \index{clustering.Clustering@{clustering.Clustering}!pyc\_metric@{pyc\_metric}}
 \index{pyc\_metric@{pyc\_metric}!clustering.Clustering@{clustering.Clustering}}
 \doxysubsubsection{\texorpdfstring{pyc\_metric()}{pyc\_metric()}}
 {\footnotesize\ttfamily def clustering.\+Clustering.\+pyc\+\_\+metric (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{metric }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}returns a distance metric which is usable by the pyclustering algorithms
-@param distance metric string. allowed: "euclidean", "manhattan", "chebyshev", "cosine"
-@returns pyclustering distance_metric object, None when distance is not supported
-\end{DoxyVerb}
- 
+
+
+returns a distance metric which is usable by the pyclustering algorithms 
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & metric string. allowed\+: \char`\"{}euclidean\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}cosine\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pyclustering distance\+\_\+metric object, None when distance is not supported 
+\end{DoxyReturn}
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

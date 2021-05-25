@@ -1,5 +1,10 @@
 \hypertarget{classkmedians_1_1kmediansClustering}{}\doxysection{kmedians.\+kmedians\+Clustering Class Reference}
 \label{classkmedians_1_1kmediansClustering}\index{kmedians.kmediansClustering@{kmedians.kmediansClustering}}
+
+
+implements k-\/\+Medians Clustering uses the pyclustering k-\/medians implementation centers are initialised using the random initialiser  
+
+
 Inheritance diagram for kmedians.\+kmedians\+Clustering\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,7 +18,7 @@ Inheritance diagram for kmedians.\+kmedians\+Clustering\+:\begin{figure}[H]
 def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, metric, dataset)
 \item 
 def \mbox{\hyperlink{classkmedians_1_1kmediansClustering_a0d51da21854c335a6ce5a585d8b2ec8d}{cluster}} (self, k)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em clustering method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,6 +30,9 @@ def \mbox{\hyperlink{classkmedians_1_1kmediansClustering_a0d51da21854c335a6ce5a5
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+implements k-\/\+Medians Clustering uses the pyclustering k-\/medians implementation centers are initialised using the random initialiser 
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classkmedians_1_1kmediansClustering_a0d51da21854c335a6ce5a585d8b2ec8d}\label{classkmedians_1_1kmediansClustering_a0d51da21854c335a6ce5a585d8b2ec8d}} 
 \index{kmedians.kmediansClustering@{kmedians.kmediansClustering}!cluster@{cluster}}
@@ -32,12 +40,19 @@ def \mbox{\hyperlink{classkmedians_1_1kmediansClustering_a0d51da21854c335a6ce5a5
 \doxysubsubsection{\texorpdfstring{cluster()}{cluster()}}
 {\footnotesize\ttfamily def kmedians.\+kmedians\+Clustering.\+cluster (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{k }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}clustering method. Will execute clustering on the data saved in self.data with the metric
-given in self.metric
-@param k number of clusters that are generated
-@returns clusters as list of lists of indices of points and final cluster medians
-\end{DoxyVerb}
- 
+
+
+clustering method. 
+
+Will execute clustering on the data saved in self.\+data with the metric given in self.\+metric 
+\begin{DoxyParams}{Parameters}
+{\em k} & number of clusters that are generated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+clusters as list of lists of indices of points and final cluster medians 
+\end{DoxyReturn}
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
