@@ -14,9 +14,8 @@ Inheritance diagram for dbscan.\+DBSCANClustering\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classdbscan_1_1DBSCANClustering_ab22686f8718cf537fc12a8eb827d7482}\label{classdbscan_1_1DBSCANClustering_ab22686f8718cf537fc12a8eb827d7482}} 
-def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, metric, dataset)
-\item 
+def \mbox{\hyperlink{classdbscan_1_1DBSCANClustering_ab22686f8718cf537fc12a8eb827d7482}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, metric, dataset)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{classdbscan_1_1DBSCANClustering_a38c00ed16e46cf3c099b8329350262c0}{cluster}} (self, eps, min\+Pts)
 \begin{DoxyCompactList}\small\item\em clustering method. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{classdbscan_1_1DBSCANClustering_a1ee916e1f8ef235bdea68e07700abf98}{package}} (self, labels)
@@ -31,6 +30,28 @@ def \mbox{\hyperlink{classdbscan_1_1DBSCANClustering_a1ee916e1f8ef235bdea68e0770
 
 \doxysubsection{Detailed Description}
 implements DBSCAN Clustering uses the scikit-\/learn DBSCAN implementation 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdbscan_1_1DBSCANClustering_ab22686f8718cf537fc12a8eb827d7482}\label{classdbscan_1_1DBSCANClustering_ab22686f8718cf537fc12a8eb827d7482}} 
+\index{dbscan.DBSCANClustering@{dbscan.DBSCANClustering}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!dbscan.DBSCANClustering@{dbscan.DBSCANClustering}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def dbscan.\+DBSCANClustering.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{metric,  }\item[{}]{dataset }\end{DoxyParamCaption})}
+
+
+
+constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em metric} & metric description as string. allowed\+: \char`\"{}euclidean\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}cosine\char`\"{} @dataset dataset given as string. allowed\+: \char`\"{}diabetes\char`\"{}, \char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}housevotes\char`\"{} \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classclustering_1_1Clustering_a59129e84c5d072bf02d0a8a89779760b}{clustering.\+Clustering}}.
+
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classdbscan_1_1DBSCANClustering_a38c00ed16e46cf3c099b8329350262c0}\label{classdbscan_1_1DBSCANClustering_a38c00ed16e46cf3c099b8329350262c0}} 

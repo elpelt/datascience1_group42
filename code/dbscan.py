@@ -9,6 +9,11 @@ class DBSCANClustering(Clustering):
     """
     
     def __init__(self, metric, dataset):
+        """
+        constructor
+        @param metric metric description as string. allowed: "euclidean", "manhattan", "chebyshev", "cosine"
+        @dataset dataset given as string. allowed: "diabetes", "iris", "wine", "housevotes"
+        """
         super().__init__(metric, dataset)
         self.metric = metric
         self.load_data()

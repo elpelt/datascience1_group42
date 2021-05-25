@@ -4,6 +4,7 @@ var NAVTREEINDEX0 =
 "classclustering_1_1Clustering.html":[1,0,0,0],
 "classclustering_1_1Clustering.html#a33ee2153799927a275df889deec09b53":[1,0,0,0,6],
 "classclustering_1_1Clustering.html#a350095d3e797e2cac62e08adbfe75da9":[1,0,0,0,4],
+"classclustering_1_1Clustering.html#a50461838df4386d28ed001591eff2383":[1,0,0,0,8],
 "classclustering_1_1Clustering.html#a59129e84c5d072bf02d0a8a89779760b":[1,0,0,0,0],
 "classclustering_1_1Clustering.html#a66e74662b64e031f887cb3d46f065a06":[1,0,0,0,3],
 "classclustering_1_1Clustering.html#a6f27f7a08bea76922d9a8edc7be84b16":[1,0,0,0,1],

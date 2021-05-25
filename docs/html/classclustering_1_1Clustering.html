@@ -29,6 +29,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="baloon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Clustering Group T4-2
    &#160;<span id="projectnumber">1.0</span>
@@ -119,8 +120,8 @@ Inheritance diagram for clustering.Clustering:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a59129e84c5d072bf02d0a8a89779760b"><td class="memItemLeft" align="right" valign="top"><a id="a59129e84c5d072bf02d0a8a89779760b"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b> (self, metric, dataset)</td></tr>
+<tr class="memitem:a59129e84c5d072bf02d0a8a89779760b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a59129e84c5d072bf02d0a8a89779760b">__init__</a> (self, metric, dataset)</td></tr>
+<tr class="memdesc:a59129e84c5d072bf02d0a8a89779760b"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor  <a href="classclustering_1_1Clustering.html#a59129e84c5d072bf02d0a8a89779760b">More...</a><br /></td></tr>
 <tr class="separator:a59129e84c5d072bf02d0a8a89779760b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a350095d3e797e2cac62e08adbfe75da9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a350095d3e797e2cac62e08adbfe75da9">pyc_metric</a> (self, metric)</td></tr>
 <tr class="memdesc:a350095d3e797e2cac62e08adbfe75da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a distance metric which is usable by the pyclustering algorithms  <a href="classclustering_1_1Clustering.html#a350095d3e797e2cac62e08adbfe75da9">More...</a><br /></td></tr>
@@ -130,7 +131,7 @@ def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="memdesc:a66e74662b64e031f887cb3d46f065a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">loads in a dataset, standardises it and sets it as self.data attribute <br /></td></tr>
 <tr class="separator:a66e74662b64e031f887cb3d46f065a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8540163639557e9527c0b2f363a4cd46"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a8540163639557e9527c0b2f363a4cd46">house_load</a> (self, path, skip=1)</td></tr>
-<tr class="memdesc:a8540163639557e9527c0b2f363a4cd46"><td class="mdescLeft">&#160;</td><td class="mdescRight">loads the housevotes dataset and encodes it using One-Hot-Encoding  <a href="classclustering_1_1Clustering.html#a8540163639557e9527c0b2f363a4cd46">More...</a><br /></td></tr>
+<tr class="memdesc:a8540163639557e9527c0b2f363a4cd46"><td class="mdescLeft">&#160;</td><td class="mdescRight">loads the housevotes dataset and encodes it using One-Hot-Encoding democrats are labeled as 1, republicans as 0  <a href="classclustering_1_1Clustering.html#a8540163639557e9527c0b2f363a4cd46">More...</a><br /></td></tr>
 <tr class="separator:a8540163639557e9527c0b2f363a4cd46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f27f7a08bea76922d9a8edc7be84b16"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a6f27f7a08bea76922d9a8edc7be84b16">cluster</a> (self)</td></tr>
 <tr class="memdesc:a6f27f7a08bea76922d9a8edc7be84b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">does nothing in the meta class.  <a href="classclustering_1_1Clustering.html#a6f27f7a08bea76922d9a8edc7be84b16">More...</a><br /></td></tr>
@@ -138,19 +139,67 @@ def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a9428002bd0ae4880a18840cbdb2c1e52"><td class="memItemLeft" align="right" valign="top"><a id="a9428002bd0ae4880a18840cbdb2c1e52"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
-<tr class="separator:a9428002bd0ae4880a18840cbdb2c1e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50461838df4386d28ed001591eff2383"><td class="memItemLeft" align="right" valign="top"><a id="a50461838df4386d28ed001591eff2383"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>metric</b></td></tr>
+<tr class="separator:a50461838df4386d28ed001591eff2383"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33ee2153799927a275df889deec09b53"><td class="memItemLeft" align="right" valign="top"><a id="a33ee2153799927a275df889deec09b53"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>dataset</b></td></tr>
 <tr class="separator:a33ee2153799927a275df889deec09b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e5a4547b2d7836c84b6e9ef2f30ab03"><td class="memItemLeft" align="right" valign="top"><a id="a9e5a4547b2d7836c84b6e9ef2f30ab03"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>labels</b></td></tr>
 <tr class="separator:a9e5a4547b2d7836c84b6e9ef2f30ab03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9428002bd0ae4880a18840cbdb2c1e52"><td class="memItemLeft" align="right" valign="top"><a id="a9428002bd0ae4880a18840cbdb2c1e52"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
+<tr class="separator:a9428002bd0ae4880a18840cbdb2c1e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Meta Class for all subsequent clustering algorithms implements all functions needed for running the different cluster algorithms. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a59129e84c5d072bf02d0a8a89779760b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59129e84c5d072bf02d0a8a89779760b">&#9670;&nbsp;</a></span>__init__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def clustering.Clustering.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>metric</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dataset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>constructor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">metric</td><td>metric description as string. allowed: "euclidean", "manhattan", "chebyshev", "cosine" @dataset dataset given as string. allowed: "diabetes", "iris", "wine", "housevotes" </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classkmedoids_1_1kmedoidsClustering.html#a03693d487c30710e44e74c5c5e5fedd5">kmedoids.kmedoidsClustering</a>, <a class="el" href="classkmedians_1_1kmediansClustering.html#a1272bc4e71fb01e5d903465e470e9760">kmedians.kmediansClustering</a>, <a class="el" href="classkmeans_1_1kmeansClustering.html#ac8df023e1434680239ad04361f8260a1">kmeans.kmeansClustering</a>, and <a class="el" href="classdbscan_1_1DBSCANClustering.html#ab22686f8718cf537fc12a8eb827d7482">dbscan.DBSCANClustering</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6f27f7a08bea76922d9a8edc7be84b16"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6f27f7a08bea76922d9a8edc7be84b16">&#9670;&nbsp;</a></span>cluster()</h2>
 
@@ -204,7 +253,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>loads the housevotes dataset and encodes it using One-Hot-Encoding </p>
+<p>loads the housevotes dataset and encodes it using One-Hot-Encoding democrats are labeled as 1, republicans as 0 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>filepath to the dataset </td></tr>
@@ -212,7 +261,7 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>One-Hot-Encoded housevotes dataset </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>One-Hot-Encoded housevotes dataset and labels as array of 1s and 0s </dd></dl>
 
 </div>
 </div>

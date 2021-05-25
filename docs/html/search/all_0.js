@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['cluster_0',['cluster',['../classclustering_1_1Clustering.html#a6f27f7a08bea76922d9a8edc7be84b16',1,'clustering.Clustering.cluster()'],['../classdbscan_1_1DBSCANClustering.html#a38c00ed16e46cf3c099b8329350262c0',1,'dbscan.DBSCANClustering.cluster()'],['../classkmeans_1_1kmeansClustering.html#a255814fdb68c24e337b3bd6ed3ecc367',1,'kmeans.kmeansClustering.cluster()'],['../classkmedians_1_1kmediansClustering.html#a0d51da21854c335a6ce5a585d8b2ec8d',1,'kmedians.kmediansClustering.cluster()'],['../classkmedoids_1_1kmedoidsClustering.html#a7802620f63a5ac51016ebb0e778d95b0',1,'kmedoids.kmedoidsClustering.cluster()']]],
-  ['clustering_1',['Clustering',['../classclustering_1_1Clustering.html',1,'clustering']]]
+  ['_5f_5finit_5f_5f_0',['__init__',['../classclustering_1_1Clustering.html#a59129e84c5d072bf02d0a8a89779760b',1,'clustering.Clustering.__init__()'],['../classdbscan_1_1DBSCANClustering.html#ab22686f8718cf537fc12a8eb827d7482',1,'dbscan.DBSCANClustering.__init__()'],['../classkmeans_1_1kmeansClustering.html#ac8df023e1434680239ad04361f8260a1',1,'kmeans.kmeansClustering.__init__()'],['../classkmedians_1_1kmediansClustering.html#a1272bc4e71fb01e5d903465e470e9760',1,'kmedians.kmediansClustering.__init__()'],['../classkmedoids_1_1kmedoidsClustering.html#a03693d487c30710e44e74c5c5e5fedd5',1,'kmedoids.kmedoidsClustering.__init__()']]]
 ];

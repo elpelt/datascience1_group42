@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['house_5fload_4',['house_load',['../classclustering_1_1Clustering.html#a8540163639557e9527c0b2f363a4cd46',1,'clustering::Clustering']]]
+  ['dbscanclustering_3',['DBSCANClustering',['../classdbscan_1_1DBSCANClustering.html',1,'dbscan']]],
+  ['description_4',['Description',['../index.html',1,'']]]
 ];

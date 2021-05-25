@@ -7,5 +7,6 @@ var classclustering_1_1Clustering =
     [ "pyc_metric", "classclustering_1_1Clustering.html#a350095d3e797e2cac62e08adbfe75da9", null ],
     [ "data", "classclustering_1_1Clustering.html#a9428002bd0ae4880a18840cbdb2c1e52", null ],
     [ "dataset", "classclustering_1_1Clustering.html#a33ee2153799927a275df889deec09b53", null ],
-    [ "labels", "classclustering_1_1Clustering.html#a9e5a4547b2d7836c84b6e9ef2f30ab03", null ]
+    [ "labels", "classclustering_1_1Clustering.html#a9e5a4547b2d7836c84b6e9ef2f30ab03", null ],
+    [ "metric", "classclustering_1_1Clustering.html#a50461838df4386d28ed001591eff2383", null ]
 ];

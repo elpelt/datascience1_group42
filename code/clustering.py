@@ -15,9 +15,13 @@ class Clustering():
     cluster algorithms
     """
     def __init__(self, metric, dataset):
-        self.data = []
+        """
+        constructor
+        @param metric metric description as string. allowed: "euclidean", "manhattan", "chebyshev", "cosine"
+        @dataset dataset given as string. allowed: "diabetes", "iris", "wine", "housevotes"
+        """
+        self.metric = metric
         self.dataset = dataset
-        self.labels = None
     
     def pyc_metric(self, metric):
         """
@@ -89,16 +93,17 @@ class Clustering():
         
         elif self.dataset == "housevotes":
             path = "../datasets/votes/house-votes-84.data"
-            self.data = self.house_load(path, 0)
+            self.data, self.labels = self.house_load(path, 0)
                 
         self.data = StandardScaler().fit_transform(self.data)
 
     def house_load(self, path, skip=1):
         """
         loads the housevotes dataset and encodes it using One-Hot-Encoding
+        democrats are labeled as 1, republicans as 0
         @param path filepath to the dataset
         @param skip number of lines that get skipped when reading in a file
-        @return One-Hot-Encoded housevotes dataset
+        @return One-Hot-Encoded housevotes dataset and labels as array of 1s and 0s
         """
         data = []
 
@@ -107,12 +112,19 @@ class Clustering():
             first = True
 
             # list comprehension loading whole dataset
-            data = [line.strip().split(',')[1:] for line in f][skip:]
+            data = [line.strip().split(',') for line in f][skip:]
 
+            labels = []
+            
+            # label extraction. labels are the first attribute
+            # democrats are 1, republicans 0
+            for d in data:
+                labels.append(1 if d.pop(0) == "democrat" else 0)
+            
         # one hot encoding
         enc = OneHotEncoder().fit_transform(data).toarray()
 
-        return enc
+        return enc, labels
     
 
     def cluster(self):

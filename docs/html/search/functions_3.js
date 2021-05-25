@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['package_21',['package',['../classdbscan_1_1DBSCANClustering.html#a1ee916e1f8ef235bdea68e07700abf98',1,'dbscan.DBSCANClustering.package()'],['../classkmedoids_1_1kmedoidsClustering.html#a322a5a591133f8adf951eda9c714335e',1,'kmedoids.kmedoidsClustering.package()']]],
-  ['pyc_5fmetric_22',['pyc_metric',['../classclustering_1_1Clustering.html#a350095d3e797e2cac62e08adbfe75da9',1,'clustering::Clustering']]]
+  ['load_5fdata_22',['load_data',['../classclustering_1_1Clustering.html#a66e74662b64e031f887cb3d46f065a06',1,'clustering::Clustering']]]
 ];

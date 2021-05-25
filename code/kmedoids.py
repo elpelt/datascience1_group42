@@ -9,6 +9,11 @@ class kmedoidsClustering(Clustering):
     """
 
     def __init__(self, metric, dataset):
+        """
+        constructor
+        @param metric metric description as string. allowed: "euclidean", "manhattan", "chebyshev", "cosine"
+        @dataset dataset given as string. allowed: "diabetes", "iris", "wine", "housevotes"
+        """
         super().__init__(metric, dataset)
         self.data = self.load_data()
         self.metric = metric

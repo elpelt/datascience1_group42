@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['load_5fdata_9',['load_data',['../classclustering_1_1Clustering.html#a66e74662b64e031f887cb3d46f065a06',1,'clustering::Clustering']]]
+  ['kmeansclustering_7',['kmeansClustering',['../classkmeans_1_1kmeansClustering.html',1,'kmeans']]],
+  ['kmediansclustering_8',['kmediansClustering',['../classkmedians_1_1kmediansClustering.html',1,'kmedians']]],
+  ['kmedoidsclustering_9',['kmedoidsClustering',['../classkmedoids_1_1kmedoidsClustering.html',1,'kmedoids']]]
 ];
