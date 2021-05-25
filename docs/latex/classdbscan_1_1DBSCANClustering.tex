@@ -1,0 +1,56 @@
+\hypertarget{classdbscan_1_1DBSCANClustering}{}\doxysection{dbscan.\+DBSCANClustering Class Reference}
+\label{classdbscan_1_1DBSCANClustering}\index{dbscan.DBSCANClustering@{dbscan.DBSCANClustering}}
+Inheritance diagram for dbscan.\+DBSCANClustering\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdbscan_1_1DBSCANClustering}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classdbscan_1_1DBSCANClustering_ab22686f8718cf537fc12a8eb827d7482}\label{classdbscan_1_1DBSCANClustering_ab22686f8718cf537fc12a8eb827d7482}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, metric, dataset)
+\item 
+def \mbox{\hyperlink{classdbscan_1_1DBSCANClustering_a38c00ed16e46cf3c099b8329350262c0}{cluster}} (self, eps, min\+Pts)
+\item 
+def \mbox{\hyperlink{classdbscan_1_1DBSCANClustering_a1ee916e1f8ef235bdea68e07700abf98}{package}} (self, labels)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classdbscan_1_1DBSCANClustering_a8b7cdb4b055b40962a2a71abeb29aa4a}\label{classdbscan_1_1DBSCANClustering_a8b7cdb4b055b40962a2a71abeb29aa4a}} 
+{\bfseries metric}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdbscan_1_1DBSCANClustering_a38c00ed16e46cf3c099b8329350262c0}\label{classdbscan_1_1DBSCANClustering_a38c00ed16e46cf3c099b8329350262c0}} 
+\index{dbscan.DBSCANClustering@{dbscan.DBSCANClustering}!cluster@{cluster}}
+\index{cluster@{cluster}!dbscan.DBSCANClustering@{dbscan.DBSCANClustering}}
+\doxysubsubsection{\texorpdfstring{cluster()}{cluster()}}
+{\footnotesize\ttfamily def dbscan.\+DBSCANClustering.\+cluster (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{eps,  }\item[{}]{min\+Pts }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}clustering method. Will execute clustering on the data saved in self.data with the metric
+given in self.metric
+params are the same as in the DBSCAN paper
+@param eps Distance for the Eps-Neighbourhood
+@param minPts Minmal number of points in a cluster
+@returns formatted clustered data
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classdbscan_1_1DBSCANClustering_a1ee916e1f8ef235bdea68e07700abf98}\label{classdbscan_1_1DBSCANClustering_a1ee916e1f8ef235bdea68e07700abf98}} 
+\index{dbscan.DBSCANClustering@{dbscan.DBSCANClustering}!package@{package}}
+\index{package@{package}!dbscan.DBSCANClustering@{dbscan.DBSCANClustering}}
+\doxysubsubsection{\texorpdfstring{package()}{package()}}
+{\footnotesize\ttfamily def dbscan.\+DBSCANClustering.\+package (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{labels }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}rearranges the result to a format similar to the one of the pyclustering algorithms
+allows for easier access in the streamlit interface
+@param labels cluster labels DBSCAN assigns to a point
+@returns clusters as list of lists of indices of points and noise as list of indices of points
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dbscan.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,45 @@
+\hypertarget{classkmeans_1_1kmeansClustering}{}\doxysection{kmeans.\+kmeans\+Clustering Class Reference}
+\label{classkmeans_1_1kmeansClustering}\index{kmeans.kmeansClustering@{kmeans.kmeansClustering}}
+Inheritance diagram for kmeans.\+kmeans\+Clustering\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkmeans_1_1kmeansClustering}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_ac8df023e1434680239ad04361f8260a1}\label{classkmeans_1_1kmeansClustering_ac8df023e1434680239ad04361f8260a1}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, metric, dataset)
+\item 
+def \mbox{\hyperlink{classkmeans_1_1kmeansClustering_a255814fdb68c24e337b3bd6ed3ecc367}{cluster}} (self, k, plusplus=True)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a71ea859d9a2beeedd5805f1a47519383}\label{classkmeans_1_1kmeansClustering_a71ea859d9a2beeedd5805f1a47519383}} 
+{\bfseries data}
+\item 
+\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a07d01c5761d14b2128869d3ab062069a}\label{classkmeans_1_1kmeansClustering_a07d01c5761d14b2128869d3ab062069a}} 
+{\bfseries metric}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a255814fdb68c24e337b3bd6ed3ecc367}\label{classkmeans_1_1kmeansClustering_a255814fdb68c24e337b3bd6ed3ecc367}} 
+\index{kmeans.kmeansClustering@{kmeans.kmeansClustering}!cluster@{cluster}}
+\index{cluster@{cluster}!kmeans.kmeansClustering@{kmeans.kmeansClustering}}
+\doxysubsubsection{\texorpdfstring{cluster()}{cluster()}}
+{\footnotesize\ttfamily def kmeans.\+kmeans\+Clustering.\+cluster (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{k,  }\item[{}]{plusplus = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}clustering method. Will execute clustering on the data saved in self.data with the metric
+given in self.metric
+@param k number of clusters that are generated
+@param plusplus will use k++ initialiser if true
+@returns clusters as list of lists of indices of points and final cluster centers
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+kmeans.\+py\end{DoxyCompactItemize}

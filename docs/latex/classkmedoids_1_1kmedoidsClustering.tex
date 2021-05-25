@@ -1,0 +1,58 @@
+\hypertarget{classkmedoids_1_1kmedoidsClustering}{}\doxysection{kmedoids.\+kmedoids\+Clustering Class Reference}
+\label{classkmedoids_1_1kmedoidsClustering}\index{kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}}
+Inheritance diagram for kmedoids.\+kmedoids\+Clustering\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkmedoids_1_1kmedoidsClustering}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_a03693d487c30710e44e74c5c5e5fedd5}\label{classkmedoids_1_1kmedoidsClustering_a03693d487c30710e44e74c5c5e5fedd5}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, metric, dataset)
+\item 
+def \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a7802620f63a5ac51016ebb0e778d95b0}{cluster}} (self, k, init=\char`\"{}k-\/medoids++\char`\"{})
+\item 
+def \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a322a5a591133f8adf951eda9c714335e}{package}} (self, labels)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_ae2f63bfe20c5b8ead83f5c21fe751797}\label{classkmedoids_1_1kmedoidsClustering_ae2f63bfe20c5b8ead83f5c21fe751797}} 
+{\bfseries data}
+\item 
+\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_a32ae6fa3886f32cfd0a4b3c77efc4469}\label{classkmedoids_1_1kmedoidsClustering_a32ae6fa3886f32cfd0a4b3c77efc4469}} 
+{\bfseries metric}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_a7802620f63a5ac51016ebb0e778d95b0}\label{classkmedoids_1_1kmedoidsClustering_a7802620f63a5ac51016ebb0e778d95b0}} 
+\index{kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}!cluster@{cluster}}
+\index{cluster@{cluster}!kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}}
+\doxysubsubsection{\texorpdfstring{cluster()}{cluster()}}
+{\footnotesize\ttfamily def kmedoids.\+kmedoids\+Clustering.\+cluster (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{k,  }\item[{}]{init = {\ttfamily \char`\"{}k-\/medoids++\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}clustering method. Will execute clustering on the data saved in self.data with the metric
+given in self.metric
+@param k number of clusters that are generated
+@param init initialisation parameter. Standard: "k-medoids++"
+@returns clusters as list of lists of indices of points, final cluster centers
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_a322a5a591133f8adf951eda9c714335e}\label{classkmedoids_1_1kmedoidsClustering_a322a5a591133f8adf951eda9c714335e}} 
+\index{kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}!package@{package}}
+\index{package@{package}!kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}}
+\doxysubsubsection{\texorpdfstring{package()}{package()}}
+{\footnotesize\ttfamily def kmedoids.\+kmedoids\+Clustering.\+package (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{labels }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}rearranges the result to a format similar to the one of the pyclustering algorithms
+allows for easier access in the streamlit interface
+@param labels labels returned from the KMedoids algorithm
+@returns clusters formated similarly to the pyclustering algorithms
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+kmedoids.\+py\end{DoxyCompactItemize}

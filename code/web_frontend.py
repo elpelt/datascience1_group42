@@ -17,9 +17,10 @@ st.set_page_config(page_title="Group 42", page_icon=":koala:")
 st.title('Datascience: Group 42')
 
 
+# Settings tab
 st.header("Settings")
 col1, col2 = st.beta_columns(2)
-dataset = col1.selectbox('Choose a beautiful dataset',['iris', 'wine', 'diabetes', 'solarflare1', 'solarflare2'])
+dataset = col1.selectbox('Choose a beautiful dataset',['iris', 'wine', 'diabetes', 'housevotes'])
 
 cluster_dist_desc = {'euclidean': 'd(x,y)=\sqrt{\sum_{i=1}^{n}(|x_i-y_i|)^2}',
                      'manhattan': '',
@@ -35,8 +36,10 @@ cluster = cluster_algo_class[cluster_algo](cluster_dist, dataset)
 print(cluster_algo_class)
 cluster.load_data()
 
+
+# algorithm specific parameter selection and clustering
 if cluster_algo == 'DBSCAN':
-    epsilon = col2.slider("Choose a nice value for epsilon", min_value=0.1, max_value=2.0, step=0.1)
+    epsilon = col2.slider("Choose a nice value for epsilon", min_value=0.1, max_value=20.0, step=0.1)
     minpts = col2.slider("Choose a minimal number of nearest points", min_value=1, max_value=20, step=1, value=5)
     clusters, stuff = cluster.cluster(epsilon, minpts)
 else:
@@ -57,6 +60,8 @@ else:
 
 st.success('Great choice! Here are the results!!!!')
 st.balloons()
+
+# Projections
 col1, col2 = st.beta_columns(2)
 col1.header("Projection with TSNE")
 perp = col1.slider("Perplexity for TSNE", 5, 50, 25)
@@ -69,6 +74,7 @@ col2.write("PCA is a linear dimension reduction. The data will be projected on t
            "which capture the most variance in the data. ")
 
 
+# actual projecting and plot generating
 col1, col2 = st.beta_columns(2)
 fig, ax = plt.subplots()
 with st.spinner('Please wait a second. Some colorful plots are generated...'):
@@ -86,6 +92,8 @@ col2.pyplot(fig)
 if cluster_algo == 'DBSCAN':
     st.write("*Please notice for DBSCAN clustering algorithm: Noise is labeled with 0 (black points) in the plots.*")
 
+
+# Index calculation
 col1, col2 = st.beta_columns(2)
 add_result = col1.button('Add')
 reset_tmp = col2.button('Reset')
