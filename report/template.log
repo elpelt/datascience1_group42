@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  20 MAY 2021 11:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  24 MAY 2021 21:50
 entering extended mode
 **./template.tex
 (template.tex
@@ -423,18 +423,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-[5]) (modules/distances/chebyshev.tex [6]) (modules/datasets/solarflare.tex
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+) (modules/distances/chebyshev.tex [6]) (modules/datasets/solarflare.tex
 [7]) (modules/datasets/wine.tex) (modules/algorithms/kmedoids.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
 
-
+[8]
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-[8]) (modules/algorithms/dbscan.tex
+) (modules/algorithms/dbscan.tex
 Overfull \hbox (11.00764pt too wide) in paragraph at lines 1--13
 \OT1/cmr/m/n/12 (-20) To in-tro-duce the def-i-ni-tion of the den-sity of a clu
 s-ter, first the Eps-neighbourhood
@@ -455,27 +460,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--13
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--29
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--29
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--29
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--29
-
- []
-
 [9]
+Underfull \hbox (badness 10000) in paragraph at lines 17--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--29
+
+ []
+
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -495,11 +499,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--156
 
  []
 
-[10] [11]
+[10] [11] [12]
 No file template.gls.
 No file template.acr.
 No file template.syi.
-[12] (template.bbl) [13] (template.aux) ) 
+[13] (template.bbl) [14] (template.aux) ) 
 Here is how much of TeX's memory you used:
  8396 strings out of 479334
  133354 string characters out of 2857559
@@ -528,9 +532,9 @@ ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users
 /T460/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><
 C:/Users/T460/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt
 12.pfb>
-Output written on template.pdf (14 pages, 241212 bytes).
+Output written on template.pdf (15 pages, 242209 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
+ 121 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  33286 words of extra memory for PDF output out of 35830 (max. 10000000)
 

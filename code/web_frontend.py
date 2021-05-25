@@ -25,7 +25,7 @@ dataset = col1.selectbox('Choose a beautiful dataset',['iris', 'wine', 'diabetes
 cluster_dist_desc = {'euclidean': 'd(x,y)=\sqrt{\sum_{i=1}^{n}(|x_i-y_i|)^2}',
                      'manhattan': '',
                      'chebyshev': 'd(x,y)=\max(|x_i - y_i|)',
-                     'cosine': 'd(x,y) = \\frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}}'}
+                     'cosine': 'd(x,y) = \\frac{\\arccos(\\frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}})}{\pi}'}
 cluster_dist = col1.selectbox('Choose an awesome distance measure',list(cluster_dist_desc.keys()))
 col1.latex(cluster_dist_desc[cluster_dist])
 
@@ -33,7 +33,6 @@ cluster_algo_class = {'kmeans': kmeansClustering, 'kmedians': kmediansClustering
 cluster_algo = col2.selectbox('Choose a lovely clustering algorithm',list(cluster_algo_class.keys()))
 
 cluster = cluster_algo_class[cluster_algo](cluster_dist, dataset)
-print(cluster_algo_class)
 cluster.load_data()
 
 
@@ -79,18 +78,18 @@ col1, col2 = st.beta_columns(2)
 fig, ax = plt.subplots()
 with st.spinner('Please wait a second. Some colorful plots are generated...'):
     projected_data_tsne = TSNE(random_state=42, perplexity=perp).fit_transform(cluster.data)
-    sns.scatterplot(x=projected_data_tsne[:,0], y=projected_data_tsne[:,1], hue=clustered_data, ax=ax, palette=color_palette)
+    sns.scatterplot(x=projected_data_tsne[:,0], y=projected_data_tsne[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
 col1.pyplot(fig)
 
 
 fig, ax = plt.subplots()
 with st.spinner('Please wait a second. Some colorful plots are generated...'):
     projected_data_pca = PCA(random_state=42, n_components=3).fit_transform(cluster.data)
-    sns.scatterplot(x=projected_data_pca[:,0], y=projected_data_pca[:,1], hue=clustered_data, ax=ax, palette=color_palette)
+    sns.scatterplot(x=projected_data_pca[:,0], y=projected_data_pca[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
 col2.pyplot(fig)
 
 if cluster_algo == 'DBSCAN':
-    st.write("*Please notice for DBSCAN clustering algorithm: Noise is labeled with 0 (black points) in the plots.*")
+    st.write("*Please notice for the DBSCAN clustering algorithm: Data points classified as noise are plotted as black points*")
 
 
 # Index calculation

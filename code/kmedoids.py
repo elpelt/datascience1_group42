@@ -20,7 +20,8 @@ class kmedoidsClustering(Clustering):
         @param init initialisation parameter. Standard: "k-medoids++"
         @returns clusters as list of lists of indices of points, final cluster centers
         """
-        kmedoids = KMedoids(n_clusters=k, random_state=42, init=init, metric=self.metric)
+
+        kmedoids = KMedoids(n_clusters=k, random_state=42, init=init, metric=self.metric, method='pam')
         kmedoids.fit(self.data)
 
         return self.package(kmedoids.labels_), kmedoids.cluster_centers_
