@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['package_11',['package',['../classdbscan_1_1DBSCANClustering.html#a1ee916e1f8ef235bdea68e07700abf98',1,'dbscan.DBSCANClustering.package()'],['../classkmedoids_1_1kmedoidsClustering.html#a322a5a591133f8adf951eda9c714335e',1,'kmedoids.kmedoidsClustering.package()']]],
-  ['pyc_5fmetric_12',['pyc_metric',['../classclustering_1_1Clustering.html#a350095d3e797e2cac62e08adbfe75da9',1,'clustering::Clustering']]]
+  ['metric_14',['metric',['../classclustering_1_1Clustering.html#a50461838df4386d28ed001591eff2383',1,'clustering.Clustering.metric()'],['../classdbscan_1_1DBSCANClustering.html#a8b7cdb4b055b40962a2a71abeb29aa4a',1,'dbscan.DBSCANClustering.metric()'],['../classkmeans_1_1kmeansClustering.html#a07d01c5761d14b2128869d3ab062069a',1,'kmeans.kmeansClustering.metric()'],['../classkmedians_1_1kmediansClustering.html#a11c66d6c277f61bff23d4628c6dd747e',1,'kmedians.kmediansClustering.metric()'],['../classkmedoids_1_1kmedoidsClustering.html#a32ae6fa3886f32cfd0a4b3c77efc4469',1,'kmedoids.kmedoidsClustering.metric()']]]
 ];

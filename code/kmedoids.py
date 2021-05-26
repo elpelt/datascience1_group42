@@ -3,8 +3,8 @@ from sklearn_extra.cluster import KMedoids
 
 class kmedoidsClustering(Clustering):
     """
-    implements k-Medians Clustering
-    uses the scikit-learn-extra k-medoids implementation
+    implements k-Medians Clustering<br>
+    uses the scikit-learn-extra k-medoids implementation<br>
     centers are set using the k++ initialiser if not set differently
     """
 
@@ -12,18 +12,28 @@ class kmedoidsClustering(Clustering):
         """
         constructor
         @param metric metric description as string. allowed: "euclidean", "manhattan", "chebyshev", "cosine"
-        @dataset dataset given as string. allowed: "diabetes", "iris", "wine", "housevotes"
+        @param dataset dataset given as string. allowed: "diabetes", "iris", "wine", "housevotes"
         """
         super().__init__(metric, dataset)
-        self.data = self.load_data()
+
+        ## metric name as string
         self.metric = metric
-        
+
+        ## dataset name as string
+        self.dataset = dataset
+
+        ## data that gets clustered
+        self.data = []
+
+        ## expected cluster values
+        self.labels = []
+
     def cluster(self, k, init="k-medoids++"):
         """
         clustering method. Will execute clustering on the data saved in self.data with the metric
         given in self.metric
         @param k number of clusters that are generated
-        @param init initialisation parameter. Standard: "k-medoids++"
+        @param init initialisation parameter. Default: "k-medoids++"
         @returns clusters as list of lists of indices of points, final cluster centers
         """
 

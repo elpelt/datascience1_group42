@@ -2,7 +2,9 @@
 \label{classkmeans_1_1kmeansClustering}\index{kmeans.kmeansClustering@{kmeans.kmeansClustering}}
 
 
-Class implementing k-\/\+Means Clustering uses the pyclustering k-\/means implementation centers can be initialised using the k++ or the random initialiser.  
+Class implementing k-\/\+Means Clustering~\newline
+ uses the pyclustering k-\/means implementation~\newline
+ centers can be initialised using the k++ or the random initialiser.  
 
 
 Inheritance diagram for kmeans.\+kmeans\+Clustering\+:\begin{figure}[H]
@@ -14,23 +16,31 @@ Inheritance diagram for kmeans.\+kmeans\+Clustering\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \mbox{\hyperlink{classkmeans_1_1kmeansClustering_ac8df023e1434680239ad04361f8260a1}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, metric, dataset)
+def \mbox{\hyperlink{classkmeans_1_1kmeansClustering_ac8df023e1434680239ad04361f8260a1}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classkmeans_1_1kmeansClustering_a07d01c5761d14b2128869d3ab062069a}{metric}}, \mbox{\hyperlink{classkmeans_1_1kmeansClustering_a26b84212ec9bcf3f05e23cdd467f8580}{dataset}})
 \begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{classkmeans_1_1kmeansClustering_a255814fdb68c24e337b3bd6ed3ecc367}{cluster}} (self, k, plusplus=True)
 \begin{DoxyCompactList}\small\item\em clustering method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a71ea859d9a2beeedd5805f1a47519383}\label{classkmeans_1_1kmeansClustering_a71ea859d9a2beeedd5805f1a47519383}} 
-{\bfseries data}
-\item 
 \mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a07d01c5761d14b2128869d3ab062069a}\label{classkmeans_1_1kmeansClustering_a07d01c5761d14b2128869d3ab062069a}} 
-{\bfseries metric}
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classkmeans_1_1kmeansClustering_a07d01c5761d14b2128869d3ab062069a}{metric}}
+\begin{DoxyCompactList}\small\item\em metric name as pyclustering distance\+\_\+metric object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a26b84212ec9bcf3f05e23cdd467f8580}\label{classkmeans_1_1kmeansClustering_a26b84212ec9bcf3f05e23cdd467f8580}} 
+\mbox{\hyperlink{classkmeans_1_1kmeansClustering_a26b84212ec9bcf3f05e23cdd467f8580}{dataset}}
+\begin{DoxyCompactList}\small\item\em dataset name as string \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a71ea859d9a2beeedd5805f1a47519383}\label{classkmeans_1_1kmeansClustering_a71ea859d9a2beeedd5805f1a47519383}} 
+\mbox{\hyperlink{classkmeans_1_1kmeansClustering_a71ea859d9a2beeedd5805f1a47519383}{data}}
+\begin{DoxyCompactList}\small\item\em data that gets clustered \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a5b1308830139d50a59c96d95881f6994}\label{classkmeans_1_1kmeansClustering_a5b1308830139d50a59c96d95881f6994}} 
+\mbox{\hyperlink{classkmeans_1_1kmeansClustering_a5b1308830139d50a59c96d95881f6994}{labels}}
+\begin{DoxyCompactList}\small\item\em expected cluster values \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Class implementing k-\/\+Means Clustering uses the pyclustering k-\/means implementation centers can be initialised using the k++ or the random initialiser. 
+Class implementing k-\/\+Means Clustering~\newline
+ uses the pyclustering k-\/means implementation~\newline
+ centers can be initialised using the k++ or the random initialiser. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classkmeans_1_1kmeansClustering_ac8df023e1434680239ad04361f8260a1}\label{classkmeans_1_1kmeansClustering_ac8df023e1434680239ad04361f8260a1}} 
@@ -45,7 +55,9 @@ constructor
 
 
 \begin{DoxyParams}{Parameters}
-{\em metric} & metric description as string. allowed\+: \char`\"{}euclidean\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}cosine\char`\"{} @dataset dataset given as string. allowed\+: \char`\"{}diabetes\char`\"{}, \char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}housevotes\char`\"{} \\
+{\em metric} & metric description as string. allowed\+: \char`\"{}euclidean\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}cosine\char`\"{} \\
+\hline
+{\em dataset} & dataset given as string. allowed\+: \char`\"{}diabetes\char`\"{}, \char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}housevotes\char`\"{} \\
 \hline
 \end{DoxyParams}
 

@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['dbscanclustering_3',['DBSCANClustering',['../classdbscan_1_1DBSCANClustering.html',1,'dbscan']]],
-  ['description_4',['Description',['../index.html',1,'']]]
+  ['data_3',['data',['../classclustering_1_1Clustering.html#a9428002bd0ae4880a18840cbdb2c1e52',1,'clustering.Clustering.data()'],['../classdbscan_1_1DBSCANClustering.html#a4e0819e1d3a3fdfe2380205289e4f08b',1,'dbscan.DBSCANClustering.data()'],['../classkmeans_1_1kmeansClustering.html#a71ea859d9a2beeedd5805f1a47519383',1,'kmeans.kmeansClustering.data()'],['../classkmedians_1_1kmediansClustering.html#abfd98a13054b8102db5e802257134d52',1,'kmedians.kmediansClustering.data()'],['../classkmedoids_1_1kmedoidsClustering.html#ae2f63bfe20c5b8ead83f5c21fe751797',1,'kmedoids.kmedoidsClustering.data()']]],
+  ['dataset_4',['dataset',['../classclustering_1_1Clustering.html#a33ee2153799927a275df889deec09b53',1,'clustering.Clustering.dataset()'],['../classdbscan_1_1DBSCANClustering.html#a156964a25917208e5746f27c9d3a6a3a',1,'dbscan.DBSCANClustering.dataset()'],['../classkmeans_1_1kmeansClustering.html#a26b84212ec9bcf3f05e23cdd467f8580',1,'kmeans.kmeansClustering.dataset()'],['../classkmedians_1_1kmediansClustering.html#af3c6712f952ef5ba8aca87e43237bb3e',1,'kmedians.kmediansClustering.dataset()'],['../classkmedoids_1_1kmedoidsClustering.html#a68e0a4518eca9990807bcb514d09dd13',1,'kmedoids.kmedoidsClustering.dataset()']]],
+  ['dbscanclustering_5',['DBSCANClustering',['../classdbscan_1_1DBSCANClustering.html',1,'dbscan']]],
+  ['description_6',['Description',['../index.html',1,'']]]
 ];

@@ -10,18 +10,28 @@ import numpy as np
 
 class Clustering():
     """
-    Meta Class for all subsequent clustering algorithms
-    implements all functions needed for running the different
+    Meta Class for all subsequent clustering algorithms<br>
+    implements all functions needed for running the different<br>
     cluster algorithms
     """
     def __init__(self, metric, dataset):
         """
         constructor
         @param metric metric description as string. allowed: "euclidean", "manhattan", "chebyshev", "cosine"
-        @dataset dataset given as string. allowed: "diabetes", "iris", "wine", "housevotes"
+        @param dataset dataset given as string. allowed: "diabetes", "iris", "wine", "housevotes"
         """
+
+        ## metric name as string or pyclustering distance_metric object
         self.metric = metric
+
+        ## dataset name as string
         self.dataset = dataset
+
+        ## data that gets clustered
+        self.data = []
+
+        ## expected cluster values
+        self.labels = []
     
     def pyc_metric(self, metric):
         """
@@ -99,7 +109,7 @@ class Clustering():
 
     def house_load(self, path, skip=1):
         """
-        loads the housevotes dataset and encodes it using One-Hot-Encoding
+        loads the housevotes dataset and encodes it using One-Hot-Encoding<br>
         democrats are labeled as 1, republicans as 0
         @param path filepath to the dataset
         @param skip number of lines that get skipped when reading in a file
@@ -129,7 +139,7 @@ class Clustering():
 
     def cluster(self):
         """
-        does nothing in the meta class. 
+        does nothing in the meta class.<br>
         needs to be implemented in the inheriting cluster algorithm classes
         """
         pass

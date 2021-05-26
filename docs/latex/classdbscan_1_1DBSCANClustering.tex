@@ -2,7 +2,8 @@
 \label{classdbscan_1_1DBSCANClustering}\index{dbscan.DBSCANClustering@{dbscan.DBSCANClustering}}
 
 
-implements DBSCAN Clustering uses the scikit-\/learn DBSCAN implementation  
+implements DBSCAN Clustering~\newline
+ uses the scikit-\/learn DBSCAN implementation  
 
 
 Inheritance diagram for dbscan.\+DBSCANClustering\+:\begin{figure}[H]
@@ -14,22 +15,33 @@ Inheritance diagram for dbscan.\+DBSCANClustering\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \mbox{\hyperlink{classdbscan_1_1DBSCANClustering_ab22686f8718cf537fc12a8eb827d7482}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, metric, dataset)
+def \mbox{\hyperlink{classdbscan_1_1DBSCANClustering_ab22686f8718cf537fc12a8eb827d7482}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classdbscan_1_1DBSCANClustering_a8b7cdb4b055b40962a2a71abeb29aa4a}{metric}}, \mbox{\hyperlink{classdbscan_1_1DBSCANClustering_a156964a25917208e5746f27c9d3a6a3a}{dataset}})
 \begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{classdbscan_1_1DBSCANClustering_a38c00ed16e46cf3c099b8329350262c0}{cluster}} (self, eps, min\+Pts)
 \begin{DoxyCompactList}\small\item\em clustering method. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{classdbscan_1_1DBSCANClustering_a1ee916e1f8ef235bdea68e07700abf98}{package}} (self, labels)
-\begin{DoxyCompactList}\small\item\em rearranges the result to a format similar to the one of the pyclustering algorithms allows for easier access in the streamlit interface \end{DoxyCompactList}\end{DoxyCompactItemize}
+def \mbox{\hyperlink{classdbscan_1_1DBSCANClustering_a1ee916e1f8ef235bdea68e07700abf98}{package}} (self, \mbox{\hyperlink{classdbscan_1_1DBSCANClustering_a394090abeacf5da4894e85263b76dfd6}{labels}})
+\begin{DoxyCompactList}\small\item\em rearranges the result to a format similar to the one of the pyclustering algorithms~\newline
+ allows for easier access in the streamlit interface \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classdbscan_1_1DBSCANClustering_a8b7cdb4b055b40962a2a71abeb29aa4a}\label{classdbscan_1_1DBSCANClustering_a8b7cdb4b055b40962a2a71abeb29aa4a}} 
-{\bfseries metric}
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classdbscan_1_1DBSCANClustering_a8b7cdb4b055b40962a2a71abeb29aa4a}{metric}}
+\begin{DoxyCompactList}\small\item\em metric name as string \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdbscan_1_1DBSCANClustering_a156964a25917208e5746f27c9d3a6a3a}\label{classdbscan_1_1DBSCANClustering_a156964a25917208e5746f27c9d3a6a3a}} 
+\mbox{\hyperlink{classdbscan_1_1DBSCANClustering_a156964a25917208e5746f27c9d3a6a3a}{dataset}}
+\begin{DoxyCompactList}\small\item\em dataset name as string \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdbscan_1_1DBSCANClustering_a4e0819e1d3a3fdfe2380205289e4f08b}\label{classdbscan_1_1DBSCANClustering_a4e0819e1d3a3fdfe2380205289e4f08b}} 
+\mbox{\hyperlink{classdbscan_1_1DBSCANClustering_a4e0819e1d3a3fdfe2380205289e4f08b}{data}}
+\begin{DoxyCompactList}\small\item\em data that gets clustered \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdbscan_1_1DBSCANClustering_a394090abeacf5da4894e85263b76dfd6}\label{classdbscan_1_1DBSCANClustering_a394090abeacf5da4894e85263b76dfd6}} 
+\mbox{\hyperlink{classdbscan_1_1DBSCANClustering_a394090abeacf5da4894e85263b76dfd6}{labels}}
+\begin{DoxyCompactList}\small\item\em expected cluster values \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-implements DBSCAN Clustering uses the scikit-\/learn DBSCAN implementation 
+implements DBSCAN Clustering~\newline
+ uses the scikit-\/learn DBSCAN implementation 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classdbscan_1_1DBSCANClustering_ab22686f8718cf537fc12a8eb827d7482}\label{classdbscan_1_1DBSCANClustering_ab22686f8718cf537fc12a8eb827d7482}} 
@@ -44,7 +56,9 @@ constructor
 
 
 \begin{DoxyParams}{Parameters}
-{\em metric} & metric description as string. allowed\+: \char`\"{}euclidean\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}cosine\char`\"{} @dataset dataset given as string. allowed\+: \char`\"{}diabetes\char`\"{}, \char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}housevotes\char`\"{} \\
+{\em metric} & metric description as string. allowed\+: \char`\"{}euclidean\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}cosine\char`\"{} \\
+\hline
+{\em dataset} & dataset given as string. allowed\+: \char`\"{}diabetes\char`\"{}, \char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}housevotes\char`\"{} \\
 \hline
 \end{DoxyParams}
 
@@ -64,7 +78,8 @@ Reimplemented from \mbox{\hyperlink{classclustering_1_1Clustering_a59129e84c5d07
 
 clustering method. 
 
-Will execute clustering on the data saved in self.\+data with the metric given in self.\+metric params are the same as in the DBSCAN paper 
+Will execute clustering on the data saved in self.\+data with the metric given in self.\+metric~\newline
+ params are the same as in the DBSCAN paper 
 \begin{DoxyParams}{Parameters}
 {\em eps} & Distance for the Eps-\/\+Neighbourhood \\
 \hline
@@ -82,7 +97,8 @@ formatted clustered data
 
 
 
-rearranges the result to a format similar to the one of the pyclustering algorithms allows for easier access in the streamlit interface 
+rearranges the result to a format similar to the one of the pyclustering algorithms~\newline
+ allows for easier access in the streamlit interface 
 
 
 \begin{DoxyParams}{Parameters}

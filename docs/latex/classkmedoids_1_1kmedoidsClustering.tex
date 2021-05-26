@@ -2,7 +2,9 @@
 \label{classkmedoids_1_1kmedoidsClustering}\index{kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}}
 
 
-implements k-\/\+Medians Clustering uses the scikit-\/learn-\/extra k-\/medoids implementation centers are set using the k++ initialiser if not set differently  
+implements k-\/\+Medians Clustering~\newline
+ uses the scikit-\/learn-\/extra k-\/medoids implementation~\newline
+ centers are set using the k++ initialiser if not set differently  
 
 
 Inheritance diagram for kmedoids.\+kmedoids\+Clustering\+:\begin{figure}[H]
@@ -14,25 +16,33 @@ Inheritance diagram for kmedoids.\+kmedoids\+Clustering\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a03693d487c30710e44e74c5c5e5fedd5}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, metric, dataset)
+def \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a03693d487c30710e44e74c5c5e5fedd5}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a32ae6fa3886f32cfd0a4b3c77efc4469}{metric}}, \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a68e0a4518eca9990807bcb514d09dd13}{dataset}})
 \begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a7802620f63a5ac51016ebb0e778d95b0}{cluster}} (self, k, init=\char`\"{}k-\/medoids++\char`\"{})
 \begin{DoxyCompactList}\small\item\em clustering method. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a322a5a591133f8adf951eda9c714335e}{package}} (self, labels)
+def \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a322a5a591133f8adf951eda9c714335e}{package}} (self, \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a91fc0212d9001b3346109f5230f7cab4}{labels}})
 \begin{DoxyCompactList}\small\item\em rearranges the result to a format similar to the one of the pyclustering algorithms allows for easier access in the streamlit interface \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_ae2f63bfe20c5b8ead83f5c21fe751797}\label{classkmedoids_1_1kmedoidsClustering_ae2f63bfe20c5b8ead83f5c21fe751797}} 
-{\bfseries data}
-\item 
 \mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_a32ae6fa3886f32cfd0a4b3c77efc4469}\label{classkmedoids_1_1kmedoidsClustering_a32ae6fa3886f32cfd0a4b3c77efc4469}} 
-{\bfseries metric}
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a32ae6fa3886f32cfd0a4b3c77efc4469}{metric}}
+\begin{DoxyCompactList}\small\item\em metric name as string \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_a68e0a4518eca9990807bcb514d09dd13}\label{classkmedoids_1_1kmedoidsClustering_a68e0a4518eca9990807bcb514d09dd13}} 
+\mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a68e0a4518eca9990807bcb514d09dd13}{dataset}}
+\begin{DoxyCompactList}\small\item\em dataset name as string \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_ae2f63bfe20c5b8ead83f5c21fe751797}\label{classkmedoids_1_1kmedoidsClustering_ae2f63bfe20c5b8ead83f5c21fe751797}} 
+\mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_ae2f63bfe20c5b8ead83f5c21fe751797}{data}}
+\begin{DoxyCompactList}\small\item\em data that gets clustered \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_a91fc0212d9001b3346109f5230f7cab4}\label{classkmedoids_1_1kmedoidsClustering_a91fc0212d9001b3346109f5230f7cab4}} 
+\mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a91fc0212d9001b3346109f5230f7cab4}{labels}}
+\begin{DoxyCompactList}\small\item\em expected cluster values \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-implements k-\/\+Medians Clustering uses the scikit-\/learn-\/extra k-\/medoids implementation centers are set using the k++ initialiser if not set differently 
+implements k-\/\+Medians Clustering~\newline
+ uses the scikit-\/learn-\/extra k-\/medoids implementation~\newline
+ centers are set using the k++ initialiser if not set differently 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_a03693d487c30710e44e74c5c5e5fedd5}\label{classkmedoids_1_1kmedoidsClustering_a03693d487c30710e44e74c5c5e5fedd5}} 
@@ -47,7 +57,9 @@ constructor
 
 
 \begin{DoxyParams}{Parameters}
-{\em metric} & metric description as string. allowed\+: \char`\"{}euclidean\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}cosine\char`\"{} @dataset dataset given as string. allowed\+: \char`\"{}diabetes\char`\"{}, \char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}housevotes\char`\"{} \\
+{\em metric} & metric description as string. allowed\+: \char`\"{}euclidean\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}cosine\char`\"{} \\
+\hline
+{\em dataset} & dataset given as string. allowed\+: \char`\"{}diabetes\char`\"{}, \char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}housevotes\char`\"{} \\
 \hline
 \end{DoxyParams}
 
@@ -71,7 +83,7 @@ Will execute clustering on the data saved in self.\+data with the metric given i
 \begin{DoxyParams}{Parameters}
 {\em k} & number of clusters that are generated \\
 \hline
-{\em init} & initialisation parameter. Standard\+: \char`\"{}k-\/medoids++\char`\"{} \\
+{\em init} & initialisation parameter. Default\+: \char`\"{}k-\/medoids++\char`\"{} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

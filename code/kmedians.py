@@ -13,11 +13,21 @@ class kmediansClustering(Clustering):
         """
         constructor
         @param metric metric description as string. allowed: "euclidean", "manhattan", "chebyshev", "cosine"
-        @dataset dataset given as string. allowed: "diabetes", "iris", "wine", "housevotes"
+        @param dataset dataset given as string. allowed: "diabetes", "iris", "wine", "housevotes"
         """
         super().__init__(metric, dataset)
-        self.data = self.load_data()
+
+        ## metric name as pyclustering distance_metric object
         self.metric = self.pyc_metric(metric)
+
+        ## dataset name as string
+        self.dataset = dataset
+
+        ## data that gets clustered
+        self.data = []
+
+        ## expected cluster values
+        self.labels = []
     
     def cluster(self, k):
         """
