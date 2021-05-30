@@ -13,5 +13,6 @@
 \contentsline {subsection}{\numberline {4.4}DBSCAN}{9}{}%
 \contentsline {section}{\numberline {5}Description of Python libraries used}{11}{}%
 \contentsline {section}{\numberline {6}Description of Evaluation Module}{11}{}%
-\contentsline {section}{\numberline {7}Web Frontend and User Manual}{11}{}%
-\contentsline {section}{\numberline {8}Conclusion}{12}{}%
+\contentsline {subsection}{\numberline {6.1}T-SNE}{11}{}%
+\contentsline {section}{\numberline {7}Web Frontend and User Manual}{13}{}%
+\contentsline {section}{\numberline {8}Conclusion}{13}{}%

@@ -1,0 +1,26 @@
+t-SNE is a nonlinear dimensionality reduction technique, which was developed by Laurens van der Maaten and Geoffrey Hinton \cite{tsne}. It can be used for visualizing high-dimensional data in a lower-dimensional (typically 2-dimensional) space such that more similar data points should be represented nearby in the lower-dimensional representation. This can lead to visual cluster formation based on the local structure of the data (and chosen parameters).  \\
+The t-SNE algorithm first calculates the distances $d(x_i, x_j)$ (by default using the euclidean distance) between each of the $N$ data points $x_i$ and $x_j$ \cite. Then it computes conditional probabilities $p_{j|i}$, \qq{ that $x_i$ would pick $x_j$ as its neighbor if neighbors were picked in proportion to their probability density under a Gaussian centered at $x_i$.}\cite{tsne} \\
+$p_{j|i}$ for $i \neq j$ is given as
+\begin{equation}
+	p_{j|i} = \frac{exp(-d(x_i, x_j)^2 / 2\sigma_i^2)}{\sum_{k \neq i} exp(-d(x_i, x_k)^2 / 2\sigma_i^2)} 
+\end{equation}
+and set $p_{i|i} = 0$. \\
+The joint probability $p_ij$ is defined by 
+\begin{equation}
+	p_{ij} = \frac{p_{j|i} + p_{i|j}}{2N}
+\end{equation}
+
+Note that the Gaussian distributions should have their standard deviations $\sigma_i$ such that the perplexity of the conditional distribution is equal to a predefined perplexity parameter. It basically measures the effective number of neighbours of the data point $i$, that can be found performing a binary search.   \\
+In the next step t-SNE searches for an embedding of the data points considering the previously computed similarities. This is achieved by minimizing the Kullback-Leibler divergence between the modeled Gaussian distributions of the high-dimensional data points $X$ and a Student t distribution of the corresponding points $Y$ in the lower-dimensional space. To do this we define $q_{ij}$ for $i \neq j$ is defined as followed 
+\begin{equation}
+	q_{ji} = \frac{(1 + \lVert y_i - y_j \rVert ^2)^{-1}}{\sum_{k}\sum_{l \neq k} (1 + \lVert y_k - y_t \rVert ^2)^{-1}}
+\end{equation}
+and set $q_{i|i} = 0$. \\
+Now the Kullback-Leibler divergence can be expressed as \\
+is defined as followed 
+\begin{equation}
+	KL(P||Q) = \sum_{j}\sum_{i \neq j}p_{ij}\log\frac{p_{ij}}{q_{ij}}
+\end{equation}
+
+The optimization procedure is performed by a gradient descent method to find a local minimum. \\
+The final results may heavily depend on the chosen parameters, especially the perplexity value. It is therefore recommended to compare different perplexity values to identify spurious clustering artifacts in the visualization. \cite{wattenberg2016how}

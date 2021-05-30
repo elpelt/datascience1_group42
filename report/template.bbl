@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{MMDS}
 Jure Leskovec, Anand Rajaraman, and Jeffrey~David Ullman.
@@ -38,6 +38,16 @@ Erich Schubert, J\"{o}rg Sander, Martin Ester, Hans~Peter Kriegel, and Xiaowei
   DBSCAN}.
 \newblock {\em ACM Trans. Database Syst.}, 42(3), July 2017.
 
+\bibitem{tsne}
+Laurens van~der Maaten and Geoffrey Hinton.
+\newblock Viualizing data using t-sne.
+\newblock {\em Journal of Machine Learning Research}, 9:2579--2605, 11 2008.
+
+\bibitem{wattenberg2016how}
+Martin Wattenberg, Fernanda Viégas, and Ian Johnson.
+\newblock How to use t-sne effectively.
+\newblock {\em Distill}, 2016.
+
 \bibitem{Novikov2019}
 Andrei Novikov.
 \newblock {PyClustering}: {D}ata {M}ining {L}ibrary.
@@ -49,5 +59,8 @@ F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
   D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay.
 \newblock Scikit-learn: Machine learning in {P}ython.
 \newblock {\em Journal of Machine Learning Research}, 12:2825--2830, 2011.
+
+\bibitem{tsne_matlab}
+Mathworks documentation, t-sne, 2021.
 
 \end{thebibliography}
