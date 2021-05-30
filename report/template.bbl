@@ -14,6 +14,17 @@ Cosine distance, cosine similarity, angular cosine distance, angular cosine
 Dheeru Dua and Casey Graff.
 \newblock {UCI} {M}achine {L}earning {R}epository, 2017.
 
+\bibitem{Jin2010}
+Xin Jin and Jiawei Han.
+\newblock {\em K-Medoids Clustering}, pages 564--565.
+\newblock Springer US, Boston, MA, 2010.
+
+\bibitem{kaufman2009finding}
+Leonard Kaufman and Peter~J Rousseeuw.
+\newblock {\em Finding groups in data: an introduction to cluster analysis},
+  volume 344.
+\newblock John Wiley \& Sons, 2009.
+
 \bibitem{dbscan}
 Martin Ester, Hans-Peter Kriegel, J\"{o}rg Sander, and Xiaowei Xu.
 \newblock A density-based algorithm for discovering clusters in large spatial

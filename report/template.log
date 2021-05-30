@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  30 MAY 2021 19:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  30 MAY 2021 19:56
 entering extended mode
 **./template.tex
 (template.tex
@@ -442,14 +442,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--8
  []
 
 [7]) (modules/datasets/wine.tex) (modules/algorithms/kmedoids.tex
-
-LaTeX Warning: Citation `Jin2010' on page 8 undefined on input line 1.
-
-
-LaTeX Warning: Citation `kaufman2009finding' on page 8 undefined on input line 
-1.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
@@ -538,41 +530,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--162
 No file template.gls.
 No file template.acr.
 No file template.syi.
-[14] (template.bbl) [15] (template.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[14] (template.bbl [15]) [16] (template.aux) ) 
 Here is how much of TeX's memory you used:
- 8465 strings out of 479334
- 134646 string characters out of 2857559
- 515921 words of memory out of 3000000
+ 8467 strings out of 479334
+ 134662 string characters out of 2857559
+ 515929 words of memory out of 3000000
  25601 multiletter control sequences out of 15000+200000
- 415278 words of font info for 122 fonts, out of 3000000 for 9000
+ 415387 words of font info for 123 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,10n,102p,1008b,266s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\T460\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
-200.pk><C:/Users/T460/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmbx10.pfb><C:/Users/T460/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmbx12.pfb><C:/Users/T460/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmcsc10.pfb><C:/Users/T460/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/T460/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/T460/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/T460/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/T460/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/
-T460/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
-/Users/T460/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.
+ <C:\Users\T460\AppData\Local\MiK
+TeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/T460/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/T460/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/T4
+60/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
+/Users/T460/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10
+.pfb><C:/Users/T460/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmmi12.pfb><C:/Users/T460/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmmi6.pfb><C:/Users/T460/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmmi8.pfb><C:/Users/T460/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb><C:/Users/T460/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/T460/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/T460/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/T460/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/T460/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/T
+460/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/
+Users/T460/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.
 pfb><C:/Users/T460/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmr6.pfb><C:/Users/T460/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmr8.pfb><C:/Users/T460/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb><C:/Users/T460/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmsy8.pfb><C:/Users/T460/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/T460/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on template.pdf (16 pages, 251049 bytes).
+/cmtt12.pfb>
+Output written on template.pdf (17 pages, 252302 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
+ 127 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  33286 words of extra memory for PDF output out of 35830 (max. 10000000)
 

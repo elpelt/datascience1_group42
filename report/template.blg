@@ -5,44 +5,46 @@ Reallocating 'name_of_file' (item size: 1) to 8 items.
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: unsrt.bst
 Database file #1: bib.bib
-You've used 12 entries,
+Warning--can't use both author and editor fields in Jin2010
+You've used 14 entries,
             1791 wiz_defined-function locations,
-            521 strings with 5384 characters,
-and the built_in function-call counts, 2588 in all, are:
-= -- 209
-> -- 133
-< -- 2
-+ -- 50
-- -- 38
-* -- 164
-:= -- 398
-add.period$ -- 32
-call.type$ -- 12
+            537 strings with 5684 characters,
+and the built_in function-call counts, 3124 in all, are:
+= -- 261
+> -- 149
+< -- 4
++ -- 56
+- -- 42
+* -- 192
+:= -- 469
+add.period$ -- 38
+call.type$ -- 14
 change.case$ -- 12
 chr.to.int$ -- 0
-cite$ -- 12
-duplicate$ -- 120
-empty$ -- 260
-format.name$ -- 38
-if$ -- 592
+cite$ -- 15
+duplicate$ -- 150
+empty$ -- 314
+format.name$ -- 42
+if$ -- 723
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 8
-newline$ -- 57
-num.names$ -- 10
-pop$ -- 49
+int.to.str$ -- 14
+missing$ -- 12
+newline$ -- 67
+num.names$ -- 12
+pop$ -- 60
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 75
+skip$ -- 95
 stack$ -- 0
-substring$ -- 113
-swap$ -- 38
-text.length$ -- 2
+substring$ -- 145
+swap$ -- 51
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 17
-width$ -- 14
-write$ -- 120
+warning$ -- 1
+while$ -- 22
+width$ -- 16
+write$ -- 143
+(There was 1 warning)
