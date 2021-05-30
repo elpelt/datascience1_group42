@@ -2,21 +2,40 @@ from clustering import Clustering
 
 from sklearn.cluster import DBSCAN
 
-"""
-metrics can be given as a string, so no metric selection needed
-"""
 class DBSCANClustering(Clustering):
+    """
+    implements DBSCAN Clustering<br>
+    uses the scikit-learn DBSCAN implementation
+    """
+    
     def __init__(self, metric, dataset):
+        """
+        constructor
+        @param metric metric description as string. allowed: "euclidean", "manhattan", "chebyshev", "cosine"
+        @param dataset dataset given as string. allowed: "diabetes", "iris", "wine", "housevotes"
+        """
         super().__init__(metric, dataset)
-        self.metric = metric
-        self.data = self.load_data()
 
+        ## metric name as string
+        self.metric = metric
+
+        ## dataset name as string
+        self.dataset = dataset
+
+        ## data that gets clustered
+        self.data = []
+
+        ## expected cluster values
+        self.labels = []
+    
     def cluster(self, eps, minPts):
         """
+        clustering method. Will execute clustering on the data saved in self.data with the metric
+        given in self.metric<br>
         params are the same as in the DBSCAN paper
         @param eps Distance for the Eps-Neighbourhood
         @param minPts Minmal number of points in a cluster
-
+        @returns formatted clustered data
         """
         clustering = DBSCAN(metric=self.metric, eps=eps, min_samples=minPts)
         clustering.fit(self.data)
@@ -24,6 +43,12 @@ class DBSCANClustering(Clustering):
         return self.package(clustering.labels_)
     
     def package(self, labels):
+        """
+        rearranges the result to a format similar to the one of the pyclustering algorithms<br>
+        allows for easier access in the streamlit interface
+        @param labels cluster labels DBSCAN assigns to a point
+        @returns clusters as list of lists of indices of points and noise as list of indices of points
+        """
         noise = []
         m = max(labels)
         clusters = [list() for i in range(m+1)]
@@ -38,8 +63,5 @@ class DBSCANClustering(Clustering):
 
 
 if __name__ == "__main__":
-    flarepath = "../datasets/solar_flares/flare.data2"
-    c = DBSCANClustering("chebyshev", "solarflare")
-    c.load_data()
-    #print(c.data)
-    #print(c.cluster(2, 10))
+    c = DBSCANClustering("chebyshev", "solarflare1")
+    c.cluster(2, 3)

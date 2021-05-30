@@ -12,7 +12,7 @@ which is the aforementioned limit of the $L_p$-metric and is therefore also call
 \ \\
 The three axioms for a metric (section \ref{metricaxioms}) are proven below:
 \begin{enumerate}
-    \item For $x = y$ all entries of a vector are identical all differences between $x_i - y_i$ are $0$. Thus: $d(x,x) = \max (|x_i - x_i|) = \max (0) = 0$
+    \item For $x = y$ all entries of a vector are identical and all differences between $x_i - y_i$ are $0$. Thus: $d(x,x) = \max (|x_i - x_i|) = \max (0) = 0$
     \item Symmetry is given because of the symmetry of the absolute value function: 
           $| x_i - y_i | = | y_i - x_i |$
     \item The triangle equation can be shown using some estimates:
@@ -23,4 +23,4 @@ The three axioms for a metric (section \ref{metricaxioms}) are proven below:
         \Rightarrow d(x,y) &\leq d(x, z) + d(z, y)
     \end{align*}
 \end{enumerate}
-Non negativity also results from the non negativity of the absolute value function.
+Non negativity also results from the non negativity of the absolute value function. Therefore the Chebyshev distance is classified as a metric.
