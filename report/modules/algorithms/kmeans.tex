@@ -1,0 +1,19 @@
+The K-means algorithm is a widely known algorithm, which aims to group together similar items into clusters. 
+The total number of clusters is predefined and represented as the value for k. All considered items can be referred to as points, as this clustering algorithm assumes an Euclidean space. The K-means algorithm belongs to the point-assignment algorithms in clustering, as all points are considered successively and assigned to the most fitting cluster. 
+\begin{enumerate}
+	\item Initially, the algorithm picks k points whose positions each represent one cluster centroid
+	\item All points are considered in turn:
+	\begin{itemize}
+		\item Find the nearest centroid/mean of the considered point (Euklidean distance measure)
+		\item Assign point to cluster of that centroid
+		\item Adapt position of this centroid
+	\end{itemize}	
+	
+	\item (optional) fix all centroids and reassign all points with the inclusion of the initial k points
+	
+\end{enumerate}
+
+The essential first step of initializing the clusters requires k points that have a high chance of being in separate clusters. This can be achieved by different approaches. The first approach is pretty straight- forward. Here, we pick points which are as far away as possible from each other. This can be achieved by the following algorithm:
+(1)	A random point is picked as the first of k cluster centorids
+(2)	For k-1 passes:
+-	Pick the point whose minimum distance is the largest considering all previously chosen points
