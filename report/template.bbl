@@ -14,10 +14,6 @@ Cosine distance, cosine similarity, angular cosine distance, angular cosine
 Dheeru Dua and Casey Graff.
 \newblock {UCI} {M}achine {L}earning {R}epository, 2017.
 
-\bibitem{winedata}
-Moshe Lichman.
-\newblock {UCI} {M}achine {L}earning {R}epository, 2013.
-
 \bibitem{dbscan}
 Martin Ester, Hans-Peter Kriegel, J\"{o}rg Sander, and Xiaowei Xu.
 \newblock A density-based algorithm for discovering clusters in large spatial
@@ -44,6 +40,10 @@ F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
 Andrei Novikov.
 \newblock {PyClustering}: {D}ata {M}ining {L}ibrary.
 \newblock {\em Journal of Open Source Software}, 4(36):1230, apr 2019.
+
+\bibitem{winedata}
+Moshe Lichman.
+\newblock {UCI} {M}achine {L}earning {R}epository, 2013.
 
 \bibitem{heuser2000lehrbuch}
 Harro Heuser.
