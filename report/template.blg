@@ -5,45 +5,46 @@ The style file: unsrt.bst
 Database file #1: bib.bib
 Warning--entry type for "heuser2000lehrbuch" isn't style-file defined
 --line 94 of file bib.bib
-You've used 9 entries,
+Warning--can't use both author and editor fields in Jin2010
+You've used 15 entries,
             1791 wiz_defined-function locations,
-            504 strings with 5134 characters,
-and the built_in function-call counts, 1992 in all, are:
-= -- 156
-> -- 113
-< -- 2
-+ -- 42
-- -- 33
-* -- 119
-:= -- 305
-add.period$ -- 24
-call.type$ -- 9
-change.case$ -- 9
+            543 strings with 6337 characters,
+and the built_in function-call counts, 3582 in all, are:
+= -- 273
+> -- 229
+< -- 4
++ -- 83
+- -- 68
+* -- 245
+:= -- 562
+add.period$ -- 40
+call.type$ -- 15
+change.case$ -- 13
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 94
-empty$ -- 197
-format.name$ -- 33
-if$ -- 458
+cite$ -- 16
+duplicate$ -- 155
+empty$ -- 332
+format.name$ -- 68
+if$ -- 803
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 5
-newline$ -- 43
-num.names$ -- 8
-pop$ -- 43
+int.to.str$ -- 15
+missing$ -- 12
+newline$ -- 71
+num.names$ -- 13
+pop$ -- 67
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 65
+skip$ -- 99
 stack$ -- 0
-substring$ -- 65
-swap$ -- 35
-text.length$ -- 2
+substring$ -- 149
+swap$ -- 52
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 13
-width$ -- 10
-write$ -- 90
-(There was 1 warning)
+warning$ -- 1
+while$ -- 24
+width$ -- 17
+write$ -- 151
+(There were 2 warnings)

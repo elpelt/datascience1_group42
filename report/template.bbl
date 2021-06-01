@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{MMDS}
 Jure Leskovec, Anand Rajaraman, and Jeffrey~David Ullman.
@@ -13,6 +13,17 @@ Cosine distance, cosine similarity, angular cosine distance, angular cosine
 \bibitem{Dua2019}
 Dheeru Dua and Casey Graff.
 \newblock {UCI} {M}achine {L}earning {R}epository, 2017.
+
+\bibitem{Jin2010}
+Xin Jin and Jiawei Han.
+\newblock {\em K-Medoids Clustering}, pages 564--565.
+\newblock Springer US, Boston, MA, 2010.
+
+\bibitem{kaufman2009finding}
+Leonard Kaufman and Peter~J Rousseeuw.
+\newblock {\em Finding groups in data: an introduction to cluster analysis},
+  volume 344.
+\newblock John Wiley \& Sons, 2009.
 
 \bibitem{dbscan}
 Martin Ester, Hans-Peter Kriegel, J\"{o}rg Sander, and Xiaowei Xu.
@@ -41,12 +52,36 @@ Andrei Novikov.
 \newblock {PyClustering}: {D}ata {M}ining {L}ibrary.
 \newblock {\em Journal of Open Source Software}, 4(36):1230, apr 2019.
 
+\bibitem{tsne}
+Laurens van~der Maaten and Geoffrey Hinton.
+\newblock Viualizing data using t-sne.
+\newblock {\em Journal of Machine Learning Research}, 9:2579--2605, 11 2008.
+
+\bibitem{tsne_matlab}
+Mathworks documentation, t-sne, 2021.
+
+\bibitem{wattenberg2016how}
+Martin Wattenberg, Fernanda Viégas, and Ian Johnson.
+\newblock How to use t-sne effectively.
+\newblock {\em Distill}, 2016.
+
 \bibitem{winedata}
 Moshe Lichman.
 \newblock {UCI} {M}achine {L}earning {R}epository, 2013.
 
 \bibitem{heuser2000lehrbuch}
 Harro Heuser.
-\newblock Lehrbuch der analysis : Teil 2, 2000.
+\newblock Lehrbuch der {A}nalysis : {T}eil 2, 2000.
+
+\bibitem{harris2020array}
+Charles~R. Harris, K.~Jarrod Millman, St{\'{e}}fan~J. van~der Walt, Ralf
+  Gommers, Pauli Virtanen, David Cournapeau, Eric Wieser, Julian Taylor,
+  Sebastian Berg, Nathaniel~J. Smith, Robert Kern, Matti Picus, Stephan Hoyer,
+  Marten~H. van Kerkwijk, Matthew Brett, Allan Haldane, Jaime~Fern{\'{a}}ndez
+  del R{\'{i}}o, Mark Wiebe, Pearu Peterson, Pierre G{\'{e}}rard-Marchant,
+  Kevin Sheppard, Tyler Reddy, Warren Weckesser, Hameer Abbasi, Christoph
+  Gohlke, and Travis~E. Oliphant.
+\newblock Array programming with {NumPy}.
+\newblock {\em Nature}, 585(7825):357--362, September 2020.
 
 \end{thebibliography}

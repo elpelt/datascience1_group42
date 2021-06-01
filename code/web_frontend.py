@@ -4,6 +4,7 @@ from kmeans import kmeansClustering
 from kmedians import kmediansClustering
 from kmedoids import kmedoidsClustering
 from dbscan import DBSCANClustering
+from indices import Indices
 from random import uniform
 from indices import Indices
 import seaborn as sns
@@ -11,7 +12,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 from sklearn.decomposition import PCA
-from sklearn.metrics import silhouette_score, homogeneity_score, completeness_score
+from sklearn.metrics import silhouette_score, homogeneity_score, completeness_score, adjusted_rand_score
 
 st.set_page_config(page_title="Group 42", page_icon=":koala:")
 st.title('Datascience: Group 42')
@@ -101,31 +102,70 @@ if st.button('Run Clustering'):
     add_result = col1.button('Add')
     reset_tmp = col2.button('Reset')
 
-    if reset_tmp:
-        with open("tmp.csv", "w") as f:
-            f.write('')
+# Index calculation
+col1, col2 = st.beta_columns(2)
+add_result = col1.button('Add')
+reset_tmp = col2.button('Reset')
 
-    if add_result:
-        try:
-            df = pd.read_csv("tmp.csv", delim_whitespace=True)
-            df[cluster_algo] = pd.Series(clustered_data)
-            df.to_csv("tmp.csv", index=False, sep=",")
-        except:
-            with open("tmp.csv", "a") as f:
-                np.savetxt(f, clustered_data, delimiter=",", header=cluster_algo)
-        #df["cluster_algo"] = "clustered_data"
-        #df.insert(column="Hi", value="abc")
-        #clustered_data.to_csv("tmp.csv", index=False)
-        #with open("tmp.csv", "a") as f:
-        #    np.savetxt(f, clustered_data, delimiter=",", header=cluster_algo)
-    t = np.loadtxt('tmp.csv')
-    st.write(t)
+# wright empty CSV to clear CSV
+if reset_tmp:
+    with open("tmp.csv", "w") as f:
+        f.write('')
+    st.write("Cluster table cleared succesfully!")
+
+# add clustering result to CSV with new column and characteristics as header
+if add_result:
+    if cluster_algo == "DBSCAN":
+        val="epsilon="+str(epsilon)
+    else:
+        val="k="+str(k_value)
+    try:
+        df = pd.read_csv("tmp.csv", delimiter=",")
+        x = clustered_data.tolist()
+        if cluster_algo == "DBSCAN":
+            df[(cluster_algo, cluster_dist, dataset, val)] = pd.Series(x)
+        df.to_csv("tmp.csv", sep=",", index=False)
+        st.write("Cluster", (cluster_algo, cluster_dist, dataset, val), "added succesfully!")
+        st.write("The list contains the following cluster:", df.columns)
+    except:
+        df = pd.DataFrame(clustered_data, columns=[(cluster_algo, cluster_dist, dataset, val)])
+        df.to_csv("tmp.csv", sep=",", index=False)
+        st.write("Cluster", (cluster_algo, cluster_dist, dataset, val), "added succesfully!")
+        st.write("The list contains the following cluster:", df.columns)
+
+st.header("Clustering evaluation")
+index_eval = st.selectbox('Choose an adorable index',["ARI", "NMI", "Completeness Score", "Homogeneity Score"])
+
+# iterate over cluster results and calculate score with chosen index
+try:
+    results = []
+    df = pd.read_csv("tmp.csv", delimiter=",")
+    if index_eval in ["ARI", "NMI", "Completeness Score", "Homogeneity Score"]:
+        for i in range(0, len(df.columns)):
+            labels = cluster.labels.tolist()
+            predicted = df.iloc[:, i].values.tolist()
+            I1 = Indices(predicted, labels)
+            score = I1.index_external(index_eval)
+            results.append([score, df.columns[i]])
+            st.write(score, df.columns[i])
+except:
+    st.write("Cluster-results-table is empty.")
+
+# desc = np.array([df.columns])
+# stats = np.zeros(len(results))
+# for i in range(0, len(results)):
+#     stats[i] = results[i][0]
+#
+# angles=np.linspace(0, 2*np.pi, len(desc), endpoint=False)
+# stats=np.concatenate((stats,[stats[0]]))
+# angles=np.concatenate((angles,[angles[0]]))
+#
+# #fig=sns.plot.figure()
+# ax = fig.add_subplot(111, polar=True)
+# ax.plot(angles, stats, 'o-', linewidth=2)
+# ax.fill(angles, stats, alpha=0.25)
+# ax.set_thetagrids(angles * 180/np.pi, desc)
+# ax.set_title(index_eval)
+# ax.grid(True)
 
 
-
-
-    st.header("Clustering evaluation")
-    #true_labels = cluster.labels
-    #pred_labels = clustered_data
-    #st.write('homogeneity_score', homogeneity_score(true_labels, pred_labels))
-    #st.write('completeness_score', completeness_score(true_labels, pred_labels))
