@@ -68,7 +68,7 @@ class Clustering():
                     if cos_similarity > 1: # due to some rounding errors with floating point values
                         cos_similarity = 1
 
-                if np.any(x<0) or np.any(y<0):
+                if np.any(np.array(x)<0) or np.any(np.array(y)<0):
                     factor = 2
                 else:
                     factor = 1

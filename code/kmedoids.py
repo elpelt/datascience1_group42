@@ -1,5 +1,6 @@
 from clustering import Clustering
 from sklearn_extra.cluster import KMedoids
+from pyclustering.cluster.kmedoids import kmedoids
 
 class kmedoidsClustering(Clustering):
     """
@@ -17,7 +18,7 @@ class kmedoidsClustering(Clustering):
         super().__init__(metric, dataset)
 
         ## metric name as string
-        self.metric = metric
+        self.metric = self.pyc_metric(metric)
 
         ## dataset name as string
         self.dataset = dataset
@@ -36,6 +37,9 @@ class kmedoidsClustering(Clustering):
         @param init initialisation parameter. Default: "k-medoids++"
         @returns clusters as list of lists of indices of points, final cluster centers
         """
+
+        if k == 1:
+            return self.package([0 for i in range(len(self.data))]), [0]
 
         kmedoids = KMedoids(n_clusters=k, random_state=42, init=init, metric=self.metric, method='pam')
         kmedoids.fit(self.data)
@@ -56,3 +60,8 @@ class kmedoidsClustering(Clustering):
             clusters[labels[i]].append(i)
 
         return clusters
+
+if __name__ == "__main__":
+    c = kmedoidsClustering("cosine", "iris")
+    c.load_data()
+    c.cluster(1)

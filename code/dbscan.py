@@ -63,5 +63,6 @@ class DBSCANClustering(Clustering):
 
 
 if __name__ == "__main__":
-    c = DBSCANClustering("chebyshev", "solarflare1")
+    c = DBSCANClustering("cosine", "iris")
+    c.load_data()
     c.cluster(2, 3)

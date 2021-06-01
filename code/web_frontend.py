@@ -23,7 +23,7 @@ col1, col2 = st.beta_columns(2)
 dataset = col1.selectbox('Choose a beautiful dataset',['iris', 'wine', 'diabetes', 'housevotes'])
 
 cluster_dist_desc = {'euclidean': 'd(x,y)=\sqrt{\sum_{i=1}^{n}(|x_i-y_i|)^2}',
-                     'manhattan': '',
+                     'manhattan': 'd(x,y)=\sum_{i=1}^{n}(|x_i-y_i|)',
                      'chebyshev': 'd(x,y)=\max(|x_i - y_i|)',
                      'cosine': 'd(x,y) = \\frac{\\arccos(\\frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}})}{\pi}'}
 cluster_dist = col1.selectbox('Choose an awesome distance measure',list(cluster_dist_desc.keys()))
@@ -40,88 +40,92 @@ cluster.load_data()
 if cluster_algo == 'DBSCAN':
     epsilon = col2.slider("Choose a nice value for epsilon", min_value=0.1, max_value=20.0, step=0.1)
     minpts = col2.slider("Choose a minimal number of nearest points", min_value=1, max_value=20, step=1, value=5)
-    clusters, stuff = cluster.cluster(epsilon, minpts)
+    
 else:
     k_value = col2.slider("Choose a nice value for k (number of clusters)", min_value=1, max_value=10, step=1, value=3)
 
-    if cluster_algo in  ['kmedoids', 'kmeans', 'kmedians']:
+
+# cluster button
+if st.button('Run Clustering'):
+    if cluster_algo == 'DBSCAN':
+        clusters, stuff = cluster.cluster(epsilon, minpts)
+    else:
         clusters, stuff = cluster.cluster(k_value)
 
+    clustered_data = np.zeros(len(cluster.data))
+    for ic,c in enumerate(clusters):
+        clustered_data[c] = ic+1
 
-clustered_data = np.zeros(len(cluster.data))
-for ic,c in enumerate(clusters):
-    clustered_data[c] = ic+1
+    if cluster_algo == 'DBSCAN':
+        color_palette = ['black'] + sns.color_palette("husl", len(set(clustered_data))-1)
+    else:
+        color_palette = sns.color_palette("husl", len(set(clustered_data)))
 
-if cluster_algo == 'DBSCAN':
-    color_palette = ['black'] + sns.color_palette("husl", len(set(clustered_data))-1)
-else:
-    color_palette = sns.color_palette("husl", len(set(clustered_data)))
+    st.success('Great choice! Here are the results!!!!')
+    st.balloons()
 
-st.success('Great choice! Here are the results!!!!')
-st.balloons()
-
-# Projections
-col1, col2 = st.beta_columns(2)
-col1.header("Projection with TSNE")
-perp = col1.slider("Perplexity for TSNE", 5, 50, 25)
-col1.write("TSNE is a nonlinear dimension reduction. The outcome will depend on the perplexity you have chosen. ")
-
-
-col2.header("Projection with PCA")
-col2.markdown("#")
-col2.write("PCA is a linear dimension reduction. The data will be projected on the first 2 principal components, "
-           "which capture the most variance in the data. ")
+    # Projections
+    col1, col2 = st.beta_columns(2)
+    col1.header("Projection with TSNE")
+    perp = col1.slider("Perplexity for TSNE", 5, 50, 25)
+    col1.write("TSNE is a nonlinear dimension reduction. The outcome will depend on the perplexity you have chosen. ")
 
 
-# actual projecting and plot generating
-col1, col2 = st.beta_columns(2)
-fig, ax = plt.subplots()
-with st.spinner('Please wait a second. Some colorful plots are generated...'):
-    projected_data_tsne = TSNE(random_state=42, perplexity=perp).fit_transform(cluster.data)
-    sns.scatterplot(x=projected_data_tsne[:,0], y=projected_data_tsne[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
-col1.pyplot(fig)
+    col2.header("Projection with PCA")
+    col2.markdown("#")
+    col2.write("PCA is a linear dimension reduction. The data will be projected on the first 2 principal components, "
+            "which capture the most variance in the data. ")
 
 
-fig, ax = plt.subplots()
-with st.spinner('Please wait a second. Some colorful plots are generated...'):
-    projected_data_pca = PCA(random_state=42, n_components=3).fit_transform(cluster.data)
-    sns.scatterplot(x=projected_data_pca[:,0], y=projected_data_pca[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
-col2.pyplot(fig)
+    # actual projecting and plot generating
+    col1, col2 = st.beta_columns(2)
+    fig, ax = plt.subplots()
+    with st.spinner('Please wait a second. Some colorful plots are generated...'):
+        projected_data_tsne = TSNE(random_state=42, perplexity=perp).fit_transform(cluster.data)
+        sns.scatterplot(x=projected_data_tsne[:,0], y=projected_data_tsne[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
+    col1.pyplot(fig)
 
-if cluster_algo == 'DBSCAN':
-    st.write("*Please notice for the DBSCAN clustering algorithm: Data points classified as noise are plotted as black points*")
+
+    fig, ax = plt.subplots()
+    with st.spinner('Please wait a second. Some colorful plots are generated...'):
+        projected_data_pca = PCA(random_state=42, n_components=3).fit_transform(cluster.data)
+        sns.scatterplot(x=projected_data_pca[:,0], y=projected_data_pca[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
+    col2.pyplot(fig)
+
+    if cluster_algo == 'DBSCAN':
+        st.write("*Please notice for the DBSCAN clustering algorithm: Data points classified as noise are plotted as black points*")
 
 
-# Index calculation
-col1, col2 = st.beta_columns(2)
-add_result = col1.button('Add')
-reset_tmp = col2.button('Reset')
+    # Index calculation
+    col1, col2 = st.beta_columns(2)
+    add_result = col1.button('Add')
+    reset_tmp = col2.button('Reset')
 
-if reset_tmp:
-    with open("tmp.csv", "w") as f:
-        f.write('')
+    if reset_tmp:
+        with open("tmp.csv", "w") as f:
+            f.write('')
 
-if add_result:
-    try:
-        df = pd.read_csv("tmp.csv", delim_whitespace=True)
-        df[cluster_algo] = pd.Series(clustered_data)
-        df.to_csv("tmp.csv", index=False, sep=",")
-    except:
-        with open("tmp.csv", "a") as f:
-            np.savetxt(f, clustered_data, delimiter=",", header=cluster_algo)
-    #df["cluster_algo"] = "clustered_data"
-    #df.insert(column="Hi", value="abc")
-    #clustered_data.to_csv("tmp.csv", index=False)
-    #with open("tmp.csv", "a") as f:
-    #    np.savetxt(f, clustered_data, delimiter=",", header=cluster_algo)
-t = np.loadtxt('tmp.csv')
-st.write(t)
-
+    if add_result:
+        try:
+            df = pd.read_csv("tmp.csv", delim_whitespace=True)
+            df[cluster_algo] = pd.Series(clustered_data)
+            df.to_csv("tmp.csv", index=False, sep=",")
+        except:
+            with open("tmp.csv", "a") as f:
+                np.savetxt(f, clustered_data, delimiter=",", header=cluster_algo)
+        #df["cluster_algo"] = "clustered_data"
+        #df.insert(column="Hi", value="abc")
+        #clustered_data.to_csv("tmp.csv", index=False)
+        #with open("tmp.csv", "a") as f:
+        #    np.savetxt(f, clustered_data, delimiter=",", header=cluster_algo)
+    t = np.loadtxt('tmp.csv')
+    st.write(t)
 
 
 
-st.header("Clustering evaluation")
-#true_labels = cluster.labels
-#pred_labels = clustered_data
-#st.write('homogeneity_score', homogeneity_score(true_labels, pred_labels))
-#st.write('completeness_score', completeness_score(true_labels, pred_labels))
+
+    st.header("Clustering evaluation")
+    #true_labels = cluster.labels
+    #pred_labels = clustered_data
+    #st.write('homogeneity_score', homogeneity_score(true_labels, pred_labels))
+    #st.write('completeness_score', completeness_score(true_labels, pred_labels))

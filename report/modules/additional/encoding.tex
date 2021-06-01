@@ -4,8 +4,7 @@ The distance measures described in section \ref{distances} need numerical data t
 Using simple integer encoding where no is encoded as 0, yes is encoded as 1 and the unknown state is encoded as 2 results in a yes vote being classified as closer to the unknown state than a no vote by the distance measures.\\
 \ \\
 For so called non ordinal data (data which has no known order) like the votes, One-Hot-Encoding provides better results when using distance based clustering.\\
-\ \\
 With One-Hot-Encoding every attribute is represented as binary vector. Each element of this vector represents a category value. The corresponding value of a sample is set to 1 in the binary vector. 
 This increases the dimensionality of the problem, but represents an equal distance between every value an attribute can have.\\
 \ \\
-The scikit-learn library \cite{scikitlearn} was used to implement One-Hot-Encoding on the solar flare dataset.
+The scikit-learn library \cite{scikitlearn} was used to implement One-Hot-Encoding on the housevotes dataset.

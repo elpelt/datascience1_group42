@@ -46,3 +46,8 @@ class kmediansClustering(Clustering):
         medians = kmedians_instance.get_medians()
 
         return clusters, medians
+
+if __name__ == "__main__":
+    c = kmediansClustering("cosine", "iris")
+    c.load_data()
+    c.cluster(1)

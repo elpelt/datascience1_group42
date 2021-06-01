@@ -1,0 +1,23 @@
+Multiple libraries were used for their implementation of cluster algorithms and other functionality needed for working with results and visualising them. Below follows a brief description of all used libraries.
+
+\subsection{pyclustering}
+pyclustering is a data mining library, focusing on clustering algorithms written in C++ and Python by Andrei Novikov \cite{Novikov2019}. The library contains a wide range of clustering algorithms implemented in Python with an optional C++ core. If possible pyclustering falls back to its C++ implementations utilising its efficiency and runtime benefits.\\
+We use pyclusterings implementation of K-Means and K-Medians.
+
+\subsection{scikit learn}
+scikit learn is a wide rangeing data analysis tool kit for python encompassing algorithms not only for clustering but for classification, regression and more \cite{scikitlearn}.\\
+The library is used for its implemntations of DBSCAN, One-Hot-Encoding, StandardScaler, TSNE and PCA.
+
+\subsection{scikit learn extra}
+scikit learn extra is an extension to scikit learn spanning algorithms that do not satisfy the inclusion criteria of scikit learn. This library is used for its implementation of K-Medoids that is fully compatible with all other scikit learn algorithms.
+
+\subsection{numpy}
+numpy is a fundamental library mostly used for its array structure implementing a C++/Fortran like way of saveing and organising data while still being relatively easy to use. Being a dependency of every other package used in this project we use numpy arrays to store and work with our datasets.
+
+\subsection{seaborn}
+seaborn is a powerful data visualisation library build on top of pythons matplotlib. seaborn simplyfies plotting predefined templates. We use seaborns \texttt{scatterplot} template for visualising the TSNE and PCA projections of the cluster results.
+
+\subsection{streamlit}
+streamlit is a easy-to-use library for building simple web apps. Our webfrontend is implemented in streamlit and is also hosted on their sharing service.\\
+\\
+----- TODO ----- Link zur gehosteten app
