@@ -1,4 +1,5 @@
-\documentclass[12pt]%[english]
+% !TeX spellcheck = <none>
+\documentclass[12pt, english]
 {article}
 
 \usepackage{graphicx}
@@ -113,6 +114,10 @@ T4 - DISTANCE MEASURES AND CLUSTERING
 \newpage 
 
 \begin{abstract}
+Clustering algorithms can be important tools during the analysis of datasets. They divide a dataset into groups of items based on a certain measure of similarity such as the distances between each of the items. 
+In this work, we implemented and compared four different clustering algorithms (K-Means, K-Medoids, K-Median, DBSCAN). For this, we selected four distinct datasets as well as multiple distance measures (Manhattan, Euclidean, Angular cosine, Chebyshev). For efficient comparison of the clustering results we made use of multiple clustering indices. Additionally, we implemented a web frontend which provides the ability to run all clustering algorithms with distance measures, datasets and clustering indices chosen by the user. The results will be visualized afterwards.
+After running all algorithms with each of the datasets respectively and all distance measures where they could be applied, we compared the resulting values of the clustering indices.
+Our results show that
 
 \end{abstract}
 
@@ -127,6 +132,7 @@ T4 - DISTANCE MEASURES AND CLUSTERING
 \label{def_DM}
 \input{modules/distances/definition}
 \section{Different Distance Measurements}
+\subsection{Manhattan distance}
 \input{modules/distances/manhattan}
 \subsection{Euclidean Distances}
 \input{modules/distances/euclidean}
@@ -143,7 +149,8 @@ T4 - DISTANCE MEASURES AND CLUSTERING
 \input{modules/datasets/solarflare}
 \subsection{Wine recognition dataset}
 \input{modules/datasets/wine}
-
+\subsection{Iris dataset}
+\input{modules/datasets/iris}
 \section{Clustering Algorithms}
 \subsection{K-Means}
 \input{modules/algorithms/kmeans}

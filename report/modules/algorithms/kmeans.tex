@@ -1,10 +1,11 @@
-The K-means algorithm is a widely known algorithm, which aims to group together similar items into clusters. 
-The total number of clusters is predefined and represented as the value for k. All considered items can be referred to as points, as this clustering algorithm assumes an Euclidean space. The K-means algorithm belongs to the point-assignment algorithms in clustering, as all points are considered successively and assigned to the most fitting cluster. 
+% !TeX spellcheck = <none>
+The K-means algorithm aims to group together similar items of a given dataset into clusters. 
+The total number of clusters is predefined and represented as the value for k. All considered items can be referred to as points, as this clustering algorithm assumes an Euclidean space. Hence, only distance measures which assume an Eulicdean space, such as the Manhattan distance or the Euclidean distance, are sensibly appicable. The K-means algorithm belongs to the point-assignment algorithms in clustering, as all points are considered successively and assigned to the most fitting cluster. The algorithms operates in the following steps:
 \begin{enumerate}
 	\item Initially, the algorithm picks k points whose positions each represent one cluster centroid
 	\item All points are considered in turn:
 	\begin{itemize}
-		\item Find the nearest centroid/mean of the considered point (Euklidean distance measure)
+		\item Find the nearest centroid/mean of the considered point (Euclidean distance measure)
 		\item Assign point to cluster of that centroid
 		\item Adapt position of this centroid
 	\end{itemize}	
@@ -13,7 +14,11 @@ The total number of clusters is predefined and represented as the value for k. A
 	
 \end{enumerate}
 
-The essential first step of initializing the clusters requires k points that have a high chance of being in separate clusters. This can be achieved by different approaches. The first approach is pretty straight- forward. Here, we pick points which are as far away as possible from each other. This can be achieved by the following algorithm:
-(1)	A random point is picked as the first of k cluster centorids
-(2)	For k-1 passes:
--	Pick the point whose minimum distance is the largest considering all previously chosen points
+The essential first step of initializing the clusters requires $k$ points that have a high chance of being in separate clusters. This can be achieved by different approaches. One possible approach consists of picking points which are as far away as possible from each other. This can be achieved by the conducting the following steps:
+\begin{enumerate}
+	\item	A random point is picked as the first of $k$ cluster centorids
+	\item	For k-1 passes: \\
+	Pick the point whose minimum distance is the largest considering all previously chosen points
+	
+\end{enumerate}
+After the K-means algorithm assigned all points, an optional step af reassigning the points with fixed centroids can be conducted. This can be sensible since it is possible that after a point has been assigned to cluster the centroids move so far that the point would now belong to a different cluster.

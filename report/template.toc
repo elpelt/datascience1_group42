@@ -1,17 +1,19 @@
-\contentsline {section}{\numberline {1}Definition of Distance Measure}{4}{}%
-\contentsline {section}{\numberline {2}Different Distance Measurements}{4}{}%
-\contentsline {subsection}{\numberline {2.1}Euclidean Distances}{4}{}%
-\contentsline {subsection}{\numberline {2.2}Angular cosine Distance}{5}{}%
-\contentsline {subsection}{\numberline {2.3}Chebyshev Distance}{6}{}%
-\contentsline {section}{\numberline {3}Data Set Description}{7}{}%
-\contentsline {subsection}{\numberline {3.1}Solar Flare}{7}{}%
-\contentsline {subsection}{\numberline {3.2}Wine recognition dataset}{8}{}%
-\contentsline {section}{\numberline {4}Clustering Algorithms}{8}{}%
-\contentsline {subsection}{\numberline {4.1}K-Means}{8}{}%
-\contentsline {subsection}{\numberline {4.2}K-Medoids}{8}{}%
-\contentsline {subsection}{\numberline {4.3}K-Median}{9}{}%
-\contentsline {subsection}{\numberline {4.4}DBSCAN}{9}{}%
-\contentsline {section}{\numberline {5}Description of Python libraries used}{11}{}%
-\contentsline {section}{\numberline {6}Description of Evaluation Module}{11}{}%
-\contentsline {section}{\numberline {7}Web Frontend and User Manual}{11}{}%
-\contentsline {section}{\numberline {8}Conclusion}{11}{}%
+\contentsline {section}{\numberline {1}Definition of Distance Measure}{4}% 
+\contentsline {section}{\numberline {2}Different Distance Measurements}{4}% 
+\contentsline {subsection}{\numberline {2.1}Manhattan distance}{4}% 
+\contentsline {subsection}{\numberline {2.2}Euclidean Distances}{5}% 
+\contentsline {subsection}{\numberline {2.3}Angular cosine Distance}{6}% 
+\contentsline {subsection}{\numberline {2.4}Chebyshev Distance}{7}% 
+\contentsline {section}{\numberline {3}Data Set Description}{8}% 
+\contentsline {subsection}{\numberline {3.1}Solar Flare}{8}% 
+\contentsline {subsection}{\numberline {3.2}Wine recognition dataset}{8}% 
+\contentsline {subsection}{\numberline {3.3}Iris dataset}{9}% 
+\contentsline {section}{\numberline {4}Clustering Algorithms}{9}% 
+\contentsline {subsection}{\numberline {4.1}K-Means}{9}% 
+\contentsline {subsection}{\numberline {4.2}K-Medoids}{10}% 
+\contentsline {subsection}{\numberline {4.3}K-Median}{11}% 
+\contentsline {subsection}{\numberline {4.4}DBSCAN}{11}% 
+\contentsline {section}{\numberline {5}Description of Python libraries used}{13}% 
+\contentsline {section}{\numberline {6}Description of Evaluation Module}{13}% 
+\contentsline {section}{\numberline {7}Web Frontend and User Manual}{13}% 
+\contentsline {section}{\numberline {8}Conclusion}{13}% 
