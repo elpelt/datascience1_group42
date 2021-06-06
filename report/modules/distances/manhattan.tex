@@ -1,0 +1,14 @@
+To determine the distance between two items the Manhattan distance, also referred to as taxicab distance, may be used. This distance measure assumes a n-dimensional vector space with a fixed cartesian coordinate system. It is defined as following:
+$$d(x,y)= ||x-y||_1 = \sum\limits_{i=1}^{n}|x_i - y_i|$$
+where x and y are vectors
+$$x = (x_1, x_2,..., x_n) \text{ and } y = (y_1, y_2,..., y_n)$$
+
+The Manhattan distance is, like the Euclidean distance, part of the $L_p-metrics$ (see 2.2), where the value for $p$ is set to 1.
+Assuming a two dimensional space, the distance between two points is the shortest path between them with the restriction of only being able to move vertically and horizontally.
+Prove of axioms described in section 1:\\
+\begin{enumerate}
+	\item Identity of indiscernibles:\\
+	Let $x=y$, then $|x-y| = 0$ and hence $\sum\limits_{i=1}^{n}|x_i - y_i| = 0$
+	\item Symmetry:\\
+	This axiom is fulfilled since $|x-y| = |y-x|$ for any x and y , which implies that $\sum\limits_{i=1}^{n}|x_i - y_i| = \sum\limits_{i=1}^{n}|y_i - x_i|$.
+\end{enumerate}
