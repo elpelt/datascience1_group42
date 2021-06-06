@@ -23,7 +23,7 @@ if seed_using:
     random.seed(42)
 
     from pyclustering.cluster.center_initializer import kmeans_plusplus_initializer, random_center_initializer
-    
+
     print(kmeans_plusplus_initializer([[1],[2],[3],[4],[5],[6],[7],[8]], 4).initialize())
 
 
