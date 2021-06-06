@@ -176,7 +176,7 @@ try:
 
 # if list is empty or two diff. datasets were chosen
 except:
-    st.write("Cluster-table is empty or two different datasets were chosen for comparison.")
+    st.write("Cluster-table is empty.")
 
 
 try:
@@ -229,7 +229,6 @@ try:
         ax.grid(True)
         st.pyplot(fig)
 
-# if list is empty or two diff. datasets were chosen
+# if list is empty
 except:
     st.write("Plot not possible.")
-    st.write("*Remember to not compare between different datasets.*")
