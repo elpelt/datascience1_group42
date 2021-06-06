@@ -8,13 +8,13 @@ class kmedoidsClustering(Clustering):
     centers are set using the k++ initialiser if not set differently
     """
 
-    def __init__(self, metric, dataset):
+    def __init__(self, metric, dataset, seed=None):
         """
         constructor
         @param metric metric description as string. allowed: "euclidean", "manhattan", "chebyshev", "cosine"
         @param dataset dataset given as string. allowed: "diabetes", "iris", "wine", "housevotes"
         """
-        super().__init__(metric, dataset)
+        super().__init__(metric, dataset, seed)
 
         ## metric name as string
         self.metric = self.pyc_metric(metric)
@@ -27,8 +27,11 @@ class kmedoidsClustering(Clustering):
 
         ## expected cluster values
         self.labels = []
+            
+        ## seed for initializer, None if no seed is used
+        self.seed = seed
 
-    def cluster(self, k, init="k-medoids++", seed=42):
+    def cluster(self, k, init="k-medoids++"):
         """
         clustering method. Will execute clustering on the data saved in self.data with the metric
         given in self.metric
@@ -39,8 +42,9 @@ class kmedoidsClustering(Clustering):
 
         if k == 1:
             return self.package([0 for i in range(len(self.data))]), [0]
-
+        
         kmedoids = KMedoids(n_clusters=k, random_state=seed, init=init, metric=self.metric, method='pam')
+
         kmedoids.fit(self.data)
 
         return self.package(kmedoids.labels_), kmedoids.cluster_centers_

@@ -14,7 +14,7 @@ class Clustering():
     implements all functions needed for running the different<br>
     cluster algorithms
     """
-    def __init__(self, metric, dataset):
+    def __init__(self, metric, dataset, seed=None):
         """
         constructor
         @param metric metric description as string. allowed: "euclidean", "manhattan", "chebyshev", "cosine"
@@ -32,6 +32,9 @@ class Clustering():
 
         ## expected cluster values
         self.labels = []
+
+        ## seed for initializer, None if no seed is used
+        self.seed = seed
     
     def pyc_metric(self, metric):
         """

@@ -8,13 +8,13 @@ class DBSCANClustering(Clustering):
     uses the scikit-learn DBSCAN implementation
     """
     
-    def __init__(self, metric, dataset):
+    def __init__(self, metric, dataset, seed=None):
         """
-        constructor
+        constructor, seed can be given but is not used. its passing is allowed to simplfy the code in the web frontend
         @param metric metric description as string. allowed: "euclidean", "manhattan", "chebyshev", "cosine"
         @param dataset dataset given as string. allowed: "diabetes", "iris", "wine", "housevotes"
         """
-        super().__init__(metric, dataset)
+        super().__init__(metric, dataset, seed)
 
         ## metric name as string
         self.metric = metric

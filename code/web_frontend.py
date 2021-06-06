@@ -1,5 +1,3 @@
-
-
 import streamlit as st
 import pandas as pd
 from kmeans import kmeansClustering
@@ -17,27 +15,20 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(page_title="Group 42", page_icon=":koala:")
 st.title('Datascience: Group 42')
 
-seed_using = st.checkbox('Use a random seed. (For replicative results.)', value=True)
-if seed_using:
+seeded = st.checkbox('Use a random seed. (For replicative results.)', value=False)
+seed = None
 
-    import random
-    random.seed(42)
-
-    from pyclustering.cluster.center_initializer import kmeans_plusplus_initializer, random_center_initializer
-
-    print(kmeans_plusplus_initializer([[1],[2],[3],[4],[5],[6],[7],[8]], 4).initialize())
-
-
-
+if seeded:
+    seed = 42
 
 # Settings tab
 st.header("Settings")
 col1, col2 = st.beta_columns(2)
 dataset = col1.selectbox('Choose a beautiful dataset',['iris', 'wine', 'diabetes', 'housevotes'])
 
-cluster_dist_desc = {'euclidean': 'd(x,y)=\sqrt{\sum_{i=1}^{n}(|x_i-y_i|)^2}',
-                     'manhattan': '',
-                     'chebyshev': 'd(x,y)=\max(|x_i - y_i|)',
+cluster_dist_desc = {'euclidean': 'd(x,y) = \sqrt{\sum_{i=1}^{n}(|x_i-y_i|)^2}',
+                     'manhattan': 'd(x,y) = \sum\limits_{i=1}^{n}|x_i - y_i|',
+                     'chebyshev': 'd(x,y) = \max(|x_i - y_i|)',
                      'cosine': 'd(x,y) = \\frac{\\arccos(\\frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}})}{\pi}'}
 cluster_dist = col1.selectbox('Choose an awesome distance measure',list(cluster_dist_desc.keys()))
 col1.latex(cluster_dist_desc[cluster_dist])
@@ -45,7 +36,7 @@ col1.latex(cluster_dist_desc[cluster_dist])
 cluster_algo_class = {'kmeans': kmeansClustering, 'kmedians': kmediansClustering, 'kmedoids': kmedoidsClustering, 'DBSCAN': DBSCANClustering}
 cluster_algo = col2.selectbox('Choose a lovely clustering algorithm',list(cluster_algo_class.keys()))
 
-cluster = cluster_algo_class[cluster_algo](cluster_dist, dataset)
+cluster = cluster_algo_class[cluster_algo](cluster_dist, dataset, seed)
 cluster.load_data()
 
 
@@ -59,7 +50,6 @@ else:
 
     if cluster_algo in  ['kmedoids', 'kmeans', 'kmedians']:
         clusters, stuff = cluster.cluster(k_value)
-
 
 clustered_data = np.zeros(len(cluster.data))
 for ic,c in enumerate(clusters):

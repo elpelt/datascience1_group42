@@ -1,13 +1,13 @@
-The application follows an object oriented approach. To unify and simplyfy the implementation of all cluster algorithms a base class, not meant for actual use instanceing, was defined aggregateing all functions that the cluster algorithms need.
-The cluster algorithms themselves are implemented as child classes inheriting all methods and attributes from the base clustering class.
+The application follows an object oriented approach. To unify and simplyfy the implementation of all cluster algorithms a base class, not meant for actual instanceing, was defined aggregateing all functions that the cluster algorithms need.
+The cluster algorithms themselves are implemented as child classes inheriting all methods and attributes from the base clustering class. This allows setting different parameters for every cluster algorithm while guaranteeing the existence and uniform execution of methods used by all algorithms.
 
 Three different libraries were used for their implementations of the used cluster algorithms. 
 For kmeans and kmedians the pyclustering \cite{Novikov2019} implementations were used, because of their flexibility in setting custom distance measures. 
-Sadly the k-medoids implementation showed bugs during testing which is why the scikit learn extra library was used.
-%The scikit learn implementation of DBSCAN 
+For Kmedoids the scikit learn extra \cite{scikit-learn-extra} implementation was used.
+DBSCAN is realised using the scikit learn implementation \cite{scikitlearn} was used.
 
 The calculation of cluster indices is packaged into a Indices class and uses scikit learn implementations of the different scoring methods.
 
-Finally the webfrontend is implemented using streamlit and is hosted using their hosting service.
+Finally the webfrontend is implemented using streamlit and is hosted using their publishing service \footnote{\url{https://share.streamlit.io/elpelt/datascience1_group42/main/code/web_frontend.py}}. 
 
 All of the code base for the project is documented using the Doxygen style and an automatically generated documentation containing detailed description of every class, method and attribute can be accessed through the github projects page \footnote{\url{https://elpelt.github.io/datascience1_group42}}.

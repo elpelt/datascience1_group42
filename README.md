@@ -11,13 +11,13 @@ So long, and thanks for all the fish
 - [x] k-means++
 - [x] Code Description
 - [x] Bibliotheken zitieren
-- [ ] Index Methoden beschreiben
+- [x] Index Methoden beschreiben
 - [x] Index Code beschreiben
 - [ ] Web Frontend Anleitung
 - [ ] Web Frontend Doxygen Doku?
 - [ ] Conclusion
 - [ ] Abstract
-- [ ] Index bugfixing
+- [x] Index bugfixing
 
 # Nice-To-Haves
 - [ ] set seed berechnungen speichern
