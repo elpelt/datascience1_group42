@@ -1,3 +1,5 @@
+
+
 import streamlit as st
 import pandas as pd
 from kmeans import kmeansClustering
@@ -18,7 +20,7 @@ st.title('Datascience: Group 42')
 seed_using = st.checkbox('Use a random seed. (For replicative results.)', value=True)
 if seed_using:
 
-
+    import random
     random.seed(42)
 
     from pyclustering.cluster.center_initializer import kmeans_plusplus_initializer, random_center_initializer
