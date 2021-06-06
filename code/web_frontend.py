@@ -100,7 +100,7 @@ reset_tmp = col2.button('Reset')
 if reset_tmp:
     with open("tmp.csv", "w") as f:
         f.write('')
-    st.write("Cluster table cleared succesfully!")
+    st.write("Cluster-table cleared succesfully!")
 
 # add clustering result to CSV with new column and characteristics as header
 if add_result:
@@ -111,17 +111,20 @@ if add_result:
         val="k="+str(k_value)
     try:
         df = pd.read_csv("tmp.csv", delimiter=",")
-        labels = cluster.labels.tolist()
-        predicted = clustered_data.tolist()
-        precalc = []
-        index_eval = ["ARI", "NMI", "Completeness Score", "Homogeneity Score"]
-        for i in range(0,4):
-            I1 = Indices(predicted, labels)
-            score = I1.index_external(index_eval[i])
-            precalc.append(score)
-        df[(cluster_algo, cluster_dist, val, dataset)] = pd.Series(precalc)
-        df.to_csv("tmp.csv", sep=",", index=False)
-        st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "added succesfully!")
+        if str((cluster_algo, cluster_dist, val, dataset)) in df.columns:
+            st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "already in cluster-table!")
+        else:
+            labels = cluster.labels.tolist()
+            predicted = clustered_data.tolist()
+            precalc = []
+            index_eval = ["ARI", "NMI", "Completeness Score", "Homogeneity Score"]
+            for i in range(0,4):
+                I1 = Indices(predicted, labels)
+                score = I1.index_external(index_eval[i])
+                precalc.append(score)
+            df[(cluster_algo, cluster_dist, val, dataset)] = pd.Series(precalc)
+            df.to_csv("tmp.csv", sep=",", index=False)
+            st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "added succesfully!")
     # if csv is empty
     except:
         labels = cluster.labels.tolist()
@@ -137,9 +140,9 @@ if add_result:
         st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "added succesfully!")
 try:
     df = pd.read_csv("tmp.csv", delimiter=",")
-    st.write("The list contains the following cluster:", df.columns)
+    st.write("The cluster-table contains the following cluster:", df.columns)
 except:
-    st.write("Cluster-Table is empty!")
+    st.write("Cluster-table is empty!")
 # Clustering evaluation
 st.header("Clustering evaluation")
 index_eval = st.selectbox('Choose an adorable index',["ARI", "NMI", "Completeness Score", "Homogeneity Score"])
@@ -165,7 +168,7 @@ try:
 
 # if list is empty or two diff. datasets were chosen
 except:
-    st.write("Cluster-results-table is empty or two different datasets are chosen for comparison.")
+    st.write("Cluster-table is empty or two different datasets were chosen for comparison.")
 
 
 try:
