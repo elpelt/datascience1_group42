@@ -203,7 +203,8 @@ try:
         labels, ys = list(desc), list(stats)
         xs = np.arange(len(labels))
         width = 0.5
-        plt.bar(xs, ys, width, align='center')
+        plt.bar(xs[0], ys[0], width, align='center', color='red')
+        plt.bar(xs[1:], ys[1:], width, align='center')
         plt.xticks(xs, labels)
         plt.yticks(ys)
         st.pyplot(fig)
