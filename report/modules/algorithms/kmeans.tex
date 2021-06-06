@@ -21,4 +21,5 @@ The essential first step of initializing the clusters requires $k$ points that h
 	Pick the point whose minimum distance is the largest considering all previously chosen points
 	
 \end{enumerate}
+Another way of determining the cluster centroids is the K++ initializer, described in section 5, which we used in our implementation of the K-means algorithm.\\
 After the K-means algorithm assigned all points, an optional step af reassigning the points with fixed centroids can be conducted. This can be sensible since it is possible that after a point has been assigned to cluster the centroids move so far that the point would now belong to a different cluster.
