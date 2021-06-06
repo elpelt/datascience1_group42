@@ -1,6 +1,5 @@
 from clustering import Clustering
 from sklearn_extra.cluster import KMedoids
-from pyclustering.cluster.kmedoids import kmedoids
 
 class kmedoidsClustering(Clustering):
     """
