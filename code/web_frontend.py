@@ -164,7 +164,7 @@ index_eval = st.selectbox('Choose an adorable index',["ARI", "NMI", "Completenes
 
 # iterate over cluster results and calculate score with chosen index
 try:
-    results = []
+    results = [[1, "maximum reference value"]]
     df = pd.read_csv("tmp.csv", delimiter=",")
     if index_eval in ["ARI", "NMI", "Completeness Score", "Homogeneity Score"]:
         for i in range(0, len(df.columns)):
@@ -176,9 +176,13 @@ try:
                 results.append([df.iloc[:,i].values[2], df.columns[i]])
             else:
                 results.append([df.iloc[:, i].values[3], df.columns[i]])
-
-            st.write(results[i][0], df.columns[i])
-
+    for i in range(0, len(results)):
+        st.write(results[i][0], results[i][1])
+    datasets = []
+    for i in range(1, len(results)):
+        results[i][1] = results[i][1].replace("(", "").replace(")", "").replace("'", "").split(",")
+        if results[i][1][3] not in datasets:
+            datasets.append(results[i][1][3])
 
 # if list is empty or two diff. datasets were chosen
 except:
@@ -188,8 +192,16 @@ except:
 try:
     # preprocess radar plot
     desc_list = []
-    for j in range(0, len(results)):
-        desc_list.append(str(results[j][1][0:(len(results[j][1])-(len(dataset)+5))])+")")
+    if len(datasets) == 1:
+        for j in range(0, len(results)):
+            if j != 0:
+                desc_list.append(str(results[j][1][0:3]))
+            else:
+                desc_list.append(str(results[j][1]))
+    else:
+        for j in range(0, len(results)):
+            desc_list.append(str(results[j][1]))
+
     desc = np.array(desc_list)
     stats = np.zeros(len(results))
     for i in range(0, len(results)):
@@ -219,7 +231,10 @@ try:
         ax.plot(angles, stats, 'o-', linewidth=2)
         ax.fill(angles, stats, alpha=0.25)
         ax.set_thetagrids((angles * 180 / np.pi)[0:len(results)], desc)
-        ax.set_title("Index:"+" "+index_eval+","+" "+"Dataset:"+" "+dataset)
+        if len(datasets) == 1:
+            ax.set_title("Index:"+" "+index_eval+","+" "+"Dataset:"+" "+dataset)
+        else:
+            ax.set_title("Index:" + " " + index_eval)
         ax.grid(True)
         st.pyplot(fig)
 
