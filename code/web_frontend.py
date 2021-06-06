@@ -219,6 +219,7 @@ try:
         fig = plt.show()
         ax = plt.subplot(111, polar=True)
         ax.plot(angles, stats, 'o-', linewidth=2)
+        ax.plot(angles[0], stats[0], 'o-', linewidth=2, color='red')
         ax.fill(angles, stats, alpha=0.25)
         ax.set_thetagrids((angles * 180 / np.pi)[0:len(results)], desc)
         if len(datasets) == 1:
