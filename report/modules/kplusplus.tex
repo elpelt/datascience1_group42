@@ -1,0 +1,11 @@
+%K++ initializer
+The K++ initializer is a method which determines the positions of the initial $k$ cluster centroids before starting the K-means algorithm. The following steps outline how the K++ initializer operates:
+
+\begin{enumerate}
+	\item Choose one centroid at random from all possible datapoints.
+	\item Loop through all remaining datapoints (k-1):\\
+	determine the distance $D(x)$ of the datapoint to the nearest already chosen centroid using the Euclidean distance.
+	\item A weighted probability distribution is used to set the next cluster centroid. For each point, the probability to be chosen is proportional to $D(x)^2$, meaning points which are farther away are more likely to be chosen.
+	\item Steps 2 and 3 are repeated until all $k$ cluster centroids have been set.
+	
+\end{enumerate}
