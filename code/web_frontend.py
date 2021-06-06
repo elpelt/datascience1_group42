@@ -1,5 +1,3 @@
-import random
-
 import streamlit as st
 import pandas as pd
 from kmeans import kmeansClustering
@@ -16,16 +14,6 @@ from sklearn.decomposition import PCA
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(page_title="Group 42", page_icon=":koala:")
 st.title('Datascience: Group 42')
-seed_using = st.checkbox('Use a random seed. (For replicative results.)', value=True)
-if seed_using:
-
-
-    random.seed(42)
-
-    from pyclustering.cluster.center_initializer import kmeans_plusplus_initializer, random_center_initializer
-    
-    print(kmeans_plusplus_initializer([[1],[2],[3],[4],[5],[6],[7],[8]], 4).initialize())
-
 
 
 # Settings tab
@@ -123,26 +111,39 @@ if add_result:
         val="k="+str(k_value)
     try:
         df = pd.read_csv("tmp.csv", delimiter=",")
-        x = clustered_data.tolist()
-        df[(cluster_algo, cluster_dist, val, dataset)] = pd.Series(x)
+        labels = cluster.labels.tolist()
+        predicted = clustered_data.tolist()
+        precalc = []
+        index_eval = ["ARI", "NMI", "Completeness Score", "Homogeneity Score"]
+        for i in range(0,4):
+            I1 = Indices(predicted, labels)
+            score = I1.index_external(index_eval[i])
+            precalc.append(score)
+        df[(cluster_algo, cluster_dist, val, dataset)] = pd.Series(precalc)
         df.to_csv("tmp.csv", sep=",", index=False)
         st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "added succesfully!")
-        st.write("The list contains the following cluster:", df.columns)
     # if csv is empty
     except:
-        df = pd.DataFrame(clustered_data, columns=[(cluster_algo, cluster_dist, val, dataset)])
+        labels = cluster.labels.tolist()
+        predicted = clustered_data.tolist()
+        precalc = []
+        index_eval = ["ARI", "NMI", "Completeness Score", "Homogeneity Score"]
+        for i in range(0, 4):
+            I1 = Indices(predicted, labels)
+            score = I1.index_external(index_eval[i])
+            precalc.append(score)
+        df = pd.DataFrame(precalc, columns=[(cluster_algo, cluster_dist, val, dataset)])
         df.to_csv("tmp.csv", sep=",", index=False)
         st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "added succesfully!")
-        st.write("The list contains the following cluster:", df.columns)
-
+try:
+    df = pd.read_csv("tmp.csv", delimiter=",")
+    st.write("The list contains the following cluster:", df.columns)
+except:
+    st.write("Cluster-Table is empty!")
 # Clustering evaluation
 st.header("Clustering evaluation")
 index_eval = st.selectbox('Choose an adorable index',["ARI", "NMI", "Completeness Score", "Homogeneity Score"])
 
-# generate buttons to show/hide values and plots
-col1, col2 = st.beta_columns(2)
-show_val = col1.button("Show values and plot")
-hide_val = col2.button("Hide values and plot")
 
 # iterate over cluster results and calculate score with chosen index
 try:
@@ -150,58 +151,62 @@ try:
     df = pd.read_csv("tmp.csv", delimiter=",")
     if index_eval in ["ARI", "NMI", "Completeness Score", "Homogeneity Score"]:
         for i in range(0, len(df.columns)):
-            labels = cluster.labels.tolist()
-            predicted = df.iloc[:, i].values.tolist()
-            I1 = Indices(predicted, labels)
-            score = I1.index_external(index_eval)
-            results.append([score, df.columns[i]])
-            if show_val:
-                st.write(score, df.columns[i])
+            if index_eval == "ARI":
+                results.append([df.iloc[:,i].values[0], df.columns[i]])
+            elif index_eval == "NMI":
+                results.append([df.iloc[:, i].values[1], df.columns[i]])
+            elif index_eval == "Completeness Score":
+                results.append([df.iloc[:,i].values[2], df.columns[i]])
+            else:
+                results.append([df.iloc[:, i].values[3], df.columns[i]])
+
+            st.write(results[i][0], df.columns[i])
+
 
 # if list is empty or two diff. datasets were chosen
 except:
     st.write("Cluster-results-table is empty or two different datasets are chosen for comparison.")
 
-if show_val:
-    try:
-        # preprocess radar plot
-        desc_list = []
-        for j in range(0, len(results)):
-            desc_list.append(str(results[j][1][0:(len(results[j][1])-(len(dataset)+5))])+")")
-        desc = np.array(desc_list)
-        stats = np.zeros(len(results))
-        for i in range(0, len(results)):
-            stats[i] = results[i][0]
 
-        # if length of results smaller than 3, barplot instead of radar chart
-        if len(results) <= 2:
-            fig, ax = plt.subplots()
-            labels, ys = list(desc), list(stats)
-            xs = np.arange(len(labels))
-            width = 0.5
-            plt.bar(xs, ys, width, align='center')
-            plt.xticks(xs, labels)
-            plt.yticks(ys)
-            st.pyplot(fig)
+try:
+    # preprocess radar plot
+    desc_list = []
+    for j in range(0, len(results)):
+        desc_list.append(str(results[j][1][0:(len(results[j][1])-(len(dataset)+5))])+")")
+    desc = np.array(desc_list)
+    stats = np.zeros(len(results))
+    for i in range(0, len(results)):
+        stats[i] = results[i][0]
 
-        #if length of results higher than 2 radar chart
-        else:
-            # define angles
-            angles=np.linspace(0, 2*np.pi, len(desc), endpoint=False)
-            stats=np.concatenate((stats,[stats[0]]))
-            angles=np.concatenate((angles,[angles[0]]))
+    # if length of results smaller than 3, barplot instead of radar chart
+    if len(results) <= 2:
+        fig, ax = plt.subplots()
+        labels, ys = list(desc), list(stats)
+        xs = np.arange(len(labels))
+        width = 0.5
+        plt.bar(xs, ys, width, align='center')
+        plt.xticks(xs, labels)
+        plt.yticks(ys)
+        st.pyplot(fig)
 
-            # print radar plot
-            fig = plt.show()
-            ax = plt.subplot(111, polar=True)
-            ax.plot(angles, stats, 'o-', linewidth=2)
-            ax.fill(angles, stats, alpha=0.25)
-            ax.set_thetagrids((angles * 180 / np.pi)[0:len(results)], desc)
-            ax.set_title("Index:"+" "+index_eval+","+" "+"Dataset:"+" "+dataset)
-            ax.grid(True)
-            st.pyplot(fig)
+    #if length of results higher than 2 radar chart
+    else:
+        # define angles
+        angles=np.linspace(0, 2*np.pi, len(desc), endpoint=False)
+        stats=np.concatenate((stats,[stats[0]]))
+        angles=np.concatenate((angles,[angles[0]]))
 
-    # if list is empty or two diff. datasets were chosen
-    except:
-        st.write("Plot not possible.")
-        st.write("*Remember to not compare between different datasets.*")
+        # print radar plot
+        fig = plt.show()
+        ax = plt.subplot(111, polar=True)
+        ax.plot(angles, stats, 'o-', linewidth=2)
+        ax.fill(angles, stats, alpha=0.25)
+        ax.set_thetagrids((angles * 180 / np.pi)[0:len(results)], desc)
+        ax.set_title("Index:"+" "+index_eval+","+" "+"Dataset:"+" "+dataset)
+        ax.grid(True)
+        st.pyplot(fig)
+
+# if list is empty or two diff. datasets were chosen
+except:
+    st.write("Plot not possible.")
+    st.write("*Remember to not compare between different datasets.*")
