@@ -14,6 +14,7 @@ from sklearn.manifold import TSNE
 from sklearn.decomposition import PCA
 from sklearn.metrics import silhouette_score, homogeneity_score, completeness_score, adjusted_rand_score
 
+st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(page_title="Group 42", page_icon=":koala:")
 st.title('Datascience: Group 42')
 
@@ -90,15 +91,12 @@ with st.spinner('Please wait a second. Some colorful plots are generated...'):
     sns.scatterplot(x=projected_data_pca[:,0], y=projected_data_pca[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
 col2.pyplot(fig)
 
-if cluster_algo == 'DBSCAN':
-    st.write("*Please notice for the DBSCAN clustering algorithm: Data points classified as noise are plotted as black points*")
+# generates button to add or reset the calculated clustering
+#col1, col2 = st.beta_columns(2)
+#add_result = col1.button('Add')
+#reset_tmp = col2.button('Reset')
 
-# Index calculation
-col1, col2 = st.beta_columns(2)
-add_result = col1.button('Add')
-reset_tmp = col2.button('Reset')
-
-# wright empty CSV to clear CSV
+# write empty CSV to clear CSV
 if reset_tmp:
     with open("tmp.csv", "w") as f:
         f.write('')
@@ -106,6 +104,7 @@ if reset_tmp:
 
 # add clustering result to CSV with new column and characteristics as header
 if add_result:
+    # epsilon or k, depends on clustering algorithm
     if cluster_algo == "DBSCAN":
         val="epsilon="+str(epsilon)
     else:
@@ -113,19 +112,25 @@ if add_result:
     try:
         df = pd.read_csv("tmp.csv", delimiter=",")
         x = clustered_data.tolist()
-        if cluster_algo == "DBSCAN":
-            df[(cluster_algo, cluster_dist, dataset, val)] = pd.Series(x)
+        df[(cluster_algo, cluster_dist, val, dataset)] = pd.Series(x)
         df.to_csv("tmp.csv", sep=",", index=False)
-        st.write("Cluster", (cluster_algo, cluster_dist, dataset, val), "added succesfully!")
+        st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "added succesfully!")
         st.write("The list contains the following cluster:", df.columns)
+    # if csv is empty
     except:
-        df = pd.DataFrame(clustered_data, columns=[(cluster_algo, cluster_dist, dataset, val)])
+        df = pd.DataFrame(clustered_data, columns=[(cluster_algo, cluster_dist, val, dataset)])
         df.to_csv("tmp.csv", sep=",", index=False)
-        st.write("Cluster", (cluster_algo, cluster_dist, dataset, val), "added succesfully!")
+        st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "added succesfully!")
         st.write("The list contains the following cluster:", df.columns)
 
+# Clustering evaluation
 st.header("Clustering evaluation")
 index_eval = st.selectbox('Choose an adorable index',["ARI", "NMI", "Completeness Score", "Homogeneity Score"])
+
+# generate buttons to show/hide values and plots
+col1, col2 = st.beta_columns(2)
+show_val = col1.button("Show values and plot")
+hide_val = col2.button("Hide values and plot")
 
 # iterate over cluster results and calculate score with chosen index
 try:
@@ -138,25 +143,54 @@ try:
             I1 = Indices(predicted, labels)
             score = I1.index_external(index_eval)
             results.append([score, df.columns[i]])
-            st.write(score, df.columns[i])
+            if show_val:
+                st.write(score, df.columns[i])
+
+# if list is empty or two diff. datasets were chosen
 except:
-    st.write("Cluster-results-table is empty.")
+    st.write("Cluster-results-table is empty or two different datasets are chosen for comparison.")
 
-# desc = np.array([df.columns])
-# stats = np.zeros(len(results))
-# for i in range(0, len(results)):
-#     stats[i] = results[i][0]
-#
-# angles=np.linspace(0, 2*np.pi, len(desc), endpoint=False)
-# stats=np.concatenate((stats,[stats[0]]))
-# angles=np.concatenate((angles,[angles[0]]))
-#
-# #fig=sns.plot.figure()
-# ax = fig.add_subplot(111, polar=True)
-# ax.plot(angles, stats, 'o-', linewidth=2)
-# ax.fill(angles, stats, alpha=0.25)
-# ax.set_thetagrids(angles * 180/np.pi, desc)
-# ax.set_title(index_eval)
-# ax.grid(True)
+if show_val:
+    try:
+        # preprocess radar plot
+        desc_list = []
+        for j in range(0, len(results)):
+            desc_list.append(str(results[j][1][0:(len(results[j][1])-(len(dataset)+5))])+")")
+        desc = np.array(desc_list)
+        stats = np.zeros(len(results))
+        for i in range(0, len(results)):
+            stats[i] = results[i][0]
 
+        # if length of results smaller than 3, barplot instead of radar chart
+        if len(results) <= 2:
+            fig, ax = plt.subplots()
+            labels, ys = list(desc), list(stats)
+            xs = np.arange(len(labels))
+            width = 0.5
+            plt.bar(xs, ys, width, align='center')
+            plt.xticks(xs, labels)
+            plt.yticks(ys)
+            st.pyplot(fig)
+
+        #if length of results higher than 2 radar chart
+        else:
+            # define angles
+            angles=np.linspace(0, 2*np.pi, len(desc), endpoint=False)
+            stats=np.concatenate((stats,[stats[0]]))
+            angles=np.concatenate((angles,[angles[0]]))
+
+            # print radar plot
+            fig = plt.show()
+            ax = plt.subplot(111, polar=True)
+            ax.plot(angles, stats, 'o-', linewidth=2)
+            ax.fill(angles, stats, alpha=0.25)
+            ax.set_thetagrids((angles * 180 / np.pi)[0:len(results)], desc)
+            ax.set_title("Index:"+" "+index_eval+","+" "+"Dataset:"+" "+dataset)
+            ax.grid(True)
+            st.pyplot(fig)
+
+    # if list is empty or two diff. datasets were chosen
+    except:
+        st.write("Plot not possible.")
+        st.write("*Remember to not compare between different datasets.*")
 
