@@ -48,54 +48,53 @@ else:
 
 
 # cluster button
-if st.button('Run Clustering'):
-    if cluster_algo == 'DBSCAN':
-        clusters, stuff = cluster.cluster(epsilon, minpts)
-    else:
-        clusters, stuff = cluster.cluster(k_value)
+if cluster_algo == 'DBSCAN':
+    clusters, stuff = cluster.cluster(epsilon, minpts)
+else:
+    clusters, stuff = cluster.cluster(k_value)
 
-    clustered_data = np.zeros(len(cluster.data))
-    for ic,c in enumerate(clusters):
-        clustered_data[c] = ic+1
+clustered_data = np.zeros(len(cluster.data))
+for ic,c in enumerate(clusters):
+    clustered_data[c] = ic+1
 
-    if cluster_algo == 'DBSCAN':
-        color_palette = ['black'] + sns.color_palette("husl", len(set(clustered_data))-1)
-    else:
-        color_palette = sns.color_palette("husl", len(set(clustered_data)))
+if cluster_algo == 'DBSCAN':
+    color_palette = ['black'] + sns.color_palette("husl", len(set(clustered_data))-1)
+else:
+    color_palette = sns.color_palette("husl", len(set(clustered_data)))
 
-    st.success('Great choice! Here are the results!!!!')
-    st.balloons()
+st.success('Great choice! Here are the results!!!!')
+st.balloons()
 
-    # Projections
-    col1, col2 = st.beta_columns(2)
-    col1.header("Projection with TSNE")
-    perp = col1.slider("Perplexity for TSNE", 5, 50, 25)
-    col1.write("TSNE is a nonlinear dimension reduction. The outcome will depend on the perplexity you have chosen. ")
-
-
-    col2.header("Projection with PCA")
-    col2.markdown("#")
-    col2.write("PCA is a linear dimension reduction. The data will be projected on the first 2 principal components, "
-            "which capture the most variance in the data. ")
+# Projections
+col1, col2 = st.beta_columns(2)
+col1.header("Projection with TSNE")
+perp = col1.slider("Perplexity for TSNE", 5, 50, 25)
+col1.write("TSNE is a nonlinear dimension reduction. The outcome will depend on the perplexity you have chosen. ")
 
 
-    # actual projecting and plot generating
-    col1, col2 = st.beta_columns(2)
-    fig, ax = plt.subplots()
-    with st.spinner('Please wait a second. Some colorful plots are generated...'):
-        projected_data_tsne = TSNE(random_state=42, perplexity=perp).fit_transform(cluster.data)
-        sns.scatterplot(x=projected_data_tsne[:,0], y=projected_data_tsne[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
-    col1.pyplot(fig)
+col2.header("Projection with PCA")
+col2.markdown("#")
+col2.write("PCA is a linear dimension reduction. The data will be projected on the first 2 principal components, "
+        "which capture the most variance in the data. ")
 
 
-    fig, ax = plt.subplots()
-    with st.spinner('Please wait a second. Some colorful plots are generated...'):
-        projected_data_pca = PCA(random_state=42, n_components=3).fit_transform(cluster.data)
-        sns.scatterplot(x=projected_data_pca[:,0], y=projected_data_pca[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
-    col2.pyplot(fig)
+# actual projecting and plot generating
+col1, col2 = st.beta_columns(2)
+fig, ax = plt.subplots()
+with st.spinner('Please wait a second. Some colorful plots are generated...'):
+    projected_data_tsne = TSNE(random_state=42, perplexity=perp).fit_transform(cluster.data)
+    sns.scatterplot(x=projected_data_tsne[:,0], y=projected_data_tsne[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
+col1.pyplot(fig)
 
-    if cluster_algo == 'DBSCAN':
-        st.write("*Please notice for the DBSCAN clustering algorithm: Data points classified as noise are plotted as black points*")
+
+fig, ax = plt.subplots()
+with st.spinner('Please wait a second. Some colorful plots are generated...'):
+    projected_data_pca = PCA(random_state=42, n_components=3).fit_transform(cluster.data)
+    sns.scatterplot(x=projected_data_pca[:,0], y=projected_data_pca[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
+col2.pyplot(fig)
+
+if cluster_algo == 'DBSCAN':
+    st.write("*Please notice for the DBSCAN clustering algorithm: Data points classified as noise are plotted as black points*")
 
 
     # Index calculation
