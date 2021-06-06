@@ -28,7 +28,7 @@ class kmedoidsClustering(Clustering):
         ## expected cluster values
         self.labels = []
 
-    def cluster(self, k, init="k-medoids++"):
+    def cluster(self, k, init="k-medoids++", seed=42):
         """
         clustering method. Will execute clustering on the data saved in self.data with the metric
         given in self.metric
@@ -40,7 +40,7 @@ class kmedoidsClustering(Clustering):
         if k == 1:
             return self.package([0 for i in range(len(self.data))]), [0]
 
-        kmedoids = KMedoids(n_clusters=k, random_state=42, init=init, metric=self.metric, method='pam')
+        kmedoids = KMedoids(n_clusters=k, random_state=seed, init=init, metric=self.metric, method='pam')
         kmedoids.fit(self.data)
 
         return self.package(kmedoids.labels_), kmedoids.cluster_centers_
