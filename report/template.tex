@@ -1,4 +1,5 @@
-\documentclass[12pt]%[english]
+% !TeX spellcheck = <none>
+\documentclass[12pt, english]
 {article}
 
 \usepackage{graphicx}
@@ -82,9 +83,9 @@ Semester: Summer Term 2021\\
 
 \begin{tabular}{ll}
 Authors: & \textsc{Franziska Hicking} \\
-& {\small your Student ID} \\
-& {\small your.email@ddre.ss} \\
-& {\small branch of study (Bachelor/Master, semester count)} \\
+& {\small 6673525} \\
+& {\small franziska.hicking@stud.uni-frankfurt.de} \\
+& {\small Master Bioinformatics, 2} \\
 & \textsc{Jonas Elpelt} \\
 & {\small 6673181}\\
 &{\small  elpelt@stud.uni-frankfurt.de}\\
@@ -115,9 +116,11 @@ T4 - DISTANCE MEASURES AND CLUSTERING
 \newpage 
 
 \begin{abstract}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+Clustering algorithms can be important tools during the analysis of datasets. They divide a dataset into groups of items based on a certain measure of similarity such as the distances between each of the items. 
+In this work, we implemented and compared four different clustering algorithms (K-Means, K-Medoids, K-Median, DBSCAN). For this, we selected four distinct datasets as well as multiple distance measures (Manhattan, Euclidean, Angular cosine, Chebyshev). For efficient comparison of the clustering results we made use of multiple clustering indices. Additionally, we implemented a web frontend which provides the ability to run all clustering algorithms with distance measures, datasets and clustering indices chosen by the user. The results will be visualized afterwards.
+After running all algorithms with each of the datasets respectively and all distance measures where they could be applied, we compared the resulting values of the clustering indices.
+Our results show that
 
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
 \end{abstract}
 
 \newpage
@@ -131,7 +134,8 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
 \label{def_DM}
 \input{modules/distances/definition}
 \section{Different Distance Measurements} \label{distances}
-
+\subsection{Manhattan distance}
+\input{modules/distances/manhattan}
 \subsection{Euclidean Distances}
 \input{modules/distances/euclidean}
 
@@ -147,12 +151,18 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
 \input{modules/datasets/housevotes}
 \subsection{Wine recognition dataset}
 \input{modules/datasets/wine}
+\subsection{Iris dataset}
+\input{modules/datasets/iris}
+\subsection{Diabetes dataset} \label{diabetes}
+\input{modules/datasets/diabetes}
 
 \section{Clustering Algorithms}
 \subsection{K-Means}
+\input{modules/algorithms/kmeans}
 \subsection{K-Medoids}
 \input{modules/algorithms/kmedoids}
 \subsection{K-Median}
+\input{modules/algorithms/kmedians}
 \subsection{DBSCAN}
 \input{modules/algorithms/dbscan}
 
@@ -168,6 +178,8 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
 \section{Description of Evaluation Module}
 \subsection{t-SNE}
 \input{modules/dim_reduction_methods/tsne}
+\subsection{Principal Component Analysis (PCA)}
+\input{modules/dim_reduction_methods/pca}
 
 \section{Web Frontend and User Manual}
 ANMERKUNGEN:
