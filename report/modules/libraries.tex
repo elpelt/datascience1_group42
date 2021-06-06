@@ -1,23 +1,26 @@
-Multiple libraries were used for their implementation of cluster algorithms and other functionality needed for working with results and visualising them. Below follows a brief description of all used libraries.
+Multiple libraries are used for their implementation of cluster algorithms and other functionality needed for working with results and visualising them. Below follows a brief description of all used libraries.
 
-\subsection{pyclustering}
+\subsection[pyclustering]{pyclustering v0.10.1.2}
+
 pyclustering is a data mining library, focusing on clustering algorithms written in C++ and Python by Andrei Novikov \cite{Novikov2019}. The library contains a wide range of clustering algorithms implemented in Python with an optional C++ core. If possible pyclustering falls back to its C++ implementations utilising its efficiency and runtime benefits.\\
 We use pyclusterings implementation of K-Means and K-Medians.
 
-\subsection{scikit learn}
+\subsection[scikit learn]{scikit learn v0.23.2}
 scikit learn is a wide rangeing data analysis tool kit for python encompassing algorithms not only for clustering but for classification, regression and more \cite{scikitlearn}.\\
-The library is used for its implemntations of DBSCAN, One-Hot-Encoding, StandardScaler, TSNE and PCA.
+The library is used for its implementations of DBSCAN, One-Hot-Encoding, StandardScaler, t-SNE and PCA.
 
-\subsection{scikit learn extra}
-scikit learn extra is an extension to scikit learn spanning algorithms that do not satisfy the inclusion criteria of scikit learn. This library is used for its implementation of K-Medoids that is fully compatible with all other scikit learn algorithms.
+\subsection[scikit learn extra]{scikit learn extra v0.2.0}
+scikit learn extra is an extension to scikit learn spanning algorithms that do not satisfy the inclusion criteria of scikit learn \cite{scikit-learn-extra}. This library is used for its implementation of K-Medoids that is fully compatible with all other scikit learn algorithms .
 
-\subsection{numpy}
-numpy is a fundamental library mostly used for its array structure implementing a C++/Fortran like way of saveing and organising data while still being relatively easy to use. Being a dependency of every other package used in this project we use numpy arrays to store and work with our datasets.
+\subsection[numpy]{numpy v1.19.2}
+numpy is a fundamental library mostly used for its array structure implementing a C++/Fortran like way of saveing and organising data while still being relatively easy to use \cite{numpy}. Being a dependency of every other package used in this project we use numpy arrays to store and work with our datasets.
 
-\subsection{seaborn}
-seaborn is a powerful data visualisation library build on top of pythons matplotlib. seaborn simplyfies plotting predefined templates. We use seaborns \texttt{scatterplot} template for visualising the TSNE and PCA projections of the cluster results.
+\subsection[seaborn]{seaborn v0.11.0}
+seaborn is a powerful data visualisation library build on top of pythons matplotlib \cite{Hunter:2007}. seaborn simplyfies plotting with predefined templates \cite{seaborn}. We use seaborns \texttt{scatterplot} template for visualising the t-SNE and PCA projections of the cluster results as well as generating the plots for clustering evaluation. 
 
-\subsection{streamlit}
-streamlit is a easy-to-use library for building simple web apps. Our webfrontend is implemented in streamlit and is also hosted on their sharing service.\\
+\subsection[streamlit]{streamlit v0.82.0}
+streamlit is an easy-to-use library for building simple web apps \cite{streamlit}. Our webfrontend is implemented in streamlit and is also hosted on their free sharing service .\\ 
 \\
------ TODO ----- Link zur gehosteten app
+
+Link zum Web-Frontend: \\
+\href{https://share.streamlit.io/elpelt/datascience1_group42/main/code/web_frontend.py}{https://share.streamlit.io/elpelt/datascience1\_group42/main/code/web\_frontend.py}
