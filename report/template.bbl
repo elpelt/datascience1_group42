@@ -1,0 +1,147 @@
+\begin{thebibliography}{10}
+
+\bibitem{MMDS}
+Jure Leskovec, Anand Rajaraman, and Jeffrey~David Ullman.
+\newblock Definition of a distance measure.
+\newblock In {\em Mining of Massive Datasets - THIRD EDITION}, page~97. Infolab
+  Stanford EDU, 2020.
+
+\bibitem{cosdist}
+Cosine distance, cosine similarity, angular cosine distance, angular cosine
+  similarity, Jul 2017.
+
+\bibitem{Dua2019}
+Dheeru Dua and Casey Graff.
+\newblock {UCI} {M}achine {L}earning {R}epository, 2017.
+
+\bibitem{diabetes}
+Bradley Efron, Trevor Hastie, Iain Johnstone, and Robert Tibshirani.
+\newblock Least angle regression.
+\newblock {\em The Annals of Statistics}, 32:407--499, 2004.
+
+\bibitem{Jin2010}
+Xin Jin and Jiawei Han.
+\newblock {\em K-Medoids Clustering}, pages 564--565.
+\newblock Springer US, Boston, MA, 2010.
+
+\bibitem{kaufman2009finding}
+Leonard Kaufman and Peter~J Rousseeuw.
+\newblock {\em Finding groups in data: an introduction to cluster analysis},
+  volume 344.
+\newblock John Wiley \& Sons, 2009.
+
+\bibitem{kmed}
+Christopher Whelan, Greg Harrell, and Jin Wang.
+\newblock Understanding the k-medians problem.
+\newblock {\em Int'l Conf. Scientific Computing}, pages 219--222, 2015.
+
+\bibitem{kmed_time}
+Sirion Vittayakorn, Sanpawat Kantabutra, and Chularat Tanprasert.
+\newblock The parallel complexities of the k-medians related problems.
+\newblock {\em IEEE Xplore}, 2008.
+
+\bibitem{algo_kmed}
+K-means and k-medians, 2020.
+
+\bibitem{dbscan}
+Martin Ester, Hans-Peter Kriegel, J\"{o}rg Sander, and Xiaowei Xu.
+\newblock A density-based algorithm for discovering clusters in large spatial
+  databases with noise.
+\newblock In {\em Proceedings of the Second International Conference on
+  Knowledge Discovery and Data Mining}, KDD'96, page 226–231. AAAI Press,
+  1996.
+
+\bibitem{dbscanrevisited}
+Erich Schubert, J\"{o}rg Sander, Martin Ester, Hans~Peter Kriegel, and Xiaowei
+  Xu.
+\newblock {DBSCAN Revisited}, {Revisited: Why and How You Should (Still) Use
+  DBSCAN}.
+\newblock {\em ACM Trans. Database Syst.}, 42(3), July 2017.
+
+\bibitem{scikitlearn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay.
+\newblock Scikit-learn: Machine learning in {P}ython.
+\newblock {\em Journal of Machine Learning Research}, 12:2825--2830, 2011.
+
+\bibitem{tsne}
+Laurens van~der Maaten and Geoffrey Hinton.
+\newblock Viualizing data using t-sne.
+\newblock {\em Journal of Machine Learning Research}, 9:2579--2605, 11 2008.
+
+\bibitem{wattenberg2016how}
+Martin Wattenberg, Fernanda Viégas, and Ian Johnson.
+\newblock How to use t-sne effectively.
+\newblock {\em Distill}, 2016.
+
+\bibitem{tsne_matlab}
+Mathworks documentation, t-sne, 2021.
+
+\bibitem{pca_beg}
+Ian~T. Jolliffe and Jorge Cadima.
+\newblock Principal component analysis: a review and recent developments.
+\newblock {\em The Royal Societey Publishing}, 2016.
+
+\bibitem{pca_step}
+Zakaria Jaadi.
+\newblock A step-by-step explanation of principal component analysis (pca),
+  2021.
+
+\bibitem{Novikov2019}
+Andrei Novikov.
+\newblock {PyClustering}: {D}ata {M}ining {L}ibrary.
+\newblock {\em Journal of Open Source Software}, 4(36):1230, apr 2019.
+
+\bibitem{scikit-learn-extra}
+scikit-learn-extra.
+\newblock \url{https://github.com/scikit-learn-contrib/scikit-learn-extra},
+  2021.
+
+\bibitem{numpy}
+Charles~R. Harris, K.~Jarrod Millman, St{\'{e}}fan~J. van~der Walt, Ralf
+  Gommers, Pauli Virtanen, David Cournapeau, Eric Wieser, Julian Taylor,
+  Sebastian Berg, Nathaniel~J. Smith, Robert Kern, Matti Picus, Stephan Hoyer,
+  Marten~H. van Kerkwijk, Matthew Brett, Allan Haldane, Jaime~Fern{\'{a}}ndez
+  del R{\'{i}}o, Mark Wiebe, Pearu Peterson, Pierre G{\'{e}}rard-Marchant,
+  Kevin Sheppard, Tyler Reddy, Warren Weckesser, Hameer Abbasi, Christoph
+  Gohlke, and Travis~E. Oliphant.
+\newblock Array programming with {NumPy}.
+\newblock {\em Nature}, 585(7825):357--362, September 2020.
+
+\bibitem{Hunter:2007}
+J.~D. Hunter.
+\newblock Matplotlib: A 2d graphics environment.
+\newblock {\em Computing in Science \& Engineering}, 9(3):90--95, 2007.
+
+\bibitem{seaborn}
+Michael~L. Waskom.
+\newblock seaborn: statistical data visualization.
+\newblock {\em Journal of Open Source Software}, 6(60):3021, 2021.
+
+\bibitem{streamlit}
+streamlit.
+\newblock \url{https://github.com/streamlit/streamlit}, 2021.
+
+\bibitem{winedata}
+Moshe Lichman.
+\newblock {UCI} {M}achine {L}earning {R}epository, 2013.
+
+\bibitem{heuser2000lehrbuch}
+Harro Heuser.
+\newblock {\em Lehrbuch der {A}nalysis : {T}eil 2}.
+\newblock Mathematische Leitfäden. B.G. Teubner, Stuttgart, 11. auflage
+  edition, 2000.
+
+\bibitem{harris2020array}
+Charles~R. Harris, K.~Jarrod Millman, St{\'{e}}fan~J. van~der Walt, Ralf
+  Gommers, Pauli Virtanen, David Cournapeau, Eric Wieser, Julian Taylor,
+  Sebastian Berg, Nathaniel~J. Smith, Robert Kern, Matti Picus, Stephan Hoyer,
+  Marten~H. van Kerkwijk, Matthew Brett, Allan Haldane, Jaime~Fern{\'{a}}ndez
+  del R{\'{i}}o, Mark Wiebe, Pearu Peterson, Pierre G{\'{e}}rard-Marchant,
+  Kevin Sheppard, Tyler Reddy, Warren Weckesser, Hameer Abbasi, Christoph
+  Gohlke, and Travis~E. Oliphant.
+\newblock Array programming with {NumPy}.
+\newblock {\em Nature}, 585(7825):357--362, September 2020.
+
+\end{thebibliography}

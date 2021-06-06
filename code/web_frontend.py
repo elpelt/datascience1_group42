@@ -140,7 +140,6 @@ try:
         for i in range(0, len(df.columns)):
             labels = cluster.labels.tolist()
             predicted = df.iloc[:, i].values.tolist()
-            print(max(labels), len(labels))
             I1 = Indices(predicted, labels)
             score = I1.index_external(index_eval)
             results.append([score, df.columns[i]])
