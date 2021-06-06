@@ -1,0 +1,15 @@
+The K-Medians cluster algorithm is closely related to the K-Means algorithm, but is more robust to outliers because it uses the median as statistics in order to determine the center of each cluster. Its main approach is to cluster data by minimizing the absolute deviations, corresponding to the Manhattan distance, between each point and its closest cluster center, i.e., creating $k$ disjoint cluster by minimizing the following function. \cite{kmed}
+\begin{align}
+    Q(\{\pi_j\}^K_{j=1}) = \sum_{j=1}^{K}\sum_{x \in \pi_j}||x-c_j||_1
+\end{align}
+The geometric median is used for the minimization.
+\begin{align}
+    {{arg\, min}\atop{y\in\mathbb{R}^n}} \sum_{i=1}^m ||x_i-y||_2
+\end{align}
+At the start of the algorithm, k cluster centers must be initialized. There are many different approaches to perform this task, such as Random Initialization, Density Analysis, Single Dimension Subsets, and many more. In this work, the random approach was used because many of the other theories, while theoretically promising, are inferior or nearly equivalent in performance to the results produced by random initialization. \cite{kmed} Achieving global optimization in k-medians is known to be NP-complete \cite{kmed_time}.\\ 
+The algorithm works as following:\cite{algo_kmed}
+\begin{enumerate}
+    \item Assign each dataset to a cluster, thus its nearest cluster center using the Manhattan distance as default.
+    \item Shift the cluster centers to the position of the vector whose elements are equal to the median value of each dimension of all instances in a cluster.
+    \item There is no guarantee to get the perfect cluster because the starting cluster centers were initialized randomly. There is the approach of reinitializing the algorithm many times and securing the best cluster center of all iterations.
+\end{enumerate}
