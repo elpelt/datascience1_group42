@@ -5,14 +5,11 @@ from kmedians import kmediansClustering
 from kmedoids import kmedoidsClustering
 from dbscan import DBSCANClustering
 from indices import Indices
-from random import uniform
-from indices import Indices
 import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 from sklearn.decomposition import PCA
-from sklearn.metrics import silhouette_score, homogeneity_score, completeness_score, adjusted_rand_score
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(page_title="Group 42", page_icon=":koala:")
@@ -25,7 +22,7 @@ col1, col2 = st.beta_columns(2)
 dataset = col1.selectbox('Choose a beautiful dataset',['iris', 'wine', 'diabetes', 'housevotes'])
 
 cluster_dist_desc = {'euclidean': 'd(x,y)=\sqrt{\sum_{i=1}^{n}(|x_i-y_i|)^2}',
-                     'manhattan': 'd(x,y)=\sum_{i=1}^{n}(|x_i-y_i|)',
+                     'manhattan': '',
                      'chebyshev': 'd(x,y)=\max(|x_i - y_i|)',
                      'cosine': 'd(x,y) = \\frac{\\arccos(\\frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}})}{\pi}'}
 cluster_dist = col1.selectbox('Choose an awesome distance measure',list(cluster_dist_desc.keys()))
@@ -42,16 +39,13 @@ cluster.load_data()
 if cluster_algo == 'DBSCAN':
     epsilon = col2.slider("Choose a nice value for epsilon", min_value=0.1, max_value=20.0, step=0.1)
     minpts = col2.slider("Choose a minimal number of nearest points", min_value=1, max_value=20, step=1, value=5)
-    
+    clusters, stuff = cluster.cluster(epsilon, minpts)
 else:
     k_value = col2.slider("Choose a nice value for k (number of clusters)", min_value=1, max_value=10, step=1, value=3)
 
+    if cluster_algo in  ['kmedoids', 'kmeans', 'kmedians']:
+        clusters, stuff = cluster.cluster(k_value)
 
-# cluster button
-if cluster_algo == 'DBSCAN':
-    clusters, stuff = cluster.cluster(epsilon, minpts)
-else:
-    clusters, stuff = cluster.cluster(k_value)
 
 clustered_data = np.zeros(len(cluster.data))
 for ic,c in enumerate(clusters):
@@ -75,7 +69,7 @@ col1.write("TSNE is a nonlinear dimension reduction. The outcome will depend on 
 col2.header("Projection with PCA")
 col2.markdown("#")
 col2.write("PCA is a linear dimension reduction. The data will be projected on the first 2 principal components, "
-        "which capture the most variance in the data. ")
+           "which capture the most variance in the data. ")
 
 
 # actual projecting and plot generating
@@ -96,11 +90,6 @@ col2.pyplot(fig)
 if cluster_algo == 'DBSCAN':
     st.write("*Please notice for the DBSCAN clustering algorithm: Data points classified as noise are plotted as black points*")
 
-
-    # Index calculation
-    #col1, col2 = st.beta_columns(2)
-    #add_result = col1.button('Add')
-    #reset_tmp = col2.button('Reset')
 
 # generates button to add or reset the calculated clustering
 col1, col2 = st.beta_columns(2)
@@ -151,6 +140,7 @@ try:
         for i in range(0, len(df.columns)):
             labels = cluster.labels.tolist()
             predicted = df.iloc[:, i].values.tolist()
+            print(max(labels), len(labels))
             I1 = Indices(predicted, labels)
             score = I1.index_external(index_eval)
             results.append([score, df.columns[i]])
@@ -204,4 +194,3 @@ if show_val:
     except:
         st.write("Plot not possible.")
         st.write("*Remember to not compare between different datasets.*")
-
