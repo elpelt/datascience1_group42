@@ -18,52 +18,48 @@ I was expecting a `,' or a `}'---line 215 of file bib.bib
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--string name "april" is undefined
---line 222 of file bib.bib
+--line 245 of file bib.bib
 Warning--I didn't find a database entry for "fisher1936use"
-Warning--I didn't find a database entry for "scikit-learn-extra"
-Warning--I didn't find a database entry for "numpy"
-Warning--I didn't find a database entry for "Hunter:2007"
-Warning--I didn't find a database entry for "seaborn"
-Warning--I didn't find a database entry for "streamlit"
-You've used 21 entries,
+Warning--I didn't find a database entry for "cikit-learn-extra"
+You've used 26 entries,
             1791 wiz_defined-function locations,
-            576 strings with 7046 characters,
-and the built_in function-call counts, 4732 in all, are:
-= -- 376
-> -- 278
+            592 strings with 7369 characters,
+and the built_in function-call counts, 5880 in all, are:
+= -- 455
+> -- 368
 < -- 5
-+ -- 102
-- -- 81
-* -- 301
-:= -- 741
-add.period$ -- 57
-call.type$ -- 21
-change.case$ -- 19
++ -- 135
+- -- 109
+* -- 401
+:= -- 932
+add.period$ -- 70
+call.type$ -- 26
+change.case$ -- 24
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 213
-empty$ -- 449
-format.name$ -- 81
-if$ -- 1074
+cite$ -- 26
+duplicate$ -- 250
+empty$ -- 552
+format.name$ -- 109
+if$ -- 1314
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 18
-newline$ -- 99
-num.names$ -- 18
-pop$ -- 89
+int.to.str$ -- 26
+missing$ -- 21
+newline$ -- 122
+num.names$ -- 21
+pop$ -- 106
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 131
+skip$ -- 148
 stack$ -- 0
-substring$ -- 198
-swap$ -- 66
+substring$ -- 254
+swap$ -- 71
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 32
-width$ -- 23
-write$ -- 212
+while$ -- 40
+width$ -- 28
+write$ -- 261
 (There were 2 error messages)

@@ -65,23 +65,18 @@ F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
 \newblock Scikit-learn: Machine learning in {P}ython.
 \newblock {\em Journal of Machine Learning Research}, 12:2825--2830, 2011.
 
-\bibitem{Novikov2019}
-Andrei Novikov.
-\newblock {PyClustering}: {D}ata {M}ining {L}ibrary.
-\newblock {\em Journal of Open Source Software}, 4(36):1230, apr 2019.
-
 \bibitem{tsne}
 Laurens van~der Maaten and Geoffrey Hinton.
 \newblock Viualizing data using t-sne.
 \newblock {\em Journal of Machine Learning Research}, 9:2579--2605, 11 2008.
 
-\bibitem{tsne_matlab}
-Mathworks documentation, t-sne, 2021.
-
 \bibitem{wattenberg2016how}
 Martin Wattenberg, Fernanda Viégas, and Ian Johnson.
 \newblock How to use t-sne effectively.
 \newblock {\em Distill}, 2016.
+
+\bibitem{tsne_matlab}
+Mathworks documentation, t-sne, 2021.
 
 \bibitem{pca_beg}
 Ian~T. Jolliffe and Jorge Cadima.
@@ -92,6 +87,41 @@ Ian~T. Jolliffe and Jorge Cadima.
 Zakaria Jaadi.
 \newblock A step-by-step explanation of principal component analysis (pca),
   2021.
+
+\bibitem{Novikov2019}
+Andrei Novikov.
+\newblock {PyClustering}: {D}ata {M}ining {L}ibrary.
+\newblock {\em Journal of Open Source Software}, 4(36):1230, apr 2019.
+
+\bibitem{scikit-learn-extra}
+scikit-learn-extra.
+\newblock \url{https://github.com/scikit-learn-contrib/scikit-learn-extra},
+  2021.
+
+\bibitem{numpy}
+Charles~R. Harris, K.~Jarrod Millman, St{\'{e}}fan~J. van~der Walt, Ralf
+  Gommers, Pauli Virtanen, David Cournapeau, Eric Wieser, Julian Taylor,
+  Sebastian Berg, Nathaniel~J. Smith, Robert Kern, Matti Picus, Stephan Hoyer,
+  Marten~H. van Kerkwijk, Matthew Brett, Allan Haldane, Jaime~Fern{\'{a}}ndez
+  del R{\'{i}}o, Mark Wiebe, Pearu Peterson, Pierre G{\'{e}}rard-Marchant,
+  Kevin Sheppard, Tyler Reddy, Warren Weckesser, Hameer Abbasi, Christoph
+  Gohlke, and Travis~E. Oliphant.
+\newblock Array programming with {NumPy}.
+\newblock {\em Nature}, 585(7825):357--362, September 2020.
+
+\bibitem{Hunter:2007}
+J.~D. Hunter.
+\newblock Matplotlib: A 2d graphics environment.
+\newblock {\em Computing in Science \& Engineering}, 9(3):90--95, 2007.
+
+\bibitem{seaborn}
+Michael~L. Waskom.
+\newblock seaborn: statistical data visualization.
+\newblock {\em Journal of Open Source Software}, 6(60):3021, 2021.
+
+\bibitem{streamlit}
+streamlit.
+\newblock \url{https://github.com/streamlit/streamlit}, 2021.
 
 \bibitem{winedata}
 Moshe Lichman.
