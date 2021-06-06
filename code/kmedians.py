@@ -32,7 +32,7 @@ class kmediansClustering(Clustering):
         ## seed for initializer, None if no seed is used
         self.seed = seed
     
-    def cluster(self, k):
+    def cluster(self, k, plusplus=True):
         """
         clustering method. Will execute clustering on the data saved in self.data with the metric
         given in self.metric

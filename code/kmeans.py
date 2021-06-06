@@ -9,7 +9,7 @@ class kmeansClustering(Clustering):
     centers can be initialised using the k++ or the random initialiser
     """
     
-    def __init__(self, metric, dataset, seed):
+    def __init__(self, metric, dataset, seed=None):
         """
         constructor
         @param metric metric description as string. allowed: "euclidean", "manhattan", "chebyshev", "cosine"
