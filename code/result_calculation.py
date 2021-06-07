@@ -21,10 +21,10 @@ for c in kalgos:
     for d in distances:
         for s in datasets:
             for k in range(1, 11):
-                alg = kalgoclass[c](d, s, seed)
-                alg.load_data()
-                clusters, centers = alg.cluster(k)
-                if not results.set_exists(s, c, d, clusters, centers, k=k):
+                if not results.set_exists(s, c, d, k=k):
+                    alg = kalgoclass[c](d, s, seed)
+                    alg.load_data()
+                    clusters, centers = alg.cluster(k)
                     results.save_set(s, c, d, clusters, centers, k=k)
                     print(f"saved {s}, {c}, {d}, k={k}")
     
@@ -34,10 +34,10 @@ for d in distances:
     for s in datasets:
         for m in range(1, 21):
             for e in [round(0.1 + 0.1*i, 2) in range(200)]:
-                alg = DBSCANClustering(d, s, seed)
-                alg.load_data()
-                clusters, centers = alg.cluster(k)
-                if not results.set_exists(s, c, d, clusters, centers, minpts=m, eps=e):
+                if not results.set_exists(s, c, d, minpts=m, eps=e):
+                    alg = DBSCANClustering(d, s, seed)
+                    alg.load_data()
+                    clusters, centers = alg.cluster(k)
                     results.save_set(s, c, d, clusters, centers, minpts=m, eps=e)
                     print(f"saved {s}, DBSCAN, {d}, minpts={m}, eps={e}")
 
