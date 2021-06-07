@@ -43,7 +43,7 @@ class kmedoidsClustering(Clustering):
         if k == 1:
             return self.package([0 for i in range(len(self.data))]), [0]
         
-        kmedoids = KMedoids(n_clusters=k, random_state=seed, init=init, metric=self.metric, method='pam')
+        kmedoids = KMedoids(n_clusters=k, random_state=self.seed, init=init, metric=self.metric, method='pam')
 
         kmedoids.fit(self.data)
 
