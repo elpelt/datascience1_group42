@@ -29,7 +29,9 @@ for c in kalgos:
 for d in distances:
     for s in datasets:
         for m in range(1, 21):
-            alg = DBSCANClustering(d, s, seed)
-            clusters, centers = alg.cluster(k)
+            for e in [round(0.1 + 0.1*i, 2) in range(200)]
+                alg = DBSCANClustering(d, s, seed)
+                clusters, centers = alg.cluster(k)
                 results.save_set(s, c, d, clusters, centers, k=k)
-                print(f"saved {dataset}, {cluster_algo}, {cluster_dist}, minpts={minpts}, eps={epsilon}"")            
+                print(f"saved {dataset}, {cluster_algo}, {cluster_dist}, minpts={minpts}, eps={epsilon}")
+print(f"finished DBSCAN algorithm")
