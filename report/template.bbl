@@ -10,9 +10,21 @@ Jure Leskovec, Anand Rajaraman, and Jeffrey~David Ullman.
 Cosine distance, cosine similarity, angular cosine distance, angular cosine
   similarity, Jul 2017.
 
+\bibitem{scikitlearn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay.
+\newblock Scikit-learn: Machine learning in {P}ython.
+\newblock {\em Journal of Machine Learning Research}, 12:2825--2830, 2011.
+
 \bibitem{Dua2019}
 Dheeru Dua and Casey Graff.
 \newblock {UCI} {M}achine {L}earning {R}epository, 2017.
+
+\bibitem{fisher1936use}
+Ronald~A Fisher.
+\newblock The use of multiple measurements in taxonomic problems.
+\newblock {\em Annals of eugenics}, 7(2):179--188, 1936.
 
 \bibitem{diabetes}
 Bradley Efron, Trevor Hastie, Iain Johnstone, and Robert Tibshirani.
@@ -29,6 +41,11 @@ Leonard Kaufman and Peter~J Rousseeuw.
 \newblock {\em Finding groups in data: an introduction to cluster analysis},
   volume 344.
 \newblock John Wiley \& Sons, 2009.
+
+\bibitem{scikit-learn-extra}
+scikit-learn-extra.
+\newblock \url{https://github.com/scikit-learn-contrib/scikit-learn-extra},
+  2021.
 
 \bibitem{kmed}
 Christopher Whelan, Greg Harrell, and Jin Wang.
@@ -58,13 +75,6 @@ Erich Schubert, J\"{o}rg Sander, Martin Ester, Hans~Peter Kriegel, and Xiaowei
   DBSCAN}.
 \newblock {\em ACM Trans. Database Syst.}, 42(3), July 2017.
 
-\bibitem{scikitlearn}
-F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
-  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
-  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay.
-\newblock Scikit-learn: Machine learning in {P}ython.
-\newblock {\em Journal of Machine Learning Research}, 12:2825--2830, 2011.
-
 \bibitem{tsne}
 Laurens van~der Maaten and Geoffrey Hinton.
 \newblock Viualizing data using t-sne.
@@ -81,22 +91,17 @@ Mathworks documentation, t-sne, 2021.
 \bibitem{pca_beg}
 Ian~T. Jolliffe and Jorge Cadima.
 \newblock Principal component analysis: a review and recent developments.
-\newblock {\em The Royal Societey Publishing}, 2016.
+\newblock {\em The Royal Societey Publishing}, April 2016.
 
 \bibitem{pca_step}
 Zakaria Jaadi.
 \newblock A step-by-step explanation of principal component analysis (pca),
-  2021.
+  April 2021.
 
 \bibitem{Novikov2019}
 Andrei Novikov.
 \newblock {PyClustering}: {D}ata {M}ining {L}ibrary.
 \newblock {\em Journal of Open Source Software}, 4(36):1230, apr 2019.
-
-\bibitem{scikit-learn-extra}
-scikit-learn-extra.
-\newblock \url{https://github.com/scikit-learn-contrib/scikit-learn-extra},
-  2021.
 
 \bibitem{numpy}
 Charles~R. Harris, K.~Jarrod Millman, St{\'{e}}fan~J. van~der Walt, Ralf
@@ -122,6 +127,14 @@ Michael~L. Waskom.
 \bibitem{streamlit}
 streamlit.
 \newblock \url{https://github.com/streamlit/streamlit}, 2021.
+
+\bibitem{rosenberg2007v}
+Andrew Rosenberg and Julia Hirschberg.
+\newblock V-measure: A conditional entropy-based external cluster evaluation
+  measure.
+\newblock In {\em Proceedings of the 2007 joint conference on empirical methods
+  in natural language processing and computational natural language learning
+  (EMNLP-CoNLL)}, pages 410--420, 2007.
 
 \bibitem{winedata}
 Moshe Lichman.
