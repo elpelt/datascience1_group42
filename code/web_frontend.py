@@ -199,7 +199,7 @@ try:
 
 # if list is empty or two diff. datasets were chosen
 except:
-    st.write("Cluster-table is empty or two different datasets were chosen for comparison.")
+    st.write("Cluster-table is empty.")
 
 
 try:
@@ -226,7 +226,8 @@ try:
         labels, ys = list(desc), list(stats)
         xs = np.arange(len(labels))
         width = 0.5
-        plt.bar(xs, ys, width, align='center')
+        plt.bar(xs[0], ys[0], width, align='center', color='red')
+        plt.bar(xs[1:], ys[1:], width, align='center')
         plt.xticks(xs, labels)
         plt.yticks(ys)
         st.pyplot(fig)
@@ -242,6 +243,7 @@ try:
         fig = plt.show()
         ax = plt.subplot(111, polar=True)
         ax.plot(angles, stats, 'o-', linewidth=2)
+        ax.plot(angles[0], stats[0], 'o-', linewidth=2, color='red')
         ax.fill(angles, stats, alpha=0.25)
         ax.set_thetagrids((angles * 180 / np.pi)[0:len(results)], desc)
         if len(datasets) == 1:
@@ -251,7 +253,6 @@ try:
         ax.grid(True)
         st.pyplot(fig)
 
-# if list is empty or two diff. datasets were chosen
+# if list is empty
 except:
     st.write("Plot not possible.")
-    st.write("*Remember to not compare between different datasets.*")
