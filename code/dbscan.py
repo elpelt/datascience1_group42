@@ -63,6 +63,6 @@ class DBSCANClustering(Clustering):
 
 
 if __name__ == "__main__":
-    c = DBSCANClustering("cosine", "iris")
+    c = DBSCANClustering("cosine", "housevotes")
     c.load_data()
     c.cluster(2, 3)

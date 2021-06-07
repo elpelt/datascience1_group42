@@ -10,13 +10,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 from sklearn.decomposition import PCA
+from results import Results
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(page_title="Group 42", page_icon=":koala:")
 st.title('Datascience: Group 42')
 
-seeded = st.checkbox('Use a random seed. (For replicative results.)', value=False)
+seeded = st.checkbox('Use a random seed. (For replicative results.)', value=True)
 seed = None
+
+# result handler for set seed clusters
+results = Results("./results")
 
 if seeded:
     seed = 42
@@ -44,12 +48,31 @@ cluster.load_data()
 if cluster_algo == 'DBSCAN':
     epsilon = col2.slider("Choose a nice value for epsilon", min_value=0.1, max_value=20.0, step=0.1)
     minpts = col2.slider("Choose a minimal number of nearest points", min_value=1, max_value=20, step=1, value=5)
-    clusters, stuff = cluster.cluster(epsilon, minpts)
+    
+    if seeded and results.set_exists(dataset, cluster_algo, cluster_dist, minpts=minpts, eps=epsilon):
+        clusters, stuff = results.load_set(dataset, cluster_algo, cluster_dist, minpts=minpts, eps=epsilon)
+        print(f"loaded {dataset}, {cluster_algo}, {cluster_dist}, minpts={minpts}, eps={epsilon}")
+    
+    else:
+        clusters, stuff = cluster.cluster(epsilon, minpts)
+        
+        if seeded:
+            results.save_set(dataset, cluster_algo, cluster_dist, clusters, stuff, minpts=minpts, eps=epsilon)
+            print(f"saved {dataset}, {cluster_algo}, {cluster_dist}, minpts={minpts}, eps={epsilon}")
+
 else:
     k_value = col2.slider("Choose a nice value for k (number of clusters)", min_value=1, max_value=10, step=1, value=3)
-
-    if cluster_algo in  ['kmedoids', 'kmeans', 'kmedians']:
+    
+    if seeded and results.set_exists(dataset, cluster_algo, cluster_dist, k=k_value):
+        clusters, stuff = results.load_set(dataset, cluster_algo, cluster_dist, k=k_value)
+        print(f"loaded {dataset}, {cluster_algo}, {cluster_dist}, k={k_value}")
+    
+    else:
         clusters, stuff = cluster.cluster(k_value)
+        
+        if seeded:
+            results.save_set(dataset, cluster_algo, cluster_dist, clusters, stuff, k=k_value)
+            print(f"saved {dataset}, {cluster_algo}, {cluster_dist}, k={k_value}")
 
 clustered_data = np.zeros(len(cluster.data))
 for ic,c in enumerate(clusters):
