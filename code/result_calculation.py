@@ -24,8 +24,9 @@ for c in kalgos:
                 alg = kalgoclass[c](d, s, seed)
                 alg.load_data()
                 clusters, centers = alg.cluster(k)
-                results.save_set(s, c, d, clusters, centers, k=k)
-                print(f"saved {s}, {c}, {d}, k={k}")
+                if not results.set_exists(s, c, d, clusters, centers, k=k):
+                    results.save_set(s, c, d, clusters, centers, k=k)
+                    print(f"saved {s}, {c}, {d}, k={k}")
     
     print(f"finished {c} algorithm")
 
@@ -36,6 +37,8 @@ for d in distances:
                 alg = DBSCANClustering(d, s, seed)
                 alg.load_data()
                 clusters, centers = alg.cluster(k)
-                results.save_set(s, c, d, clusters, centers, k=k)
-                print(f"saved {s}, DBSCAN, {d}, minpts={m}, eps={e}")
+                if not results.set_exists(s, c, d, clusters, centers, minpts=m, eps=e):
+                    results.save_set(s, c, d, clusters, centers, minpts=m, eps=e)
+                    print(f"saved {s}, DBSCAN, {d}, minpts={m}, eps={e}")
+
 print(f"finished DBSCAN algorithm")
