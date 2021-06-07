@@ -1,6 +1,6 @@
 import os
-import pandas as pd
 import json
+import numpy as np
 
 class Results():
     """
@@ -38,6 +38,8 @@ class Results():
 
     def save_set(self, dataset, algorithm, metric, clusters, centers, **kwargs):
         path = self.get_path(dataset, algorithm, metric, **kwargs)
+
+        centers = centers.tolist() if isinstance(centers, np.ndarray) else centers
         
         with open(path, 'w') as f:
             json.dump({"clusters" : clusters, "centers" : centers}, f, ensure_ascii=False)
