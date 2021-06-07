@@ -5,6 +5,8 @@ from dbscan import DBSCANClustering
 
 from results import Results
 
+import numpy as np
+
 kalgos = ['kmeans', 'kmedians', 'kmedoids']
 kalgoclass = {'kmeans': kmeansClustering, 'kmedians': kmediansClustering, 'kmedoids': kmedoidsClustering}
 
@@ -25,6 +27,7 @@ for c in kalgos:
                     alg = kalgoclass[c](d, s, seed)
                     alg.load_data()
                     clusters, centers = alg.cluster(k)
+                    centers = centers.tolist() if isinstance(centers, np.ndarray) else centers
                     results.save_set(s, c, d, clusters, centers, k=k)
                     print(f"saved {s}, {c}, {d}, k={k}")
     
