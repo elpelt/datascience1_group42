@@ -16,7 +16,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(page_title="Group 42", page_icon=":koala:")
 st.title('Datascience: Group 42')
 
-seeded = st.checkbox('Use a random seed. (For replicative results.)', value=True)
+seeded = st.checkbox('Use precalculated results (with random seed for reproduction).', value=True)
 seed = None
 
 # result handler for set seed clusters
