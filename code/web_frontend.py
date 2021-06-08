@@ -226,10 +226,11 @@ try:
         labels, ys = list(desc), list(stats)
         xs = np.arange(len(labels))
         width = 0.5
-        plt.bar(xs[0], ys[0], width, align='center', color='red')
-        plt.bar(xs[1:], ys[1:], width, align='center')
-        plt.xticks(xs, labels)
-        plt.yticks(ys)
+        ax.bar(xs[0], ys[0], width, align='center', color='red')
+        ax.bar(xs[1:], ys[1:], width, align='center')
+        ax.set_xticks(xs)
+        ax.set_xticklabels(labels)
+        ax.set_yticks(ys)
         st.pyplot(fig)
 
     #if length of results higher than 2 radar chart
@@ -240,8 +241,7 @@ try:
         angles=np.concatenate((angles,[angles[0]]))
 
         # print radar plot
-        fig = plt.show()
-        ax = plt.subplot(111, polar=True)
+        fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
         ax.plot(angles, stats, 'o-', linewidth=2)
         ax.plot(angles[0], stats[0], 'o-', linewidth=2, color='red')
         ax.fill(angles, stats, alpha=0.25)
@@ -254,5 +254,6 @@ try:
         st.pyplot(fig)
 
 # if list is empty
-except:
+except Exception as er:
+    print(er)
     st.write("Plot not possible.")

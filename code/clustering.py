@@ -106,7 +106,7 @@ class Clustering():
             self.data = s["data"]
         
         elif self.dataset == "housevotes":
-            path = "../datasets/votes/house-votes-84.data"
+            path = "./datasets/votes/house-votes-84.data"
             self.data, self.labels = self.house_load(path, 0)
                 
         self.data = StandardScaler().fit_transform(self.data)
@@ -128,12 +128,13 @@ class Clustering():
             # list comprehension loading whole dataset
             data = [line.strip().split(',') for line in f][skip:]
 
-            labels = []
+            labels = np.zeros(len(data))
             
             # label extraction. labels are the first attribute
             # democrats are 1, republicans 0
-            for d in data:
-                labels.append(1 if d.pop(0) == "democrat" else 0)
+            for i in range(len(data)):
+                if data[i].pop(0) == "democrat":
+                    labels[i] = 1
             
         # one hot encoding
         enc = OneHotEncoder().fit_transform(data).toarray()
