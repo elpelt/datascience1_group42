@@ -88,9 +88,9 @@ st.balloons()
 
 # Projections
 col1, col2 = st.beta_columns(2)
-col1.header("Projection with TSNE")
-perp = col1.slider("Perplexity for TSNE", 5, 50, 25)
-col1.write("TSNE is a nonlinear dimension reduction. The outcome will depend on the perplexity you have chosen. ")
+col1.header("Projection with t-SNE")
+perp = col1.slider("Perplexity for t-SNE", 5, 50, 25)
+col1.write("t-SNE is a nonlinear dimension reduction. The outcome will depend on the perplexity you have chosen. ")
 
 
 col2.header("Projection with PCA")
@@ -117,6 +117,10 @@ col2.pyplot(fig)
 if cluster_algo == 'DBSCAN':
     st.write("*Please notice for the DBSCAN clustering algorithm: Data points classified as noise are plotted as black points*")
 
+
+# Clustering evaluation
+st.header("Clustering evaluation")
+st.write("Clustering results can be stored in a cluster-table and used for comparative evaluation.")
 
 # generates button to add or reset the calculated clustering
 col1, col2 = st.beta_columns(2)
@@ -170,8 +174,7 @@ try:
     st.write("The cluster-table contains the following cluster:", df.columns)
 except:
     st.write("Cluster-table is empty!")
-# Clustering evaluation
-st.header("Clustering evaluation")
+
 index_eval = st.selectbox('Choose an adorable index',["ARI", "NMI", "Completeness Score", "Homogeneity Score"])
 
 

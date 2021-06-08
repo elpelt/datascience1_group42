@@ -119,6 +119,13 @@ J.~D. Hunter.
 \newblock Matplotlib: A 2d graphics environment.
 \newblock {\em Computing in Science \& Engineering}, 9(3):90--95, 2007.
 
+\bibitem{mckinney-proc-scipy-2010}
+{W}es {M}c{K}inney.
+\newblock {D}ata {S}tructures for {S}tatistical {C}omputing in {P}ython.
+\newblock In {S}t\'efan van~der {W}alt and {J}arrod {M}illman, editors, {\em
+  {P}roceedings of the 9th {P}ython in {S}cience {C}onference}, pages 56 -- 61,
+  2010.
+
 \bibitem{seaborn}
 Michael~L. Waskom.
 \newblock seaborn: statistical data visualization.

@@ -1,11 +1,8 @@
-%K++ initializer
-The K++ initializer is a method which determines the positions of the initial $k$ cluster centroids before starting the K-means algorithm. The following steps outline how the K++ initializer operates:
-
-\begin{enumerate}
-	\item Choose one centroid at random from all possible datapoints.
-	\item Loop through all remaining datapoints (k-1):\\
-	determine the distance $D(x)$ of the datapoint to the nearest already chosen centroid using the Euclidean distance.
-	\item A weighted probability distribution is used to set the next cluster centroid. For each point, the probability to be chosen is proportional to $D(x)^2$, meaning points which are farther away are more likely to be chosen.
-	\item Steps 2 and 3 are repeated until all $k$ cluster centroids have been set.
-	
-\end{enumerate}
+The web frontend is designed to provide an intuitive exploration of the different datasets, clustering algorithms and distances. In an interactive interface multiple clustering settings can be chosen and a visualisation of the results is directly generated. 
+A cluster-table is used to store previous calculated results, which can be plotted within the evaluation module. \\
+A checkbox at the top of the page, which is set by default, allows the use of precalculated clustering results, which have been computed beforehand (with a random seed value) and are stored in the github repository. This was done for reproduction purposes. \\
+The user can choose between four datasets, four distance measures and four different algorithms. If kmeans, kmedian or kmedoids is chosen a value for the parameter k between 1 and 10 has to be set (default k=3). If DBSCAN is chosen the user has to define a value for epsilon and the minimal number of nearest points. The parameter settings can be adjusted with an interactive slider widget. \\
+Moreover the perplexity value for the t-SNE projection can be set individually between 5 and 50 with a slider (default value is 25). The t-SNE and PCA plots are shown next to each other to allow a direct comparison of the lower-dimensional projections. \\
+The frontend is reloaded entirely if a parameter value is changed, a different setting is made or a button is clicked. 
+Ancillary streamlit settings can be found at the upper right corner. Additional explanatory texts provide help and more information. \\
+To motivate the user and claim serious scientific standards some ballons have been added. 
