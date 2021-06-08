@@ -9,6 +9,7 @@ pyclustering = "*"
 scikit-learn = "*"
 scikit-learn-extra = "*"
 seaborn = "*"
+click = "*"
 
 [dev-packages]
 

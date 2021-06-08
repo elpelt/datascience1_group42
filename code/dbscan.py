@@ -28,7 +28,7 @@ class DBSCANClustering(Clustering):
         ## expected cluster values
         self.labels = []
     
-    def cluster(self, eps, minPts):
+    def cluster(self, eps, minpts):
         """
         clustering method. Will execute clustering on the data saved in self.data with the metric
         given in self.metric<br>
@@ -37,7 +37,7 @@ class DBSCANClustering(Clustering):
         @param minPts Minmal number of points in a cluster
         @returns formatted clustered data
         """
-        clustering = DBSCAN(metric=self.metric, eps=eps, min_samples=minPts)
+        clustering = DBSCAN(metric=self.metric, eps=eps, min_samples=minpts)
         clustering.fit(self.data)
  
         return self.package(clustering.labels_)

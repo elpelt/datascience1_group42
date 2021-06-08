@@ -4,6 +4,7 @@ from pyclustering.utils.metric import type_metric, distance_metric
 from sklearn.datasets import load_diabetes, load_iris, load_wine
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import OneHotEncoder
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 
 import numpy as np
 
@@ -146,6 +147,7 @@ class Clustering():
         needs to be implemented in the inheriting cluster algorithm classes
         """
         pass
+
 
 if __name__ == "__main__":
     test = Clustering("cosine", "solarflare1")

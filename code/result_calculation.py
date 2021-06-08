@@ -5,8 +5,6 @@ from dbscan import DBSCANClustering
 
 from results import Results
 
-import numpy as np
-
 kalgos = ['kmeans', 'kmedians', 'kmedoids']
 kalgoclass = {'kmeans': kmeansClustering, 'kmedians': kmediansClustering, 'kmedoids': kmedoidsClustering}
 
