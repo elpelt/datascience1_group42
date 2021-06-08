@@ -20,7 +20,7 @@ seeded = st.checkbox('Use precalculated results (with random seed for reproducti
 seed = None
 
 # result handler for set seed clusters
-results = Results("./results")
+results = Results("./code/results")
 
 if seeded:
     seed = 42
