@@ -98,20 +98,35 @@ col2.markdown("#")
 col2.write("PCA is a linear dimension reduction. The data will be projected on the first 2 principal components, "
            "which capture the most variance in the data. ")
 
+if cluster_algo == 'kmedoids':
+    marking_centroids = np.ones(cluster.data.shape[0])
+    for centroid in stuff:
+        marking_centroids[cluster.data.tolist().index(centroid)] = 25
+    print(marking_centroids)
+
 
 # actual projecting and plot generating
 col1, col2 = st.beta_columns(2)
 fig, ax = plt.subplots()
 with st.spinner('Please wait a second. Some colorful plots are generated...'):
     projected_data_tsne = TSNE(random_state=42, perplexity=perp).fit_transform(cluster.data)
-    sns.scatterplot(x=projected_data_tsne[:,0], y=projected_data_tsne[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
+    if cluster_algo == 'kmedoids':
+        sns.scatterplot(x=projected_data_tsne[:, 0], y=projected_data_tsne[:, 1], hue=clustered_data, ax=ax,
+                        palette=color_palette, legend=False, style=marking_centroids, size=marking_centroids*30, markers=["o", "P"])
+    else:
+        sns.scatterplot(x=projected_data_tsne[:,0], y=projected_data_tsne[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
 col1.pyplot(fig)
 
 
 fig, ax = plt.subplots()
 with st.spinner('Please wait a second. Some colorful plots are generated...'):
     projected_data_pca = PCA(random_state=42, n_components=3).fit_transform(cluster.data)
-    sns.scatterplot(x=projected_data_pca[:,0], y=projected_data_pca[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
+    if cluster_algo == 'kmedoids':
+        sns.scatterplot(x=projected_data_pca[:, 0], y=projected_data_pca[:, 1], hue=clustered_data, ax=ax,
+                        palette=color_palette, legend=False, style=marking_centroids, size=marking_centroids*30, markers=["o", "P"])
+    else:
+        sns.scatterplot(x=projected_data_pca[:, 0], y=projected_data_pca[:, 1], hue=clustered_data, ax=ax,
+                        palette=color_palette, legend=False)
 col2.pyplot(fig)
 
 if cluster_algo == 'DBSCAN':
