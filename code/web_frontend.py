@@ -61,7 +61,7 @@ if cluster_algo == 'DBSCAN':
             print(f"saved {dataset}, {cluster_algo}, {cluster_dist}, minpts={minpts}, eps={epsilon}")
 
 else:
-    k_value = col2.slider("Choose a nice value for k (number of clusters)", min_value=1, max_value=10, step=1, value=3)
+    k_value = col2.slider("Choose a nice value for k (number of clusters)", min_value=2, max_value=10, step=1, value=3)
     
     if seeded and results.set_exists(dataset, cluster_algo, cluster_dist, k=k_value):
         clusters, stuff = results.load_set(dataset, cluster_algo, cluster_dist, k=k_value)
