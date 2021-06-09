@@ -40,8 +40,7 @@ class kmedoidsClustering(Clustering):
         @returns clusters as list of lists of indices of points, final cluster centers
         """
 
-        if k == 1:
-            return self.package([0 for i in range(len(self.data))]), [0]
+        
         
         kmedoids = KMedoids(n_clusters=k, random_state=self.seed, init=init, metric=self.metric, method='pam')
 
