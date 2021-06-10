@@ -83,8 +83,7 @@ if cluster_algo == 'DBSCAN':
 else:
     color_palette = sns.color_palette("husl", len(set(clustered_data)))
 
-st.success('Great choice! Here are the results!!!!')
-st.balloons()
+st.success('Great choice! Here are the results!')
 
 # Projections
 col1, col2 = st.beta_columns(2)
@@ -100,11 +99,6 @@ col2.write("PCA is a linear dimension reduction. The data will be projected on t
 
 if cluster_algo == 'kmedoids' and k_value>1:
     marking_centroids = np.ones(cluster.data.shape[0])
-    print(stuff)
-    for centroid in stuff:
-        print(centroid)
-        #print(cluster.data.tolist())
-        #marking_centroids[cluster.data.tolist().index(centroid)] = 25
     marking_centroids[stuff] = 25
 
 
