@@ -30,12 +30,12 @@ results = Results("./results")
 
 for isx,s in enumerate(datasets):
     print(f'start {s}')
-    all_kalgos = np.zeros((3,4, 10,len(index_eval)))
+    all_kalgos = np.zeros((3,4, 9,len(index_eval)))
     for icc, c in enumerate(kalgos):
-        all_dist = np.zeros((4, 10,len(index_eval)))
+        all_dist = np.zeros((4, 9,len(index_eval)))
         for id,d in enumerate(distances):
             all_k = np.zeros((10,len(index_eval)))
-            for k in range(1, 11):
+            for k in range(2, 11):
                 clusters, stuff = results.load_set(s, c, d, k=k)
                 cluster = kalgoclass[c](d, s, seed)
                 cluster.load_data()
@@ -60,7 +60,7 @@ for isx,s in enumerate(datasets):
                 os.makedirs(f'../plots/{s}/{c}/{index_eval[i]}')
             fig = plt.figure(figsize=(15, 10))
             for d in range(4):
-                plt.plot(range(1, 11), all_dist[d,:,i], 'o-')
+                plt.plot(range(2, 11), all_dist[d,:,i], 'o-')
             plt.legend(distances)
             plt.title(f'{index_eval[i]}')
             plt.xlabel('k')

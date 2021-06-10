@@ -100,8 +100,12 @@ col2.write("PCA is a linear dimension reduction. The data will be projected on t
 
 if cluster_algo == 'kmedoids' and k_value>1:
     marking_centroids = np.ones(cluster.data.shape[0])
+    print(stuff)
     for centroid in stuff:
-        marking_centroids[cluster.data.tolist().index(centroid)] = 25
+        print(centroid)
+        #print(cluster.data.tolist())
+        #marking_centroids[cluster.data.tolist().index(centroid)] = 25
+    marking_centroids[stuff] = 25
 
 
 # actual projecting and plot generating

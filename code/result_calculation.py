@@ -30,6 +30,7 @@ for c in kalgos:
     
     print(f"finished {c} algorithm")
 
+
 for d in distances:
     for s in datasets:
         for m in [1]:#range(1, 21):
