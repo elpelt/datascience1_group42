@@ -90,13 +90,9 @@ if cluster_algo == 'DBSCAN':
 else:
     color_palette = sns.color_palette("husl", len(set(clustered_data)))
 
-<<<<<<< HEAD
 if random.choices([True, False], weights=[1, 9])[0]:
     st.balloons()
 st.success('Great choice! Here are the results!!!!')
-=======
-st.success('Great choice! Here are the results!')
->>>>>>> 50cae69692a3b7bc4e80cb3a554bbf59210c97e3
 
 # Projections
 col1, col2 = st.beta_columns(2)
