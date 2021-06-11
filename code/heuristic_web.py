@@ -1,5 +1,8 @@
 import streamlit as st
 from dbscan_heuristic import DBSCANHeuristic
+import pandas as pd
+import altair as alt
+
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(page_title="DBSCAN Heuristic", page_icon=":goat:")
 st.title('DBSCAN Heuristic for determining minPts and eps')
@@ -26,5 +29,33 @@ with st.form(key='settings'):
 heu = DBSCANHeuristic()
 heu.set_metric(cluster_dist)
 heu.set_dataset(dataset)
+
 kdist = heu.kdist(k)
-st.pyplot(heu.plot_kdist(kdist))
+kdist.sort(reverse=True)
+
+df = pd.DataFrame(
+    [[i+1, kdist[i]] for i in range(len(kdist))],
+    columns=["points", "dist"])
+
+# this code is mostly derived from the altair examples gallery, especially this example:
+# https://altair-viz.github.io/gallery/multiline_tooltip.html
+
+nearest = alt.selection(type='single', nearest=True, on='mouseover', fields=['points'], empty='none')
+
+yaxis = alt.Y("dist", axis=alt.Axis(title=f"{k}-dist"))
+line = alt.Chart(df).mark_line(point=True).encode(x="points", y=yaxis).properties(
+                    title=f"DBSCAN Heuristic k={k}, {cluster_dist} distance")
+
+selectors = alt.Chart(df).mark_point().encode(x='points', opacity=alt.value(0)).add_selection(nearest)
+
+points = line.mark_point(color="red").encode(opacity=alt.condition(nearest, alt.value(1), alt.value(0)))
+
+text = line.mark_text(align='left', dx=5, dy=-5, color="red").encode(text=alt.condition(nearest, "label:N", alt.value(' '))).transform_calculate(label=f'"distance: " + format(datum.dist, ".2f")')
+
+textp = line.mark_text(align='left', dx=5, dy=-15, color="red").encode(text=alt.condition(nearest, "label:N", alt.value(' '))).transform_calculate(label=f'format( (1 - (datum.points-1) / {len(kdist)}) * 100, ".2f") + "% core points"')
+
+rules = alt.Chart(df).mark_rule(color='gray').encode(x="points").transform_filter(nearest)
+
+st.altair_chart(line+selectors+points+rules+text+textp, use_container_width=True)
+
+#st.pyplot(heu.plot_kdist(kdist))

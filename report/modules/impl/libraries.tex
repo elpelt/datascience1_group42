@@ -17,10 +17,13 @@ numpy is a fundamental library mostly used for its array structure implementing 
 matplotlib is a popular python library for generating and plotting various types of graphs \cite{Hunter:2007}. For our project matplotlib is used for creating the graphs for index comparision.
 
 \subsubsection[pandas]{pandas v1.2.4}
-pandas is a powerful data analysis tool \cite{mckinney-proc-scipy-2010, reback2020pandas}. It provides an efficient data structure called DataFrame. We have used pandas for handling clustering results (and dealing with temporal data storing in an external csv-file). 
+pandas is a powerful data analysis tool \cite{mckinney-proc-scipy-2010, reback2020pandas}. It provides an efficient data structure called DataFrame. This structure is used for handling clustering results, storing them in an external csv-file and preparing data for plotting. 
 
 \subsubsection[seaborn]{seaborn v0.11.0}
 seaborn is a powerful data visualisation library build on top of pythons matplotlib \cite{seaborn}. It simplyfies plotting by providing predefined templates.  The \texttt{scatterplot} function is used for visualising the TSNE and PCA projections of the cluster results.
 
 \subsubsection[streamlit]{streamlit v0.82.0}
 streamlit is an easy-to-use library for building web apps \cite{streamlit}. The webfrontend for our application is implemented using streamlit. Additionally the streamlit hosting service is used for serving the webapp \footnote{\url{https://share.streamlit.io/elpelt/datascience1_group42/main/code/web_frontend.py}}.
+
+\subsubsection[altair]{altair v4.1.0}
+Altair \cite{VanderPlas2018} is a data visualisation toolkit for python based upon the vega-lite project \cite{Satyanarayan2017}, implementing a simple way of generating interactive graphs. Plots built in altair can be easily integrated into streamlit and are therefore used when possible, to display results in a interesting fashion.

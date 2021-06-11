@@ -2,12 +2,13 @@ The application follows an object oriented approach. To unify and simplyfy the i
 The cluster algorithms themselves are implemented as child classes inheriting all methods and attributes from the base clustering class. This allows setting different parameters for every cluster algorithm while guaranteeing the existence and uniform execution of methods used by all algorithms.
 
 Three different libraries were used for their implementations of the used cluster algorithms. 
-For kmeans and kmedians the pyclustering \cite{Novikov2019} implementations were used, because of their flexibility in setting custom distance measures. 
-For Kmedoids the scikit learn extra \cite{scikit-learn-extra} implementation was used.
+For kmeans and kmedians the pyclustering \cite{Novikov2019} implementations were used, because of their flexibility in setting custom distance measures. For Kmedoids the scikit learn extra \cite{scikit-learn-extra} implementation was used.
 DBSCAN is realised using the scikit learn implementation \cite{scikitlearn} was used.
 
-The calculation of cluster indices is packaged into a Indices class and uses scikit learn implementations of the different scoring methods.
+To reduce time spent on computing a class for organising already calculated resulsts as json files was created. All clustering results using the option of a predefined fixed seed are, if available, loaded from a file, or are calculated and then saved. Optionally cluster results can be bulk computed using a given script (\textit{result\_calculation.py}). Because of the large amount of possible parameter combinations of DBSCAN we decided to precompute only results for kmeans, kmedians and kmedoids with $k$ ranging from 1 to 10 for all distance measures.
 
-Finally the webfrontend is implemented using streamlit and is hosted using their publishing service \footnote{\url{https://share.streamlit.io/elpelt/datascience1_group42/main/code/web_frontend.py}}. 
+The calculation of cluster indices is packaged into a Indices class and uses scikit learn implementations of the different scoring methods. Clustering results used for index calculations are saved in a csv file.
+
+Finally the webfrontend is implemented using streamlit and is hosted using their publishing service \footnote{\url{https://share.streamlit.io/elpelt/datascience1_group42/main/code/web_frontend.py}}. The cluster plots are generated using either seaborn or altair given a flag one can set in the frontend. The scoring results are visualised using matplotlib.
 
 All of the code base for the project is documented using the Doxygen style and an automatically generated documentation containing detailed description of every class, method and attribute can be accessed through the github projects page \footnote{\url{https://elpelt.github.io/datascience1_group42}}.

@@ -1,15 +1,18 @@
 import streamlit as st
 import pandas as pd
-from kmeans import kmeansClustering
-from kmedians import kmediansClustering
-from kmedoids import kmedoidsClustering
-from dbscan import DBSCANClustering
-from indices import Indices
 import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 from sklearn.decomposition import PCA
+import altair as alt
+import random
+
+from kmeans import kmeansClustering
+from kmedians import kmediansClustering
+from kmedoids import kmedoidsClustering
+from dbscan import DBSCANClustering
+from indices import Indices
 from results import Results
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -18,6 +21,9 @@ st.title('Datascience: Group 42')
 
 seeded = st.checkbox('Use precalculated results (with random seed for reproduction).', value=True)
 seed = None
+
+seaplots = st.checkbox('Use interactive altair plots over static seaborn plots.', value=True)
+
 
 # result handler for set seed clusters
 results = Results("./code/results")
@@ -34,11 +40,11 @@ cluster_dist_desc = {'euclidean': 'd(x,y) = \sqrt{\sum_{i=1}^{n}(|x_i-y_i|)^2}',
                      'manhattan': 'd(x,y) = \sum\limits_{i=1}^{n}|x_i - y_i|',
                      'chebyshev': 'd(x,y) = \max(|x_i - y_i|)',
                      'cosine': 'd(x,y) = \\frac{\\arccos(\\frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}})}{\pi}'}
-cluster_dist = col1.selectbox('Choose an awesome distance measure',list(cluster_dist_desc.keys()))
+cluster_dist = col1.selectbox('Choose an awesome distance measure', list(cluster_dist_desc.keys()))
 col1.latex(cluster_dist_desc[cluster_dist])
 
 cluster_algo_class = {'kmeans': kmeansClustering, 'kmedians': kmediansClustering, 'kmedoids': kmedoidsClustering, 'DBSCAN': DBSCANClustering}
-cluster_algo = col2.selectbox('Choose a lovely clustering algorithm',list(cluster_algo_class.keys()))
+cluster_algo = col2.selectbox('Choose a lovely clustering algorithm', list(cluster_algo_class.keys()))
 
 cluster = cluster_algo_class[cluster_algo](cluster_dist, dataset, seed)
 cluster.load_data()
@@ -59,6 +65,7 @@ if cluster_algo == 'DBSCAN':
         if seeded:
             results.save_set(dataset, cluster_algo, cluster_dist, clusters, stuff, minpts=minpts, eps=epsilon)
             print(f"saved {dataset}, {cluster_algo}, {cluster_dist}, minpts={minpts}, eps={epsilon}")
+    st.write("*DBSCAN heuristic for estimating minPts and eps parameters: https://share.streamlit.io/elpelt/datascience1_group42/main/code/heuristic_web.py*")
 
 else:
     k_value = col2.slider("Choose a nice value for k (number of clusters)", min_value=1, max_value=10, step=1, value=3)
@@ -83,8 +90,9 @@ if cluster_algo == 'DBSCAN':
 else:
     color_palette = sns.color_palette("husl", len(set(clustered_data)))
 
+if random.choices([True, False], weights=[1, 9])[0]:
+    st.balloons()
 st.success('Great choice! Here are the results!!!!')
-st.balloons()
 
 # Projections
 col1, col2 = st.beta_columns(2)
@@ -101,21 +109,74 @@ col2.write("PCA is a linear dimension reduction. The data will be projected on t
 
 # actual projecting and plot generating
 col1, col2 = st.beta_columns(2)
-fig, ax = plt.subplots()
+
+cluster_label = alt.Tooltip("c", title="Cluster ID")
+point_label = alt.Tooltip("i", title="Point ID")
+dfclusterdata = pd.DataFrame()
+dfclusterdata["c"] = clustered_data
+dfclusterdata["i"] = [i for i in range(len(clustered_data))]
+
 with st.spinner('Please wait a second. Some colorful plots are generated...'):
     projected_data_tsne = TSNE(random_state=42, perplexity=perp).fit_transform(cluster.data)
-    sns.scatterplot(x=projected_data_tsne[:,0], y=projected_data_tsne[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
-col1.pyplot(fig)
+
+    if not seaplots:
+        fig, ax = plt.subplots()
+        if cluster_algo == 'kmedoids' and k_value>1:
+            sns.scatterplot(x=projected_data_tsne[:, 0], y=projected_data_tsne[:, 1], hue=clustered_data, ax=ax,
+                            palette=color_palette, legend=False, style=marking_centroids, size=marking_centroids*30, markers=["o", "P"])
+        else:
+            sns.scatterplot(x=projected_data_tsne[:,0], y=projected_data_tsne[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
+        col1.pyplot(fig)
+    
+    else:
+        dfclusterdata[["xt", "yt"]] = pd.DataFrame(projected_data_tsne)
+
+        dfclusterdata["c"] = clustered_data
+        dfclusterdata["i"] = [i for i in range(len(clustered_data))]
+        xaxis = alt.X("xt", axis=alt.Axis(title=None))
+        yaxis = alt.Y("yt", axis=alt.Axis(title=None))
+        
+        tsnealt = alt.Chart(dfclusterdata).mark_circle().encode(x=xaxis, y=yaxis, tooltip=[cluster_label, point_label],
+                        color=alt.Color("c", legend=None, 
+                        scale=alt.Scale(domain=[0, max(clustered_data)], 
+                        scheme="turbo"))).interactive()
+        col1.altair_chart(tsnealt, use_container_width=True)
 
 
-fig, ax = plt.subplots()
+
 with st.spinner('Please wait a second. Some colorful plots are generated...'):
-    projected_data_pca = PCA(random_state=42, n_components=3).fit_transform(cluster.data)
-    sns.scatterplot(x=projected_data_pca[:,0], y=projected_data_pca[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
-col2.pyplot(fig)
+    projected_data_pca = PCA(random_state=42, n_components=2).fit_transform(cluster.data)
+    
+    if not seaplots:
+        fig, ax = plt.subplots()
+
+        if cluster_algo == 'kmedoids' and k_value>1:
+            sns.scatterplot(x=projected_data_pca[:, 0], y=projected_data_pca[:, 1], hue=clustered_data, ax=ax,
+                            palette=color_palette, legend=False, style=marking_centroids, size=marking_centroids*30, markers=["o", "P"])
+        else:
+            sns.scatterplot(x=projected_data_pca[:, 0], y=projected_data_pca[:, 1], hue=clustered_data, ax=ax,
+                            palette=color_palette, legend=False)
+        col2.pyplot(fig)
+    
+    else:
+        dfclusterdata[["xp", "yp"]] = pd.DataFrame(projected_data_pca)
+
+        xaxis = alt.X("xp", axis=alt.Axis(title=None))
+        yaxis = alt.Y("yp", axis=alt.Axis(title=None))
+        pcaalt = alt.Chart(dfclusterdata).mark_circle().encode(x=xaxis, y=yaxis, tooltip=[cluster_label, point_label],
+                        color=alt.Color("c", legend=None, 
+                        scale=alt.Scale(domain=[0, max(clustered_data)], scheme="turbo"))).interactive()
+        
+        col2.altair_chart(pcaalt, use_container_width=True)
 
 if cluster_algo == 'DBSCAN':
-    st.write("*Please notice for the DBSCAN clustering algorithm: Data points classified as noise are plotted as black points*")
+    st.write()
+    st.write(f"*Please notice for the DBSCAN clustering algorithm: Data points classified as noise are plotted as black points*. In this clustering {np.count_nonzero(clustered_data == 0)} points are marked as noise")
+
+dataexpander = st.beta_expander("data")
+cluster.datadf["cluster ID"] = clustered_data
+dataexpander.write(cluster.datadf)
+
 
 
 # Clustering evaluation
@@ -177,7 +238,7 @@ except:
 
 index_eval = st.selectbox('Choose an adorable index',["ARI", "NMI", "Completeness Score", "Homogeneity Score"])
 
-
+datasets = []
 # iterate over cluster results and calculate score with chosen index
 try:
     results = [[1, "maximum reference value"]]
@@ -205,9 +266,12 @@ except:
     st.write("Cluster-table is empty.")
 
 
-try:
-    # preprocess radar plot
-    desc_list = []
+# preprocess radar plot
+desc_list = []
+if len(datasets) == 0:
+    st.write("Plot not possible.")
+
+else:
     if len(datasets) == 1:
         for j in range(0, len(results)):
             if j != 0:
@@ -218,45 +282,44 @@ try:
         for j in range(0, len(results)):
             desc_list.append(str(results[j][1]))
 
-    desc = np.array(desc_list)
-    stats = np.zeros(len(results))
-    for i in range(0, len(results)):
-        stats[i] = results[i][0]
+desc = np.array(desc_list)
+stats = np.zeros(len(results))
+for i in range(0, len(results)):
+    stats[i] = results[i][0]
 
-    # if length of results smaller than 3, barplot instead of radar chart
-    if len(results) <= 2:
-        fig, ax = plt.subplots()
-        labels, ys = list(desc), list(stats)
-        xs = np.arange(len(labels))
-        width = 0.5
-        ax.bar(xs[0], ys[0], width, align='center', color='red')
-        ax.bar(xs[1:], ys[1:], width, align='center')
-        ax.set_xticks(xs)
-        ax.set_xticklabels(labels)
-        ax.set_yticks(ys)
-        st.pyplot(fig)
+# if only reference value is in results
+if len(results) <= 1:
+    pass
 
-    #if length of results higher than 2 radar chart
+# if length of results smaller than 3, barplot instead of radar chart
+elif len(results) <= 2:
+    fig, ax = plt.subplots()
+    labels, ys = list(desc), list(stats)
+    xs = np.arange(len(labels))
+    width = 0.5
+    ax.bar(xs[0], ys[0], width, align='center', color='red')
+    ax.bar(xs[1:], ys[1:], width, align='center')
+    ax.set_xticks(xs)
+    ax.set_xticklabels(labels)
+    ax.set_yticks(ys)
+    st.pyplot(fig)
+
+#if length of results higher than 2 radar chart
+else:
+    # define angles
+    angles=np.linspace(0, 2*np.pi, len(desc), endpoint=False)
+    stats=np.concatenate((stats,[stats[0]]))
+    angles=np.concatenate((angles,[angles[0]]))
+
+    # print radar plot
+    fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+    ax.plot(angles, stats, 'o-', linewidth=2)
+    ax.plot(angles[0], stats[0], 'o-', linewidth=2, color='red')
+    ax.fill(angles, stats, alpha=0.25)
+    ax.set_thetagrids((angles * 180 / np.pi)[0:len(results)], desc)
+    if len(datasets) == 1:
+        ax.set_title("Index:"+" "+index_eval+","+" "+"Dataset:"+" "+dataset)
     else:
-        # define angles
-        angles=np.linspace(0, 2*np.pi, len(desc), endpoint=False)
-        stats=np.concatenate((stats,[stats[0]]))
-        angles=np.concatenate((angles,[angles[0]]))
-
-        # print radar plot
-        fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-        ax.plot(angles, stats, 'o-', linewidth=2)
-        ax.plot(angles[0], stats[0], 'o-', linewidth=2, color='red')
-        ax.fill(angles, stats, alpha=0.25)
-        ax.set_thetagrids((angles * 180 / np.pi)[0:len(results)], desc)
-        if len(datasets) == 1:
-            ax.set_title("Index:"+" "+index_eval+","+" "+"Dataset:"+" "+dataset)
-        else:
-            ax.set_title("Index:" + " " + index_eval)
-        ax.grid(True)
-        st.pyplot(fig)
-
-# if list is empty
-except Exception as er:
-    print(er)
-    st.write("Plot not possible.")
+        ax.set_title("Index:" + " " + index_eval)
+    ax.grid(True)
+    st.pyplot(fig)

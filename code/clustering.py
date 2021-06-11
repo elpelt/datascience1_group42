@@ -7,6 +7,7 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 
 import numpy as np
+import pandas as pd
 
 
 class Clustering():
@@ -36,6 +37,9 @@ class Clustering():
 
         ## seed for initializer, None if no seed is used
         self.seed = seed
+
+        ## dataset as pandas frame. needed for web frontend later
+        self.datadf = None
     
     def pyc_metric(self, metric):
         """
@@ -94,20 +98,23 @@ class Clustering():
             s = load_diabetes()
             self.labels = s["target"]
             self.data = s["data"]
+            self.datadf = load_diabetes(as_frame=True)["data"]
         
         elif self.dataset == "iris":
             s = load_iris()
             self.labels = s["target"]
             self.data = s["data"]
+            self.datadf = load_iris(as_frame=True)["data"]
         
         elif self.dataset == "wine":
             s = load_wine()
             self.labels = s["target"]
             self.data = s["data"]
+            self.datadf = load_wine(as_frame=True)["data"]
         
         elif self.dataset == "housevotes":
-            path = "../datasets/votes/house-votes-84.data"
-            self.data, self.labels = self.house_load(path, 0)
+            path = "./datasets/votes/house-votes-84.data"
+            self.data, self.labels, self.datadf = self.house_load(path, 0)
                 
         self.data = StandardScaler().fit_transform(self.data)
 
@@ -120,6 +127,7 @@ class Clustering():
         @return One-Hot-Encoded housevotes dataset and labels as array of 1s and 0s
         """
         data = []
+        datadf = None
 
         with open(path, 'r') as f:
             row = -1
@@ -135,11 +143,13 @@ class Clustering():
             for i in range(len(data)):
                 if data[i].pop(0) == "democrat":
                     labels[i] = 1
+        
+            datadf = pd.DataFrame(data, columns=[f"vote {i+1}" for i in range(len(data[0]))])
             
         # one hot encoding
         enc = OneHotEncoder().fit_transform(data).toarray()
 
-        return enc, labels
+        return enc, labels, datadf
     
 
     def cluster(self):

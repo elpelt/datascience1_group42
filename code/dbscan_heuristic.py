@@ -14,22 +14,21 @@ class DBSCANHeuristic():
     def set_dataset(self, dataset):
         self.clustering.dataset = dataset
         self.clustering.load_data()
-
+    
     def kdist(self, k):
         self.k = k
-        kdist = []
-        for pi in range(len(self.clustering.data)):
-            distances = []
-            for pj in range(len(self.clustering.data)):
-                if pj == pi:
-                    continue
-                
-                distances.append(pairwise_distances([self.clustering.data[pi]], [self.clustering.data[pj]], metric=self.metric)[0][0])
-            
-            distances.sort()
-            kdist.append(distances[k-1])
-        
+        distances = pairwise_distances(self.clustering.data, self.clustering.data, metric=self.metric)
+        kdist = [sorted(distances[i])[k-1] for i in range(len(distances))]
         return kdist
+    
+    def percentages(self):
+        nump = len(self.clustering.data)
+        perc = []
+        
+        for pi in range(nump):
+            perc.append(round(1-pi/nump, 3))
+        
+        return perc
     
     def plot_kdist(self, kdist):
         p = [i for i in range(len(kdist))]
@@ -45,11 +44,12 @@ class DBSCANHeuristic():
         #fig.savefig("tmp.png")
         return fig
 
+
 if __name__ == "__main__":
     test = DBSCANHeuristic()
-    test.set_metric("chebyshev")
-    test.set_dataset("housevotes")
+    test.set_metric("euclidean")
+    test.set_dataset("iris")
     kdist = test.kdist(4)
-    test.plot_kdist(kdist)
+    print(kdist)
 
     
