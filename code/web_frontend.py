@@ -68,7 +68,7 @@ if cluster_algo == 'DBSCAN':
     st.write("*DBSCAN heuristic for estimating minPts and eps parameters: https://share.streamlit.io/elpelt/datascience1_group42/main/code/heuristic_web.py*")
 
 else:
-    k_value = col2.slider("Choose a nice value for k (number of clusters)", min_value=1, max_value=10, step=1, value=3)
+    k_value = col2.slider("Choose a nice value for k (number of clusters)", min_value=2, max_value=10, step=1, value=3)
     
     if seeded and results.set_exists(dataset, cluster_algo, cluster_dist, k=k_value):
         clusters, stuff = results.load_set(dataset, cluster_algo, cluster_dist, k=k_value)
@@ -90,9 +90,13 @@ if cluster_algo == 'DBSCAN':
 else:
     color_palette = sns.color_palette("husl", len(set(clustered_data)))
 
+<<<<<<< HEAD
 if random.choices([True, False], weights=[1, 9])[0]:
     st.balloons()
 st.success('Great choice! Here are the results!!!!')
+=======
+st.success('Great choice! Here are the results!')
+>>>>>>> 50cae69692a3b7bc4e80cb3a554bbf59210c97e3
 
 # Projections
 col1, col2 = st.beta_columns(2)
@@ -105,6 +109,10 @@ col2.header("Projection with PCA")
 col2.markdown("#")
 col2.write("PCA is a linear dimension reduction. The data will be projected on the first 2 principal components, "
            "which capture the most variance in the data. ")
+
+if cluster_algo == 'kmedoids' and k_value>1:
+    marking_centroids = np.ones(cluster.data.shape[0])
+    marking_centroids[stuff] = 25
 
 
 # actual projecting and plot generating
@@ -198,7 +206,7 @@ if reset_tmp:
 if add_result:
     # epsilon or k, depends on clustering algorithm
     if cluster_algo == "DBSCAN":
-        val="epsilon="+str(epsilon)
+        val="epsilon="+str(epsilon)+", np="+str(minpts)
     else:
         val="k="+str(k_value)
     try:
@@ -209,11 +217,12 @@ if add_result:
             labels = cluster.labels.tolist()
             predicted = clustered_data.tolist()
             precalc = []
-            index_eval = ["ARI", "NMI", "Completeness Score", "Homogeneity Score"]
+            index_eval = ["ARI", "NMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"]
             for i in range(0,4):
                 I1 = Indices(predicted, labels)
                 score = I1.index_external(index_eval[i])
                 precalc.append(score)
+            precalc.append(I1.index_internal(index_eval[4], cluster.data.tolist(), cluster_dist))
             df[(cluster_algo, cluster_dist, val, dataset)] = pd.Series(precalc)
             df.to_csv("tmp.csv", sep=",", index=False)
             st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "added succesfully!")
@@ -222,11 +231,12 @@ if add_result:
         labels = cluster.labels.tolist()
         predicted = clustered_data.tolist()
         precalc = []
-        index_eval = ["ARI", "NMI", "Completeness Score", "Homogeneity Score"]
+        index_eval = ["ARI", "NMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"]
         for i in range(0, 4):
             I1 = Indices(predicted, labels)
             score = I1.index_external(index_eval[i])
             precalc.append(score)
+        precalc.append(I1.index_internal(index_eval[4], cluster.data.tolist(), cluster_dist))
         df = pd.DataFrame(precalc, columns=[(cluster_algo, cluster_dist, val, dataset)])
         df.to_csv("tmp.csv", sep=",", index=False)
         st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "added succesfully!")
@@ -243,7 +253,7 @@ datasets = []
 try:
     results = [[1, "maximum reference value"]]
     df = pd.read_csv("tmp.csv", delimiter=",")
-    if index_eval in ["ARI", "NMI", "Completeness Score", "Homogeneity Score"]:
+    if index_eval in ["ARI", "NMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"]:
         for i in range(0, len(df.columns)):
             if index_eval == "ARI":
                 results.append([df.iloc[:,i].values[0], df.columns[i]])
@@ -251,6 +261,8 @@ try:
                 results.append([df.iloc[:, i].values[1], df.columns[i]])
             elif index_eval == "Completeness Score":
                 results.append([df.iloc[:,i].values[2], df.columns[i]])
+            elif index_eval == "Silhouette Score":
+                results.append([df.iloc[:, i].values[4], df.columns[i]])
             else:
                 results.append([df.iloc[:, i].values[3], df.columns[i]])
     for i in range(0, len(results)):
@@ -258,12 +270,15 @@ try:
     datasets = []
     for i in range(1, len(results)):
         results[i][1] = results[i][1].replace("(", "").replace(")", "").replace("'", "").split(",")
-        if results[i][1][3] not in datasets:
+        if results[i][1][0] == "DBSCAN":
+            if (results[i][1][4] not in datasets):
+                datasets.append(results[i][1][4])
+        elif results[i][1][3] not in datasets:
             datasets.append(results[i][1][3])
 
 # if list is empty or two diff. datasets were chosen
 except:
-    st.write("Cluster-table is empty.")
+    st.write("")
 
 
 # preprocess radar plot
@@ -274,7 +289,9 @@ if len(datasets) == 0:
 else:
     if len(datasets) == 1:
         for j in range(0, len(results)):
-            if j != 0:
+            if (j != 0) and (results[j][1][0] == "DBSCAN"):
+                desc_list.append(str(results[j][1][0:4]))
+            elif j != 0:
                 desc_list.append(str(results[j][1][0:3]))
             else:
                 desc_list.append(str(results[j][1]))
@@ -318,8 +335,9 @@ else:
     ax.fill(angles, stats, alpha=0.25)
     ax.set_thetagrids((angles * 180 / np.pi)[0:len(results)], desc)
     if len(datasets) == 1:
-        ax.set_title("Index:"+" "+index_eval+","+" "+"Dataset:"+" "+dataset)
+        ax.set_title("Index:"+" "+index_eval+","+" "+"Dataset:"+" "+datasets[0])
     else:
         ax.set_title("Index:" + " " + index_eval)
     ax.grid(True)
     st.pyplot(fig)
+        

@@ -20,9 +20,9 @@ distances = ["euclidean", "manhattan", "chebyshev", "cosine"]
 
 datasets = ["iris", "wine", "diabetes", "housevotes"]
 
-index_eval = ["ARI", "NMI", "Completeness Score", "Homogeneity Score"]
+index_eval = ["ARI", "NMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"]
 
-num_of_classes = [3,3,2,2]
+num_of_classes = [3,3,2,5]
 
 seed = 42
 
@@ -30,12 +30,12 @@ results = Results("./results")
 
 for isx,s in enumerate(datasets):
     print(f'start {s}')
-    all_kalgos = np.zeros((3,4, 10,len(index_eval)))
+    all_kalgos = np.zeros((3,4, 9,len(index_eval)))
     for icc, c in enumerate(kalgos):
-        all_dist = np.zeros((4, 10,len(index_eval)))
+        all_dist = np.zeros((4, 9,len(index_eval)))
         for id,d in enumerate(distances):
-            all_k = np.zeros((10,len(index_eval)))
-            for k in range(1, 11):
+            all_k = np.zeros((9,len(index_eval)))
+            for k in range(2, 11):
                 clusters, stuff = results.load_set(s, c, d, k=k)
                 cluster = kalgoclass[c](d, s, seed)
                 cluster.load_data()
@@ -46,21 +46,26 @@ for isx,s in enumerate(datasets):
 
                 labels = cluster.labels.tolist()
                 predicted = clustered_data.tolist()
-                I1 = Indices(labels, predicted)
+                I1 = Indices(predicted, labels)
                 index_scores = np.zeros_like(index_eval, dtype=float)
-                for i in range(0, 4):
-                    index_scores[i] = I1.index_external(index_eval[i])
-                all_k[k-1] = index_scores
+                for i in range(0, len(index_eval)):
+                    if i <=3:
+                        index_scores[i] = I1.index_external(index_eval[i])
+                    else:
+                        print(i,)
+                        index_scores[i] = I1.index_internal(index=index_eval[i], points=cluster.data.tolist(), metric=d)
+                        print(index_scores)
+                all_k[k-2] = index_scores
 
             all_dist[id] = all_k
 
 
-        for i in range(0,4):
+        for i in range(0,len(index_eval)):
             if not os.path.exists(f'../plots/{s}/{c}/{index_eval[i]}'):
                 os.makedirs(f'../plots/{s}/{c}/{index_eval[i]}')
             fig = plt.figure(figsize=(15, 10))
             for d in range(4):
-                plt.plot(range(1, 11), all_dist[d,:,i], 'o-')
+                plt.plot(range(2, 11), all_dist[d,:,i], 'o-')
             plt.legend(distances)
             plt.title(f'{index_eval[i]}')
             plt.xlabel('k')
@@ -72,7 +77,7 @@ for isx,s in enumerate(datasets):
 
         all_kalgos[icc] = all_dist
 
-    for i in range(0, 4):
+    for i in range(0, len(index_eval)):
         if not os.path.exists(f'../plots/{s}/combined/{index_eval[i]}'):
             os.makedirs(f'../plots/{s}/combined/{index_eval[i]}')
         fig, ax = plt.subplots(figsize=(15, 10))

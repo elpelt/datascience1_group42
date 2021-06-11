@@ -41,13 +41,13 @@ class kmedoidsClustering(Clustering):
         """
 
         if k == 1:
-            return self.package([0 for i in range(len(self.data))]), [0]
+            return self.package([0 for i in range(len(self.data))]), 0
         
         kmedoids = KMedoids(n_clusters=k, random_state=self.seed, init=init, metric=self.metric, method='pam')
 
         kmedoids.fit(self.data)
 
-        return self.package(kmedoids.labels_), kmedoids.cluster_centers_
+        return self.package(kmedoids.labels_), kmedoids.medoid_indices_
 
     def package(self, labels):
         """

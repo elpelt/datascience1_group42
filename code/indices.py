@@ -16,28 +16,28 @@ class Indices():
         ARI, AMI, Homogeneity Score and Completeness Score
         """
         if index == "ARI":
-            ari = adjusted_rand_score(self.cluster_calc, self.cluster_label)
+            ari = adjusted_rand_score(self.cluster_label, self.cluster_calc)
             return ari
 
         elif index == "NMI":
-            nmi = adjusted_mutual_info_score(self.cluster_calc, self.cluster_label)
+            nmi = adjusted_mutual_info_score(self.cluster_label, self.cluster_calc)
             return nmi
 
         elif index == "Completeness Score":
-            cs = completeness_score(self.cluster_calc, self.cluster_label)
+            cs = completeness_score(self.cluster_label, self.cluster_calc)
             return cs
 
         elif index == "Homogeneity Score":
-            hs = homogeneity_score(self.cluster_calc, self.cluster_label)
+            hs = homogeneity_score(self.cluster_label, self.cluster_calc)
             return hs
 
         else:
             print("wrong index given")
             return None
 
-    def index_internal(self, index):
-        if index == "silhouette":
-            return silhouette_score(self.cluster_calc, self.cluster_label)
+    def index_internal(self, index, points, metric):
+        if index == "Silhouette Score":
+            return silhouette_score(points, self.cluster_calc, metric=metric)
 
         else:
             print("wrong index given")
