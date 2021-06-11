@@ -134,16 +134,13 @@ with st.spinner('Please wait a second. Some colorful plots are generated...'):
     
     else:
         dfclusterdata[["xt", "yt"]] = pd.DataFrame(projected_data_tsne)
-
         dfclusterdata["c"] = clustered_data
         dfclusterdata["i"] = [i for i in range(len(clustered_data))]
+
         xaxis = alt.X("xt", axis=alt.Axis(title=None))
         yaxis = alt.Y("yt", axis=alt.Axis(title=None))
-        
-        tsnealt = alt.Chart(dfclusterdata).mark_circle().encode(x=xaxis, y=yaxis, tooltip=[cluster_label, point_label],
-                        color=alt.Color("c", legend=None, 
-                        scale=alt.Scale(domain=[0, max(clustered_data)], 
-                        scheme="turbo"))).interactive()
+        altcolor=alt.Color("c", legend=None, scale=alt.Scale(domain=[0, 1 if max(clustered_data) == 0 else max(clustered_data)], scheme="turbo"))
+        tsnealt = alt.Chart(dfclusterdata).mark_circle().encode(x=xaxis, y=yaxis, tooltip=[cluster_label, point_label], color=altcolor).interactive()
         col1.altair_chart(tsnealt, use_container_width=True)
 
 
@@ -167,9 +164,8 @@ with st.spinner('Please wait a second. Some colorful plots are generated...'):
 
         xaxis = alt.X("xp", axis=alt.Axis(title=None))
         yaxis = alt.Y("yp", axis=alt.Axis(title=None))
-        pcaalt = alt.Chart(dfclusterdata).mark_circle().encode(x=xaxis, y=yaxis, tooltip=[cluster_label, point_label],
-                        color=alt.Color("c", legend=None, 
-                        scale=alt.Scale(domain=[0, max(clustered_data)], scheme="turbo"))).interactive()
+        altcolor=alt.Color("c", legend=None, scale=alt.Scale(domain=[0, 1 if max(clustered_data) == 0 else max(clustered_data)], scheme="turbo"))
+        pcaalt = alt.Chart(dfclusterdata).mark_circle().encode(x=xaxis, y=yaxis, tooltip=[cluster_label, point_label], color=altcolor).interactive()
         
         col2.altair_chart(pcaalt, use_container_width=True)
 
