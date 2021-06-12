@@ -79,9 +79,9 @@ for isx,s in enumerate(datasets):
 
         if not os.path.exists(f'../plots/{s}/{c}/{index_int_eval[0]}'):
             os.makedirs(f'../plots/{s}/{c}/{index_int_eval[0]}')
-        fig,ax = plt.subplots(figsize=(15, 10))
+        fig,ax = plt.subplots(figsize=(25, 10))
         sns.lineplot(data=all_kalgos_int.loc[all_kalgos_int['kalgo'] == c], x='k', y='sil_score', hue='Distance (Clustering)', style='Distance (Silhouette Score)', ax=ax, legend='full', )
-        #plt.legend(distances)
+        plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,)
         plt.title(f'{index_int_eval[0]}')
         plt.xlabel('k')
         plt.ylabel('score')
@@ -96,7 +96,7 @@ for isx,s in enumerate(datasets):
         if not os.path.exists(f'../plots/{s}/combined/{index_ext_eval[i]}'):
             os.makedirs(f'../plots/{s}/combined/{index_ext_eval[i]}')
         fig, ax = plt.subplots(figsize=(15, 10))
-        all_kalgos_df = pd.DataFrame(all_kalgos[:,:,num_of_classes[isx],i], columns=distances, index=kalgos)
+        all_kalgos_df = pd.DataFrame(all_kalgos[:,:,num_of_classes[isx]-2,i], columns=distances, index=kalgos)
         all_kalgos_df.plot(kind='bar', ax=ax)
         plt.legend(distances, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0., title="Distance (Clustering)")
         plt.title(f'{index_ext_eval[i]}, k = {num_of_classes[isx]}')

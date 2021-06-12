@@ -126,6 +126,10 @@ J.~D. Hunter.
   {P}roceedings of the 9th {P}ython in {S}cience {C}onference}, pages 56 -- 61,
   2010.
 
+\bibitem{reback2020pandas}
+The pandas~development team.
+\newblock pandas-dev/pandas: Pandas, February 2020.
+
 \bibitem{seaborn}
 Michael~L. Waskom.
 \newblock seaborn: statistical data visualization.
@@ -135,6 +139,19 @@ Michael~L. Waskom.
 streamlit.
 \newblock \url{https://github.com/streamlit/streamlit}, 2021.
 
+\bibitem{VanderPlas2018}
+Jacob VanderPlas, Brian Granger, Jeffrey Heer, Dominik Moritz, Kanit
+  Wongsuphasawat, Arvind Satyanarayan, Eitan Lees, Ilia Timofeev, Ben Welsh,
+  and Scott Sievert.
+\newblock Altair: Interactive statistical visualizations for python.
+\newblock {\em Journal of Open Source Software}, 3(32):1057, 2018.
+
+\bibitem{Satyanarayan2017}
+Arvind Satyanarayan, Dominik Moritz, Kanit Wongsuphasawat, and Jeffrey Heer.
+\newblock Vega-lite: A grammar of interactive graphics.
+\newblock {\em IEEE transactions on visualization and computer graphics},
+  23(1):341--350, 2017.
+
 \bibitem{rosenberg2007v}
 Andrew Rosenberg and Julia Hirschberg.
 \newblock V-measure: A conditional entropy-based external cluster evaluation
@@ -142,6 +159,11 @@ Andrew Rosenberg and Julia Hirschberg.
 \newblock In {\em Proceedings of the 2007 joint conference on empirical methods
   in natural language processing and computational natural language learning
   (EMNLP-CoNLL)}, pages 410--420, 2007.
+
+\bibitem{nofreelunch}
+David Wolpert.
+\newblock The lack of a priori distinctions between learning algorithms.
+\newblock {\em Neural Computation}, 8, 03 1996.
 
 \bibitem{winedata}
 Moshe Lichman.
