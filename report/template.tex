@@ -3,6 +3,7 @@
 {article}
 
 \usepackage{graphicx}
+\usepackage{subfig}
 \usepackage{microtype}
 \usepackage[nonumberlist, acronym, toc, section]{glossaries}
 \usepackage{cite}
@@ -10,6 +11,8 @@
 \usepackage{amssymb}
 \usepackage{textcmds}
 \usepackage{hyperref}
+\usepackage{float}
+\usepackage[toc,page]{appendix}
 
 
 \newglossary[slg]{symbolslist}{syi}{syg}{Symbols}
@@ -203,11 +206,7 @@ Our results show that
 \input{modules/web_frontend/user_manual}
 
 \section{Conclusion}
-ANMERKUNGEN:
-\begin{itemize}
-\item Summarize the main points and achievements
-\item Add your own assessment/criticism on the topic
-\end{itemize}
+\input{modules/conclusion}
 
 \newpage
 
@@ -226,5 +225,10 @@ ANMERKUNGEN:
 \bibliography{bib.bib}
 \bibliographystyle{unsrt}
 \nocite{*}
+
+\begin{appendices}
+	\section{Plots}
+	\input{modules/appendix}
+\end{appendices}
 
 \end{document}
