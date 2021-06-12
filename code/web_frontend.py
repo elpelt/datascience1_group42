@@ -14,10 +14,15 @@ from kmedoids import kmedoidsClustering
 from dbscan import DBSCANClustering
 from indices import Indices
 from results import Results
+from external.SessionState import SessionState
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(page_title="Group 42", page_icon=":koala:")
 st.title('Datascience: Group 42')
+
+# session state for saving parameters for every in browser opened instance
+session_state = SessionState.get(indices_data=[])
+
 
 seeded = st.checkbox('Use precalculated results (with random seed for reproduction).', value=True)
 seed = None
