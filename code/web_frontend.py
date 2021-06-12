@@ -33,7 +33,7 @@ session_state = SessionState.get(indices_data=pd.DataFrame())
 seeded = st.checkbox('Use precalculated results (with random seed for reproduction).', value=True)
 seed = None
 
-seaplots = st.checkbox('Use interactive altair plots over static seaborn plots.', value=True)
+seaplots = st.checkbox('Use interactive charts', value=True)
 
 
 # result handler for set seed clusters
