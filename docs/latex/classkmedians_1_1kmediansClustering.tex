@@ -14,36 +14,34 @@ Inheritance diagram for kmedians.\+kmedians\+Clustering\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \mbox{\hyperlink{classkmedians_1_1kmediansClustering_a1272bc4e71fb01e5d903465e470e9760}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classkmedians_1_1kmediansClustering_a11c66d6c277f61bff23d4628c6dd747e}{metric}}, \mbox{\hyperlink{classkmedians_1_1kmediansClustering_af3c6712f952ef5ba8aca87e43237bb3e}{dataset}})
+def \mbox{\hyperlink{classkmedians_1_1kmediansClustering_a63bfd566d6d80955ce5f3599cc023874}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classkmedians_1_1kmediansClustering_a11c66d6c277f61bff23d4628c6dd747e}{metric}}, \mbox{\hyperlink{classkmedians_1_1kmediansClustering_af3c6712f952ef5ba8aca87e43237bb3e}{dataset}}, \mbox{\hyperlink{classkmedians_1_1kmediansClustering_a0e95645fbe33100df499cbe060c364f9}{seed}}=None)
 \begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{classkmedians_1_1kmediansClustering_a0d51da21854c335a6ce5a585d8b2ec8d}{cluster}} (self, k)
+def \mbox{\hyperlink{classkmedians_1_1kmediansClustering_af19c828dff6b5b722553629f774b97b6}{cluster}} (self, k, plusplus=True)
 \begin{DoxyCompactList}\small\item\em clustering method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classkmedians_1_1kmediansClustering_a11c66d6c277f61bff23d4628c6dd747e}\label{classkmedians_1_1kmediansClustering_a11c66d6c277f61bff23d4628c6dd747e}} 
 \mbox{\hyperlink{classkmedians_1_1kmediansClustering_a11c66d6c277f61bff23d4628c6dd747e}{metric}}
 \begin{DoxyCompactList}\small\item\em metric name as pyclustering distance\+\_\+metric object \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classkmedians_1_1kmediansClustering_af3c6712f952ef5ba8aca87e43237bb3e}\label{classkmedians_1_1kmediansClustering_af3c6712f952ef5ba8aca87e43237bb3e}} 
 \mbox{\hyperlink{classkmedians_1_1kmediansClustering_af3c6712f952ef5ba8aca87e43237bb3e}{dataset}}
 \begin{DoxyCompactList}\small\item\em dataset name as string \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classkmedians_1_1kmediansClustering_abfd98a13054b8102db5e802257134d52}\label{classkmedians_1_1kmediansClustering_abfd98a13054b8102db5e802257134d52}} 
 \mbox{\hyperlink{classkmedians_1_1kmediansClustering_abfd98a13054b8102db5e802257134d52}{data}}
 \begin{DoxyCompactList}\small\item\em data that gets clustered \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classkmedians_1_1kmediansClustering_a34df5300aa64e01801783576253ada68}\label{classkmedians_1_1kmediansClustering_a34df5300aa64e01801783576253ada68}} 
 \mbox{\hyperlink{classkmedians_1_1kmediansClustering_a34df5300aa64e01801783576253ada68}{labels}}
-\begin{DoxyCompactList}\small\item\em expected cluster values \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em expected cluster values \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classkmedians_1_1kmediansClustering_a0e95645fbe33100df499cbe060c364f9}{seed}}
+\begin{DoxyCompactList}\small\item\em seed for initializer, None if no seed is used \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 implements k-\/\+Medians Clustering uses the pyclustering k-\/medians implementation centers are initialised using the random initialiser 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classkmedians_1_1kmediansClustering_a1272bc4e71fb01e5d903465e470e9760}\label{classkmedians_1_1kmediansClustering_a1272bc4e71fb01e5d903465e470e9760}} 
+\mbox{\Hypertarget{classkmedians_1_1kmediansClustering_a63bfd566d6d80955ce5f3599cc023874}\label{classkmedians_1_1kmediansClustering_a63bfd566d6d80955ce5f3599cc023874}} 
 \index{kmedians.kmediansClustering@{kmedians.kmediansClustering}!\_\_init\_\_@{\_\_init\_\_}}
 \index{\_\_init\_\_@{\_\_init\_\_}!kmedians.kmediansClustering@{kmedians.kmediansClustering}}
 \doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
-{\footnotesize\ttfamily def kmedians.\+kmedians\+Clustering.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{metric,  }\item[{}]{dataset }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def kmedians.\+kmedians\+Clustering.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{metric,  }\item[{}]{dataset,  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
 
 
 
@@ -58,16 +56,16 @@ constructor
 \end{DoxyParams}
 
 
-Reimplemented from \mbox{\hyperlink{classclustering_1_1Clustering_a59129e84c5d072bf02d0a8a89779760b}{clustering.\+Clustering}}.
+Reimplemented from \mbox{\hyperlink{classclustering_1_1Clustering_a96699924e73d3dac5c91d23a99842585}{clustering.\+Clustering}}.
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classkmedians_1_1kmediansClustering_a0d51da21854c335a6ce5a585d8b2ec8d}\label{classkmedians_1_1kmediansClustering_a0d51da21854c335a6ce5a585d8b2ec8d}} 
+\mbox{\Hypertarget{classkmedians_1_1kmediansClustering_af19c828dff6b5b722553629f774b97b6}\label{classkmedians_1_1kmediansClustering_af19c828dff6b5b722553629f774b97b6}} 
 \index{kmedians.kmediansClustering@{kmedians.kmediansClustering}!cluster@{cluster}}
 \index{cluster@{cluster}!kmedians.kmediansClustering@{kmedians.kmediansClustering}}
 \doxysubsubsection{\texorpdfstring{cluster()}{cluster()}}
-{\footnotesize\ttfamily def kmedians.\+kmedians\+Clustering.\+cluster (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{k }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def kmedians.\+kmedians\+Clustering.\+cluster (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{k,  }\item[{}]{plusplus = {\ttfamily True} }\end{DoxyParamCaption})}
 
 
 
@@ -83,6 +81,59 @@ clusters as list of lists of indices of points and final cluster medians
 \end{DoxyReturn}
 
 
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classkmedians_1_1kmediansClustering_abfd98a13054b8102db5e802257134d52}\label{classkmedians_1_1kmediansClustering_abfd98a13054b8102db5e802257134d52}} 
+\index{kmedians.kmediansClustering@{kmedians.kmediansClustering}!data@{data}}
+\index{data@{data}!kmedians.kmediansClustering@{kmedians.kmediansClustering}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily kmedians.\+kmedians\+Clustering.\+data}
+
+
+
+data that gets clustered 
+
+\mbox{\Hypertarget{classkmedians_1_1kmediansClustering_af3c6712f952ef5ba8aca87e43237bb3e}\label{classkmedians_1_1kmediansClustering_af3c6712f952ef5ba8aca87e43237bb3e}} 
+\index{kmedians.kmediansClustering@{kmedians.kmediansClustering}!dataset@{dataset}}
+\index{dataset@{dataset}!kmedians.kmediansClustering@{kmedians.kmediansClustering}}
+\doxysubsubsection{\texorpdfstring{dataset}{dataset}}
+{\footnotesize\ttfamily kmedians.\+kmedians\+Clustering.\+dataset}
+
+
+
+dataset name as string 
+
+\mbox{\Hypertarget{classkmedians_1_1kmediansClustering_a34df5300aa64e01801783576253ada68}\label{classkmedians_1_1kmediansClustering_a34df5300aa64e01801783576253ada68}} 
+\index{kmedians.kmediansClustering@{kmedians.kmediansClustering}!labels@{labels}}
+\index{labels@{labels}!kmedians.kmediansClustering@{kmedians.kmediansClustering}}
+\doxysubsubsection{\texorpdfstring{labels}{labels}}
+{\footnotesize\ttfamily kmedians.\+kmedians\+Clustering.\+labels}
+
+
+
+expected cluster values 
+
+\mbox{\Hypertarget{classkmedians_1_1kmediansClustering_a11c66d6c277f61bff23d4628c6dd747e}\label{classkmedians_1_1kmediansClustering_a11c66d6c277f61bff23d4628c6dd747e}} 
+\index{kmedians.kmediansClustering@{kmedians.kmediansClustering}!metric@{metric}}
+\index{metric@{metric}!kmedians.kmediansClustering@{kmedians.kmediansClustering}}
+\doxysubsubsection{\texorpdfstring{metric}{metric}}
+{\footnotesize\ttfamily kmedians.\+kmedians\+Clustering.\+metric}
+
+
+
+metric name as pyclustering distance\+\_\+metric object 
+
+\mbox{\Hypertarget{classkmedians_1_1kmediansClustering_a0e95645fbe33100df499cbe060c364f9}\label{classkmedians_1_1kmediansClustering_a0e95645fbe33100df499cbe060c364f9}} 
+\index{kmedians.kmediansClustering@{kmedians.kmediansClustering}!seed@{seed}}
+\index{seed@{seed}!kmedians.kmediansClustering@{kmedians.kmediansClustering}}
+\doxysubsubsection{\texorpdfstring{seed}{seed}}
+{\footnotesize\ttfamily kmedians.\+kmedians\+Clustering.\+seed}
+
+
+
+seed for initializer, None if no seed is used 
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-kmedians.\+py\end{DoxyCompactItemize}
+\mbox{\hyperlink{kmedians_8py}{kmedians.\+py}}\end{DoxyCompactItemize}

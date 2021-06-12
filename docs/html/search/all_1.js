@@ -1,5 +1,15 @@
 var searchData=
 [
-  ['cluster_1',['cluster',['../classclustering_1_1Clustering.html#a6f27f7a08bea76922d9a8edc7be84b16',1,'clustering.Clustering.cluster()'],['../classdbscan_1_1DBSCANClustering.html#a38c00ed16e46cf3c099b8329350262c0',1,'dbscan.DBSCANClustering.cluster()'],['../classkmeans_1_1kmeansClustering.html#a255814fdb68c24e337b3bd6ed3ecc367',1,'kmeans.kmeansClustering.cluster()'],['../classkmedians_1_1kmediansClustering.html#a0d51da21854c335a6ce5a585d8b2ec8d',1,'kmedians.kmediansClustering.cluster()'],['../classkmedoids_1_1kmedoidsClustering.html#a7802620f63a5ac51016ebb0e778d95b0',1,'kmedoids.kmedoidsClustering.cluster()']]],
-  ['clustering_2',['Clustering',['../classclustering_1_1Clustering.html',1,'clustering']]]
+  ['add_5fresult_1',['add_result',['../namespaceweb__frontend.html#a1c29df4088a1c35eaf8147a235f9ebf9',1,'web_frontend']]],
+  ['alg_2',['alg',['../namespaceresult__calculation.html#a52086c04881e61e9dbc3e27a6a828a03',1,'result_calculation']]],
+  ['align_3',['align',['../namespaceweb__frontend.html#a1b424f697075e41398c55d80300904c7',1,'web_frontend']]],
+  ['all_5fdist_4',['all_dist',['../namespacecomparison__plots.html#a1b293b4390a4a0a4ad60fa3ebfcf9ac9',1,'comparison_plots']]],
+  ['all_5fk_5',['all_k',['../namespacecomparison__plots.html#a3f3ac75294a407ec34918b677c657b94',1,'comparison_plots']]],
+  ['all_5fkalgos_6',['all_kalgos',['../namespacecomparison__plots.html#aa74a009f2421e2d7133054bd7b8e487d',1,'comparison_plots']]],
+  ['all_5fkalgos_5fdf_7',['all_kalgos_df',['../namespacecomparison__plots.html#addb96093e081f7fa8493d2aa3ac143bb',1,'comparison_plots']]],
+  ['all_5fkalgos_5fint_8',['all_kalgos_int',['../namespacecomparison__plots.html#aa973bd93ee0ec916c2d27cc0aa7ae0f8',1,'comparison_plots']]],
+  ['alpha_9',['alpha',['../namespaceweb__frontend.html#ae5593c31da74f3185dbab1dab3ec988a',1,'web_frontend']]],
+  ['altcolor_10',['altcolor',['../namespaceweb__frontend.html#a5116b8e7725539769cf10cb172e4c37a',1,'web_frontend']]],
+  ['angles_11',['angles',['../namespaceweb__frontend.html#a5a41b97806946bdcd868b1cf6443c6eb',1,'web_frontend']]],
+  ['ax_12',['ax',['../namespacecomparison__plots.html#ad904120c2e3840bc451503883dedb107',1,'comparison_plots.ax()'],['../namespaceweb__frontend.html#a51aa7a6d31bc700ca7e4c4207f86fab3',1,'web_frontend.ax()']]]
 ];

@@ -1,3 +1,8 @@
+"""
+@file kmedoids.py
+implementation of the k-medoids algorithm.
+"""
+
 from clustering import Clustering
 from sklearn_extra.cluster import KMedoids
 
@@ -63,8 +68,3 @@ class kmedoidsClustering(Clustering):
             clusters[labels[i]].append(i)
 
         return clusters
-
-if __name__ == "__main__":
-    c = kmedoidsClustering("cosine", "iris")
-    c.load_data()
-    c.cluster(1)

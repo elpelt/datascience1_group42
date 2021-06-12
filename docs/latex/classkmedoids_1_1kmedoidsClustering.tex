@@ -16,7 +16,7 @@ Inheritance diagram for kmedoids.\+kmedoids\+Clustering\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a03693d487c30710e44e74c5c5e5fedd5}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a32ae6fa3886f32cfd0a4b3c77efc4469}{metric}}, \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a68e0a4518eca9990807bcb514d09dd13}{dataset}})
+def \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a55bbada40c0c240e0ef1adf065994aaa}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a32ae6fa3886f32cfd0a4b3c77efc4469}{metric}}, \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a68e0a4518eca9990807bcb514d09dd13}{dataset}}, \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_ad1e8d058bff04d83350c2d3c6bcb3bf4}{seed}}=None)
 \begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a7802620f63a5ac51016ebb0e778d95b0}{cluster}} (self, k, init=\char`\"{}k-\/medoids++\char`\"{})
 \begin{DoxyCompactList}\small\item\em clustering method. \end{DoxyCompactList}\item 
@@ -25,18 +25,16 @@ def \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a322a5a591133f8adf951ed
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_a32ae6fa3886f32cfd0a4b3c77efc4469}\label{classkmedoids_1_1kmedoidsClustering_a32ae6fa3886f32cfd0a4b3c77efc4469}} 
 \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a32ae6fa3886f32cfd0a4b3c77efc4469}{metric}}
 \begin{DoxyCompactList}\small\item\em metric name as string \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_a68e0a4518eca9990807bcb514d09dd13}\label{classkmedoids_1_1kmedoidsClustering_a68e0a4518eca9990807bcb514d09dd13}} 
 \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a68e0a4518eca9990807bcb514d09dd13}{dataset}}
 \begin{DoxyCompactList}\small\item\em dataset name as string \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_ae2f63bfe20c5b8ead83f5c21fe751797}\label{classkmedoids_1_1kmedoidsClustering_ae2f63bfe20c5b8ead83f5c21fe751797}} 
 \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_ae2f63bfe20c5b8ead83f5c21fe751797}{data}}
 \begin{DoxyCompactList}\small\item\em data that gets clustered \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_a91fc0212d9001b3346109f5230f7cab4}\label{classkmedoids_1_1kmedoidsClustering_a91fc0212d9001b3346109f5230f7cab4}} 
 \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_a91fc0212d9001b3346109f5230f7cab4}{labels}}
-\begin{DoxyCompactList}\small\item\em expected cluster values \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em expected cluster values \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering_ad1e8d058bff04d83350c2d3c6bcb3bf4}{seed}}
+\begin{DoxyCompactList}\small\item\em seed for initializer, None if no seed is used \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -45,11 +43,11 @@ implements k-\/\+Medians Clustering~\newline
  centers are set using the k++ initialiser if not set differently 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_a03693d487c30710e44e74c5c5e5fedd5}\label{classkmedoids_1_1kmedoidsClustering_a03693d487c30710e44e74c5c5e5fedd5}} 
+\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_a55bbada40c0c240e0ef1adf065994aaa}\label{classkmedoids_1_1kmedoidsClustering_a55bbada40c0c240e0ef1adf065994aaa}} 
 \index{kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}!\_\_init\_\_@{\_\_init\_\_}}
 \index{\_\_init\_\_@{\_\_init\_\_}!kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}}
 \doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
-{\footnotesize\ttfamily def kmedoids.\+kmedoids\+Clustering.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{metric,  }\item[{}]{dataset }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def kmedoids.\+kmedoids\+Clustering.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{metric,  }\item[{}]{dataset,  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
 
 
 
@@ -64,7 +62,7 @@ constructor
 \end{DoxyParams}
 
 
-Reimplemented from \mbox{\hyperlink{classclustering_1_1Clustering_a59129e84c5d072bf02d0a8a89779760b}{clustering.\+Clustering}}.
+Reimplemented from \mbox{\hyperlink{classclustering_1_1Clustering_a96699924e73d3dac5c91d23a99842585}{clustering.\+Clustering}}.
 
 
 
@@ -109,6 +107,59 @@ clusters formated similarly to the pyclustering algorithms
 \end{DoxyReturn}
 
 
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_ae2f63bfe20c5b8ead83f5c21fe751797}\label{classkmedoids_1_1kmedoidsClustering_ae2f63bfe20c5b8ead83f5c21fe751797}} 
+\index{kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}!data@{data}}
+\index{data@{data}!kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily kmedoids.\+kmedoids\+Clustering.\+data}
+
+
+
+data that gets clustered 
+
+\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_a68e0a4518eca9990807bcb514d09dd13}\label{classkmedoids_1_1kmedoidsClustering_a68e0a4518eca9990807bcb514d09dd13}} 
+\index{kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}!dataset@{dataset}}
+\index{dataset@{dataset}!kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}}
+\doxysubsubsection{\texorpdfstring{dataset}{dataset}}
+{\footnotesize\ttfamily kmedoids.\+kmedoids\+Clustering.\+dataset}
+
+
+
+dataset name as string 
+
+\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_a91fc0212d9001b3346109f5230f7cab4}\label{classkmedoids_1_1kmedoidsClustering_a91fc0212d9001b3346109f5230f7cab4}} 
+\index{kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}!labels@{labels}}
+\index{labels@{labels}!kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}}
+\doxysubsubsection{\texorpdfstring{labels}{labels}}
+{\footnotesize\ttfamily kmedoids.\+kmedoids\+Clustering.\+labels}
+
+
+
+expected cluster values 
+
+\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_a32ae6fa3886f32cfd0a4b3c77efc4469}\label{classkmedoids_1_1kmedoidsClustering_a32ae6fa3886f32cfd0a4b3c77efc4469}} 
+\index{kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}!metric@{metric}}
+\index{metric@{metric}!kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}}
+\doxysubsubsection{\texorpdfstring{metric}{metric}}
+{\footnotesize\ttfamily kmedoids.\+kmedoids\+Clustering.\+metric}
+
+
+
+metric name as string 
+
+\mbox{\Hypertarget{classkmedoids_1_1kmedoidsClustering_ad1e8d058bff04d83350c2d3c6bcb3bf4}\label{classkmedoids_1_1kmedoidsClustering_ad1e8d058bff04d83350c2d3c6bcb3bf4}} 
+\index{kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}!seed@{seed}}
+\index{seed@{seed}!kmedoids.kmedoidsClustering@{kmedoids.kmedoidsClustering}}
+\doxysubsubsection{\texorpdfstring{seed}{seed}}
+{\footnotesize\ttfamily kmedoids.\+kmedoids\+Clustering.\+seed}
+
+
+
+seed for initializer, None if no seed is used 
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-kmedoids.\+py\end{DoxyCompactItemize}
+\mbox{\hyperlink{kmedoids_8py}{kmedoids.\+py}}\end{DoxyCompactItemize}

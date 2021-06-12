@@ -1,61 +1,673 @@
 \begin{theindex}
 
+  \item {/home/nordegraf/Uni/8.Semester/DataScienceI/datascience1\_group42/README.md}, 
+		\hyperpage{74}
   \item {\_\_init\_\_}
-    \subitem {clustering.Clustering}, \hyperpage{8}
-    \subitem {dbscan.DBSCANClustering}, \hyperpage{10}
-    \subitem {kmeans.kmeansClustering}, \hyperpage{13}
-    \subitem {kmedians.kmediansClustering}, \hyperpage{14}
-    \subitem {kmedoids.kmedoidsClustering}, \hyperpage{17}
+    \subitem {clustering.Clustering}, \hyperpage{40}
+    \subitem {dbscan.DBSCANClustering}, \hyperpage{44}
+    \subitem {dbscan\_heuristic.DBSCANHeuristic}, \hyperpage{46}
+    \subitem {indices.Indices}, \hyperpage{49}
+    \subitem {kmeans.kmeansClustering}, \hyperpage{52}
+    \subitem {kmedians.kmediansClustering}, \hyperpage{54}
+    \subitem {kmedoids.kmedoidsClustering}, \hyperpage{57}
+    \subitem {results.Results}, \hyperpage{60}
+    \subitem {SessionState.SessionState}, \hyperpage{63}
 
   \indexspace
 
+  \item {add\_result}
+    \subitem {web\_frontend}, \hyperpage{28}
+  \item {alg}
+    \subitem {result\_calculation}, \hyperpage{23}
+  \item {align}
+    \subitem {web\_frontend}, \hyperpage{28}
+  \item {all\_dist}
+    \subitem {comparison\_plots}, \hyperpage{12}
+  \item {all\_k}
+    \subitem {comparison\_plots}, \hyperpage{12}
+  \item {all\_kalgos}
+    \subitem {comparison\_plots}, \hyperpage{12}
+  \item {all\_kalgos\_df}
+    \subitem {comparison\_plots}, \hyperpage{12}
+  \item {all\_kalgos\_int}
+    \subitem {comparison\_plots}, \hyperpage{13}
+  \item {alpha}
+    \subitem {web\_frontend}, \hyperpage{28}
+  \item {altcolor}
+    \subitem {web\_frontend}, \hyperpage{29}
+  \item {angles}
+    \subitem {web\_frontend}, \hyperpage{29}
+  \item {ax}
+    \subitem {comparison\_plots}, \hyperpage{13}
+    \subitem {web\_frontend}, \hyperpage{29}
+
+  \indexspace
+
+  \item {bbox\_to\_anchor}
+    \subitem {comparison\_plots}, \hyperpage{13}
+  \item {borderaxespad}
+    \subitem {comparison\_plots}, \hyperpage{13}
+
+  \indexspace
+
+  \item {c}
+    \subitem {comparison\_plots}, \hyperpage{13}
+    \subitem {result\_calculation}, \hyperpage{23}
+  \item {centers}
+    \subitem {result\_calculation}, \hyperpage{23}
   \item {cluster}
-    \subitem {clustering.Clustering}, \hyperpage{8}
-    \subitem {dbscan.DBSCANClustering}, \hyperpage{11}
-    \subitem {kmeans.kmeansClustering}, \hyperpage{13}
-    \subitem {kmedians.kmediansClustering}, \hyperpage{16}
-    \subitem {kmedoids.kmedoidsClustering}, \hyperpage{18}
-  \item {clustering.Clustering}, \hyperpage{7}
-    \subitem {\_\_init\_\_}, \hyperpage{8}
-    \subitem {cluster}, \hyperpage{8}
-    \subitem {house\_load}, \hyperpage{8}
-    \subitem {pyc\_metric}, \hyperpage{9}
-
-  \indexspace
-
-  \item {dbscan.DBSCANClustering}, \hyperpage{9}
-    \subitem {\_\_init\_\_}, \hyperpage{10}
-    \subitem {cluster}, \hyperpage{11}
-    \subitem {package}, \hyperpage{11}
-
-  \indexspace
-
-  \item {house\_load}
-    \subitem {clustering.Clustering}, \hyperpage{8}
-
-  \indexspace
-
-  \item {indices.Indices}, \hyperpage{12}
-
-  \indexspace
-
-  \item {kmeans.kmeansClustering}, \hyperpage{12}
-    \subitem {\_\_init\_\_}, \hyperpage{13}
+    \subitem {clustering.Clustering}, \hyperpage{40}
+    \subitem {comparison\_plots}, \hyperpage{13}
+    \subitem {dbscan.DBSCANClustering}, \hyperpage{44}
+    \subitem {kmeans.kmeansClustering}, \hyperpage{52}
+    \subitem {kmedians.kmediansClustering}, \hyperpage{55}
+    \subitem {kmedoids.kmedoidsClustering}, \hyperpage{57}
+    \subitem {web\_frontend}, \hyperpage{29}
+  \item {cluster\_algo}
+    \subitem {web\_frontend}, \hyperpage{29}
+  \item {cluster\_algo\_class}
+    \subitem {web\_frontend}, \hyperpage{29}
+  \item {cluster\_calc}
+    \subitem {indices.Indices}, \hyperpage{50}
+  \item {cluster\_dist}
+    \subitem {heuristic\_web}, \hyperpage{19}
+    \subitem {web\_frontend}, \hyperpage{29}
+  \item {cluster\_dist\_desc}
+    \subitem {heuristic\_web}, \hyperpage{19}
+    \subitem {web\_frontend}, \hyperpage{30}
+  \item {cluster\_label}
+    \subitem {indices.Indices}, \hyperpage{50}
+    \subitem {web\_frontend}, \hyperpage{30}
+  \item {clustered\_data}
+    \subitem {comparison\_plots}, \hyperpage{13}
+    \subitem {web\_frontend}, \hyperpage{30}
+  \item {clustering}, \hyperpage{11}
+    \subitem {dbscan\_heuristic.DBSCANHeuristic}, \hyperpage{48}
+  \item {clustering.Clustering}, \hyperpage{39}
+    \subitem {\_\_init\_\_}, \hyperpage{40}
+    \subitem {cluster}, \hyperpage{40}
+    \subitem {data}, \hyperpage{42}
+    \subitem {datadf}, \hyperpage{42}
+    \subitem {dataset}, \hyperpage{42}
+    \subitem {house\_load}, \hyperpage{41}
+    \subitem {labels}, \hyperpage{42}
+    \subitem {load\_data}, \hyperpage{41}
+    \subitem {metric}, \hyperpage{42}
+    \subitem {pyc\_metric}, \hyperpage{41}
+    \subitem {seed}, \hyperpage{43}
+  \item {clustering.py}, \hyperpage{65}
+  \item {clusters}
+    \subitem {comparison\_plots}, \hyperpage{14}
+    \subitem {result\_calculation}, \hyperpage{24}
+    \subitem {web\_frontend}, \hyperpage{30}
+  \item {col1}
+    \subitem {heuristic\_web}, \hyperpage{19}
+    \subitem {web\_frontend}, \hyperpage{30}
+  \item {col2}
+    \subitem {heuristic\_web}, \hyperpage{19}
+    \subitem {web\_frontend}, \hyperpage{30}
+  \item {color}
+    \subitem {web\_frontend}, \hyperpage{30}
+  \item {color\_palette}
+    \subitem {web\_frontend}, \hyperpage{31}
+  \item {comparison\_plots}, \hyperpage{11}
+    \subitem {all\_dist}, \hyperpage{12}
+    \subitem {all\_k}, \hyperpage{12}
+    \subitem {all\_kalgos}, \hyperpage{12}
+    \subitem {all\_kalgos\_df}, \hyperpage{12}
+    \subitem {all\_kalgos\_int}, \hyperpage{13}
+    \subitem {ax}, \hyperpage{13}
+    \subitem {bbox\_to\_anchor}, \hyperpage{13}
+    \subitem {borderaxespad}, \hyperpage{13}
+    \subitem {c}, \hyperpage{13}
     \subitem {cluster}, \hyperpage{13}
-  \item {kmedians.kmediansClustering}, \hyperpage{14}
-    \subitem {\_\_init\_\_}, \hyperpage{14}
-    \subitem {cluster}, \hyperpage{16}
-  \item {kmedoids.kmedoidsClustering}, \hyperpage{16}
-    \subitem {\_\_init\_\_}, \hyperpage{17}
-    \subitem {cluster}, \hyperpage{18}
-    \subitem {package}, \hyperpage{18}
+    \subitem {clustered\_data}, \hyperpage{13}
+    \subitem {clusters}, \hyperpage{14}
+    \subitem {d}, \hyperpage{14}
+    \subitem {data}, \hyperpage{14}
+    \subitem {datasets}, \hyperpage{14}
+    \subitem {distances}, \hyperpage{14}
+    \subitem {fig}, \hyperpage{14}
+    \subitem {figsize}, \hyperpage{14}
+    \subitem {hue}, \hyperpage{14}
+    \subitem {I1}, \hyperpage{15}
+    \subitem {index}, \hyperpage{15}
+    \subitem {index\_ext\_eval}, \hyperpage{15}
+    \subitem {index\_int\_eval}, \hyperpage{15}
+    \subitem {index\_score}, \hyperpage{15}
+    \subitem {index\_scores}, \hyperpage{15}
+    \subitem {k}, \hyperpage{15}
+    \subitem {kalgoclass}, \hyperpage{16}
+    \subitem {kalgos}, \hyperpage{16}
+    \subitem {kind}, \hyperpage{16}
+    \subitem {labels}, \hyperpage{16}
+    \subitem {legend}, \hyperpage{16}
+    \subitem {loc}, \hyperpage{16}
+    \subitem {num\_of\_classes}, \hyperpage{16}
+    \subitem {predicted}, \hyperpage{17}
+    \subitem {results}, \hyperpage{17}
+    \subitem {s}, \hyperpage{17}
+    \subitem {seed}, \hyperpage{17}
+    \subitem {stuff}, \hyperpage{17}
+    \subitem {style}, \hyperpage{17}
+    \subitem {title}, \hyperpage{17}
+    \subitem {x}, \hyperpage{17}
+    \subitem {y}, \hyperpage{18}
+  \item {comparison\_plots.py}, \hyperpage{65}
+
+  \indexspace
+
+  \item {d}
+    \subitem {comparison\_plots}, \hyperpage{14}
+    \subitem {result\_calculation}, \hyperpage{24}
+  \item {data}
+    \subitem {clustering.Clustering}, \hyperpage{42}
+    \subitem {comparison\_plots}, \hyperpage{14}
+    \subitem {dbscan.DBSCANClustering}, \hyperpage{45}
+    \subitem {kmeans.kmeansClustering}, \hyperpage{52}
+    \subitem {kmedians.kmediansClustering}, \hyperpage{55}
+    \subitem {kmedoids.kmedoidsClustering}, \hyperpage{58}
+  \item {datadf}
+    \subitem {clustering.Clustering}, \hyperpage{42}
+  \item {dataexpander}
+    \subitem {web\_frontend}, \hyperpage{31}
+  \item {dataset}
+    \subitem {clustering.Clustering}, \hyperpage{42}
+    \subitem {dbscan.DBSCANClustering}, \hyperpage{45}
+    \subitem {heuristic\_web}, \hyperpage{19}
+    \subitem {kmeans.kmeansClustering}, \hyperpage{53}
+    \subitem {kmedians.kmediansClustering}, \hyperpage{55}
+    \subitem {kmedoids.kmedoidsClustering}, \hyperpage{58}
+    \subitem {web\_frontend}, \hyperpage{31}
+  \item {datasets}
+    \subitem {comparison\_plots}, \hyperpage{14}
+    \subitem {result\_calculation}, \hyperpage{24}
+    \subitem {web\_frontend}, \hyperpage{31}
+  \item {dbscan}, \hyperpage{18}
+  \item {dbscan.DBSCANClustering}, \hyperpage{43}
+    \subitem {\_\_init\_\_}, \hyperpage{44}
+    \subitem {cluster}, \hyperpage{44}
+    \subitem {data}, \hyperpage{45}
+    \subitem {dataset}, \hyperpage{45}
+    \subitem {labels}, \hyperpage{45}
+    \subitem {metric}, \hyperpage{45}
+    \subitem {package}, \hyperpage{45}
+  \item {dbscan.py}, \hyperpage{66}
+  \item {dbscan\_heuristic}, \hyperpage{18}
+  \item {dbscan\_heuristic.DBSCANHeuristic}, \hyperpage{46}
+    \subitem {\_\_init\_\_}, \hyperpage{46}
+    \subitem {clustering}, \hyperpage{48}
+    \subitem {k}, \hyperpage{48}
+    \subitem {kdist}, \hyperpage{47}
+    \subitem {metric}, \hyperpage{48}
+    \subitem {plot\_kdist}, \hyperpage{47}
+    \subitem {set\_dataset}, \hyperpage{47}
+    \subitem {set\_metric}, \hyperpage{48}
+  \item {dbscan\_heuristic.py}, \hyperpage{67}
+  \item {desc}
+    \subitem {web\_frontend}, \hyperpage{31}
+  \item {desc\_list}
+    \subitem {web\_frontend}, \hyperpage{31}
+  \item {df}
+    \subitem {heuristic\_web}, \hyperpage{19}
+    \subitem {web\_frontend}, \hyperpage{31}
+  \item {dfclusterdata}
+    \subitem {web\_frontend}, \hyperpage{32}
+  \item {distances}
+    \subitem {comparison\_plots}, \hyperpage{14}
+    \subitem {result\_calculation}, \hyperpage{24}
+
+  \indexspace
+
+  \item {eps}
+    \subitem {result\_calculation}, \hyperpage{24}
+    \subitem {web\_frontend}, \hyperpage{32}
+  \item {epsilon}
+    \subitem {web\_frontend}, \hyperpage{32}
+
+  \indexspace
+
+  \item {False}
+    \subitem {web\_frontend}, \hyperpage{32}
+  \item {fig}
+    \subitem {comparison\_plots}, \hyperpage{14}
+    \subitem {web\_frontend}, \hyperpage{32}
+  \item {figsize}
+    \subitem {comparison\_plots}, \hyperpage{14}
+
+  \indexspace
+
+  \item {get}
+    \subitem {SessionState}, \hyperpage{26}
+  \item {get\_path}
+    \subitem {results.Results}, \hyperpage{60}
+
+  \indexspace
+
+  \item {heu}
+    \subitem {heuristic\_web}, \hyperpage{19}
+  \item {heuristic\_web}, \hyperpage{18}
+    \subitem {cluster\_dist}, \hyperpage{19}
+    \subitem {cluster\_dist\_desc}, \hyperpage{19}
+    \subitem {col1}, \hyperpage{19}
+    \subitem {col2}, \hyperpage{19}
+    \subitem {dataset}, \hyperpage{19}
+    \subitem {df}, \hyperpage{19}
+    \subitem {heu}, \hyperpage{19}
+    \subitem {k}, \hyperpage{20}
+    \subitem {kdist}, \hyperpage{20}
+    \subitem {key}, \hyperpage{20}
+    \subitem {line}, \hyperpage{20}
+    \subitem {nearest}, \hyperpage{20}
+    \subitem {page\_icon}, \hyperpage{20}
+    \subitem {page\_title}, \hyperpage{20}
+    \subitem {points}, \hyperpage{21}
+    \subitem {reverse}, \hyperpage{21}
+    \subitem {rules}, \hyperpage{21}
+    \subitem {selectors}, \hyperpage{21}
+    \subitem {submit\_button}, \hyperpage{21}
+    \subitem {text}, \hyperpage{21}
+    \subitem {textp}, \hyperpage{21}
+    \subitem {use\_container\_width}, \hyperpage{22}
+    \subitem {yaxis}, \hyperpage{22}
+  \item {heuristic\_web.py}, \hyperpage{67}
+  \item {house\_load}
+    \subitem {clustering.Clustering}, \hyperpage{41}
+  \item {hue}
+    \subitem {comparison\_plots}, \hyperpage{14}
+    \subitem {web\_frontend}, \hyperpage{32}
+
+  \indexspace
+
+  \item {I1}
+    \subitem {comparison\_plots}, \hyperpage{15}
+    \subitem {web\_frontend}, \hyperpage{32}
+  \item {index}
+    \subitem {comparison\_plots}, \hyperpage{15}
+  \item {index\_eval}
+    \subitem {web\_frontend}, \hyperpage{33}
+  \item {index\_ext\_eval}
+    \subitem {comparison\_plots}, \hyperpage{15}
+  \item {index\_external}
+    \subitem {indices.Indices}, \hyperpage{50}
+  \item {index\_int\_eval}
+    \subitem {comparison\_plots}, \hyperpage{15}
+  \item {index\_internal}
+    \subitem {indices.Indices}, \hyperpage{50}
+  \item {index\_score}
+    \subitem {comparison\_plots}, \hyperpage{15}
+  \item {index\_scores}
+    \subitem {comparison\_plots}, \hyperpage{15}
+  \item {indices}, \hyperpage{22}
+  \item {indices.Indices}, \hyperpage{49}
+    \subitem {\_\_init\_\_}, \hyperpage{49}
+    \subitem {cluster\_calc}, \hyperpage{50}
+    \subitem {cluster\_label}, \hyperpage{50}
+    \subitem {index\_external}, \hyperpage{50}
+    \subitem {index\_internal}, \hyperpage{50}
+  \item {indices.py}, \hyperpage{68}
+  \item {indices\_data}
+    \subitem {web\_frontend}, \hyperpage{33}
+
+  \indexspace
+
+  \item {k}
+    \subitem {comparison\_plots}, \hyperpage{15}
+    \subitem {dbscan\_heuristic.DBSCANHeuristic}, \hyperpage{48}
+    \subitem {heuristic\_web}, \hyperpage{20}
+    \subitem {result\_calculation}, \hyperpage{24}
+    \subitem {web\_frontend}, \hyperpage{33}
+  \item {k\_value}
+    \subitem {web\_frontend}, \hyperpage{33}
+  \item {kalgoclass}
+    \subitem {comparison\_plots}, \hyperpage{16}
+    \subitem {result\_calculation}, \hyperpage{24}
+  \item {kalgos}
+    \subitem {comparison\_plots}, \hyperpage{16}
+    \subitem {result\_calculation}, \hyperpage{24}
+  \item {kdist}
+    \subitem {dbscan\_heuristic.DBSCANHeuristic}, \hyperpage{47}
+    \subitem {heuristic\_web}, \hyperpage{20}
+  \item {key}
+    \subitem {heuristic\_web}, \hyperpage{20}
+  \item {kind}
+    \subitem {comparison\_plots}, \hyperpage{16}
+  \item {kmeans}, \hyperpage{22}
+  \item {kmeans.kmeansClustering}, \hyperpage{51}
+    \subitem {\_\_init\_\_}, \hyperpage{52}
+    \subitem {cluster}, \hyperpage{52}
+    \subitem {data}, \hyperpage{52}
+    \subitem {dataset}, \hyperpage{53}
+    \subitem {labels}, \hyperpage{53}
+    \subitem {metric}, \hyperpage{53}
+    \subitem {seed}, \hyperpage{53}
+  \item {kmeans.py}, \hyperpage{69}
+  \item {kmedians}, \hyperpage{22}
+  \item {kmedians.kmediansClustering}, \hyperpage{54}
+    \subitem {\_\_init\_\_}, \hyperpage{54}
+    \subitem {cluster}, \hyperpage{55}
+    \subitem {data}, \hyperpage{55}
+    \subitem {dataset}, \hyperpage{55}
+    \subitem {labels}, \hyperpage{55}
+    \subitem {metric}, \hyperpage{56}
+    \subitem {seed}, \hyperpage{56}
+  \item {kmedians.py}, \hyperpage{69}
+  \item {kmedoids}, \hyperpage{23}
+  \item {kmedoids.kmedoidsClustering}, \hyperpage{56}
+    \subitem {\_\_init\_\_}, \hyperpage{57}
+    \subitem {cluster}, \hyperpage{57}
+    \subitem {data}, \hyperpage{58}
+    \subitem {dataset}, \hyperpage{58}
+    \subitem {labels}, \hyperpage{59}
+    \subitem {metric}, \hyperpage{59}
+    \subitem {package}, \hyperpage{58}
+    \subitem {seed}, \hyperpage{59}
+  \item {kmedoids.py}, \hyperpage{70}
+
+  \indexspace
+
+  \item {labels}
+    \subitem {clustering.Clustering}, \hyperpage{42}
+    \subitem {comparison\_plots}, \hyperpage{16}
+    \subitem {dbscan.DBSCANClustering}, \hyperpage{45}
+    \subitem {kmeans.kmeansClustering}, \hyperpage{53}
+    \subitem {kmedians.kmediansClustering}, \hyperpage{55}
+    \subitem {kmedoids.kmedoidsClustering}, \hyperpage{59}
+    \subitem {web\_frontend}, \hyperpage{33}
+  \item {legend}
+    \subitem {comparison\_plots}, \hyperpage{16}
+    \subitem {web\_frontend}, \hyperpage{33}
+  \item {line}
+    \subitem {heuristic\_web}, \hyperpage{20}
+  \item {linewidth}
+    \subitem {web\_frontend}, \hyperpage{33}
+  \item {load\_data}
+    \subitem {clustering.Clustering}, \hyperpage{41}
+  \item {load\_set}
+    \subitem {results.Results}, \hyperpage{61}
+  \item {loc}
+    \subitem {comparison\_plots}, \hyperpage{16}
+
+  \indexspace
+
+  \item {m}
+    \subitem {result\_calculation}, \hyperpage{25}
+  \item {markers}
+    \subitem {web\_frontend}, \hyperpage{34}
+  \item {marking\_centroids}
+    \subitem {web\_frontend}, \hyperpage{34}
+  \item {metric}
+    \subitem {clustering.Clustering}, \hyperpage{42}
+    \subitem {dbscan.DBSCANClustering}, \hyperpage{45}
+    \subitem {dbscan\_heuristic.DBSCANHeuristic}, \hyperpage{48}
+    \subitem {kmeans.kmeansClustering}, \hyperpage{53}
+    \subitem {kmedians.kmediansClustering}, \hyperpage{56}
+    \subitem {kmedoids.kmedoidsClustering}, \hyperpage{59}
+  \item {minpts}
+    \subitem {result\_calculation}, \hyperpage{25}
+    \subitem {web\_frontend}, \hyperpage{34}
+
+  \indexspace
+
+  \item {nearest}
+    \subitem {heuristic\_web}, \hyperpage{20}
+  \item {num\_of\_classes}
+    \subitem {comparison\_plots}, \hyperpage{16}
 
   \indexspace
 
   \item {package}
-    \subitem {dbscan.DBSCANClustering}, \hyperpage{11}
-    \subitem {kmedoids.kmedoidsClustering}, \hyperpage{18}
+    \subitem {dbscan.DBSCANClustering}, \hyperpage{45}
+    \subitem {kmedoids.kmedoidsClustering}, \hyperpage{58}
+  \item {page\_icon}
+    \subitem {heuristic\_web}, \hyperpage{20}
+    \subitem {web\_frontend}, \hyperpage{34}
+  \item {page\_title}
+    \subitem {heuristic\_web}, \hyperpage{20}
+    \subitem {web\_frontend}, \hyperpage{34}
+  \item {palette}
+    \subitem {web\_frontend}, \hyperpage{34}
+  \item {parent}
+    \subitem {results.Results}, \hyperpage{62}
+  \item {pcaalt}
+    \subitem {web\_frontend}, \hyperpage{34}
+  \item {perp}
+    \subitem {web\_frontend}, \hyperpage{35}
+  \item {plot\_kdist}
+    \subitem {dbscan\_heuristic.DBSCANHeuristic}, \hyperpage{47}
+  \item {point\_label}
+    \subitem {web\_frontend}, \hyperpage{35}
+  \item {points}
+    \subitem {heuristic\_web}, \hyperpage{21}
+  \item {precalc}
+    \subitem {web\_frontend}, \hyperpage{35}
+  \item {predicted}
+    \subitem {comparison\_plots}, \hyperpage{17}
+    \subitem {web\_frontend}, \hyperpage{35}
+  \item {projected\_data\_pca}
+    \subitem {web\_frontend}, \hyperpage{35}
+  \item {projected\_data\_tsne}
+    \subitem {web\_frontend}, \hyperpage{35}
   \item {pyc\_metric}
-    \subitem {clustering.Clustering}, \hyperpage{9}
+    \subitem {clustering.Clustering}, \hyperpage{41}
+
+  \indexspace
+
+  \item {reset\_tmp}
+    \subitem {web\_frontend}, \hyperpage{35}
+  \item {result\_calculation}, \hyperpage{23}
+    \subitem {alg}, \hyperpage{23}
+    \subitem {c}, \hyperpage{23}
+    \subitem {centers}, \hyperpage{23}
+    \subitem {clusters}, \hyperpage{24}
+    \subitem {d}, \hyperpage{24}
+    \subitem {datasets}, \hyperpage{24}
+    \subitem {distances}, \hyperpage{24}
+    \subitem {eps}, \hyperpage{24}
+    \subitem {k}, \hyperpage{24}
+    \subitem {kalgoclass}, \hyperpage{24}
+    \subitem {kalgos}, \hyperpage{24}
+    \subitem {m}, \hyperpage{25}
+    \subitem {minpts}, \hyperpage{25}
+    \subitem {results}, \hyperpage{25}
+    \subitem {s}, \hyperpage{25}
+    \subitem {seed}, \hyperpage{25}
+  \item {result\_calculation.py}, \hyperpage{70}
+  \item {resulthandler}
+    \subitem {web\_frontend}, \hyperpage{36}
+  \item {results}, \hyperpage{25}
+    \subitem {comparison\_plots}, \hyperpage{17}
+    \subitem {result\_calculation}, \hyperpage{25}
+    \subitem {web\_frontend}, \hyperpage{36}
+  \item {results.py}, \hyperpage{71}
+  \item {results.Results}, \hyperpage{59}
+    \subitem {\_\_init\_\_}, \hyperpage{60}
+    \subitem {get\_path}, \hyperpage{60}
+    \subitem {load\_set}, \hyperpage{61}
+    \subitem {parent}, \hyperpage{62}
+    \subitem {save\_set}, \hyperpage{61}
+    \subitem {set\_exists}, \hyperpage{62}
+  \item {reverse}
+    \subitem {heuristic\_web}, \hyperpage{21}
+  \item {rules}
+    \subitem {heuristic\_web}, \hyperpage{21}
+
+  \indexspace
+
+  \item {s}
+    \subitem {comparison\_plots}, \hyperpage{17}
+    \subitem {result\_calculation}, \hyperpage{25}
+  \item {save\_set}
+    \subitem {results.Results}, \hyperpage{61}
+  \item {score}
+    \subitem {web\_frontend}, \hyperpage{36}
+  \item {seaplots}
+    \subitem {web\_frontend}, \hyperpage{36}
+  \item {seed}
+    \subitem {clustering.Clustering}, \hyperpage{43}
+    \subitem {comparison\_plots}, \hyperpage{17}
+    \subitem {kmeans.kmeansClustering}, \hyperpage{53}
+    \subitem {kmedians.kmediansClustering}, \hyperpage{56}
+    \subitem {kmedoids.kmedoidsClustering}, \hyperpage{59}
+    \subitem {result\_calculation}, \hyperpage{25}
+    \subitem {web\_frontend}, \hyperpage{36}
+  \item {seeded}
+    \subitem {web\_frontend}, \hyperpage{36}
+  \item {selectors}
+    \subitem {heuristic\_web}, \hyperpage{21}
+  \item {session\_state}
+    \subitem {web\_frontend}, \hyperpage{36}
+  \item {SessionState}, \hyperpage{26}
+    \subitem {get}, \hyperpage{26}
+  \item {SessionState.py}, \hyperpage{71}
+  \item {SessionState.SessionState}, \hyperpage{63}
+    \subitem {\_\_init\_\_}, \hyperpage{63}
+  \item {set\_dataset}
+    \subitem {dbscan\_heuristic.DBSCANHeuristic}, \hyperpage{47}
+  \item {set\_exists}
+    \subitem {results.Results}, \hyperpage{62}
+  \item {set\_metric}
+    \subitem {dbscan\_heuristic.DBSCANHeuristic}, \hyperpage{48}
+  \item {size}
+    \subitem {web\_frontend}, \hyperpage{37}
+  \item {stats}
+    \subitem {web\_frontend}, \hyperpage{37}
+  \item {stuff}
+    \subitem {comparison\_plots}, \hyperpage{17}
+    \subitem {web\_frontend}, \hyperpage{37}
+  \item {style}
+    \subitem {comparison\_plots}, \hyperpage{17}
+    \subitem {web\_frontend}, \hyperpage{37}
+  \item {submit\_button}
+    \subitem {heuristic\_web}, \hyperpage{21}
+  \item {subplot\_kw}
+    \subitem {web\_frontend}, \hyperpage{37}
+
+  \indexspace
+
+  \item {text}
+    \subitem {heuristic\_web}, \hyperpage{21}
+  \item {textp}
+    \subitem {heuristic\_web}, \hyperpage{21}
+  \item {title}
+    \subitem {comparison\_plots}, \hyperpage{17}
+  \item {tsnealt}
+    \subitem {web\_frontend}, \hyperpage{37}
+
+  \indexspace
+
+  \item {use\_container\_width}
+    \subitem {heuristic\_web}, \hyperpage{22}
+    \subitem {web\_frontend}, \hyperpage{37}
+
+  \indexspace
+
+  \item {val}
+    \subitem {web\_frontend}, \hyperpage{38}
+
+  \indexspace
+
+  \item {web\_frontend}, \hyperpage{27}
+    \subitem {add\_result}, \hyperpage{28}
+    \subitem {align}, \hyperpage{28}
+    \subitem {alpha}, \hyperpage{28}
+    \subitem {altcolor}, \hyperpage{29}
+    \subitem {angles}, \hyperpage{29}
+    \subitem {ax}, \hyperpage{29}
+    \subitem {cluster}, \hyperpage{29}
+    \subitem {cluster\_algo}, \hyperpage{29}
+    \subitem {cluster\_algo\_class}, \hyperpage{29}
+    \subitem {cluster\_dist}, \hyperpage{29}
+    \subitem {cluster\_dist\_desc}, \hyperpage{30}
+    \subitem {cluster\_label}, \hyperpage{30}
+    \subitem {clustered\_data}, \hyperpage{30}
+    \subitem {clusters}, \hyperpage{30}
+    \subitem {col1}, \hyperpage{30}
+    \subitem {col2}, \hyperpage{30}
+    \subitem {color}, \hyperpage{30}
+    \subitem {color\_palette}, \hyperpage{31}
+    \subitem {dataexpander}, \hyperpage{31}
+    \subitem {dataset}, \hyperpage{31}
+    \subitem {datasets}, \hyperpage{31}
+    \subitem {desc}, \hyperpage{31}
+    \subitem {desc\_list}, \hyperpage{31}
+    \subitem {df}, \hyperpage{31}
+    \subitem {dfclusterdata}, \hyperpage{32}
+    \subitem {eps}, \hyperpage{32}
+    \subitem {epsilon}, \hyperpage{32}
+    \subitem {False}, \hyperpage{32}
+    \subitem {fig}, \hyperpage{32}
+    \subitem {hue}, \hyperpage{32}
+    \subitem {I1}, \hyperpage{32}
+    \subitem {index\_eval}, \hyperpage{33}
+    \subitem {indices\_data}, \hyperpage{33}
+    \subitem {k}, \hyperpage{33}
+    \subitem {k\_value}, \hyperpage{33}
+    \subitem {labels}, \hyperpage{33}
+    \subitem {legend}, \hyperpage{33}
+    \subitem {linewidth}, \hyperpage{33}
+    \subitem {markers}, \hyperpage{34}
+    \subitem {marking\_centroids}, \hyperpage{34}
+    \subitem {minpts}, \hyperpage{34}
+    \subitem {page\_icon}, \hyperpage{34}
+    \subitem {page\_title}, \hyperpage{34}
+    \subitem {palette}, \hyperpage{34}
+    \subitem {pcaalt}, \hyperpage{34}
+    \subitem {perp}, \hyperpage{35}
+    \subitem {point\_label}, \hyperpage{35}
+    \subitem {precalc}, \hyperpage{35}
+    \subitem {predicted}, \hyperpage{35}
+    \subitem {projected\_data\_pca}, \hyperpage{35}
+    \subitem {projected\_data\_tsne}, \hyperpage{35}
+    \subitem {reset\_tmp}, \hyperpage{35}
+    \subitem {resulthandler}, \hyperpage{36}
+    \subitem {results}, \hyperpage{36}
+    \subitem {score}, \hyperpage{36}
+    \subitem {seaplots}, \hyperpage{36}
+    \subitem {seed}, \hyperpage{36}
+    \subitem {seeded}, \hyperpage{36}
+    \subitem {session\_state}, \hyperpage{36}
+    \subitem {size}, \hyperpage{37}
+    \subitem {stats}, \hyperpage{37}
+    \subitem {stuff}, \hyperpage{37}
+    \subitem {style}, \hyperpage{37}
+    \subitem {subplot\_kw}, \hyperpage{37}
+    \subitem {tsnealt}, \hyperpage{37}
+    \subitem {use\_container\_width}, \hyperpage{37}
+    \subitem {val}, \hyperpage{38}
+    \subitem {weights}, \hyperpage{38}
+    \subitem {width}, \hyperpage{38}
+    \subitem {x}, \hyperpage{38}
+    \subitem {xaxis}, \hyperpage{38}
+    \subitem {xs}, \hyperpage{38}
+    \subitem {y}, \hyperpage{38}
+    \subitem {yaxis}, \hyperpage{38}
+    \subitem {ys}, \hyperpage{38}
+  \item {web\_frontend.py}, \hyperpage{72}
+  \item {weights}
+    \subitem {web\_frontend}, \hyperpage{38}
+  \item {width}
+    \subitem {web\_frontend}, \hyperpage{38}
+
+  \indexspace
+
+  \item {x}
+    \subitem {comparison\_plots}, \hyperpage{17}
+    \subitem {web\_frontend}, \hyperpage{38}
+  \item {xaxis}
+    \subitem {web\_frontend}, \hyperpage{38}
+  \item {xs}
+    \subitem {web\_frontend}, \hyperpage{38}
+
+  \indexspace
+
+  \item {y}
+    \subitem {comparison\_plots}, \hyperpage{18}
+    \subitem {web\_frontend}, \hyperpage{38}
+  \item {yaxis}
+    \subitem {heuristic\_web}, \hyperpage{22}
+    \subitem {web\_frontend}, \hyperpage{38}
+  \item {ys}
+    \subitem {web\_frontend}, \hyperpage{38}
 
 \end{theindex}

@@ -1,3 +1,8 @@
+"""
+@file kmeans.py
+implementation of the k-means algorithm.
+"""
+
 from clustering import Clustering
 from pyclustering.cluster.kmeans import kmeans, kmeans_visualizer
 from pyclustering.cluster.center_initializer import kmeans_plusplus_initializer, random_center_initializer

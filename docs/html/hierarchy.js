@@ -6,5 +6,10 @@ var hierarchy =
       [ "kmedians.kmediansClustering", "classkmedians_1_1kmediansClustering.html", null ],
       [ "kmedoids.kmedoidsClustering", "classkmedoids_1_1kmedoidsClustering.html", null ]
     ] ],
-    [ "indices.Indices", "classindices_1_1Indices.html", null ]
+    [ "dbscan_heuristic.DBSCANHeuristic", "classdbscan__heuristic_1_1DBSCANHeuristic.html", null ],
+    [ "indices.Indices", "classindices_1_1Indices.html", null ],
+    [ "object", null, [
+      [ "SessionState.SessionState", "classSessionState_1_1SessionState.html", null ]
+    ] ],
+    [ "results.Results", "classresults_1_1Results.html", null ]
 ];

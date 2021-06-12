@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['labels_12',['labels',['../classclustering_1_1Clustering.html#a9e5a4547b2d7836c84b6e9ef2f30ab03',1,'clustering.Clustering.labels()'],['../classdbscan_1_1DBSCANClustering.html#a394090abeacf5da4894e85263b76dfd6',1,'dbscan.DBSCANClustering.labels()'],['../classkmeans_1_1kmeansClustering.html#a5b1308830139d50a59c96d95881f6994',1,'kmeans.kmeansClustering.labels()'],['../classkmedians_1_1kmediansClustering.html#a34df5300aa64e01801783576253ada68',1,'kmedians.kmediansClustering.labels()'],['../classkmedoids_1_1kmedoidsClustering.html#a91fc0212d9001b3346109f5230f7cab4',1,'kmedoids.kmedoidsClustering.labels()']]],
-  ['load_5fdata_13',['load_data',['../classclustering_1_1Clustering.html#a66e74662b64e031f887cb3d46f065a06',1,'clustering::Clustering']]]
+  ['false_55',['False',['../namespaceweb__frontend.html#a3c3a05e18097009144e4684f3beee988',1,'web_frontend']]],
+  ['fig_56',['fig',['../namespacecomparison__plots.html#ab680834434448414098a5fd807f8f554',1,'comparison_plots.fig()'],['../namespaceweb__frontend.html#ab2c7ca7d972c5e7340cf4c7e867b5d02',1,'web_frontend.fig()']]],
+  ['figsize_57',['figsize',['../namespacecomparison__plots.html#aba89b893ca71bbecebfd3e15af295ce1',1,'comparison_plots']]]
 ];

@@ -1,4 +1,8 @@
-"""Hack to add per-session state to Streamlit.
+"""
+@file SessionState.py
+taken from https://gist.github.com/tvst/036da038ab3e999a64497f42de966a92. Please refer to this gist and its original author
+
+Hack to add per-session state to Streamlit.
 
 Usage
 -----

@@ -1,3 +1,8 @@
+"""
+@file kmedians.py
+implementation of the k-medians algorithm.
+"""
+
 from clustering import Clustering
 from pyclustering.cluster.kmedians import kmedians
 from pyclustering.cluster.center_initializer import kmeans_plusplus_initializer, random_center_initializer
@@ -58,8 +63,3 @@ class kmediansClustering(Clustering):
         medians = kmedians_instance.get_medians()
 
         return clusters, medians
-
-if __name__ == "__main__":
-    c = kmediansClustering("cosine", "iris")
-    c.load_data()
-    c.cluster(1)

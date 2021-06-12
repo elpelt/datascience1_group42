@@ -1,0 +1,344 @@
+\hypertarget{namespacecomparison__plots}{}\doxysection{comparison\+\_\+plots Namespace Reference}
+\label{namespacecomparison__plots}\index{comparison\_plots@{comparison\_plots}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespacecomparison__plots_a2081b82ba3759f16f6e96d1eef9fd488}{kalgos}} = \mbox{[}\textquotesingle{}kmeans\textquotesingle{}, \textquotesingle{}kmedians\textquotesingle{}, \textquotesingle{}kmedoids\textquotesingle{}\mbox{]}
+\item 
+dictionary \mbox{\hyperlink{namespacecomparison__plots_adbd3fd741604c3322c048ca36bf1d024}{kalgoclass}} = \{\textquotesingle{}kmeans\textquotesingle{}\+: \mbox{\hyperlink{classkmeans_1_1kmeansClustering}{kmeans\+Clustering}}, \textquotesingle{}kmedians\textquotesingle{}\+: \mbox{\hyperlink{classkmedians_1_1kmediansClustering}{kmedians\+Clustering}}, \textquotesingle{}kmedoids\textquotesingle{}\+: \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering}{kmedoids\+Clustering}}\}
+\item 
+list \mbox{\hyperlink{namespacecomparison__plots_a883c5aeb7bcda7c4ba1b91a0b66a2362}{distances}} = \mbox{[}\char`\"{}euclidean\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}cosine\char`\"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacecomparison__plots_a90b4218b87d66220647776ec04a5a547}{datasets}} = \mbox{[}\char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}diabetes\char`\"{}, \char`\"{}housevotes\char`\"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacecomparison__plots_a2c9402e730df1da3bdaad2762bea71a4}{index\+\_\+ext\+\_\+eval}} = \mbox{[}\char`\"{}ARI\char`\"{}, \char`\"{}NMI\char`\"{}, \char`\"{}Completeness Score\char`\"{}, \char`\"{}Homogeneity Score\char`\"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacecomparison__plots_a79fedf98c84d302828e7dec5f603b414}{index\+\_\+int\+\_\+eval}} = \mbox{[}\char`\"{}Silhouette Score\char`\"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacecomparison__plots_a47fb570c1fd566ffd662b443c32d6466}{num\+\_\+of\+\_\+classes}} = \mbox{[}3,3,2,2\mbox{]}
+\item 
+int \mbox{\hyperlink{namespacecomparison__plots_a087256393affc587cf0429ccee42bf24}{seed}} = 42
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_a0a9c78ffc0d5a88ea923bbbab6d45f1b}{results}} = \mbox{\hyperlink{classresults_1_1Results}{Results}}(\char`\"{}./results\char`\"{})
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_aa74a009f2421e2d7133054bd7b8e487d}{all\+\_\+kalgos}} = np.\+zeros((3,4, 9,len(\mbox{\hyperlink{namespacecomparison__plots_a2c9402e730df1da3bdaad2762bea71a4}{index\+\_\+ext\+\_\+eval}})))
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_aa973bd93ee0ec916c2d27cc0aa7ae0f8}{all\+\_\+kalgos\+\_\+int}} = pd.\+Data\+Frame(columns=\mbox{[}\textquotesingle{}\mbox{\hyperlink{namespacecomparison__plots_a0b7fe02e8473fff4f2609da2a47bffa4}{k}}\textquotesingle{}, \textquotesingle{}Distance (Silhouette Score)\textquotesingle{}, \textquotesingle{}Distance (Clustering)\textquotesingle{}, \textquotesingle{}sil\+\_\+score\textquotesingle{}, \textquotesingle{}kalgo\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_a1b293b4390a4a0a4ad60fa3ebfcf9ac9}{all\+\_\+dist}} = np.\+zeros((4, 9,len(\mbox{\hyperlink{namespacecomparison__plots_a2c9402e730df1da3bdaad2762bea71a4}{index\+\_\+ext\+\_\+eval}})))
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_a3f3ac75294a407ec34918b677c657b94}{all\+\_\+k}} = np.\+zeros((9,len(\mbox{\hyperlink{namespacecomparison__plots_a2c9402e730df1da3bdaad2762bea71a4}{index\+\_\+ext\+\_\+eval}})))
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_aba41571ef556abec26ba9019b96ebb9a}{clusters}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_ae8f81c42fe52b75f569dac87128d805c}{stuff}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_a05facf77ed2f5041702fce0f3c58519c}{s}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_adea5b85428072fa454e1eb9ac341a0fe}{c}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_a897171abac1d3548c703575dd3c7cb2c}{d}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_a0b7fe02e8473fff4f2609da2a47bffa4}{k}}
+\item 
+dictionary \mbox{\hyperlink{namespacecomparison__plots_a2af7b094e4f65937fa74ffcfbb77b471}{cluster}} = \mbox{\hyperlink{namespacecomparison__plots_adbd3fd741604c3322c048ca36bf1d024}{kalgoclass}}\mbox{[}\mbox{\hyperlink{namespacecomparison__plots_adea5b85428072fa454e1eb9ac341a0fe}{c}}\mbox{]}(\mbox{\hyperlink{namespacecomparison__plots_a897171abac1d3548c703575dd3c7cb2c}{d}}, \mbox{\hyperlink{namespacecomparison__plots_a05facf77ed2f5041702fce0f3c58519c}{s}}, \mbox{\hyperlink{namespacecomparison__plots_a087256393affc587cf0429ccee42bf24}{seed}})
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_ac2bc7eefd065b41e230f005d92674fad}{clustered\+\_\+data}} = np.\+zeros(len(cluster.\+data))
+\item 
+dictionary \mbox{\hyperlink{namespacecomparison__plots_a9a3d7b0edf42bbfd699643635c863b8c}{labels}} = cluster.\+labels.\+tolist()
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_ae37ed368a170a42c00b1ae7ddefaa40b}{predicted}} = clustered\+\_\+data.\+tolist()
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_a09cd9b02eb1166532a4caeb1ca65cb04}{I1}} = \mbox{\hyperlink{classindices_1_1Indices}{Indices}}(\mbox{\hyperlink{namespacecomparison__plots_ae37ed368a170a42c00b1ae7ddefaa40b}{predicted}}, \mbox{\hyperlink{namespacecomparison__plots_a9a3d7b0edf42bbfd699643635c863b8c}{labels}})
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_ac3714b681f67ab7ba125705a877697b4}{index\+\_\+scores}} = np.\+zeros\+\_\+like(\mbox{\hyperlink{namespacecomparison__plots_a2c9402e730df1da3bdaad2762bea71a4}{index\+\_\+ext\+\_\+eval}}, dtype=float)
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_a30704a259a274f44d51b4afcd62586da}{index\+\_\+score}} = I1.\+index\+\_\+internal(\mbox{\hyperlink{namespacecomparison__plots_afb2a9dc6611d33590c974d0ce5069b76}{index}}=\mbox{\hyperlink{namespacecomparison__plots_a79fedf98c84d302828e7dec5f603b414}{index\+\_\+int\+\_\+eval}}\mbox{[}0\mbox{]}, points=cluster.\+data.\+tolist(), metric=di)
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_afb2a9dc6611d33590c974d0ce5069b76}{index}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_ab680834434448414098a5fd807f8f554}{fig}} = plt.\+figure(\mbox{\hyperlink{namespacecomparison__plots_aba89b893ca71bbecebfd3e15af295ce1}{figsize}}=(15, 10))
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_ad5398a55cacdde83964b899d847f56d0}{bbox\+\_\+to\+\_\+anchor}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_a146bedbde35f26630d4c7558dcf07c73}{loc}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_a49d661c3b1d5a5a54e4c49166fe5c669}{borderaxespad}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_ad904120c2e3840bc451503883dedb107}{ax}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_aba89b893ca71bbecebfd3e15af295ce1}{figsize}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_ab8bcd732cc7945aede098774d027636c}{data}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_af306d7782d3208c5a84a00d6a21b91ae}{x}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_a39eee19f958bd0fcf87c36b45d6e01e9}{y}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_a3139c30abd6668d7deb06b81aefd2707}{hue}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_aff300a011b58681562319399102cb987}{style}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_a680c539847a648a3c67ba6a0075d4578}{legend}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_addb96093e081f7fa8493d2aa3ac143bb}{all\+\_\+kalgos\+\_\+df}} = pd.\+Data\+Frame(\mbox{\hyperlink{namespacecomparison__plots_aa74a009f2421e2d7133054bd7b8e487d}{all\+\_\+kalgos}}\mbox{[}\+:,\+:,\mbox{\hyperlink{namespacecomparison__plots_a47fb570c1fd566ffd662b443c32d6466}{num\+\_\+of\+\_\+classes}}\mbox{[}isx\mbox{]}-\/2,i\mbox{]}, columns=\mbox{\hyperlink{namespacecomparison__plots_a883c5aeb7bcda7c4ba1b91a0b66a2362}{distances}}, \mbox{\hyperlink{namespacecomparison__plots_afb2a9dc6611d33590c974d0ce5069b76}{index}}=\mbox{\hyperlink{namespacecomparison__plots_a2081b82ba3759f16f6e96d1eef9fd488}{kalgos}})
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_a32b65094ff4ac599c3e0f83f8355928a}{kind}}
+\item 
+\mbox{\hyperlink{namespacecomparison__plots_a8e616eea1dc83f272702b0b4b08af6f9}{title}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacecomparison__plots_a1b293b4390a4a0a4ad60fa3ebfcf9ac9}\label{namespacecomparison__plots_a1b293b4390a4a0a4ad60fa3ebfcf9ac9}} 
+\index{comparison\_plots@{comparison\_plots}!all\_dist@{all\_dist}}
+\index{all\_dist@{all\_dist}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{all\_dist}{all\_dist}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+all\+\_\+dist = np.\+zeros((4, 9,len(\mbox{\hyperlink{namespacecomparison__plots_a2c9402e730df1da3bdaad2762bea71a4}{index\+\_\+ext\+\_\+eval}})))}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a3f3ac75294a407ec34918b677c657b94}\label{namespacecomparison__plots_a3f3ac75294a407ec34918b677c657b94}} 
+\index{comparison\_plots@{comparison\_plots}!all\_k@{all\_k}}
+\index{all\_k@{all\_k}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{all\_k}{all\_k}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+all\+\_\+k = np.\+zeros((9,len(\mbox{\hyperlink{namespacecomparison__plots_a2c9402e730df1da3bdaad2762bea71a4}{index\+\_\+ext\+\_\+eval}})))}
+
+\mbox{\Hypertarget{namespacecomparison__plots_aa74a009f2421e2d7133054bd7b8e487d}\label{namespacecomparison__plots_aa74a009f2421e2d7133054bd7b8e487d}} 
+\index{comparison\_plots@{comparison\_plots}!all\_kalgos@{all\_kalgos}}
+\index{all\_kalgos@{all\_kalgos}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{all\_kalgos}{all\_kalgos}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+all\+\_\+kalgos = np.\+zeros((3,4, 9,len(\mbox{\hyperlink{namespacecomparison__plots_a2c9402e730df1da3bdaad2762bea71a4}{index\+\_\+ext\+\_\+eval}})))}
+
+\mbox{\Hypertarget{namespacecomparison__plots_addb96093e081f7fa8493d2aa3ac143bb}\label{namespacecomparison__plots_addb96093e081f7fa8493d2aa3ac143bb}} 
+\index{comparison\_plots@{comparison\_plots}!all\_kalgos\_df@{all\_kalgos\_df}}
+\index{all\_kalgos\_df@{all\_kalgos\_df}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{all\_kalgos\_df}{all\_kalgos\_df}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+all\+\_\+kalgos\+\_\+df = pd.\+Data\+Frame(\mbox{\hyperlink{namespacecomparison__plots_aa74a009f2421e2d7133054bd7b8e487d}{all\+\_\+kalgos}}\mbox{[}\+:,\+:,\mbox{\hyperlink{namespacecomparison__plots_a47fb570c1fd566ffd662b443c32d6466}{num\+\_\+of\+\_\+classes}}\mbox{[}isx\mbox{]}-\/2,i\mbox{]}, columns=\mbox{\hyperlink{namespacecomparison__plots_a883c5aeb7bcda7c4ba1b91a0b66a2362}{distances}}, \mbox{\hyperlink{namespacecomparison__plots_afb2a9dc6611d33590c974d0ce5069b76}{index}}=\mbox{\hyperlink{namespacecomparison__plots_a2081b82ba3759f16f6e96d1eef9fd488}{kalgos}})}
+
+\mbox{\Hypertarget{namespacecomparison__plots_aa973bd93ee0ec916c2d27cc0aa7ae0f8}\label{namespacecomparison__plots_aa973bd93ee0ec916c2d27cc0aa7ae0f8}} 
+\index{comparison\_plots@{comparison\_plots}!all\_kalgos\_int@{all\_kalgos\_int}}
+\index{all\_kalgos\_int@{all\_kalgos\_int}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{all\_kalgos\_int}{all\_kalgos\_int}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+all\+\_\+kalgos\+\_\+int = pd.\+Data\+Frame(columns=\mbox{[}\textquotesingle{}\mbox{\hyperlink{namespacecomparison__plots_a0b7fe02e8473fff4f2609da2a47bffa4}{k}}\textquotesingle{}, \textquotesingle{}Distance (Silhouette Score)\textquotesingle{}, \textquotesingle{}Distance (Clustering)\textquotesingle{}, \textquotesingle{}sil\+\_\+score\textquotesingle{}, \textquotesingle{}kalgo\textquotesingle{}\mbox{]})}
+
+\mbox{\Hypertarget{namespacecomparison__plots_ad904120c2e3840bc451503883dedb107}\label{namespacecomparison__plots_ad904120c2e3840bc451503883dedb107}} 
+\index{comparison\_plots@{comparison\_plots}!ax@{ax}}
+\index{ax@{ax}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{ax}{ax}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+ax}
+
+\mbox{\Hypertarget{namespacecomparison__plots_ad5398a55cacdde83964b899d847f56d0}\label{namespacecomparison__plots_ad5398a55cacdde83964b899d847f56d0}} 
+\index{comparison\_plots@{comparison\_plots}!bbox\_to\_anchor@{bbox\_to\_anchor}}
+\index{bbox\_to\_anchor@{bbox\_to\_anchor}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{bbox\_to\_anchor}{bbox\_to\_anchor}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+bbox\+\_\+to\+\_\+anchor}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a49d661c3b1d5a5a54e4c49166fe5c669}\label{namespacecomparison__plots_a49d661c3b1d5a5a54e4c49166fe5c669}} 
+\index{comparison\_plots@{comparison\_plots}!borderaxespad@{borderaxespad}}
+\index{borderaxespad@{borderaxespad}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{borderaxespad}{borderaxespad}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+borderaxespad}
+
+\mbox{\Hypertarget{namespacecomparison__plots_adea5b85428072fa454e1eb9ac341a0fe}\label{namespacecomparison__plots_adea5b85428072fa454e1eb9ac341a0fe}} 
+\index{comparison\_plots@{comparison\_plots}!c@{c}}
+\index{c@{c}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+c}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a2af7b094e4f65937fa74ffcfbb77b471}\label{namespacecomparison__plots_a2af7b094e4f65937fa74ffcfbb77b471}} 
+\index{comparison\_plots@{comparison\_plots}!cluster@{cluster}}
+\index{cluster@{cluster}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{cluster}{cluster}}
+{\footnotesize\ttfamily dictionary comparison\+\_\+plots.\+cluster = \mbox{\hyperlink{namespacecomparison__plots_adbd3fd741604c3322c048ca36bf1d024}{kalgoclass}}\mbox{[}\mbox{\hyperlink{namespacecomparison__plots_adea5b85428072fa454e1eb9ac341a0fe}{c}}\mbox{]}(\mbox{\hyperlink{namespacecomparison__plots_a897171abac1d3548c703575dd3c7cb2c}{d}}, \mbox{\hyperlink{namespacecomparison__plots_a05facf77ed2f5041702fce0f3c58519c}{s}}, \mbox{\hyperlink{namespacecomparison__plots_a087256393affc587cf0429ccee42bf24}{seed}})}
+
+\mbox{\Hypertarget{namespacecomparison__plots_ac2bc7eefd065b41e230f005d92674fad}\label{namespacecomparison__plots_ac2bc7eefd065b41e230f005d92674fad}} 
+\index{comparison\_plots@{comparison\_plots}!clustered\_data@{clustered\_data}}
+\index{clustered\_data@{clustered\_data}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{clustered\_data}{clustered\_data}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+clustered\+\_\+data = np.\+zeros(len(cluster.\+data))}
+
+\mbox{\Hypertarget{namespacecomparison__plots_aba41571ef556abec26ba9019b96ebb9a}\label{namespacecomparison__plots_aba41571ef556abec26ba9019b96ebb9a}} 
+\index{comparison\_plots@{comparison\_plots}!clusters@{clusters}}
+\index{clusters@{clusters}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{clusters}{clusters}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+clusters}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a897171abac1d3548c703575dd3c7cb2c}\label{namespacecomparison__plots_a897171abac1d3548c703575dd3c7cb2c}} 
+\index{comparison\_plots@{comparison\_plots}!d@{d}}
+\index{d@{d}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+d}
+
+\mbox{\Hypertarget{namespacecomparison__plots_ab8bcd732cc7945aede098774d027636c}\label{namespacecomparison__plots_ab8bcd732cc7945aede098774d027636c}} 
+\index{comparison\_plots@{comparison\_plots}!data@{data}}
+\index{data@{data}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+data}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a90b4218b87d66220647776ec04a5a547}\label{namespacecomparison__plots_a90b4218b87d66220647776ec04a5a547}} 
+\index{comparison\_plots@{comparison\_plots}!datasets@{datasets}}
+\index{datasets@{datasets}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{datasets}{datasets}}
+{\footnotesize\ttfamily list comparison\+\_\+plots.\+datasets = \mbox{[}\char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}diabetes\char`\"{}, \char`\"{}housevotes\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a883c5aeb7bcda7c4ba1b91a0b66a2362}\label{namespacecomparison__plots_a883c5aeb7bcda7c4ba1b91a0b66a2362}} 
+\index{comparison\_plots@{comparison\_plots}!distances@{distances}}
+\index{distances@{distances}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{distances}{distances}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+distances = \mbox{[}\char`\"{}euclidean\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}cosine\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacecomparison__plots_ab680834434448414098a5fd807f8f554}\label{namespacecomparison__plots_ab680834434448414098a5fd807f8f554}} 
+\index{comparison\_plots@{comparison\_plots}!fig@{fig}}
+\index{fig@{fig}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{fig}{fig}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+fig = plt.\+figure(\mbox{\hyperlink{namespacecomparison__plots_aba89b893ca71bbecebfd3e15af295ce1}{figsize}}=(15, 10))}
+
+\mbox{\Hypertarget{namespacecomparison__plots_aba89b893ca71bbecebfd3e15af295ce1}\label{namespacecomparison__plots_aba89b893ca71bbecebfd3e15af295ce1}} 
+\index{comparison\_plots@{comparison\_plots}!figsize@{figsize}}
+\index{figsize@{figsize}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{figsize}{figsize}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+figsize}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a3139c30abd6668d7deb06b81aefd2707}\label{namespacecomparison__plots_a3139c30abd6668d7deb06b81aefd2707}} 
+\index{comparison\_plots@{comparison\_plots}!hue@{hue}}
+\index{hue@{hue}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{hue}{hue}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+hue}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a09cd9b02eb1166532a4caeb1ca65cb04}\label{namespacecomparison__plots_a09cd9b02eb1166532a4caeb1ca65cb04}} 
+\index{comparison\_plots@{comparison\_plots}!I1@{I1}}
+\index{I1@{I1}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{I1}{I1}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+I1 = \mbox{\hyperlink{classindices_1_1Indices}{Indices}}(\mbox{\hyperlink{namespacecomparison__plots_ae37ed368a170a42c00b1ae7ddefaa40b}{predicted}}, \mbox{\hyperlink{namespacecomparison__plots_a9a3d7b0edf42bbfd699643635c863b8c}{labels}})}
+
+\mbox{\Hypertarget{namespacecomparison__plots_afb2a9dc6611d33590c974d0ce5069b76}\label{namespacecomparison__plots_afb2a9dc6611d33590c974d0ce5069b76}} 
+\index{comparison\_plots@{comparison\_plots}!index@{index}}
+\index{index@{index}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+index}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a2c9402e730df1da3bdaad2762bea71a4}\label{namespacecomparison__plots_a2c9402e730df1da3bdaad2762bea71a4}} 
+\index{comparison\_plots@{comparison\_plots}!index\_ext\_eval@{index\_ext\_eval}}
+\index{index\_ext\_eval@{index\_ext\_eval}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{index\_ext\_eval}{index\_ext\_eval}}
+{\footnotesize\ttfamily list comparison\+\_\+plots.\+index\+\_\+ext\+\_\+eval = \mbox{[}\char`\"{}ARI\char`\"{}, \char`\"{}NMI\char`\"{}, \char`\"{}Completeness Score\char`\"{}, \char`\"{}Homogeneity Score\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a79fedf98c84d302828e7dec5f603b414}\label{namespacecomparison__plots_a79fedf98c84d302828e7dec5f603b414}} 
+\index{comparison\_plots@{comparison\_plots}!index\_int\_eval@{index\_int\_eval}}
+\index{index\_int\_eval@{index\_int\_eval}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{index\_int\_eval}{index\_int\_eval}}
+{\footnotesize\ttfamily list comparison\+\_\+plots.\+index\+\_\+int\+\_\+eval = \mbox{[}\char`\"{}Silhouette Score\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a30704a259a274f44d51b4afcd62586da}\label{namespacecomparison__plots_a30704a259a274f44d51b4afcd62586da}} 
+\index{comparison\_plots@{comparison\_plots}!index\_score@{index\_score}}
+\index{index\_score@{index\_score}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{index\_score}{index\_score}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+index\+\_\+score = I1.\+index\+\_\+internal(\mbox{\hyperlink{namespacecomparison__plots_afb2a9dc6611d33590c974d0ce5069b76}{index}}=\mbox{\hyperlink{namespacecomparison__plots_a79fedf98c84d302828e7dec5f603b414}{index\+\_\+int\+\_\+eval}}\mbox{[}0\mbox{]}, points=cluster.\+data.\+tolist(), metric=di)}
+
+\mbox{\Hypertarget{namespacecomparison__plots_ac3714b681f67ab7ba125705a877697b4}\label{namespacecomparison__plots_ac3714b681f67ab7ba125705a877697b4}} 
+\index{comparison\_plots@{comparison\_plots}!index\_scores@{index\_scores}}
+\index{index\_scores@{index\_scores}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{index\_scores}{index\_scores}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+index\+\_\+scores = np.\+zeros\+\_\+like(\mbox{\hyperlink{namespacecomparison__plots_a2c9402e730df1da3bdaad2762bea71a4}{index\+\_\+ext\+\_\+eval}}, dtype=float)}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a0b7fe02e8473fff4f2609da2a47bffa4}\label{namespacecomparison__plots_a0b7fe02e8473fff4f2609da2a47bffa4}} 
+\index{comparison\_plots@{comparison\_plots}!k@{k}}
+\index{k@{k}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{k}{k}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+k}
+
+\mbox{\Hypertarget{namespacecomparison__plots_adbd3fd741604c3322c048ca36bf1d024}\label{namespacecomparison__plots_adbd3fd741604c3322c048ca36bf1d024}} 
+\index{comparison\_plots@{comparison\_plots}!kalgoclass@{kalgoclass}}
+\index{kalgoclass@{kalgoclass}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{kalgoclass}{kalgoclass}}
+{\footnotesize\ttfamily dictionary comparison\+\_\+plots.\+kalgoclass = \{\textquotesingle{}kmeans\textquotesingle{}\+: \mbox{\hyperlink{classkmeans_1_1kmeansClustering}{kmeans\+Clustering}}, \textquotesingle{}kmedians\textquotesingle{}\+: \mbox{\hyperlink{classkmedians_1_1kmediansClustering}{kmedians\+Clustering}}, \textquotesingle{}kmedoids\textquotesingle{}\+: \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering}{kmedoids\+Clustering}}\}}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a2081b82ba3759f16f6e96d1eef9fd488}\label{namespacecomparison__plots_a2081b82ba3759f16f6e96d1eef9fd488}} 
+\index{comparison\_plots@{comparison\_plots}!kalgos@{kalgos}}
+\index{kalgos@{kalgos}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{kalgos}{kalgos}}
+{\footnotesize\ttfamily list comparison\+\_\+plots.\+kalgos = \mbox{[}\textquotesingle{}kmeans\textquotesingle{}, \textquotesingle{}kmedians\textquotesingle{}, \textquotesingle{}kmedoids\textquotesingle{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a32b65094ff4ac599c3e0f83f8355928a}\label{namespacecomparison__plots_a32b65094ff4ac599c3e0f83f8355928a}} 
+\index{comparison\_plots@{comparison\_plots}!kind@{kind}}
+\index{kind@{kind}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{kind}{kind}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+kind}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a9a3d7b0edf42bbfd699643635c863b8c}\label{namespacecomparison__plots_a9a3d7b0edf42bbfd699643635c863b8c}} 
+\index{comparison\_plots@{comparison\_plots}!labels@{labels}}
+\index{labels@{labels}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{labels}{labels}}
+{\footnotesize\ttfamily dictionary comparison\+\_\+plots.\+labels = cluster.\+labels.\+tolist()}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a680c539847a648a3c67ba6a0075d4578}\label{namespacecomparison__plots_a680c539847a648a3c67ba6a0075d4578}} 
+\index{comparison\_plots@{comparison\_plots}!legend@{legend}}
+\index{legend@{legend}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{legend}{legend}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+legend}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a146bedbde35f26630d4c7558dcf07c73}\label{namespacecomparison__plots_a146bedbde35f26630d4c7558dcf07c73}} 
+\index{comparison\_plots@{comparison\_plots}!loc@{loc}}
+\index{loc@{loc}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{loc}{loc}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+loc}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a47fb570c1fd566ffd662b443c32d6466}\label{namespacecomparison__plots_a47fb570c1fd566ffd662b443c32d6466}} 
+\index{comparison\_plots@{comparison\_plots}!num\_of\_classes@{num\_of\_classes}}
+\index{num\_of\_classes@{num\_of\_classes}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{num\_of\_classes}{num\_of\_classes}}
+{\footnotesize\ttfamily list comparison\+\_\+plots.\+num\+\_\+of\+\_\+classes = \mbox{[}3,3,2,2\mbox{]}}
+
+\mbox{\Hypertarget{namespacecomparison__plots_ae37ed368a170a42c00b1ae7ddefaa40b}\label{namespacecomparison__plots_ae37ed368a170a42c00b1ae7ddefaa40b}} 
+\index{comparison\_plots@{comparison\_plots}!predicted@{predicted}}
+\index{predicted@{predicted}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{predicted}{predicted}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+predicted = clustered\+\_\+data.\+tolist()}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a0a9c78ffc0d5a88ea923bbbab6d45f1b}\label{namespacecomparison__plots_a0a9c78ffc0d5a88ea923bbbab6d45f1b}} 
+\index{comparison\_plots@{comparison\_plots}!results@{results}}
+\index{results@{results}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{results}{results}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+results = \mbox{\hyperlink{classresults_1_1Results}{Results}}(\char`\"{}./results\char`\"{})}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a05facf77ed2f5041702fce0f3c58519c}\label{namespacecomparison__plots_a05facf77ed2f5041702fce0f3c58519c}} 
+\index{comparison\_plots@{comparison\_plots}!s@{s}}
+\index{s@{s}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+s}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a087256393affc587cf0429ccee42bf24}\label{namespacecomparison__plots_a087256393affc587cf0429ccee42bf24}} 
+\index{comparison\_plots@{comparison\_plots}!seed@{seed}}
+\index{seed@{seed}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{seed}{seed}}
+{\footnotesize\ttfamily int comparison\+\_\+plots.\+seed = 42}
+
+\mbox{\Hypertarget{namespacecomparison__plots_ae8f81c42fe52b75f569dac87128d805c}\label{namespacecomparison__plots_ae8f81c42fe52b75f569dac87128d805c}} 
+\index{comparison\_plots@{comparison\_plots}!stuff@{stuff}}
+\index{stuff@{stuff}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{stuff}{stuff}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+stuff}
+
+\mbox{\Hypertarget{namespacecomparison__plots_aff300a011b58681562319399102cb987}\label{namespacecomparison__plots_aff300a011b58681562319399102cb987}} 
+\index{comparison\_plots@{comparison\_plots}!style@{style}}
+\index{style@{style}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{style}{style}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+style}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a8e616eea1dc83f272702b0b4b08af6f9}\label{namespacecomparison__plots_a8e616eea1dc83f272702b0b4b08af6f9}} 
+\index{comparison\_plots@{comparison\_plots}!title@{title}}
+\index{title@{title}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{title}{title}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+title}
+
+\mbox{\Hypertarget{namespacecomparison__plots_af306d7782d3208c5a84a00d6a21b91ae}\label{namespacecomparison__plots_af306d7782d3208c5a84a00d6a21b91ae}} 
+\index{comparison\_plots@{comparison\_plots}!x@{x}}
+\index{x@{x}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+x}
+
+\mbox{\Hypertarget{namespacecomparison__plots_a39eee19f958bd0fcf87c36b45d6e01e9}\label{namespacecomparison__plots_a39eee19f958bd0fcf87c36b45d6e01e9}} 
+\index{comparison\_plots@{comparison\_plots}!y@{y}}
+\index{y@{y}!comparison\_plots@{comparison\_plots}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily comparison\+\_\+plots.\+y}
+

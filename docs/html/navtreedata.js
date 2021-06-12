@@ -25,7 +25,22 @@
 var NAVTREE =
 [
   [ "Distance Measures and Clustering Group T4-2", "index.html", [
-    [ "Description", "index.html", null ],
+    [ "Description", "index.html", [
+      [ "Frontend", "index.html#autotoc_md2", null ],
+      [ "Documentation", "index.html#autotoc_md3", null ],
+      [ "Dependencies and Sources", "index.html#autotoc_md4", null ],
+      [ "ToDos", "index.html#autotoc_md5", null ],
+      [ "Nice-To-Haves", "index.html#autotoc_md6", null ],
+      [ "Authors", "index.html#autotoc_md7", null ]
+    ] ],
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ]
+      ] ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -35,13 +50,17 @@ var NAVTREE =
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
+    ] ],
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"SessionState_8py.html",
+"namespaceresult__calculation.html#aa19b5ca88c04409c87fb528f6044842c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

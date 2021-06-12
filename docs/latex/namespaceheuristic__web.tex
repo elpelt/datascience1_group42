@@ -1,0 +1,213 @@
+\hypertarget{namespaceheuristic__web}{}\doxysection{heuristic\+\_\+web Namespace Reference}
+\label{namespaceheuristic__web}\index{heuristic\_web@{heuristic\_web}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_a64d8677c350ee6d67493256c338d8520}{page\+\_\+title}}
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_adc31ea6f2611249ff48c71cf7d253f9f}{page\+\_\+icon}}
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_afa1ecf1f637abeeaa69cb9e6f8f74a44}{key}}
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_a4231d783df2f28fee994d6300efdd6a9}{col1}}
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_a34e6339de02662613f0334bc6bf2857f}{col2}}
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_a6fc094ab494e07fe7a737f57a4b09ef1}{dataset}} = col1.\+selectbox(\textquotesingle{}Choose a beautiful dataset\textquotesingle{},\mbox{[}\textquotesingle{}iris\textquotesingle{}, \textquotesingle{}wine\textquotesingle{}, \textquotesingle{}diabetes\textquotesingle{}, \textquotesingle{}housevotes\textquotesingle{}\mbox{]})
+\item 
+dictionary \mbox{\hyperlink{namespaceheuristic__web_a681d83b270a410559dabfab0da4d1eef}{cluster\+\_\+dist\+\_\+desc}}
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_af82dff5d4b9dbcd18b21122f425783fd}{cluster\+\_\+dist}} = col1.\+selectbox(\textquotesingle{}Choose an awesome distance measure\textquotesingle{},list(cluster\+\_\+dist\+\_\+desc.\+keys()))
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_a83c0cf5c32b989bc323608b8cf894016}{k}} = col2.\+slider(\char`\"{}Choose a nice value for k\char`\"{}, min\+\_\+value=1, max\+\_\+value=20, step=1, value=4)
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_aa6a8e2d75887ee8b21d479e76ed52c23}{submit\+\_\+button}} = st.\+form\+\_\+submit\+\_\+button(label=\textquotesingle{}Calculate \mbox{\hyperlink{namespaceheuristic__web_a593407568d9602842eb84c3f3382ea17}{kdist}} Graph\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_a3455a13ebabbbf967abbfc8b271b272c}{heu}} = \mbox{\hyperlink{classdbscan__heuristic_1_1DBSCANHeuristic}{DBSCANHeuristic}}()
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_a593407568d9602842eb84c3f3382ea17}{kdist}} = heu.\+kdist(\mbox{\hyperlink{namespaceheuristic__web_a83c0cf5c32b989bc323608b8cf894016}{k}})
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_adf805e3e62fda8c56a50fb845c8266f0}{reverse}}
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_adbe6fc6b144adb79cb62a57cbd6de0c5}{df}}
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_afe0edb175df681d7d1f2edc5fde37ea7}{nearest}} = alt.\+selection(type=\textquotesingle{}single\textquotesingle{}, nearest=True, on=\textquotesingle{}mouseover\textquotesingle{}, fields=\mbox{[}\textquotesingle{}\mbox{\hyperlink{namespaceheuristic__web_a541be4363df40924728881b48c31415c}{points}}\textquotesingle{}\mbox{]}, empty=\textquotesingle{}none\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_a68c8e7baa94574f4c8f9443663831d69}{yaxis}} = alt.\+Y(\char`\"{}dist\char`\"{}, axis=alt.\+Axis(title=f\char`\"{}\{k\}-\/dist\char`\"{}))
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_a6595e8caf9e6e2d8e0a72b6ffb898eb4}{line}}
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_a9c7c2c6c0c8ee31b323ea2cb8bb8ddc6}{selectors}} = alt.\+Chart(\mbox{\hyperlink{namespaceheuristic__web_adbe6fc6b144adb79cb62a57cbd6de0c5}{df}}).mark\+\_\+point().encode(x=\textquotesingle{}\mbox{\hyperlink{namespaceheuristic__web_a541be4363df40924728881b48c31415c}{points}}\textquotesingle{}, opacity=alt.\+value(0)).add\+\_\+selection(\mbox{\hyperlink{namespaceheuristic__web_afe0edb175df681d7d1f2edc5fde37ea7}{nearest}})
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_a541be4363df40924728881b48c31415c}{points}} = line.\+mark\+\_\+point(color=\char`\"{}red\char`\"{}).encode(opacity=alt.\+condition(\mbox{\hyperlink{namespaceheuristic__web_afe0edb175df681d7d1f2edc5fde37ea7}{nearest}}, alt.\+value(1), alt.\+value(0)))
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_a78e6e5ed9532b5cb74b7bcdd1381dd0a}{text}} = line.\+mark\+\_\+text(align=\textquotesingle{}left\textquotesingle{}, dx=5, dy=-\/5, color=\char`\"{}red\char`\"{}).encode(text=alt.\+condition(\mbox{\hyperlink{namespaceheuristic__web_afe0edb175df681d7d1f2edc5fde37ea7}{nearest}}, \char`\"{}label\+:N\char`\"{}, alt.\+value(\textquotesingle{} \textquotesingle{}))).transform\+\_\+calculate(label=f\textquotesingle{}\char`\"{}distance\+: \char`\"{} + format(datum.\+dist, \char`\"{}.\+2f\char`\"{})\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_aec5e5f1d8c7fc0002d889efc2131bd32}{textp}} = line.\+mark\+\_\+text(align=\textquotesingle{}left\textquotesingle{}, dx=5, dy=-\/15, color=\char`\"{}red\char`\"{}).encode(\mbox{\hyperlink{namespaceheuristic__web_a78e6e5ed9532b5cb74b7bcdd1381dd0a}{text}}=alt.\+condition(\mbox{\hyperlink{namespaceheuristic__web_afe0edb175df681d7d1f2edc5fde37ea7}{nearest}}, \char`\"{}label\+:N\char`\"{}, alt.\+value(\textquotesingle{} \textquotesingle{}))).transform\+\_\+calculate(label=f\textquotesingle{}format( (1 -\/ (datum.\+points-\/1) / \{len(\mbox{\hyperlink{namespaceheuristic__web_a593407568d9602842eb84c3f3382ea17}{kdist}})\}) $\ast$ 100, \char`\"{}.\+2f\char`\"{}) + \char`\"{}\% core \mbox{\hyperlink{namespaceheuristic__web_a541be4363df40924728881b48c31415c}{points}}\char`\"{}\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_a016a75b445b6aecbd31c36846590e801}{rules}} = alt.\+Chart(\mbox{\hyperlink{namespaceheuristic__web_adbe6fc6b144adb79cb62a57cbd6de0c5}{df}}).mark\+\_\+rule(color=\textquotesingle{}gray\textquotesingle{}).encode(x=\char`\"{}points\char`\"{}).transform\+\_\+filter(\mbox{\hyperlink{namespaceheuristic__web_afe0edb175df681d7d1f2edc5fde37ea7}{nearest}})
+\item 
+\mbox{\hyperlink{namespaceheuristic__web_a1db01fc7fb55f6b36bb57f75b3ab281b}{use\+\_\+container\+\_\+width}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceheuristic__web_af82dff5d4b9dbcd18b21122f425783fd}\label{namespaceheuristic__web_af82dff5d4b9dbcd18b21122f425783fd}} 
+\index{heuristic\_web@{heuristic\_web}!cluster\_dist@{cluster\_dist}}
+\index{cluster\_dist@{cluster\_dist}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{cluster\_dist}{cluster\_dist}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+cluster\+\_\+dist = col1.\+selectbox(\textquotesingle{}Choose an awesome distance measure\textquotesingle{},list(cluster\+\_\+dist\+\_\+desc.\+keys()))}
+
+\mbox{\Hypertarget{namespaceheuristic__web_a681d83b270a410559dabfab0da4d1eef}\label{namespaceheuristic__web_a681d83b270a410559dabfab0da4d1eef}} 
+\index{heuristic\_web@{heuristic\_web}!cluster\_dist\_desc@{cluster\_dist\_desc}}
+\index{cluster\_dist\_desc@{cluster\_dist\_desc}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{cluster\_dist\_desc}{cluster\_dist\_desc}}
+{\footnotesize\ttfamily dictionary heuristic\+\_\+web.\+cluster\+\_\+dist\+\_\+desc}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \{\textcolor{stringliteral}{'euclidean'}: \textcolor{stringliteral}{'d(x,y) = \(\backslash\)sqrt\{\(\backslash\)sum\_\{i=1\}\string^\{n\}(|x\_i-\/y\_i|)\string^2\}'},}
+\DoxyCodeLine{2                         \textcolor{stringliteral}{'manhattan'}: \textcolor{stringliteral}{'d(x,y) = \(\backslash\)sum\(\backslash\)limits\_\{i=1\}\string^\{n\}|x\_i -\/ y\_i|'},}
+\DoxyCodeLine{3                         \textcolor{stringliteral}{'chebyshev'}: \textcolor{stringliteral}{'d(x,y) = \(\backslash\)max(|x\_i -\/ y\_i|)'},}
+\DoxyCodeLine{4                         \textcolor{stringliteral}{'cosine'}: \textcolor{stringliteral}{'d(x,y) = \(\backslash\)\(\backslash\)frac\{\(\backslash\)\(\backslash\)arccos(\(\backslash\)\(\backslash\)frac\{\(\backslash\)sum\_\{i=1\}\string^\{n\} x\_i y\_i\}\{\(\backslash\)sqrt\{\(\backslash\)sum\_\{i=1\}\string^\{n\} x\_i\string^2 \(\backslash\)sum\_\{i=1\}\string^\{n\} y\_i\string^2\}\})\}\{\(\backslash\)pi\}'}\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceheuristic__web_a4231d783df2f28fee994d6300efdd6a9}\label{namespaceheuristic__web_a4231d783df2f28fee994d6300efdd6a9}} 
+\index{heuristic\_web@{heuristic\_web}!col1@{col1}}
+\index{col1@{col1}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{col1}{col1}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+col1}
+
+\mbox{\Hypertarget{namespaceheuristic__web_a34e6339de02662613f0334bc6bf2857f}\label{namespaceheuristic__web_a34e6339de02662613f0334bc6bf2857f}} 
+\index{heuristic\_web@{heuristic\_web}!col2@{col2}}
+\index{col2@{col2}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{col2}{col2}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+col2}
+
+\mbox{\Hypertarget{namespaceheuristic__web_a6fc094ab494e07fe7a737f57a4b09ef1}\label{namespaceheuristic__web_a6fc094ab494e07fe7a737f57a4b09ef1}} 
+\index{heuristic\_web@{heuristic\_web}!dataset@{dataset}}
+\index{dataset@{dataset}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{dataset}{dataset}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+dataset = col1.\+selectbox(\textquotesingle{}Choose a beautiful dataset\textquotesingle{},\mbox{[}\textquotesingle{}iris\textquotesingle{}, \textquotesingle{}wine\textquotesingle{}, \textquotesingle{}diabetes\textquotesingle{}, \textquotesingle{}housevotes\textquotesingle{}\mbox{]})}
+
+\mbox{\Hypertarget{namespaceheuristic__web_adbe6fc6b144adb79cb62a57cbd6de0c5}\label{namespaceheuristic__web_adbe6fc6b144adb79cb62a57cbd6de0c5}} 
+\index{heuristic\_web@{heuristic\_web}!df@{df}}
+\index{df@{df}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{df}{df}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+df}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  pd.DataFrame(}
+\DoxyCodeLine{2     [[i+1, kdist[i]] \textcolor{keywordflow}{for} i \textcolor{keywordflow}{in} range(len(kdist))],}
+\DoxyCodeLine{3     columns=[\textcolor{stringliteral}{"{}points"{}}, \textcolor{stringliteral}{"{}dist"{}}])}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceheuristic__web_a3455a13ebabbbf967abbfc8b271b272c}\label{namespaceheuristic__web_a3455a13ebabbbf967abbfc8b271b272c}} 
+\index{heuristic\_web@{heuristic\_web}!heu@{heu}}
+\index{heu@{heu}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{heu}{heu}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+heu = \mbox{\hyperlink{classdbscan__heuristic_1_1DBSCANHeuristic}{DBSCANHeuristic}}()}
+
+\mbox{\Hypertarget{namespaceheuristic__web_a83c0cf5c32b989bc323608b8cf894016}\label{namespaceheuristic__web_a83c0cf5c32b989bc323608b8cf894016}} 
+\index{heuristic\_web@{heuristic\_web}!k@{k}}
+\index{k@{k}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{k}{k}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+k = col2.\+slider(\char`\"{}Choose a nice value for k\char`\"{}, min\+\_\+value=1, max\+\_\+value=20, step=1, value=4)}
+
+\mbox{\Hypertarget{namespaceheuristic__web_a593407568d9602842eb84c3f3382ea17}\label{namespaceheuristic__web_a593407568d9602842eb84c3f3382ea17}} 
+\index{heuristic\_web@{heuristic\_web}!kdist@{kdist}}
+\index{kdist@{kdist}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{kdist}{kdist}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+kdist = heu.\+kdist(\mbox{\hyperlink{namespaceheuristic__web_a83c0cf5c32b989bc323608b8cf894016}{k}})}
+
+\mbox{\Hypertarget{namespaceheuristic__web_afa1ecf1f637abeeaa69cb9e6f8f74a44}\label{namespaceheuristic__web_afa1ecf1f637abeeaa69cb9e6f8f74a44}} 
+\index{heuristic\_web@{heuristic\_web}!key@{key}}
+\index{key@{key}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+key}
+
+\mbox{\Hypertarget{namespaceheuristic__web_a6595e8caf9e6e2d8e0a72b6ffb898eb4}\label{namespaceheuristic__web_a6595e8caf9e6e2d8e0a72b6ffb898eb4}} 
+\index{heuristic\_web@{heuristic\_web}!line@{line}}
+\index{line@{line}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{line}{line}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+line}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  alt.Chart(df).mark\_line(point=\textcolor{keyword}{True}).encode(x=\textcolor{stringliteral}{"{}points"{}}, y=yaxis).properties(}
+\DoxyCodeLine{2                     title=f\textcolor{stringliteral}{"{}DBSCAN Heuristic k=\{k\}, \{cluster\_dist\} distance"{}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceheuristic__web_afe0edb175df681d7d1f2edc5fde37ea7}\label{namespaceheuristic__web_afe0edb175df681d7d1f2edc5fde37ea7}} 
+\index{heuristic\_web@{heuristic\_web}!nearest@{nearest}}
+\index{nearest@{nearest}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{nearest}{nearest}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+nearest = alt.\+selection(type=\textquotesingle{}single\textquotesingle{}, nearest=True, on=\textquotesingle{}mouseover\textquotesingle{}, fields=\mbox{[}\textquotesingle{}\mbox{\hyperlink{namespaceheuristic__web_a541be4363df40924728881b48c31415c}{points}}\textquotesingle{}\mbox{]}, empty=\textquotesingle{}none\textquotesingle{})}
+
+\mbox{\Hypertarget{namespaceheuristic__web_adc31ea6f2611249ff48c71cf7d253f9f}\label{namespaceheuristic__web_adc31ea6f2611249ff48c71cf7d253f9f}} 
+\index{heuristic\_web@{heuristic\_web}!page\_icon@{page\_icon}}
+\index{page\_icon@{page\_icon}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{page\_icon}{page\_icon}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+page\+\_\+icon}
+
+\mbox{\Hypertarget{namespaceheuristic__web_a64d8677c350ee6d67493256c338d8520}\label{namespaceheuristic__web_a64d8677c350ee6d67493256c338d8520}} 
+\index{heuristic\_web@{heuristic\_web}!page\_title@{page\_title}}
+\index{page\_title@{page\_title}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{page\_title}{page\_title}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+page\+\_\+title}
+
+\mbox{\Hypertarget{namespaceheuristic__web_a541be4363df40924728881b48c31415c}\label{namespaceheuristic__web_a541be4363df40924728881b48c31415c}} 
+\index{heuristic\_web@{heuristic\_web}!points@{points}}
+\index{points@{points}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{points}{points}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+points = line.\+mark\+\_\+point(color=\char`\"{}red\char`\"{}).encode(opacity=alt.\+condition(\mbox{\hyperlink{namespaceheuristic__web_afe0edb175df681d7d1f2edc5fde37ea7}{nearest}}, alt.\+value(1), alt.\+value(0)))}
+
+\mbox{\Hypertarget{namespaceheuristic__web_adf805e3e62fda8c56a50fb845c8266f0}\label{namespaceheuristic__web_adf805e3e62fda8c56a50fb845c8266f0}} 
+\index{heuristic\_web@{heuristic\_web}!reverse@{reverse}}
+\index{reverse@{reverse}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{reverse}{reverse}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+reverse}
+
+\mbox{\Hypertarget{namespaceheuristic__web_a016a75b445b6aecbd31c36846590e801}\label{namespaceheuristic__web_a016a75b445b6aecbd31c36846590e801}} 
+\index{heuristic\_web@{heuristic\_web}!rules@{rules}}
+\index{rules@{rules}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{rules}{rules}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+rules = alt.\+Chart(\mbox{\hyperlink{namespaceheuristic__web_adbe6fc6b144adb79cb62a57cbd6de0c5}{df}}).mark\+\_\+rule(color=\textquotesingle{}gray\textquotesingle{}).encode(x=\char`\"{}points\char`\"{}).transform\+\_\+filter(\mbox{\hyperlink{namespaceheuristic__web_afe0edb175df681d7d1f2edc5fde37ea7}{nearest}})}
+
+\mbox{\Hypertarget{namespaceheuristic__web_a9c7c2c6c0c8ee31b323ea2cb8bb8ddc6}\label{namespaceheuristic__web_a9c7c2c6c0c8ee31b323ea2cb8bb8ddc6}} 
+\index{heuristic\_web@{heuristic\_web}!selectors@{selectors}}
+\index{selectors@{selectors}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{selectors}{selectors}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+selectors = alt.\+Chart(\mbox{\hyperlink{namespaceheuristic__web_adbe6fc6b144adb79cb62a57cbd6de0c5}{df}}).mark\+\_\+point().encode(x=\textquotesingle{}\mbox{\hyperlink{namespaceheuristic__web_a541be4363df40924728881b48c31415c}{points}}\textquotesingle{}, opacity=alt.\+value(0)).add\+\_\+selection(\mbox{\hyperlink{namespaceheuristic__web_afe0edb175df681d7d1f2edc5fde37ea7}{nearest}})}
+
+\mbox{\Hypertarget{namespaceheuristic__web_aa6a8e2d75887ee8b21d479e76ed52c23}\label{namespaceheuristic__web_aa6a8e2d75887ee8b21d479e76ed52c23}} 
+\index{heuristic\_web@{heuristic\_web}!submit\_button@{submit\_button}}
+\index{submit\_button@{submit\_button}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{submit\_button}{submit\_button}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+submit\+\_\+button = st.\+form\+\_\+submit\+\_\+button(label=\textquotesingle{}Calculate \mbox{\hyperlink{namespaceheuristic__web_a593407568d9602842eb84c3f3382ea17}{kdist}} Graph\textquotesingle{})}
+
+\mbox{\Hypertarget{namespaceheuristic__web_a78e6e5ed9532b5cb74b7bcdd1381dd0a}\label{namespaceheuristic__web_a78e6e5ed9532b5cb74b7bcdd1381dd0a}} 
+\index{heuristic\_web@{heuristic\_web}!text@{text}}
+\index{text@{text}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+text = line.\+mark\+\_\+text(align=\textquotesingle{}left\textquotesingle{}, dx=5, dy=-\/5, color=\char`\"{}red\char`\"{}).encode(text=alt.\+condition(\mbox{\hyperlink{namespaceheuristic__web_afe0edb175df681d7d1f2edc5fde37ea7}{nearest}}, \char`\"{}label\+:N\char`\"{}, alt.\+value(\textquotesingle{} \textquotesingle{}))).transform\+\_\+calculate(label=f\textquotesingle{}\char`\"{}distance\+: \char`\"{} + format(datum.\+dist, \char`\"{}.\+2f\char`\"{})\textquotesingle{})}
+
+\mbox{\Hypertarget{namespaceheuristic__web_aec5e5f1d8c7fc0002d889efc2131bd32}\label{namespaceheuristic__web_aec5e5f1d8c7fc0002d889efc2131bd32}} 
+\index{heuristic\_web@{heuristic\_web}!textp@{textp}}
+\index{textp@{textp}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{textp}{textp}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+textp = line.\+mark\+\_\+text(align=\textquotesingle{}left\textquotesingle{}, dx=5, dy=-\/15, color=\char`\"{}red\char`\"{}).encode(\mbox{\hyperlink{namespaceheuristic__web_a78e6e5ed9532b5cb74b7bcdd1381dd0a}{text}}=alt.\+condition(\mbox{\hyperlink{namespaceheuristic__web_afe0edb175df681d7d1f2edc5fde37ea7}{nearest}}, \char`\"{}label\+:N\char`\"{}, alt.\+value(\textquotesingle{} \textquotesingle{}))).transform\+\_\+calculate(label=f\textquotesingle{}format( (1 -\/ (datum.\+points-\/1) / \{len(\mbox{\hyperlink{namespaceheuristic__web_a593407568d9602842eb84c3f3382ea17}{kdist}})\}) $\ast$ 100, \char`\"{}.\+2f\char`\"{}) + \char`\"{}\% core \mbox{\hyperlink{namespaceheuristic__web_a541be4363df40924728881b48c31415c}{points}}\char`\"{}\textquotesingle{})}
+
+\mbox{\Hypertarget{namespaceheuristic__web_a1db01fc7fb55f6b36bb57f75b3ab281b}\label{namespaceheuristic__web_a1db01fc7fb55f6b36bb57f75b3ab281b}} 
+\index{heuristic\_web@{heuristic\_web}!use\_container\_width@{use\_container\_width}}
+\index{use\_container\_width@{use\_container\_width}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{use\_container\_width}{use\_container\_width}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+use\+\_\+container\+\_\+width}
+
+\mbox{\Hypertarget{namespaceheuristic__web_a68c8e7baa94574f4c8f9443663831d69}\label{namespaceheuristic__web_a68c8e7baa94574f4c8f9443663831d69}} 
+\index{heuristic\_web@{heuristic\_web}!yaxis@{yaxis}}
+\index{yaxis@{yaxis}!heuristic\_web@{heuristic\_web}}
+\doxysubsubsection{\texorpdfstring{yaxis}{yaxis}}
+{\footnotesize\ttfamily heuristic\+\_\+web.\+yaxis = alt.\+Y(\char`\"{}dist\char`\"{}, axis=alt.\+Axis(title=f\char`\"{}\{k\}-\/dist\char`\"{}))}
+

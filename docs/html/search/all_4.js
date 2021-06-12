@@ -1,4 +1,21 @@
 var searchData=
 [
-  ['indices_8',['Indices',['../classindices_1_1Indices.html',1,'indices']]]
+  ['d_35',['d',['../namespaceresult__calculation.html#a59d6111f52efebc1e516f0fb840d42b3',1,'result_calculation.d()'],['../namespacecomparison__plots.html#a897171abac1d3548c703575dd3c7cb2c',1,'comparison_plots.d()']]],
+  ['data_36',['data',['../classkmedoids_1_1kmedoidsClustering.html#ae2f63bfe20c5b8ead83f5c21fe751797',1,'kmedoids.kmedoidsClustering.data()'],['../namespacecomparison__plots.html#ab8bcd732cc7945aede098774d027636c',1,'comparison_plots.data()'],['../classkmedians_1_1kmediansClustering.html#abfd98a13054b8102db5e802257134d52',1,'kmedians.kmediansClustering.data()'],['../classkmeans_1_1kmeansClustering.html#a71ea859d9a2beeedd5805f1a47519383',1,'kmeans.kmeansClustering.data()'],['../classdbscan_1_1DBSCANClustering.html#a4e0819e1d3a3fdfe2380205289e4f08b',1,'dbscan.DBSCANClustering.data()'],['../classclustering_1_1Clustering.html#a9428002bd0ae4880a18840cbdb2c1e52',1,'clustering.Clustering.data()']]],
+  ['datadf_37',['datadf',['../classclustering_1_1Clustering.html#a5a06f298bab213a556be22cde5651e24',1,'clustering::Clustering']]],
+  ['dataexpander_38',['dataexpander',['../namespaceweb__frontend.html#a06738bfdebda9497c3c2b2a677f9ddcf',1,'web_frontend']]],
+  ['dataset_39',['dataset',['../namespaceheuristic__web.html#a6fc094ab494e07fe7a737f57a4b09ef1',1,'heuristic_web.dataset()'],['../classclustering_1_1Clustering.html#a33ee2153799927a275df889deec09b53',1,'clustering.Clustering.dataset()'],['../classdbscan_1_1DBSCANClustering.html#a156964a25917208e5746f27c9d3a6a3a',1,'dbscan.DBSCANClustering.dataset()'],['../classkmeans_1_1kmeansClustering.html#a26b84212ec9bcf3f05e23cdd467f8580',1,'kmeans.kmeansClustering.dataset()'],['../classkmedians_1_1kmediansClustering.html#af3c6712f952ef5ba8aca87e43237bb3e',1,'kmedians.kmediansClustering.dataset()'],['../classkmedoids_1_1kmedoidsClustering.html#a68e0a4518eca9990807bcb514d09dd13',1,'kmedoids.kmedoidsClustering.dataset()'],['../namespaceweb__frontend.html#ad784ad8e3f72e82ccc15fffc02ac0563',1,'web_frontend.dataset()']]],
+  ['datasets_40',['datasets',['../namespaceweb__frontend.html#ae6753587119b61b5e1f1e834cf48bcef',1,'web_frontend.datasets()'],['../namespacecomparison__plots.html#a90b4218b87d66220647776ec04a5a547',1,'comparison_plots.datasets()'],['../namespaceresult__calculation.html#a4639cb05ca28f3df918b1da4c458da59',1,'result_calculation.datasets()']]],
+  ['dbscan_41',['dbscan',['../namespacedbscan.html',1,'']]],
+  ['dbscan_2epy_42',['dbscan.py',['../dbscan_8py.html',1,'']]],
+  ['dbscan_5fheuristic_43',['dbscan_heuristic',['../namespacedbscan__heuristic.html',1,'']]],
+  ['dbscan_5fheuristic_2epy_44',['dbscan_heuristic.py',['../dbscan__heuristic_8py.html',1,'']]],
+  ['dbscanclustering_45',['DBSCANClustering',['../classdbscan_1_1DBSCANClustering.html',1,'dbscan']]],
+  ['dbscanheuristic_46',['DBSCANHeuristic',['../classdbscan__heuristic_1_1DBSCANHeuristic.html',1,'dbscan_heuristic']]],
+  ['desc_47',['desc',['../namespaceweb__frontend.html#ac8d1239dd61f040588df58073da2d06d',1,'web_frontend']]],
+  ['desc_5flist_48',['desc_list',['../namespaceweb__frontend.html#a6d4b09f1196dc0e9a291005878c7dffb',1,'web_frontend']]],
+  ['description_49',['Description',['../index.html',1,'']]],
+  ['df_50',['df',['../namespaceheuristic__web.html#adbe6fc6b144adb79cb62a57cbd6de0c5',1,'heuristic_web.df()'],['../namespaceweb__frontend.html#a7a6ee1b7740be3fdd76313e704c09b8e',1,'web_frontend.df()']]],
+  ['dfclusterdata_51',['dfclusterdata',['../namespaceweb__frontend.html#a0191bc0cba482c929e000c10dd86801e',1,'web_frontend']]],
+  ['distances_52',['distances',['../namespacecomparison__plots.html#a883c5aeb7bcda7c4ba1b91a0b66a2362',1,'comparison_plots.distances()'],['../namespaceresult__calculation.html#a1f510103b587aac208da8d651854ca33',1,'result_calculation.distances()']]]
 ];

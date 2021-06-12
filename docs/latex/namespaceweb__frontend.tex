@@ -1,0 +1,616 @@
+\hypertarget{namespaceweb__frontend}{}\doxysection{web\+\_\+frontend Namespace Reference}
+\label{namespaceweb__frontend}\index{web\_frontend@{web\_frontend}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a539479f85bb69146a4afc4dff726232a}{page\+\_\+title}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a7580efbd05b87376061a0c0068878c09}{page\+\_\+icon}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ab6601ad5e4df81438e964e8076718c67}{session\+\_\+state}} = \mbox{\hyperlink{namespaceSessionState_a6447a6ba08dae19a324f73980cc7508e}{Session\+State.\+get}}(\mbox{\hyperlink{namespaceweb__frontend_a37570665c5211c961b272562bbd335e9}{indices\+\_\+data}}=pd.\+Data\+Frame())
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a58d0ef0147c2f404a31fbcadab5c7146}{seeded}} = st.\+checkbox(\textquotesingle{}Use precalculated \mbox{\hyperlink{namespaceweb__frontend_a2926d7785b026ae5beb31c307bf61560}{results}} (with random \mbox{\hyperlink{namespaceweb__frontend_a8b1c4acb3b2f6a4a1fa3f1e2c02b07c3}{seed}} for reproduction).\textquotesingle{}, value=True)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a8b1c4acb3b2f6a4a1fa3f1e2c02b07c3}{seed}} = None
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a2ce3d7137e04c70336f26386dc7e853b}{seaplots}} = st.\+checkbox(\textquotesingle{}Use interactive altair plots over static seaborn plots.\textquotesingle{}, value=True)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_afbb40890ae4f84ac47eb68bc09e62fa1}{resulthandler}} = \mbox{\hyperlink{classresults_1_1Results}{Results}}(\char`\"{}./code/\mbox{\hyperlink{namespaceweb__frontend_a2926d7785b026ae5beb31c307bf61560}{results}}\char`\"{})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a09a9c4d0fe74cb4efb06acc9fde7c307}{col1}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_adff0b924c11d3d89d808ceb50a3d9574}{col2}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ad784ad8e3f72e82ccc15fffc02ac0563}{dataset}} = col1.\+selectbox(\textquotesingle{}Choose a beautiful dataset\textquotesingle{},\mbox{[}\textquotesingle{}iris\textquotesingle{}, \textquotesingle{}wine\textquotesingle{}, \textquotesingle{}diabetes\textquotesingle{}, \textquotesingle{}housevotes\textquotesingle{}\mbox{]})
+\item 
+dictionary \mbox{\hyperlink{namespaceweb__frontend_a9006b2d522009282e36d99b804b6f871}{cluster\+\_\+dist\+\_\+desc}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a6fe2b5ed2108e2ac12d0200ccf0a79d8}{cluster\+\_\+dist}} = col1.\+selectbox(\textquotesingle{}Choose an awesome distance measure\textquotesingle{}, list(cluster\+\_\+dist\+\_\+desc.\+keys()))
+\item 
+dictionary \mbox{\hyperlink{namespaceweb__frontend_a318abf6ef1e0e1a7c8af4717fbf9adff}{cluster\+\_\+algo\+\_\+class}} = \{\textquotesingle{}kmeans\textquotesingle{}\+: \mbox{\hyperlink{classkmeans_1_1kmeansClustering}{kmeans\+Clustering}}, \textquotesingle{}kmedians\textquotesingle{}\+: \mbox{\hyperlink{classkmedians_1_1kmediansClustering}{kmedians\+Clustering}}, \textquotesingle{}kmedoids\textquotesingle{}\+: \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering}{kmedoids\+Clustering}}, \textquotesingle{}DBSCAN\textquotesingle{}\+: \mbox{\hyperlink{classdbscan_1_1DBSCANClustering}{DBSCANClustering}}\}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_af267f56ddbcb8e56360963e723a4056d}{cluster\+\_\+algo}} = col2.\+selectbox(\textquotesingle{}Choose a lovely clustering algorithm\textquotesingle{}, list(cluster\+\_\+algo\+\_\+class.\+keys()))
+\item 
+dictionary \mbox{\hyperlink{namespaceweb__frontend_a0798d4c5006e331ac35930cbb6dc6b8c}{cluster}} = \mbox{\hyperlink{namespaceweb__frontend_a318abf6ef1e0e1a7c8af4717fbf9adff}{cluster\+\_\+algo\+\_\+class}}\mbox{[}\mbox{\hyperlink{namespaceweb__frontend_af267f56ddbcb8e56360963e723a4056d}{cluster\+\_\+algo}}\mbox{]}(\mbox{\hyperlink{namespaceweb__frontend_a6fe2b5ed2108e2ac12d0200ccf0a79d8}{cluster\+\_\+dist}}, \mbox{\hyperlink{namespaceweb__frontend_ad784ad8e3f72e82ccc15fffc02ac0563}{dataset}}, \mbox{\hyperlink{namespaceweb__frontend_a8b1c4acb3b2f6a4a1fa3f1e2c02b07c3}{seed}})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_aa885b9caed1bf35c2b68e9d6a68f6b51}{epsilon}} = col2.\+slider(\char`\"{}Choose a nice value for epsilon\char`\"{}, min\+\_\+value=0.\+1, max\+\_\+value=20.\+0, step=0.\+1)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a5cb9f78690b87790c69114058aa0b03f}{minpts}} = col2.\+slider(\char`\"{}Choose a minimal number of nearest points\char`\"{}, min\+\_\+value=1, max\+\_\+value=20, step=1, value=5)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a05b458056ccbac0ffb6a23ef48a07c5e}{eps}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a25c9a63429521ea396fe7cd47affd742}{clusters}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a450af770f949f976f0da06a2c33cfe5c}{stuff}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a7f7156d9924ee0822f4451ea125a3446}{k\+\_\+value}} = col2.\+slider(\char`\"{}Choose a nice value for \mbox{\hyperlink{namespaceweb__frontend_a94dd98947f64fc0fff9b548c41639bfa}{k}} (number of \mbox{\hyperlink{namespaceweb__frontend_a25c9a63429521ea396fe7cd47affd742}{clusters}})\char`\"{}, min\+\_\+value=2, max\+\_\+value=10, step=1, value=3)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a94dd98947f64fc0fff9b548c41639bfa}{k}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a8a75bc5f52d10650f9c219e78d2cd42a}{clustered\+\_\+data}} = np.\+zeros(len(cluster.\+data))
+\item 
+list \mbox{\hyperlink{namespaceweb__frontend_aa125eecf731512db07a91067d3b96efe}{color\+\_\+palette}} = \mbox{[}\textquotesingle{}black\textquotesingle{}\mbox{]} + sns.\+color\+\_\+palette(\char`\"{}husl\char`\"{}, len(set(\mbox{\hyperlink{namespaceweb__frontend_a8a75bc5f52d10650f9c219e78d2cd42a}{clustered\+\_\+data}}))-\/1)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_abcf6953a3b83eef8228ec7d91ed184fc}{weights}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ae93ba1b476312c7cf104491d77040d3d}{perp}} = col1.\+slider(\char`\"{}Perplexity for t-\/SNE\char`\"{}, 5, 50, 25)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ab8af5ba16ba60ca4306dbd2f7cc2adda}{marking\+\_\+centroids}} = np.\+ones(cluster.\+data.\+shape\mbox{[}0\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a8770d3c28a8081b31dded64b8690d6b8}{cluster\+\_\+label}} = alt.\+Tooltip(\char`\"{}c\char`\"{}, title=\char`\"{}Cluster ID\char`\"{})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_acf49c9659e615dc42e77fc8b87fbbff9}{point\+\_\+label}} = alt.\+Tooltip(\char`\"{}i\char`\"{}, title=\char`\"{}Point ID\char`\"{})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a0191bc0cba482c929e000c10dd86801e}{dfclusterdata}} = pd.\+Data\+Frame()
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a6261e4a3c482320b5c9cbbcff5dd7f57}{projected\+\_\+data\+\_\+tsne}} = TSNE(random\+\_\+state=42, perplexity=\mbox{\hyperlink{namespaceweb__frontend_ae93ba1b476312c7cf104491d77040d3d}{perp}}).fit\+\_\+transform(cluster.\+data)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ab2c7ca7d972c5e7340cf4c7e867b5d02}{fig}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a51aa7a6d31bc700ca7e4c4207f86fab3}{ax}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ae5593f4f72a8fd57bf6706f119d3309b}{x}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a98c16a3a25df247e64ee8e1ef2da037f}{y}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a193e8d4dbf733bf1918f0f09975ed6ce}{hue}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a5270867dae900f6e6044de56725bfc31}{palette}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a93eab05f4c018e6e65a76d838cff34e6}{legend}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a3c3a05e18097009144e4684f3beee988}{False}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a41595dbe670b3fdefd7eb41feb6ca0f5}{style}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a8ac918fe92d8f55635253e1106657fe6}{size}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_af67892833d2af8e60eb05352c79cbe8d}{markers}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a3cc7db566a02c44210df5d149ea4e6f3}{xaxis}} = alt.\+X(\char`\"{}xt\char`\"{}, axis=alt.\+Axis(title=None))
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a26326cf837785de956857a6daa4cac89}{yaxis}} = alt.\+Y(\char`\"{}yt\char`\"{}, axis=alt.\+Axis(title=None))
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a5116b8e7725539769cf10cb172e4c37a}{altcolor}} = alt.\+Color(\char`\"{}c\char`\"{}, legend=None, scale=alt.\+Scale(domain=\mbox{[}0, 1 if max(\mbox{\hyperlink{namespaceweb__frontend_a8a75bc5f52d10650f9c219e78d2cd42a}{clustered\+\_\+data}}) == 0 else max(\mbox{\hyperlink{namespaceweb__frontend_a8a75bc5f52d10650f9c219e78d2cd42a}{clustered\+\_\+data}})\mbox{]}, scheme=\char`\"{}turbo\char`\"{}))
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a79b7120bced743cd49e139bedf3fae48}{tsnealt}} = alt.\+Chart(\mbox{\hyperlink{namespaceweb__frontend_a0191bc0cba482c929e000c10dd86801e}{dfclusterdata}}).mark\+\_\+circle().encode(\mbox{\hyperlink{namespaceweb__frontend_ae5593f4f72a8fd57bf6706f119d3309b}{x}}=\mbox{\hyperlink{namespaceweb__frontend_a3cc7db566a02c44210df5d149ea4e6f3}{xaxis}}, \mbox{\hyperlink{namespaceweb__frontend_a98c16a3a25df247e64ee8e1ef2da037f}{y}}=\mbox{\hyperlink{namespaceweb__frontend_a26326cf837785de956857a6daa4cac89}{yaxis}}, tooltip=\mbox{[}\mbox{\hyperlink{namespaceweb__frontend_a8770d3c28a8081b31dded64b8690d6b8}{cluster\+\_\+label}}, \mbox{\hyperlink{namespaceweb__frontend_acf49c9659e615dc42e77fc8b87fbbff9}{point\+\_\+label}}\mbox{]}, \mbox{\hyperlink{namespaceweb__frontend_af0ac7cf718145355f2362cb8a51f55bb}{color}}=\mbox{\hyperlink{namespaceweb__frontend_a5116b8e7725539769cf10cb172e4c37a}{altcolor}}).interactive()
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a4d78c0a2b478c196f08136e541782dcf}{use\+\_\+container\+\_\+width}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a3b4bb0b6d4fb023e5deef81fb802b4cb}{projected\+\_\+data\+\_\+pca}} = PCA(random\+\_\+state=42, n\+\_\+components=2).fit\+\_\+transform(cluster.\+data)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ae9367db9cae6ac3dd2c6e388b2f1d387}{pcaalt}} = alt.\+Chart(\mbox{\hyperlink{namespaceweb__frontend_a0191bc0cba482c929e000c10dd86801e}{dfclusterdata}}).mark\+\_\+circle().encode(\mbox{\hyperlink{namespaceweb__frontend_ae5593f4f72a8fd57bf6706f119d3309b}{x}}=\mbox{\hyperlink{namespaceweb__frontend_a3cc7db566a02c44210df5d149ea4e6f3}{xaxis}}, \mbox{\hyperlink{namespaceweb__frontend_a98c16a3a25df247e64ee8e1ef2da037f}{y}}=\mbox{\hyperlink{namespaceweb__frontend_a26326cf837785de956857a6daa4cac89}{yaxis}}, tooltip=\mbox{[}\mbox{\hyperlink{namespaceweb__frontend_a8770d3c28a8081b31dded64b8690d6b8}{cluster\+\_\+label}}, \mbox{\hyperlink{namespaceweb__frontend_acf49c9659e615dc42e77fc8b87fbbff9}{point\+\_\+label}}\mbox{]}, \mbox{\hyperlink{namespaceweb__frontend_af0ac7cf718145355f2362cb8a51f55bb}{color}}=\mbox{\hyperlink{namespaceweb__frontend_a5116b8e7725539769cf10cb172e4c37a}{altcolor}}).interactive()
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a06738bfdebda9497c3c2b2a677f9ddcf}{dataexpander}} = st.\+beta\+\_\+expander(\char`\"{}data\char`\"{})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a1c29df4088a1c35eaf8147a235f9ebf9}{add\+\_\+result}} = col1.\+button(\textquotesingle{}Add\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a49e7f1d54634decf9bd55b5963d398d9}{reset\+\_\+tmp}} = col2.\+button(\textquotesingle{}Reset\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a37570665c5211c961b272562bbd335e9}{indices\+\_\+data}}
+\item 
+string \mbox{\hyperlink{namespaceweb__frontend_a8b39b147bcb9ea75b351224287fb0d14}{val}} = \char`\"{}epsilon=\char`\"{}+str(\mbox{\hyperlink{namespaceweb__frontend_aa885b9caed1bf35c2b68e9d6a68f6b51}{epsilon}})+\char`\"{}, np=\char`\"{}+str(\mbox{\hyperlink{namespaceweb__frontend_a5cb9f78690b87790c69114058aa0b03f}{minpts}})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a7a6ee1b7740be3fdd76313e704c09b8e}{df}} = session\+\_\+state.\+indices\+\_\+data
+\item 
+dictionary \mbox{\hyperlink{namespaceweb__frontend_ad6cb59f4d8d78e1f93b5bcd2838595ee}{labels}} = cluster.\+labels.\+tolist()
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_aaf3ac2b14e7665a95f91b3b2a4fe2b3a}{predicted}} = clustered\+\_\+data.\+tolist()
+\item 
+list \mbox{\hyperlink{namespaceweb__frontend_a61d104e008a5ba1f7122da6411bb4db0}{precalc}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespaceweb__frontend_a399e55f26a0ed76172a03e4d18f33fbf}{index\+\_\+eval}} = \mbox{[}\char`\"{}ARI\char`\"{}, \char`\"{}NMI\char`\"{}, \char`\"{}Completeness Score\char`\"{}, \char`\"{}Homogeneity Score\char`\"{}, \char`\"{}Silhouette Score\char`\"{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a53726d670e54274b72635b663ba69dca}{I1}} = \mbox{\hyperlink{classindices_1_1Indices}{Indices}}(\mbox{\hyperlink{namespaceweb__frontend_aaf3ac2b14e7665a95f91b3b2a4fe2b3a}{predicted}}, \mbox{\hyperlink{namespaceweb__frontend_ad6cb59f4d8d78e1f93b5bcd2838595ee}{labels}})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a893a6447437f3d483fb64e457c26580c}{score}} = I1.\+index\+\_\+external(\mbox{\hyperlink{namespaceweb__frontend_a399e55f26a0ed76172a03e4d18f33fbf}{index\+\_\+eval}}\mbox{[}i\mbox{]})
+\item 
+list \mbox{\hyperlink{namespaceweb__frontend_ae6753587119b61b5e1f1e834cf48bcef}{datasets}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespaceweb__frontend_a2926d7785b026ae5beb31c307bf61560}{results}} = \mbox{[}\mbox{[}1, \char`\"{}maximum reference value\char`\"{}\mbox{]}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespaceweb__frontend_a6d4b09f1196dc0e9a291005878c7dffb}{desc\+\_\+list}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ac8d1239dd61f040588df58073da2d06d}{desc}} = np.\+array(\mbox{\hyperlink{namespaceweb__frontend_a6d4b09f1196dc0e9a291005878c7dffb}{desc\+\_\+list}})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ada89560d6b64d3670edc7d77d4d5b85f}{stats}} = np.\+zeros(len(\mbox{\hyperlink{namespaceweb__frontend_a2926d7785b026ae5beb31c307bf61560}{results}}))
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ac08f6b50ca9689f1ec62998b27fee863}{ys}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a0838ca5e31a97686f8c9783545b51b1c}{xs}} = np.\+arange(len(\mbox{\hyperlink{namespaceweb__frontend_ad6cb59f4d8d78e1f93b5bcd2838595ee}{labels}}))
+\item 
+float \mbox{\hyperlink{namespaceweb__frontend_a364f1ad37501b60441618aea22763888}{width}} = 0.\+5
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a1b424f697075e41398c55d80300904c7}{align}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_af0ac7cf718145355f2362cb8a51f55bb}{color}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a5a41b97806946bdcd868b1cf6443c6eb}{angles}} = np.\+linspace(0, 2$\ast$np.\+pi, len(\mbox{\hyperlink{namespaceweb__frontend_ac8d1239dd61f040588df58073da2d06d}{desc}}), endpoint=\mbox{\hyperlink{namespaceweb__frontend_a3c3a05e18097009144e4684f3beee988}{False}})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_adbd0171437252f426da0d72460f17de6}{subplot\+\_\+kw}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a9aa566eabde22259a97c37e426eb957c}{linewidth}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ae5593c31da74f3185dbab1dab3ec988a}{alpha}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceweb__frontend_a1c29df4088a1c35eaf8147a235f9ebf9}\label{namespaceweb__frontend_a1c29df4088a1c35eaf8147a235f9ebf9}} 
+\index{web\_frontend@{web\_frontend}!add\_result@{add\_result}}
+\index{add\_result@{add\_result}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{add\_result}{add\_result}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+add\+\_\+result = col1.\+button(\textquotesingle{}Add\textquotesingle{})}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a1b424f697075e41398c55d80300904c7}\label{namespaceweb__frontend_a1b424f697075e41398c55d80300904c7}} 
+\index{web\_frontend@{web\_frontend}!align@{align}}
+\index{align@{align}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{align}{align}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+align}
+
+\mbox{\Hypertarget{namespaceweb__frontend_ae5593c31da74f3185dbab1dab3ec988a}\label{namespaceweb__frontend_ae5593c31da74f3185dbab1dab3ec988a}} 
+\index{web\_frontend@{web\_frontend}!alpha@{alpha}}
+\index{alpha@{alpha}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{alpha}{alpha}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+alpha}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a5116b8e7725539769cf10cb172e4c37a}\label{namespaceweb__frontend_a5116b8e7725539769cf10cb172e4c37a}} 
+\index{web\_frontend@{web\_frontend}!altcolor@{altcolor}}
+\index{altcolor@{altcolor}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{altcolor}{altcolor}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+altcolor = alt.\+Color(\char`\"{}c\char`\"{}, legend=None, scale=alt.\+Scale(domain=\mbox{[}0, 1 if max(\mbox{\hyperlink{namespaceweb__frontend_a8a75bc5f52d10650f9c219e78d2cd42a}{clustered\+\_\+data}}) == 0 else max(\mbox{\hyperlink{namespaceweb__frontend_a8a75bc5f52d10650f9c219e78d2cd42a}{clustered\+\_\+data}})\mbox{]}, scheme=\char`\"{}turbo\char`\"{}))}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a5a41b97806946bdcd868b1cf6443c6eb}\label{namespaceweb__frontend_a5a41b97806946bdcd868b1cf6443c6eb}} 
+\index{web\_frontend@{web\_frontend}!angles@{angles}}
+\index{angles@{angles}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{angles}{angles}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+angles = np.\+linspace(0, 2$\ast$np.\+pi, len(\mbox{\hyperlink{namespaceweb__frontend_ac8d1239dd61f040588df58073da2d06d}{desc}}), endpoint=\mbox{\hyperlink{namespaceweb__frontend_a3c3a05e18097009144e4684f3beee988}{False}})}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a51aa7a6d31bc700ca7e4c4207f86fab3}\label{namespaceweb__frontend_a51aa7a6d31bc700ca7e4c4207f86fab3}} 
+\index{web\_frontend@{web\_frontend}!ax@{ax}}
+\index{ax@{ax}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{ax}{ax}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+ax}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a0798d4c5006e331ac35930cbb6dc6b8c}\label{namespaceweb__frontend_a0798d4c5006e331ac35930cbb6dc6b8c}} 
+\index{web\_frontend@{web\_frontend}!cluster@{cluster}}
+\index{cluster@{cluster}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{cluster}{cluster}}
+{\footnotesize\ttfamily dictionary web\+\_\+frontend.\+cluster = \mbox{\hyperlink{namespaceweb__frontend_a318abf6ef1e0e1a7c8af4717fbf9adff}{cluster\+\_\+algo\+\_\+class}}\mbox{[}\mbox{\hyperlink{namespaceweb__frontend_af267f56ddbcb8e56360963e723a4056d}{cluster\+\_\+algo}}\mbox{]}(\mbox{\hyperlink{namespaceweb__frontend_a6fe2b5ed2108e2ac12d0200ccf0a79d8}{cluster\+\_\+dist}}, \mbox{\hyperlink{namespaceweb__frontend_ad784ad8e3f72e82ccc15fffc02ac0563}{dataset}}, \mbox{\hyperlink{namespaceweb__frontend_a8b1c4acb3b2f6a4a1fa3f1e2c02b07c3}{seed}})}
+
+\mbox{\Hypertarget{namespaceweb__frontend_af267f56ddbcb8e56360963e723a4056d}\label{namespaceweb__frontend_af267f56ddbcb8e56360963e723a4056d}} 
+\index{web\_frontend@{web\_frontend}!cluster\_algo@{cluster\_algo}}
+\index{cluster\_algo@{cluster\_algo}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{cluster\_algo}{cluster\_algo}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+cluster\+\_\+algo = col2.\+selectbox(\textquotesingle{}Choose a lovely clustering algorithm\textquotesingle{}, list(cluster\+\_\+algo\+\_\+class.\+keys()))}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a318abf6ef1e0e1a7c8af4717fbf9adff}\label{namespaceweb__frontend_a318abf6ef1e0e1a7c8af4717fbf9adff}} 
+\index{web\_frontend@{web\_frontend}!cluster\_algo\_class@{cluster\_algo\_class}}
+\index{cluster\_algo\_class@{cluster\_algo\_class}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{cluster\_algo\_class}{cluster\_algo\_class}}
+{\footnotesize\ttfamily dictionary web\+\_\+frontend.\+cluster\+\_\+algo\+\_\+class = \{\textquotesingle{}kmeans\textquotesingle{}\+: \mbox{\hyperlink{classkmeans_1_1kmeansClustering}{kmeans\+Clustering}}, \textquotesingle{}kmedians\textquotesingle{}\+: \mbox{\hyperlink{classkmedians_1_1kmediansClustering}{kmedians\+Clustering}}, \textquotesingle{}kmedoids\textquotesingle{}\+: \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering}{kmedoids\+Clustering}}, \textquotesingle{}DBSCAN\textquotesingle{}\+: \mbox{\hyperlink{classdbscan_1_1DBSCANClustering}{DBSCANClustering}}\}}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a6fe2b5ed2108e2ac12d0200ccf0a79d8}\label{namespaceweb__frontend_a6fe2b5ed2108e2ac12d0200ccf0a79d8}} 
+\index{web\_frontend@{web\_frontend}!cluster\_dist@{cluster\_dist}}
+\index{cluster\_dist@{cluster\_dist}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{cluster\_dist}{cluster\_dist}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+cluster\+\_\+dist = col1.\+selectbox(\textquotesingle{}Choose an awesome distance measure\textquotesingle{}, list(cluster\+\_\+dist\+\_\+desc.\+keys()))}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a9006b2d522009282e36d99b804b6f871}\label{namespaceweb__frontend_a9006b2d522009282e36d99b804b6f871}} 
+\index{web\_frontend@{web\_frontend}!cluster\_dist\_desc@{cluster\_dist\_desc}}
+\index{cluster\_dist\_desc@{cluster\_dist\_desc}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{cluster\_dist\_desc}{cluster\_dist\_desc}}
+{\footnotesize\ttfamily dictionary web\+\_\+frontend.\+cluster\+\_\+dist\+\_\+desc}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \{\textcolor{stringliteral}{'euclidean'}: \textcolor{stringliteral}{'d(x,y) = \(\backslash\)sqrt\{\(\backslash\)sum\_\{i=1\}\string^\{n\}(|x\_i-\/y\_i|)\string^2\}'},}
+\DoxyCodeLine{2                      \textcolor{stringliteral}{'manhattan'}: \textcolor{stringliteral}{'d(x,y) = \(\backslash\)sum\(\backslash\)limits\_\{i=1\}\string^\{n\}|x\_i -\/ y\_i|'},}
+\DoxyCodeLine{3                      \textcolor{stringliteral}{'chebyshev'}: \textcolor{stringliteral}{'d(x,y) = \(\backslash\)max(|x\_i -\/ y\_i|)'},}
+\DoxyCodeLine{4                      \textcolor{stringliteral}{'cosine'}: \textcolor{stringliteral}{'d(x,y) = \(\backslash\)\(\backslash\)frac\{\(\backslash\)\(\backslash\)arccos(\(\backslash\)\(\backslash\)frac\{\(\backslash\)sum\_\{i=1\}\string^\{n\} x\_i y\_i\}\{\(\backslash\)sqrt\{\(\backslash\)sum\_\{i=1\}\string^\{n\} x\_i\string^2 \(\backslash\)sum\_\{i=1\}\string^\{n\} y\_i\string^2\}\})\}\{\(\backslash\)pi\}'}\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceweb__frontend_a8770d3c28a8081b31dded64b8690d6b8}\label{namespaceweb__frontend_a8770d3c28a8081b31dded64b8690d6b8}} 
+\index{web\_frontend@{web\_frontend}!cluster\_label@{cluster\_label}}
+\index{cluster\_label@{cluster\_label}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{cluster\_label}{cluster\_label}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+cluster\+\_\+label = alt.\+Tooltip(\char`\"{}c\char`\"{}, title=\char`\"{}Cluster ID\char`\"{})}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a8a75bc5f52d10650f9c219e78d2cd42a}\label{namespaceweb__frontend_a8a75bc5f52d10650f9c219e78d2cd42a}} 
+\index{web\_frontend@{web\_frontend}!clustered\_data@{clustered\_data}}
+\index{clustered\_data@{clustered\_data}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{clustered\_data}{clustered\_data}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+clustered\+\_\+data = np.\+zeros(len(cluster.\+data))}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a25c9a63429521ea396fe7cd47affd742}\label{namespaceweb__frontend_a25c9a63429521ea396fe7cd47affd742}} 
+\index{web\_frontend@{web\_frontend}!clusters@{clusters}}
+\index{clusters@{clusters}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{clusters}{clusters}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+clusters}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a09a9c4d0fe74cb4efb06acc9fde7c307}\label{namespaceweb__frontend_a09a9c4d0fe74cb4efb06acc9fde7c307}} 
+\index{web\_frontend@{web\_frontend}!col1@{col1}}
+\index{col1@{col1}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{col1}{col1}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+col1}
+
+\mbox{\Hypertarget{namespaceweb__frontend_adff0b924c11d3d89d808ceb50a3d9574}\label{namespaceweb__frontend_adff0b924c11d3d89d808ceb50a3d9574}} 
+\index{web\_frontend@{web\_frontend}!col2@{col2}}
+\index{col2@{col2}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{col2}{col2}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+col2}
+
+\mbox{\Hypertarget{namespaceweb__frontend_af0ac7cf718145355f2362cb8a51f55bb}\label{namespaceweb__frontend_af0ac7cf718145355f2362cb8a51f55bb}} 
+\index{web\_frontend@{web\_frontend}!color@{color}}
+\index{color@{color}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+color}
+
+\mbox{\Hypertarget{namespaceweb__frontend_aa125eecf731512db07a91067d3b96efe}\label{namespaceweb__frontend_aa125eecf731512db07a91067d3b96efe}} 
+\index{web\_frontend@{web\_frontend}!color\_palette@{color\_palette}}
+\index{color\_palette@{color\_palette}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{color\_palette}{color\_palette}}
+{\footnotesize\ttfamily list web\+\_\+frontend.\+color\+\_\+palette = \mbox{[}\textquotesingle{}black\textquotesingle{}\mbox{]} + sns.\+color\+\_\+palette(\char`\"{}husl\char`\"{}, len(set(\mbox{\hyperlink{namespaceweb__frontend_a8a75bc5f52d10650f9c219e78d2cd42a}{clustered\+\_\+data}}))-\/1)}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a06738bfdebda9497c3c2b2a677f9ddcf}\label{namespaceweb__frontend_a06738bfdebda9497c3c2b2a677f9ddcf}} 
+\index{web\_frontend@{web\_frontend}!dataexpander@{dataexpander}}
+\index{dataexpander@{dataexpander}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{dataexpander}{dataexpander}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+dataexpander = st.\+beta\+\_\+expander(\char`\"{}data\char`\"{})}
+
+\mbox{\Hypertarget{namespaceweb__frontend_ad784ad8e3f72e82ccc15fffc02ac0563}\label{namespaceweb__frontend_ad784ad8e3f72e82ccc15fffc02ac0563}} 
+\index{web\_frontend@{web\_frontend}!dataset@{dataset}}
+\index{dataset@{dataset}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{dataset}{dataset}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+dataset = col1.\+selectbox(\textquotesingle{}Choose a beautiful dataset\textquotesingle{},\mbox{[}\textquotesingle{}iris\textquotesingle{}, \textquotesingle{}wine\textquotesingle{}, \textquotesingle{}diabetes\textquotesingle{}, \textquotesingle{}housevotes\textquotesingle{}\mbox{]})}
+
+\mbox{\Hypertarget{namespaceweb__frontend_ae6753587119b61b5e1f1e834cf48bcef}\label{namespaceweb__frontend_ae6753587119b61b5e1f1e834cf48bcef}} 
+\index{web\_frontend@{web\_frontend}!datasets@{datasets}}
+\index{datasets@{datasets}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{datasets}{datasets}}
+{\footnotesize\ttfamily list web\+\_\+frontend.\+datasets = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespaceweb__frontend_ac8d1239dd61f040588df58073da2d06d}\label{namespaceweb__frontend_ac8d1239dd61f040588df58073da2d06d}} 
+\index{web\_frontend@{web\_frontend}!desc@{desc}}
+\index{desc@{desc}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{desc}{desc}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+desc = np.\+array(\mbox{\hyperlink{namespaceweb__frontend_a6d4b09f1196dc0e9a291005878c7dffb}{desc\+\_\+list}})}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a6d4b09f1196dc0e9a291005878c7dffb}\label{namespaceweb__frontend_a6d4b09f1196dc0e9a291005878c7dffb}} 
+\index{web\_frontend@{web\_frontend}!desc\_list@{desc\_list}}
+\index{desc\_list@{desc\_list}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{desc\_list}{desc\_list}}
+{\footnotesize\ttfamily list web\+\_\+frontend.\+desc\+\_\+list = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a7a6ee1b7740be3fdd76313e704c09b8e}\label{namespaceweb__frontend_a7a6ee1b7740be3fdd76313e704c09b8e}} 
+\index{web\_frontend@{web\_frontend}!df@{df}}
+\index{df@{df}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{df}{df}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+df = session\+\_\+state.\+indices\+\_\+data}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a0191bc0cba482c929e000c10dd86801e}\label{namespaceweb__frontend_a0191bc0cba482c929e000c10dd86801e}} 
+\index{web\_frontend@{web\_frontend}!dfclusterdata@{dfclusterdata}}
+\index{dfclusterdata@{dfclusterdata}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{dfclusterdata}{dfclusterdata}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+dfclusterdata = pd.\+Data\+Frame()}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a05b458056ccbac0ffb6a23ef48a07c5e}\label{namespaceweb__frontend_a05b458056ccbac0ffb6a23ef48a07c5e}} 
+\index{web\_frontend@{web\_frontend}!eps@{eps}}
+\index{eps@{eps}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{eps}{eps}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+eps}
+
+\mbox{\Hypertarget{namespaceweb__frontend_aa885b9caed1bf35c2b68e9d6a68f6b51}\label{namespaceweb__frontend_aa885b9caed1bf35c2b68e9d6a68f6b51}} 
+\index{web\_frontend@{web\_frontend}!epsilon@{epsilon}}
+\index{epsilon@{epsilon}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{epsilon}{epsilon}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+epsilon = col2.\+slider(\char`\"{}Choose a nice value for epsilon\char`\"{}, min\+\_\+value=0.\+1, max\+\_\+value=20.\+0, step=0.\+1)}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a3c3a05e18097009144e4684f3beee988}\label{namespaceweb__frontend_a3c3a05e18097009144e4684f3beee988}} 
+\index{web\_frontend@{web\_frontend}!False@{False}}
+\index{False@{False}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{False}{False}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+False}
+
+\mbox{\Hypertarget{namespaceweb__frontend_ab2c7ca7d972c5e7340cf4c7e867b5d02}\label{namespaceweb__frontend_ab2c7ca7d972c5e7340cf4c7e867b5d02}} 
+\index{web\_frontend@{web\_frontend}!fig@{fig}}
+\index{fig@{fig}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{fig}{fig}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+fig}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a193e8d4dbf733bf1918f0f09975ed6ce}\label{namespaceweb__frontend_a193e8d4dbf733bf1918f0f09975ed6ce}} 
+\index{web\_frontend@{web\_frontend}!hue@{hue}}
+\index{hue@{hue}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{hue}{hue}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+hue}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a53726d670e54274b72635b663ba69dca}\label{namespaceweb__frontend_a53726d670e54274b72635b663ba69dca}} 
+\index{web\_frontend@{web\_frontend}!I1@{I1}}
+\index{I1@{I1}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{I1}{I1}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+I1 = \mbox{\hyperlink{classindices_1_1Indices}{Indices}}(\mbox{\hyperlink{namespaceweb__frontend_aaf3ac2b14e7665a95f91b3b2a4fe2b3a}{predicted}}, \mbox{\hyperlink{namespaceweb__frontend_ad6cb59f4d8d78e1f93b5bcd2838595ee}{labels}})}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a399e55f26a0ed76172a03e4d18f33fbf}\label{namespaceweb__frontend_a399e55f26a0ed76172a03e4d18f33fbf}} 
+\index{web\_frontend@{web\_frontend}!index\_eval@{index\_eval}}
+\index{index\_eval@{index\_eval}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{index\_eval}{index\_eval}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+index\+\_\+eval = \mbox{[}\char`\"{}ARI\char`\"{}, \char`\"{}NMI\char`\"{}, \char`\"{}Completeness Score\char`\"{}, \char`\"{}Homogeneity Score\char`\"{}, \char`\"{}Silhouette Score\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a37570665c5211c961b272562bbd335e9}\label{namespaceweb__frontend_a37570665c5211c961b272562bbd335e9}} 
+\index{web\_frontend@{web\_frontend}!indices\_data@{indices\_data}}
+\index{indices\_data@{indices\_data}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{indices\_data}{indices\_data}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+indices\+\_\+data}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a94dd98947f64fc0fff9b548c41639bfa}\label{namespaceweb__frontend_a94dd98947f64fc0fff9b548c41639bfa}} 
+\index{web\_frontend@{web\_frontend}!k@{k}}
+\index{k@{k}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{k}{k}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+k}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a7f7156d9924ee0822f4451ea125a3446}\label{namespaceweb__frontend_a7f7156d9924ee0822f4451ea125a3446}} 
+\index{web\_frontend@{web\_frontend}!k\_value@{k\_value}}
+\index{k\_value@{k\_value}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{k\_value}{k\_value}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+k\+\_\+value = col2.\+slider(\char`\"{}Choose a nice value for \mbox{\hyperlink{namespaceweb__frontend_a94dd98947f64fc0fff9b548c41639bfa}{k}} (number of \mbox{\hyperlink{namespaceweb__frontend_a25c9a63429521ea396fe7cd47affd742}{clusters}})\char`\"{}, min\+\_\+value=2, max\+\_\+value=10, step=1, value=3)}
+
+\mbox{\Hypertarget{namespaceweb__frontend_ad6cb59f4d8d78e1f93b5bcd2838595ee}\label{namespaceweb__frontend_ad6cb59f4d8d78e1f93b5bcd2838595ee}} 
+\index{web\_frontend@{web\_frontend}!labels@{labels}}
+\index{labels@{labels}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{labels}{labels}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+labels = cluster.\+labels.\+tolist()}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a93eab05f4c018e6e65a76d838cff34e6}\label{namespaceweb__frontend_a93eab05f4c018e6e65a76d838cff34e6}} 
+\index{web\_frontend@{web\_frontend}!legend@{legend}}
+\index{legend@{legend}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{legend}{legend}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+legend}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a9aa566eabde22259a97c37e426eb957c}\label{namespaceweb__frontend_a9aa566eabde22259a97c37e426eb957c}} 
+\index{web\_frontend@{web\_frontend}!linewidth@{linewidth}}
+\index{linewidth@{linewidth}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{linewidth}{linewidth}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+linewidth}
+
+\mbox{\Hypertarget{namespaceweb__frontend_af67892833d2af8e60eb05352c79cbe8d}\label{namespaceweb__frontend_af67892833d2af8e60eb05352c79cbe8d}} 
+\index{web\_frontend@{web\_frontend}!markers@{markers}}
+\index{markers@{markers}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{markers}{markers}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+markers}
+
+\mbox{\Hypertarget{namespaceweb__frontend_ab8af5ba16ba60ca4306dbd2f7cc2adda}\label{namespaceweb__frontend_ab8af5ba16ba60ca4306dbd2f7cc2adda}} 
+\index{web\_frontend@{web\_frontend}!marking\_centroids@{marking\_centroids}}
+\index{marking\_centroids@{marking\_centroids}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{marking\_centroids}{marking\_centroids}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+marking\+\_\+centroids = np.\+ones(cluster.\+data.\+shape\mbox{[}0\mbox{]})}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a5cb9f78690b87790c69114058aa0b03f}\label{namespaceweb__frontend_a5cb9f78690b87790c69114058aa0b03f}} 
+\index{web\_frontend@{web\_frontend}!minpts@{minpts}}
+\index{minpts@{minpts}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{minpts}{minpts}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+minpts = col2.\+slider(\char`\"{}Choose a minimal number of nearest points\char`\"{}, min\+\_\+value=1, max\+\_\+value=20, step=1, value=5)}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a7580efbd05b87376061a0c0068878c09}\label{namespaceweb__frontend_a7580efbd05b87376061a0c0068878c09}} 
+\index{web\_frontend@{web\_frontend}!page\_icon@{page\_icon}}
+\index{page\_icon@{page\_icon}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{page\_icon}{page\_icon}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+page\+\_\+icon}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a539479f85bb69146a4afc4dff726232a}\label{namespaceweb__frontend_a539479f85bb69146a4afc4dff726232a}} 
+\index{web\_frontend@{web\_frontend}!page\_title@{page\_title}}
+\index{page\_title@{page\_title}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{page\_title}{page\_title}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+page\+\_\+title}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a5270867dae900f6e6044de56725bfc31}\label{namespaceweb__frontend_a5270867dae900f6e6044de56725bfc31}} 
+\index{web\_frontend@{web\_frontend}!palette@{palette}}
+\index{palette@{palette}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{palette}{palette}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+palette}
+
+\mbox{\Hypertarget{namespaceweb__frontend_ae9367db9cae6ac3dd2c6e388b2f1d387}\label{namespaceweb__frontend_ae9367db9cae6ac3dd2c6e388b2f1d387}} 
+\index{web\_frontend@{web\_frontend}!pcaalt@{pcaalt}}
+\index{pcaalt@{pcaalt}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{pcaalt}{pcaalt}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+pcaalt = alt.\+Chart(\mbox{\hyperlink{namespaceweb__frontend_a0191bc0cba482c929e000c10dd86801e}{dfclusterdata}}).mark\+\_\+circle().encode(\mbox{\hyperlink{namespaceweb__frontend_ae5593f4f72a8fd57bf6706f119d3309b}{x}}=\mbox{\hyperlink{namespaceweb__frontend_a3cc7db566a02c44210df5d149ea4e6f3}{xaxis}}, \mbox{\hyperlink{namespaceweb__frontend_a98c16a3a25df247e64ee8e1ef2da037f}{y}}=\mbox{\hyperlink{namespaceweb__frontend_a26326cf837785de956857a6daa4cac89}{yaxis}}, tooltip=\mbox{[}\mbox{\hyperlink{namespaceweb__frontend_a8770d3c28a8081b31dded64b8690d6b8}{cluster\+\_\+label}}, \mbox{\hyperlink{namespaceweb__frontend_acf49c9659e615dc42e77fc8b87fbbff9}{point\+\_\+label}}\mbox{]}, \mbox{\hyperlink{namespaceweb__frontend_af0ac7cf718145355f2362cb8a51f55bb}{color}}=\mbox{\hyperlink{namespaceweb__frontend_a5116b8e7725539769cf10cb172e4c37a}{altcolor}}).interactive()}
+
+\mbox{\Hypertarget{namespaceweb__frontend_ae93ba1b476312c7cf104491d77040d3d}\label{namespaceweb__frontend_ae93ba1b476312c7cf104491d77040d3d}} 
+\index{web\_frontend@{web\_frontend}!perp@{perp}}
+\index{perp@{perp}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{perp}{perp}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+perp = col1.\+slider(\char`\"{}Perplexity for t-\/SNE\char`\"{}, 5, 50, 25)}
+
+\mbox{\Hypertarget{namespaceweb__frontend_acf49c9659e615dc42e77fc8b87fbbff9}\label{namespaceweb__frontend_acf49c9659e615dc42e77fc8b87fbbff9}} 
+\index{web\_frontend@{web\_frontend}!point\_label@{point\_label}}
+\index{point\_label@{point\_label}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{point\_label}{point\_label}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+point\+\_\+label = alt.\+Tooltip(\char`\"{}i\char`\"{}, title=\char`\"{}Point ID\char`\"{})}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a61d104e008a5ba1f7122da6411bb4db0}\label{namespaceweb__frontend_a61d104e008a5ba1f7122da6411bb4db0}} 
+\index{web\_frontend@{web\_frontend}!precalc@{precalc}}
+\index{precalc@{precalc}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{precalc}{precalc}}
+{\footnotesize\ttfamily list web\+\_\+frontend.\+precalc = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespaceweb__frontend_aaf3ac2b14e7665a95f91b3b2a4fe2b3a}\label{namespaceweb__frontend_aaf3ac2b14e7665a95f91b3b2a4fe2b3a}} 
+\index{web\_frontend@{web\_frontend}!predicted@{predicted}}
+\index{predicted@{predicted}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{predicted}{predicted}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+predicted = clustered\+\_\+data.\+tolist()}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a3b4bb0b6d4fb023e5deef81fb802b4cb}\label{namespaceweb__frontend_a3b4bb0b6d4fb023e5deef81fb802b4cb}} 
+\index{web\_frontend@{web\_frontend}!projected\_data\_pca@{projected\_data\_pca}}
+\index{projected\_data\_pca@{projected\_data\_pca}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{projected\_data\_pca}{projected\_data\_pca}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+projected\+\_\+data\+\_\+pca = PCA(random\+\_\+state=42, n\+\_\+components=2).fit\+\_\+transform(cluster.\+data)}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a6261e4a3c482320b5c9cbbcff5dd7f57}\label{namespaceweb__frontend_a6261e4a3c482320b5c9cbbcff5dd7f57}} 
+\index{web\_frontend@{web\_frontend}!projected\_data\_tsne@{projected\_data\_tsne}}
+\index{projected\_data\_tsne@{projected\_data\_tsne}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{projected\_data\_tsne}{projected\_data\_tsne}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+projected\+\_\+data\+\_\+tsne = TSNE(random\+\_\+state=42, perplexity=\mbox{\hyperlink{namespaceweb__frontend_ae93ba1b476312c7cf104491d77040d3d}{perp}}).fit\+\_\+transform(cluster.\+data)}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a49e7f1d54634decf9bd55b5963d398d9}\label{namespaceweb__frontend_a49e7f1d54634decf9bd55b5963d398d9}} 
+\index{web\_frontend@{web\_frontend}!reset\_tmp@{reset\_tmp}}
+\index{reset\_tmp@{reset\_tmp}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{reset\_tmp}{reset\_tmp}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+reset\+\_\+tmp = col2.\+button(\textquotesingle{}Reset\textquotesingle{})}
+
+\mbox{\Hypertarget{namespaceweb__frontend_afbb40890ae4f84ac47eb68bc09e62fa1}\label{namespaceweb__frontend_afbb40890ae4f84ac47eb68bc09e62fa1}} 
+\index{web\_frontend@{web\_frontend}!resulthandler@{resulthandler}}
+\index{resulthandler@{resulthandler}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{resulthandler}{resulthandler}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+resulthandler = \mbox{\hyperlink{classresults_1_1Results}{Results}}(\char`\"{}./code/\mbox{\hyperlink{namespaceweb__frontend_a2926d7785b026ae5beb31c307bf61560}{results}}\char`\"{})}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a2926d7785b026ae5beb31c307bf61560}\label{namespaceweb__frontend_a2926d7785b026ae5beb31c307bf61560}} 
+\index{web\_frontend@{web\_frontend}!results@{results}}
+\index{results@{results}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{results}{results}}
+{\footnotesize\ttfamily list web\+\_\+frontend.\+results = \mbox{[}\mbox{[}1, \char`\"{}maximum reference value\char`\"{}\mbox{]}\mbox{]}}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a893a6447437f3d483fb64e457c26580c}\label{namespaceweb__frontend_a893a6447437f3d483fb64e457c26580c}} 
+\index{web\_frontend@{web\_frontend}!score@{score}}
+\index{score@{score}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{score}{score}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+score = I1.\+index\+\_\+external(\mbox{\hyperlink{namespaceweb__frontend_a399e55f26a0ed76172a03e4d18f33fbf}{index\+\_\+eval}}\mbox{[}i\mbox{]})}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a2ce3d7137e04c70336f26386dc7e853b}\label{namespaceweb__frontend_a2ce3d7137e04c70336f26386dc7e853b}} 
+\index{web\_frontend@{web\_frontend}!seaplots@{seaplots}}
+\index{seaplots@{seaplots}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{seaplots}{seaplots}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+seaplots = st.\+checkbox(\textquotesingle{}Use interactive altair plots over static seaborn plots.\textquotesingle{}, value=True)}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a8b1c4acb3b2f6a4a1fa3f1e2c02b07c3}\label{namespaceweb__frontend_a8b1c4acb3b2f6a4a1fa3f1e2c02b07c3}} 
+\index{web\_frontend@{web\_frontend}!seed@{seed}}
+\index{seed@{seed}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{seed}{seed}}
+{\footnotesize\ttfamily int web\+\_\+frontend.\+seed = None}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a58d0ef0147c2f404a31fbcadab5c7146}\label{namespaceweb__frontend_a58d0ef0147c2f404a31fbcadab5c7146}} 
+\index{web\_frontend@{web\_frontend}!seeded@{seeded}}
+\index{seeded@{seeded}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{seeded}{seeded}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+seeded = st.\+checkbox(\textquotesingle{}Use precalculated \mbox{\hyperlink{namespaceweb__frontend_a2926d7785b026ae5beb31c307bf61560}{results}} (with random \mbox{\hyperlink{namespaceweb__frontend_a8b1c4acb3b2f6a4a1fa3f1e2c02b07c3}{seed}} for reproduction).\textquotesingle{}, value=True)}
+
+\mbox{\Hypertarget{namespaceweb__frontend_ab6601ad5e4df81438e964e8076718c67}\label{namespaceweb__frontend_ab6601ad5e4df81438e964e8076718c67}} 
+\index{web\_frontend@{web\_frontend}!session\_state@{session\_state}}
+\index{session\_state@{session\_state}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{session\_state}{session\_state}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+session\+\_\+state = \mbox{\hyperlink{namespaceSessionState_a6447a6ba08dae19a324f73980cc7508e}{Session\+State.\+get}}(\mbox{\hyperlink{namespaceweb__frontend_a37570665c5211c961b272562bbd335e9}{indices\+\_\+data}}=pd.\+Data\+Frame())}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a8ac918fe92d8f55635253e1106657fe6}\label{namespaceweb__frontend_a8ac918fe92d8f55635253e1106657fe6}} 
+\index{web\_frontend@{web\_frontend}!size@{size}}
+\index{size@{size}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+size}
+
+\mbox{\Hypertarget{namespaceweb__frontend_ada89560d6b64d3670edc7d77d4d5b85f}\label{namespaceweb__frontend_ada89560d6b64d3670edc7d77d4d5b85f}} 
+\index{web\_frontend@{web\_frontend}!stats@{stats}}
+\index{stats@{stats}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{stats}{stats}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+stats = np.\+zeros(len(\mbox{\hyperlink{namespaceweb__frontend_a2926d7785b026ae5beb31c307bf61560}{results}}))}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a450af770f949f976f0da06a2c33cfe5c}\label{namespaceweb__frontend_a450af770f949f976f0da06a2c33cfe5c}} 
+\index{web\_frontend@{web\_frontend}!stuff@{stuff}}
+\index{stuff@{stuff}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{stuff}{stuff}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+stuff}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a41595dbe670b3fdefd7eb41feb6ca0f5}\label{namespaceweb__frontend_a41595dbe670b3fdefd7eb41feb6ca0f5}} 
+\index{web\_frontend@{web\_frontend}!style@{style}}
+\index{style@{style}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{style}{style}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+style}
+
+\mbox{\Hypertarget{namespaceweb__frontend_adbd0171437252f426da0d72460f17de6}\label{namespaceweb__frontend_adbd0171437252f426da0d72460f17de6}} 
+\index{web\_frontend@{web\_frontend}!subplot\_kw@{subplot\_kw}}
+\index{subplot\_kw@{subplot\_kw}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{subplot\_kw}{subplot\_kw}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+subplot\+\_\+kw}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a79b7120bced743cd49e139bedf3fae48}\label{namespaceweb__frontend_a79b7120bced743cd49e139bedf3fae48}} 
+\index{web\_frontend@{web\_frontend}!tsnealt@{tsnealt}}
+\index{tsnealt@{tsnealt}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{tsnealt}{tsnealt}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+tsnealt = alt.\+Chart(\mbox{\hyperlink{namespaceweb__frontend_a0191bc0cba482c929e000c10dd86801e}{dfclusterdata}}).mark\+\_\+circle().encode(\mbox{\hyperlink{namespaceweb__frontend_ae5593f4f72a8fd57bf6706f119d3309b}{x}}=\mbox{\hyperlink{namespaceweb__frontend_a3cc7db566a02c44210df5d149ea4e6f3}{xaxis}}, \mbox{\hyperlink{namespaceweb__frontend_a98c16a3a25df247e64ee8e1ef2da037f}{y}}=\mbox{\hyperlink{namespaceweb__frontend_a26326cf837785de956857a6daa4cac89}{yaxis}}, tooltip=\mbox{[}\mbox{\hyperlink{namespaceweb__frontend_a8770d3c28a8081b31dded64b8690d6b8}{cluster\+\_\+label}}, \mbox{\hyperlink{namespaceweb__frontend_acf49c9659e615dc42e77fc8b87fbbff9}{point\+\_\+label}}\mbox{]}, \mbox{\hyperlink{namespaceweb__frontend_af0ac7cf718145355f2362cb8a51f55bb}{color}}=\mbox{\hyperlink{namespaceweb__frontend_a5116b8e7725539769cf10cb172e4c37a}{altcolor}}).interactive()}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a4d78c0a2b478c196f08136e541782dcf}\label{namespaceweb__frontend_a4d78c0a2b478c196f08136e541782dcf}} 
+\index{web\_frontend@{web\_frontend}!use\_container\_width@{use\_container\_width}}
+\index{use\_container\_width@{use\_container\_width}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{use\_container\_width}{use\_container\_width}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+use\+\_\+container\+\_\+width}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a8b39b147bcb9ea75b351224287fb0d14}\label{namespaceweb__frontend_a8b39b147bcb9ea75b351224287fb0d14}} 
+\index{web\_frontend@{web\_frontend}!val@{val}}
+\index{val@{val}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{val}{val}}
+{\footnotesize\ttfamily string web\+\_\+frontend.\+val = \char`\"{}epsilon=\char`\"{}+str(\mbox{\hyperlink{namespaceweb__frontend_aa885b9caed1bf35c2b68e9d6a68f6b51}{epsilon}})+\char`\"{}, np=\char`\"{}+str(\mbox{\hyperlink{namespaceweb__frontend_a5cb9f78690b87790c69114058aa0b03f}{minpts}})}
+
+\mbox{\Hypertarget{namespaceweb__frontend_abcf6953a3b83eef8228ec7d91ed184fc}\label{namespaceweb__frontend_abcf6953a3b83eef8228ec7d91ed184fc}} 
+\index{web\_frontend@{web\_frontend}!weights@{weights}}
+\index{weights@{weights}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{weights}{weights}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+weights}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a364f1ad37501b60441618aea22763888}\label{namespaceweb__frontend_a364f1ad37501b60441618aea22763888}} 
+\index{web\_frontend@{web\_frontend}!width@{width}}
+\index{width@{width}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+width = 0.\+5}
+
+\mbox{\Hypertarget{namespaceweb__frontend_ae5593f4f72a8fd57bf6706f119d3309b}\label{namespaceweb__frontend_ae5593f4f72a8fd57bf6706f119d3309b}} 
+\index{web\_frontend@{web\_frontend}!x@{x}}
+\index{x@{x}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+x}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a3cc7db566a02c44210df5d149ea4e6f3}\label{namespaceweb__frontend_a3cc7db566a02c44210df5d149ea4e6f3}} 
+\index{web\_frontend@{web\_frontend}!xaxis@{xaxis}}
+\index{xaxis@{xaxis}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{xaxis}{xaxis}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+xaxis = alt.\+X(\char`\"{}xt\char`\"{}, axis=alt.\+Axis(title=None))}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a0838ca5e31a97686f8c9783545b51b1c}\label{namespaceweb__frontend_a0838ca5e31a97686f8c9783545b51b1c}} 
+\index{web\_frontend@{web\_frontend}!xs@{xs}}
+\index{xs@{xs}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{xs}{xs}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+xs = np.\+arange(len(\mbox{\hyperlink{namespaceweb__frontend_ad6cb59f4d8d78e1f93b5bcd2838595ee}{labels}}))}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a98c16a3a25df247e64ee8e1ef2da037f}\label{namespaceweb__frontend_a98c16a3a25df247e64ee8e1ef2da037f}} 
+\index{web\_frontend@{web\_frontend}!y@{y}}
+\index{y@{y}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+y}
+
+\mbox{\Hypertarget{namespaceweb__frontend_a26326cf837785de956857a6daa4cac89}\label{namespaceweb__frontend_a26326cf837785de956857a6daa4cac89}} 
+\index{web\_frontend@{web\_frontend}!yaxis@{yaxis}}
+\index{yaxis@{yaxis}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{yaxis}{yaxis}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+yaxis = alt.\+Y(\char`\"{}yt\char`\"{}, axis=alt.\+Axis(title=None))}
+
+\mbox{\Hypertarget{namespaceweb__frontend_ac08f6b50ca9689f1ec62998b27fee863}\label{namespaceweb__frontend_ac08f6b50ca9689f1ec62998b27fee863}} 
+\index{web\_frontend@{web\_frontend}!ys@{ys}}
+\index{ys@{ys}!web\_frontend@{web\_frontend}}
+\doxysubsubsection{\texorpdfstring{ys}{ys}}
+{\footnotesize\ttfamily web\+\_\+frontend.\+ys}
+

@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('classclustering_1_1Clustering.html',''
 </div><!--header-->
 <div class="contents">
 
-<p>Meta Class for all subsequent clustering algorithms<br  />
+<p>Base Class for all subsequent clustering algorithms<br  />
  implements all functions needed for running the different<br  />
  cluster algorithms.  
  <a href="classclustering_1_1Clustering.html#details">More...</a></p>
@@ -122,15 +122,14 @@ Inheritance diagram for clustering.Clustering:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a59129e84c5d072bf02d0a8a89779760b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a59129e84c5d072bf02d0a8a89779760b">__init__</a> (self, <a class="el" href="classclustering_1_1Clustering.html#a50461838df4386d28ed001591eff2383">metric</a>, <a class="el" href="classclustering_1_1Clustering.html#a33ee2153799927a275df889deec09b53">dataset</a>)</td></tr>
-<tr class="memdesc:a59129e84c5d072bf02d0a8a89779760b"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor  <a href="classclustering_1_1Clustering.html#a59129e84c5d072bf02d0a8a89779760b">More...</a><br /></td></tr>
-<tr class="separator:a59129e84c5d072bf02d0a8a89779760b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96699924e73d3dac5c91d23a99842585"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a96699924e73d3dac5c91d23a99842585">__init__</a> (self, <a class="el" href="classclustering_1_1Clustering.html#a50461838df4386d28ed001591eff2383">metric</a>, <a class="el" href="classclustering_1_1Clustering.html#a33ee2153799927a275df889deec09b53">dataset</a>, <a class="el" href="classclustering_1_1Clustering.html#a1812b94a6bec621047497eaf39c6f998">seed</a>=None)</td></tr>
+<tr class="memdesc:a96699924e73d3dac5c91d23a99842585"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor  <a href="classclustering_1_1Clustering.html#a96699924e73d3dac5c91d23a99842585">More...</a><br /></td></tr>
+<tr class="separator:a96699924e73d3dac5c91d23a99842585"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a350095d3e797e2cac62e08adbfe75da9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a350095d3e797e2cac62e08adbfe75da9">pyc_metric</a> (self, <a class="el" href="classclustering_1_1Clustering.html#a50461838df4386d28ed001591eff2383">metric</a>)</td></tr>
 <tr class="memdesc:a350095d3e797e2cac62e08adbfe75da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a distance metric which is usable by the pyclustering algorithms  <a href="classclustering_1_1Clustering.html#a350095d3e797e2cac62e08adbfe75da9">More...</a><br /></td></tr>
 <tr class="separator:a350095d3e797e2cac62e08adbfe75da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66e74662b64e031f887cb3d46f065a06"><td class="memItemLeft" align="right" valign="top"><a id="a66e74662b64e031f887cb3d46f065a06"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a66e74662b64e031f887cb3d46f065a06">load_data</a> (self)</td></tr>
-<tr class="memdesc:a66e74662b64e031f887cb3d46f065a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">loads in a dataset, standardises it and sets it as self.data attribute <br /></td></tr>
+<tr class="memitem:a66e74662b64e031f887cb3d46f065a06"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a66e74662b64e031f887cb3d46f065a06">load_data</a> (self)</td></tr>
+<tr class="memdesc:a66e74662b64e031f887cb3d46f065a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">loads in a dataset, standardises it and sets it as self.data attribute  <a href="classclustering_1_1Clustering.html#a66e74662b64e031f887cb3d46f065a06">More...</a><br /></td></tr>
 <tr class="separator:a66e74662b64e031f887cb3d46f065a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8540163639557e9527c0b2f363a4cd46"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a8540163639557e9527c0b2f363a4cd46">house_load</a> (self, path, skip=1)</td></tr>
 <tr class="memdesc:a8540163639557e9527c0b2f363a4cd46"><td class="mdescLeft">&#160;</td><td class="mdescRight">loads the housevotes dataset and encodes it using One-Hot-Encoding<br  />
@@ -142,30 +141,32 @@ def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a50461838df4386d28ed001591eff2383"><td class="memItemLeft" align="right" valign="top"><a id="a50461838df4386d28ed001591eff2383"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a50461838df4386d28ed001591eff2383">metric</a></td></tr>
-<tr class="memdesc:a50461838df4386d28ed001591eff2383"><td class="mdescLeft">&#160;</td><td class="mdescRight">metric name as string or pyclustering distance_metric object <br /></td></tr>
+<tr class="memitem:a50461838df4386d28ed001591eff2383"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a50461838df4386d28ed001591eff2383">metric</a></td></tr>
+<tr class="memdesc:a50461838df4386d28ed001591eff2383"><td class="mdescLeft">&#160;</td><td class="mdescRight">metric name as string or pyclustering distance_metric object  <a href="classclustering_1_1Clustering.html#a50461838df4386d28ed001591eff2383">More...</a><br /></td></tr>
 <tr class="separator:a50461838df4386d28ed001591eff2383"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33ee2153799927a275df889deec09b53"><td class="memItemLeft" align="right" valign="top"><a id="a33ee2153799927a275df889deec09b53"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a33ee2153799927a275df889deec09b53">dataset</a></td></tr>
-<tr class="memdesc:a33ee2153799927a275df889deec09b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">dataset name as string <br /></td></tr>
+<tr class="memitem:a33ee2153799927a275df889deec09b53"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a33ee2153799927a275df889deec09b53">dataset</a></td></tr>
+<tr class="memdesc:a33ee2153799927a275df889deec09b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">dataset name as string  <a href="classclustering_1_1Clustering.html#a33ee2153799927a275df889deec09b53">More...</a><br /></td></tr>
 <tr class="separator:a33ee2153799927a275df889deec09b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9428002bd0ae4880a18840cbdb2c1e52"><td class="memItemLeft" align="right" valign="top"><a id="a9428002bd0ae4880a18840cbdb2c1e52"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a9428002bd0ae4880a18840cbdb2c1e52">data</a></td></tr>
-<tr class="memdesc:a9428002bd0ae4880a18840cbdb2c1e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">data that gets clustered <br /></td></tr>
+<tr class="memitem:a9428002bd0ae4880a18840cbdb2c1e52"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a9428002bd0ae4880a18840cbdb2c1e52">data</a></td></tr>
+<tr class="memdesc:a9428002bd0ae4880a18840cbdb2c1e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">data that gets clustered  <a href="classclustering_1_1Clustering.html#a9428002bd0ae4880a18840cbdb2c1e52">More...</a><br /></td></tr>
 <tr class="separator:a9428002bd0ae4880a18840cbdb2c1e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e5a4547b2d7836c84b6e9ef2f30ab03"><td class="memItemLeft" align="right" valign="top"><a id="a9e5a4547b2d7836c84b6e9ef2f30ab03"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a9e5a4547b2d7836c84b6e9ef2f30ab03">labels</a></td></tr>
-<tr class="memdesc:a9e5a4547b2d7836c84b6e9ef2f30ab03"><td class="mdescLeft">&#160;</td><td class="mdescRight">expected cluster values <br /></td></tr>
+<tr class="memitem:a9e5a4547b2d7836c84b6e9ef2f30ab03"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a9e5a4547b2d7836c84b6e9ef2f30ab03">labels</a></td></tr>
+<tr class="memdesc:a9e5a4547b2d7836c84b6e9ef2f30ab03"><td class="mdescLeft">&#160;</td><td class="mdescRight">expected cluster values  <a href="classclustering_1_1Clustering.html#a9e5a4547b2d7836c84b6e9ef2f30ab03">More...</a><br /></td></tr>
 <tr class="separator:a9e5a4547b2d7836c84b6e9ef2f30ab03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1812b94a6bec621047497eaf39c6f998"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a1812b94a6bec621047497eaf39c6f998">seed</a></td></tr>
+<tr class="memdesc:a1812b94a6bec621047497eaf39c6f998"><td class="mdescLeft">&#160;</td><td class="mdescRight">seed for initializer, None if no seed is used  <a href="classclustering_1_1Clustering.html#a1812b94a6bec621047497eaf39c6f998">More...</a><br /></td></tr>
+<tr class="separator:a1812b94a6bec621047497eaf39c6f998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a06f298bab213a556be22cde5651e24"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a5a06f298bab213a556be22cde5651e24">datadf</a></td></tr>
+<tr class="memdesc:a5a06f298bab213a556be22cde5651e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">dataset as pandas frame.  <a href="classclustering_1_1Clustering.html#a5a06f298bab213a556be22cde5651e24">More...</a><br /></td></tr>
+<tr class="separator:a5a06f298bab213a556be22cde5651e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Meta Class for all subsequent clustering algorithms<br  />
+<div class="textblock"><p>Base Class for all subsequent clustering algorithms<br  />
  implements all functions needed for running the different<br  />
  cluster algorithms. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a59129e84c5d072bf02d0a8a89779760b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59129e84c5d072bf02d0a8a89779760b">&#9670;&nbsp;</a></span>__init__()</h2>
+<a id="a96699924e73d3dac5c91d23a99842585"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96699924e73d3dac5c91d23a99842585">&#9670;&nbsp;</a></span>__init__()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -186,7 +187,13 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>dataset</em>&#160;</td>
+          <td class="paramname"><em>dataset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>seed</em> = <code>None</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -205,7 +212,7 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classkmedoids_1_1kmedoidsClustering.html#a03693d487c30710e44e74c5c5e5fedd5">kmedoids.kmedoidsClustering</a>, <a class="el" href="classkmedians_1_1kmediansClustering.html#a1272bc4e71fb01e5d903465e470e9760">kmedians.kmediansClustering</a>, <a class="el" href="classkmeans_1_1kmeansClustering.html#ac8df023e1434680239ad04361f8260a1">kmeans.kmeansClustering</a>, and <a class="el" href="classdbscan_1_1DBSCANClustering.html#ab22686f8718cf537fc12a8eb827d7482">dbscan.DBSCANClustering</a>.</p>
+<p>Reimplemented in <a class="el" href="classkmedoids_1_1kmedoidsClustering.html#a55bbada40c0c240e0ef1adf065994aaa">kmedoids.kmedoidsClustering</a>, <a class="el" href="classkmedians_1_1kmediansClustering.html#a63bfd566d6d80955ce5f3599cc023874">kmedians.kmediansClustering</a>, <a class="el" href="classkmeans_1_1kmeansClustering.html#ae978c1ffd77c33c56913dc22d59a6bfb">kmeans.kmeansClustering</a>, and <a class="el" href="classdbscan_1_1DBSCANClustering.html#a7e6f70492d3841413536ffd9abeed07a">dbscan.DBSCANClustering</a>.</p>
 
 </div>
 </div>
@@ -277,6 +284,26 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a66e74662b64e031f887cb3d46f065a06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66e74662b64e031f887cb3d46f065a06">&#9670;&nbsp;</a></span>load_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def clustering.Clustering.load_data </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>loads in a dataset, standardises it and sets it as self.data attribute </p>
+
+</div>
+</div>
 <a id="a350095d3e797e2cac62e08adbfe75da9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a350095d3e797e2cac62e08adbfe75da9">&#9670;&nbsp;</a></span>pyc_metric()</h2>
 
@@ -314,15 +341,113 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a9428002bd0ae4880a18840cbdb2c1e52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9428002bd0ae4880a18840cbdb2c1e52">&#9670;&nbsp;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">clustering.Clustering.data</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>data that gets clustered </p>
+
+</div>
+</div>
+<a id="a5a06f298bab213a556be22cde5651e24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a06f298bab213a556be22cde5651e24">&#9670;&nbsp;</a></span>datadf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">clustering.Clustering.datadf</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>dataset as pandas frame. </p>
+<p>needed for web frontend later </p>
+
+</div>
+</div>
+<a id="a33ee2153799927a275df889deec09b53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33ee2153799927a275df889deec09b53">&#9670;&nbsp;</a></span>dataset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">clustering.Clustering.dataset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>dataset name as string </p>
+
+</div>
+</div>
+<a id="a9e5a4547b2d7836c84b6e9ef2f30ab03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e5a4547b2d7836c84b6e9ef2f30ab03">&#9670;&nbsp;</a></span>labels</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">clustering.Clustering.labels</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>expected cluster values </p>
+
+</div>
+</div>
+<a id="a50461838df4386d28ed001591eff2383"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50461838df4386d28ed001591eff2383">&#9670;&nbsp;</a></span>metric</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">clustering.Clustering.metric</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>metric name as string or pyclustering distance_metric object </p>
+
+</div>
+</div>
+<a id="a1812b94a6bec621047497eaf39c6f998"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1812b94a6bec621047497eaf39c6f998">&#9670;&nbsp;</a></span>seed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">clustering.Clustering.seed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>seed for initializer, None if no seed is used </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>clustering.py</li>
+<li><a class="el" href="clustering_8py.html">clustering.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>clustering</b></li><li class="navelem"><a class="el" href="classclustering_1_1Clustering.html">Clustering</a></li>
+    <li class="navelem"><a class="el" href="namespaceclustering.html">clustering</a></li><li class="navelem"><a class="el" href="classclustering_1_1Clustering.html">Clustering</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

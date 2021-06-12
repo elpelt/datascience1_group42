@@ -1,3 +1,8 @@
+"""
+@file clustering.py
+@brief contains the clustering base class
+"""
+
 from pyclustering.utils import read_sample
 from pyclustering.utils.metric import type_metric, distance_metric
 
@@ -9,10 +14,9 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 import numpy as np
 import pandas as pd
 
-
 class Clustering():
     """
-    Meta Class for all subsequent clustering algorithms<br>
+    Base Class for all subsequent clustering algorithms<br>
     implements all functions needed for running the different<br>
     cluster algorithms
     """
@@ -124,7 +128,7 @@ class Clustering():
         democrats are labeled as 1, republicans as 0
         @param path filepath to the dataset
         @param skip number of lines that get skipped when reading in a file
-        @return One-Hot-Encoded housevotes dataset and labels as array of 1s and 0s
+        @returns One-Hot-Encoded housevotes dataset and labels as array of 1s and 0s
         """
         data = []
         datadf = None
@@ -158,9 +162,3 @@ class Clustering():
         needs to be implemented in the inheriting cluster algorithm classes
         """
         pass
-
-
-if __name__ == "__main__":
-    test = Clustering("cosine", "solarflare1")
-    test.load_data()
-    

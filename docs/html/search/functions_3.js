@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['load_5fdata_26',['load_data',['../classclustering_1_1Clustering.html#a66e74662b64e031f887cb3d46f065a06',1,'clustering::Clustering']]]
+  ['house_5fload_208',['house_load',['../classclustering_1_1Clustering.html#a8540163639557e9527c0b2f363a4cd46',1,'clustering::Clustering']]]
 ];

@@ -1,3 +1,10 @@
+"""
+@file web_frontend.py
+webfrontend for project.
+implemented using streamlit. displays parameter selection, clustering results, 
+data and the evaluation module. Charts can be displayed using seaborn or altair
+"""
+
 import streamlit as st
 import pandas as pd
 import seaborn as sns

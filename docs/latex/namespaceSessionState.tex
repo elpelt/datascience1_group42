@@ -1,0 +1,49 @@
+\hypertarget{namespaceSessionState}{}\doxysection{Session\+State Namespace Reference}
+\label{namespaceSessionState}\index{SessionState@{SessionState}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSessionState_1_1SessionState}{Session\+State}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceSessionState_a6447a6ba08dae19a324f73980cc7508e}{get}} ($\ast$$\ast$kwargs)
+\begin{DoxyCompactList}\small\item\em Gets a \mbox{\hyperlink{namespaceSessionState}{Session\+State}} object for the current session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceSessionState_a6447a6ba08dae19a324f73980cc7508e}\label{namespaceSessionState_a6447a6ba08dae19a324f73980cc7508e}} 
+\index{SessionState@{SessionState}!get@{get}}
+\index{get@{get}!SessionState@{SessionState}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily def Session\+State.\+get (\begin{DoxyParamCaption}\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+Gets a \mbox{\hyperlink{namespaceSessionState}{Session\+State}} object for the current session. 
+
+\begin{DoxyVerb}Creates a new object if necessary.
+
+Parameters
+----------
+**kwargs : any
+    Default values you want to add to the session state, if we're creating a
+    new one.
+
+Example
+-------
+>>> session_state = get(user_name='', favorite_color='black')
+>>> session_state.user_name
+''
+>>> session_state.user_name = 'Mary'
+>>> session_state.favorite_color
+'black'
+
+Since you set user_name above, next time your script runs this will be the
+result:
+>>> session_state = get(user_name='', favorite_color='black')
+>>> session_state.user_name
+'Mary'
+\end{DoxyVerb}
+ 

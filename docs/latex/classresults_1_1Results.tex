@@ -1,0 +1,162 @@
+\hypertarget{classresults_1_1Results}{}\doxysection{results.\+Results Class Reference}
+\label{classresults_1_1Results}\index{results.Results@{results.Results}}
+
+
+class for easily saving and loading already calculated clustering results~\newline
+ ~\newline
+ every dataset has a folder containing subfolders for every clustering algorithm containing more subfolders for every distance measure.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classresults_1_1Results_a9279a662b7a430c3fdf6a67fe642fc07}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, parentpath)
+\begin{DoxyCompactList}\small\item\em constructor. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classresults_1_1Results_a86803a28e15509a5ad566c3497cd3ff7}{get\+\_\+path}} (self, dataset, algorithm, metric, $\ast$$\ast$kwargs)
+\begin{DoxyCompactList}\small\item\em builds and returns the filepath to the json file fitting the given parameters \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classresults_1_1Results_aad842de4286159bfd9ced24c348d5e7d}{set\+\_\+exists}} (self, dataset, algorithm, metric, $\ast$$\ast$kwargs)
+\begin{DoxyCompactList}\small\item\em checks if a file for a result defined by the parameters exists \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classresults_1_1Results_a977039329040bd70df7c8be952dbbf09}{load\+\_\+set}} (self, dataset, algorithm, metric, $\ast$$\ast$kwargs)
+\begin{DoxyCompactList}\small\item\em loads results fitting the given parameters from a json file \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classresults_1_1Results_a3f00e067bfd723ab13f44ec34a80eb1b}{save\+\_\+set}} (self, dataset, algorithm, metric, clusters, centers, $\ast$$\ast$kwargs)
+\begin{DoxyCompactList}\small\item\em saves cluster results in a json file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classresults_1_1Results_a3ac53d3da4b01d26db0a5dd973578381}{parent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class for easily saving and loading already calculated clustering results~\newline
+ ~\newline
+ every dataset has a folder containing subfolders for every clustering algorithm containing more subfolders for every distance measure. 
+
+Clustering results are saved as json files in their respective folders. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classresults_1_1Results_a9279a662b7a430c3fdf6a67fe642fc07}\label{classresults_1_1Results_a9279a662b7a430c3fdf6a67fe642fc07}} 
+\index{results.Results@{results.Results}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!results.Results@{results.Results}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def results.\+Results.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{parentpath }\end{DoxyParamCaption})}
+
+
+
+constructor. 
+
+needs the filepath to the parent directory where the json files are suposed to be saved 
+\begin{DoxyParams}{Parameters}
+{\em parentpath} & filepath to the parent directory \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classresults_1_1Results_a86803a28e15509a5ad566c3497cd3ff7}\label{classresults_1_1Results_a86803a28e15509a5ad566c3497cd3ff7}} 
+\index{results.Results@{results.Results}!get\_path@{get\_path}}
+\index{get\_path@{get\_path}!results.Results@{results.Results}}
+\doxysubsubsection{\texorpdfstring{get\_path()}{get\_path()}}
+{\footnotesize\ttfamily def results.\+Results.\+get\+\_\+path (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dataset,  }\item[{}]{algorithm,  }\item[{}]{metric,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+builds and returns the filepath to the json file fitting the given parameters 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dataset} & string with the name of the dataset (\char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}diabetes\char`\"{}, \char`\"{}\+DBSCAN\char`\"{}) \\
+\hline
+{\em algorithm} & string with the name of the algorithm (\char`\"{}kmeans\char`\"{}, \char`\"{}kmedians\char`\"{}, \char`\"{}kmedoids\char`\"{}, \char`\"{}\+DBSCAN\char`\"{}) \\
+\hline
+{\em metric} & string with the name of the distance measure (\char`\"{}euclidean\char`\"{}, \char`\"{}cosine\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}manhattan\char`\"{}) \\
+\hline
+{\em $\ast$$\ast$kwargs} & algorithm specific parameters. Needs to be either \char`\"{}k\char`\"{} or \char`\"{}minpts\char`\"{} and \char`\"{}eps\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+filepath to the correct json file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classresults_1_1Results_a977039329040bd70df7c8be952dbbf09}\label{classresults_1_1Results_a977039329040bd70df7c8be952dbbf09}} 
+\index{results.Results@{results.Results}!load\_set@{load\_set}}
+\index{load\_set@{load\_set}!results.Results@{results.Results}}
+\doxysubsubsection{\texorpdfstring{load\_set()}{load\_set()}}
+{\footnotesize\ttfamily def results.\+Results.\+load\+\_\+set (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dataset,  }\item[{}]{algorithm,  }\item[{}]{metric,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+loads results fitting the given parameters from a json file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dataset} & string with the name of the dataset (\char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}diabetes\char`\"{}, \char`\"{}\+DBSCAN\char`\"{}) \\
+\hline
+{\em algorithm} & string with the name of the algorithm (\char`\"{}kmeans\char`\"{}, \char`\"{}kmedians\char`\"{}, \char`\"{}kmedoids\char`\"{}, \char`\"{}\+DBSCAN\char`\"{}) \\
+\hline
+{\em metric} & string with the name of the distance measure (\char`\"{}euclidean\char`\"{}, \char`\"{}cosine\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}manhattan\char`\"{}) \\
+\hline
+{\em $\ast$$\ast$kwargs} & algorithm specific parameters. Needs to be either \char`\"{}k\char`\"{} or \char`\"{}minpts\char`\"{} and \char`\"{}eps\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+loaded clustering results (clusters and centers) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classresults_1_1Results_a3f00e067bfd723ab13f44ec34a80eb1b}\label{classresults_1_1Results_a3f00e067bfd723ab13f44ec34a80eb1b}} 
+\index{results.Results@{results.Results}!save\_set@{save\_set}}
+\index{save\_set@{save\_set}!results.Results@{results.Results}}
+\doxysubsubsection{\texorpdfstring{save\_set()}{save\_set()}}
+{\footnotesize\ttfamily def results.\+Results.\+save\+\_\+set (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dataset,  }\item[{}]{algorithm,  }\item[{}]{metric,  }\item[{}]{clusters,  }\item[{}]{centers,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+saves cluster results in a json file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dataset} & string with the name of the dataset (\char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}diabetes\char`\"{}, \char`\"{}\+DBSCAN\char`\"{}) \\
+\hline
+{\em algorithm} & string with the name of the algorithm (\char`\"{}kmeans\char`\"{}, \char`\"{}kmedians\char`\"{}, \char`\"{}kmedoids\char`\"{}, \char`\"{}\+DBSCAN\char`\"{}) \\
+\hline
+{\em metric} & string with the name of the distance measure (\char`\"{}euclidean\char`\"{}, \char`\"{}cosine\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}manhattan\char`\"{}) \\
+\hline
+{\em $\ast$$\ast$kwargs} & algorithm specific parameters. Needs to be either \char`\"{}k\char`\"{} or \char`\"{}minpts\char`\"{} and \char`\"{}eps\char`\"{} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classresults_1_1Results_aad842de4286159bfd9ced24c348d5e7d}\label{classresults_1_1Results_aad842de4286159bfd9ced24c348d5e7d}} 
+\index{results.Results@{results.Results}!set\_exists@{set\_exists}}
+\index{set\_exists@{set\_exists}!results.Results@{results.Results}}
+\doxysubsubsection{\texorpdfstring{set\_exists()}{set\_exists()}}
+{\footnotesize\ttfamily def results.\+Results.\+set\+\_\+exists (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dataset,  }\item[{}]{algorithm,  }\item[{}]{metric,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+checks if a file for a result defined by the parameters exists 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dataset} & string with the name of the dataset (\char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}diabetes\char`\"{}, \char`\"{}\+DBSCAN\char`\"{}) \\
+\hline
+{\em algorithm} & string with the name of the algorithm (\char`\"{}kmeans\char`\"{}, \char`\"{}kmedians\char`\"{}, \char`\"{}kmedoids\char`\"{}, \char`\"{}\+DBSCAN\char`\"{}) \\
+\hline
+{\em metric} & string with the name of the distance measure (\char`\"{}euclidean\char`\"{}, \char`\"{}cosine\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}manhattan\char`\"{}) \\
+\hline
+{\em $\ast$$\ast$kwargs} & algorithm specific parameters. Needs to be either \char`\"{}k\char`\"{} or \char`\"{}minpts\char`\"{} and \char`\"{}eps\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if file exists, False if not 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classresults_1_1Results_a3ac53d3da4b01d26db0a5dd973578381}\label{classresults_1_1Results_a3ac53d3da4b01d26db0a5dd973578381}} 
+\index{results.Results@{results.Results}!parent@{parent}}
+\index{parent@{parent}!results.Results@{results.Results}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily results.\+Results.\+parent}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{results_8py}{results.\+py}}\end{DoxyCompactItemize}

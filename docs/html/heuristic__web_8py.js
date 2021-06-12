@@ -1,0 +1,26 @@
+var heuristic__web_8py =
+[
+    [ "cluster_dist", "heuristic__web_8py.html#af82dff5d4b9dbcd18b21122f425783fd", null ],
+    [ "cluster_dist_desc", "heuristic__web_8py.html#a681d83b270a410559dabfab0da4d1eef", null ],
+    [ "col1", "heuristic__web_8py.html#a4231d783df2f28fee994d6300efdd6a9", null ],
+    [ "col2", "heuristic__web_8py.html#a34e6339de02662613f0334bc6bf2857f", null ],
+    [ "dataset", "heuristic__web_8py.html#a6fc094ab494e07fe7a737f57a4b09ef1", null ],
+    [ "df", "heuristic__web_8py.html#adbe6fc6b144adb79cb62a57cbd6de0c5", null ],
+    [ "heu", "heuristic__web_8py.html#a3455a13ebabbbf967abbfc8b271b272c", null ],
+    [ "k", "heuristic__web_8py.html#a83c0cf5c32b989bc323608b8cf894016", null ],
+    [ "kdist", "heuristic__web_8py.html#a593407568d9602842eb84c3f3382ea17", null ],
+    [ "key", "heuristic__web_8py.html#afa1ecf1f637abeeaa69cb9e6f8f74a44", null ],
+    [ "line", "heuristic__web_8py.html#a6595e8caf9e6e2d8e0a72b6ffb898eb4", null ],
+    [ "nearest", "heuristic__web_8py.html#afe0edb175df681d7d1f2edc5fde37ea7", null ],
+    [ "page_icon", "heuristic__web_8py.html#adc31ea6f2611249ff48c71cf7d253f9f", null ],
+    [ "page_title", "heuristic__web_8py.html#a64d8677c350ee6d67493256c338d8520", null ],
+    [ "points", "heuristic__web_8py.html#a541be4363df40924728881b48c31415c", null ],
+    [ "reverse", "heuristic__web_8py.html#adf805e3e62fda8c56a50fb845c8266f0", null ],
+    [ "rules", "heuristic__web_8py.html#a016a75b445b6aecbd31c36846590e801", null ],
+    [ "selectors", "heuristic__web_8py.html#a9c7c2c6c0c8ee31b323ea2cb8bb8ddc6", null ],
+    [ "submit_button", "heuristic__web_8py.html#aa6a8e2d75887ee8b21d479e76ed52c23", null ],
+    [ "text", "heuristic__web_8py.html#a78e6e5ed9532b5cb74b7bcdd1381dd0a", null ],
+    [ "textp", "heuristic__web_8py.html#aec5e5f1d8c7fc0002d889efc2131bd32", null ],
+    [ "use_container_width", "heuristic__web_8py.html#a1db01fc7fb55f6b36bb57f75b3ab281b", null ],
+    [ "yaxis", "heuristic__web_8py.html#a68c8e7baa94574f4c8f9443663831d69", null ]
+];

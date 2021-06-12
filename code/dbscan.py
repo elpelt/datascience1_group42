@@ -1,3 +1,8 @@
+"""
+@file dbscan.py
+implementation of the DBSCAN algorithm.
+"""
+
 from clustering import Clustering
 
 from sklearn.cluster import DBSCAN
@@ -60,9 +65,3 @@ class DBSCANClustering(Clustering):
                 clusters[labels[i]].append(i)
 
         return clusters, noise
-
-
-if __name__ == "__main__":
-    c = DBSCANClustering("cosine", "housevotes")
-    c.load_data()
-    c.cluster(2, 3)

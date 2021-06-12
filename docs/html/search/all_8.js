@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['package_15',['package',['../classdbscan_1_1DBSCANClustering.html#a1ee916e1f8ef235bdea68e07700abf98',1,'dbscan.DBSCANClustering.package()'],['../classkmedoids_1_1kmedoidsClustering.html#a322a5a591133f8adf951eda9c714335e',1,'kmedoids.kmedoidsClustering.package()']]],
-  ['pyc_5fmetric_16',['pyc_metric',['../classclustering_1_1Clustering.html#a350095d3e797e2cac62e08adbfe75da9',1,'clustering::Clustering']]]
+  ['heu_60',['heu',['../namespaceheuristic__web.html#a3455a13ebabbbf967abbfc8b271b272c',1,'heuristic_web']]],
+  ['heuristic_5fweb_61',['heuristic_web',['../namespaceheuristic__web.html',1,'']]],
+  ['heuristic_5fweb_2epy_62',['heuristic_web.py',['../heuristic__web_8py.html',1,'']]],
+  ['house_5fload_63',['house_load',['../classclustering_1_1Clustering.html#a8540163639557e9527c0b2f363a4cd46',1,'clustering::Clustering']]],
+  ['hue_64',['hue',['../namespacecomparison__plots.html#a3139c30abd6668d7deb06b81aefd2707',1,'comparison_plots.hue()'],['../namespaceweb__frontend.html#a193e8d4dbf733bf1918f0f09975ed6ce',1,'web_frontend.hue()']]]
 ];

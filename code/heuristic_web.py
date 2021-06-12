@@ -1,3 +1,9 @@
+"""
+@file heuristic_web.py
+webfrontend for the DBSCAN heuristic impslemented using streamlit.
+uses altair charts for displaying the chart
+"""
+
 import streamlit as st
 from dbscan_heuristic import DBSCANHeuristic
 import pandas as pd
@@ -9,6 +15,7 @@ st.title('DBSCAN Heuristic for determining minPts and eps')
 
 st.header("Settings")
 
+# settings form
 with st.form(key='settings'):
     col1, col2 = st.beta_columns(2)
     dataset = col1.selectbox('Choose a beautiful dataset',['iris', 'wine', 'diabetes', 'housevotes'])
@@ -37,6 +44,8 @@ df = pd.DataFrame(
     [[i+1, kdist[i]] for i in range(len(kdist))],
     columns=["points", "dist"])
 
+
+# building altair chart
 # this code is mostly derived from the altair examples gallery, especially this example:
 # https://altair-viz.github.io/gallery/multiline_tooltip.html
 

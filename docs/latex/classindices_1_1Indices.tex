@@ -1,28 +1,110 @@
 \hypertarget{classindices_1_1Indices}{}\doxysection{indices.\+Indices Class Reference}
 \label{classindices_1_1Indices}\index{indices.Indices@{indices.Indices}}
+
+
+calculates \mbox{\hyperlink{classindices_1_1Indices}{Indices}} for computed cluster labels uses the scikit library  
+
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classindices_1_1Indices_a0d09ca120f81360506d01c61fb880252}\label{classindices_1_1Indices_a0d09ca120f81360506d01c61fb880252}} 
-def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, cluster\+\_\+calc, cluster\+\_\+label)
-\item 
-\mbox{\Hypertarget{classindices_1_1Indices_a4686e5e78539ba40cc88e0f47b2faa4e}\label{classindices_1_1Indices_a4686e5e78539ba40cc88e0f47b2faa4e}} 
-def {\bfseries index\+\_\+external} (self, index)
-\item 
-\mbox{\Hypertarget{classindices_1_1Indices_ab5c233089fe2399a9f70541d60a7b97c}\label{classindices_1_1Indices_ab5c233089fe2399a9f70541d60a7b97c}} 
-def {\bfseries index\+\_\+internal} (self, index)
-\end{DoxyCompactItemize}
+def \mbox{\hyperlink{classindices_1_1Indices_a0d09ca120f81360506d01c61fb880252}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classindices_1_1Indices_a3bdd154c1050aed9472e1e1f7c6037f8}{cluster\+\_\+calc}}, \mbox{\hyperlink{classindices_1_1Indices_a4c473ccf0b064c335ca7c5313befdd28}{cluster\+\_\+label}})
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classindices_1_1Indices_a4686e5e78539ba40cc88e0f47b2faa4e}{index\+\_\+external}} (self, index)
+\begin{DoxyCompactList}\small\item\em Function to calculate external index scores~\newline
+ ARI, AMI, Homogeneity Score and Completeness Score @params index string with name of index used (\char`\"{}\+ARI\char`\"{}, \char`\"{}\+AMI\char`\"{}, \char`\"{}\+Homogeneity Score\char`\"{}, \char`\"{}\+Completeness Score\char`\"{}) \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classindices_1_1Indices_a75e33619b94ad0d52a2ac3aaf3ad0861}{index\+\_\+internal}} (self, index, points, metric)
+\begin{DoxyCompactList}\small\item\em Function to calculate internal index scores~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classindices_1_1Indices_a3bdd154c1050aed9472e1e1f7c6037f8}{cluster\+\_\+calc}}
+\begin{DoxyCompactList}\small\item\em calculated clustering results \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classindices_1_1Indices_a4c473ccf0b064c335ca7c5313befdd28}{cluster\+\_\+label}}
+\begin{DoxyCompactList}\small\item\em expected cluster results \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+calculates \mbox{\hyperlink{classindices_1_1Indices}{Indices}} for computed cluster labels uses the scikit library 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classindices_1_1Indices_a0d09ca120f81360506d01c61fb880252}\label{classindices_1_1Indices_a0d09ca120f81360506d01c61fb880252}} 
+\index{indices.Indices@{indices.Indices}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!indices.Indices@{indices.Indices}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def indices.\+Indices.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cluster\+\_\+calc,  }\item[{}]{cluster\+\_\+label }\end{DoxyParamCaption})}
+
+
+
+constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cluster\+\_\+calc} & calculated clustering results \\
+\hline
+{\em cluster\+\_\+label} & expected cluster results \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classindices_1_1Indices_a4686e5e78539ba40cc88e0f47b2faa4e}\label{classindices_1_1Indices_a4686e5e78539ba40cc88e0f47b2faa4e}} 
+\index{indices.Indices@{indices.Indices}!index\_external@{index\_external}}
+\index{index\_external@{index\_external}!indices.Indices@{indices.Indices}}
+\doxysubsubsection{\texorpdfstring{index\_external()}{index\_external()}}
+{\footnotesize\ttfamily def indices.\+Indices.\+index\+\_\+external (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{index }\end{DoxyParamCaption})}
+
+
+
+Function to calculate external index scores~\newline
+ ARI, AMI, Homogeneity Score and Completeness Score @params index string with name of index used (\char`\"{}\+ARI\char`\"{}, \char`\"{}\+AMI\char`\"{}, \char`\"{}\+Homogeneity Score\char`\"{}, \char`\"{}\+Completeness Score\char`\"{}) 
+
+\mbox{\Hypertarget{classindices_1_1Indices_a75e33619b94ad0d52a2ac3aaf3ad0861}\label{classindices_1_1Indices_a75e33619b94ad0d52a2ac3aaf3ad0861}} 
+\index{indices.Indices@{indices.Indices}!index\_internal@{index\_internal}}
+\index{index\_internal@{index\_internal}!indices.Indices@{indices.Indices}}
+\doxysubsubsection{\texorpdfstring{index\_internal()}{index\_internal()}}
+{\footnotesize\ttfamily def indices.\+Indices.\+index\+\_\+internal (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{index,  }\item[{}]{points,  }\item[{}]{metric }\end{DoxyParamCaption})}
+
+
+
+Function to calculate internal index scores~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+{\em points} & \\
+\hline
+{\em metric} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classindices_1_1Indices_a3bdd154c1050aed9472e1e1f7c6037f8}\label{classindices_1_1Indices_a3bdd154c1050aed9472e1e1f7c6037f8}} 
-{\bfseries cluster\+\_\+calc}
-\item 
+\index{indices.Indices@{indices.Indices}!cluster\_calc@{cluster\_calc}}
+\index{cluster\_calc@{cluster\_calc}!indices.Indices@{indices.Indices}}
+\doxysubsubsection{\texorpdfstring{cluster\_calc}{cluster\_calc}}
+{\footnotesize\ttfamily indices.\+Indices.\+cluster\+\_\+calc}
+
+
+
+calculated clustering results 
+
 \mbox{\Hypertarget{classindices_1_1Indices_a4c473ccf0b064c335ca7c5313befdd28}\label{classindices_1_1Indices_a4c473ccf0b064c335ca7c5313befdd28}} 
-{\bfseries cluster\+\_\+label}
-\end{DoxyCompactItemize}
+\index{indices.Indices@{indices.Indices}!cluster\_label@{cluster\_label}}
+\index{cluster\_label@{cluster\_label}!indices.Indices@{indices.Indices}}
+\doxysubsubsection{\texorpdfstring{cluster\_label}{cluster\_label}}
+{\footnotesize\ttfamily indices.\+Indices.\+cluster\+\_\+label}
+
+
+
+expected cluster results 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-indices.\+py\end{DoxyCompactItemize}
+\mbox{\hyperlink{indices_8py}{indices.\+py}}\end{DoxyCompactItemize}

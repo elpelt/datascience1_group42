@@ -1,0 +1,171 @@
+\hypertarget{web__frontend_8py}{}\doxysection{web\+\_\+frontend.\+py File Reference}
+\label{web__frontend_8py}\index{web\_frontend.py@{web\_frontend.py}}
+
+
+webfrontend for project.  
+
+
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceweb__frontend}{web\+\_\+frontend}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a539479f85bb69146a4afc4dff726232a}{web\+\_\+frontend.\+page\+\_\+title}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a7580efbd05b87376061a0c0068878c09}{web\+\_\+frontend.\+page\+\_\+icon}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ab6601ad5e4df81438e964e8076718c67}{web\+\_\+frontend.\+session\+\_\+state}} = \mbox{\hyperlink{namespaceSessionState_a6447a6ba08dae19a324f73980cc7508e}{Session\+State.\+get}}(indices\+\_\+data=pd.\+Data\+Frame())
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a58d0ef0147c2f404a31fbcadab5c7146}{web\+\_\+frontend.\+seeded}} = st.\+checkbox(\textquotesingle{}Use precalculated results (with random seed for reproduction).\textquotesingle{}, value=True)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a8b1c4acb3b2f6a4a1fa3f1e2c02b07c3}{web\+\_\+frontend.\+seed}} = None
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a2ce3d7137e04c70336f26386dc7e853b}{web\+\_\+frontend.\+seaplots}} = st.\+checkbox(\textquotesingle{}Use interactive altair plots over static seaborn plots.\textquotesingle{}, value=True)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_afbb40890ae4f84ac47eb68bc09e62fa1}{web\+\_\+frontend.\+resulthandler}} = Results(\char`\"{}./code/results\char`\"{})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a09a9c4d0fe74cb4efb06acc9fde7c307}{web\+\_\+frontend.\+col1}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_adff0b924c11d3d89d808ceb50a3d9574}{web\+\_\+frontend.\+col2}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ad784ad8e3f72e82ccc15fffc02ac0563}{web\+\_\+frontend.\+dataset}} = col1.\+selectbox(\textquotesingle{}Choose a beautiful dataset\textquotesingle{},\mbox{[}\textquotesingle{}iris\textquotesingle{}, \textquotesingle{}wine\textquotesingle{}, \textquotesingle{}diabetes\textquotesingle{}, \textquotesingle{}housevotes\textquotesingle{}\mbox{]})
+\item 
+dictionary \mbox{\hyperlink{namespaceweb__frontend_a9006b2d522009282e36d99b804b6f871}{web\+\_\+frontend.\+cluster\+\_\+dist\+\_\+desc}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a6fe2b5ed2108e2ac12d0200ccf0a79d8}{web\+\_\+frontend.\+cluster\+\_\+dist}} = col1.\+selectbox(\textquotesingle{}Choose an awesome distance measure\textquotesingle{}, list(cluster\+\_\+dist\+\_\+desc.\+keys()))
+\item 
+dictionary \mbox{\hyperlink{namespaceweb__frontend_a318abf6ef1e0e1a7c8af4717fbf9adff}{web\+\_\+frontend.\+cluster\+\_\+algo\+\_\+class}} = \{\textquotesingle{}kmeans\textquotesingle{}\+: kmeans\+Clustering, \textquotesingle{}kmedians\textquotesingle{}\+: kmedians\+Clustering, \textquotesingle{}kmedoids\textquotesingle{}\+: kmedoids\+Clustering, \textquotesingle{}DBSCAN\textquotesingle{}\+: DBSCANClustering\}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_af267f56ddbcb8e56360963e723a4056d}{web\+\_\+frontend.\+cluster\+\_\+algo}} = col2.\+selectbox(\textquotesingle{}Choose a lovely clustering algorithm\textquotesingle{}, list(cluster\+\_\+algo\+\_\+class.\+keys()))
+\item 
+dictionary \mbox{\hyperlink{namespaceweb__frontend_a0798d4c5006e331ac35930cbb6dc6b8c}{web\+\_\+frontend.\+cluster}} = cluster\+\_\+algo\+\_\+class\mbox{[}cluster\+\_\+algo\mbox{]}(cluster\+\_\+dist, dataset, seed)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_aa885b9caed1bf35c2b68e9d6a68f6b51}{web\+\_\+frontend.\+epsilon}} = col2.\+slider(\char`\"{}Choose a nice value for epsilon\char`\"{}, min\+\_\+value=0.\+1, max\+\_\+value=20.\+0, step=0.\+1)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a5cb9f78690b87790c69114058aa0b03f}{web\+\_\+frontend.\+minpts}} = col2.\+slider(\char`\"{}Choose a minimal number of nearest points\char`\"{}, min\+\_\+value=1, max\+\_\+value=20, step=1, value=5)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a05b458056ccbac0ffb6a23ef48a07c5e}{web\+\_\+frontend.\+eps}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a25c9a63429521ea396fe7cd47affd742}{web\+\_\+frontend.\+clusters}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a450af770f949f976f0da06a2c33cfe5c}{web\+\_\+frontend.\+stuff}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a7f7156d9924ee0822f4451ea125a3446}{web\+\_\+frontend.\+k\+\_\+value}} = col2.\+slider(\char`\"{}Choose a nice value for k (number of clusters)\char`\"{}, min\+\_\+value=2, max\+\_\+value=10, step=1, value=3)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a94dd98947f64fc0fff9b548c41639bfa}{web\+\_\+frontend.\+k}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a8a75bc5f52d10650f9c219e78d2cd42a}{web\+\_\+frontend.\+clustered\+\_\+data}} = np.\+zeros(len(cluster.\+data))
+\item 
+list \mbox{\hyperlink{namespaceweb__frontend_aa125eecf731512db07a91067d3b96efe}{web\+\_\+frontend.\+color\+\_\+palette}} = \mbox{[}\textquotesingle{}black\textquotesingle{}\mbox{]} + sns.\+color\+\_\+palette(\char`\"{}husl\char`\"{}, len(set(clustered\+\_\+data))-\/1)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_abcf6953a3b83eef8228ec7d91ed184fc}{web\+\_\+frontend.\+weights}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ae93ba1b476312c7cf104491d77040d3d}{web\+\_\+frontend.\+perp}} = col1.\+slider(\char`\"{}Perplexity for t-\/SNE\char`\"{}, 5, 50, 25)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ab8af5ba16ba60ca4306dbd2f7cc2adda}{web\+\_\+frontend.\+marking\+\_\+centroids}} = np.\+ones(cluster.\+data.\+shape\mbox{[}0\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a8770d3c28a8081b31dded64b8690d6b8}{web\+\_\+frontend.\+cluster\+\_\+label}} = alt.\+Tooltip(\char`\"{}c\char`\"{}, title=\char`\"{}Cluster ID\char`\"{})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_acf49c9659e615dc42e77fc8b87fbbff9}{web\+\_\+frontend.\+point\+\_\+label}} = alt.\+Tooltip(\char`\"{}i\char`\"{}, title=\char`\"{}Point ID\char`\"{})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a0191bc0cba482c929e000c10dd86801e}{web\+\_\+frontend.\+dfclusterdata}} = pd.\+Data\+Frame()
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a6261e4a3c482320b5c9cbbcff5dd7f57}{web\+\_\+frontend.\+projected\+\_\+data\+\_\+tsne}} = TSNE(random\+\_\+state=42, perplexity=perp).fit\+\_\+transform(cluster.\+data)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ab2c7ca7d972c5e7340cf4c7e867b5d02}{web\+\_\+frontend.\+fig}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a51aa7a6d31bc700ca7e4c4207f86fab3}{web\+\_\+frontend.\+ax}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ae5593f4f72a8fd57bf6706f119d3309b}{web\+\_\+frontend.\+x}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a98c16a3a25df247e64ee8e1ef2da037f}{web\+\_\+frontend.\+y}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a193e8d4dbf733bf1918f0f09975ed6ce}{web\+\_\+frontend.\+hue}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a5270867dae900f6e6044de56725bfc31}{web\+\_\+frontend.\+palette}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a93eab05f4c018e6e65a76d838cff34e6}{web\+\_\+frontend.\+legend}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a3c3a05e18097009144e4684f3beee988}{web\+\_\+frontend.\+False}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a41595dbe670b3fdefd7eb41feb6ca0f5}{web\+\_\+frontend.\+style}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a8ac918fe92d8f55635253e1106657fe6}{web\+\_\+frontend.\+size}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_af67892833d2af8e60eb05352c79cbe8d}{web\+\_\+frontend.\+markers}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a3cc7db566a02c44210df5d149ea4e6f3}{web\+\_\+frontend.\+xaxis}} = alt.\+X(\char`\"{}xt\char`\"{}, axis=alt.\+Axis(title=None))
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a26326cf837785de956857a6daa4cac89}{web\+\_\+frontend.\+yaxis}} = alt.\+Y(\char`\"{}yt\char`\"{}, axis=alt.\+Axis(title=None))
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a5116b8e7725539769cf10cb172e4c37a}{web\+\_\+frontend.\+altcolor}} = alt.\+Color(\char`\"{}c\char`\"{}, legend=None, scale=alt.\+Scale(domain=\mbox{[}0, 1 if max(clustered\+\_\+data) == 0 else max(clustered\+\_\+data)\mbox{]}, scheme=\char`\"{}turbo\char`\"{}))
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a79b7120bced743cd49e139bedf3fae48}{web\+\_\+frontend.\+tsnealt}} = alt.\+Chart(dfclusterdata).mark\+\_\+circle().encode(x=xaxis, y=yaxis, tooltip=\mbox{[}cluster\+\_\+label, point\+\_\+label\mbox{]}, color=altcolor).interactive()
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a4d78c0a2b478c196f08136e541782dcf}{web\+\_\+frontend.\+use\+\_\+container\+\_\+width}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a3b4bb0b6d4fb023e5deef81fb802b4cb}{web\+\_\+frontend.\+projected\+\_\+data\+\_\+pca}} = PCA(random\+\_\+state=42, n\+\_\+components=2).fit\+\_\+transform(cluster.\+data)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ae9367db9cae6ac3dd2c6e388b2f1d387}{web\+\_\+frontend.\+pcaalt}} = alt.\+Chart(dfclusterdata).mark\+\_\+circle().encode(x=xaxis, y=yaxis, tooltip=\mbox{[}cluster\+\_\+label, point\+\_\+label\mbox{]}, color=altcolor).interactive()
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a06738bfdebda9497c3c2b2a677f9ddcf}{web\+\_\+frontend.\+dataexpander}} = st.\+beta\+\_\+expander(\char`\"{}data\char`\"{})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a1c29df4088a1c35eaf8147a235f9ebf9}{web\+\_\+frontend.\+add\+\_\+result}} = col1.\+button(\textquotesingle{}Add\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a49e7f1d54634decf9bd55b5963d398d9}{web\+\_\+frontend.\+reset\+\_\+tmp}} = col2.\+button(\textquotesingle{}Reset\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a37570665c5211c961b272562bbd335e9}{web\+\_\+frontend.\+indices\+\_\+data}}
+\item 
+string \mbox{\hyperlink{namespaceweb__frontend_a8b39b147bcb9ea75b351224287fb0d14}{web\+\_\+frontend.\+val}} = \char`\"{}epsilon=\char`\"{}+str(epsilon)+\char`\"{}, np=\char`\"{}+str(minpts)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a7a6ee1b7740be3fdd76313e704c09b8e}{web\+\_\+frontend.\+df}} = session\+\_\+state.\+indices\+\_\+data
+\item 
+dictionary \mbox{\hyperlink{namespaceweb__frontend_ad6cb59f4d8d78e1f93b5bcd2838595ee}{web\+\_\+frontend.\+labels}} = cluster.\+labels.\+tolist()
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_aaf3ac2b14e7665a95f91b3b2a4fe2b3a}{web\+\_\+frontend.\+predicted}} = clustered\+\_\+data.\+tolist()
+\item 
+list \mbox{\hyperlink{namespaceweb__frontend_a61d104e008a5ba1f7122da6411bb4db0}{web\+\_\+frontend.\+precalc}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespaceweb__frontend_a399e55f26a0ed76172a03e4d18f33fbf}{web\+\_\+frontend.\+index\+\_\+eval}} = \mbox{[}\char`\"{}ARI\char`\"{}, \char`\"{}NMI\char`\"{}, \char`\"{}Completeness Score\char`\"{}, \char`\"{}Homogeneity Score\char`\"{}, \char`\"{}Silhouette Score\char`\"{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a53726d670e54274b72635b663ba69dca}{web\+\_\+frontend.\+I1}} = Indices(predicted, labels)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a893a6447437f3d483fb64e457c26580c}{web\+\_\+frontend.\+score}} = I1.\+index\+\_\+external(index\+\_\+eval\mbox{[}i\mbox{]})
+\item 
+list \mbox{\hyperlink{namespaceweb__frontend_ae6753587119b61b5e1f1e834cf48bcef}{web\+\_\+frontend.\+datasets}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespaceweb__frontend_a2926d7785b026ae5beb31c307bf61560}{web\+\_\+frontend.\+results}} = \mbox{[}\mbox{[}1, \char`\"{}maximum reference value\char`\"{}\mbox{]}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespaceweb__frontend_a6d4b09f1196dc0e9a291005878c7dffb}{web\+\_\+frontend.\+desc\+\_\+list}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ac8d1239dd61f040588df58073da2d06d}{web\+\_\+frontend.\+desc}} = np.\+array(desc\+\_\+list)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ada89560d6b64d3670edc7d77d4d5b85f}{web\+\_\+frontend.\+stats}} = np.\+zeros(len(results))
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ac08f6b50ca9689f1ec62998b27fee863}{web\+\_\+frontend.\+ys}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a0838ca5e31a97686f8c9783545b51b1c}{web\+\_\+frontend.\+xs}} = np.\+arange(len(labels))
+\item 
+float \mbox{\hyperlink{namespaceweb__frontend_a364f1ad37501b60441618aea22763888}{web\+\_\+frontend.\+width}} = 0.\+5
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a1b424f697075e41398c55d80300904c7}{web\+\_\+frontend.\+align}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_af0ac7cf718145355f2362cb8a51f55bb}{web\+\_\+frontend.\+color}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a5a41b97806946bdcd868b1cf6443c6eb}{web\+\_\+frontend.\+angles}} = np.\+linspace(0, 2$\ast$np.\+pi, len(desc), endpoint=False)
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_adbd0171437252f426da0d72460f17de6}{web\+\_\+frontend.\+subplot\+\_\+kw}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_a9aa566eabde22259a97c37e426eb957c}{web\+\_\+frontend.\+linewidth}}
+\item 
+\mbox{\hyperlink{namespaceweb__frontend_ae5593c31da74f3185dbab1dab3ec988a}{web\+\_\+frontend.\+alpha}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+webfrontend for project. 
+
+implemented using streamlit. displays parameter selection, clustering results, data and the evaluation module. Charts can be displayed using seaborn or altair 

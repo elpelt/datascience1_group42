@@ -1,0 +1,148 @@
+\hypertarget{classdbscan__heuristic_1_1DBSCANHeuristic}{}\doxysection{dbscan\+\_\+heuristic.\+DBSCANHeuristic Class Reference}
+\label{classdbscan__heuristic_1_1DBSCANHeuristic}\index{dbscan\_heuristic.DBSCANHeuristic@{dbscan\_heuristic.DBSCANHeuristic}}
+
+
+implements the DBSCAN heuristic proposed in the original DBSCAN paper\+:  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classdbscan__heuristic_1_1DBSCANHeuristic_a3524fef7235ad103169020499a76e425}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em constructor. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classdbscan__heuristic_1_1DBSCANHeuristic_ab0c41f1b671a553749f9d9de26f99c06}{set\+\_\+metric}} (self, \mbox{\hyperlink{classdbscan__heuristic_1_1DBSCANHeuristic_a4e638849c23c5dc9b47dcc3ad1ab613e}{metric}})
+\begin{DoxyCompactList}\small\item\em setter for the metric \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classdbscan__heuristic_1_1DBSCANHeuristic_a74cd3b03f6a86b3c4e470280d464b713}{set\+\_\+dataset}} (self, dataset)
+\begin{DoxyCompactList}\small\item\em sets and loads the dataset using the DBSCANClustering objects load\+\_\+data() function \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classdbscan__heuristic_1_1DBSCANHeuristic_a37ae2331f60af6befa70d225812c9ed6}{kdist}} (self, \mbox{\hyperlink{classdbscan__heuristic_1_1DBSCANHeuristic_ad19d84cfaa2d2d96c0127ca1428bf5f6}{k}})
+\begin{DoxyCompactList}\small\item\em calculates all k-\/distances for the dataset \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classdbscan__heuristic_1_1DBSCANHeuristic_a51a22b54374a2a998303ff532885f194}{plot\+\_\+kdist}} (self, \mbox{\hyperlink{classdbscan__heuristic_1_1DBSCANHeuristic_a37ae2331f60af6befa70d225812c9ed6}{kdist}})
+\begin{DoxyCompactList}\small\item\em plots the sorted kdist graph using matplotlib \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdbscan__heuristic_1_1DBSCANHeuristic_ae45ca5b61e3bcc291cc74b6e7c8448c8}{clustering}}
+\begin{DoxyCompactList}\small\item\em DBSCANClustering object for loading datasets. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdbscan__heuristic_1_1DBSCANHeuristic_a4e638849c23c5dc9b47dcc3ad1ab613e}{metric}}
+\begin{DoxyCompactList}\small\item\em metric as string (\char`\"{}euclidean\char`\"{}, \char`\"{}cosine\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdbscan__heuristic_1_1DBSCANHeuristic_ad19d84cfaa2d2d96c0127ca1428bf5f6}{k}}
+\begin{DoxyCompactList}\small\item\em variable k used in the k-\/dist calculation \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+implements the DBSCAN heuristic proposed in the original DBSCAN paper\+: 
+
+Martin Ester, Hans-\/\+Peter Kriegel, Jörg Sander, and Xiaowei Xu. A density-\/based algorithm for discovering clusters in large spatial databases with noise. In Proceedings of the Second International Conference on Knowledge Discovery and Data Mining, KDD’96, page 226–231. AAAI Press, 1996. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdbscan__heuristic_1_1DBSCANHeuristic_a3524fef7235ad103169020499a76e425}\label{classdbscan__heuristic_1_1DBSCANHeuristic_a3524fef7235ad103169020499a76e425}} 
+\index{dbscan\_heuristic.DBSCANHeuristic@{dbscan\_heuristic.DBSCANHeuristic}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!dbscan\_heuristic.DBSCANHeuristic@{dbscan\_heuristic.DBSCANHeuristic}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def dbscan\+\_\+heuristic.\+DBSCANHeuristic.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+constructor. 
+
+uses a DBSCANClustering object for loading the datasets 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdbscan__heuristic_1_1DBSCANHeuristic_a37ae2331f60af6befa70d225812c9ed6}\label{classdbscan__heuristic_1_1DBSCANHeuristic_a37ae2331f60af6befa70d225812c9ed6}} 
+\index{dbscan\_heuristic.DBSCANHeuristic@{dbscan\_heuristic.DBSCANHeuristic}!kdist@{kdist}}
+\index{kdist@{kdist}!dbscan\_heuristic.DBSCANHeuristic@{dbscan\_heuristic.DBSCANHeuristic}}
+\doxysubsubsection{\texorpdfstring{kdist()}{kdist()}}
+{\footnotesize\ttfamily def dbscan\+\_\+heuristic.\+DBSCANHeuristic.\+kdist (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{k }\end{DoxyParamCaption})}
+
+
+
+calculates all k-\/distances for the dataset 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & variable for the k-\/dist. Natural Number. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdbscan__heuristic_1_1DBSCANHeuristic_a51a22b54374a2a998303ff532885f194}\label{classdbscan__heuristic_1_1DBSCANHeuristic_a51a22b54374a2a998303ff532885f194}} 
+\index{dbscan\_heuristic.DBSCANHeuristic@{dbscan\_heuristic.DBSCANHeuristic}!plot\_kdist@{plot\_kdist}}
+\index{plot\_kdist@{plot\_kdist}!dbscan\_heuristic.DBSCANHeuristic@{dbscan\_heuristic.DBSCANHeuristic}}
+\doxysubsubsection{\texorpdfstring{plot\_kdist()}{plot\_kdist()}}
+{\footnotesize\ttfamily def dbscan\+\_\+heuristic.\+DBSCANHeuristic.\+plot\+\_\+kdist (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{kdist }\end{DoxyParamCaption})}
+
+
+
+plots the sorted kdist graph using matplotlib 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k-\/dist} & list containing the k-\/distances for every point of the dataset \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdbscan__heuristic_1_1DBSCANHeuristic_a74cd3b03f6a86b3c4e470280d464b713}\label{classdbscan__heuristic_1_1DBSCANHeuristic_a74cd3b03f6a86b3c4e470280d464b713}} 
+\index{dbscan\_heuristic.DBSCANHeuristic@{dbscan\_heuristic.DBSCANHeuristic}!set\_dataset@{set\_dataset}}
+\index{set\_dataset@{set\_dataset}!dbscan\_heuristic.DBSCANHeuristic@{dbscan\_heuristic.DBSCANHeuristic}}
+\doxysubsubsection{\texorpdfstring{set\_dataset()}{set\_dataset()}}
+{\footnotesize\ttfamily def dbscan\+\_\+heuristic.\+DBSCANHeuristic.\+set\+\_\+dataset (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dataset }\end{DoxyParamCaption})}
+
+
+
+sets and loads the dataset using the DBSCANClustering objects load\+\_\+data() function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dataset} & string with name of the dataset used (\char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}diabetes\char`\"{}, \char`\"{}housevotes\char`\"{}) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdbscan__heuristic_1_1DBSCANHeuristic_ab0c41f1b671a553749f9d9de26f99c06}\label{classdbscan__heuristic_1_1DBSCANHeuristic_ab0c41f1b671a553749f9d9de26f99c06}} 
+\index{dbscan\_heuristic.DBSCANHeuristic@{dbscan\_heuristic.DBSCANHeuristic}!set\_metric@{set\_metric}}
+\index{set\_metric@{set\_metric}!dbscan\_heuristic.DBSCANHeuristic@{dbscan\_heuristic.DBSCANHeuristic}}
+\doxysubsubsection{\texorpdfstring{set\_metric()}{set\_metric()}}
+{\footnotesize\ttfamily def dbscan\+\_\+heuristic.\+DBSCANHeuristic.\+set\+\_\+metric (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{metric }\end{DoxyParamCaption})}
+
+
+
+setter for the metric 
+
+
+\begin{DoxyParams}{Parameters}
+{\em metric} & string containing name of the metric (\char`\"{}euclidean\char`\"{}, \char`\"{}cosine\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classdbscan__heuristic_1_1DBSCANHeuristic_ae45ca5b61e3bcc291cc74b6e7c8448c8}\label{classdbscan__heuristic_1_1DBSCANHeuristic_ae45ca5b61e3bcc291cc74b6e7c8448c8}} 
+\index{dbscan\_heuristic.DBSCANHeuristic@{dbscan\_heuristic.DBSCANHeuristic}!clustering@{clustering}}
+\index{clustering@{clustering}!dbscan\_heuristic.DBSCANHeuristic@{dbscan\_heuristic.DBSCANHeuristic}}
+\doxysubsubsection{\texorpdfstring{clustering}{clustering}}
+{\footnotesize\ttfamily dbscan\+\_\+heuristic.\+DBSCANHeuristic.\+clustering}
+
+
+
+DBSCANClustering object for loading datasets. 
+
+\mbox{\Hypertarget{classdbscan__heuristic_1_1DBSCANHeuristic_ad19d84cfaa2d2d96c0127ca1428bf5f6}\label{classdbscan__heuristic_1_1DBSCANHeuristic_ad19d84cfaa2d2d96c0127ca1428bf5f6}} 
+\index{dbscan\_heuristic.DBSCANHeuristic@{dbscan\_heuristic.DBSCANHeuristic}!k@{k}}
+\index{k@{k}!dbscan\_heuristic.DBSCANHeuristic@{dbscan\_heuristic.DBSCANHeuristic}}
+\doxysubsubsection{\texorpdfstring{k}{k}}
+{\footnotesize\ttfamily dbscan\+\_\+heuristic.\+DBSCANHeuristic.\+k}
+
+
+
+variable k used in the k-\/dist calculation 
+
+\mbox{\Hypertarget{classdbscan__heuristic_1_1DBSCANHeuristic_a4e638849c23c5dc9b47dcc3ad1ab613e}\label{classdbscan__heuristic_1_1DBSCANHeuristic_a4e638849c23c5dc9b47dcc3ad1ab613e}} 
+\index{dbscan\_heuristic.DBSCANHeuristic@{dbscan\_heuristic.DBSCANHeuristic}!metric@{metric}}
+\index{metric@{metric}!dbscan\_heuristic.DBSCANHeuristic@{dbscan\_heuristic.DBSCANHeuristic}}
+\doxysubsubsection{\texorpdfstring{metric}{metric}}
+{\footnotesize\ttfamily dbscan\+\_\+heuristic.\+DBSCANHeuristic.\+metric}
+
+
+
+metric as string (\char`\"{}euclidean\char`\"{}, \char`\"{}cosine\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}) 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{dbscan__heuristic_8py}{dbscan\+\_\+heuristic.\+py}}\end{DoxyCompactItemize}

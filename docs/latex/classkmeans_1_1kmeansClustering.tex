@@ -16,25 +16,23 @@ Inheritance diagram for kmeans.\+kmeans\+Clustering\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \mbox{\hyperlink{classkmeans_1_1kmeansClustering_ac8df023e1434680239ad04361f8260a1}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classkmeans_1_1kmeansClustering_a07d01c5761d14b2128869d3ab062069a}{metric}}, \mbox{\hyperlink{classkmeans_1_1kmeansClustering_a26b84212ec9bcf3f05e23cdd467f8580}{dataset}})
+def \mbox{\hyperlink{classkmeans_1_1kmeansClustering_ae978c1ffd77c33c56913dc22d59a6bfb}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classkmeans_1_1kmeansClustering_a07d01c5761d14b2128869d3ab062069a}{metric}}, \mbox{\hyperlink{classkmeans_1_1kmeansClustering_a26b84212ec9bcf3f05e23cdd467f8580}{dataset}}, \mbox{\hyperlink{classkmeans_1_1kmeansClustering_a68819e95c448fd3e0a53e9887542c66d}{seed}}=None)
 \begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{classkmeans_1_1kmeansClustering_a255814fdb68c24e337b3bd6ed3ecc367}{cluster}} (self, k, plusplus=True)
 \begin{DoxyCompactList}\small\item\em clustering method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a07d01c5761d14b2128869d3ab062069a}\label{classkmeans_1_1kmeansClustering_a07d01c5761d14b2128869d3ab062069a}} 
 \mbox{\hyperlink{classkmeans_1_1kmeansClustering_a07d01c5761d14b2128869d3ab062069a}{metric}}
 \begin{DoxyCompactList}\small\item\em metric name as pyclustering distance\+\_\+metric object \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a26b84212ec9bcf3f05e23cdd467f8580}\label{classkmeans_1_1kmeansClustering_a26b84212ec9bcf3f05e23cdd467f8580}} 
 \mbox{\hyperlink{classkmeans_1_1kmeansClustering_a26b84212ec9bcf3f05e23cdd467f8580}{dataset}}
 \begin{DoxyCompactList}\small\item\em dataset name as string \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a71ea859d9a2beeedd5805f1a47519383}\label{classkmeans_1_1kmeansClustering_a71ea859d9a2beeedd5805f1a47519383}} 
 \mbox{\hyperlink{classkmeans_1_1kmeansClustering_a71ea859d9a2beeedd5805f1a47519383}{data}}
 \begin{DoxyCompactList}\small\item\em data that gets clustered \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a5b1308830139d50a59c96d95881f6994}\label{classkmeans_1_1kmeansClustering_a5b1308830139d50a59c96d95881f6994}} 
 \mbox{\hyperlink{classkmeans_1_1kmeansClustering_a5b1308830139d50a59c96d95881f6994}{labels}}
-\begin{DoxyCompactList}\small\item\em expected cluster values \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em expected cluster values \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classkmeans_1_1kmeansClustering_a68819e95c448fd3e0a53e9887542c66d}{seed}}
+\begin{DoxyCompactList}\small\item\em seed for initializer, None if no seed is used \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -43,11 +41,11 @@ Class implementing k-\/\+Means Clustering~\newline
  centers can be initialised using the k++ or the random initialiser. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_ac8df023e1434680239ad04361f8260a1}\label{classkmeans_1_1kmeansClustering_ac8df023e1434680239ad04361f8260a1}} 
+\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_ae978c1ffd77c33c56913dc22d59a6bfb}\label{classkmeans_1_1kmeansClustering_ae978c1ffd77c33c56913dc22d59a6bfb}} 
 \index{kmeans.kmeansClustering@{kmeans.kmeansClustering}!\_\_init\_\_@{\_\_init\_\_}}
 \index{\_\_init\_\_@{\_\_init\_\_}!kmeans.kmeansClustering@{kmeans.kmeansClustering}}
 \doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
-{\footnotesize\ttfamily def kmeans.\+kmeans\+Clustering.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{metric,  }\item[{}]{dataset }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def kmeans.\+kmeans\+Clustering.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{metric,  }\item[{}]{dataset,  }\item[{}]{seed = {\ttfamily None} }\end{DoxyParamCaption})}
 
 
 
@@ -62,7 +60,7 @@ constructor
 \end{DoxyParams}
 
 
-Reimplemented from \mbox{\hyperlink{classclustering_1_1Clustering_a59129e84c5d072bf02d0a8a89779760b}{clustering.\+Clustering}}.
+Reimplemented from \mbox{\hyperlink{classclustering_1_1Clustering_a96699924e73d3dac5c91d23a99842585}{clustering.\+Clustering}}.
 
 
 
@@ -89,6 +87,59 @@ clusters as list of lists of indices of points and final cluster centers
 \end{DoxyReturn}
 
 
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a71ea859d9a2beeedd5805f1a47519383}\label{classkmeans_1_1kmeansClustering_a71ea859d9a2beeedd5805f1a47519383}} 
+\index{kmeans.kmeansClustering@{kmeans.kmeansClustering}!data@{data}}
+\index{data@{data}!kmeans.kmeansClustering@{kmeans.kmeansClustering}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily kmeans.\+kmeans\+Clustering.\+data}
+
+
+
+data that gets clustered 
+
+\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a26b84212ec9bcf3f05e23cdd467f8580}\label{classkmeans_1_1kmeansClustering_a26b84212ec9bcf3f05e23cdd467f8580}} 
+\index{kmeans.kmeansClustering@{kmeans.kmeansClustering}!dataset@{dataset}}
+\index{dataset@{dataset}!kmeans.kmeansClustering@{kmeans.kmeansClustering}}
+\doxysubsubsection{\texorpdfstring{dataset}{dataset}}
+{\footnotesize\ttfamily kmeans.\+kmeans\+Clustering.\+dataset}
+
+
+
+dataset name as string 
+
+\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a5b1308830139d50a59c96d95881f6994}\label{classkmeans_1_1kmeansClustering_a5b1308830139d50a59c96d95881f6994}} 
+\index{kmeans.kmeansClustering@{kmeans.kmeansClustering}!labels@{labels}}
+\index{labels@{labels}!kmeans.kmeansClustering@{kmeans.kmeansClustering}}
+\doxysubsubsection{\texorpdfstring{labels}{labels}}
+{\footnotesize\ttfamily kmeans.\+kmeans\+Clustering.\+labels}
+
+
+
+expected cluster values 
+
+\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a07d01c5761d14b2128869d3ab062069a}\label{classkmeans_1_1kmeansClustering_a07d01c5761d14b2128869d3ab062069a}} 
+\index{kmeans.kmeansClustering@{kmeans.kmeansClustering}!metric@{metric}}
+\index{metric@{metric}!kmeans.kmeansClustering@{kmeans.kmeansClustering}}
+\doxysubsubsection{\texorpdfstring{metric}{metric}}
+{\footnotesize\ttfamily kmeans.\+kmeans\+Clustering.\+metric}
+
+
+
+metric name as pyclustering distance\+\_\+metric object 
+
+\mbox{\Hypertarget{classkmeans_1_1kmeansClustering_a68819e95c448fd3e0a53e9887542c66d}\label{classkmeans_1_1kmeansClustering_a68819e95c448fd3e0a53e9887542c66d}} 
+\index{kmeans.kmeansClustering@{kmeans.kmeansClustering}!seed@{seed}}
+\index{seed@{seed}!kmeans.kmeansClustering@{kmeans.kmeansClustering}}
+\doxysubsubsection{\texorpdfstring{seed}{seed}}
+{\footnotesize\ttfamily kmeans.\+kmeans\+Clustering.\+seed}
+
+
+
+seed for initializer, None if no seed is used 
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-kmeans.\+py\end{DoxyCompactItemize}
+\mbox{\hyperlink{kmeans_8py}{kmeans.\+py}}\end{DoxyCompactItemize}

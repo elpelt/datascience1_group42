@@ -112,18 +112,18 @@ Inheritance diagram for dbscan.DBSCANClustering:</div>
  <div class="center">
   <img src="classdbscan_1_1DBSCANClustering.png" usemap="#dbscan.DBSCANClustering_map" alt=""/>
   <map id="dbscan.DBSCANClustering_map" name="dbscan.DBSCANClustering_map">
-<area href="classclustering_1_1Clustering.html" title="Meta Class for all subsequent clustering algorithms  implements all functions needed for running the ..." alt="clustering.Clustering" shape="rect" coords="0,0,166,24"/>
+<area href="classclustering_1_1Clustering.html" title="Base Class for all subsequent clustering algorithms  implements all functions needed for running the ..." alt="clustering.Clustering" shape="rect" coords="0,0,166,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab22686f8718cf537fc12a8eb827d7482"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdbscan_1_1DBSCANClustering.html#ab22686f8718cf537fc12a8eb827d7482">__init__</a> (self, <a class="el" href="classdbscan_1_1DBSCANClustering.html#a8b7cdb4b055b40962a2a71abeb29aa4a">metric</a>, <a class="el" href="classdbscan_1_1DBSCANClustering.html#a156964a25917208e5746f27c9d3a6a3a">dataset</a>)</td></tr>
-<tr class="memdesc:ab22686f8718cf537fc12a8eb827d7482"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor  <a href="classdbscan_1_1DBSCANClustering.html#ab22686f8718cf537fc12a8eb827d7482">More...</a><br /></td></tr>
-<tr class="separator:ab22686f8718cf537fc12a8eb827d7482"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38c00ed16e46cf3c099b8329350262c0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdbscan_1_1DBSCANClustering.html#a38c00ed16e46cf3c099b8329350262c0">cluster</a> (self, eps, minPts)</td></tr>
-<tr class="memdesc:a38c00ed16e46cf3c099b8329350262c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">clustering method.  <a href="classdbscan_1_1DBSCANClustering.html#a38c00ed16e46cf3c099b8329350262c0">More...</a><br /></td></tr>
-<tr class="separator:a38c00ed16e46cf3c099b8329350262c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e6f70492d3841413536ffd9abeed07a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdbscan_1_1DBSCANClustering.html#a7e6f70492d3841413536ffd9abeed07a">__init__</a> (self, <a class="el" href="classdbscan_1_1DBSCANClustering.html#a8b7cdb4b055b40962a2a71abeb29aa4a">metric</a>, <a class="el" href="classdbscan_1_1DBSCANClustering.html#a156964a25917208e5746f27c9d3a6a3a">dataset</a>, <a class="el" href="classclustering_1_1Clustering.html#a1812b94a6bec621047497eaf39c6f998">seed</a>=None)</td></tr>
+<tr class="memdesc:a7e6f70492d3841413536ffd9abeed07a"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor, seed can be given but is not used.  <a href="classdbscan_1_1DBSCANClustering.html#a7e6f70492d3841413536ffd9abeed07a">More...</a><br /></td></tr>
+<tr class="separator:a7e6f70492d3841413536ffd9abeed07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af763d9904e3a380d187caa2adc3fe73d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdbscan_1_1DBSCANClustering.html#af763d9904e3a380d187caa2adc3fe73d">cluster</a> (self, eps, minpts)</td></tr>
+<tr class="memdesc:af763d9904e3a380d187caa2adc3fe73d"><td class="mdescLeft">&#160;</td><td class="mdescRight">clustering method.  <a href="classdbscan_1_1DBSCANClustering.html#af763d9904e3a380d187caa2adc3fe73d">More...</a><br /></td></tr>
+<tr class="separator:af763d9904e3a380d187caa2adc3fe73d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ee916e1f8ef235bdea68e07700abf98"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdbscan_1_1DBSCANClustering.html#a1ee916e1f8ef235bdea68e07700abf98">package</a> (self, <a class="el" href="classdbscan_1_1DBSCANClustering.html#a394090abeacf5da4894e85263b76dfd6">labels</a>)</td></tr>
 <tr class="memdesc:a1ee916e1f8ef235bdea68e07700abf98"><td class="mdescLeft">&#160;</td><td class="mdescRight">rearranges the result to a format similar to the one of the pyclustering algorithms<br  />
  allows for easier access in the streamlit interface  <a href="classdbscan_1_1DBSCANClustering.html#a1ee916e1f8ef235bdea68e07700abf98">More...</a><br /></td></tr>
@@ -132,9 +132,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a350095d3e797e2cac62e08adbfe75da9 inherit pub_methods_classclustering_1_1Clustering"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a350095d3e797e2cac62e08adbfe75da9">pyc_metric</a> (self, <a class="el" href="classclustering_1_1Clustering.html#a50461838df4386d28ed001591eff2383">metric</a>)</td></tr>
 <tr class="memdesc:a350095d3e797e2cac62e08adbfe75da9 inherit pub_methods_classclustering_1_1Clustering"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a distance metric which is usable by the pyclustering algorithms  <a href="classclustering_1_1Clustering.html#a350095d3e797e2cac62e08adbfe75da9">More...</a><br /></td></tr>
 <tr class="separator:a350095d3e797e2cac62e08adbfe75da9 inherit pub_methods_classclustering_1_1Clustering"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66e74662b64e031f887cb3d46f065a06 inherit pub_methods_classclustering_1_1Clustering"><td class="memItemLeft" align="right" valign="top"><a id="a66e74662b64e031f887cb3d46f065a06"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a66e74662b64e031f887cb3d46f065a06">load_data</a> (self)</td></tr>
-<tr class="memdesc:a66e74662b64e031f887cb3d46f065a06 inherit pub_methods_classclustering_1_1Clustering"><td class="mdescLeft">&#160;</td><td class="mdescRight">loads in a dataset, standardises it and sets it as self.data attribute <br /></td></tr>
+<tr class="memitem:a66e74662b64e031f887cb3d46f065a06 inherit pub_methods_classclustering_1_1Clustering"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a66e74662b64e031f887cb3d46f065a06">load_data</a> (self)</td></tr>
+<tr class="memdesc:a66e74662b64e031f887cb3d46f065a06 inherit pub_methods_classclustering_1_1Clustering"><td class="mdescLeft">&#160;</td><td class="mdescRight">loads in a dataset, standardises it and sets it as self.data attribute  <a href="classclustering_1_1Clustering.html#a66e74662b64e031f887cb3d46f065a06">More...</a><br /></td></tr>
 <tr class="separator:a66e74662b64e031f887cb3d46f065a06 inherit pub_methods_classclustering_1_1Clustering"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8540163639557e9527c0b2f363a4cd46 inherit pub_methods_classclustering_1_1Clustering"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a8540163639557e9527c0b2f363a4cd46">house_load</a> (self, path, skip=1)</td></tr>
 <tr class="memdesc:a8540163639557e9527c0b2f363a4cd46 inherit pub_methods_classclustering_1_1Clustering"><td class="mdescLeft">&#160;</td><td class="mdescRight">loads the housevotes dataset and encodes it using One-Hot-Encoding<br  />
@@ -146,46 +145,44 @@ def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a8b7cdb4b055b40962a2a71abeb29aa4a"><td class="memItemLeft" align="right" valign="top"><a id="a8b7cdb4b055b40962a2a71abeb29aa4a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdbscan_1_1DBSCANClustering.html#a8b7cdb4b055b40962a2a71abeb29aa4a">metric</a></td></tr>
-<tr class="memdesc:a8b7cdb4b055b40962a2a71abeb29aa4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">metric name as string <br /></td></tr>
+<tr class="memitem:a8b7cdb4b055b40962a2a71abeb29aa4a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdbscan_1_1DBSCANClustering.html#a8b7cdb4b055b40962a2a71abeb29aa4a">metric</a></td></tr>
+<tr class="memdesc:a8b7cdb4b055b40962a2a71abeb29aa4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">metric name as string  <a href="classdbscan_1_1DBSCANClustering.html#a8b7cdb4b055b40962a2a71abeb29aa4a">More...</a><br /></td></tr>
 <tr class="separator:a8b7cdb4b055b40962a2a71abeb29aa4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a156964a25917208e5746f27c9d3a6a3a"><td class="memItemLeft" align="right" valign="top"><a id="a156964a25917208e5746f27c9d3a6a3a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdbscan_1_1DBSCANClustering.html#a156964a25917208e5746f27c9d3a6a3a">dataset</a></td></tr>
-<tr class="memdesc:a156964a25917208e5746f27c9d3a6a3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">dataset name as string <br /></td></tr>
+<tr class="memitem:a156964a25917208e5746f27c9d3a6a3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdbscan_1_1DBSCANClustering.html#a156964a25917208e5746f27c9d3a6a3a">dataset</a></td></tr>
+<tr class="memdesc:a156964a25917208e5746f27c9d3a6a3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">dataset name as string  <a href="classdbscan_1_1DBSCANClustering.html#a156964a25917208e5746f27c9d3a6a3a">More...</a><br /></td></tr>
 <tr class="separator:a156964a25917208e5746f27c9d3a6a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e0819e1d3a3fdfe2380205289e4f08b"><td class="memItemLeft" align="right" valign="top"><a id="a4e0819e1d3a3fdfe2380205289e4f08b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdbscan_1_1DBSCANClustering.html#a4e0819e1d3a3fdfe2380205289e4f08b">data</a></td></tr>
-<tr class="memdesc:a4e0819e1d3a3fdfe2380205289e4f08b"><td class="mdescLeft">&#160;</td><td class="mdescRight">data that gets clustered <br /></td></tr>
+<tr class="memitem:a4e0819e1d3a3fdfe2380205289e4f08b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdbscan_1_1DBSCANClustering.html#a4e0819e1d3a3fdfe2380205289e4f08b">data</a></td></tr>
+<tr class="memdesc:a4e0819e1d3a3fdfe2380205289e4f08b"><td class="mdescLeft">&#160;</td><td class="mdescRight">data that gets clustered  <a href="classdbscan_1_1DBSCANClustering.html#a4e0819e1d3a3fdfe2380205289e4f08b">More...</a><br /></td></tr>
 <tr class="separator:a4e0819e1d3a3fdfe2380205289e4f08b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a394090abeacf5da4894e85263b76dfd6"><td class="memItemLeft" align="right" valign="top"><a id="a394090abeacf5da4894e85263b76dfd6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdbscan_1_1DBSCANClustering.html#a394090abeacf5da4894e85263b76dfd6">labels</a></td></tr>
-<tr class="memdesc:a394090abeacf5da4894e85263b76dfd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">expected cluster values <br /></td></tr>
+<tr class="memitem:a394090abeacf5da4894e85263b76dfd6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdbscan_1_1DBSCANClustering.html#a394090abeacf5da4894e85263b76dfd6">labels</a></td></tr>
+<tr class="memdesc:a394090abeacf5da4894e85263b76dfd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">expected cluster values  <a href="classdbscan_1_1DBSCANClustering.html#a394090abeacf5da4894e85263b76dfd6">More...</a><br /></td></tr>
 <tr class="separator:a394090abeacf5da4894e85263b76dfd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classclustering_1_1Clustering"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classclustering_1_1Clustering')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classclustering_1_1Clustering.html">clustering.Clustering</a></td></tr>
-<tr class="memitem:a50461838df4386d28ed001591eff2383 inherit pub_attribs_classclustering_1_1Clustering"><td class="memItemLeft" align="right" valign="top"><a id="a50461838df4386d28ed001591eff2383"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a50461838df4386d28ed001591eff2383">metric</a></td></tr>
-<tr class="memdesc:a50461838df4386d28ed001591eff2383 inherit pub_attribs_classclustering_1_1Clustering"><td class="mdescLeft">&#160;</td><td class="mdescRight">metric name as string or pyclustering distance_metric object <br /></td></tr>
+<tr class="memitem:a50461838df4386d28ed001591eff2383 inherit pub_attribs_classclustering_1_1Clustering"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a50461838df4386d28ed001591eff2383">metric</a></td></tr>
+<tr class="memdesc:a50461838df4386d28ed001591eff2383 inherit pub_attribs_classclustering_1_1Clustering"><td class="mdescLeft">&#160;</td><td class="mdescRight">metric name as string or pyclustering distance_metric object  <a href="classclustering_1_1Clustering.html#a50461838df4386d28ed001591eff2383">More...</a><br /></td></tr>
 <tr class="separator:a50461838df4386d28ed001591eff2383 inherit pub_attribs_classclustering_1_1Clustering"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33ee2153799927a275df889deec09b53 inherit pub_attribs_classclustering_1_1Clustering"><td class="memItemLeft" align="right" valign="top"><a id="a33ee2153799927a275df889deec09b53"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a33ee2153799927a275df889deec09b53">dataset</a></td></tr>
-<tr class="memdesc:a33ee2153799927a275df889deec09b53 inherit pub_attribs_classclustering_1_1Clustering"><td class="mdescLeft">&#160;</td><td class="mdescRight">dataset name as string <br /></td></tr>
+<tr class="memitem:a33ee2153799927a275df889deec09b53 inherit pub_attribs_classclustering_1_1Clustering"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a33ee2153799927a275df889deec09b53">dataset</a></td></tr>
+<tr class="memdesc:a33ee2153799927a275df889deec09b53 inherit pub_attribs_classclustering_1_1Clustering"><td class="mdescLeft">&#160;</td><td class="mdescRight">dataset name as string  <a href="classclustering_1_1Clustering.html#a33ee2153799927a275df889deec09b53">More...</a><br /></td></tr>
 <tr class="separator:a33ee2153799927a275df889deec09b53 inherit pub_attribs_classclustering_1_1Clustering"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9428002bd0ae4880a18840cbdb2c1e52 inherit pub_attribs_classclustering_1_1Clustering"><td class="memItemLeft" align="right" valign="top"><a id="a9428002bd0ae4880a18840cbdb2c1e52"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a9428002bd0ae4880a18840cbdb2c1e52">data</a></td></tr>
-<tr class="memdesc:a9428002bd0ae4880a18840cbdb2c1e52 inherit pub_attribs_classclustering_1_1Clustering"><td class="mdescLeft">&#160;</td><td class="mdescRight">data that gets clustered <br /></td></tr>
+<tr class="memitem:a9428002bd0ae4880a18840cbdb2c1e52 inherit pub_attribs_classclustering_1_1Clustering"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a9428002bd0ae4880a18840cbdb2c1e52">data</a></td></tr>
+<tr class="memdesc:a9428002bd0ae4880a18840cbdb2c1e52 inherit pub_attribs_classclustering_1_1Clustering"><td class="mdescLeft">&#160;</td><td class="mdescRight">data that gets clustered  <a href="classclustering_1_1Clustering.html#a9428002bd0ae4880a18840cbdb2c1e52">More...</a><br /></td></tr>
 <tr class="separator:a9428002bd0ae4880a18840cbdb2c1e52 inherit pub_attribs_classclustering_1_1Clustering"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e5a4547b2d7836c84b6e9ef2f30ab03 inherit pub_attribs_classclustering_1_1Clustering"><td class="memItemLeft" align="right" valign="top"><a id="a9e5a4547b2d7836c84b6e9ef2f30ab03"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a9e5a4547b2d7836c84b6e9ef2f30ab03">labels</a></td></tr>
-<tr class="memdesc:a9e5a4547b2d7836c84b6e9ef2f30ab03 inherit pub_attribs_classclustering_1_1Clustering"><td class="mdescLeft">&#160;</td><td class="mdescRight">expected cluster values <br /></td></tr>
+<tr class="memitem:a9e5a4547b2d7836c84b6e9ef2f30ab03 inherit pub_attribs_classclustering_1_1Clustering"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a9e5a4547b2d7836c84b6e9ef2f30ab03">labels</a></td></tr>
+<tr class="memdesc:a9e5a4547b2d7836c84b6e9ef2f30ab03 inherit pub_attribs_classclustering_1_1Clustering"><td class="mdescLeft">&#160;</td><td class="mdescRight">expected cluster values  <a href="classclustering_1_1Clustering.html#a9e5a4547b2d7836c84b6e9ef2f30ab03">More...</a><br /></td></tr>
 <tr class="separator:a9e5a4547b2d7836c84b6e9ef2f30ab03 inherit pub_attribs_classclustering_1_1Clustering"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1812b94a6bec621047497eaf39c6f998 inherit pub_attribs_classclustering_1_1Clustering"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a1812b94a6bec621047497eaf39c6f998">seed</a></td></tr>
+<tr class="memdesc:a1812b94a6bec621047497eaf39c6f998 inherit pub_attribs_classclustering_1_1Clustering"><td class="mdescLeft">&#160;</td><td class="mdescRight">seed for initializer, None if no seed is used  <a href="classclustering_1_1Clustering.html#a1812b94a6bec621047497eaf39c6f998">More...</a><br /></td></tr>
+<tr class="separator:a1812b94a6bec621047497eaf39c6f998 inherit pub_attribs_classclustering_1_1Clustering"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a06f298bab213a556be22cde5651e24 inherit pub_attribs_classclustering_1_1Clustering"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclustering_1_1Clustering.html#a5a06f298bab213a556be22cde5651e24">datadf</a></td></tr>
+<tr class="memdesc:a5a06f298bab213a556be22cde5651e24 inherit pub_attribs_classclustering_1_1Clustering"><td class="mdescLeft">&#160;</td><td class="mdescRight">dataset as pandas frame.  <a href="classclustering_1_1Clustering.html#a5a06f298bab213a556be22cde5651e24">More...</a><br /></td></tr>
+<tr class="separator:a5a06f298bab213a556be22cde5651e24 inherit pub_attribs_classclustering_1_1Clustering"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>implements DBSCAN Clustering<br  />
  uses the scikit-learn DBSCAN implementation </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab22686f8718cf537fc12a8eb827d7482"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab22686f8718cf537fc12a8eb827d7482">&#9670;&nbsp;</a></span>__init__()</h2>
+<a id="a7e6f70492d3841413536ffd9abeed07a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e6f70492d3841413536ffd9abeed07a">&#9670;&nbsp;</a></span>__init__()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,7 +203,13 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>dataset</em>&#160;</td>
+          <td class="paramname"><em>dataset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>seed</em> = <code>None</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -216,8 +219,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>constructor </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>constructor, seed can be given but is not used. </p>
+<p>its passing is allowed to simplfy the code in the web frontend </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">metric</td><td>metric description as string. allowed: "euclidean", "manhattan", "chebyshev", "cosine" </td></tr>
     <tr><td class="paramname">dataset</td><td>dataset given as string. allowed: "diabetes", "iris", "wine", "housevotes" </td></tr>
@@ -225,13 +228,13 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="classclustering_1_1Clustering.html#a59129e84c5d072bf02d0a8a89779760b">clustering.Clustering</a>.</p>
+<p>Reimplemented from <a class="el" href="classclustering_1_1Clustering.html#a96699924e73d3dac5c91d23a99842585">clustering.Clustering</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a38c00ed16e46cf3c099b8329350262c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38c00ed16e46cf3c099b8329350262c0">&#9670;&nbsp;</a></span>cluster()</h2>
+<a id="af763d9904e3a380d187caa2adc3fe73d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af763d9904e3a380d187caa2adc3fe73d">&#9670;&nbsp;</a></span>cluster()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -252,7 +255,7 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>minPts</em>&#160;</td>
+          <td class="paramname"><em>minpts</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -313,15 +316,80 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4e0819e1d3a3fdfe2380205289e4f08b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e0819e1d3a3fdfe2380205289e4f08b">&#9670;&nbsp;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dbscan.DBSCANClustering.data</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>data that gets clustered </p>
+
+</div>
+</div>
+<a id="a156964a25917208e5746f27c9d3a6a3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a156964a25917208e5746f27c9d3a6a3a">&#9670;&nbsp;</a></span>dataset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dbscan.DBSCANClustering.dataset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>dataset name as string </p>
+
+</div>
+</div>
+<a id="a394090abeacf5da4894e85263b76dfd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a394090abeacf5da4894e85263b76dfd6">&#9670;&nbsp;</a></span>labels</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dbscan.DBSCANClustering.labels</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>expected cluster values </p>
+
+</div>
+</div>
+<a id="a8b7cdb4b055b40962a2a71abeb29aa4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b7cdb4b055b40962a2a71abeb29aa4a">&#9670;&nbsp;</a></span>metric</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dbscan.DBSCANClustering.metric</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>metric name as string </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>dbscan.py</li>
+<li><a class="el" href="dbscan_8py.html">dbscan.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>dbscan</b></li><li class="navelem"><a class="el" href="classdbscan_1_1DBSCANClustering.html">DBSCANClustering</a></li>
+    <li class="navelem"><a class="el" href="namespacedbscan.html">dbscan</a></li><li class="navelem"><a class="el" href="classdbscan_1_1DBSCANClustering.html">DBSCANClustering</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

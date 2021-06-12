@@ -1,0 +1,53 @@
+\hypertarget{SessionState_8py}{}\doxysection{Session\+State.\+py File Reference}
+\label{SessionState_8py}\index{SessionState.py@{SessionState.py}}
+
+
+taken from \href{https://gist.github.com/tvst/036da038ab3e999a64497f42de966a92}{\texttt{ https\+://gist.\+github.\+com/tvst/036da038ab3e999a64497f42de966a92}}.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSessionState_1_1SessionState}{Session\+State.\+Session\+State}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceSessionState}{Session\+State}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceSessionState_a6447a6ba08dae19a324f73980cc7508e}{Session\+State.\+get}} ($\ast$$\ast$kwargs)
+\begin{DoxyCompactList}\small\item\em Gets a \mbox{\hyperlink{namespaceSessionState}{Session\+State}} object for the current session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+taken from \href{https://gist.github.com/tvst/036da038ab3e999a64497f42de966a92}{\texttt{ https\+://gist.\+github.\+com/tvst/036da038ab3e999a64497f42de966a92}}. 
+
+Please refer to this gist and its original author
+
+Hack to add per-\/session state to Streamlit.\hypertarget{SessionState_8py_autotoc_md0}{}\doxysubsubsection{Usage}\label{SessionState_8py_autotoc_md0}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+import \mbox{\hyperlink{namespaceSessionState}{Session\+State}}
+
+session\+\_\+state = \mbox{\hyperlink{namespaceSessionState_a6447a6ba08dae19a324f73980cc7508e}{Session\+State.\+get}}(user\+\_\+name=\textquotesingle{}\textquotesingle{}, favorite\+\_\+color=\textquotesingle{}black\textquotesingle{}) session\+\_\+state.\+user\+\_\+name \end{quote}
+\end{quote}
+\end{quote}
+\textquotesingle{}\textquotesingle{} \begin{quote}
+\begin{quote}
+\begin{quote}
+session\+\_\+state.\+user\+\_\+name = \textquotesingle{}Mary\textquotesingle{} session\+\_\+state.\+favorite\+\_\+color \end{quote}
+\end{quote}
+\end{quote}
+\textquotesingle{}black\textquotesingle{}
+
+Since you set user\+\_\+name above, next time your script runs this will be the result\+: \begin{quote}
+\begin{quote}
+\begin{quote}
+session\+\_\+state = get(user\+\_\+name=\textquotesingle{}\textquotesingle{}, favorite\+\_\+color=\textquotesingle{}black\textquotesingle{}) session\+\_\+state.\+user\+\_\+name \end{quote}
+\end{quote}
+\end{quote}
+\textquotesingle{}Mary\textquotesingle{} 
