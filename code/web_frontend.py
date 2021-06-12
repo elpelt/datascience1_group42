@@ -14,15 +14,14 @@ from kmedoids import kmedoidsClustering
 from dbscan import DBSCANClustering
 from indices import Indices
 from results import Results
-from external.SessionState import SessionState
+import SessionState
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(page_title="Group 42", page_icon=":koala:")
 st.title('Datascience: Group 42')
 
 # session state for saving parameters for every in browser opened instance
-session_state = SessionState.get(indices_data=[])
-
+session_state = SessionState.get(indices_data=pd.DataFrame())
 
 seeded = st.checkbox('Use precalculated results (with random seed for reproduction).', value=True)
 seed = None
@@ -31,7 +30,7 @@ seaplots = st.checkbox('Use interactive altair plots over static seaborn plots.'
 
 
 # result handler for set seed clusters
-results = Results("./code/results")
+resulthandler = Results("./code/results")
 
 if seeded:
     seed = 42
@@ -60,30 +59,30 @@ if cluster_algo == 'DBSCAN':
     epsilon = col2.slider("Choose a nice value for epsilon", min_value=0.1, max_value=20.0, step=0.1)
     minpts = col2.slider("Choose a minimal number of nearest points", min_value=1, max_value=20, step=1, value=5)
     
-    if seeded and results.set_exists(dataset, cluster_algo, cluster_dist, minpts=minpts, eps=epsilon):
-        clusters, stuff = results.load_set(dataset, cluster_algo, cluster_dist, minpts=minpts, eps=epsilon)
+    if seeded and resulthandler.set_exists(dataset, cluster_algo, cluster_dist, minpts=minpts, eps=epsilon):
+        clusters, stuff = resulthandler.load_set(dataset, cluster_algo, cluster_dist, minpts=minpts, eps=epsilon)
         print(f"loaded {dataset}, {cluster_algo}, {cluster_dist}, minpts={minpts}, eps={epsilon}")
     
     else:
         clusters, stuff = cluster.cluster(epsilon, minpts)
         
         if seeded:
-            results.save_set(dataset, cluster_algo, cluster_dist, clusters, stuff, minpts=minpts, eps=epsilon)
+            resulthandler.save_set(dataset, cluster_algo, cluster_dist, clusters, stuff, minpts=minpts, eps=epsilon)
             print(f"saved {dataset}, {cluster_algo}, {cluster_dist}, minpts={minpts}, eps={epsilon}")
     st.write("*DBSCAN heuristic for estimating minPts and eps parameters: https://share.streamlit.io/elpelt/datascience1_group42/main/code/heuristic_web.py*")
 
 else:
     k_value = col2.slider("Choose a nice value for k (number of clusters)", min_value=2, max_value=10, step=1, value=3)
     
-    if seeded and results.set_exists(dataset, cluster_algo, cluster_dist, k=k_value):
-        clusters, stuff = results.load_set(dataset, cluster_algo, cluster_dist, k=k_value)
+    if seeded and resulthandler.set_exists(dataset, cluster_algo, cluster_dist, k=k_value):
+        clusters, stuff = resulthandler.load_set(dataset, cluster_algo, cluster_dist, k=k_value)
         print(f"loaded {dataset}, {cluster_algo}, {cluster_dist}, k={k_value}")
     
     else:
         clusters, stuff = cluster.cluster(k_value)
         
         if seeded:
-            results.save_set(dataset, cluster_algo, cluster_dist, clusters, stuff, k=k_value)
+            resulthandler.save_set(dataset, cluster_algo, cluster_dist, clusters, stuff, k=k_value)
             print(f"saved {dataset}, {cluster_algo}, {cluster_dist}, k={k_value}")
 
 clustered_data = np.zeros(len(cluster.data))
@@ -195,8 +194,7 @@ reset_tmp = col2.button('Reset')
 
 # write empty CSV to clear CSV
 if reset_tmp:
-    with open("tmp.csv", "w") as f:
-        f.write('')
+    session_state.indices_data = pd.DataFrame
     st.write("Cluster-table cleared succesfully!")
 
 # add clustering result to CSV with new column and characteristics as header
@@ -206,50 +204,36 @@ if add_result:
         val="epsilon="+str(epsilon)+", np="+str(minpts)
     else:
         val="k="+str(k_value)
-    try:
-        df = pd.read_csv("tmp.csv", delimiter=",")
-        if str((cluster_algo, cluster_dist, val, dataset)) in df.columns:
-            st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "already in cluster-table!")
-        else:
-            labels = cluster.labels.tolist()
-            predicted = clustered_data.tolist()
-            precalc = []
-            index_eval = ["ARI", "NMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"]
-            for i in range(0,4):
-                I1 = Indices(predicted, labels)
-                score = I1.index_external(index_eval[i])
-                precalc.append(score)
-            precalc.append(I1.index_internal(index_eval[4], cluster.data.tolist(), cluster_dist))
-            df[(cluster_algo, cluster_dist, val, dataset)] = pd.Series(precalc)
-            df.to_csv("tmp.csv", sep=",", index=False)
-            st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "added succesfully!")
-    # if csv is empty
-    except:
+    
+    df = session_state.indices_data
+
+    if str((cluster_algo, cluster_dist, val, dataset)) in df.columns:
+        st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "already in cluster-table!")
+    else:
         labels = cluster.labels.tolist()
         predicted = clustered_data.tolist()
         precalc = []
         index_eval = ["ARI", "NMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"]
-        for i in range(0, 4):
+        for i in range(0,4):
             I1 = Indices(predicted, labels)
             score = I1.index_external(index_eval[i])
             precalc.append(score)
         precalc.append(I1.index_internal(index_eval[4], cluster.data.tolist(), cluster_dist))
-        df = pd.DataFrame(precalc, columns=[(cluster_algo, cluster_dist, val, dataset)])
-        df.to_csv("tmp.csv", sep=",", index=False)
+        df[(cluster_algo, cluster_dist, val, dataset)] = pd.Series(precalc)
         st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "added succesfully!")
-try:
-    df = pd.read_csv("tmp.csv", delimiter=",")
-    st.write("The cluster-table contains the following cluster:", df.columns)
-except:
+
+if not session_state.indices_data.empty:
+    st.write("The cluster-table contains the following cluster:", session_state.indices_data.columns)
+else:
     st.write("Cluster-table is empty!")
 
 index_eval = st.selectbox('Choose an adorable index',["ARI", "NMI", "Completeness Score", "Homogeneity Score"])
 
 datasets = []
 # iterate over cluster results and calculate score with chosen index
-try:
-    results = [[1, "maximum reference value"]]
-    df = pd.read_csv("tmp.csv", delimiter=",")
+results = [[1, "maximum reference value"]]
+if not session_state.indices_data.empty:
+    df = session_state.indices_data
     if index_eval in ["ARI", "NMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"]:
         for i in range(0, len(df.columns)):
             if index_eval == "ARI":
@@ -266,7 +250,7 @@ try:
         st.write(results[i][0], results[i][1])
     datasets = []
     for i in range(1, len(results)):
-        results[i][1] = results[i][1].replace("(", "").replace(")", "").replace("'", "").split(",")
+        results[i][1] = str(results[i][1]).replace("(", "").replace(")", "").replace("'", "").split(",")
         if results[i][1][0] == "DBSCAN":
             if (results[i][1][4] not in datasets):
                 datasets.append(results[i][1][4])
@@ -274,7 +258,7 @@ try:
             datasets.append(results[i][1][3])
 
 # if list is empty or two diff. datasets were chosen
-except:
+else:
     st.write("")
 
 
