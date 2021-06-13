@@ -57,8 +57,6 @@ col1.latex(cluster_dist_desc[cluster_dist])
 cluster_algo_class = {'kmeans': kmeansClustering, 'kmedians': kmediansClustering, 'kmedoids': kmedoidsClustering, 'DBSCAN': DBSCANClustering}
 cluster_algo = col2.selectbox('Choose a lovely clustering algorithm', list(cluster_algo_class.keys()))
 
-cluster = cluster_algo_class[cluster_algo](cluster_dist, dataset, seed)
-
 params = {}
 if cluster_algo == 'DBSCAN':
     epsilon = col2.slider("Choose a nice value for epsilon", min_value=0.1, max_value=20.0, step=0.1)
@@ -70,11 +68,16 @@ else:
     k_value = col2.slider("Choose a nice value for k (number of clusters)", min_value=2, max_value=10, step=1, value=3)
     params = {"k" : k_value}
 
-cluster.load_data()
+@st.cache()
+def create_cluster(cluster_algo, cluster_dist, dataset, seed):
+    cluster = cluster_algo_class[cluster_algo](cluster_dist, dataset, seed)
+    cluster.load_data()
+    return cluster
+
+cluster = create_cluster(cluster_algo, cluster_dist, dataset, seed)
 
 @st.cache()
 def clustering(cluster, params):
-
     if seeded and resulthandler.set_exists(dataset, cluster_algo, cluster_dist, **params):
         clusters, centers = resulthandler.load_set(dataset, cluster_algo, cluster_dist, **params)
         print(f"loaded {dataset}, {cluster_algo}, {cluster_dist}, {params}")
@@ -175,7 +178,7 @@ if cluster_algo == 'DBSCAN':
     st.write(f"*Please notice for the DBSCAN clustering algorithm: Data points classified as noise are plotted as black points*. In this clustering {np.count_nonzero(clustered_data == 0)} points are marked as noise")
 
 dataexpander = st.beta_expander("data")
-cluster.datadf["cluster ID"] = clustered_data
+#cluster.datadf["cluster ID"] = clustered_data
 dataexpander.write(cluster.datadf)
 
 
