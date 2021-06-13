@@ -58,48 +58,41 @@ cluster_algo_class = {'kmeans': kmeansClustering, 'kmedians': kmediansClustering
 cluster_algo = col2.selectbox('Choose a lovely clustering algorithm', list(cluster_algo_class.keys()))
 
 cluster = cluster_algo_class[cluster_algo](cluster_dist, dataset, seed)
-cluster.load_data()
 
-
-# algorithm specific parameter selection and clustering
+params = {}
 if cluster_algo == 'DBSCAN':
     epsilon = col2.slider("Choose a nice value for epsilon", min_value=0.1, max_value=20.0, step=0.1)
     minpts = col2.slider("Choose a minimal number of nearest points", min_value=1, max_value=20, step=1, value=5)
-    
-    if seeded and resulthandler.set_exists(dataset, cluster_algo, cluster_dist, minpts=minpts, eps=epsilon):
-        clusters, stuff = resulthandler.load_set(dataset, cluster_algo, cluster_dist, minpts=minpts, eps=epsilon)
-        print(f"loaded {dataset}, {cluster_algo}, {cluster_dist}, minpts={minpts}, eps={epsilon}")
-    
-    else:
-        clusters, stuff = cluster.cluster(epsilon, minpts)
-        
-        if seeded:
-            resulthandler.save_set(dataset, cluster_algo, cluster_dist, clusters, stuff, minpts=minpts, eps=epsilon)
-            print(f"saved {dataset}, {cluster_algo}, {cluster_dist}, minpts={minpts}, eps={epsilon}")
+    params = {"eps" : epsilon, "minpts" : minpts}
     st.write("*DBSCAN heuristic for estimating minPts and eps parameters: https://share.streamlit.io/elpelt/datascience1_group42/main/code/heuristic_web.py*")
 
 else:
     k_value = col2.slider("Choose a nice value for k (number of clusters)", min_value=2, max_value=10, step=1, value=3)
-    
-    if seeded and resulthandler.set_exists(dataset, cluster_algo, cluster_dist, k=k_value):
-        clusters, stuff = resulthandler.load_set(dataset, cluster_algo, cluster_dist, k=k_value)
-        print(f"loaded {dataset}, {cluster_algo}, {cluster_dist}, k={k_value}")
+    params = {"k" : k_value}
+
+cluster.load_data()
+
+@st.cache()
+def clustering(cluster, params):
+
+    if seeded and resulthandler.set_exists(dataset, cluster_algo, cluster_dist, **params):
+        clusters, centers = resulthandler.load_set(dataset, cluster_algo, cluster_dist, **params)
+        print(f"loaded {dataset}, {cluster_algo}, {cluster_dist}, {params}")
     
     else:
-        clusters, stuff = cluster.cluster(k_value)
+        clusters, centers = cluster.cluster(epsilon, minpts)
         
         if seeded:
-            resulthandler.save_set(dataset, cluster_algo, cluster_dist, clusters, stuff, k=k_value)
-            print(f"saved {dataset}, {cluster_algo}, {cluster_dist}, k={k_value}")
+            resulthandler.save_set(dataset, cluster_algo, cluster_dist, clusters, centers, **params)
+            print(f"saved {dataset}, {cluster_algo}, {cluster_dist}, {params}")
+    
+    clustered_data = np.zeros(len(cluster.data))
+    for ic,c in enumerate(clusters):
+        clustered_data[c] = ic+1
 
-clustered_data = np.zeros(len(cluster.data))
-for ic,c in enumerate(clusters):
-    clustered_data[c] = ic+1
+    return clusters, centers, clustered_data
 
-if cluster_algo == 'DBSCAN':
-    color_palette = ['black'] + sns.color_palette("husl", len(set(clustered_data))-1)
-else:
-    color_palette = sns.color_palette("husl", len(set(clustered_data)))
+clusters, centers, clustered_data = clustering(cluster, params)
 
 if random.choices([True, False], weights=[1, 9])[0]:
     st.balloons()
@@ -119,22 +112,26 @@ col2.write("PCA is a linear dimension reduction. The data will be projected on t
 
 if cluster_algo == 'kmedoids' and k_value>1:
     marking_centroids = np.ones(cluster.data.shape[0])
-    marking_centroids[stuff] = 25
-
+    marking_centroids[centers] = 25
 
 # actual projecting and plot generating
 col1, col2 = st.beta_columns(2)
 
-cluster_label = alt.Tooltip("c", title="Cluster ID")
-point_label = alt.Tooltip("i", title="Point ID")
 dfclusterdata = pd.DataFrame()
 dfclusterdata["c"] = clustered_data
 dfclusterdata["i"] = [i for i in range(len(clustered_data))]
 
 with st.spinner('Please wait a second. Some colorful plots are generated...'):
     projected_data_tsne = TSNE(random_state=42, perplexity=perp).fit_transform(cluster.data)
+    projected_data_pca = PCA(random_state=42, n_components=2).fit_transform(cluster.data)
 
     if not seaplots:
+        # seaborn color palette
+        if cluster_algo == "DBSCAN":
+            color_palette = ['black'] + sns.color_palette("husl", len(set(clustered_data))-1)
+        else:
+            color_palette = sns.color_palette("husl", len(set(clustered_data)))
+
         fig, ax = plt.subplots()
         if cluster_algo == 'kmedoids' and k_value>1:
             sns.scatterplot(x=projected_data_tsne[:, 0], y=projected_data_tsne[:, 1], hue=clustered_data, ax=ax,
@@ -142,24 +139,7 @@ with st.spinner('Please wait a second. Some colorful plots are generated...'):
         else:
             sns.scatterplot(x=projected_data_tsne[:,0], y=projected_data_tsne[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
         col1.pyplot(fig)
-    
-    else:
-        dfclusterdata[["xt", "yt"]] = pd.DataFrame(projected_data_tsne)
-        dfclusterdata["c"] = clustered_data
-        dfclusterdata["i"] = [i for i in range(len(clustered_data))]
 
-        xaxis = alt.X("xt", axis=alt.Axis(title=None))
-        yaxis = alt.Y("yt", axis=alt.Axis(title=None))
-        altcolor=alt.Color("c", legend=None, scale=alt.Scale(domain=[0, 1 if max(clustered_data) == 0 else max(clustered_data)], scheme="turbo"))
-        tsnealt = alt.Chart(dfclusterdata).mark_circle().encode(x=xaxis, y=yaxis, tooltip=[cluster_label, point_label], color=altcolor).interactive()
-        col1.altair_chart(tsnealt, use_container_width=True)
-
-
-
-with st.spinner('Please wait a second. Some colorful plots are generated...'):
-    projected_data_pca = PCA(random_state=42, n_components=2).fit_transform(cluster.data)
-    
-    if not seaplots:
         fig, ax = plt.subplots()
 
         if cluster_algo == 'kmedoids' and k_value>1:
@@ -169,13 +149,23 @@ with st.spinner('Please wait a second. Some colorful plots are generated...'):
             sns.scatterplot(x=projected_data_pca[:, 0], y=projected_data_pca[:, 1], hue=clustered_data, ax=ax,
                             palette=color_palette, legend=False)
         col2.pyplot(fig)
-    
+
     else:
+        dfclusterdata[["xt", "yt"]] = pd.DataFrame(projected_data_tsne)
         dfclusterdata[["xp", "yp"]] = pd.DataFrame(projected_data_pca)
+        dfclusterdata["c"] = clustered_data
+        dfclusterdata["i"] = [i for i in range(len(clustered_data))]
+
+        cluster_label = alt.Tooltip("c", title="Cluster ID")
+        point_label = alt.Tooltip("i", title="Point ID")
+        altcolor=alt.Color("c", legend=None, scale=alt.Scale(domain=[0, 1 if max(clustered_data) == 0 else max(clustered_data)], scheme="turbo"))
+        xaxis = alt.X("xt", axis=alt.Axis(title=None))
+        yaxis = alt.Y("yt", axis=alt.Axis(title=None))
+        tsnealt = alt.Chart(dfclusterdata).mark_circle().encode(x=xaxis, y=yaxis, tooltip=[cluster_label, point_label], color=altcolor).interactive()
+        col1.altair_chart(tsnealt, use_container_width=True)
 
         xaxis = alt.X("xp", axis=alt.Axis(title=None))
         yaxis = alt.Y("yp", axis=alt.Axis(title=None))
-        altcolor=alt.Color("c", legend=None, scale=alt.Scale(domain=[0, 1 if max(clustered_data) == 0 else max(clustered_data)], scheme="turbo"))
         pcaalt = alt.Chart(dfclusterdata).mark_circle().encode(x=xaxis, y=yaxis, tooltip=[cluster_label, point_label], color=altcolor).interactive()
         
         col2.altair_chart(pcaalt, use_container_width=True)
@@ -187,7 +177,6 @@ if cluster_algo == 'DBSCAN':
 dataexpander = st.beta_expander("data")
 cluster.datadf["cluster ID"] = clustered_data
 dataexpander.write(cluster.datadf)
-
 
 
 # Clustering evaluation
