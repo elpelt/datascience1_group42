@@ -1,5 +1,5 @@
 # Description
-This is a group project done for the Lecture "Data Science 1" at the Goethe University Frankfurt exploring the effects of different distance measures on distance-based clustering algorithm.
+This is a group project done for the Lecture "Data Science 1" at the Goethe University Frankfurt exploring the effects of different distance measures on distance-based clustering algorithms.
 
 ## Frontend
 The web frontend is accessible [here](https://share.streamlit.io/elpelt/datascience1_group42/main/code/web_frontend.py).
