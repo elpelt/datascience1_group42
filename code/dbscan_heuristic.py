@@ -52,7 +52,8 @@ class DBSCANHeuristic():
         """
         self.k = k
         distances = pairwise_distances(self.clustering.data, self.clustering.data, metric=self.metric)
-        kdist = [sorted(distances[i])[k-1] for i in range(len(distances))]
+        # index has to be k, because the distance to a vector itself (0) is also contained in the distances
+        kdist = [sorted(distances[i])[k] for i in range(len(distances))]
         return kdist
     
     def plot_kdist(self, kdist):

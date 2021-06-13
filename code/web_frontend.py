@@ -70,6 +70,14 @@ else:
 
 @st.cache()
 def create_cluster(cluster_algo, cluster_dist, dataset, seed):
+    """
+    creates a cluster algorithm instance. takes all parameters needed for creating such instance. uses the streamlit caching decorator
+    @param cluster_algo string containing name of cluster algorithm used ("kmeans", "kmedians", "kmedoids", "DBSCAN")
+    @param cluster_dist string containing the distance measure used ("euclidean", "manhattan", "chebyshev", "cosine")
+    @param dataset string containing the datasets name ("iris", "wine", "diabetes", "housevotes")
+    @param seed seed for cluster algorithm, None if a random seed should be used
+    @returns cluster results, cluster centers, clustered data
+    """
     cluster = cluster_algo_class[cluster_algo](cluster_dist, dataset, seed)
     cluster.load_data()
     return cluster
@@ -78,6 +86,12 @@ cluster = create_cluster(cluster_algo, cluster_dist, dataset, seed)
 
 @st.cache()
 def clustering(cluster, params):
+    """
+    calculates clustering results. uses the streamlit caching decorator
+    @param cluster cluster algorithm object
+    @param params dictionary containing parameters needed for the cluster algorithm, either k or minpts and eps
+    @returns cluster results, cluster centers, clustered data
+    """
     if seeded and resulthandler.set_exists(dataset, cluster_algo, cluster_dist, **params):
         clusters, centers = resulthandler.load_set(dataset, cluster_algo, cluster_dist, **params)
         print(f"loaded {dataset}, {cluster_algo}, {cluster_dist}, {params}")
@@ -124,7 +138,12 @@ dfclusterdata = pd.DataFrame()
 dfclusterdata["c"] = clustered_data
 dfclusterdata["i"] = [i for i in range(len(clustered_data))]
 
-with st.spinner('Please wait a second. Some colorful plots are generated...'):
+@st.cache(allow_output_mutation=True)
+def plotting():
+    """
+    generates the plots for the frontend. uses the streamlit chacheing decorator
+    @returns TSNE and PCA projections of clustering results either as seaborn or altair plots
+    """
     projected_data_tsne = TSNE(random_state=42, perplexity=perp).fit_transform(cluster.data)
     projected_data_pca = PCA(random_state=42, n_components=2).fit_transform(cluster.data)
 
@@ -135,23 +154,23 @@ with st.spinner('Please wait a second. Some colorful plots are generated...'):
         else:
             color_palette = sns.color_palette("husl", len(set(clustered_data)))
 
-        fig, ax = plt.subplots()
+        # plot building
+        fig1, ax1 = plt.subplots()
         if cluster_algo == 'kmedoids' and k_value>1:
-            sns.scatterplot(x=projected_data_tsne[:, 0], y=projected_data_tsne[:, 1], hue=clustered_data, ax=ax,
+            sns.scatterplot(x=projected_data_tsne[:, 0], y=projected_data_tsne[:, 1], hue=clustered_data, ax=ax1,
                             palette=color_palette, legend=False, style=marking_centroids, size=marking_centroids*30, markers=["o", "P"])
         else:
-            sns.scatterplot(x=projected_data_tsne[:,0], y=projected_data_tsne[:,1], hue=clustered_data, ax=ax, palette=color_palette, legend=False)
-        col1.pyplot(fig)
-
-        fig, ax = plt.subplots()
-
+            sns.scatterplot(x=projected_data_tsne[:,0], y=projected_data_tsne[:,1], hue=clustered_data, ax=ax1, palette=color_palette, legend=False)
+        
+        fig2, ax2 = plt.subplots()
+        
         if cluster_algo == 'kmedoids' and k_value>1:
-            sns.scatterplot(x=projected_data_pca[:, 0], y=projected_data_pca[:, 1], hue=clustered_data, ax=ax,
-                            palette=color_palette, legend=False, style=marking_centroids, size=marking_centroids*30, markers=["o", "P"])
+            sns.scatterplot(x=projected_data_pca[:, 0], y=projected_data_pca[:, 1], hue=clustered_data, ax=ax2,
+                                palette=color_palette, legend=False, style=marking_centroids, size=marking_centroids*30, markers=["o", "P"])
         else:
-            sns.scatterplot(x=projected_data_pca[:, 0], y=projected_data_pca[:, 1], hue=clustered_data, ax=ax,
+            sns.scatterplot(x=projected_data_pca[:, 0], y=projected_data_pca[:, 1], hue=clustered_data, ax=ax2,
                             palette=color_palette, legend=False)
-        col2.pyplot(fig)
+        return fig1, fig2
 
     else:
         dfclusterdata[["xt", "yt"]] = pd.DataFrame(projected_data_tsne)
@@ -159,19 +178,31 @@ with st.spinner('Please wait a second. Some colorful plots are generated...'):
         dfclusterdata["c"] = clustered_data
         dfclusterdata["i"] = [i for i in range(len(clustered_data))]
 
+        # plot building
         cluster_label = alt.Tooltip("c", title="Cluster ID")
         point_label = alt.Tooltip("i", title="Point ID")
         altcolor=alt.Color("c", legend=None, scale=alt.Scale(domain=[0, 1 if max(clustered_data) == 0 else max(clustered_data)], scheme="turbo"))
+
         xaxis = alt.X("xt", axis=alt.Axis(title=None))
         yaxis = alt.Y("yt", axis=alt.Axis(title=None))
         tsnealt = alt.Chart(dfclusterdata).mark_circle().encode(x=xaxis, y=yaxis, tooltip=[cluster_label, point_label], color=altcolor).interactive()
-        col1.altair_chart(tsnealt, use_container_width=True)
 
         xaxis = alt.X("xp", axis=alt.Axis(title=None))
         yaxis = alt.Y("yp", axis=alt.Axis(title=None))
         pcaalt = alt.Chart(dfclusterdata).mark_circle().encode(x=xaxis, y=yaxis, tooltip=[cluster_label, point_label], color=altcolor).interactive()
-        
-        col2.altair_chart(pcaalt, use_container_width=True)
+            
+        return tsnealt, pcaalt
+
+with st.spinner('Please wait a second. Some colorful plots are generated...'):
+    fig1, fig2 = plotting()
+
+    if seaplots:
+        col1.altair_chart(fig1, use_container_width=True)
+        col2.altair_chart(fig2, use_container_width=True)
+
+    else:
+        col1.pyplot(fig1)
+        col2.pyplot(fig2)
 
 if cluster_algo == 'DBSCAN':
     st.write()
@@ -180,7 +211,6 @@ if cluster_algo == 'DBSCAN':
 dataexpander = st.beta_expander("data")
 #cluster.datadf["cluster ID"] = clustered_data
 dataexpander.write(cluster.datadf)
-
 
 # Clustering evaluation
 st.header("Clustering evaluation")
@@ -193,7 +223,7 @@ reset_tmp = col2.button('Reset')
 
 # write empty CSV to clear CSV
 if reset_tmp:
-    session_state.indices_data = pd.DataFrame
+    session_state.indices_data = pd.DataFrame()
     st.write("Cluster-table cleared succesfully!")
 
 # add clustering result to CSV with new column and characteristics as header
@@ -260,7 +290,6 @@ if not session_state.indices_data.empty:
 else:
     st.write("")
 
-
 # preprocess radar plot
 desc_list = []
 if len(datasets) == 0:
@@ -320,4 +349,3 @@ else:
         ax.set_title("Index:" + " " + index_eval)
     ax.grid(True)
     st.pyplot(fig)
-        
