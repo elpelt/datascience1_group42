@@ -206,28 +206,33 @@ if reset_tmp:
 
 # add clustering result to CSV with new column and characteristics as header
 if add_result:
-    # epsilon or k, depends on clustering algorithm
-    if cluster_algo == "DBSCAN":
-        val="epsilon="+str(epsilon)+", np="+str(minpts)
-    else:
-        val="k="+str(k_value)
-    
-    df = session_state.indices_data
 
-    if str((cluster_algo, cluster_dist, val, dataset)) in df.columns:
-        st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "already in cluster-table!")
+    if len(set(clustered_data)) ==1:
+        st.warning('All datapoints belong to the same cluster. Please choose different parameter settings to get a more useful clustering.')
+
     else:
-        labels = cluster.labels.tolist()
-        predicted = clustered_data.tolist()
-        precalc = []
-        index_eval = ["ARI", "NMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"]
-        for i in range(0,4):
-            I1 = Indices(predicted, labels)
-            score = I1.index_external(index_eval[i])
-            precalc.append(score)
-        precalc.append(I1.index_internal(index_eval[4], cluster.data.tolist(), cluster_dist))
-        df[(cluster_algo, cluster_dist, val, dataset)] = pd.Series(precalc)
-        st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "added succesfully!")
+        # epsilon or k, depends on clustering algorithm
+        if cluster_algo == "DBSCAN":
+            val="epsilon="+str(epsilon)+", np="+str(minpts)
+        else:
+            val="k="+str(k_value)
+
+        df = session_state.indices_data
+
+        if str((cluster_algo, cluster_dist, val, dataset)) in df.columns:
+            st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "already in cluster-table!")
+        else:
+            labels = cluster.labels.tolist()
+            predicted = clustered_data.tolist()
+            precalc = []
+            index_eval = ["ARI", "NMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"]
+            for i in range(0,4):
+                I1 = Indices(predicted, labels)
+                score = I1.index_external(index_eval[i])
+                precalc.append(score)
+            precalc.append(I1.index_internal(index_eval[4], cluster.data.tolist(), cluster_dist))
+            df[(cluster_algo, cluster_dist, val, dataset)] = pd.Series(precalc)
+            st.write("Cluster", (cluster_algo, cluster_dist, val, dataset), "added succesfully!")
 
 if not session_state.indices_data.empty:
     st.write("The cluster-table contains the following cluster:", session_state.indices_data.columns)
