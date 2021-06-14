@@ -111,8 +111,6 @@ def clustering(cluster, params):
 
 clusters, centers, clustered_data = clustering(cluster, params)
 
-if random.choices([True, False], weights=[1, 9])[0]:
-    st.balloons()
 st.success('Great choice! Here are the results!!!!')
 
 # Projections
@@ -261,7 +259,7 @@ if not session_state.indices_data.empty:
 else:
     st.write("Cluster-table is empty!")
 
-index_eval = st.selectbox('Choose an adorable index',["ARI", "NMI", "Completeness Score", "Homogeneity Score"])
+index_eval = st.selectbox('Choose an adorable index',["ARI", "NMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"])
 
 datasets = []
 # iterate over cluster results and calculate score with chosen index
