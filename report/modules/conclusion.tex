@@ -1,3 +1,16 @@
-A variety of additional algorithms, distance metrics, parameter settings and cluster evaluation measures could be considered.
+DESCRIPTION OF RESULTS: \\ 
+
+For wine and housevotes datasets we found that a clustering with the chebyshev distance produces clusterings with consideribly low scores (for all evaluated indices). 
+For iris and wine datasets ARI scores for the used K-algorithms have a peak for k=3, which corresponds to the true number of labels in these datasets.  
+By comparing different clustering algorithms for the wine dataset it can be said that the K-Medians is more unstable than K-means and K-medoids as small peturbations of k can lead to remarkable differences in the resulting clustering scores. 
+
+Best parameter combination for every dataset:\\
+TODO!!! \\ 
+
+
+POSSIBLE IMPROVEMENTS:\\
+A variety of additional algorithms, distance metrics, parameter settings and cluster evaluation measures could be considered. By including more datasets a more detailed comparison of the algorithms and distance measures and their behaviour on differently distributed data might be possible. 
+
+FINAL THOUGHTS: \\
 
 We did not found a best clustering algorithm neither a superior distance measure, which would give the best results on every dataset. This problem is widely known as the "No Free Lunch Theorem" \cite{nofreelunch}. As specific requierements may differ for diverse use cases multiple algorithms and parameters should be explored and compared according to individual needs. 
