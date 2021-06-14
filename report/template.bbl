@@ -103,6 +103,13 @@ Andrei Novikov.
 \newblock {PyClustering}: {D}ata {M}ining {L}ibrary.
 \newblock {\em Journal of Open Source Software}, 4(36):1230, apr 2019.
 
+\bibitem{sessionstate}
+{Thiago Teixeira}.
+\newblock gist: Sessionstate.py.
+\newblock \url{https://gist.github.com/tvst/036da038ab3e999a64497f42de966a92},
+  2021.
+\newblock Accessed: 10th June 2021.
+
 \bibitem{numpy}
 Charles~R. Harris, K.~Jarrod Millman, St{\'{e}}fan~J. van~der Walt, Ralf
   Gommers, Pauli Virtanen, David Cournapeau, Eric Wieser, Julian Taylor,
@@ -152,6 +159,11 @@ Arvind Satyanarayan, Dominik Moritz, Kanit Wongsuphasawat, and Jeffrey Heer.
 \newblock {\em IEEE transactions on visualization and computer graphics},
   23(1):341--350, 2017.
 
+\bibitem{ari}
+Yun Yang.
+\newblock {\em Temporal Data Mining Via Unsupervised Ensemble Learning}.
+\newblock Elsevier, 2017.
+
 \bibitem{rosenberg2007v}
 Andrew Rosenberg and Julia Hirschberg.
 \newblock V-measure: A conditional entropy-based external cluster evaluation
@@ -159,6 +171,12 @@ Andrew Rosenberg and Julia Hirschberg.
 \newblock In {\em Proceedings of the 2007 joint conference on empirical methods
   in natural language processing and computational natural language learning
   (EMNLP-CoNLL)}, pages 410--420, 2007.
+
+\bibitem{ari_form}
+Nguyen~Xuan Vinh, Julien Epps, and James Bailey.
+\newblock Information theoretic measures for clusterings comparison: Variants,
+  properties, normalization and correction for chance.
+\newblock {\em Journal of Machine Learning Research}, 11:2837--2854, 2010.
 
 \bibitem{nofreelunch}
 David Wolpert.
