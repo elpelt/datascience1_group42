@@ -53,9 +53,9 @@ class Indices():
     def index_internal(self, index, points, metric):
         """
         Function to calculate internal index scores<br>
-        @param index 
-        @param points
-        @param metric
+        @param index string with name of index used ("Silhouette Score")
+        @param points data points of the selected dataset
+        @param metric metric used for calculation of silhouette score
         """
         if index == "Silhouette Score":
             return silhouette_score(points, self.cluster_calc, metric=metric)
