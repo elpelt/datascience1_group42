@@ -259,7 +259,7 @@ if not session_state.indices_data.empty:
 else:
     st.write("Cluster-table is empty!")
 
-index_eval = st.selectbox('Choose an adorable index',["ARI", "NMI", "Completeness Score", "Homogeneity Score"])
+index_eval = st.selectbox('Choose an adorable index',["ARI", "NMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"])
 
 datasets = []
 # iterate over cluster results and calculate score with chosen index
