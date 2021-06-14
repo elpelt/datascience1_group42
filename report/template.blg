@@ -5,47 +5,44 @@ Reallocating 'name_of_file' (item size: 1) to 8 items.
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: unsrt.bst
 Database file #1: bib.bib
-Warning--I didn't find a database entry for "ari"
-Warning--I didn't find a database entry for "ari_form"
-You've used 33 entries,
+You've used 36 entries,
             1791 wiz_defined-function locations,
-            635 strings with 8673 characters,
-and the built_in function-call counts, 7651 in all, are:
-= -- 605
-> -- 446
+            646 strings with 9063 characters,
+and the built_in function-call counts, 8191 in all, are:
+= -- 653
+> -- 465
 < -- 7
-+ -- 164
-- -- 131
-* -- 522
-:= -- 1199
-add.period$ -- 90
-call.type$ -- 33
-change.case$ -- 31
++ -- 172
+- -- 136
+* -- 546
+:= -- 1285
+add.period$ -- 100
+call.type$ -- 36
+change.case$ -- 33
 chr.to.int$ -- 0
-cite$ -- 33
-duplicate$ -- 332
-empty$ -- 730
-format.name$ -- 131
-if$ -- 1718
+cite$ -- 36
+duplicate$ -- 356
+empty$ -- 792
+format.name$ -- 136
+if$ -- 1843
 int.to.chr$ -- 0
-int.to.str$ -- 33
-missing$ -- 27
-newline$ -- 156
-num.names$ -- 30
-pop$ -- 129
+int.to.str$ -- 36
+missing$ -- 30
+newline$ -- 172
+num.names$ -- 33
+pop$ -- 143
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 199
+skip$ -- 206
 stack$ -- 0
-substring$ -- 372
-swap$ -- 98
+substring$ -- 399
+swap$ -- 101
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 57
-width$ -- 35
-write$ -- 335
-(There were 2 warnings)
+while$ -- 61
+width$ -- 38
+write$ -- 368
