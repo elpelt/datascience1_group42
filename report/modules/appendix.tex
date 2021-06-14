@@ -1,64 +1,4 @@
-For each dataset we independently compared clustering scores of different algorithms for multiple distances. For the algorithms that require a predefined number of clusters we set the value k to be the number of different classes in the dataset (except for the diabetes dataset, which does not have categorical labels). \\
-
-\begin{figure}[H]
-	\centering
-	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/combined/ARI/algdist_for_given_k.png} }}%
-	\qquad
-	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/combined/NMI/algdist_for_given_k.png} }}%
-	\qquad
-	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/combined/Completeness Score/algdist_for_given_k.png} }}%
-	\qquad
-	\subfloat[Homogeneity Score ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/combined/Homogeneity Score/algdist_for_given_k.png} }}%
-	\qquad
-	\subfloat[Silhouette Score ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/combined/Silhouette Score/algdist_for_given_k.png} }}%
-	
-	\caption{Comparison of clustering scores for Iris dataset (given k=3)}%
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/combined/ARI/algdist_for_given_k.png} }}%
-	\qquad
-	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/combined/NMI/algdist_for_given_k.png} }}%
-	\qquad
-	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/combined/Completeness Score/algdist_for_given_k.png} }}%
-	\qquad
-	\subfloat[Homogeneity Score ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/combined/Homogeneity Score/algdist_for_given_k.png} }}%
-	\qquad
-	\subfloat[Silhouette Score ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/combined/Silhouette Score/algdist_for_given_k.png} }}%
-	
-	\caption{Comparison of clustering scores for Wine dataset (given k=3)}%
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/diabetes/combined/ARI/algdist_for_given_k.png} }}%
-	\qquad
-	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/diabetes/combined/NMI/algdist_for_given_k.png} }}%
-	\qquad
-	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/diabetes/combined/Completeness Score/algdist_for_given_k.png} }}%
-	\qquad
-	\subfloat[Homogeneity Score ]{{\includegraphics[width=0.45\textwidth]{../plots/diabetes/combined/Homogeneity Score/algdist_for_given_k.png} }}%
-	\qquad
-	\subfloat[Silhouette Score ]{{\includegraphics[width=0.45\textwidth]{../plots/diabetes/combined/Silhouette Score/algdist_for_given_k.png} }}%
-	
-	\caption{Comparison of clustering scores for Diabetes dataset (given k=2)}%
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/combined/ARI/algdist_for_given_k.png} }}%
-	\qquad
-	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/combined/NMI/algdist_for_given_k.png} }}%
-	\qquad
-	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/combined/Completeness Score/algdist_for_given_k.png} }}%
-	\qquad
-	\subfloat[Homogeneity Score ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/combined/Homogeneity Score/algdist_for_given_k.png} }}%
-	\qquad
-	\subfloat[Silhouette Score ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/combined/Silhouette Score/algdist_for_given_k.png} }}%
-	
-	\caption{Comparison of clustering scores for Housevotes dataset (given k=2)}%
-\end{figure}
+\subsection{Comparison of different k values}
 
 To estimate the number of meaningful clusters (clusterings with highest index scores) in the datasets and test the robustness of different distance measures we compared scorings as a function of k. \\
 
@@ -216,5 +156,72 @@ To estimate the number of meaningful clusters (clusterings with highest index sc
 	\subfloat[Silhouette Score ]{{\includegraphics[width=1\textwidth]{../plots/housevotes/kmedoids/Silhouette Score/k_1to10.png} }}%
 	
 	\caption{Comparison of clustering scores for kmedoids-clustering on Housevotes dataset}%
+\end{figure}
+
+
+
+
+\subsection{Comparison for given k value}
+
+For each dataset we independently compared clustering scores of different algorithms for multiple distances. For the algorithms that require a predefined number of clusters we set the value k to be the number of different classes in the dataset (except for the diabetes dataset, which does not have categorical labels). \\
+
+\begin{figure}[H]
+	\centering
+	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/combined/ARI/algdist_for_given_k.png} }}%
+	\qquad
+	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/combined/NMI/algdist_for_given_k.png} }}%
+	\qquad
+	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/combined/Completeness Score/algdist_for_given_k.png} }}%
+	\qquad
+	\subfloat[Homogeneity Score ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/combined/Homogeneity Score/algdist_for_given_k.png} }}%
+	\qquad
+	\subfloat[Silhouette Score ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/combined/Silhouette Score/algdist_for_given_k.png} }}%
+	
+	\caption{Comparison of clustering scores for Iris dataset (given k=3)}%
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/combined/ARI/algdist_for_given_k.png} }}%
+	\qquad
+	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/combined/NMI/algdist_for_given_k.png} }}%
+	\qquad
+	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/combined/Completeness Score/algdist_for_given_k.png} }}%
+	\qquad
+	\subfloat[Homogeneity Score ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/combined/Homogeneity Score/algdist_for_given_k.png} }}%
+	\qquad
+	\subfloat[Silhouette Score ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/combined/Silhouette Score/algdist_for_given_k.png} }}%
+	
+	\caption{Comparison of clustering scores for Wine dataset (given k=3)}%
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/diabetes/combined/ARI/algdist_for_given_k.png} }}%
+	\qquad
+	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/diabetes/combined/NMI/algdist_for_given_k.png} }}%
+	\qquad
+	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/diabetes/combined/Completeness Score/algdist_for_given_k.png} }}%
+	\qquad
+	\subfloat[Homogeneity Score ]{{\includegraphics[width=0.45\textwidth]{../plots/diabetes/combined/Homogeneity Score/algdist_for_given_k.png} }}%
+	\qquad
+	\subfloat[Silhouette Score ]{{\includegraphics[width=0.45\textwidth]{../plots/diabetes/combined/Silhouette Score/algdist_for_given_k.png} }}%
+	
+	\caption{Comparison of clustering scores for Diabetes dataset (given k=2)}%
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/combined/ARI/algdist_for_given_k.png} }}%
+	\qquad
+	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/combined/NMI/algdist_for_given_k.png} }}%
+	\qquad
+	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/combined/Completeness Score/algdist_for_given_k.png} }}%
+	\qquad
+	\subfloat[Homogeneity Score ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/combined/Homogeneity Score/algdist_for_given_k.png} }}%
+	\qquad
+	\subfloat[Silhouette Score ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/combined/Silhouette Score/algdist_for_given_k.png} }}%
+	
+	\caption{Comparison of clustering scores for Housevotes dataset (given k=2)}%
 \end{figure}
 
