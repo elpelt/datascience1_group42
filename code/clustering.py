@@ -117,7 +117,7 @@ class Clustering():
             self.datadf = load_wine(as_frame=True)["data"]
         
         elif self.dataset == "housevotes":
-            path = "./datasets/votes/house-votes-84.data"
+            path = "../datasets/votes/house-votes-84.data"
             self.data, self.labels, self.datadf = self.house_load(path, 0)
                 
         self.data = StandardScaler().fit_transform(self.data)

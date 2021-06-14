@@ -111,8 +111,6 @@ def clustering(cluster, params):
 
 clusters, centers, clustered_data = clustering(cluster, params)
 
-if random.choices([True, False], weights=[1, 9])[0]:
-    st.balloons()
 st.success('Great choice! Here are the results!!!!')
 
 # Projections
