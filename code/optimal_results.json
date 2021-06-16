@@ -1,0 +1,352 @@
+{
+    "euclideanirisARI": [
+        0.7063013754344988,
+        3,
+        0.4
+    ],
+    "euclideanirisNMI": [
+        0.7315847607219575,
+        1,
+        0.9
+    ],
+    "euclideanirisCompleteness Score": [
+        0.9999999999999997,
+        1,
+        0.9
+    ],
+    "euclideanirisHomogeneity Score": [
+        1.0000000000000002,
+        1,
+        0.1
+    ],
+    "euclideanirisSilhouette Score": [
+        0.6867350732769776,
+        1,
+        0.9
+    ],
+    "euclideanwineARI": [
+        0.489727847905605,
+        18,
+        2.4
+    ],
+    "euclideanwineNMI": [
+        0.5597761242642592,
+        18,
+        2.4
+    ],
+    "euclideanwineCompleteness Score": [
+        0.7143744318161459,
+        20,
+        2.4
+    ],
+    "euclideanwineHomogeneity Score": [
+        1.0000000000000002,
+        1,
+        1.2
+    ],
+    "euclideanwineSilhouette Score": [
+        0.2653538432834378,
+        18,
+        4.1
+    ],
+    "euclideandiabetesARI": [
+        0.0015184605693586868,
+        16,
+        0.1
+    ],
+    "euclideandiabetesNMI": [
+        0.016534178172862606,
+        16,
+        0.1
+    ],
+    "euclideandiabetesCompleteness Score": [
+        0.6202873339533389,
+        1,
+        0.1
+    ],
+    "euclideandiabetesHomogeneity Score": [
+        0.13028044473061526,
+        1,
+        0.1
+    ],
+    "euclideandiabetesSilhouette Score": [
+        0.13312669910859978,
+        3,
+        0.1
+    ],
+    "euclideanhousevotesARI": [
+        0.5050485546507165,
+        18,
+        2.5
+    ],
+    "euclideanhousevotesNMI": [
+        0.43569894447060364,
+        18,
+        2.5
+    ],
+    "euclideanhousevotesCompleteness Score": [
+        0.3674122569719165,
+        18,
+        2.5
+    ],
+    "euclideanhousevotesHomogeneity Score": [
+        0.9999999999999997,
+        1,
+        0.1
+    ],
+    "euclideanhousevotesSilhouette Score": [
+        0.30114942528735633,
+        1,
+        0.1
+    ],
+    "manhattanirisARI": [
+        0.694647633734363,
+        16,
+        0.9
+    ],
+    "manhattanirisNMI": [
+        0.7315847607219575,
+        1,
+        1.2
+    ],
+    "manhattanirisCompleteness Score": [
+        0.9999999999999997,
+        1,
+        1.2
+    ],
+    "manhattanirisHomogeneity Score": [
+        1.0000000000000004,
+        1,
+        0.2
+    ],
+    "manhattanirisSilhouette Score": [
+        0.6791715440076466,
+        1,
+        1.2
+    ],
+    "manhattanwineARI": [
+        0.582171773994734,
+        18,
+        6.9
+    ],
+    "manhattanwineNMI": [
+        0.6011413957270584,
+        18,
+        6.9
+    ],
+    "manhattanwineCompleteness Score": [
+        0.780383628281019,
+        15,
+        6.4
+    ],
+    "manhattanwineHomogeneity Score": [
+        1.0000000000000004,
+        1,
+        5.2
+    ],
+    "manhattanwineSilhouette Score": [
+        0.2870381928444974,
+        1,
+        10.1
+    ],
+    "manhattandiabetesARI": [
+        0.0014207065236706861,
+        6,
+        0.2
+    ],
+    "manhattandiabetesNMI": [
+        0.02676735068903351,
+        2,
+        0.2
+    ],
+    "manhattandiabetesCompleteness Score": [
+        0.8565688110795865,
+        1,
+        0.1
+    ],
+    "manhattandiabetesHomogeneity Score": [
+        0.9866912797824374,
+        1,
+        0.1
+    ],
+    "manhattandiabetesSilhouette Score": [
+        0.2644468356970502,
+        2,
+        0.3
+    ],
+    "manhattanhousevotesARI": [
+        0.5050485546507165,
+        18,
+        6.0
+    ],
+    "manhattanhousevotesNMI": [
+        0.43569894447060364,
+        18,
+        6.0
+    ],
+    "manhattanhousevotesCompleteness Score": [
+        0.3674122569719165,
+        18,
+        6.0
+    ],
+    "manhattanhousevotesHomogeneity Score": [
+        0.9999999999999997,
+        1,
+        0.1
+    ],
+    "manhattanhousevotesSilhouette Score": [
+        0.4236305186817333,
+        1,
+        12.0
+    ],
+    "chebyshevirisARI": [
+        0.5681159420289855,
+        1,
+        0.7
+    ],
+    "chebyshevirisNMI": [
+        0.7315847607219575,
+        1,
+        0.7
+    ],
+    "chebyshevirisCompleteness Score": [
+        0.9999999999999997,
+        1,
+        0.7
+    ],
+    "chebyshevirisHomogeneity Score": [
+        1.0000000000000002,
+        1,
+        0.1
+    ],
+    "chebyshevirisSilhouette Score": [
+        0.716278705430765,
+        1,
+        0.7
+    ],
+    "chebyshevwineARI": [
+        0.45600139295282915,
+        17,
+        1.3
+    ],
+    "chebyshevwineNMI": [
+        0.5338793705625648,
+        17,
+        1.3
+    ],
+    "chebyshevwineCompleteness Score": [
+        0.5965822843286023,
+        17,
+        1.3
+    ],
+    "chebyshevwineHomogeneity Score": [
+        1.0000000000000002,
+        1,
+        0.8
+    ],
+    "chebyshevwineSilhouette Score": [
+        0.36052617024221817,
+        11,
+        2.3
+    ],
+    "chebyshevhousevotesARI": [
+        0.10566948039778556,
+        4,
+        0.1
+    ],
+    "chebyshevhousevotesNMI": [
+        0.16607165293800777,
+        4,
+        0.1
+    ],
+    "chebyshevhousevotesCompleteness Score": [
+        0.1972900634867184,
+        7,
+        0.1
+    ],
+    "chebyshevhousevotesHomogeneity Score": [
+        0.9999999999999997,
+        1,
+        0.1
+    ],
+    "chebyshevhousevotesSilhouette Score": [
+        0.30114942528735633,
+        1,
+        0.1
+    ],
+    "cosinewineARI": [
+        0.8662225570696692,
+        16,
+        0.3
+    ],
+    "cosinewineNMI": [
+        0.8335006203300607,
+        16,
+        0.3
+    ],
+    "cosinewineCompleteness Score": [
+        0.8342803042103143,
+        16,
+        0.3
+    ],
+    "cosinewineHomogeneity Score": [
+        1.0,
+        1,
+        0.1
+    ],
+    "cosinewineSilhouette Score": [
+        0.44500798579583667,
+        16,
+        0.3
+    ],
+    "cosinediabetesARI": [
+        0.005107235375625038,
+        1,
+        0.1
+    ],
+    "cosinediabetesNMI": [
+        0.028270135348904414,
+        1,
+        0.1
+    ],
+    "cosinediabetesCompleteness Score": [
+        1.000000000000005,
+        1,
+        0.3
+    ],
+    "cosinediabetesHomogeneity Score": [
+        0.7457028372972158,
+        1,
+        0.1
+    ],
+    "cosinediabetesSilhouette Score": [
+        0.21511108926993622,
+        10,
+        0.2
+    ],
+    "cosinehousevotesARI": [
+        0.5050485546507165,
+        18,
+        0.2
+    ],
+    "cosinehousevotesNMI": [
+        0.43569894447060364,
+        18,
+        0.2
+    ],
+    "cosinehousevotesCompleteness Score": [
+        0.3674122569719165,
+        18,
+        0.2
+    ],
+    "cosinehousevotesHomogeneity Score": [
+        0.9232982904457316,
+        1,
+        0.1
+    ],
+    "cosinehousevotesSilhouette Score": [
+        0.4236305186817333,
+        1,
+        0.4
+    ]
+}
