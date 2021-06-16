@@ -1,0 +1,9 @@
+The Silhouette Score is an internal cluster validation method that calculates the mean silhouette coefficient (SC) of all samples \cite{scikitlearn}. It calculates a separation distance between resulting clusters, by stating how close each point in one cluster is to the points in a neighboring cluster \cite{sil_score}. The score is calculated as following: \cite{scikitlearn}
+
+\begin{align}
+    SC = \frac{b-a}{max(a,b)}
+\end{align}
+
+for each sample. $b$ is defined as the distance between the distance between a sample and the nearest cluster to which the sample does not belong, and $a$ as the mean intra-cluster distance.\\
+The silhouette coefficient can be calculated either for each cluster or the entire dataset. To obtain a comparable value, in this project the score for the entire dataset is calculated as the mean value over all samples. \cite{scikitlearn}\\
+This index is necessary to compare the different results for the clustering of the diabetes dataset, since this dataset does not contain a predefined classification.

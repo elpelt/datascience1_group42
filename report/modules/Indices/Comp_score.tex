@@ -1,7 +1,12 @@
 The completeness score is another external clustering index. Essentially, the completeness score determines how much items with the same labeling are also put into the same cluster. It is symmetric to the homogeneity score and is defined as following: \cite{rosenberg2007v}
-$$c = 1 - \frac{H(K|C)}{H(K)}$$
+\begin{align}
+    c = 1 - \frac{H(K|C)}{H(K)}  
+\end{align}
 where
-$$H(C|K) = - \sum_{c,k} \frac{n_{ck}}{N}\log\left(\frac{n_{ck}}{n_c}\right)$$
+\begin{align}
+    H(C|K) = - \sum_{c,k} \frac{n_{ck}}{N}\log\left(\frac{n_{ck}}{n_c}\right)  
+\end{align}
+
 
 Consistent to the homogeneity score, C represents the true cluster labels of the datapoints and K the labels predicted by the clustering algorithm. $n_{ck}$ is the number of items in a cluster $k$, which are labeled $c$, i.e. share the same label. $n_c$ stands for the total number of points labeled $c$.
 When all items labeled $c$ are put into one single cluster $k$, the completeness score is 1.
