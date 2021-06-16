@@ -1,11 +1,16 @@
 DESCRIPTION OF RESULTS: \\ 
 
-For wine and housevotes datasets we found that a clustering with the chebyshev distance produces clusterings with consideribly low scores (for all evaluated indices). 
-For iris and wine datasets ARI scores for the used K-algorithms have a peak for k=3, which corresponds to the true number of labels in these datasets.  
-By comparing different clustering algorithms for the wine dataset it can be said that the K-Medians is more unstable than K-means and K-medoids as small peturbations of k can lead to remarkable differences in the resulting clustering scores. 
+For Wine and Housevotes datasets we found that a clustering with the Chebyshev distance produces clusterings with consideribly low scores (for all evaluated indices). 
+For Iris and Wine datasets ARI scores for the used K-algorithms have a peak for k=3, which corresponds to the true number of labels in these datasets.  
+By comparing different clustering algorithms for the Wine dataset it can be said that the K-Medians is more unstable than K-means and K-medoids as small peturbations of k can lead to remarkable differences in the resulting clustering scores. 
 
-Best parameter combination for every dataset:\\
-TODO!!! \\ 
+
+For the Iris dataset a clustering calculated by a K-algorithm (with k=3) with the Manhattan distance gives the highest score values for all evaluated external scores (and can therefore be considered to match the true labels in the most accurate way). K-Medians and K-Medoids gives slightly higher scores than K-Means.  \\
+Using the Chebyshev distance for the Wine dataset results in clusterings with lowest scores, whereas K-Means with Euclidean distance and K-Medians with Manhattan distance perform relatively well for this dataset.  
+For the Diabetes dataset comparing the Silhouette Score for k=2 K-Medians with Manhattan distance performs the worst, while K-Means with Euclidean, Manhattan or Cosine distance and K-Medians or K-Medoids with Cosine distance gives the highest scoring results. 
+For the Housevotes dataset the Chebyshev distance performs the worst. The highest external scores for k=2 can be achieved with K-Means using the Euclidean or Manhattan distance. 
+
+
 
 
 POSSIBLE IMPROVEMENTS:\\
