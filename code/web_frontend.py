@@ -323,35 +323,31 @@ for i in range(0, len(results)):
 if len(results) <= 1:
     pass
 
-# if length of results smaller than 3, barplot instead of radar chart
-elif len(results) <= 2:
-    fig, ax = plt.subplots()
-    labels, ys = list(desc), list(stats)
-    xs = np.arange(len(labels))
-    width = 0.5
-    ax.bar(xs[0], ys[0], width, align='center', color='red')
-    ax.bar(xs[1:], ys[1:], width, align='center')
-    ax.set_xticks(xs)
-    ax.set_xticklabels(labels)
-    ax.set_yticks(ys)
-    st.pyplot(fig)
-
-#if length of results higher than 2 radar chart
+# Altair Plots for added cluster results
 else:
-    # define angles
-    angles=np.linspace(0, 2*np.pi, len(desc), endpoint=False)
-    stats=np.concatenate((stats,[stats[0]]))
-    angles=np.concatenate((angles,[angles[0]]))
+    df_for = pd.DataFrame(results, columns=["Score","Data"])
+    df_for["Data"] = desc_list
+    data_select = alt.selection_multi(fields=["Data"], name="Datapoint")
 
-    # print radar plot
-    fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-    ax.plot(angles, stats, 'o-', linewidth=2)
-    ax.plot(angles[0], stats[0], 'o-', linewidth=2, color='red')
-    ax.fill(angles, stats, alpha=0.25)
-    ax.set_thetagrids((angles * 180 / np.pi)[0:len(results)], desc)
     if len(datasets) == 1:
-        ax.set_title("Index:"+" "+index_eval+","+" "+"Dataset:"+" "+datasets[0])
+        title = "Index:" + " " + index_eval + "," + " " + "Dataset:" + " " + datasets[0]
     else:
-        ax.set_title("Index:" + " " + index_eval)
-    ax.grid(True)
-    st.pyplot(fig)
+        title = "Index:" + " " + index_eval
+    base = alt.Chart(
+        df_for, width=(len(results)*120), height=500).mark_bar().configure(
+        lineBreak = ","
+    ).properties(
+        title = title
+    ).encode(
+        x = alt.X("Data", axis=alt.Axis(labelAngle=0)),
+        y = alt.Y("Score:Q"),
+        tooltip = ("Data", "Score"),
+        opacity=alt.condition(data_select, alt.value(1), alt.value(0.0)),
+        color=alt.Color("Data", legend=None)
+    ).add_selection(
+        data_select
+    ).configure_view(
+        strokeOpacity=0
+    ).interactive()
+
+    st.altair_chart(base)
