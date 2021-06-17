@@ -4,7 +4,7 @@ Evaluation Modul to compare clustering results
 """
 
 import numpy as np
-from sklearn.metrics import jaccard_score, silhouette_score, adjusted_rand_score, adjusted_mutual_info_score,homogeneity_score, completeness_score
+from sklearn.metrics import silhouette_score, adjusted_rand_score, adjusted_mutual_info_score,homogeneity_score, completeness_score
 
 class Indices():
     """
@@ -34,9 +34,9 @@ class Indices():
             ari = adjusted_rand_score(self.cluster_label, self.cluster_calc)
             return ari
 
-        elif index == "NMI":
+        elif index == "AMI":
             nmi = adjusted_mutual_info_score(self.cluster_label, self.cluster_calc)
-            return nmi
+            return ami
 
         elif index == "Completeness Score":
             cs = completeness_score(self.cluster_label, self.cluster_calc)

@@ -245,7 +245,7 @@ if add_result:
             labels = cluster.labels.tolist()
             predicted = clustered_data.tolist()
             precalc = []
-            index_eval = ["ARI", "NMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"]
+            index_eval = ["ARI", "AMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"]
             for i in range(0,4):
                 I1 = Indices(predicted, labels)
                 score = I1.index_external(index_eval[i])
@@ -259,18 +259,18 @@ if not session_state.indices_data.empty:
 else:
     st.write("Cluster-table is empty!")
 
-index_eval = st.selectbox('Choose an adorable index',["ARI", "NMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"])
+index_eval = st.selectbox('Choose an adorable index',["ARI", "AMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"])
 
 datasets = []
 # iterate over cluster results and calculate score with chosen index
 results = [[1, "maximum reference value"]]
 if not session_state.indices_data.empty:
     df = session_state.indices_data
-    if index_eval in ["ARI", "NMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"]:
+    if index_eval in ["ARI", "AMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"]:
         for i in range(0, len(df.columns)):
             if index_eval == "ARI":
                 results.append([df.iloc[:,i].values[0], df.columns[i]])
-            elif index_eval == "NMI":
+            elif index_eval == "AMI":
                 results.append([df.iloc[:, i].values[1], df.columns[i]])
             elif index_eval == "Completeness Score":
                 results.append([df.iloc[:,i].values[2], df.columns[i]])

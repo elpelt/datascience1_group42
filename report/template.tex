@@ -46,6 +46,12 @@ sort=symbollambda, type=symbolslist
 
 %abbreviations and glossary combined
 \newacronym{AD}{AD}{Active Directory\protect\glsadd{glos:AD}}
+\newacronym{t-SNE}{t-SNE}{t-Distributed Stochastic Neighbor Embedding}
+\newacronym{pca}{PCA}{Principal Component Analysis}
+\newacronym{ari}{ARI}{Adjusted Rand Index}
+\newacronym{ami}{AMI}{Adjusted Mutual Info Score}
+\newacronym{sc}{SC}{silhouette coefficient}
+\newacronym{mi}{MI}{Mutual Information}
  
 % ... 
  
@@ -193,15 +199,22 @@ Our results show that
 \section{Evaluation Module}
 \subsection{Implementation}
 \input{modules/Indices/Implementation_ind}
-\subsection{Scoring Methods}
+\subsection{External Scoring Methods}
+\subsubsection{Definition}
+\input{report/modules/Indices/external_def}
 \subsubsection{Adjusted Rand Index}
 \input{modules/Indices/ARI}
 \subsubsection{Completeness Score}
 \input{modules/Indices/Comp_score}
 \subsubsection{Homogeneity Score}
 \input{modules/Indices/Hom_score}
-\subsubsection{Normalized Mutual Index}
+\subsubsection{Adjusted Mutual Index}
 \input{modules/Indices/NMI}
+\subsection{Internal Scoring Methods}
+\subsubsection{Definition}
+\input{report/modules/Indices/internal_def}
+\subsubsection{Silhouette Score}
+\input{report/modules/Indices/Silhouette_Score}
 
 
 \section{Web Frontend and User Manual}

@@ -1,4 +1,4 @@
-The Adjusted Rand Index (ARI) is an external cluster validation method with a value between 0 and 1, where a value close to 0 represents a random partition and a value close to 1 represents a nearly identical cluster compared to the original labels of the data. Thus, maximizing this score argues for perfect clustering.\\
+\acrshort{ari} is an external cluster validation method with a value between -1 and 1, where a value close to 0 represents a random partition and a value close to 1 represents a nearly identical cluster compared to the original labels of the data. Thus, maximizing this score argues for perfect clustering.\\
 It is defined by: \cite{ari}
 \begin{align}
     ARI(P^*,P) = \frac{\sum_{i,j}\binom{N_{i,j}}{2}-[\sum_{i}\binom{N_{i}}{2}\sum_{j}\binom{N_{j}}{2}]/\binom{N}{2}}{\frac{1}{2}[\sum_{i}\binom{N_{i}}{2}+\sum_{j}\binom{N_{j}}{2}]-[\sum_{i}\binom{N_{i}}{2}\sum_{j}\binom{N_{j}}{2}]/\binom{N}{2}}
