@@ -3,6 +3,7 @@
 \subsection{Comparison of different k values}
 \marginnote{\textcolor{blue}{Jonas Elpelt}}
 To estimate the number of meaningful clusters (clusterings with highest index scores) in the datasets and test the robustness of different distance measures we compared scorings as a function of k (for K-means, K-medians and K-medoids). The diabetes dataset was only evaluated with an internal index (silhouette score) as it does not have categorical target values, which would not lead to meaningful scores of external indices.  \\
+As the silhouette score can be evaluated with different distance metrics, we have included the four distance measures to be considered independently for each distance measure used for the clustering algorithm. 
 
 \begin{figure}[H]
 	\centering
@@ -17,6 +18,7 @@ To estimate the number of meaningful clusters (clusterings with highest index sc
 	\subfloat[Silhouette Score ]{{\includegraphics[width=1\textwidth]{../plots/iris/kmeans/Silhouette Score/k_1to10.png} }}%
 	
 	\caption{Comparison of clustering scores for K-means-clustering on Iris dataset}%
+	\label{fig:kmeans_iris}
 \end{figure}
 
 \begin{figure}[H]
@@ -32,6 +34,7 @@ To estimate the number of meaningful clusters (clusterings with highest index sc
 	\subfloat[Silhouette Score ]{{\includegraphics[width=1\textwidth]{../plots/wine/kmeans/Silhouette Score/k_1to10.png} }}%
 	
 	\caption{Comparison of clustering scores for K-means-clustering on Wine dataset}%
+	\label{fig:kmeans_wine}
 \end{figure}
 
 \begin{figure}[H]
@@ -39,6 +42,7 @@ To estimate the number of meaningful clusters (clusterings with highest index sc
 	\subfloat[Silhouette Score ]{{\includegraphics[width=1\textwidth]{../plots/diabetes/kmeans/Silhouette Score/k_1to10.png} }}%
 	
 	\caption{Comparison of clustering scores for K-means-clustering on Diabetes dataset}%
+	\label{fig:kmeans_diabetes}
 \end{figure}
 
 \begin{figure}[H]
@@ -54,6 +58,7 @@ To estimate the number of meaningful clusters (clusterings with highest index sc
 	\subfloat[Silhouette Score ]{{\includegraphics[width=1\textwidth]{../plots/housevotes/kmeans/Silhouette Score/k_1to10.png} }}%
 	
 	\caption{Comparison of clustering scores for K-means-clustering on Housevotes dataset}%
+	\label{fig:kmeans_housevotes}
 \end{figure}
 
 \begin{figure}[H]
@@ -69,6 +74,7 @@ To estimate the number of meaningful clusters (clusterings with highest index sc
 	\subfloat[Silhouette Score ]{{\includegraphics[width=1\textwidth]{../plots/iris/kmedians/Silhouette Score/k_1to10.png} }}%
 	
 	\caption{Comparison of clustering scores for K-medians-clustering on Iris dataset}%
+	\label{fig:kmedians_iris}
 \end{figure}
 
 \begin{figure}[H]
@@ -84,6 +90,7 @@ To estimate the number of meaningful clusters (clusterings with highest index sc
 	\subfloat[Silhouette Score ]{{\includegraphics[width=1\textwidth]{../plots/wine/kmedians/Silhouette Score/k_1to10.png} }}%
 	
 	\caption{Comparison of clustering scores for K-medians-clustering on Wine dataset}%
+	\label{fig:kmedians_wine}
 \end{figure}
 
 \begin{figure}[H]
@@ -91,6 +98,7 @@ To estimate the number of meaningful clusters (clusterings with highest index sc
 	\subfloat[Silhouette Score ]{{\includegraphics[width=1\textwidth]{../plots/diabetes/kmedians/Silhouette Score/k_1to10.png} }}%
 	
 	\caption{Comparison of clustering scores for K-medians-clustering on Diabetes dataset}%
+	\label{fig:kmedians_diabetes}
 \end{figure}
 
 \begin{figure}[H]
@@ -106,6 +114,7 @@ To estimate the number of meaningful clusters (clusterings with highest index sc
 	\subfloat[Silhouette Score ]{{\includegraphics[width=1\textwidth]{../plots/housevotes/kmedians/Silhouette Score/k_1to10.png} }}%
 	
 	\caption{Comparison of clustering scores for K-medians-clustering on Housevotes dataset}%
+	\label{fig:kmedians_housevotes}
 \end{figure}
 
 \begin{figure}[H]
@@ -121,6 +130,7 @@ To estimate the number of meaningful clusters (clusterings with highest index sc
 	\subfloat[Silhouette Score ]{{\includegraphics[width=1\textwidth]{../plots/iris/kmedoids/Silhouette Score/k_1to10.png} }}%
 	
 	\caption{Comparison of clustering scores for K-medoids-clustering on Iris dataset}%
+	\label{fig:kmedoids_iris}
 \end{figure}
 
 \begin{figure}[H]
@@ -136,6 +146,7 @@ To estimate the number of meaningful clusters (clusterings with highest index sc
 	\subfloat[Silhouette Score ]{{\includegraphics[width=1\textwidth]{../plots/wine/kmedoids/Silhouette Score/k_1to10.png} }}%
 	
 	\caption{Comparison of clustering scores for K-medoids-clustering on Wine dataset}%
+	\label{fig:kmedoids_wine}
 \end{figure}
 
 \begin{figure}[H]
@@ -143,6 +154,7 @@ To estimate the number of meaningful clusters (clusterings with highest index sc
 	\subfloat[Silhouette Score ]{{\includegraphics[width=1\textwidth]{../plots/diabetes/kmedoids/Silhouette Score/k_1to10.png} }}%
 	
 	\caption{Comparison of clustering scores for K-medoids-clustering on Diabetes dataset}%
+	\label{fig:kmedoids_diabetes}
 \end{figure}
 
 \begin{figure}[H]
@@ -158,6 +170,7 @@ To estimate the number of meaningful clusters (clusterings with highest index sc
 	\subfloat[Silhouette Score ]{{\includegraphics[width=1\textwidth]{../plots/housevotes/kmedoids/Silhouette Score/k_1to10.png} }}%
 	
 	\caption{Comparison of clustering scores for K-medoids-clustering on Housevotes dataset}%
+	\label{fig:kmedoids_housevotes}
 \end{figure}
 
 
@@ -165,7 +178,8 @@ To estimate the number of meaningful clusters (clusterings with highest index sc
 
 \subsection{Comparison for given k value}
 \marginnote{\textcolor{blue}{Jonas Elpelt}}
-For each dataset we independently compared clustering scores of different algorithms for multiple distances. For the algorithms that require a predefined number of clusters we set the value k to be the number of different classes in the dataset. For the diabetes dataset, which does not have categorical labels we have chosen k to be equal to the k, that gives the highest silhouette score. \\
+For each dataset we independently compared clustering scores of different algorithms for multiple distances. For the algorithms that require a predefined number of clusters we set the value k to be the number of different classes in the dataset. For the diabetes dataset, which does not have categorical labels we have chosen k to be equal to the k value, that gives the highest silhouette score. \\
+For the silhouette score the mean value and a standard deviation for the score evaluated with all four distance measures is shown. 
 
 \begin{figure}[H]
 	\centering
@@ -180,6 +194,7 @@ For each dataset we independently compared clustering scores of different algori
 	\subfloat[Silhouette Score ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/combined/Silhouette Score/algdist_for_given_k.png} }}%
 	
 	\caption{Comparison of clustering scores for Iris dataset (given k=3)}%
+	\label{fig:comparison_iris}
 \end{figure}
 
 \begin{figure}[H]
@@ -195,6 +210,7 @@ For each dataset we independently compared clustering scores of different algori
 	\subfloat[Silhouette Score ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/combined/Silhouette Score/algdist_for_given_k.png} }}%
 	
 	\caption{Comparison of clustering scores for Wine dataset (given k=3)}%
+	\label{fig:comparison_wine}
 \end{figure}
 
 \begin{figure}[H]
@@ -202,6 +218,7 @@ For each dataset we independently compared clustering scores of different algori
 	\subfloat[Silhouette Score ]{{\includegraphics[width=0.8\textwidth]{../plots/diabetes/combined/Silhouette Score/algdist_for_given_k.png} }}%
 	
 	\caption{Comparison of clustering scores for Diabetes dataset (given k=2)}%
+	\label{fig:comparison_diabetes}
 \end{figure}
 
 \begin{figure}[H]
@@ -217,5 +234,6 @@ For each dataset we independently compared clustering scores of different algori
 	\subfloat[Silhouette Score ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/combined/Silhouette Score/algdist_for_given_k.png} }}%
 	
 	\caption{Comparison of clustering scores for Housevotes dataset (given k=2)}%
+	\label{fig:comparison_housevotes}
 \end{figure}
 
