@@ -85,7 +85,7 @@ def create_cluster(cluster_algo, cluster_dist, dataset, seed):
 cluster = create_cluster(cluster_algo, cluster_dist, dataset, seed)
 
 @st.cache()
-def clustering(cluster, params):
+def clustering(cluster, params, cluster_algo):
     """
     calculates clustering results. uses the streamlit caching decorator
     @param cluster cluster algorithm object
@@ -97,7 +97,10 @@ def clustering(cluster, params):
         print(f"loaded {dataset}, {cluster_algo}, {cluster_dist}, {params}")
     
     else:
-        clusters, centers = cluster.cluster(epsilon, minpts)
+        if cluster_algo == 'DBSCAN':
+            clusters, centers = cluster.cluster(epsilon, minpts)
+        else:
+            clusters, centers = cluster.cluster(k_value)
         
         if seeded:
             resulthandler.save_set(dataset, cluster_algo, cluster_dist, clusters, centers, **params)
@@ -109,7 +112,7 @@ def clustering(cluster, params):
 
     return clusters, centers, clustered_data
 
-clusters, centers, clustered_data = clustering(cluster, params)
+clusters, centers, clustered_data = clustering(cluster, params, cluster_algo)
 
 st.success('Great choice! Here are the results!!!!')
 
