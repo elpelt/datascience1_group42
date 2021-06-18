@@ -238,6 +238,7 @@ def plotting():
                 xpm.append(m["xp"])
                 ypm.append(m["yp"])
                 c.append(i+1)
+
             
             acenters = pd.DataFrame({"xt":xtm, "yt":ytm, "xp":xpm, "yp":ypm, "c":c})
 

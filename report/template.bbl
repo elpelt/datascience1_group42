@@ -194,6 +194,14 @@ Nguyen~Xuan Vinh, Julien Epps, and James Bailey.
   properties, normalization and correction for chance.
 \newblock {\em Journal of Machine Learning Research}, 11:2837--2854, 2010.
 
+\bibitem{sil_score}
+{Abhishek Mishra}.
+\newblock Understanding silhouette scoring.
+\newblock
+  \url{https://datascience.foundation/datatalk/understanding-silhouette-scoring},
+  2020.
+\newblock Accessed: 16th June 2021.
+
 \bibitem{nofreelunch}
 David Wolpert.
 \newblock The lack of a priori distinctions between learning algorithms.

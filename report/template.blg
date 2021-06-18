@@ -6,48 +6,47 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: unsrt.bst
 Database file #1: bib.bib
 Warning--I didn't find a database entry for "int_ext"
-Warning--I didn't find a database entry for "sil_score"
 Warning--can't use both author and editor fields in Craw2010
 Warning--empty booktitle in inproceedings
-You've used 39 entries,
+You've used 40 entries,
             1791 wiz_defined-function locations,
-            661 strings with 9405 characters,
-and the built_in function-call counts, 8835 in all, are:
-= -- 713
-> -- 481
+            665 strings with 9556 characters,
+and the built_in function-call counts, 8973 in all, are:
+= -- 726
+> -- 485
 < -- 8
-+ -- 179
-- -- 140
-* -- 575
-:= -- 1374
-add.period$ -- 109
-call.type$ -- 39
-change.case$ -- 34
++ -- 181
+- -- 141
+* -- 576
+:= -- 1396
+add.period$ -- 113
+call.type$ -- 40
+change.case$ -- 35
 chr.to.int$ -- 0
-cite$ -- 41
-duplicate$ -- 394
-empty$ -- 865
-format.name$ -- 140
-if$ -- 1998
+cite$ -- 42
+duplicate$ -- 399
+empty$ -- 883
+format.name$ -- 141
+if$ -- 2031
 int.to.chr$ -- 0
-int.to.str$ -- 39
+int.to.str$ -- 40
 missing$ -- 33
-newline$ -- 187
-num.names$ -- 36
-pop$ -- 159
+newline$ -- 193
+num.names$ -- 37
+pop$ -- 165
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 226
+skip$ -- 228
 stack$ -- 0
 substring$ -- 431
-swap$ -- 115
+swap$ -- 116
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 67
-width$ -- 41
-write$ -- 400
-(There were 4 warnings)
+while$ -- 68
+width$ -- 42
+write$ -- 412
+(There were 3 warnings)
