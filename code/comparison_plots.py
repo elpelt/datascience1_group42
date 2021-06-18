@@ -27,7 +27,7 @@ num_of_classes = [3,3,2,2]
 
 seed = 42
 
-results = Results("./results")
+results = Results("./code/results")
 
 for isx,s in enumerate(datasets):
     print(f'start {s}')

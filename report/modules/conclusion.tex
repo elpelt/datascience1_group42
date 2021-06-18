@@ -1,8 +1,14 @@
-A variety of additional algorithms, distance metrics, parameter settings and cluster evaluation measures could be considered.
 
-We did not found a best clustering algorithm neither a superior distance measure, which would give the best results on every dataset. This problem is widely known as the "No Free Lunch Theorem" \cite{nofreelunch}. As specific requierements may differ for diverse use cases multiple algorithms and parameters should be explored and compared according to individual needs. 
+For Wine and Housevotes datasets we found that a clustering with the Chebyshev distance produces clusterings with consideribly low scores (for all evaluated indices). 
+For Iris and Wine datasets ARI scores for the used \Gls{glos:K-Algorithms} have a peak for k=3 (\autoref{fig:comparison_iris}, \autoref{fig:comparison_wine}), which corresponds to the true number of labels in these datasets.  
+By comparing different clustering algorithms for the Wine dataset \autoref{fig:comparison_wine} it can be said that the K-Medians is more unstable for this specific dataset than K-means and K-medoids as small peturbations of k can lead to remarkable differences in the resulting clustering scores. 
 
-\subsection{Wine Dataset}
-labeled data $\rightarrow$ external validation.
-k=3, because of three examined types of wine
-dbscan unfit, because of distance distribution
+
+For the Iris dataset a clustering calculated by a K-algorithm (with k=3, \autoref{fig:comparison_iris})  with the Manhattan distance gives the highest score values for all evaluated external scores (and can therefore be considered to match the true labels in the most accurate way). K-Medians and K-Medoids gives slightly higher scores than K-Means. The results are very similar and differ only in a few differently assigned data points. \\
+Using the Chebyshev distance for the Wine dataset results in clusterings with lowest scores, whereas K-Means with Euclidean distance and K-Medians with Manhattan distance perform relatively well for this dataset (\autoref{fig:comparison_wine}).  
+For the Diabetes dataset comparing the Silhouette Score for k=2 (\autoref{fig:comparison_diabetes}) K-Medians with Manhattan distance performs the worst, while K-Means with Euclidean, Manhattan or Cosine distance and K-Medians or K-Medoids with Cosine distance gives the highest scoring results. 
+For the Housevotes dataset (\autoref{fig:comparison_housevotes}) the Chebyshev distance performs the worst. The highest external scores for k=2 can be achieved with K-Means using the Euclidean or Manhattan distance. \\
+
+Our study is restricted to a small set of algorithms and distance measures and therefore provides only a limited overview. A variety of additional algorithms, distance metrics, parameter settings and cluster evaluation measures could be considered to get a more exhaustive in-depth analysis. By including more datasets a more detailed comparison of the algorithms and distance measures and their behaviour on differently distributed data might be possible. \\
+
+Finally we did not found a best clustering algorithm neither a superior distance measure, which would give the best results on every dataset. This general problem in the field of Data Science is widely known as the "No Free Lunch Theorem" \cite{nofreelunch}. As specific requierements may differ for diverse use cases multiple algorithms and parameters should be explored and compared according to individual needs. 

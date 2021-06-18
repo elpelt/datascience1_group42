@@ -1,4 +1,5 @@
-
-This dataset contains the chemical analysis results of Italian wines from 3 different cultivators. It is also taken from the UCI Machine Learning Repository \cite{Dua2019}. 
-The dataset consists of 178 instances, each of them having 13 numeric attributes according to different measurements taken for different constitutuents (alcohol, malic acid, ash, alcalinity of ash, magnesium, total phenols, flavanoids, nonflavanoid phenols, proanthocyanins, color intensity, hue, OD280/OD315 of diluted wines, proline). Each instance belongs to either one of three classes containing 59, 71 and 48 data points. 
-It was created by R. A. Fisher in July 1988 \cite{scikitlearn}. 
+\marginnote{\textcolor{blue}{Jonas Elpelt}}
+This dataset contains the chemical analysis results of Italian wines from 3 different cultivators. It is taken from the UCI Machine Learning Repository \cite{Dua2019}. 
+The dataset consists of 178 data points, each of them having 13 numeric attributes according to different measurements taken for different constitutuents (alcohol, malic acid, ash, alcalinity of ash, magnesium, total phenols, flavanoids, nonflavanoid phenols, proanthocyanins, color intensity, hue, OD280/OD315 of diluted wines, proline). Each instance belongs to either one of three classes containing 59, 71 and 48 data points. 
+It was created by R. A. Fisher in July 1988 \cite{scikitlearn}.\\ 
+As it is recommended to standardise the data \cite{Dua2019}, we used a z-Scoring method (StandardScaler in sklearn \cite{scikitlearn}) to substract the attribute mean value and divide by the standard deviation per feature. 

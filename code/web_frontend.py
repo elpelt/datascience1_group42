@@ -88,7 +88,7 @@ datasetinformation = st.beta_expander("dataset information")
 datasetinformation.write(f"This dataset has {len(cluster.datadf.columns)} attributes and {len(cluster.datadf)} points")
 
 @st.cache()
-def clustering(cluster, params):
+def clustering(cluster, params, cluster_algo):
     """
     calculates clustering results. uses the streamlit caching decorator
     @param cluster cluster algorithm object
@@ -112,7 +112,7 @@ def clustering(cluster, params):
 
     return clusters, centers, clustered_data
 
-clusters, centers, clustered_data = clustering(cluster, params)
+clusters, centers, clustered_data = clustering(cluster, params, cluster_algo)
 
 st.success('Great choice! Here are the results!!!!')
 
@@ -254,7 +254,7 @@ if add_result:
             labels = cluster.labels.tolist()
             predicted = clustered_data.tolist()
             precalc = []
-            index_eval = ["ARI", "NMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"]
+            index_eval = ["ARI", "AMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"]
             for i in range(0,4):
                 I1 = Indices(predicted, labels)
                 score = I1.index_external(index_eval[i])
@@ -268,18 +268,18 @@ if not session_state.indices_data.empty:
 else:
     st.write("Cluster-table is empty!")
 
-index_eval = st.selectbox('Choose an adorable index',["ARI", "NMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"])
+index_eval = st.selectbox('Choose an adorable index',["ARI", "AMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"])
 
 datasets = []
 # iterate over cluster results and calculate score with chosen index
 results = [[1, "maximum reference value"]]
 if not session_state.indices_data.empty:
     df = session_state.indices_data
-    if index_eval in ["ARI", "NMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"]:
+    if index_eval in ["ARI", "AMI", "Completeness Score", "Homogeneity Score", "Silhouette Score"]:
         for i in range(0, len(df.columns)):
             if index_eval == "ARI":
                 results.append([df.iloc[:,i].values[0], df.columns[i]])
-            elif index_eval == "NMI":
+            elif index_eval == "AMI":
                 results.append([df.iloc[:, i].values[1], df.columns[i]])
             elif index_eval == "Completeness Score":
                 results.append([df.iloc[:,i].values[2], df.columns[i]])
@@ -329,35 +329,31 @@ for i in range(0, len(results)):
 if len(results) <= 1:
     pass
 
-# if length of results smaller than 3, barplot instead of radar chart
-elif len(results) <= 2:
-    fig, ax = plt.subplots()
-    labels, ys = list(desc), list(stats)
-    xs = np.arange(len(labels))
-    width = 0.5
-    ax.bar(xs[0], ys[0], width, align='center', color='red')
-    ax.bar(xs[1:], ys[1:], width, align='center')
-    ax.set_xticks(xs)
-    ax.set_xticklabels(labels)
-    ax.set_yticks(ys)
-    st.pyplot(fig)
-
-#if length of results higher than 2 radar chart
+# Altair Plots for added cluster results
 else:
-    # define angles
-    angles=np.linspace(0, 2*np.pi, len(desc), endpoint=False)
-    stats=np.concatenate((stats,[stats[0]]))
-    angles=np.concatenate((angles,[angles[0]]))
+    df_for = pd.DataFrame(results, columns=["Score","Data"])
+    df_for["Data"] = desc_list
+    data_select = alt.selection_multi(fields=["Data"], name="Datapoint")
 
-    # print radar plot
-    fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-    ax.plot(angles, stats, 'o-', linewidth=2)
-    ax.plot(angles[0], stats[0], 'o-', linewidth=2, color='red')
-    ax.fill(angles, stats, alpha=0.25)
-    ax.set_thetagrids((angles * 180 / np.pi)[0:len(results)], desc)
     if len(datasets) == 1:
-        ax.set_title("Index:"+" "+index_eval+","+" "+"Dataset:"+" "+datasets[0])
+        title = "Index:" + " " + index_eval + "," + " " + "Dataset:" + " " + datasets[0]
     else:
-        ax.set_title("Index:" + " " + index_eval)
-    ax.grid(True)
-    st.pyplot(fig)
+        title = "Index:" + " " + index_eval
+    base = alt.Chart(
+        df_for, width=(len(results)*120), height=500).mark_bar().configure(
+        lineBreak = ","
+    ).properties(
+        title = title
+    ).encode(
+        x = alt.X("Data", axis=alt.Axis(labelAngle=0)),
+        y = alt.Y("Score:Q"),
+        tooltip = ("Data", "Score"),
+        opacity=alt.condition(data_select, alt.value(1), alt.value(0.0)),
+        color=alt.Color("Data", legend=None)
+    ).add_selection(
+        data_select
+    ).configure_view(
+        strokeOpacity=0
+    ).interactive()
+
+    st.altair_chart(base)
