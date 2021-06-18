@@ -135,10 +135,6 @@ col2.markdown("#")
 col2.write("PCA is a linear dimension reduction. The data will be projected on the first 2 principal components, "
            "which capture the most variance in the data. ")
 
-if cluster_algo == 'kmedoids' and k_value>1:
-    marking_centroids = np.ones(cluster.data.shape[0])
-    marking_centroids[centers] = 25
-
 # actual projecting and plot generating
 col1, col2 = st.beta_columns(2)
 
@@ -157,6 +153,10 @@ def plotting():
     projected_data_pca = data_pca.fit_transform(cluster.data)
 
     if not seaplots:
+        if cluster_algo == 'kmedoids':
+            marking_centroids = np.ones(cluster.data.shape[0])
+            marking_centroids[centers] = 25
+
         # seaborn color palette
         if cluster_algo == "DBSCAN":
             color_palette = ['black'] + sns.color_palette("husl", len(set(clustered_data))-1)
@@ -187,19 +187,60 @@ def plotting():
         dfclusterdata["c"] = clustered_data
         dfclusterdata["i"] = [i for i in range(len(clustered_data))]
 
+        
         # plot building
         cluster_label = alt.Tooltip("c", title="Cluster ID")
         point_label = alt.Tooltip("i", title="Point ID")
         altcolor=alt.Color("c", legend=None, scale=alt.Scale(domain=[0, 1 if max(clustered_data) == 0 else max(clustered_data)], scheme="turbo"))
 
-        xaxis = alt.X("xt", axis=alt.Axis(title=None))
-        yaxis = alt.Y("yt", axis=alt.Axis(title=None))
-        tsnealt = alt.Chart(dfclusterdata).mark_circle().encode(x=xaxis, y=yaxis, tooltip=[cluster_label, point_label], color=altcolor).interactive()
+        xtaxis = alt.X("xt", axis=alt.Axis(title=None))
+        ytaxis = alt.Y("yt", axis=alt.Axis(title=None))
+        tsnealt = alt.Chart(dfclusterdata).mark_circle().encode(x=xtaxis, y=ytaxis, tooltip=[cluster_label, point_label], color=altcolor).interactive()
 
-        xaxis = alt.X("xp", axis=alt.Axis(title=f"PCAX {round(data_pca.explained_variance_ratio_[0]*100, 2)}"))
-        yaxis = alt.Y("yp", axis=alt.Axis(title=f"PCAY {round(data_pca.explained_variance_ratio_[1]*100, 2)}"))
-        pcaalt = alt.Chart(dfclusterdata).mark_circle().encode(x=xaxis, y=yaxis, tooltip=[cluster_label, point_label], color=altcolor).interactive()
+        xpaxis = alt.X("xp", axis=alt.Axis(title=f"PCAX {round(data_pca.explained_variance_ratio_[0]*100, 2)}"))
+        ypaxis = alt.Y("yp", axis=alt.Axis(title=f"PCAY {round(data_pca.explained_variance_ratio_[1]*100, 2)}"))
+        pcaalt = alt.Chart(dfclusterdata).mark_circle().encode(x=xpaxis, y=ypaxis, tooltip=[cluster_label, point_label], color=altcolor).interactive()
+        
+        # drawing medoids
+        if cluster_algo == 'kmedoids':
+            medoids = pd.DataFrame()
+            medoids["xt"] = [projected_data_tsne[i][0] for i in centers]
+            medoids["yt"] = [projected_data_tsne[i][1] for i in centers]
+            medoids["xp"] = [projected_data_pca[i][0] for i in centers]
+            medoids["yp"] = [projected_data_pca[i][1] for i in centers]
+            medoids["c"] = [clustered_data[i] for i in centers]
+
+            tsnemed = alt.Chart(medoids).mark_point(shape="diamond", size=alt.Value(250)).encode(x=xtaxis, y=ytaxis, color=altcolor)
+            pcamed = alt.Chart(medoids).mark_point(shape="diamond", size=alt.Value(250)).encode(x=xpaxis, y=ypaxis, color=altcolor)
+            tsnealt += tsnemed
+            pcaalt += pcamed
+
+        # drawing means or medians
+        elif cluster_algo in ["kmeans", "kmedians"]:
             
+            xtm, ytm, xpm, ypm, c = [], [], [], [], []
+
+            for i in range(len(centers)):
+                data = dfclusterdata[dfclusterdata["c"] == i+1]
+                m = None
+                if cluster_algo == "kmeans":
+                    m = data.mean()
+                else:
+                    m = data.median()
+                xtm.append(m["xt"])
+                ytm.append(m["yt"])
+                xpm.append(m["xp"])
+                ypm.append(m["yp"])
+                c.append(i+1)
+            
+            acenters = pd.DataFrame({"xt":xtm, "yt":ytm, "xp":xpm, "yp":ypm, "c":c})
+
+            pcamed = alt.Chart(acenters).mark_point(shape="diamond", size=alt.Value(150)).encode(x=xpaxis, y=ypaxis, color=altcolor)
+            tsnemed = alt.Chart(acenters).mark_point(shape="diamond", size=alt.Value(150)).encode(x=xtaxis, y=ytaxis, color=altcolor)
+
+            tsnealt += tsnemed
+            pcaalt += pcamed
+
         return tsnealt, pcaalt
 
 with st.spinner('Please wait a second. Some colorful plots are generated...'):
@@ -243,7 +284,7 @@ if reset_tmp:
 # add clustering result to CSV with new column and characteristics as header
 if add_result:
 
-    if len(clusterset) == 0:
+    if len(clusterset) == 0 or len(clusterset) == 1:
         st.warning('All datapoints belong to the same cluster. Please choose different parameter settings to get a more useful clustering.')
 
     elif len(clusterset) == len(clustered_data):
