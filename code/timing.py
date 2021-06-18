@@ -17,7 +17,7 @@ dataset_cluster = {"iris": 3, "wine" : 3, "diabetes" : 2, "housevotes" : 2}
 
 timing = {}
 
-n = 1
+n = 10
 
 for c in kalgos:
     for d in distances:
@@ -33,6 +33,7 @@ for c in kalgos:
             
             time = time / n
             timing[f"{c}{d}{s}"] = time
+            print(time)
 
 # dbscan combinations are chosen because they produced the best scores
 dbscan_comb = {"euclideaniris" : {"minpts" : 3, "eps" : 0.4}, "euclideanwine" : {"minpts" : 18, "eps" : 2.4},

@@ -15,6 +15,7 @@
 \usepackage[toc,page]{appendix}
 \usepackage{marginnote}
 \usepackage{xcolor}
+\usepackage{booktabs}
 
 \newglossary[slg]{symbolslist}{syi}{syg}{Symbols}
 
@@ -47,8 +48,11 @@ sort=symbollambda, type=symbolslist
 \newacronym{pca}{PCA}{Principal Component Analysis}
 \newacronym{ari}{ARI}{Adjusted Rand Index}
 \newacronym{ami}{AMI}{Adjusted Mutual Info Score}
-\newacronym{sc}{SC}{silhouette coefficient}
+\newacronym{sc}{SC}{Silhouette coefficient}
 \newacronym{mi}{MI}{Mutual Information}
+\newacronym{dbscan}{dbscan}{Density-Based Spatial Clustering of Applications with Noise}
+\newacronym{minPts}{MinPts}{Minimum number of points to be considered in Eps-neighourhood for DBSCAN}
+
  
 % ... 
  
@@ -59,8 +63,15 @@ name=K-Algorithms,
 description={One of the studied clustering algorithms, that work with a parameter k: K-Means, K-Medians, K-Medoids}
 }
 
-\newglossaryentry{glos:F}{name=File, description={An arbitrary file}}
+\newglossaryentry{glos:onehotencoding}{
+	name=One-Hot-Encoding,
+	description={Encoding method for categorical attribute values where every attribute is represented as a binary vector and each element in the vector represents a category.}
+}
 
+\newglossaryentry{glos:rangequery}{
+	name=RangeQuery,
+	description={Function to find all points in a Eps-Neighbourhood around a given point.}
+}
 % ...
 
 \patchcmd{\subequations}{\def\theequation{\theparentequation\alph{equation}}}%
@@ -132,7 +143,7 @@ All authors confirm that they contributed equally to the project report and were
 Clustering algorithms can be important tools during the analysis of datasets. They divide a dataset into groups of items based on a certain measure of similarity such as the distances between each of the items. 
 In this work, we implemented and compared four different clustering algorithms (K-Means, K-Medoids, K-Median, DBSCAN). For this, we selected four distinct datasets as well as multiple distance measures (Manhattan, Euclidean, Angular cosine, Chebyshev). For efficient comparison of the clustering results we made use of multiple clustering indices. Additionally, we implemented a web frontend which provides the ability to run all clustering algorithms with distance measures, datasets and clustering indices chosen by the user. The results will be visualized afterwards.
 After running all algorithms with each of the datasets respectively and all distance measures where they could be applied, we compared the resulting values of the clustering indices.
-Finally we tried to extimate the best parameter combinations for each dataset.
+Finally we tried to estimate the best parameter combinations for each dataset.
 
 \end{abstract}
 
@@ -233,7 +244,6 @@ Finally we tried to extimate the best parameter combinations for each dataset.
 %print symbols
 %\printglossary[type=symbolslist,style=long]
 
-\printglossary
 
 \newpage
 
@@ -243,7 +253,6 @@ Finally we tried to extimate the best parameter combinations for each dataset.
 \nocite{*}
 
 \begin{appendices}
-	\section{Plots}
 	\input{modules/appendix}
 \end{appendices}
 

@@ -1,4 +1,4 @@
-
+\section{Plots}
 
 \subsection{Comparison of different k values}
 To estimate the number of meaningful clusters (clusterings with highest index scores) in the datasets and test the robustness of different distance measures we compared scorings as a function of k (for K-means, K-medians and K-medoids). The diabetes dataset was only evaluated with an internal index (silhouette score) as it does not have categorical target values, which would not lead to meaningful scores of external indices.  \\
@@ -234,4 +234,77 @@ For the silhouette score the mean value and a standard deviation for the score e
 	\caption{Comparison of clustering scores for Housevotes dataset (given k=2)}%
 	\label{fig:comparison_housevotes}
 \end{figure}
+
+\section{Comparison of runtimes}
+The runtimes were calculated on AMD Ryzen 3600X, 16GB 3200MHz DDR4 RAM. The value k was set to be the number of different classes in the dataset for Iris, Wine and Housevotes dataset. For the diabetes dataset, which does not have categorical labels we have chosen $k=2$ to be equal to the k value, that gives the highest silhouette score. For DBSCAN the parameters were used that give the highest ARI score for Iris, Wine and Housevotes and the highest Silhouette score for Diabetes dataset. \\
+
+\begin{table}[H]
+	\begin{tabular}{lrrrr|r}
+		\toprule
+		{} &  Euclidean &  Manhattan &  Chebyshev &    Cosine &     Total \\
+		\midrule
+		K-Means   &   0.001300 &   0.001143 &   0.001214 &  0.057548 &  0.061206 \\
+		K-Medians &   0.001824 &   0.002235 &   0.005253 &  0.873826 &  0.883138 \\
+		K-Medoids &   0.032768 &   0.026929 &   0.030192 &  0.269327 &  0.359216 \\
+		DBSCAN    &   0.000683 &   0.000736 &   0.000640 &  0.000805 &  0.002864 \\
+		\midrule
+		Total     &   0.036575 &   0.031044 &   0.037299 &  1.201506 &  1.306424 \\
+		\bottomrule
+		
+	\end{tabular}
+	\caption{Runtimes for Iris dataset (in seconds)}
+\end{table}
+
+
+\begin{table}[H]
+	\begin{tabular}{lrrrr|r}
+		\toprule
+		{} &  Euclidean &  Manhattan &  Chebyshev &    Cosine &     Total \\
+		\midrule
+		K-Means   &   0.001686 &   0.001692 &   0.001632 &  0.112143 &  0.117153 \\
+		K-Medians &   0.003722 &   0.004837 &   0.005135 &  0.074670 &  0.088364 \\
+		K-Medoids &   0.112080 &   0.091926 &   0.102531 &  0.462057 &  0.768594 \\
+		DBSCAN    &   0.001123 &   0.001168 &   0.000848 &  0.000895 &  0.004034 \\
+		\midrule
+		Total     &   0.118611 &   0.099622 &   0.110146 &  0.649764 &  0.978144 \\
+		\bottomrule
+		
+	\end{tabular} 
+	\caption{Runtimes for Wine dataset (in seconds)}
+\end{table}
+
+
+\begin{table}[H]
+	\begin{tabular}{lrrrr|r}
+		\toprule
+		{} &  Euclidean &  Manhattan &  Chebyshev &    Cosine &     Total \\
+		\midrule
+		K-Means   &   0.005803 &   0.003188 &   0.003208 &  0.136975 &  0.149174 \\
+		K-Medians &   0.012511 &   0.014224 &   0.014343 &  0.134298 &  0.175376 \\
+		K-Medoids &   0.558538 &   0.455667 &   0.481983 &  2.495598 &  3.991786 \\
+		DBSCAN    &   0.003577 &   0.004333 &   0.003563 &  0.002348 &  0.013822 \\
+		\midrule
+		Total     &   0.580429 &   0.477412 &   0.503097 &  2.769219 &  4.330157 \\
+		\bottomrule
+		
+	\end{tabular}
+	\caption{Runtimes for Diabetes dataset (in seconds)}
+\end{table}
+
+
+\begin{table}[H]
+	\begin{tabular}{lrrrr|r}
+		\toprule
+		{} &  Euclidean &  Manhattan &  Chebyshev &    Cosine &      Total \\
+		\midrule
+		K-Means   &   0.005589 &   0.005560 &   0.008237 &  0.341636 &   0.361021 \\
+		K-Medians &   0.281766 &   0.285803 &   0.011203 &  0.220306 &   0.799078 \\
+		K-Medoids &   2.093371 &   1.815214 &   1.911084 &  6.242655 &  12.062324 \\
+		DBSCAN    &   0.011879 &   0.012103 &   0.006456 &  0.004406 &   0.034844 \\
+		\midrule
+		Total     &   2.392605 &   2.118680 &   1.936980 &  6.809003 &  13.257267 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Runtimes for Housevotes dataset (in seconds)}
+\end{table}
 

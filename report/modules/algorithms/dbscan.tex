@@ -1,4 +1,4 @@
-\marginnote{\textcolor{cyan}{Niklas Conen}}
+
 DBSCAN was developed by Martin Ester, Hans-Peter Kriegel, Jiirg Sander and Xiaowei Xu. All following definitions and descriptions are taken from their original publication \cite{dbscan} or their revisit of DBSCAN \cite{dbscanrevisited} and only apply to this algorithm.\\
 Contrary to the aforementioned centroid-based partitioning algorithms (k-means, k-medoids and k-median) the DBSCAN (\textit{Density Based Spatial Clustering of Applications with Noise}) algorithm uses point densities to determine clusters.\\
 To introduce the definition of the density of a cluster, first the Eps-neighbourhood of a point is defined:\\
@@ -15,7 +15,7 @@ A point p is directly density-reachable from a point q when
     \item $p \in N_{Eps}(q)$
     \item $|N_{Eps}(q)| \geq \text{MinPts}$
 \end{enumerate}
-with MinPts being the minimal number of points that $N_{eps}(q)$ should contain so that q is considered a core point of a cluster.\\
+with \acrshort{minPts} being the minimal number of points that $N_{eps}(q)$ should contain so that q is considered a core point of a cluster.\\
 A point is \textit{density-reachable} if there is a chain of points between $p$ and $q$ so that all neighbouring points in the chain are directly density reachable.\\
 \begin{figure}[H]
     \centering
@@ -45,7 +45,7 @@ A cluster is a non empty subset $C \in D$ so that:
 \end{enumerate}
 \textit{Noise} is easily defined as every point that is not part of a Cluster $C_i$.\\
 \ \\
-Using these definitions DBSCAN can start the clustering process with given values for Eps and MinPts. First all points are marked as not labeled. Starting from an arbitrary point $p$ all points are iterated through in a linear fashion. For each point a \texttt{RangeQuery} function is executed finding all directly density-reachable neighbours of $p$. If less then minPts neighbours are found, $p$ is labeled as noise. Otherwise $p$ is a core point and is labeled as part of the currently explored cluster. If this is the case the neighbourhood of $p$, from now on denoted as S, is expanded.\\
+Using these definitions DBSCAN can start the clustering process with given values for Eps and MinPts. First all points are marked as not labeled. Starting from an arbitrary point $p$ all points are iterated through in a linear fashion. For each point a \texttt{\Gls{glos:rangequery}} function is executed finding all directly density-reachable neighbours of $p$. If less then minPts neighbours are found, $p$ is labeled as noise. Otherwise $p$ is a core point and is labeled as part of the currently explored cluster. If this is the case the neighbourhood of $p$, from now on denoted as S, is expanded.\\
 \ \\
 Unlabled points get checked for the core point condition (which equals a \texttt{RangeQuery} call) and all subsequent found neighbours are also added to S. Points that got labeled as Noise beforehand and are part of S are labeled as part of the cluster.
 When the expansion comes to an end a cluster is yielded, the next unlabeled point is chosen as $p$ and DBSCAN will continue to look for a new cluster.\\
