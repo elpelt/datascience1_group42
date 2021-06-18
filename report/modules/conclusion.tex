@@ -17,3 +17,8 @@ For the Housevotes dataset (\autoref{fig:comparison_housevotes}) the Chebyshev d
 In general, our study is restricted to a small set of algorithms and distance measures. As a result, it can only provide a limited overview. A variety of additional algorithms, distance metrics, parameter settings and cluster evaluation measures could be considered to get a more exhaustive in-depth analysis. By including more datasets a more detailed comparison of the algorithms and distance measures and their behaviour on differently distributed data might be possible. Furthermore, even more clustering indices, particularly internal indices, could give further insights on the clustering quality. \\
 
 Finally, we did not find the best clustering algorithm or the superior distance measure which would give the best results on every dataset. This general problem in the field of Data Science is widely known as the "No Free Lunch Theorem" \cite{nofreelunch}. As specific requierements may differ for diverse use cases multiple algorithms and parameters should be explored and compared according to individual needs. 
+
+- Iris: kmedians (K-Algorithmen gleichgut aber kmedians bessere LZ), cosine distance offentsichtlich besser
+- Wine: kmeans und euklidisch minimal besser als kmedians und manhattan
+- Diabetes: DBSCAN, visuell festgestellt, Silhouette Score problematisch wegen Noise  
+- Housevotes: 
