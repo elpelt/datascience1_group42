@@ -1,3 +1,9 @@
+"""
+@file make_timing_table.py
+script for generating latex tables for timing results
+"""
+
+
 from kmeans import kmeansClustering
 from kmedians import kmediansClustering
 from kmedoids import kmedoidsClustering

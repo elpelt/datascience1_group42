@@ -1,3 +1,8 @@
+"""
+@file comparison_plots.py
+script for generating plots for comparing different parameters
+"""
+
 from indices import Indices
 from results import Results
 from kmeans import kmeansClustering
