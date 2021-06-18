@@ -86,7 +86,13 @@ def create_cluster(cluster_algo, cluster_dist, dataset, seed):
 cluster = create_cluster(cluster_algo, cluster_dist, dataset, seed)
 
 datasetinformation = st.beta_expander("dataset information")
-datasetinformation.write(f"This dataset has {len(cluster.datadf.columns)} attributes and {len(cluster.datadf)} points")
+datasetinformation.write(f"This dataset has a dimension of {len(cluster.datadf.columns)} and {len(cluster.datadf)} samples.")
+if dataset == "diabetes":
+    datasetinformation.write(f"It has no pre-classification. Please use interal cluster validation!")
+else:
+    datasetinformation.write(f"It is classified in {max(cluster.labels)} clusters.")
+datasetinformation.write(f"It contains the following datatypes:")
+datasetinformation.write(pd.DataFrame(cluster.datadf.dtypes).transpose())
 
 @st.cache()
 def clustering(cluster, params, cluster_algo):
