@@ -139,13 +139,13 @@ class Clustering():
             # list comprehension loading whole dataset
             data = [line.strip().split(',') for line in f][skip:]
 
-            labels = np.zeros(len(data))
+            labels = np.ones(len(data))
             
             # label extraction. labels are the first attribute
-            # democrats are 1, republicans 0
+            # democrats are 2, republicans 1
             for i in range(len(data)):
                 if data[i].pop(0) == "democrat":
-                    labels[i] = 1
+                    labels[i] = 2
         
             datadf = pd.DataFrame(data, columns=[f"vote {i+1}" for i in range(len(data[0]))])
             
