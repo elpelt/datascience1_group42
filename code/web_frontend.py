@@ -14,6 +14,7 @@ from sklearn.manifold import TSNE
 from sklearn.decomposition import PCA
 import altair as alt
 import random
+from datetime import datetime
 
 from kmeans import kmeansClustering
 from kmedians import kmediansClustering
@@ -95,13 +96,19 @@ def clustering(cluster, params, cluster_algo):
     @param params dictionary containing parameters needed for the cluster algorithm, either k or minpts and eps
     @returns cluster results, cluster centers, clustered data
     """
+    computetime = 0
+
     if seeded and resulthandler.set_exists(dataset, cluster_algo, cluster_dist, **params):
         clusters, centers = resulthandler.load_set(dataset, cluster_algo, cluster_dist, **params)
         print(f"loaded {dataset}, {cluster_algo}, {cluster_dist}, {params}")
     
     else:
+        before = datetime.now()
         clusters, centers = cluster.cluster(**params)
+        after = datetime.now()
         
+        computetime = (after - before).total_seconds()
+
         if seeded:
             resulthandler.save_set(dataset, cluster_algo, cluster_dist, clusters, centers, **params)
             print(f"saved {dataset}, {cluster_algo}, {cluster_dist}, {params}")
@@ -110,9 +117,9 @@ def clustering(cluster, params, cluster_algo):
     for ic,c in enumerate(clusters):
         clustered_data[c] = ic+1
 
-    return clusters, centers, clustered_data
+    return clusters, centers, clustered_data, computetime
 
-clusters, centers, clustered_data = clustering(cluster, params, cluster_algo)
+clusters, centers, clustered_data, computetime = clustering(cluster, params, cluster_algo)
 
 st.success('Great choice! Here are the results!!!!')
 
@@ -205,6 +212,9 @@ with st.spinner('Please wait a second. Some colorful plots are generated...'):
     else:
         col1.pyplot(fig1)
         col2.pyplot(fig2)
+
+if not seeded:
+    st.write(f"The calculation took {computetime}s")
 
 clusterset = set(clustered_data)
 if cluster_algo == 'DBSCAN':
@@ -356,4 +366,4 @@ else:
         strokeOpacity=0
     ).interactive()
 
-    st.altair_chart(base)
+    st.altair_chart(base, use_container_width=True)
