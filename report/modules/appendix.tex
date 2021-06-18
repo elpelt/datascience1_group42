@@ -236,7 +236,7 @@ For the silhouette score the mean value and a standard deviation for the score e
 \end{figure}
 
 \section{Comparison of runtimes}
-The runtimes were calculated on AMD Ryzen 3600X, 16GB 3200MHz DDR4 RAM.  \\
+The runtimes were calculated on AMD Ryzen 3600X, 16GB 3200MHz DDR4 RAM. The value k was set to be the number of different classes in the dataset for Iris, Wine and Housevotes dataset. For the diabetes dataset, which does not have categorical labels we have chosen $k=2$ to be equal to the k value, that gives the highest silhouette score. For DBSCAN the parameters were used that give the highest ARI score for Iris, Wine and Housevotes and the highest Silhouette score for Diabetes dataset. \\
 
 \begin{table}[H]
 	\begin{tabular}{lrrrr|r}
