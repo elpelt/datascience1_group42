@@ -297,8 +297,8 @@ if not session_state.indices_data.empty:
                 results.append([df.iloc[:, i].values[4], df.columns[i]])
             else:
                 results.append([df.iloc[:, i].values[3], df.columns[i]])
-    for i in range(0, len(results)):
-        st.write(results[i][0], results[i][1])
+    #for i in range(0, len(results)):
+    #    st.write(results[i][0], results[i][1])
     datasets = []
     for i in range(1, len(results)):
         results[i][1] = str(results[i][1]).replace("(", "").replace(")", "").replace("'", "").split(",")
