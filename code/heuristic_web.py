@@ -52,7 +52,7 @@ df = pd.DataFrame(
 nearest = alt.selection(type='single', nearest=True, on='mouseover', fields=['points'], empty='none')
 
 yaxis = alt.Y("dist", axis=alt.Axis(title=f"{k}-dist"))
-line = alt.Chart(df).mark_line(point=True).encode(x="points", y=yaxis).properties(
+line = alt.Chart(df).mark_line().encode(x="points", y=yaxis).properties(
                     title=f"DBSCAN Heuristic k={k}, {cluster_dist} distance")
 
 selectors = alt.Chart(df).mark_point().encode(x='points', opacity=alt.value(0)).add_selection(nearest)

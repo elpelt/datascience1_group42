@@ -17,15 +17,27 @@ A point p is directly density-reachable from a point q when
 \end{enumerate}
 with MinPts being the minimal number of points that $N_{eps}(q)$ should contain so that q is considered a core point of a cluster.\\
 A point is \textit{density-reachable} if there is a chain of points between $p$ and $q$ so that all neighbouring points in the chain are directly density reachable.\\
+\begin{figure}[H]
+    \centering
+    \subfloat[eps-neighbourhood ]{{\includegraphics[height=7em]{./images/eps-neighbourhood}}}
+    \qquad
+    \subfloat[direct density-reachable]{{\includegraphics[height=7em]{./images/direct-density-reachable} }}
+    \caption{visualisations of the definitions for eps-neighbourhood (left) and direct-density-reachable (right)}
+\end{figure}
 \ \\
 To complete the definition of what is considered part of a cluster density-connectivity is defined:\\
 \ \\
 \textbf{Definition 3:} \textit{density-connected}\\
 Two points $p$ and $q$ are considered density-connected if there is a common point $o$ which is density-reachable from $p$ and $q$.\\
 \ \\
+\begin{figure}[H]
+    \subfloat[density-reachable]{{\includegraphics[height=7em]{./images/density-reachable} }}
+    \subfloat[density-connected]{{\includegraphics[height=7em]{./images/density-connected} }}  
+    \caption{visualisations of the definitions for density-reachable (left) and density-connected (right)}
+\end{figure}
 Now a cluster can be described as:\\
 \ \\
-\textbf{Definition 4:} \textit{cluster}\\
+\textbf{Definition 4:} \textit{cluster and noise}\\
 A cluster is a non empty subset $C \in D$ so that:
 \begin{enumerate}
     \item $\forall p, q: p \in C \wedge q \text{ is density reachable from } p \Rightarrow q \in C$
@@ -33,10 +45,22 @@ A cluster is a non empty subset $C \in D$ so that:
 \end{enumerate}
 \textit{Noise} is easily defined as every point that is not part of a Cluster $C_i$.\\
 \ \\
-Using these definitions DBSCAN can begin the clustering process with given values for Eps and MinPts. In the beginning all points are not labeled. Beginning with an arbitrary point $p$ all points are iterated in a linear fashion. For each point a \texttt{RangeQuery} function is executed finding all density-reachable neighbours of $p$. If \texttt{RangeQuery} finds more than MinPts neighbours then $p$ is a core point and is labeled as such. Otherwise $p$ is marked as Noise.\\
-In the next step every point in the Neighbourhood excluding $p$ is expanded. Unlabled Points get checked for the core point condition (which equals a \texttt{RangeQuery} call). Points that got labeled as Noise before are labeled as core points.
-When the expansion comes to an end a cluster is yielded and the next unlabeled point is chosen as $p$.\\
-\\
-Two clusters may be merged if their distance is below Eps. The distance between two clusters $C_1$ and $C_2$ is defined as $||C_1, C_2|| = \min \{ ||q, p|| \ | \ p \in C_1, q \in C_2\}$.\\
+Using these definitions DBSCAN can start the clustering process with given values for Eps and MinPts. First all points are marked as not labeled. Starting from an arbitrary point $p$ all points are iterated through in a linear fashion. For each point a \texttt{RangeQuery} function is executed finding all directly density-reachable neighbours of $p$. If less then minPts neighbours are found, $p$ is labeled as noise. Otherwise $p$ is a core point and is labeled as part of the currently explored cluster. If this is the case the neighbourhood of $p$, from now on denoted as S, is expanded.\\
 \ \\
-The runtime complexity of DBSCAN heavily depends on the runtime of the \texttt{RangeQuery} function and the distance measure. Thus the runtime can exceed $\mathcal{O}(n^2)$ depending on the chosen implementations. A detailed discussion of DBSCANs runtime can be found in \cite{dbscanrevisited}. 
+Unlabled points get checked for the core point condition (which equals a \texttt{RangeQuery} call) and all subsequent found neighbours are also added to S. Points that got labeled as Noise beforehand and are part of S are labeled as part of the cluster.
+When the expansion comes to an end a cluster is yielded, the next unlabeled point is chosen as $p$ and DBSCAN will continue to look for a new cluster.\\
+\ \\
+The biggest advantage of DBSCAN is its capability to find oddly shaped or spatially complex clusters. The aforementioned partitioning algorithms all fail at finding clusters that are not shaped like a sphere or a ellipsoid, if they are spatially entangled. scikit-learn published a great comparision of clustering algorithms on their website where the capabilities of DBSCAN are visualised \footnote{\url{https://scikit-learn.org/stable/auto_examples/cluster/plot_cluster_comparison.html}}. An example of DBSCANs capabilities generated using the python script on the aforementioned site is shown in figure \ref{fig:dbscanadv}.\\
+
+Moreover DBSCAN allows for clustering without knowing the exact number of clusters or a termination criterion. Though finding the best values for minPts and eps can be equally challenging. The heuristic described in section \ref{dbscanheuristic} tries to simplify the estimation of these parameters.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{../plots/dbscan/dbscan_comp}
+    \caption{Comparision of DBSCAN to kmeans on spatially complex clusters}
+    \label{fig:dbscanadv}
+\end{figure}
+
+Lastly DBSCAN will fail at finding multiple clusters if they are spatially close to each other. Because of the nature of the eps-neighbourhood all clusters with points seperated by a distance equal or less less than eps can not be distinguished.
+
+The runtime complexity of DBSCAN heavily depends on the runtime of the \texttt{RangeQuery} function which is executed for every point in the dataset once.
+If \texttt{RangeQuery} is implemented using a linear scan, its complexity will be $\Theta (n \cdot D)$ with $D$ being the time needed for calculating the distance between points. Therefore the runtime complexity of DBSCAN is $\Theta(n^2 \cdot D)$ \cite{dbscanrevisited}.

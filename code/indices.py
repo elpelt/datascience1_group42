@@ -35,7 +35,7 @@ class Indices():
             return ari
 
         elif index == "AMI":
-            nmi = adjusted_mutual_info_score(self.cluster_label, self.cluster_calc)
+            ami = adjusted_mutual_info_score(self.cluster_label, self.cluster_calc)
             return ami
 
         elif index == "Completeness Score":

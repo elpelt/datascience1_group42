@@ -33,8 +33,8 @@ for c in kalgos:
 
 for d in distances:
     for s in datasets:
-        for m in [1]:#range(1, 21):
-            for e in [0.1]:#[round(0.1 + 0.1*i, 2) for i in range(200)]:
+        for m in range(1, 21):
+            for e in [round(0.1 + 0.1*i, 2) for i in range(200)]:
                 if not results.set_exists(s, "DBSCAN", d, minpts=m, eps=e):
                     alg = DBSCANClustering(d, s, seed)
                     alg.load_data()

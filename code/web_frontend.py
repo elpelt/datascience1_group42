@@ -84,6 +84,9 @@ def create_cluster(cluster_algo, cluster_dist, dataset, seed):
 
 cluster = create_cluster(cluster_algo, cluster_dist, dataset, seed)
 
+datasetinformation = st.beta_expander("dataset information")
+datasetinformation.write(f"This dataset has {len(cluster.datadf.columns)} attributes and {len(cluster.datadf)} points")
+
 @st.cache()
 def clustering(cluster, params, cluster_algo):
     """
@@ -97,10 +100,7 @@ def clustering(cluster, params, cluster_algo):
         print(f"loaded {dataset}, {cluster_algo}, {cluster_dist}, {params}")
     
     else:
-        if cluster_algo == 'DBSCAN':
-            clusters, centers = cluster.cluster(epsilon, minpts)
-        else:
-            clusters, centers = cluster.cluster(k_value)
+        clusters, centers = cluster.cluster(**params)
         
         if seeded:
             resulthandler.save_set(dataset, cluster_algo, cluster_dist, clusters, centers, **params)
@@ -146,7 +146,8 @@ def plotting():
     @returns TSNE and PCA projections of clustering results either as seaborn or altair plots
     """
     projected_data_tsne = TSNE(random_state=42, perplexity=perp).fit_transform(cluster.data)
-    projected_data_pca = PCA(random_state=42, n_components=2).fit_transform(cluster.data)
+    data_pca = PCA(random_state=42, n_components=2)
+    projected_data_pca = data_pca.fit_transform(cluster.data)
 
     if not seaplots:
         # seaborn color palette
@@ -188,8 +189,8 @@ def plotting():
         yaxis = alt.Y("yt", axis=alt.Axis(title=None))
         tsnealt = alt.Chart(dfclusterdata).mark_circle().encode(x=xaxis, y=yaxis, tooltip=[cluster_label, point_label], color=altcolor).interactive()
 
-        xaxis = alt.X("xp", axis=alt.Axis(title=None))
-        yaxis = alt.Y("yp", axis=alt.Axis(title=None))
+        xaxis = alt.X("xp", axis=alt.Axis(title=f"PCAX {round(data_pca.explained_variance_ratio_[0]*100, 2)}"))
+        yaxis = alt.Y("yp", axis=alt.Axis(title=f"PCAY {round(data_pca.explained_variance_ratio_[1]*100, 2)}"))
         pcaalt = alt.Chart(dfclusterdata).mark_circle().encode(x=xaxis, y=yaxis, tooltip=[cluster_label, point_label], color=altcolor).interactive()
             
         return tsnealt, pcaalt
@@ -205,9 +206,11 @@ with st.spinner('Please wait a second. Some colorful plots are generated...'):
         col1.pyplot(fig1)
         col2.pyplot(fig2)
 
+clusterset = set(clustered_data)
 if cluster_algo == 'DBSCAN':
     st.write()
-    st.write(f"*Please notice for the DBSCAN clustering algorithm: Data points classified as noise are plotted as black points*. In this clustering {np.count_nonzero(clustered_data == 0)} points are marked as noise")
+    clusterset.discard(0)
+    st.write(f"*Please notice for the DBSCAN clustering algorithm: Data points classified as noise are plotted as black points*. In this clustering {len(clusterset)} clusters were found and {np.count_nonzero(clustered_data == 0)} points are marked as noise")
 
 dataexpander = st.beta_expander("data")
 #cluster.datadf["cluster ID"] = clustered_data
@@ -230,8 +233,11 @@ if reset_tmp:
 # add clustering result to CSV with new column and characteristics as header
 if add_result:
 
-    if len(set(clustered_data)) ==1:
+    if len(clusterset) == 0:
         st.warning('All datapoints belong to the same cluster. Please choose different parameter settings to get a more useful clustering.')
+
+    elif len(clusterset) == len(clustered_data):
+        st.warning('Number of clusters is the same as number of points. Please choose different parameter settings to get a more useful clustering.')
 
     else:
         # epsilon or k, depends on clustering algorithm
@@ -323,35 +329,31 @@ for i in range(0, len(results)):
 if len(results) <= 1:
     pass
 
-# if length of results smaller than 3, barplot instead of radar chart
-elif len(results) <= 2:
-    fig, ax = plt.subplots()
-    labels, ys = list(desc), list(stats)
-    xs = np.arange(len(labels))
-    width = 0.5
-    ax.bar(xs[0], ys[0], width, align='center', color='red')
-    ax.bar(xs[1:], ys[1:], width, align='center')
-    ax.set_xticks(xs)
-    ax.set_xticklabels(labels)
-    ax.set_yticks(ys)
-    st.pyplot(fig)
-
-#if length of results higher than 2 radar chart
+# Altair Plots for added cluster results
 else:
-    # define angles
-    angles=np.linspace(0, 2*np.pi, len(desc), endpoint=False)
-    stats=np.concatenate((stats,[stats[0]]))
-    angles=np.concatenate((angles,[angles[0]]))
+    df_for = pd.DataFrame(results, columns=["Score","Data"])
+    df_for["Data"] = desc_list
+    data_select = alt.selection_multi(fields=["Data"], name="Datapoint")
 
-    # print radar plot
-    fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-    ax.plot(angles, stats, 'o-', linewidth=2)
-    ax.plot(angles[0], stats[0], 'o-', linewidth=2, color='red')
-    ax.fill(angles, stats, alpha=0.25)
-    ax.set_thetagrids((angles * 180 / np.pi)[0:len(results)], desc)
     if len(datasets) == 1:
-        ax.set_title("Index:"+" "+index_eval+","+" "+"Dataset:"+" "+datasets[0])
+        title = "Index:" + " " + index_eval + "," + " " + "Dataset:" + " " + datasets[0]
     else:
-        ax.set_title("Index:" + " " + index_eval)
-    ax.grid(True)
-    st.pyplot(fig)
+        title = "Index:" + " " + index_eval
+    base = alt.Chart(
+        df_for, width=(len(results)*120), height=500).mark_bar().configure(
+        lineBreak = ","
+    ).properties(
+        title = title
+    ).encode(
+        x = alt.X("Data", axis=alt.Axis(labelAngle=0)),
+        y = alt.Y("Score:Q"),
+        tooltip = ("Data", "Score"),
+        opacity=alt.condition(data_select, alt.value(1), alt.value(0.0)),
+        color=alt.Color("Data", legend=None)
+    ).add_selection(
+        data_select
+    ).configure_view(
+        strokeOpacity=0
+    ).interactive()
+
+    st.altair_chart(base)
