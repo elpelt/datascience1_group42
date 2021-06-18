@@ -6,6 +6,11 @@ Jure Leskovec, Anand Rajaraman, and Jeffrey~David Ullman.
 \newblock In {\em Mining of Massive Datasets - THIRD EDITION}, page~97. Infolab
   Stanford EDU, 2020.
 
+\bibitem{Craw2010}
+Susan Craw.
+\newblock {\em Manhattan Distance}, pages 639--639.
+\newblock Springer US, Boston, MA, 2010.
+
 \bibitem{cosdist}
 Cosine distance, cosine similarity, angular cosine distance, angular cosine
   similarity, Jul 2017.
@@ -25,6 +30,17 @@ Dheeru Dua and Casey Graff.
 Ronald~A Fisher.
 \newblock The use of multiple measurements in taxonomic problems.
 \newblock {\em Annals of eugenics}, 7(2):179--188, 1936.
+
+\bibitem{inproceedings}
+Marten Schutten and Marco Wiering.
+\newblock An analysis on better testing than training performances on the iris
+  dataset.
+\newblock 11 2016.
+
+\bibitem{rbase}
+{R Core Team}.
+\newblock {\em R: A Language and Environment for Statistical Computing}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria, 2020.
 
 \bibitem{diabetes}
 Bradley Efron, Trevor Hastie, Iain Johnstone, and Robert Tibshirani.

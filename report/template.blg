@@ -5,44 +5,49 @@ Reallocating 'name_of_file' (item size: 1) to 8 items.
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: unsrt.bst
 Database file #1: bib.bib
-You've used 36 entries,
+Warning--I didn't find a database entry for "int_ext"
+Warning--I didn't find a database entry for "sil_score"
+Warning--can't use both author and editor fields in Craw2010
+Warning--empty booktitle in inproceedings
+You've used 39 entries,
             1791 wiz_defined-function locations,
-            646 strings with 9063 characters,
-and the built_in function-call counts, 8191 in all, are:
-= -- 653
-> -- 465
-< -- 7
-+ -- 172
-- -- 136
-* -- 546
-:= -- 1285
-add.period$ -- 100
-call.type$ -- 36
-change.case$ -- 33
+            661 strings with 9405 characters,
+and the built_in function-call counts, 8835 in all, are:
+= -- 713
+> -- 481
+< -- 8
++ -- 179
+- -- 140
+* -- 575
+:= -- 1374
+add.period$ -- 109
+call.type$ -- 39
+change.case$ -- 34
 chr.to.int$ -- 0
-cite$ -- 36
-duplicate$ -- 356
-empty$ -- 792
-format.name$ -- 136
-if$ -- 1843
+cite$ -- 41
+duplicate$ -- 394
+empty$ -- 865
+format.name$ -- 140
+if$ -- 1998
 int.to.chr$ -- 0
-int.to.str$ -- 36
-missing$ -- 30
-newline$ -- 172
-num.names$ -- 33
-pop$ -- 143
+int.to.str$ -- 39
+missing$ -- 33
+newline$ -- 187
+num.names$ -- 36
+pop$ -- 159
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 206
+skip$ -- 226
 stack$ -- 0
-substring$ -- 399
-swap$ -- 101
-text.length$ -- 7
+substring$ -- 431
+swap$ -- 115
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 61
-width$ -- 38
-write$ -- 368
+warning$ -- 2
+while$ -- 67
+width$ -- 41
+write$ -- 400
+(There were 4 warnings)
