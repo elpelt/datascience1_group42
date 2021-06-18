@@ -4,6 +4,8 @@ This is a group project done for the Lecture "Data Science 1" at the Goethe Univ
 ## Frontend
 The web frontend is accessible [here](https://share.streamlit.io/elpelt/datascience1_group42/main/code/web_frontend.py).
 
+A user manual can be looked up [here](https://elpelt.github.io/datascience1_group42/docs/usermanual.pdf)
+
 ## Documentation
 The doxygen Documentation of the codebase can be accessed [here](https://elpelt.github.io/datascience1_group42/docs/html/index.html).
 
@@ -30,6 +32,7 @@ The project depends on following python libraries:
 - [ ] Web Frontend Doxygen Doku?
 - [ ] Conclusion
 - [ ] Abstract
+- [ ] Informationen zum Datenset
 
 # Nice-To-Haves
 - [ ] Dendrogramm

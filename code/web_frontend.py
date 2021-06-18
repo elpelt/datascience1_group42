@@ -84,6 +84,9 @@ def create_cluster(cluster_algo, cluster_dist, dataset, seed):
 
 cluster = create_cluster(cluster_algo, cluster_dist, dataset, seed)
 
+datasetinformation = st.beta_expander("dataset information")
+datasetinformation.write(f"This dataset has {len(cluster.datadf.columns)} attributes and {len(cluster.datadf)} points")
+
 @st.cache()
 def clustering(cluster, params):
     """
@@ -97,7 +100,7 @@ def clustering(cluster, params):
         print(f"loaded {dataset}, {cluster_algo}, {cluster_dist}, {params}")
     
     else:
-        clusters, centers = cluster.cluster(epsilon, minpts)
+        clusters, centers = cluster.cluster(**params)
         
         if seeded:
             resulthandler.save_set(dataset, cluster_algo, cluster_dist, clusters, centers, **params)
@@ -143,7 +146,8 @@ def plotting():
     @returns TSNE and PCA projections of clustering results either as seaborn or altair plots
     """
     projected_data_tsne = TSNE(random_state=42, perplexity=perp).fit_transform(cluster.data)
-    projected_data_pca = PCA(random_state=42, n_components=2).fit_transform(cluster.data)
+    data_pca = PCA(random_state=42, n_components=2)
+    projected_data_pca = data_pca.fit_transform(cluster.data)
 
     if not seaplots:
         # seaborn color palette
@@ -185,8 +189,8 @@ def plotting():
         yaxis = alt.Y("yt", axis=alt.Axis(title=None))
         tsnealt = alt.Chart(dfclusterdata).mark_circle().encode(x=xaxis, y=yaxis, tooltip=[cluster_label, point_label], color=altcolor).interactive()
 
-        xaxis = alt.X("xp", axis=alt.Axis(title=None))
-        yaxis = alt.Y("yp", axis=alt.Axis(title=None))
+        xaxis = alt.X("xp", axis=alt.Axis(title=f"PCAX {round(data_pca.explained_variance_ratio_[0]*100, 2)}"))
+        yaxis = alt.Y("yp", axis=alt.Axis(title=f"PCAY {round(data_pca.explained_variance_ratio_[1]*100, 2)}"))
         pcaalt = alt.Chart(dfclusterdata).mark_circle().encode(x=xaxis, y=yaxis, tooltip=[cluster_label, point_label], color=altcolor).interactive()
             
         return tsnealt, pcaalt
@@ -204,7 +208,9 @@ with st.spinner('Please wait a second. Some colorful plots are generated...'):
 
 if cluster_algo == 'DBSCAN':
     st.write()
-    st.write(f"*Please notice for the DBSCAN clustering algorithm: Data points classified as noise are plotted as black points*. In this clustering {np.count_nonzero(clustered_data == 0)} points are marked as noise")
+    clusterset = set(clustered_data)
+    clusterset.discard(0)
+    st.write(f"*Please notice for the DBSCAN clustering algorithm: Data points classified as noise are plotted as black points*. In this clustering {len(clusterset)} clusters were found and {np.count_nonzero(clustered_data == 0)} points are marked as noise")
 
 dataexpander = st.beta_expander("data")
 #cluster.datadf["cluster ID"] = clustered_data
@@ -227,8 +233,11 @@ if reset_tmp:
 # add clustering result to CSV with new column and characteristics as header
 if add_result:
 
-    if len(set(clustered_data)) ==1:
+    if len(clusterset) == 0:
         st.warning('All datapoints belong to the same cluster. Please choose different parameter settings to get a more useful clustering.')
+
+    elif len(clusterset) == len(clustered_data):
+        st.warning('Number of clusters is the same as number of points. Please choose different parameter settings to get a more useful clustering.')
 
     else:
         # epsilon or k, depends on clustering algorithm
