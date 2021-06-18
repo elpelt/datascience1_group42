@@ -1,14 +1,19 @@
-To determine the distance between two items the Manhattan distance, also referred to as taxicab distance, may be used. This distance measure assumes a n-dimensional vector space with a fixed cartesian coordinate system. It is defined as following:
+To determine the distance between two items the Manhattan distance, also referred to as taxicab distance, may be used. This distance measure assumes a n-dimensional vector space with a fixed cartesian coordinate system. It is defined as following: \cite{Craw2010}
 $$d(x,y)= ||x-y||_1 = \sum\limits_{i=1}^{n}|x_i - y_i|$$
 where x and y are vectors
 $$x = (x_1, x_2,..., x_n) \text{ and } y = (y_1, y_2,..., y_n)$$
 
 The Manhattan distance is, like the Euclidean distance, part of the $L_p-metrics$ (see 2.2), where the value for $p$ is set to 1.
 Assuming a two dimensional space, the distance between two points is the shortest path between them with the restriction of only being able to move vertically and horizontally.
-Prove of axioms described in section 1:\\
+Prove of axioms described in section \ref{def_DM}:\\
 \begin{enumerate}
 	\item Identity of indiscernibles:\\
 	Let $x=y$, then $|x-y| = 0$ and hence $\sum\limits_{i=1}^{n}|x_i - y_i| = 0$
 	\item Symmetry:\\
 	This axiom is fulfilled since $|x-y| = |y-x|$ for any x and y , which implies that $\sum\limits_{i=1}^{n}|x_i - y_i| = \sum\limits_{i=1}^{n}|y_i - x_i|$.
+	\item Triangle inequality:\\
+	$|x-y| \leq |x-z|+|z-y|$ holds true for any $x,y,z \in \mathbb{R}$
+	This means that for $\sum\limits_{i=1}^{n}|x_i - y_i| = \sum\limits_{i=1}^{n}|x_i - z_i| + \sum\limits_{i=1}^{n}|z_i - y_i|$ the equation $|x_i - y_i| \leq |x_i - z_i| + |z_i - y_i|$ is true for each i which in turn shows that the axiom is fulfilled.
+	\item Non Negativity:\\
+	This condition is trivial since the Manhattan distance is a sum of absolute values and can therefore never be negative.
 \end{enumerate}

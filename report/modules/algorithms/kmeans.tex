@@ -5,7 +5,7 @@ The total number of clusters is predefined and represented as the value for k. A
 	\item Initially, the algorithm picks k points whose positions each represent one cluster centroid
 	\item All points are considered in turn:
 	\begin{itemize}
-		\item Find the nearest centroid/mean of the considered point (Euclidean distance measure)
+		\item Find the nearest centroid/mean of the considered point (Euclidean distance measure at default)
 		\item Assign point to cluster of that centroid
 		\item Adapt position of this centroid
 	\end{itemize}	
@@ -22,4 +22,5 @@ The essential first step of initializing the clusters requires $k$ points that h
 	
 \end{enumerate}
 Another way of determining the cluster centroids is the K++ initializer, described in section 5, which we used in our implementation of the K-means algorithm.\\
-After the K-means algorithm assigned all points, an optional step af reassigning the points with fixed centroids can be conducted. This can be sensible since it is possible that after a point has been assigned to cluster the centroids move so far that the point would now belong to a different cluster.
+After the K-means algorithm assigned all points, an optional step af reassigning the points with fixed centroids can be conducted. This can be sensible since it is possible that after a point has been assigned to cluster the centroids move so far that the point would now belong to a different cluster.\\
+The K-means clustering algorithm has many advantages including its simplicity which makes it easy to implement and its guaranteed convergence meaning it will always find a solution. The linear runtime of this algorithm is another advantage. However, a disadvantage is that the value for k has to be predetermined. This means that the algorithm might have to be run multiple times. Additionally, the starting points of the centroid greaty effect the outcome of the algorithm.
