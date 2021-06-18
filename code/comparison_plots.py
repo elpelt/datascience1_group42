@@ -20,7 +20,7 @@ distances = ["euclidean", "manhattan", "chebyshev", "cosine"]
 
 datasets = ["iris", "wine", "diabetes", "housevotes"]
 
-index_ext_eval = ["ARI", "NMI", "Completeness Score", "Homogeneity Score"]
+index_ext_eval = ["ARI", "AMI", "Completeness Score", "Homogeneity Score"]
 index_int_eval = ["Silhouette Score"]
 
 num_of_classes = [3,3,2,2]

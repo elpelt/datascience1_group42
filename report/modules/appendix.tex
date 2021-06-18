@@ -1,7 +1,6 @@
 
 
 \subsection{Comparison of different k values}
-\marginnote{\textcolor{blue}{Jonas Elpelt}}
 To estimate the number of meaningful clusters (clusterings with highest index scores) in the datasets and test the robustness of different distance measures we compared scorings as a function of k (for K-means, K-medians and K-medoids). The diabetes dataset was only evaluated with an internal index (silhouette score) as it does not have categorical target values, which would not lead to meaningful scores of external indices.  \\
 As the silhouette score can be evaluated with different distance metrics, we have included the four distance measures to be considered independently for each distance measure used for the clustering algorithm. 
 
@@ -9,7 +8,7 @@ As the silhouette score can be evaluated with different distance metrics, we hav
 	\centering
 	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/kmeans/ARI/k_1to10.png} }}%
 	\qquad
-	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/kmeans/NMI/k_1to10.png} }}%
+	\subfloat[AMI ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/kmeans/AMI/k_1to10.png} }}%
 	\qquad
 	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/kmeans/Completeness Score/k_1to10.png} }}%
 	\qquad
@@ -25,7 +24,7 @@ As the silhouette score can be evaluated with different distance metrics, we hav
 	\centering
 	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/kmeans/ARI/k_1to10.png} }}%
 	\qquad
-	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/kmeans/NMI/k_1to10.png} }}%
+	\subfloat[AMI ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/kmeans/AMI/k_1to10.png} }}%
 	\qquad
 	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/kmeans/Completeness Score/k_1to10.png} }}%
 	\qquad
@@ -49,7 +48,7 @@ As the silhouette score can be evaluated with different distance metrics, we hav
 	\centering
 	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/kmeans/ARI/k_1to10.png} }}%
 	\qquad
-	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/kmeans/NMI/k_1to10.png} }}%
+	\subfloat[AMI ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/kmeans/AMI/k_1to10.png} }}%
 	\qquad
 	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/kmeans/Completeness Score/k_1to10.png} }}%
 	\qquad
@@ -65,7 +64,7 @@ As the silhouette score can be evaluated with different distance metrics, we hav
 	\centering
 	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/kmedians/ARI/k_1to10.png} }}%
 	\qquad
-	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/kmedians/NMI/k_1to10.png} }}%
+	\subfloat[AMI ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/kmedians/AMI/k_1to10.png} }}%
 	\qquad
 	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/kmedians/Completeness Score/k_1to10.png} }}%
 	\qquad
@@ -81,7 +80,7 @@ As the silhouette score can be evaluated with different distance metrics, we hav
 	\centering
 	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/kmedians/ARI/k_1to10.png} }}%
 	\qquad
-	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/kmedians/NMI/k_1to10.png} }}%
+	\subfloat[AMI ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/kmedians/AMI/k_1to10.png} }}%
 	\qquad
 	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/kmedians/Completeness Score/k_1to10.png} }}%
 	\qquad
@@ -105,7 +104,7 @@ As the silhouette score can be evaluated with different distance metrics, we hav
 	\centering
 	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/kmedians/ARI/k_1to10.png} }}%
 	\qquad
-	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/kmedians/NMI/k_1to10.png} }}%
+	\subfloat[AMI ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/kmedians/AMI/k_1to10.png} }}%
 	\qquad
 	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/kmedians/Completeness Score/k_1to10.png} }}%
 	\qquad
@@ -121,7 +120,7 @@ As the silhouette score can be evaluated with different distance metrics, we hav
 	\centering
 	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/kmedoids/ARI/k_1to10.png} }}%
 	\qquad
-	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/kmedoids/NMI/k_1to10.png} }}%
+	\subfloat[AMI ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/kmedoids/AMI/k_1to10.png} }}%
 	\qquad
 	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/kmedoids/Completeness Score/k_1to10.png} }}%
 	\qquad
@@ -137,7 +136,7 @@ As the silhouette score can be evaluated with different distance metrics, we hav
 	\centering
 	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/kmedoids/ARI/k_1to10.png} }}%
 	\qquad
-	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/kmedoids/NMI/k_1to10.png} }}%
+	\subfloat[AMI ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/kmedoids/AMI/k_1to10.png} }}%
 	\qquad
 	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/kmedoids/Completeness Score/k_1to10.png} }}%
 	\qquad
@@ -161,7 +160,7 @@ As the silhouette score can be evaluated with different distance metrics, we hav
 	\centering
 	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/kmedoids/ARI/k_1to10.png} }}%
 	\qquad
-	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/kmedoids/NMI/k_1to10.png} }}%
+	\subfloat[AMI ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/kmedoids/AMI/k_1to10.png} }}%
 	\qquad
 	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/kmedoids/Completeness Score/k_1to10.png} }}%
 	\qquad
@@ -177,7 +176,6 @@ As the silhouette score can be evaluated with different distance metrics, we hav
 
 
 \subsection{Comparison for given k value}
-\marginnote{\textcolor{blue}{Jonas Elpelt}}
 For each dataset we independently compared clustering scores of different algorithms for multiple distances. For the algorithms that require a predefined number of clusters we set the value k to be the number of different classes in the dataset. For the diabetes dataset, which does not have categorical labels we have chosen k to be equal to the k value, that gives the highest silhouette score. \\
 For the silhouette score the mean value and a standard deviation for the score evaluated with all four distance measures is shown. 
 
@@ -185,7 +183,7 @@ For the silhouette score the mean value and a standard deviation for the score e
 	\centering
 	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/combined/ARI/algdist_for_given_k.png} }}%
 	\qquad
-	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/combined/NMI/algdist_for_given_k.png} }}%
+	\subfloat[AMI ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/combined/AMI/algdist_for_given_k.png} }}%
 	\qquad
 	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/iris/combined/Completeness Score/algdist_for_given_k.png} }}%
 	\qquad
@@ -201,7 +199,7 @@ For the silhouette score the mean value and a standard deviation for the score e
 	\centering
 	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/combined/ARI/algdist_for_given_k.png} }}%
 	\qquad
-	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/combined/NMI/algdist_for_given_k.png} }}%
+	\subfloat[AMI ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/combined/AMI/algdist_for_given_k.png} }}%
 	\qquad
 	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/wine/combined/Completeness Score/algdist_for_given_k.png} }}%
 	\qquad
@@ -225,7 +223,7 @@ For the silhouette score the mean value and a standard deviation for the score e
 	\centering
 	\subfloat[ARI ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/combined/ARI/algdist_for_given_k.png} }}%
 	\qquad
-	\subfloat[NMI ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/combined/NMI/algdist_for_given_k.png} }}%
+	\subfloat[AMI ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/combined/AMI/algdist_for_given_k.png} }}%
 	\qquad
 	\subfloat[Completeness Score ]{{\includegraphics[width=0.45\textwidth]{../plots/housevotes/combined/Completeness Score/algdist_for_given_k.png} }}%
 	\qquad

@@ -1,0 +1,6 @@
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{K}\relax \glsresetentrylist %
+\glossentry{glos:K-Algorithms}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{33\delimN 34}}}%
+\end{theglossary}\glossarypostamble

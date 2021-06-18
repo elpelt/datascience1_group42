@@ -1,4 +1,6 @@
 
+
+
 For Wine and Housevotes datasets we found that a clustering with the Chebyshev distance produces clusterings with consideribly low scores for all evaluated indices. 
 For Iris and Wine datasets ARI scores for the used \Gls{glos:K-Algorithms} have a peak for k=3 (\autoref{fig:comparison_iris}, \autoref{fig:comparison_wine}), which corresponds to the true number of labels in these datasets.  
 By comparing different clustering algorithms for the Wine dataset \autoref{fig:comparison_wine} we found that the K-median algorithm is more unstable for this specific dataset than K-means and K-medoids as small peturbations of k can lead to remarkable differences in the resulting clustering scores. 
@@ -9,7 +11,6 @@ Using the Chebyshev distance for the Wine dataset results in clusterings with th
 For the Diabetes dataset the K-medians algorithm with k=2 and the Manhattan distance performs the worst considering the Silhouette Score (\autoref{fig:comparison_diabetes}). The K-means algorithm along with the Euclidean, Manhattan or Cosine distance, as well as the results of the K-medians or K-medoids algorithm with Cosine distance, give the highest scoring results. \\
 For the Housevotes dataset (\autoref{fig:comparison_housevotes}) the Chebyshev distance performs the worst. The highest external scores for k=2 can be achieved with K-Means using the Euclidean or Manhattan distance. \\
 
-Considering the difference in clustering indices, we found that for the most part, the external clustering indices are in general agreement among themselves. The Silhouette Score ranges from -1 to 1 making it more difficult to compare to the external scores which range from 0 to 1. However, for the Iris dataset the average values for the Silhouette Score are relatively close to the average scores of its external counterparts \ref{fig:comparison_iris}. In contrast, the difference is much larger in the Wine dataset \ref{fig:comparison_wine}. Here, the average scores computed by the external indices are larger than those for the Iris dataset while the Silhouette Score is lower for all distance measure in the Wine dataset compared with the Iris dataset.\\
 
 In general, our study is restricted to a small set of algorithms and distance measures. As a result, it can only provide a limited overview. A variety of additional algorithms, distance metrics, parameter settings and cluster evaluation measures could be considered to get a more exhaustive in-depth analysis. By including more datasets a more detailed comparison of the algorithms and distance measures and their behaviour on differently distributed data might be possible. Furthermore, even more clustering indices, particularly internal indices, could give further insights on the clustering quality. \\
 
