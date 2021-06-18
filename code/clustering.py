@@ -116,7 +116,6 @@ class Clustering():
             self.data = s["data"]
             self.data = StandardScaler().fit_transform(self.data)
             self.datadf = load_wine(as_frame=True)["data"]
-            self.data = StandardScaler().fit_transform(self.data)
         
         elif self.dataset == "housevotes":
             path = "./datasets/votes/house-votes-84.data"
