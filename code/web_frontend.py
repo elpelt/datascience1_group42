@@ -206,9 +206,9 @@ with st.spinner('Please wait a second. Some colorful plots are generated...'):
         col1.pyplot(fig1)
         col2.pyplot(fig2)
 
+clusterset = set(clustered_data)
 if cluster_algo == 'DBSCAN':
     st.write()
-    clusterset = set(clustered_data)
     clusterset.discard(0)
     st.write(f"*Please notice for the DBSCAN clustering algorithm: Data points classified as noise are plotted as black points*. In this clustering {len(clusterset)} clusters were found and {np.count_nonzero(clustered_data == 0)} points are marked as noise")
 
