@@ -5,9 +5,9 @@ The total number of clusters is predefined and represented as the value for k. A
 	\item Initially, the algorithm picks k points whose positions each represent one cluster centroid
 	\item All points are considered in turn:
 	\begin{itemize}
-		\item Find the nearest centroid/mean of the considered point (Euclidean distance measure at default)
+		\item Find the nearest centroid of the considered point  using the Euclidean distance measure at default (but can be exchanged for a different distance measure)
 		\item Assign point to cluster of that centroid
-		\item Adapt position of this centroid
+		\item Adapt the position of this centroid minimizing the Euclidean distances of the centroid to all datapoints of the cluster.
 	\end{itemize}	
 	
 	\item (optional) fix all centroids and reassign all points with the inclusion of the initial k points
@@ -22,5 +22,6 @@ The essential first step of initializing the clusters requires $k$ points that h
 	
 \end{enumerate}
 Another way of determining the cluster centroids is the K++ initializer, described in section 5, which we used in our implementation of the K-means algorithm.\\
-After the K-means algorithm assigned all points, an optional step af reassigning the points with fixed centroids can be conducted. This can be sensible since it is possible that after a point has been assigned to cluster the centroids move so far that the point would now belong to a different cluster.\\
-The K-means clustering algorithm has many advantages including its simplicity which makes it easy to implement and its guaranteed convergence meaning it will always find a solution. The linear runtime of this algorithm is another advantage. However, a disadvantage is that the value for k has to be predetermined. This means that the algorithm might have to be run multiple times. Additionally, the starting points of the centroid greaty effect the outcome of the algorithm.
+After the K-means algorithm assigned all points, an optional step of reassigning the points with fixed centroids can be conducted. This may be sensible since it is possible that after a point has been assigned to a cluster the centroids move so far that the point would now belong to a different cluster.\\
+The average runtime of the K-means clustering algorithm is $O(ntk)$ where t is number of iteration the algorithm needs to converge \cite{scikit-learn-extra}.
+The K-means clustering algorithm has many advantages including its simplicity which makes it easy to implement \cite{santini2016advantages}. However, a disadvantage is that the value for k might be difficult to determine. If a specific amount of cluster is needed however, the predetermination of k is an advantage. A further disadvantage is that the starting points of the centroids greatly effect the outcome of the algorithm. This means that the algorithm might have to be run multiple times.

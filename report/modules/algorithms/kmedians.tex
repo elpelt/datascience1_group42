@@ -1,4 +1,4 @@
-The K-Medians cluster algorithm is closely related to the K-Means algorithm, but is more robust to outliers because it uses the median as statistics in order to determine the center of each cluster. Its main approach is to cluster data by minimizing the absolute deviations, corresponding to the Manhattan distance, between each point and its closest cluster center, i.e., creating $k$ disjoint cluster by minimizing the following function. \cite{kmed}
+The K-medians cluster algorithm is closely related to the K-means algorithm, but is more robust to outliers because it uses the median as statistics in order to determine the center of each cluster. Its main approach is to cluster data by minimizing the absolute deviations, corresponding to the Manhattan distance, between each point and its closest cluster center, i.e., creating $k$ disjoint cluster by minimizing the following function. \cite{kmed}
 \begin{align}
     Q(\{\pi_j\}^K_{j=1}) = \sum_{j=1}^{K}\sum_{x \in \pi_j}||x-c_j||_1
 \end{align}
@@ -9,7 +9,8 @@ The geometric median is used for the minimization.
 At the start of the algorithm, k cluster centers must be initialized. There are many different approaches to perform this task, such as Random Initialization, Density Analysis, Single Dimension Subsets, and many more. In this work, the random approach was used because many of the other theories, while theoretically promising, are inferior or nearly equivalent in performance to the results produced by random initialization. \cite{kmed} Achieving global optimization in k-medians is known to be NP-complete \cite{kmed_time}.\\ 
 The algorithm works as following:\cite{algo_kmed}
 \begin{enumerate}
-    \item Assign each dataset to a cluster, thus its nearest cluster center using the Manhattan distance as default.
+    \item Assign each datapoint to a cluster, thus its nearest cluster center using the Manhattan distance as default (it can be substituted for a different distance measure) 
     \item Shift the cluster centers to the position of the vector whose elements are equal to the median value of each dimension of all instances in a cluster.
     \item There is no guarantee to get the perfect cluster because the starting cluster centers were initialized randomly. There is the approach of reinitializing the algorithm many times and securing the best cluster center of all iterations.
 \end{enumerate}
+The runtime of the K-median algorithm is, similarly to the K-means algorithm, $O(ntk)$. Due to the algorithms similarity to the K-means algorithm, the advantages and diadvantages apply here as well.\\
