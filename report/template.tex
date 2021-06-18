@@ -47,8 +47,11 @@ sort=symbollambda, type=symbolslist
 \newacronym{pca}{PCA}{Principal Component Analysis}
 \newacronym{ari}{ARI}{Adjusted Rand Index}
 \newacronym{ami}{AMI}{Adjusted Mutual Info Score}
-\newacronym{sc}{SC}{silhouette coefficient}
+\newacronym{sc}{SC}{Silhouette coefficient}
 \newacronym{mi}{MI}{Mutual Information}
+\newacronym{dbscan}{dbscan}{Density-Based Spatial Clustering of Applications with Noise}
+\newacronym{minPts}{MinPts}{Minimum number of points to be considered in Eps-neighourhood for DBSCAN}
+
  
 % ... 
  
@@ -59,8 +62,15 @@ name=K-Algorithms,
 description={One of the studied clustering algorithms, that work with a parameter k: K-Means, K-Medians, K-Medoids}
 }
 
-\newglossaryentry{glos:F}{name=File, description={An arbitrary file}}
+\newglossaryentry{glos:onehotencoding}{
+	name=One-Hot-Encoding,
+	description={Encoding method for categorical attribute values where every attribute is represented as a binary vector and each element in the vector represents a category.}
+}
 
+\newglossaryentry{glos:rangequery}{
+	name=RangeQuery,
+	description={Function to find all points in a Eps-Neighbourhood around a given point.}
+}
 % ...
 
 \patchcmd{\subequations}{\def\theequation{\theparentequation\alph{equation}}}%
@@ -233,7 +243,6 @@ Finally we tried to extimate the best parameter combinations for each dataset.
 %print symbols
 %\printglossary[type=symbolslist,style=long]
 
-\printglossary
 
 \newpage
 
