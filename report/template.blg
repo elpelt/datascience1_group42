@@ -8,45 +8,45 @@ Database file #1: bib.bib
 Warning--I didn't find a database entry for "int_ext"
 Warning--can't use both author and editor fields in Craw2010
 Warning--empty booktitle in inproceedings
-You've used 40 entries,
+You've used 41 entries,
             1791 wiz_defined-function locations,
-            665 strings with 9556 characters,
-and the built_in function-call counts, 8973 in all, are:
-= -- 726
-> -- 485
+            669 strings with 9784 characters,
+and the built_in function-call counts, 9102 in all, are:
+= -- 737
+> -- 489
 < -- 8
-+ -- 181
-- -- 141
-* -- 576
-:= -- 1396
-add.period$ -- 113
-call.type$ -- 40
-change.case$ -- 35
++ -- 183
+- -- 142
+* -- 579
+:= -- 1420
+add.period$ -- 116
+call.type$ -- 41
+change.case$ -- 36
 chr.to.int$ -- 0
-cite$ -- 42
-duplicate$ -- 399
-empty$ -- 883
-format.name$ -- 141
-if$ -- 2031
+cite$ -- 43
+duplicate$ -- 407
+empty$ -- 897
+format.name$ -- 142
+if$ -- 2059
 int.to.chr$ -- 0
-int.to.str$ -- 40
-missing$ -- 33
-newline$ -- 193
-num.names$ -- 37
-pop$ -- 165
+int.to.str$ -- 41
+missing$ -- 34
+newline$ -- 198
+num.names$ -- 38
+pop$ -- 168
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 228
+skip$ -- 231
 stack$ -- 0
 substring$ -- 431
-swap$ -- 116
+swap$ -- 117
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 68
-width$ -- 42
-write$ -- 412
+while$ -- 69
+width$ -- 43
+write$ -- 422
 (There were 3 warnings)
