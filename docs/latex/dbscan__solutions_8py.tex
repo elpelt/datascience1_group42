@@ -1,0 +1,39 @@
+\hypertarget{dbscan__solutions_8py}{}\doxysection{dbscan\+\_\+solutions.\+py File Reference}
+\label{dbscan__solutions_8py}\index{dbscan\_solutions.py@{dbscan\_solutions.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacedbscan__solutions}{dbscan\+\_\+solutions}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacedbscan__solutions_ae4ad1d439869d07c04f1ce2f32b76698}{dbscan\+\_\+solutions.\+save\+\_\+score}} (key, score, m, e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespacedbscan__solutions_a624ac1616dbc51ec208019aa06467a27}{dbscan\+\_\+solutions.\+distances}} = \mbox{[}\char`\"{}euclidean\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}cosine\char`\"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacedbscan__solutions_ad536cae1bf2bfa7a25102a678844e572}{dbscan\+\_\+solutions.\+datasets}} = \mbox{[}\char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}diabetes\char`\"{}, \char`\"{}housevotes\char`\"{}\mbox{]}
+\item 
+int \mbox{\hyperlink{namespacedbscan__solutions_a913c77f149ca6361034685cab11e3c11}{dbscan\+\_\+solutions.\+seed}} = 42
+\item 
+list \mbox{\hyperlink{namespacedbscan__solutions_ab43400ed6a9265eb51c54371e7706714}{dbscan\+\_\+solutions.\+external}} = \mbox{[}\char`\"{}ARI\char`\"{}, \char`\"{}AMI\char`\"{}, \char`\"{}Completeness Score\char`\"{}, \char`\"{}Homogeneity Score\char`\"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacedbscan__solutions_a1857484a91abbe80045d2c6dec833945}{dbscan\+\_\+solutions.\+internal}} = \mbox{[}\char`\"{}Silhouette Score\char`\"{}\mbox{]}
+\item 
+dictionary \mbox{\hyperlink{namespacedbscan__solutions_a7b7492c0b1b09094b961b38853202129}{dbscan\+\_\+solutions.\+best\+\_\+results}} = \{\}
+\item 
+\mbox{\hyperlink{namespacedbscan__solutions_ae65bad16c9b9da8daff99fa025b74709}{dbscan\+\_\+solutions.\+alg}} = DBSCANClustering(d, s, seed)
+\item 
+\mbox{\hyperlink{namespacedbscan__solutions_a07b56b218bab0180ad9228ec1c753fae}{dbscan\+\_\+solutions.\+clusters}}
+\item 
+\mbox{\hyperlink{namespacedbscan__solutions_a73ff9a7d14c10b827ae049b5ac1e579c}{dbscan\+\_\+solutions.\+centers}}
+\item 
+\mbox{\hyperlink{namespacedbscan__solutions_a063bd81a6baaccdffe018468ef042913}{dbscan\+\_\+solutions.\+clustered\+\_\+data}} = np.\+zeros(len(alg.\+data))
+\item 
+\mbox{\hyperlink{namespacedbscan__solutions_af552776c144fffb969e9e5829f5d8f6b}{dbscan\+\_\+solutions.\+indices}} = Indices(clustered\+\_\+data.\+tolist(), alg.\+labels.\+tolist())
+\item 
+\mbox{\hyperlink{namespacedbscan__solutions_a1dd056cc67a9102a362fd5bc4c54bdbd}{dbscan\+\_\+solutions.\+score}} = indices.\+index\+\_\+external(ind)
+\end{DoxyCompactItemize}

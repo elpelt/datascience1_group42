@@ -95,12 +95,25 @@ $(document).ready(function(){initNavTree('namespaceweb__frontend.html',''); init
 
 <div class="header">
   <div class="summary">
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">web_frontend Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ae652f7fa97965cda748b0bbe768724d0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#ae652f7fa97965cda748b0bbe768724d0">create_cluster</a> (<a class="el" href="namespaceweb__frontend.html#af267f56ddbcb8e56360963e723a4056d">cluster_algo</a>, <a class="el" href="namespaceweb__frontend.html#a6fe2b5ed2108e2ac12d0200ccf0a79d8">cluster_dist</a>, <a class="el" href="namespaceweb__frontend.html#ad784ad8e3f72e82ccc15fffc02ac0563">dataset</a>, <a class="el" href="namespaceweb__frontend.html#a8b1c4acb3b2f6a4a1fa3f1e2c02b07c3">seed</a>)</td></tr>
+<tr class="memdesc:ae652f7fa97965cda748b0bbe768724d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">creates a cluster algorithm instance.  <a href="namespaceweb__frontend.html#ae652f7fa97965cda748b0bbe768724d0">More...</a><br /></td></tr>
+<tr class="separator:ae652f7fa97965cda748b0bbe768724d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c2208b356c8c79a7ce329b7188e4f03"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a1c2208b356c8c79a7ce329b7188e4f03">clustering</a> (<a class="el" href="namespaceweb__frontend.html#ac2765fead6c27bf2ad1500a8eb8b29bb">cluster</a>, <a class="el" href="namespaceweb__frontend.html#ac0e79a7c404805a0e5d5b7af4ddea011">params</a>, <a class="el" href="namespaceweb__frontend.html#af267f56ddbcb8e56360963e723a4056d">cluster_algo</a>)</td></tr>
+<tr class="memdesc:a1c2208b356c8c79a7ce329b7188e4f03"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates clustering results.  <a href="namespaceweb__frontend.html#a1c2208b356c8c79a7ce329b7188e4f03">More...</a><br /></td></tr>
+<tr class="separator:a1c2208b356c8c79a7ce329b7188e4f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75c50a8899ae62c4193a1534326c789e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a75c50a8899ae62c4193a1534326c789e">plotting</a> ()</td></tr>
+<tr class="memdesc:a75c50a8899ae62c4193a1534326c789e"><td class="mdescLeft">&#160;</td><td class="mdescRight">generates the plots for the frontend.  <a href="namespaceweb__frontend.html#a75c50a8899ae62c4193a1534326c789e">More...</a><br /></td></tr>
+<tr class="separator:a75c50a8899ae62c4193a1534326c789e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a539479f85bb69146a4afc4dff726232a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a539479f85bb69146a4afc4dff726232a">page_title</a></td></tr>
@@ -129,78 +142,32 @@ Variables</h2></td></tr>
 <tr class="separator:a6fe2b5ed2108e2ac12d0200ccf0a79d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a318abf6ef1e0e1a7c8af4717fbf9adff"><td class="memItemLeft" align="right" valign="top">dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a318abf6ef1e0e1a7c8af4717fbf9adff">cluster_algo_class</a> = {'kmeans': <a class="el" href="classkmeans_1_1kmeansClustering.html">kmeansClustering</a>, 'kmedians': <a class="el" href="classkmedians_1_1kmediansClustering.html">kmediansClustering</a>, 'kmedoids': <a class="el" href="classkmedoids_1_1kmedoidsClustering.html">kmedoidsClustering</a>, 'DBSCAN': <a class="el" href="classdbscan_1_1DBSCANClustering.html">DBSCANClustering</a>}</td></tr>
 <tr class="separator:a318abf6ef1e0e1a7c8af4717fbf9adff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af267f56ddbcb8e56360963e723a4056d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#af267f56ddbcb8e56360963e723a4056d">cluster_algo</a> = col2.selectbox('Choose a lovely clustering algorithm', list(cluster_algo_class.keys()))</td></tr>
+<tr class="memitem:af267f56ddbcb8e56360963e723a4056d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#af267f56ddbcb8e56360963e723a4056d">cluster_algo</a> = col2.selectbox('Choose a lovely <a class="el" href="namespaceweb__frontend.html#a1c2208b356c8c79a7ce329b7188e4f03">clustering</a> algorithm', list(cluster_algo_class.keys()))</td></tr>
 <tr class="separator:af267f56ddbcb8e56360963e723a4056d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0798d4c5006e331ac35930cbb6dc6b8c"><td class="memItemLeft" align="right" valign="top">dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a0798d4c5006e331ac35930cbb6dc6b8c">cluster</a> = <a class="el" href="namespaceweb__frontend.html#a318abf6ef1e0e1a7c8af4717fbf9adff">cluster_algo_class</a>[<a class="el" href="namespaceweb__frontend.html#af267f56ddbcb8e56360963e723a4056d">cluster_algo</a>](<a class="el" href="namespaceweb__frontend.html#a6fe2b5ed2108e2ac12d0200ccf0a79d8">cluster_dist</a>, <a class="el" href="namespaceweb__frontend.html#ad784ad8e3f72e82ccc15fffc02ac0563">dataset</a>, <a class="el" href="namespaceweb__frontend.html#a8b1c4acb3b2f6a4a1fa3f1e2c02b07c3">seed</a>)</td></tr>
-<tr class="separator:a0798d4c5006e331ac35930cbb6dc6b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0e79a7c404805a0e5d5b7af4ddea011"><td class="memItemLeft" align="right" valign="top">dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#ac0e79a7c404805a0e5d5b7af4ddea011">params</a> = {}</td></tr>
+<tr class="separator:ac0e79a7c404805a0e5d5b7af4ddea011"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa885b9caed1bf35c2b68e9d6a68f6b51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#aa885b9caed1bf35c2b68e9d6a68f6b51">epsilon</a> = col2.slider(&quot;Choose a nice value for epsilon&quot;, min_value=0.1, max_value=20.0, step=0.1)</td></tr>
 <tr class="separator:aa885b9caed1bf35c2b68e9d6a68f6b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cb9f78690b87790c69114058aa0b03f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a5cb9f78690b87790c69114058aa0b03f">minpts</a> = col2.slider(&quot;Choose a minimal number of nearest points&quot;, min_value=1, max_value=20, step=1, value=5)</td></tr>
 <tr class="separator:a5cb9f78690b87790c69114058aa0b03f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05b458056ccbac0ffb6a23ef48a07c5e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a05b458056ccbac0ffb6a23ef48a07c5e">eps</a></td></tr>
-<tr class="separator:a05b458056ccbac0ffb6a23ef48a07c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25c9a63429521ea396fe7cd47affd742"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a25c9a63429521ea396fe7cd47affd742">clusters</a></td></tr>
-<tr class="separator:a25c9a63429521ea396fe7cd47affd742"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a450af770f949f976f0da06a2c33cfe5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a450af770f949f976f0da06a2c33cfe5c">stuff</a></td></tr>
-<tr class="separator:a450af770f949f976f0da06a2c33cfe5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f7156d9924ee0822f4451ea125a3446"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a7f7156d9924ee0822f4451ea125a3446">k_value</a> = col2.slider(&quot;Choose a nice value for <a class="el" href="namespaceweb__frontend.html#a94dd98947f64fc0fff9b548c41639bfa">k</a> (number of <a class="el" href="namespaceweb__frontend.html#a25c9a63429521ea396fe7cd47affd742">clusters</a>)&quot;, min_value=2, max_value=10, step=1, value=3)</td></tr>
+<tr class="memitem:a7f7156d9924ee0822f4451ea125a3446"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a7f7156d9924ee0822f4451ea125a3446">k_value</a> = col2.slider(&quot;Choose a nice value for k (number of clusters)&quot;, min_value=2, max_value=10, step=1, value=3)</td></tr>
 <tr class="separator:a7f7156d9924ee0822f4451ea125a3446"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94dd98947f64fc0fff9b548c41639bfa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a94dd98947f64fc0fff9b548c41639bfa">k</a></td></tr>
-<tr class="separator:a94dd98947f64fc0fff9b548c41639bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a75bc5f52d10650f9c219e78d2cd42a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a8a75bc5f52d10650f9c219e78d2cd42a">clustered_data</a> = np.zeros(len(cluster.data))</td></tr>
-<tr class="separator:a8a75bc5f52d10650f9c219e78d2cd42a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa125eecf731512db07a91067d3b96efe"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#aa125eecf731512db07a91067d3b96efe">color_palette</a> = ['black'] + sns.color_palette(&quot;husl&quot;, len(set(<a class="el" href="namespaceweb__frontend.html#a8a75bc5f52d10650f9c219e78d2cd42a">clustered_data</a>))-1)</td></tr>
-<tr class="separator:aa125eecf731512db07a91067d3b96efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcf6953a3b83eef8228ec7d91ed184fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#abcf6953a3b83eef8228ec7d91ed184fc">weights</a></td></tr>
-<tr class="separator:abcf6953a3b83eef8228ec7d91ed184fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2765fead6c27bf2ad1500a8eb8b29bb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#ac2765fead6c27bf2ad1500a8eb8b29bb">cluster</a> = <a class="el" href="namespaceweb__frontend.html#ae652f7fa97965cda748b0bbe768724d0">create_cluster</a>(<a class="el" href="namespaceweb__frontend.html#af267f56ddbcb8e56360963e723a4056d">cluster_algo</a>, <a class="el" href="namespaceweb__frontend.html#a6fe2b5ed2108e2ac12d0200ccf0a79d8">cluster_dist</a>, <a class="el" href="namespaceweb__frontend.html#ad784ad8e3f72e82ccc15fffc02ac0563">dataset</a>, <a class="el" href="namespaceweb__frontend.html#a8b1c4acb3b2f6a4a1fa3f1e2c02b07c3">seed</a>)</td></tr>
+<tr class="separator:ac2765fead6c27bf2ad1500a8eb8b29bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a2f59ae24a052d482396ebf743eb8cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a5a2f59ae24a052d482396ebf743eb8cf">datasetinformation</a> = st.beta_expander(&quot;dataset information&quot;)</td></tr>
+<tr class="separator:a5a2f59ae24a052d482396ebf743eb8cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae93ba1b476312c7cf104491d77040d3d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#ae93ba1b476312c7cf104491d77040d3d">perp</a> = col1.slider(&quot;Perplexity for t-SNE&quot;, 5, 50, 25)</td></tr>
 <tr class="separator:ae93ba1b476312c7cf104491d77040d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8af5ba16ba60ca4306dbd2f7cc2adda"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#ab8af5ba16ba60ca4306dbd2f7cc2adda">marking_centroids</a> = np.ones(cluster.data.shape[0])</td></tr>
-<tr class="separator:ab8af5ba16ba60ca4306dbd2f7cc2adda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8770d3c28a8081b31dded64b8690d6b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a8770d3c28a8081b31dded64b8690d6b8">cluster_label</a> = alt.Tooltip(&quot;c&quot;, title=&quot;Cluster ID&quot;)</td></tr>
-<tr class="separator:a8770d3c28a8081b31dded64b8690d6b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf49c9659e615dc42e77fc8b87fbbff9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#acf49c9659e615dc42e77fc8b87fbbff9">point_label</a> = alt.Tooltip(&quot;i&quot;, title=&quot;Point ID&quot;)</td></tr>
-<tr class="separator:acf49c9659e615dc42e77fc8b87fbbff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0191bc0cba482c929e000c10dd86801e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a0191bc0cba482c929e000c10dd86801e">dfclusterdata</a> = pd.DataFrame()</td></tr>
 <tr class="separator:a0191bc0cba482c929e000c10dd86801e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6261e4a3c482320b5c9cbbcff5dd7f57"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a6261e4a3c482320b5c9cbbcff5dd7f57">projected_data_tsne</a> = TSNE(random_state=42, perplexity=<a class="el" href="namespaceweb__frontend.html#ae93ba1b476312c7cf104491d77040d3d">perp</a>).fit_transform(cluster.data)</td></tr>
-<tr class="separator:a6261e4a3c482320b5c9cbbcff5dd7f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2c7ca7d972c5e7340cf4c7e867b5d02"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#ab2c7ca7d972c5e7340cf4c7e867b5d02">fig</a></td></tr>
-<tr class="separator:ab2c7ca7d972c5e7340cf4c7e867b5d02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51aa7a6d31bc700ca7e4c4207f86fab3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a51aa7a6d31bc700ca7e4c4207f86fab3">ax</a></td></tr>
-<tr class="separator:a51aa7a6d31bc700ca7e4c4207f86fab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5593f4f72a8fd57bf6706f119d3309b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#ae5593f4f72a8fd57bf6706f119d3309b">x</a></td></tr>
-<tr class="separator:ae5593f4f72a8fd57bf6706f119d3309b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98c16a3a25df247e64ee8e1ef2da037f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a98c16a3a25df247e64ee8e1ef2da037f">y</a></td></tr>
-<tr class="separator:a98c16a3a25df247e64ee8e1ef2da037f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a193e8d4dbf733bf1918f0f09975ed6ce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a193e8d4dbf733bf1918f0f09975ed6ce">hue</a></td></tr>
-<tr class="separator:a193e8d4dbf733bf1918f0f09975ed6ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5270867dae900f6e6044de56725bfc31"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a5270867dae900f6e6044de56725bfc31">palette</a></td></tr>
-<tr class="separator:a5270867dae900f6e6044de56725bfc31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93eab05f4c018e6e65a76d838cff34e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a93eab05f4c018e6e65a76d838cff34e6">legend</a></td></tr>
-<tr class="separator:a93eab05f4c018e6e65a76d838cff34e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c3a05e18097009144e4684f3beee988"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a3c3a05e18097009144e4684f3beee988">False</a></td></tr>
-<tr class="separator:a3c3a05e18097009144e4684f3beee988"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41595dbe670b3fdefd7eb41feb6ca0f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a41595dbe670b3fdefd7eb41feb6ca0f5">style</a></td></tr>
-<tr class="separator:a41595dbe670b3fdefd7eb41feb6ca0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ac918fe92d8f55635253e1106657fe6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a8ac918fe92d8f55635253e1106657fe6">size</a></td></tr>
-<tr class="separator:a8ac918fe92d8f55635253e1106657fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af67892833d2af8e60eb05352c79cbe8d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#af67892833d2af8e60eb05352c79cbe8d">markers</a></td></tr>
-<tr class="separator:af67892833d2af8e60eb05352c79cbe8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cc7db566a02c44210df5d149ea4e6f3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a3cc7db566a02c44210df5d149ea4e6f3">xaxis</a> = alt.X(&quot;xt&quot;, axis=alt.Axis(title=None))</td></tr>
-<tr class="separator:a3cc7db566a02c44210df5d149ea4e6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26326cf837785de956857a6daa4cac89"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a26326cf837785de956857a6daa4cac89">yaxis</a> = alt.Y(&quot;yt&quot;, axis=alt.Axis(title=None))</td></tr>
-<tr class="separator:a26326cf837785de956857a6daa4cac89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5116b8e7725539769cf10cb172e4c37a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a5116b8e7725539769cf10cb172e4c37a">altcolor</a> = alt.Color(&quot;c&quot;, legend=None, scale=alt.Scale(domain=[0, 1 if max(<a class="el" href="namespaceweb__frontend.html#a8a75bc5f52d10650f9c219e78d2cd42a">clustered_data</a>) == 0 else max(<a class="el" href="namespaceweb__frontend.html#a8a75bc5f52d10650f9c219e78d2cd42a">clustered_data</a>)], scheme=&quot;turbo&quot;))</td></tr>
-<tr class="separator:a5116b8e7725539769cf10cb172e4c37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79b7120bced743cd49e139bedf3fae48"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a79b7120bced743cd49e139bedf3fae48">tsnealt</a> = alt.Chart(<a class="el" href="namespaceweb__frontend.html#a0191bc0cba482c929e000c10dd86801e">dfclusterdata</a>).mark_circle().encode(<a class="el" href="namespaceweb__frontend.html#ae5593f4f72a8fd57bf6706f119d3309b">x</a>=<a class="el" href="namespaceweb__frontend.html#a3cc7db566a02c44210df5d149ea4e6f3">xaxis</a>, <a class="el" href="namespaceweb__frontend.html#a98c16a3a25df247e64ee8e1ef2da037f">y</a>=<a class="el" href="namespaceweb__frontend.html#a26326cf837785de956857a6daa4cac89">yaxis</a>, tooltip=[<a class="el" href="namespaceweb__frontend.html#a8770d3c28a8081b31dded64b8690d6b8">cluster_label</a>, <a class="el" href="namespaceweb__frontend.html#acf49c9659e615dc42e77fc8b87fbbff9">point_label</a>], <a class="el" href="namespaceweb__frontend.html#af0ac7cf718145355f2362cb8a51f55bb">color</a>=<a class="el" href="namespaceweb__frontend.html#a5116b8e7725539769cf10cb172e4c37a">altcolor</a>).interactive()</td></tr>
-<tr class="separator:a79b7120bced743cd49e139bedf3fae48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abab8fa2288df0e844e2fbcd968a42a57"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#abab8fa2288df0e844e2fbcd968a42a57">fig1</a></td></tr>
+<tr class="separator:abab8fa2288df0e844e2fbcd968a42a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa1709dbd84064e7e8f851d6841a8572"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#aaa1709dbd84064e7e8f851d6841a8572">fig2</a></td></tr>
+<tr class="separator:aaa1709dbd84064e7e8f851d6841a8572"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d78c0a2b478c196f08136e541782dcf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a4d78c0a2b478c196f08136e541782dcf">use_container_width</a></td></tr>
 <tr class="separator:a4d78c0a2b478c196f08136e541782dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b4bb0b6d4fb023e5deef81fb802b4cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a3b4bb0b6d4fb023e5deef81fb802b4cb">projected_data_pca</a> = PCA(random_state=42, n_components=2).fit_transform(cluster.data)</td></tr>
-<tr class="separator:a3b4bb0b6d4fb023e5deef81fb802b4cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9367db9cae6ac3dd2c6e388b2f1d387"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#ae9367db9cae6ac3dd2c6e388b2f1d387">pcaalt</a> = alt.Chart(<a class="el" href="namespaceweb__frontend.html#a0191bc0cba482c929e000c10dd86801e">dfclusterdata</a>).mark_circle().encode(<a class="el" href="namespaceweb__frontend.html#ae5593f4f72a8fd57bf6706f119d3309b">x</a>=<a class="el" href="namespaceweb__frontend.html#a3cc7db566a02c44210df5d149ea4e6f3">xaxis</a>, <a class="el" href="namespaceweb__frontend.html#a98c16a3a25df247e64ee8e1ef2da037f">y</a>=<a class="el" href="namespaceweb__frontend.html#a26326cf837785de956857a6daa4cac89">yaxis</a>, tooltip=[<a class="el" href="namespaceweb__frontend.html#a8770d3c28a8081b31dded64b8690d6b8">cluster_label</a>, <a class="el" href="namespaceweb__frontend.html#acf49c9659e615dc42e77fc8b87fbbff9">point_label</a>], <a class="el" href="namespaceweb__frontend.html#af0ac7cf718145355f2362cb8a51f55bb">color</a>=<a class="el" href="namespaceweb__frontend.html#a5116b8e7725539769cf10cb172e4c37a">altcolor</a>).interactive()</td></tr>
-<tr class="separator:ae9367db9cae6ac3dd2c6e388b2f1d387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4569608af620ef90ea339e28ab48dcaa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a4569608af620ef90ea339e28ab48dcaa">clusterset</a> = set(clustered_data)</td></tr>
+<tr class="separator:a4569608af620ef90ea339e28ab48dcaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06738bfdebda9497c3c2b2a677f9ddcf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a06738bfdebda9497c3c2b2a677f9ddcf">dataexpander</a> = st.beta_expander(&quot;data&quot;)</td></tr>
 <tr class="separator:a06738bfdebda9497c3c2b2a677f9ddcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c29df4088a1c35eaf8147a235f9ebf9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a1c29df4088a1c35eaf8147a235f9ebf9">add_result</a> = col1.button('Add')</td></tr>
@@ -213,15 +180,15 @@ Variables</h2></td></tr>
 <tr class="separator:a8b39b147bcb9ea75b351224287fb0d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a6ee1b7740be3fdd76313e704c09b8e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a7a6ee1b7740be3fdd76313e704c09b8e">df</a> = session_state.indices_data</td></tr>
 <tr class="separator:a7a6ee1b7740be3fdd76313e704c09b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6cb59f4d8d78e1f93b5bcd2838595ee"><td class="memItemLeft" align="right" valign="top">dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#ad6cb59f4d8d78e1f93b5bcd2838595ee">labels</a> = cluster.labels.tolist()</td></tr>
-<tr class="separator:ad6cb59f4d8d78e1f93b5bcd2838595ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a707461d1835594987d52dbf74714eeb4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a707461d1835594987d52dbf74714eeb4">labels</a> = cluster.labels.tolist()</td></tr>
+<tr class="separator:a707461d1835594987d52dbf74714eeb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf3ac2b14e7665a95f91b3b2a4fe2b3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#aaf3ac2b14e7665a95f91b3b2a4fe2b3a">predicted</a> = clustered_data.tolist()</td></tr>
 <tr class="separator:aaf3ac2b14e7665a95f91b3b2a4fe2b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61d104e008a5ba1f7122da6411bb4db0"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a61d104e008a5ba1f7122da6411bb4db0">precalc</a> = []</td></tr>
 <tr class="separator:a61d104e008a5ba1f7122da6411bb4db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a399e55f26a0ed76172a03e4d18f33fbf"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a399e55f26a0ed76172a03e4d18f33fbf">index_eval</a> = [&quot;ARI&quot;, &quot;NMI&quot;, &quot;Completeness Score&quot;, &quot;Homogeneity Score&quot;, &quot;Silhouette Score&quot;]</td></tr>
+<tr class="memitem:a399e55f26a0ed76172a03e4d18f33fbf"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a399e55f26a0ed76172a03e4d18f33fbf">index_eval</a> = [&quot;ARI&quot;, &quot;AMI&quot;, &quot;Completeness Score&quot;, &quot;Homogeneity Score&quot;, &quot;Silhouette Score&quot;]</td></tr>
 <tr class="separator:a399e55f26a0ed76172a03e4d18f33fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53726d670e54274b72635b663ba69dca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a53726d670e54274b72635b663ba69dca">I1</a> = <a class="el" href="classindices_1_1Indices.html">Indices</a>(<a class="el" href="namespaceweb__frontend.html#aaf3ac2b14e7665a95f91b3b2a4fe2b3a">predicted</a>, <a class="el" href="namespaceweb__frontend.html#ad6cb59f4d8d78e1f93b5bcd2838595ee">labels</a>)</td></tr>
+<tr class="memitem:a53726d670e54274b72635b663ba69dca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a53726d670e54274b72635b663ba69dca">I1</a> = <a class="el" href="classindices_1_1Indices.html">Indices</a>(<a class="el" href="namespaceweb__frontend.html#aaf3ac2b14e7665a95f91b3b2a4fe2b3a">predicted</a>, <a class="el" href="namespaceweb__frontend.html#a707461d1835594987d52dbf74714eeb4">labels</a>)</td></tr>
 <tr class="separator:a53726d670e54274b72635b663ba69dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a893a6447437f3d483fb64e457c26580c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a893a6447437f3d483fb64e457c26580c">score</a> = I1.index_external(<a class="el" href="namespaceweb__frontend.html#a399e55f26a0ed76172a03e4d18f33fbf">index_eval</a>[i])</td></tr>
 <tr class="separator:a893a6447437f3d483fb64e457c26580c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -235,25 +202,132 @@ Variables</h2></td></tr>
 <tr class="separator:ac8d1239dd61f040588df58073da2d06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada89560d6b64d3670edc7d77d4d5b85f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#ada89560d6b64d3670edc7d77d4d5b85f">stats</a> = np.zeros(len(<a class="el" href="namespaceweb__frontend.html#a2926d7785b026ae5beb31c307bf61560">results</a>))</td></tr>
 <tr class="separator:ada89560d6b64d3670edc7d77d4d5b85f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac08f6b50ca9689f1ec62998b27fee863"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#ac08f6b50ca9689f1ec62998b27fee863">ys</a></td></tr>
-<tr class="separator:ac08f6b50ca9689f1ec62998b27fee863"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0838ca5e31a97686f8c9783545b51b1c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a0838ca5e31a97686f8c9783545b51b1c">xs</a> = np.arange(len(<a class="el" href="namespaceweb__frontend.html#ad6cb59f4d8d78e1f93b5bcd2838595ee">labels</a>))</td></tr>
-<tr class="separator:a0838ca5e31a97686f8c9783545b51b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a364f1ad37501b60441618aea22763888"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a364f1ad37501b60441618aea22763888">width</a> = 0.5</td></tr>
-<tr class="separator:a364f1ad37501b60441618aea22763888"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b424f697075e41398c55d80300904c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a1b424f697075e41398c55d80300904c7">align</a></td></tr>
-<tr class="separator:a1b424f697075e41398c55d80300904c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0ac7cf718145355f2362cb8a51f55bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#af0ac7cf718145355f2362cb8a51f55bb">color</a></td></tr>
-<tr class="separator:af0ac7cf718145355f2362cb8a51f55bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a41b97806946bdcd868b1cf6443c6eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a5a41b97806946bdcd868b1cf6443c6eb">angles</a> = np.linspace(0, 2*np.pi, len(<a class="el" href="namespaceweb__frontend.html#ac8d1239dd61f040588df58073da2d06d">desc</a>), endpoint=<a class="el" href="namespaceweb__frontend.html#a3c3a05e18097009144e4684f3beee988">False</a>)</td></tr>
-<tr class="separator:a5a41b97806946bdcd868b1cf6443c6eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbd0171437252f426da0d72460f17de6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#adbd0171437252f426da0d72460f17de6">subplot_kw</a></td></tr>
-<tr class="separator:adbd0171437252f426da0d72460f17de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9aa566eabde22259a97c37e426eb957c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a9aa566eabde22259a97c37e426eb957c">linewidth</a></td></tr>
-<tr class="separator:a9aa566eabde22259a97c37e426eb957c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5593c31da74f3185dbab1dab3ec988a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#ae5593c31da74f3185dbab1dab3ec988a">alpha</a></td></tr>
-<tr class="separator:ae5593c31da74f3185dbab1dab3ec988a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f2e8c0e0dc2c2e618f4449a1aa58e4c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a7f2e8c0e0dc2c2e618f4449a1aa58e4c">df_for</a> = pd.DataFrame(<a class="el" href="namespaceweb__frontend.html#a2926d7785b026ae5beb31c307bf61560">results</a>, columns=[&quot;Score&quot;,&quot;Data&quot;])</td></tr>
+<tr class="separator:a7f2e8c0e0dc2c2e618f4449a1aa58e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a079d64aeec37a7f9de7633d939846f9d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a079d64aeec37a7f9de7633d939846f9d">data_select</a> = alt.selection_multi(fields=[&quot;Data&quot;], name=&quot;Datapoint&quot;)</td></tr>
+<tr class="separator:a079d64aeec37a7f9de7633d939846f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a949d4790ae8b80a70557f1e127f6c8f0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#a949d4790ae8b80a70557f1e127f6c8f0">title</a> = &quot;Index:&quot; + &quot; &quot; + index_eval + &quot;,&quot; + &quot; &quot; + &quot;Dataset:&quot; + &quot; &quot; + datasets[0]</td></tr>
+<tr class="separator:a949d4790ae8b80a70557f1e127f6c8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af21fb823ad45a6a8498c785bd7a86897"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb__frontend.html#af21fb823ad45a6a8498c785bd7a86897">base</a></td></tr>
+<tr class="separator:af21fb823ad45a6a8498c785bd7a86897"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a1c2208b356c8c79a7ce329b7188e4f03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c2208b356c8c79a7ce329b7188e4f03">&#9670;&nbsp;</a></span>clustering()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def web_frontend.clustering </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cluster</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>params</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cluster_algo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>calculates clustering results. </p>
+<p>uses the streamlit caching decorator </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cluster</td><td>cluster algorithm object </td></tr>
+    <tr><td class="paramname">params</td><td>dictionary containing parameters needed for the cluster algorithm, either k or minpts and eps </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>cluster results, cluster centers, clustered data </dd></dl>
+
+</div>
+</div>
+<a id="ae652f7fa97965cda748b0bbe768724d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae652f7fa97965cda748b0bbe768724d0">&#9670;&nbsp;</a></span>create_cluster()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def web_frontend.create_cluster </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cluster_algo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cluster_dist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dataset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>seed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>creates a cluster algorithm instance. </p>
+<p>takes all parameters needed for creating such instance. uses the streamlit caching decorator </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cluster_algo</td><td>string containing name of cluster algorithm used ("kmeans", "kmedians", "kmedoids", "DBSCAN") </td></tr>
+    <tr><td class="paramname">cluster_dist</td><td>string containing the distance measure used ("euclidean", "manhattan", "chebyshev", "cosine") </td></tr>
+    <tr><td class="paramname">dataset</td><td>string containing the datasets name ("iris", "wine", "diabetes", "housevotes") </td></tr>
+    <tr><td class="paramname">seed</td><td>seed for cluster algorithm, None if a random seed should be used </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>cluster results, cluster centers, clustered data </dd></dl>
+
+</div>
+</div>
+<a id="a75c50a8899ae62c4193a1534326c789e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75c50a8899ae62c4193a1534326c789e">&#9670;&nbsp;</a></span>plotting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def web_frontend.plotting </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>generates the plots for the frontend. </p>
+<p>uses the streamlit chacheing decorator </p><dl class="section return"><dt>Returns</dt><dd>TSNE and PCA projections of clustering results either as seaborn or altair plots </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a1c29df4088a1c35eaf8147a235f9ebf9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c29df4088a1c35eaf8147a235f9ebf9">&#9670;&nbsp;</a></span>add_result</h2>
@@ -269,84 +343,44 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a1b424f697075e41398c55d80300904c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b424f697075e41398c55d80300904c7">&#9670;&nbsp;</a></span>align</h2>
+<a id="af21fb823ad45a6a8498c785bd7a86897"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af21fb823ad45a6a8498c785bd7a86897">&#9670;&nbsp;</a></span>base</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">web_frontend.align</td>
+          <td class="memname">web_frontend.base</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;=  alt.Chart(</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;        df_for, width=(len(results)*120), height=500).mark_bar().configure(</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;        lineBreak = <span class="stringliteral">&quot;,&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    ).properties(</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        title = title</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    ).encode(</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        x = alt.X(<span class="stringliteral">&quot;Data&quot;</span>, axis=alt.Axis(labelAngle=0)),</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        y = alt.Y(<span class="stringliteral">&quot;Score:Q&quot;</span>),</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        tooltip = (<span class="stringliteral">&quot;Data&quot;</span>, <span class="stringliteral">&quot;Score&quot;</span>),</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        opacity=alt.condition(data_select, alt.value(1), alt.value(0.0)),</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        color=alt.Color(<span class="stringliteral">&quot;Data&quot;</span>, legend=<span class="keywordtype">None</span>)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    ).add_selection(</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        data_select</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    ).configure_view(</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        strokeOpacity=0</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    ).interactive()</div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="ae5593c31da74f3185dbab1dab3ec988a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5593c31da74f3185dbab1dab3ec988a">&#9670;&nbsp;</a></span>alpha</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.alpha</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5116b8e7725539769cf10cb172e4c37a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5116b8e7725539769cf10cb172e4c37a">&#9670;&nbsp;</a></span>altcolor</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.altcolor = alt.Color(&quot;c&quot;, legend=None, scale=alt.Scale(domain=[0, 1 if max(<a class="el" href="namespaceweb__frontend.html#a8a75bc5f52d10650f9c219e78d2cd42a">clustered_data</a>) == 0 else max(<a class="el" href="namespaceweb__frontend.html#a8a75bc5f52d10650f9c219e78d2cd42a">clustered_data</a>)], scheme=&quot;turbo&quot;))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5a41b97806946bdcd868b1cf6443c6eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a41b97806946bdcd868b1cf6443c6eb">&#9670;&nbsp;</a></span>angles</h2>
+<a id="ac2765fead6c27bf2ad1500a8eb8b29bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2765fead6c27bf2ad1500a8eb8b29bb">&#9670;&nbsp;</a></span>cluster</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">web_frontend.angles = np.linspace(0, 2*np.pi, len(<a class="el" href="namespaceweb__frontend.html#ac8d1239dd61f040588df58073da2d06d">desc</a>), endpoint=<a class="el" href="namespaceweb__frontend.html#a3c3a05e18097009144e4684f3beee988">False</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a51aa7a6d31bc700ca7e4c4207f86fab3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51aa7a6d31bc700ca7e4c4207f86fab3">&#9670;&nbsp;</a></span>ax</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.ax</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0798d4c5006e331ac35930cbb6dc6b8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0798d4c5006e331ac35930cbb6dc6b8c">&#9670;&nbsp;</a></span>cluster</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">dictionary web_frontend.cluster = <a class="el" href="namespaceweb__frontend.html#a318abf6ef1e0e1a7c8af4717fbf9adff">cluster_algo_class</a>[<a class="el" href="namespaceweb__frontend.html#af267f56ddbcb8e56360963e723a4056d">cluster_algo</a>](<a class="el" href="namespaceweb__frontend.html#a6fe2b5ed2108e2ac12d0200ccf0a79d8">cluster_dist</a>, <a class="el" href="namespaceweb__frontend.html#ad784ad8e3f72e82ccc15fffc02ac0563">dataset</a>, <a class="el" href="namespaceweb__frontend.html#a8b1c4acb3b2f6a4a1fa3f1e2c02b07c3">seed</a>)</td>
+          <td class="memname">def web_frontend.cluster = <a class="el" href="namespaceweb__frontend.html#ae652f7fa97965cda748b0bbe768724d0">create_cluster</a>(<a class="el" href="namespaceweb__frontend.html#af267f56ddbcb8e56360963e723a4056d">cluster_algo</a>, <a class="el" href="namespaceweb__frontend.html#a6fe2b5ed2108e2ac12d0200ccf0a79d8">cluster_dist</a>, <a class="el" href="namespaceweb__frontend.html#ad784ad8e3f72e82ccc15fffc02ac0563">dataset</a>, <a class="el" href="namespaceweb__frontend.html#a8b1c4acb3b2f6a4a1fa3f1e2c02b07c3">seed</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -360,7 +394,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">web_frontend.cluster_algo = col2.selectbox('Choose a lovely clustering algorithm', list(cluster_algo_class.keys()))</td>
+          <td class="memname">web_frontend.cluster_algo = col2.selectbox('Choose a lovely <a class="el" href="namespaceweb__frontend.html#a1c2208b356c8c79a7ce329b7188e4f03">clustering</a> algorithm', list(cluster_algo_class.keys()))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -413,42 +447,14 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a8770d3c28a8081b31dded64b8690d6b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8770d3c28a8081b31dded64b8690d6b8">&#9670;&nbsp;</a></span>cluster_label</h2>
+<a id="a4569608af620ef90ea339e28ab48dcaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4569608af620ef90ea339e28ab48dcaa">&#9670;&nbsp;</a></span>clusterset</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">web_frontend.cluster_label = alt.Tooltip(&quot;c&quot;, title=&quot;Cluster ID&quot;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8a75bc5f52d10650f9c219e78d2cd42a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a75bc5f52d10650f9c219e78d2cd42a">&#9670;&nbsp;</a></span>clustered_data</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.clustered_data = np.zeros(len(cluster.data))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a25c9a63429521ea396fe7cd47affd742"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25c9a63429521ea396fe7cd47affd742">&#9670;&nbsp;</a></span>clusters</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.clusters</td>
+          <td class="memname">web_frontend.clusterset = set(clustered_data)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -483,28 +489,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="af0ac7cf718145355f2362cb8a51f55bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0ac7cf718145355f2362cb8a51f55bb">&#9670;&nbsp;</a></span>color</h2>
+<a id="a079d64aeec37a7f9de7633d939846f9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a079d64aeec37a7f9de7633d939846f9d">&#9670;&nbsp;</a></span>data_select</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">web_frontend.color</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa125eecf731512db07a91067d3b96efe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa125eecf731512db07a91067d3b96efe">&#9670;&nbsp;</a></span>color_palette</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">list web_frontend.color_palette = ['black'] + sns.color_palette(&quot;husl&quot;, len(set(<a class="el" href="namespaceweb__frontend.html#a8a75bc5f52d10650f9c219e78d2cd42a">clustered_data</a>))-1)</td>
+          <td class="memname">web_frontend.data_select = alt.selection_multi(fields=[&quot;Data&quot;], name=&quot;Datapoint&quot;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -533,6 +525,20 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">web_frontend.dataset = col1.selectbox('Choose a beautiful dataset',['iris', 'wine', 'diabetes', 'housevotes'])</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5a2f59ae24a052d482396ebf743eb8cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a2f59ae24a052d482396ebf743eb8cf">&#9670;&nbsp;</a></span>datasetinformation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">web_frontend.datasetinformation = st.beta_expander(&quot;dataset information&quot;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -595,6 +601,20 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a7f2e8c0e0dc2c2e618f4449a1aa58e4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f2e8c0e0dc2c2e618f4449a1aa58e4c">&#9670;&nbsp;</a></span>df_for</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">web_frontend.df_for = pd.DataFrame(<a class="el" href="namespaceweb__frontend.html#a2926d7785b026ae5beb31c307bf61560">results</a>, columns=[&quot;Score&quot;,&quot;Data&quot;])</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a0191bc0cba482c929e000c10dd86801e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0191bc0cba482c929e000c10dd86801e">&#9670;&nbsp;</a></span>dfclusterdata</h2>
 
@@ -603,20 +623,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">web_frontend.dfclusterdata = pd.DataFrame()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a05b458056ccbac0ffb6a23ef48a07c5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05b458056ccbac0ffb6a23ef48a07c5e">&#9670;&nbsp;</a></span>eps</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.eps</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -637,42 +643,28 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a3c3a05e18097009144e4684f3beee988"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c3a05e18097009144e4684f3beee988">&#9670;&nbsp;</a></span>False</h2>
+<a id="abab8fa2288df0e844e2fbcd968a42a57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abab8fa2288df0e844e2fbcd968a42a57">&#9670;&nbsp;</a></span>fig1</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">web_frontend.False</td>
+          <td class="memname">web_frontend.fig1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ab2c7ca7d972c5e7340cf4c7e867b5d02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2c7ca7d972c5e7340cf4c7e867b5d02">&#9670;&nbsp;</a></span>fig</h2>
+<a id="aaa1709dbd84064e7e8f851d6841a8572"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa1709dbd84064e7e8f851d6841a8572">&#9670;&nbsp;</a></span>fig2</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">web_frontend.fig</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a193e8d4dbf733bf1918f0f09975ed6ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a193e8d4dbf733bf1918f0f09975ed6ce">&#9670;&nbsp;</a></span>hue</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.hue</td>
+          <td class="memname">web_frontend.fig2</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -686,7 +678,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">web_frontend.I1 = <a class="el" href="classindices_1_1Indices.html">Indices</a>(<a class="el" href="namespaceweb__frontend.html#aaf3ac2b14e7665a95f91b3b2a4fe2b3a">predicted</a>, <a class="el" href="namespaceweb__frontend.html#ad6cb59f4d8d78e1f93b5bcd2838595ee">labels</a>)</td>
+          <td class="memname">web_frontend.I1 = <a class="el" href="classindices_1_1Indices.html">Indices</a>(<a class="el" href="namespaceweb__frontend.html#aaf3ac2b14e7665a95f91b3b2a4fe2b3a">predicted</a>, <a class="el" href="namespaceweb__frontend.html#a707461d1835594987d52dbf74714eeb4">labels</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -700,7 +692,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">web_frontend.index_eval = [&quot;ARI&quot;, &quot;NMI&quot;, &quot;Completeness Score&quot;, &quot;Homogeneity Score&quot;, &quot;Silhouette Score&quot;]</td>
+          <td class="memname">web_frontend.index_eval = [&quot;ARI&quot;, &quot;AMI&quot;, &quot;Completeness Score&quot;, &quot;Homogeneity Score&quot;, &quot;Silhouette Score&quot;]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -721,20 +713,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a94dd98947f64fc0fff9b548c41639bfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94dd98947f64fc0fff9b548c41639bfa">&#9670;&nbsp;</a></span>k</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.k</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a7f7156d9924ee0822f4451ea125a3446"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7f7156d9924ee0822f4451ea125a3446">&#9670;&nbsp;</a></span>k_value</h2>
 
@@ -742,77 +720,21 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">web_frontend.k_value = col2.slider(&quot;Choose a nice value for <a class="el" href="namespaceweb__frontend.html#a94dd98947f64fc0fff9b548c41639bfa">k</a> (number of <a class="el" href="namespaceweb__frontend.html#a25c9a63429521ea396fe7cd47affd742">clusters</a>)&quot;, min_value=2, max_value=10, step=1, value=3)</td>
+          <td class="memname">web_frontend.k_value = col2.slider(&quot;Choose a nice value for k (number of clusters)&quot;, min_value=2, max_value=10, step=1, value=3)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ad6cb59f4d8d78e1f93b5bcd2838595ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6cb59f4d8d78e1f93b5bcd2838595ee">&#9670;&nbsp;</a></span>labels</h2>
+<a id="a707461d1835594987d52dbf74714eeb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a707461d1835594987d52dbf74714eeb4">&#9670;&nbsp;</a></span>labels</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">web_frontend.labels = cluster.labels.tolist()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a93eab05f4c018e6e65a76d838cff34e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93eab05f4c018e6e65a76d838cff34e6">&#9670;&nbsp;</a></span>legend</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.legend</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9aa566eabde22259a97c37e426eb957c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9aa566eabde22259a97c37e426eb957c">&#9670;&nbsp;</a></span>linewidth</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.linewidth</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af67892833d2af8e60eb05352c79cbe8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af67892833d2af8e60eb05352c79cbe8d">&#9670;&nbsp;</a></span>markers</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.markers</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab8af5ba16ba60ca4306dbd2f7cc2adda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8af5ba16ba60ca4306dbd2f7cc2adda">&#9670;&nbsp;</a></span>marking_centroids</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.marking_centroids = np.ones(cluster.data.shape[0])</td>
+          <td class="memname">def web_frontend.labels = cluster.labels.tolist()</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -861,28 +783,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a5270867dae900f6e6044de56725bfc31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5270867dae900f6e6044de56725bfc31">&#9670;&nbsp;</a></span>palette</h2>
+<a id="ac0e79a7c404805a0e5d5b7af4ddea011"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0e79a7c404805a0e5d5b7af4ddea011">&#9670;&nbsp;</a></span>params</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">web_frontend.palette</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae9367db9cae6ac3dd2c6e388b2f1d387"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9367db9cae6ac3dd2c6e388b2f1d387">&#9670;&nbsp;</a></span>pcaalt</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.pcaalt = alt.Chart(<a class="el" href="namespaceweb__frontend.html#a0191bc0cba482c929e000c10dd86801e">dfclusterdata</a>).mark_circle().encode(<a class="el" href="namespaceweb__frontend.html#ae5593f4f72a8fd57bf6706f119d3309b">x</a>=<a class="el" href="namespaceweb__frontend.html#a3cc7db566a02c44210df5d149ea4e6f3">xaxis</a>, <a class="el" href="namespaceweb__frontend.html#a98c16a3a25df247e64ee8e1ef2da037f">y</a>=<a class="el" href="namespaceweb__frontend.html#a26326cf837785de956857a6daa4cac89">yaxis</a>, tooltip=[<a class="el" href="namespaceweb__frontend.html#a8770d3c28a8081b31dded64b8690d6b8">cluster_label</a>, <a class="el" href="namespaceweb__frontend.html#acf49c9659e615dc42e77fc8b87fbbff9">point_label</a>], <a class="el" href="namespaceweb__frontend.html#af0ac7cf718145355f2362cb8a51f55bb">color</a>=<a class="el" href="namespaceweb__frontend.html#a5116b8e7725539769cf10cb172e4c37a">altcolor</a>).interactive()</td>
+          <td class="memname">dictionary web_frontend.params = {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -897,20 +805,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">web_frontend.perp = col1.slider(&quot;Perplexity for t-SNE&quot;, 5, 50, 25)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="acf49c9659e615dc42e77fc8b87fbbff9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf49c9659e615dc42e77fc8b87fbbff9">&#9670;&nbsp;</a></span>point_label</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.point_label = alt.Tooltip(&quot;i&quot;, title=&quot;Point ID&quot;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -939,34 +833,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">web_frontend.predicted = clustered_data.tolist()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3b4bb0b6d4fb023e5deef81fb802b4cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b4bb0b6d4fb023e5deef81fb802b4cb">&#9670;&nbsp;</a></span>projected_data_pca</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.projected_data_pca = PCA(random_state=42, n_components=2).fit_transform(cluster.data)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6261e4a3c482320b5c9cbbcff5dd7f57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6261e4a3c482320b5c9cbbcff5dd7f57">&#9670;&nbsp;</a></span>projected_data_tsne</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.projected_data_tsne = TSNE(random_state=42, perplexity=<a class="el" href="namespaceweb__frontend.html#ae93ba1b476312c7cf104491d77040d3d">perp</a>).fit_transform(cluster.data)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1085,20 +951,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a8ac918fe92d8f55635253e1106657fe6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ac918fe92d8f55635253e1106657fe6">&#9670;&nbsp;</a></span>size</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.size</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ada89560d6b64d3670edc7d77d4d5b85f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ada89560d6b64d3670edc7d77d4d5b85f">&#9670;&nbsp;</a></span>stats</h2>
 
@@ -1113,56 +965,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a450af770f949f976f0da06a2c33cfe5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a450af770f949f976f0da06a2c33cfe5c">&#9670;&nbsp;</a></span>stuff</h2>
+<a id="a949d4790ae8b80a70557f1e127f6c8f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a949d4790ae8b80a70557f1e127f6c8f0">&#9670;&nbsp;</a></span>title</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">web_frontend.stuff</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a41595dbe670b3fdefd7eb41feb6ca0f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41595dbe670b3fdefd7eb41feb6ca0f5">&#9670;&nbsp;</a></span>style</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.style</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="adbd0171437252f426da0d72460f17de6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbd0171437252f426da0d72460f17de6">&#9670;&nbsp;</a></span>subplot_kw</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.subplot_kw</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a79b7120bced743cd49e139bedf3fae48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79b7120bced743cd49e139bedf3fae48">&#9670;&nbsp;</a></span>tsnealt</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.tsnealt = alt.Chart(<a class="el" href="namespaceweb__frontend.html#a0191bc0cba482c929e000c10dd86801e">dfclusterdata</a>).mark_circle().encode(<a class="el" href="namespaceweb__frontend.html#ae5593f4f72a8fd57bf6706f119d3309b">x</a>=<a class="el" href="namespaceweb__frontend.html#a3cc7db566a02c44210df5d149ea4e6f3">xaxis</a>, <a class="el" href="namespaceweb__frontend.html#a98c16a3a25df247e64ee8e1ef2da037f">y</a>=<a class="el" href="namespaceweb__frontend.html#a26326cf837785de956857a6daa4cac89">yaxis</a>, tooltip=[<a class="el" href="namespaceweb__frontend.html#a8770d3c28a8081b31dded64b8690d6b8">cluster_label</a>, <a class="el" href="namespaceweb__frontend.html#acf49c9659e615dc42e77fc8b87fbbff9">point_label</a>], <a class="el" href="namespaceweb__frontend.html#af0ac7cf718145355f2362cb8a51f55bb">color</a>=<a class="el" href="namespaceweb__frontend.html#a5116b8e7725539769cf10cb172e4c37a">altcolor</a>).interactive()</td>
+          <td class="memname">string web_frontend.title = &quot;Index:&quot; + &quot; &quot; + index_eval + &quot;,&quot; + &quot; &quot; + &quot;Dataset:&quot; + &quot; &quot; + datasets[0]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1191,118 +1001,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">string web_frontend.val = &quot;epsilon=&quot;+str(<a class="el" href="namespaceweb__frontend.html#aa885b9caed1bf35c2b68e9d6a68f6b51">epsilon</a>)+&quot;, np=&quot;+str(<a class="el" href="namespaceweb__frontend.html#a5cb9f78690b87790c69114058aa0b03f">minpts</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abcf6953a3b83eef8228ec7d91ed184fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcf6953a3b83eef8228ec7d91ed184fc">&#9670;&nbsp;</a></span>weights</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.weights</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a364f1ad37501b60441618aea22763888"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a364f1ad37501b60441618aea22763888">&#9670;&nbsp;</a></span>width</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.width = 0.5</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae5593f4f72a8fd57bf6706f119d3309b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5593f4f72a8fd57bf6706f119d3309b">&#9670;&nbsp;</a></span>x</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.x</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3cc7db566a02c44210df5d149ea4e6f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cc7db566a02c44210df5d149ea4e6f3">&#9670;&nbsp;</a></span>xaxis</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.xaxis = alt.X(&quot;xt&quot;, axis=alt.Axis(title=None))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0838ca5e31a97686f8c9783545b51b1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0838ca5e31a97686f8c9783545b51b1c">&#9670;&nbsp;</a></span>xs</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.xs = np.arange(len(<a class="el" href="namespaceweb__frontend.html#ad6cb59f4d8d78e1f93b5bcd2838595ee">labels</a>))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a98c16a3a25df247e64ee8e1ef2da037f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98c16a3a25df247e64ee8e1ef2da037f">&#9670;&nbsp;</a></span>y</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.y</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a26326cf837785de956857a6daa4cac89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26326cf837785de956857a6daa4cac89">&#9670;&nbsp;</a></span>yaxis</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.yaxis = alt.Y(&quot;yt&quot;, axis=alt.Axis(title=None))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac08f6b50ca9689f1ec62998b27fee863"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac08f6b50ca9689f1ec62998b27fee863">&#9670;&nbsp;</a></span>ys</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">web_frontend.ys</td>
         </tr>
       </table>
 </div><div class="memdoc">

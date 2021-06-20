@@ -29,9 +29,7 @@ var NAVTREE =
       [ "Frontend", "index.html#autotoc_md2", null ],
       [ "Documentation", "index.html#autotoc_md3", null ],
       [ "Dependencies and Sources", "index.html#autotoc_md4", null ],
-      [ "ToDos", "index.html#autotoc_md5", null ],
-      [ "Nice-To-Haves", "index.html#autotoc_md6", null ],
-      [ "Authors", "index.html#autotoc_md7", null ]
+      [ "Authors", "index.html#autotoc_md5", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -60,7 +58,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "SessionState_8py.html",
-"namespaceresult__calculation.html#aa19b5ca88c04409c87fb528f6044842c"
+"namespacedbscan__solutions.html#a7b7492c0b1b09094b961b38853202129"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

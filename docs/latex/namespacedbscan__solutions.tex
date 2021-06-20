@@ -1,0 +1,118 @@
+\hypertarget{namespacedbscan__solutions}{}\doxysection{dbscan\+\_\+solutions Namespace Reference}
+\label{namespacedbscan__solutions}\index{dbscan\_solutions@{dbscan\_solutions}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacedbscan__solutions_ae4ad1d439869d07c04f1ce2f32b76698}{save\+\_\+score}} (key, \mbox{\hyperlink{namespacedbscan__solutions_a1dd056cc67a9102a362fd5bc4c54bdbd}{score}}, m, e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespacedbscan__solutions_a624ac1616dbc51ec208019aa06467a27}{distances}} = \mbox{[}\char`\"{}euclidean\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}cosine\char`\"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacedbscan__solutions_ad536cae1bf2bfa7a25102a678844e572}{datasets}} = \mbox{[}\char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}diabetes\char`\"{}, \char`\"{}housevotes\char`\"{}\mbox{]}
+\item 
+int \mbox{\hyperlink{namespacedbscan__solutions_a913c77f149ca6361034685cab11e3c11}{seed}} = 42
+\item 
+list \mbox{\hyperlink{namespacedbscan__solutions_ab43400ed6a9265eb51c54371e7706714}{external}} = \mbox{[}\char`\"{}ARI\char`\"{}, \char`\"{}AMI\char`\"{}, \char`\"{}Completeness Score\char`\"{}, \char`\"{}Homogeneity Score\char`\"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacedbscan__solutions_a1857484a91abbe80045d2c6dec833945}{internal}} = \mbox{[}\char`\"{}Silhouette Score\char`\"{}\mbox{]}
+\item 
+dictionary \mbox{\hyperlink{namespacedbscan__solutions_a7b7492c0b1b09094b961b38853202129}{best\+\_\+results}} = \{\}
+\item 
+\mbox{\hyperlink{namespacedbscan__solutions_ae65bad16c9b9da8daff99fa025b74709}{alg}} = \mbox{\hyperlink{classdbscan_1_1DBSCANClustering}{DBSCANClustering}}(d, s, \mbox{\hyperlink{namespacedbscan__solutions_a913c77f149ca6361034685cab11e3c11}{seed}})
+\item 
+\mbox{\hyperlink{namespacedbscan__solutions_a07b56b218bab0180ad9228ec1c753fae}{clusters}}
+\item 
+\mbox{\hyperlink{namespacedbscan__solutions_a73ff9a7d14c10b827ae049b5ac1e579c}{centers}}
+\item 
+\mbox{\hyperlink{namespacedbscan__solutions_a063bd81a6baaccdffe018468ef042913}{clustered\+\_\+data}} = np.\+zeros(len(alg.\+data))
+\item 
+\mbox{\hyperlink{namespacedbscan__solutions_af552776c144fffb969e9e5829f5d8f6b}{indices}} = \mbox{\hyperlink{classindices_1_1Indices}{Indices}}(clustered\+\_\+data.\+tolist(), alg.\+labels.\+tolist())
+\item 
+\mbox{\hyperlink{namespacedbscan__solutions_a1dd056cc67a9102a362fd5bc4c54bdbd}{score}} = indices.\+index\+\_\+external(ind)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacedbscan__solutions_ae4ad1d439869d07c04f1ce2f32b76698}\label{namespacedbscan__solutions_ae4ad1d439869d07c04f1ce2f32b76698}} 
+\index{dbscan\_solutions@{dbscan\_solutions}!save\_score@{save\_score}}
+\index{save\_score@{save\_score}!dbscan\_solutions@{dbscan\_solutions}}
+\doxysubsubsection{\texorpdfstring{save\_score()}{save\_score()}}
+{\footnotesize\ttfamily def dbscan\+\_\+solutions.\+save\+\_\+score (\begin{DoxyParamCaption}\item[{}]{key,  }\item[{}]{score,  }\item[{}]{m,  }\item[{}]{e }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacedbscan__solutions_ae65bad16c9b9da8daff99fa025b74709}\label{namespacedbscan__solutions_ae65bad16c9b9da8daff99fa025b74709}} 
+\index{dbscan\_solutions@{dbscan\_solutions}!alg@{alg}}
+\index{alg@{alg}!dbscan\_solutions@{dbscan\_solutions}}
+\doxysubsubsection{\texorpdfstring{alg}{alg}}
+{\footnotesize\ttfamily dbscan\+\_\+solutions.\+alg = \mbox{\hyperlink{classdbscan_1_1DBSCANClustering}{DBSCANClustering}}(d, s, \mbox{\hyperlink{namespacedbscan__solutions_a913c77f149ca6361034685cab11e3c11}{seed}})}
+
+\mbox{\Hypertarget{namespacedbscan__solutions_a7b7492c0b1b09094b961b38853202129}\label{namespacedbscan__solutions_a7b7492c0b1b09094b961b38853202129}} 
+\index{dbscan\_solutions@{dbscan\_solutions}!best\_results@{best\_results}}
+\index{best\_results@{best\_results}!dbscan\_solutions@{dbscan\_solutions}}
+\doxysubsubsection{\texorpdfstring{best\_results}{best\_results}}
+{\footnotesize\ttfamily dictionary dbscan\+\_\+solutions.\+best\+\_\+results = \{\}}
+
+\mbox{\Hypertarget{namespacedbscan__solutions_a73ff9a7d14c10b827ae049b5ac1e579c}\label{namespacedbscan__solutions_a73ff9a7d14c10b827ae049b5ac1e579c}} 
+\index{dbscan\_solutions@{dbscan\_solutions}!centers@{centers}}
+\index{centers@{centers}!dbscan\_solutions@{dbscan\_solutions}}
+\doxysubsubsection{\texorpdfstring{centers}{centers}}
+{\footnotesize\ttfamily dbscan\+\_\+solutions.\+centers}
+
+\mbox{\Hypertarget{namespacedbscan__solutions_a063bd81a6baaccdffe018468ef042913}\label{namespacedbscan__solutions_a063bd81a6baaccdffe018468ef042913}} 
+\index{dbscan\_solutions@{dbscan\_solutions}!clustered\_data@{clustered\_data}}
+\index{clustered\_data@{clustered\_data}!dbscan\_solutions@{dbscan\_solutions}}
+\doxysubsubsection{\texorpdfstring{clustered\_data}{clustered\_data}}
+{\footnotesize\ttfamily dbscan\+\_\+solutions.\+clustered\+\_\+data = np.\+zeros(len(alg.\+data))}
+
+\mbox{\Hypertarget{namespacedbscan__solutions_a07b56b218bab0180ad9228ec1c753fae}\label{namespacedbscan__solutions_a07b56b218bab0180ad9228ec1c753fae}} 
+\index{dbscan\_solutions@{dbscan\_solutions}!clusters@{clusters}}
+\index{clusters@{clusters}!dbscan\_solutions@{dbscan\_solutions}}
+\doxysubsubsection{\texorpdfstring{clusters}{clusters}}
+{\footnotesize\ttfamily dbscan\+\_\+solutions.\+clusters}
+
+\mbox{\Hypertarget{namespacedbscan__solutions_ad536cae1bf2bfa7a25102a678844e572}\label{namespacedbscan__solutions_ad536cae1bf2bfa7a25102a678844e572}} 
+\index{dbscan\_solutions@{dbscan\_solutions}!datasets@{datasets}}
+\index{datasets@{datasets}!dbscan\_solutions@{dbscan\_solutions}}
+\doxysubsubsection{\texorpdfstring{datasets}{datasets}}
+{\footnotesize\ttfamily list dbscan\+\_\+solutions.\+datasets = \mbox{[}\char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}diabetes\char`\"{}, \char`\"{}housevotes\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacedbscan__solutions_a624ac1616dbc51ec208019aa06467a27}\label{namespacedbscan__solutions_a624ac1616dbc51ec208019aa06467a27}} 
+\index{dbscan\_solutions@{dbscan\_solutions}!distances@{distances}}
+\index{distances@{distances}!dbscan\_solutions@{dbscan\_solutions}}
+\doxysubsubsection{\texorpdfstring{distances}{distances}}
+{\footnotesize\ttfamily list dbscan\+\_\+solutions.\+distances = \mbox{[}\char`\"{}euclidean\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}cosine\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacedbscan__solutions_ab43400ed6a9265eb51c54371e7706714}\label{namespacedbscan__solutions_ab43400ed6a9265eb51c54371e7706714}} 
+\index{dbscan\_solutions@{dbscan\_solutions}!external@{external}}
+\index{external@{external}!dbscan\_solutions@{dbscan\_solutions}}
+\doxysubsubsection{\texorpdfstring{external}{external}}
+{\footnotesize\ttfamily list dbscan\+\_\+solutions.\+external = \mbox{[}\char`\"{}ARI\char`\"{}, \char`\"{}AMI\char`\"{}, \char`\"{}Completeness Score\char`\"{}, \char`\"{}Homogeneity Score\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacedbscan__solutions_af552776c144fffb969e9e5829f5d8f6b}\label{namespacedbscan__solutions_af552776c144fffb969e9e5829f5d8f6b}} 
+\index{dbscan\_solutions@{dbscan\_solutions}!indices@{indices}}
+\index{indices@{indices}!dbscan\_solutions@{dbscan\_solutions}}
+\doxysubsubsection{\texorpdfstring{indices}{indices}}
+{\footnotesize\ttfamily dbscan\+\_\+solutions.\+indices = \mbox{\hyperlink{classindices_1_1Indices}{Indices}}(clustered\+\_\+data.\+tolist(), alg.\+labels.\+tolist())}
+
+\mbox{\Hypertarget{namespacedbscan__solutions_a1857484a91abbe80045d2c6dec833945}\label{namespacedbscan__solutions_a1857484a91abbe80045d2c6dec833945}} 
+\index{dbscan\_solutions@{dbscan\_solutions}!internal@{internal}}
+\index{internal@{internal}!dbscan\_solutions@{dbscan\_solutions}}
+\doxysubsubsection{\texorpdfstring{internal}{internal}}
+{\footnotesize\ttfamily list dbscan\+\_\+solutions.\+internal = \mbox{[}\char`\"{}Silhouette Score\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacedbscan__solutions_a1dd056cc67a9102a362fd5bc4c54bdbd}\label{namespacedbscan__solutions_a1dd056cc67a9102a362fd5bc4c54bdbd}} 
+\index{dbscan\_solutions@{dbscan\_solutions}!score@{score}}
+\index{score@{score}!dbscan\_solutions@{dbscan\_solutions}}
+\doxysubsubsection{\texorpdfstring{score}{score}}
+{\footnotesize\ttfamily dbscan\+\_\+solutions.\+score = indices.\+index\+\_\+external(ind)}
+
+\mbox{\Hypertarget{namespacedbscan__solutions_a913c77f149ca6361034685cab11e3c11}\label{namespacedbscan__solutions_a913c77f149ca6361034685cab11e3c11}} 
+\index{dbscan\_solutions@{dbscan\_solutions}!seed@{seed}}
+\index{seed@{seed}!dbscan\_solutions@{dbscan\_solutions}}
+\doxysubsubsection{\texorpdfstring{seed}{seed}}
+{\footnotesize\ttfamily int dbscan\+\_\+solutions.\+seed = 42}
+

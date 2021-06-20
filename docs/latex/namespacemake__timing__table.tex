@@ -1,0 +1,104 @@
+\hypertarget{namespacemake__timing__table}{}\doxysection{make\+\_\+timing\+\_\+table Namespace Reference}
+\label{namespacemake__timing__table}\index{make\_timing\_table@{make\_timing\_table}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespacemake__timing__table_ac7c4b4881cee040cc2d3e710f019e3ed}{kalgos}} = \mbox{[}\textquotesingle{}kmeans\textquotesingle{}, \textquotesingle{}kmedians\textquotesingle{}, \textquotesingle{}kmedoids\textquotesingle{}\mbox{]}
+\item 
+dictionary \mbox{\hyperlink{namespacemake__timing__table_add3bcbce880bfee8bfd8329ebe879999}{kalgoclass}} = \{\textquotesingle{}kmeans\textquotesingle{}\+: \mbox{\hyperlink{classkmeans_1_1kmeansClustering}{kmeans\+Clustering}}, \textquotesingle{}kmedians\textquotesingle{}\+: \mbox{\hyperlink{classkmedians_1_1kmediansClustering}{kmedians\+Clustering}}, \textquotesingle{}kmedoids\textquotesingle{}\+: \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering}{kmedoids\+Clustering}}\}
+\item 
+list \mbox{\hyperlink{namespacemake__timing__table_a93eecbe34fdcfa57c7ac82c36cae3d72}{distances}} = \mbox{[}\char`\"{}euclidean\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}cosine\char`\"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacemake__timing__table_aa3437a5fab547b11b3117a0f74e3b581}{datasets}} = \mbox{[}\char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}diabetes\char`\"{}, \char`\"{}housevotes\char`\"{}\mbox{]}
+\item 
+dictionary \mbox{\hyperlink{namespacemake__timing__table_a05e70c04c23f04b9352befa2f8a8f37d}{dataset\+\_\+cluster}} = \{\char`\"{}iris\char`\"{}\+: 3, \char`\"{}wine\char`\"{} \+: 3, \char`\"{}diabetes\char`\"{} \+: 2, \char`\"{}housevotes\char`\"{} \+: 2\}
+\item 
+dictionary \mbox{\hyperlink{namespacemake__timing__table_a0b9ed108d1bb13e2cce2b61ec37d88ca}{dbscan\+\_\+comb}}
+\item 
+\mbox{\hyperlink{namespacemake__timing__table_a93c99887b4b89babb7fa64f41ebf0b00}{timing\+\_\+results}} = json.\+load(f)
+\item 
+\mbox{\hyperlink{namespacemake__timing__table_a05ee9785560577f7770d296e8062824b}{table\+\_\+array}} = np.\+zeros((4,4))
+\item 
+\mbox{\hyperlink{namespacemake__timing__table_a63fb2ea5d076e8800a3ca83842b3cdc7}{timing\+\_\+table}} = pd.\+Data\+Frame(\mbox{\hyperlink{namespacemake__timing__table_a05ee9785560577f7770d296e8062824b}{table\+\_\+array}}, columns=\mbox{[}\char`\"{}Euclidean\char`\"{}, \char`\"{}Manhattan\char`\"{}, \char`\"{}Chebyshev\char`\"{}, \char`\"{}Cosine\char`\"{}\mbox{]}, index=\mbox{[}\textquotesingle{}K-\/Means\textquotesingle{}, \textquotesingle{}K-\/Medians\textquotesingle{}, \textquotesingle{}K-\/Medoids\textquotesingle{}\mbox{]}+\mbox{[}\textquotesingle{}DBSCAN\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacemake__timing__table_a21e4d0ad4c6b09788c17751aa193002b}{axis}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacemake__timing__table_a21e4d0ad4c6b09788c17751aa193002b}\label{namespacemake__timing__table_a21e4d0ad4c6b09788c17751aa193002b}} 
+\index{make\_timing\_table@{make\_timing\_table}!axis@{axis}}
+\index{axis@{axis}!make\_timing\_table@{make\_timing\_table}}
+\doxysubsubsection{\texorpdfstring{axis}{axis}}
+{\footnotesize\ttfamily make\+\_\+timing\+\_\+table.\+axis}
+
+\mbox{\Hypertarget{namespacemake__timing__table_a05e70c04c23f04b9352befa2f8a8f37d}\label{namespacemake__timing__table_a05e70c04c23f04b9352befa2f8a8f37d}} 
+\index{make\_timing\_table@{make\_timing\_table}!dataset\_cluster@{dataset\_cluster}}
+\index{dataset\_cluster@{dataset\_cluster}!make\_timing\_table@{make\_timing\_table}}
+\doxysubsubsection{\texorpdfstring{dataset\_cluster}{dataset\_cluster}}
+{\footnotesize\ttfamily dictionary make\+\_\+timing\+\_\+table.\+dataset\+\_\+cluster = \{\char`\"{}iris\char`\"{}\+: 3, \char`\"{}wine\char`\"{} \+: 3, \char`\"{}diabetes\char`\"{} \+: 2, \char`\"{}housevotes\char`\"{} \+: 2\}}
+
+\mbox{\Hypertarget{namespacemake__timing__table_aa3437a5fab547b11b3117a0f74e3b581}\label{namespacemake__timing__table_aa3437a5fab547b11b3117a0f74e3b581}} 
+\index{make\_timing\_table@{make\_timing\_table}!datasets@{datasets}}
+\index{datasets@{datasets}!make\_timing\_table@{make\_timing\_table}}
+\doxysubsubsection{\texorpdfstring{datasets}{datasets}}
+{\footnotesize\ttfamily list make\+\_\+timing\+\_\+table.\+datasets = \mbox{[}\char`\"{}iris\char`\"{}, \char`\"{}wine\char`\"{}, \char`\"{}diabetes\char`\"{}, \char`\"{}housevotes\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacemake__timing__table_a0b9ed108d1bb13e2cce2b61ec37d88ca}\label{namespacemake__timing__table_a0b9ed108d1bb13e2cce2b61ec37d88ca}} 
+\index{make\_timing\_table@{make\_timing\_table}!dbscan\_comb@{dbscan\_comb}}
+\index{dbscan\_comb@{dbscan\_comb}!make\_timing\_table@{make\_timing\_table}}
+\doxysubsubsection{\texorpdfstring{dbscan\_comb}{dbscan\_comb}}
+{\footnotesize\ttfamily dictionary make\+\_\+timing\+\_\+table.\+dbscan\+\_\+comb}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \{\textcolor{stringliteral}{"{}euclideaniris"{}} : \{\textcolor{stringliteral}{"{}minpts"{}} : 3, \textcolor{stringliteral}{"{}eps"{}} : 0.4\}, \textcolor{stringliteral}{"{}euclideanwine"{}} : \{\textcolor{stringliteral}{"{}minpts"{}} : 18, \textcolor{stringliteral}{"{}eps"{}} : 2.4\},}
+\DoxyCodeLine{2 \textcolor{stringliteral}{"{}euclideandiabetes"{}} : \{\textcolor{stringliteral}{"{}minpts"{}} : 3, \textcolor{stringliteral}{"{}eps"{}} : 0.1\}, \textcolor{stringliteral}{"{}euclideanhousevotes"{}} : \{\textcolor{stringliteral}{"{}minpts"{}} : 18, \textcolor{stringliteral}{"{}eps"{}} : 2.5\},}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{stringliteral}{"{}manhattaniris"{}} : \{\textcolor{stringliteral}{"{}minpts"{}} : 1, \textcolor{stringliteral}{"{}eps"{}} : 1.2\}, \textcolor{stringliteral}{"{}manhattanwine"{}} : \{\textcolor{stringliteral}{"{}minpts"{}} : 18, \textcolor{stringliteral}{"{}eps"{}} : 6.9\},}
+\DoxyCodeLine{5 \textcolor{stringliteral}{"{}manhattandiabetes"{}} : \{\textcolor{stringliteral}{"{}minpts"{}} : 2, \textcolor{stringliteral}{"{}eps"{}} : 0.3\}, \textcolor{stringliteral}{"{}manhattanhousevotes"{}} : \{\textcolor{stringliteral}{"{}minpts"{}} : 18, \textcolor{stringliteral}{"{}eps"{}} : 6.0\},}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{stringliteral}{"{}chebysheviris"{}} : \{\textcolor{stringliteral}{"{}minpts"{}} : 1, \textcolor{stringliteral}{"{}eps"{}} : 0.7\}, \textcolor{stringliteral}{"{}chebyshevwine"{}} : \{\textcolor{stringliteral}{"{}minpts"{}} : 17, \textcolor{stringliteral}{"{}eps"{}} : 1.3\},}
+\DoxyCodeLine{8 \textcolor{stringliteral}{"{}chebyshevdiabetes"{}} : \{\textcolor{stringliteral}{"{}minpts"{}} : 1, \textcolor{stringliteral}{"{}eps"{}} : 0.1\}, \textcolor{stringliteral}{"{}chebyshevhousevotes"{}} : \{\textcolor{stringliteral}{"{}minpts"{}} : 4, \textcolor{stringliteral}{"{}eps"{}} : 0.1\},}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{stringliteral}{"{}cosineiris"{}} : \{\textcolor{stringliteral}{"{}minpts"{}} : 1, \textcolor{stringliteral}{"{}eps"{}} : 0.1\}, \textcolor{stringliteral}{"{}cosinewine"{}} : \{\textcolor{stringliteral}{"{}minpts"{}} : 16, \textcolor{stringliteral}{"{}eps"{}} : 0.3\},}
+\DoxyCodeLine{11 \textcolor{stringliteral}{"{}cosinediabetes"{}} : \{\textcolor{stringliteral}{"{}minpts"{}} : 10, \textcolor{stringliteral}{"{}eps"{}} : 0.2\}, \textcolor{stringliteral}{"{}cosinehousevotes"{}} : \{\textcolor{stringliteral}{"{}minpts"{}} : 18, \textcolor{stringliteral}{"{}eps"{}} : 0.2\},}
+\DoxyCodeLine{12 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemake__timing__table_a93eecbe34fdcfa57c7ac82c36cae3d72}\label{namespacemake__timing__table_a93eecbe34fdcfa57c7ac82c36cae3d72}} 
+\index{make\_timing\_table@{make\_timing\_table}!distances@{distances}}
+\index{distances@{distances}!make\_timing\_table@{make\_timing\_table}}
+\doxysubsubsection{\texorpdfstring{distances}{distances}}
+{\footnotesize\ttfamily list make\+\_\+timing\+\_\+table.\+distances = \mbox{[}\char`\"{}euclidean\char`\"{}, \char`\"{}manhattan\char`\"{}, \char`\"{}chebyshev\char`\"{}, \char`\"{}cosine\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacemake__timing__table_add3bcbce880bfee8bfd8329ebe879999}\label{namespacemake__timing__table_add3bcbce880bfee8bfd8329ebe879999}} 
+\index{make\_timing\_table@{make\_timing\_table}!kalgoclass@{kalgoclass}}
+\index{kalgoclass@{kalgoclass}!make\_timing\_table@{make\_timing\_table}}
+\doxysubsubsection{\texorpdfstring{kalgoclass}{kalgoclass}}
+{\footnotesize\ttfamily dictionary make\+\_\+timing\+\_\+table.\+kalgoclass = \{\textquotesingle{}kmeans\textquotesingle{}\+: \mbox{\hyperlink{classkmeans_1_1kmeansClustering}{kmeans\+Clustering}}, \textquotesingle{}kmedians\textquotesingle{}\+: \mbox{\hyperlink{classkmedians_1_1kmediansClustering}{kmedians\+Clustering}}, \textquotesingle{}kmedoids\textquotesingle{}\+: \mbox{\hyperlink{classkmedoids_1_1kmedoidsClustering}{kmedoids\+Clustering}}\}}
+
+\mbox{\Hypertarget{namespacemake__timing__table_ac7c4b4881cee040cc2d3e710f019e3ed}\label{namespacemake__timing__table_ac7c4b4881cee040cc2d3e710f019e3ed}} 
+\index{make\_timing\_table@{make\_timing\_table}!kalgos@{kalgos}}
+\index{kalgos@{kalgos}!make\_timing\_table@{make\_timing\_table}}
+\doxysubsubsection{\texorpdfstring{kalgos}{kalgos}}
+{\footnotesize\ttfamily list make\+\_\+timing\+\_\+table.\+kalgos = \mbox{[}\textquotesingle{}kmeans\textquotesingle{}, \textquotesingle{}kmedians\textquotesingle{}, \textquotesingle{}kmedoids\textquotesingle{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacemake__timing__table_a05ee9785560577f7770d296e8062824b}\label{namespacemake__timing__table_a05ee9785560577f7770d296e8062824b}} 
+\index{make\_timing\_table@{make\_timing\_table}!table\_array@{table\_array}}
+\index{table\_array@{table\_array}!make\_timing\_table@{make\_timing\_table}}
+\doxysubsubsection{\texorpdfstring{table\_array}{table\_array}}
+{\footnotesize\ttfamily make\+\_\+timing\+\_\+table.\+table\+\_\+array = np.\+zeros((4,4))}
+
+\mbox{\Hypertarget{namespacemake__timing__table_a93c99887b4b89babb7fa64f41ebf0b00}\label{namespacemake__timing__table_a93c99887b4b89babb7fa64f41ebf0b00}} 
+\index{make\_timing\_table@{make\_timing\_table}!timing\_results@{timing\_results}}
+\index{timing\_results@{timing\_results}!make\_timing\_table@{make\_timing\_table}}
+\doxysubsubsection{\texorpdfstring{timing\_results}{timing\_results}}
+{\footnotesize\ttfamily make\+\_\+timing\+\_\+table.\+timing\+\_\+results = json.\+load(f)}
+
+\mbox{\Hypertarget{namespacemake__timing__table_a63fb2ea5d076e8800a3ca83842b3cdc7}\label{namespacemake__timing__table_a63fb2ea5d076e8800a3ca83842b3cdc7}} 
+\index{make\_timing\_table@{make\_timing\_table}!timing\_table@{timing\_table}}
+\index{timing\_table@{timing\_table}!make\_timing\_table@{make\_timing\_table}}
+\doxysubsubsection{\texorpdfstring{timing\_table}{timing\_table}}
+{\footnotesize\ttfamily make\+\_\+timing\+\_\+table.\+timing\+\_\+table = pd.\+Data\+Frame(\mbox{\hyperlink{namespacemake__timing__table_a05ee9785560577f7770d296e8062824b}{table\+\_\+array}}, columns=\mbox{[}\char`\"{}Euclidean\char`\"{}, \char`\"{}Manhattan\char`\"{}, \char`\"{}Chebyshev\char`\"{}, \char`\"{}Cosine\char`\"{}\mbox{]}, index=\mbox{[}\textquotesingle{}K-\/Means\textquotesingle{}, \textquotesingle{}K-\/Medians\textquotesingle{}, \textquotesingle{}K-\/Medoids\textquotesingle{}\mbox{]}+\mbox{[}\textquotesingle{}DBSCAN\textquotesingle{}\mbox{]})}
+

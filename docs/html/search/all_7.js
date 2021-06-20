@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['get_58',['get',['../namespaceSessionState.html#a6447a6ba08dae19a324f73980cc7508e',1,'SessionState']]],
-  ['get_5fpath_59',['get_path',['../classresults_1_1Results.html#a86803a28e15509a5ad566c3497cd3ff7',1,'results::Results']]]
+  ['get_70',['get',['../namespaceSessionState.html#a6447a6ba08dae19a324f73980cc7508e',1,'SessionState']]],
+  ['get_5fpath_71',['get_path',['../classresults_1_1Results.html#a86803a28e15509a5ad566c3497cd3ff7',1,'results::Results']]]
 ];

@@ -10,6 +10,15 @@ webfrontend for project.
 \item 
  \mbox{\hyperlink{namespaceweb__frontend}{web\+\_\+frontend}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceweb__frontend_ae652f7fa97965cda748b0bbe768724d0}{web\+\_\+frontend.\+create\+\_\+cluster}} (cluster\+\_\+algo, cluster\+\_\+dist, dataset, seed)
+\begin{DoxyCompactList}\small\item\em creates a cluster algorithm instance. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceweb__frontend_a1c2208b356c8c79a7ce329b7188e4f03}{web\+\_\+frontend.\+clustering}} (cluster, params, cluster\+\_\+algo)
+\begin{DoxyCompactList}\small\item\em calculates clustering results. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceweb__frontend_a75c50a8899ae62c4193a1534326c789e}{web\+\_\+frontend.\+plotting}} ()
+\begin{DoxyCompactList}\small\item\em generates the plots for the frontend. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,75 +50,29 @@ dictionary \mbox{\hyperlink{namespaceweb__frontend_a318abf6ef1e0e1a7c8af4717fbf9
 \item 
 \mbox{\hyperlink{namespaceweb__frontend_af267f56ddbcb8e56360963e723a4056d}{web\+\_\+frontend.\+cluster\+\_\+algo}} = col2.\+selectbox(\textquotesingle{}Choose a lovely clustering algorithm\textquotesingle{}, list(cluster\+\_\+algo\+\_\+class.\+keys()))
 \item 
-dictionary \mbox{\hyperlink{namespaceweb__frontend_a0798d4c5006e331ac35930cbb6dc6b8c}{web\+\_\+frontend.\+cluster}} = cluster\+\_\+algo\+\_\+class\mbox{[}cluster\+\_\+algo\mbox{]}(cluster\+\_\+dist, dataset, seed)
+dictionary \mbox{\hyperlink{namespaceweb__frontend_ac0e79a7c404805a0e5d5b7af4ddea011}{web\+\_\+frontend.\+params}} = \{\}
 \item 
 \mbox{\hyperlink{namespaceweb__frontend_aa885b9caed1bf35c2b68e9d6a68f6b51}{web\+\_\+frontend.\+epsilon}} = col2.\+slider(\char`\"{}Choose a nice value for epsilon\char`\"{}, min\+\_\+value=0.\+1, max\+\_\+value=20.\+0, step=0.\+1)
 \item 
 \mbox{\hyperlink{namespaceweb__frontend_a5cb9f78690b87790c69114058aa0b03f}{web\+\_\+frontend.\+minpts}} = col2.\+slider(\char`\"{}Choose a minimal number of nearest points\char`\"{}, min\+\_\+value=1, max\+\_\+value=20, step=1, value=5)
 \item 
-\mbox{\hyperlink{namespaceweb__frontend_a05b458056ccbac0ffb6a23ef48a07c5e}{web\+\_\+frontend.\+eps}}
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_a25c9a63429521ea396fe7cd47affd742}{web\+\_\+frontend.\+clusters}}
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_a450af770f949f976f0da06a2c33cfe5c}{web\+\_\+frontend.\+stuff}}
-\item 
 \mbox{\hyperlink{namespaceweb__frontend_a7f7156d9924ee0822f4451ea125a3446}{web\+\_\+frontend.\+k\+\_\+value}} = col2.\+slider(\char`\"{}Choose a nice value for k (number of clusters)\char`\"{}, min\+\_\+value=2, max\+\_\+value=10, step=1, value=3)
 \item 
-\mbox{\hyperlink{namespaceweb__frontend_a94dd98947f64fc0fff9b548c41639bfa}{web\+\_\+frontend.\+k}}
+def \mbox{\hyperlink{namespaceweb__frontend_ac2765fead6c27bf2ad1500a8eb8b29bb}{web\+\_\+frontend.\+cluster}} = create\+\_\+cluster(cluster\+\_\+algo, cluster\+\_\+dist, dataset, seed)
 \item 
-\mbox{\hyperlink{namespaceweb__frontend_a8a75bc5f52d10650f9c219e78d2cd42a}{web\+\_\+frontend.\+clustered\+\_\+data}} = np.\+zeros(len(cluster.\+data))
-\item 
-list \mbox{\hyperlink{namespaceweb__frontend_aa125eecf731512db07a91067d3b96efe}{web\+\_\+frontend.\+color\+\_\+palette}} = \mbox{[}\textquotesingle{}black\textquotesingle{}\mbox{]} + sns.\+color\+\_\+palette(\char`\"{}husl\char`\"{}, len(set(clustered\+\_\+data))-\/1)
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_abcf6953a3b83eef8228ec7d91ed184fc}{web\+\_\+frontend.\+weights}}
+\mbox{\hyperlink{namespaceweb__frontend_a5a2f59ae24a052d482396ebf743eb8cf}{web\+\_\+frontend.\+datasetinformation}} = st.\+beta\+\_\+expander(\char`\"{}dataset information\char`\"{})
 \item 
 \mbox{\hyperlink{namespaceweb__frontend_ae93ba1b476312c7cf104491d77040d3d}{web\+\_\+frontend.\+perp}} = col1.\+slider(\char`\"{}Perplexity for t-\/SNE\char`\"{}, 5, 50, 25)
 \item 
-\mbox{\hyperlink{namespaceweb__frontend_ab8af5ba16ba60ca4306dbd2f7cc2adda}{web\+\_\+frontend.\+marking\+\_\+centroids}} = np.\+ones(cluster.\+data.\+shape\mbox{[}0\mbox{]})
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_a8770d3c28a8081b31dded64b8690d6b8}{web\+\_\+frontend.\+cluster\+\_\+label}} = alt.\+Tooltip(\char`\"{}c\char`\"{}, title=\char`\"{}Cluster ID\char`\"{})
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_acf49c9659e615dc42e77fc8b87fbbff9}{web\+\_\+frontend.\+point\+\_\+label}} = alt.\+Tooltip(\char`\"{}i\char`\"{}, title=\char`\"{}Point ID\char`\"{})
-\item 
 \mbox{\hyperlink{namespaceweb__frontend_a0191bc0cba482c929e000c10dd86801e}{web\+\_\+frontend.\+dfclusterdata}} = pd.\+Data\+Frame()
 \item 
-\mbox{\hyperlink{namespaceweb__frontend_a6261e4a3c482320b5c9cbbcff5dd7f57}{web\+\_\+frontend.\+projected\+\_\+data\+\_\+tsne}} = TSNE(random\+\_\+state=42, perplexity=perp).fit\+\_\+transform(cluster.\+data)
+\mbox{\hyperlink{namespaceweb__frontend_abab8fa2288df0e844e2fbcd968a42a57}{web\+\_\+frontend.\+fig1}}
 \item 
-\mbox{\hyperlink{namespaceweb__frontend_ab2c7ca7d972c5e7340cf4c7e867b5d02}{web\+\_\+frontend.\+fig}}
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_a51aa7a6d31bc700ca7e4c4207f86fab3}{web\+\_\+frontend.\+ax}}
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_ae5593f4f72a8fd57bf6706f119d3309b}{web\+\_\+frontend.\+x}}
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_a98c16a3a25df247e64ee8e1ef2da037f}{web\+\_\+frontend.\+y}}
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_a193e8d4dbf733bf1918f0f09975ed6ce}{web\+\_\+frontend.\+hue}}
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_a5270867dae900f6e6044de56725bfc31}{web\+\_\+frontend.\+palette}}
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_a93eab05f4c018e6e65a76d838cff34e6}{web\+\_\+frontend.\+legend}}
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_a3c3a05e18097009144e4684f3beee988}{web\+\_\+frontend.\+False}}
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_a41595dbe670b3fdefd7eb41feb6ca0f5}{web\+\_\+frontend.\+style}}
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_a8ac918fe92d8f55635253e1106657fe6}{web\+\_\+frontend.\+size}}
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_af67892833d2af8e60eb05352c79cbe8d}{web\+\_\+frontend.\+markers}}
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_a3cc7db566a02c44210df5d149ea4e6f3}{web\+\_\+frontend.\+xaxis}} = alt.\+X(\char`\"{}xt\char`\"{}, axis=alt.\+Axis(title=None))
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_a26326cf837785de956857a6daa4cac89}{web\+\_\+frontend.\+yaxis}} = alt.\+Y(\char`\"{}yt\char`\"{}, axis=alt.\+Axis(title=None))
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_a5116b8e7725539769cf10cb172e4c37a}{web\+\_\+frontend.\+altcolor}} = alt.\+Color(\char`\"{}c\char`\"{}, legend=None, scale=alt.\+Scale(domain=\mbox{[}0, 1 if max(clustered\+\_\+data) == 0 else max(clustered\+\_\+data)\mbox{]}, scheme=\char`\"{}turbo\char`\"{}))
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_a79b7120bced743cd49e139bedf3fae48}{web\+\_\+frontend.\+tsnealt}} = alt.\+Chart(dfclusterdata).mark\+\_\+circle().encode(x=xaxis, y=yaxis, tooltip=\mbox{[}cluster\+\_\+label, point\+\_\+label\mbox{]}, color=altcolor).interactive()
+\mbox{\hyperlink{namespaceweb__frontend_aaa1709dbd84064e7e8f851d6841a8572}{web\+\_\+frontend.\+fig2}}
 \item 
 \mbox{\hyperlink{namespaceweb__frontend_a4d78c0a2b478c196f08136e541782dcf}{web\+\_\+frontend.\+use\+\_\+container\+\_\+width}}
 \item 
-\mbox{\hyperlink{namespaceweb__frontend_a3b4bb0b6d4fb023e5deef81fb802b4cb}{web\+\_\+frontend.\+projected\+\_\+data\+\_\+pca}} = PCA(random\+\_\+state=42, n\+\_\+components=2).fit\+\_\+transform(cluster.\+data)
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_ae9367db9cae6ac3dd2c6e388b2f1d387}{web\+\_\+frontend.\+pcaalt}} = alt.\+Chart(dfclusterdata).mark\+\_\+circle().encode(x=xaxis, y=yaxis, tooltip=\mbox{[}cluster\+\_\+label, point\+\_\+label\mbox{]}, color=altcolor).interactive()
+\mbox{\hyperlink{namespaceweb__frontend_a4569608af620ef90ea339e28ab48dcaa}{web\+\_\+frontend.\+clusterset}} = set(clustered\+\_\+data)
 \item 
 \mbox{\hyperlink{namespaceweb__frontend_a06738bfdebda9497c3c2b2a677f9ddcf}{web\+\_\+frontend.\+dataexpander}} = st.\+beta\+\_\+expander(\char`\"{}data\char`\"{})
 \item 
@@ -123,13 +86,13 @@ string \mbox{\hyperlink{namespaceweb__frontend_a8b39b147bcb9ea75b351224287fb0d14
 \item 
 \mbox{\hyperlink{namespaceweb__frontend_a7a6ee1b7740be3fdd76313e704c09b8e}{web\+\_\+frontend.\+df}} = session\+\_\+state.\+indices\+\_\+data
 \item 
-dictionary \mbox{\hyperlink{namespaceweb__frontend_ad6cb59f4d8d78e1f93b5bcd2838595ee}{web\+\_\+frontend.\+labels}} = cluster.\+labels.\+tolist()
+def \mbox{\hyperlink{namespaceweb__frontend_a707461d1835594987d52dbf74714eeb4}{web\+\_\+frontend.\+labels}} = cluster.\+labels.\+tolist()
 \item 
 \mbox{\hyperlink{namespaceweb__frontend_aaf3ac2b14e7665a95f91b3b2a4fe2b3a}{web\+\_\+frontend.\+predicted}} = clustered\+\_\+data.\+tolist()
 \item 
 list \mbox{\hyperlink{namespaceweb__frontend_a61d104e008a5ba1f7122da6411bb4db0}{web\+\_\+frontend.\+precalc}} = \mbox{[}$\,$\mbox{]}
 \item 
-list \mbox{\hyperlink{namespaceweb__frontend_a399e55f26a0ed76172a03e4d18f33fbf}{web\+\_\+frontend.\+index\+\_\+eval}} = \mbox{[}\char`\"{}ARI\char`\"{}, \char`\"{}NMI\char`\"{}, \char`\"{}Completeness Score\char`\"{}, \char`\"{}Homogeneity Score\char`\"{}, \char`\"{}Silhouette Score\char`\"{}\mbox{]}
+list \mbox{\hyperlink{namespaceweb__frontend_a399e55f26a0ed76172a03e4d18f33fbf}{web\+\_\+frontend.\+index\+\_\+eval}} = \mbox{[}\char`\"{}ARI\char`\"{}, \char`\"{}AMI\char`\"{}, \char`\"{}Completeness Score\char`\"{}, \char`\"{}Homogeneity Score\char`\"{}, \char`\"{}Silhouette Score\char`\"{}\mbox{]}
 \item 
 \mbox{\hyperlink{namespaceweb__frontend_a53726d670e54274b72635b663ba69dca}{web\+\_\+frontend.\+I1}} = Indices(predicted, labels)
 \item 
@@ -145,23 +108,13 @@ list \mbox{\hyperlink{namespaceweb__frontend_a6d4b09f1196dc0e9a291005878c7dffb}{
 \item 
 \mbox{\hyperlink{namespaceweb__frontend_ada89560d6b64d3670edc7d77d4d5b85f}{web\+\_\+frontend.\+stats}} = np.\+zeros(len(results))
 \item 
-\mbox{\hyperlink{namespaceweb__frontend_ac08f6b50ca9689f1ec62998b27fee863}{web\+\_\+frontend.\+ys}}
+\mbox{\hyperlink{namespaceweb__frontend_a7f2e8c0e0dc2c2e618f4449a1aa58e4c}{web\+\_\+frontend.\+df\+\_\+for}} = pd.\+Data\+Frame(results, columns=\mbox{[}\char`\"{}Score\char`\"{},\char`\"{}Data\char`\"{}\mbox{]})
 \item 
-\mbox{\hyperlink{namespaceweb__frontend_a0838ca5e31a97686f8c9783545b51b1c}{web\+\_\+frontend.\+xs}} = np.\+arange(len(labels))
+\mbox{\hyperlink{namespaceweb__frontend_a079d64aeec37a7f9de7633d939846f9d}{web\+\_\+frontend.\+data\+\_\+select}} = alt.\+selection\+\_\+multi(fields=\mbox{[}\char`\"{}Data\char`\"{}\mbox{]}, name=\char`\"{}Datapoint\char`\"{})
 \item 
-float \mbox{\hyperlink{namespaceweb__frontend_a364f1ad37501b60441618aea22763888}{web\+\_\+frontend.\+width}} = 0.\+5
+string \mbox{\hyperlink{namespaceweb__frontend_a949d4790ae8b80a70557f1e127f6c8f0}{web\+\_\+frontend.\+title}} = \char`\"{}Index\+:\char`\"{} + \char`\"{} \char`\"{} + index\+\_\+eval + \char`\"{},\char`\"{} + \char`\"{} \char`\"{} + \char`\"{}Dataset\+:\char`\"{} + \char`\"{} \char`\"{} + datasets\mbox{[}0\mbox{]}
 \item 
-\mbox{\hyperlink{namespaceweb__frontend_a1b424f697075e41398c55d80300904c7}{web\+\_\+frontend.\+align}}
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_af0ac7cf718145355f2362cb8a51f55bb}{web\+\_\+frontend.\+color}}
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_a5a41b97806946bdcd868b1cf6443c6eb}{web\+\_\+frontend.\+angles}} = np.\+linspace(0, 2$\ast$np.\+pi, len(desc), endpoint=False)
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_adbd0171437252f426da0d72460f17de6}{web\+\_\+frontend.\+subplot\+\_\+kw}}
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_a9aa566eabde22259a97c37e426eb957c}{web\+\_\+frontend.\+linewidth}}
-\item 
-\mbox{\hyperlink{namespaceweb__frontend_ae5593c31da74f3185dbab1dab3ec988a}{web\+\_\+frontend.\+alpha}}
+\mbox{\hyperlink{namespaceweb__frontend_af21fb823ad45a6a8498c785bd7a86897}{web\+\_\+frontend.\+base}}
 \end{DoxyCompactItemize}
 
 
