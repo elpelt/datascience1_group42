@@ -64,7 +64,7 @@ if cluster_algo == 'DBSCAN':
     epsilon = col2.slider("Choose a nice value for Eps", min_value=0.1, max_value=20.0, step=0.1)
     minpts = col2.slider("Choose a hilarious value for MinPts", min_value=1, max_value=20, step=1, value=5)
     params = {"eps" : epsilon, "minpts" : minpts}
-    st.write("*DBSCAN heuristic for estimating MinPts and eps parameters: https://share.streamlit.io/elpelt/datascience1_group42/main/code/heuristic_web.py*")
+    st.write("*DBSCAN heuristic for estimating MinPts and Eps parameters: https://share.streamlit.io/elpelt/datascience1_group42/main/code/heuristic_web.py*")
 
 else:
     k_value = col2.slider("Choose a nice value for k (number of clusters)", min_value=2, max_value=10, step=1, value=3)
