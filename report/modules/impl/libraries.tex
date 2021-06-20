@@ -3,27 +3,27 @@ Below all used libraries are described briefly.
 \subsubsection[pyclustering]{pyclustering v0.10.1.2}
 pyclustering is a data mining library, focusing on clustering algorithms written in C++ and Python by Andrei Novikov \cite{Novikov2019}. The library contains a wide range of clustering algorithms implemented in Python with an optional C++ core. If possible pyclustering falls back to its C++ implementations utilising its efficiency and runtime benefits.
 
-\subsubsection[scikit learn]{scikit learn v0.23.2}
-scikit learn is a wide rangeing data analysis tool kit for python encompassing algorithms not only for clustering but for classification, regression and in general Data Science tools \cite{scikitlearn}.\\
-Our implementations heavily depends on scikit learn implementations of distance measures, clustering algorithms, scoreing, data preparation like standardising and projecting results. 
+\subsubsection[scikit-learn]{scikit-learn v0.23.2}
+scikit-learn is a wide ranging data analysis toolkit for python encompassing algorithms for clustering, classification, regression and in general Data Science tools \cite{scikitlearn}.\\
+Our implementations heavily depends on scikit-learn implementations of distance measures, clustering algorithms, scoring, data preparation like standardising and projecting results. 
 
-\subsubsection[scikit learn extra]{scikit learn extra v0.2.0}
-scikit learn extra is an extension to scikit learn spanning algorithms that do not satisfy the inclusion criteria of scikit learn \cite{scikit-learn-extra}. This library is used for its implementation of K-Medoids that is fully compatible with all other scikit learn algorithms.
+\subsubsection[scikit-learn extra]{scikit-learn extra v0.2.0}
+scikit-learn extra is an extension to scikit learn spanning algorithms that do not satisfy the inclusion criteria of scikit learn \cite{scikit-learn-extra}. This library is used for its implementation of K-Medoids that is fully compatible with all other scikit learn algorithms.
 
 \subsubsection[numpy]{numpy v1.19.2}
-numpy is a fundamental library mostly used for its array structure implementing a C++/Fortran like way of saveing, organising and working with data while still being relatively easy to use \cite{numpy}. Being a dependency of every other package used in this project we naturally use numpy arrays to store and work with our datasets.
+numpy is a fundamental library mostly used for its array structure implementing a C++/Fortran like way of saving, organising and working with data while still being relatively easy to use \cite{numpy}. Being a dependency of every other package used in this project we naturally use numpy arrays to store and work with our datasets.
 
 \subsubsection[matplotlib]{matplotlib v3.3.2}
-matplotlib is a popular python library for generating and plotting various types of graphs \cite{Hunter:2007}. For our project matplotlib is used for creating the graphs for index comparision.
+matplotlib is a popular python library for generating and plotting various types of graphs \cite{Hunter:2007}. matplotlib is a direct dependency of seaborn, which was used for most of our plots.
+
+\subsubsection[seaborn]{seaborn v0.11.0}
+seaborn is a powerful data visualisation library build on top the aforementioned matplotlib \cite{seaborn}. It simplifies plotting by providing predefined templates. The \texttt{scatterplot} function is used for the non-interactive TSNE and PCA projections of the cluster results. Moreover most of the plots contained in the Appendix are generated using seaborn.
 
 \subsubsection[pandas]{pandas v1.2.4}
 pandas is a powerful data analysis tool \cite{mckinney-proc-scipy-2010, reback2020pandas}. It provides an efficient data structure called DataFrame. This structure is used for handling clustering results, storing them in an external csv-file and preparing data for plotting. 
 
-\subsubsection[seaborn]{seaborn v0.11.0}
-seaborn is a powerful data visualisation library build on top of pythons matplotlib \cite{seaborn}. It simplyfies plotting by providing predefined templates.  The \texttt{scatterplot} function is used for visualising the TSNE and PCA projections of the cluster results.
-
 \subsubsection[streamlit]{streamlit v0.82.0}
-streamlit is an easy-to-use library for building web apps \cite{streamlit}. The webfrontend for our application is implemented using streamlit. Additionally the streamlit hosting service is used for serving the webapp \footnote{\url{https://share.streamlit.io/elpelt/datascience1_group42/main/code/web_frontend.py}}.
+streamlit is an easy-to-use library for building web apps \cite{streamlit}. The webfrontend for our application is implemented using streamlit. Additionally, the streamlit hosting service is used for serving the webapp \footnote{\url{https://share.streamlit.io/elpelt/datascience1_group42/main/code/web_frontend.py}}.
 
-\subsubsection[altair]{altair v4.1.0}
-Altair \cite{VanderPlas2018} is a data visualisation toolkit for python based upon the vega-lite project \cite{Satyanarayan2017}, implementing a simple way of generating interactive graphs. Plots built in altair can be easily integrated into streamlit and are therefore used when possible, to display results in a interesting fashion.
+\subsubsection[altair]{altair v4.1.0} \label{altair}
+Altair \cite{VanderPlas2018} is a data visualisation toolkit for python based upon the vega-lite project \cite{Satyanarayan2017}, implementing a simple way of generating interactive graphs. Plots built in altair can be easily integrated into streamlit and are therefore used when possible, to display results in an interesting fashion.

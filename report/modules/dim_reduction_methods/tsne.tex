@@ -12,7 +12,7 @@ The joint probability $p_ij$ is defined by
 \end{equation}
 
 Note that the Gaussian distributions should have their standard deviations $\sigma_i$ such that the perplexity of the conditional distribution is equal to a predefined perplexity parameter \cite{tsne_matlab}. It basically measures the effective number of neighbours of the data point $i$, that can be found performing a binary search.   \\
-In the next step t-SNE searches for an embedding of the data points considering the previously computed similarities \cite{tsne_matlab}. This is achieved by minimizing the Kullback-Leibler divergence between the modeled Gaussian distributions of the high-dimensional data points $X$ and a Student t distribution of the corresponding points $Y$ in the lower-dimensional space. To do this we define $q_{ij}$ for $i \neq j$ as followed 
+In the next step t-SNE searches for an embedding of the data points considering the previously computed similarities \cite{tsne_matlab}. This is achieved by minimizing the Kullback-Leibler divergence between the modeled Gaussian distributions of the high-dimensional data points $X$ and a Student t-distribution of the corresponding points $Y$ in the lower-dimensional space. To do this we define $q_{ij}$ for $i \neq j$ as followed 
 \begin{equation}
 	q_{ji} = \frac{(1 + \lVert y_i - y_j \rVert ^2)^{-1}}{\sum_{k}\sum_{l \neq k} (1 + \lVert y_k - y_t \rVert ^2)^{-1}}
 \end{equation}

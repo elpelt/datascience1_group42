@@ -1,17 +1,17 @@
-PCA is a dimension reduction technique to increase interpretability while minimizing information loss during the process. Working with a dataset containing $p$ numerical variables and $n$ entities, a $n$x$p$-Matrix $X$ gets defined with $p$ vectors as columns. Now linear combinations (see: \ref{lin_comb}) of the columns of $X$ with maximum variance (see: \ref{var}) are searched for, given by: 
+PCA is a dimension reduction technique to increase interpretability while minimizing information loss during the process. Working with a dataset containing $p$ numerical variables and $n$ entities, a $n\times p$ -Matrix $X$ gets defined with $p$ vectors as columns. Now linear combinations (see: \ref{lin_comb}) of the columns of $X$ with maximum variance (see: \ref{var}) are searched for, given by: 
 \begin{align}\label{lin_comb}
     \sum_{j=1}^{p}a_jx_j = Xa
 \end{align}
 \begin{align}\label{var}
     var(Xa) = a^TSa
 \end{align}
-with $a$ as vector of constants $a_1,...,a_p$ and $S$ as sample covariance matrix associated with the dataset. \cite{pca_beg}\\
-These linear combinations are called principal components and are $p$ uncorrelated, new variables for the initial variables. Most of the information of the original data is compressed in the first principal component, with reduced but maximized information in the following components. It is highly important to understand the correlation between variance and information. The greater the variance, the greater the dispersion and thus the greater the abundance of information. Eigenvectors and eigenvalues are needed to calculate the principal components, where the eigenvectors of the covariance-matrix $S$ are the directions of the axes where most of the variance is present and the corresponding eigenvalues indicate the amount of variance contained in each principal component. \cite{pca_step} This produces the equation: \cite{pca_beg}
+with $a$ as vector of constants $a_1,...,a_p$ and $S$ as sample covariance matrix associated with the dataset \cite{pca_beg}.\\
+These linear combinations are called principal components and are $p$ uncorrelated, new variables for the initial variables. Most of the information of the original data is compressed in the first principal component, with reduced but maximized information in the following components. It is highly important to understand the correlation between variance and information. The greater the variance, the greater the dispersion and thus the greater the abundance of information. Eigenvectors and eigenvalues are needed to calculate the principal components, where the eigenvectors of the covariance-matrix $S$ are the directions of the axes where most of the variance is present and the corresponding eigenvalues indicate the amount of variance contained in each principal component \cite{pca_step}. This produces the equation \cite{pca_beg}:
 \begin{align}
     Sa - \lambda a = 0 \Leftrightarrow Sa = \lambda a
 \end{align}
-Thus, ranking the eigenvectors in order of their eigenvalues, one obtains all principal components from 1 to $p$. In the following step, the user can decide whether to keep all principal components or discard some of them based on their calculated significance, by: \cite{pca_beg}
+Thus, ranking the eigenvectors in order of their eigenvalues, one obtains all principal components from 1 to $p$. In the following step, the user can decide whether to keep all principal components or discard some of them based on their calculated significance, by \cite{pca_beg}: 
 \begin{align}
     \pi_j = \frac{\lambda_j}{\sum_{j=1}^{p}\lambda_j}
 \end{align}
-This results in a matrix called feature vector, which contains all the remaining components as columns and forms the final dimension of the reduced data set \cite{pca_step}. Usually, the requirements of graphical representation lead to keeping the first two to three principal components \cite{pca_beg}. Finally, the original data gets reorientated from the original axes to the axes represented by the principal components.
+This results in a matrix called \textit{feature vector}, which contains all the remaining components as columns and forms the final dimension of the reduced dataset \cite{pca_step}. Usually, the requirements of graphical representation lead to keeping the first two to three principal components \cite{pca_beg}. Finally, the original data gets reorientated from the original axes to the axes represented by the principal components.

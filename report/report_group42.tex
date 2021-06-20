@@ -141,7 +141,7 @@ All authors confirm that they contributed equally to the project report and were
 
 \begin{abstract}
 Clustering algorithms can be important tools during the analysis of datasets. They divide a dataset into groups of items based on a certain measure of similarity such as the distances between each of the items. 
-In this work, we implemented and compared four different clustering algorithms (K-Means, K-Medoids, K-Medians, DBSCAN). For this, we selected four distinct datasets as well as multiple distance measures (Manhattan, Euclidean, Angular cosine, Chebyshev). For efficient comparison of the clustering results we made use of multiple clustering indices. Additionally, we implemented a web frontend which provides the ability to run all clustering algorithms with distance measures, datasets and clustering indices chosen by the user. The results will be visualized afterwards.
+In this work, we implemented and compared four different clustering algorithms (K-Means, K-Medoids, K-Medians, DBSCAN). For this, we selected four distinct datasets as well as multiple distance measures (Manhattan, Euclidean, Angular Cosine, Chebyshev). For efficient comparison of the clustering results we made use of multiple clustering indices. Additionally, we implemented a web frontend which provides the ability to run all clustering algorithms with distance measures, datasets and clustering indices chosen by the user. The results will be visualized afterwards.
 After running all algorithms with each of the datasets respectively and all distance measures where they could be applied, we compared the resulting values of the clustering indices.
 Finally we tried to estimate the best parameter combinations for each dataset.
 
@@ -157,22 +157,23 @@ Finally we tried to estimate the best parameter combinations for each dataset.
 \section{Definition of Distance Measure}
 \label{def_DM}
 \input{modules/distances/definition}
+
+\newpage
 \section{Different Distance Measurements} \label{distances}
 \subsection{Manhattan Distance}
 \input{modules/distances/manhattan}
-\subsection{Euclidean Distances}
+\subsection{Euclidean Distance}
 \input{modules/distances/euclidean}
-
 \subsection{Angular Cosine Distance}
 \input{modules/distances/cosine}
-
 \subsection{Chebyshev Distance}
 \input{modules/distances/chebyshev}
 
+\newpage
 \section{Data Set Description}
-
 \subsection{Housevotes} \label{housevotes}
 \input{modules/datasets/housevotes}
+\newpage
 \subsection{Wine}
 \input{modules/datasets/wine}
 \subsection{Iris}
@@ -180,6 +181,7 @@ Finally we tried to estimate the best parameter combinations for each dataset.
 \subsection{Diabetes} \label{diabetes}
 \input{modules/datasets/diabetes}
 
+\newpage
 \section{Clustering Algorithms} \label{algorithms}
 \subsection{K-Means}
 \input{modules/algorithms/kmeans}
@@ -190,8 +192,9 @@ Finally we tried to estimate the best parameter combinations for each dataset.
 \subsection{DBSCAN}
 \input{modules/algorithms/dbscan}
 
+\newpage
 \section{Additional Methods Used}
-\subsection{k++-Initializer}
+\subsection{K++ Initializer} \label{kplusplusdef}
 \input{modules/kplusplus}
 \subsection{t-SNE}
 \input{modules/dim_reduction_methods/tsne}
@@ -200,12 +203,14 @@ Finally we tried to estimate the best parameter combinations for each dataset.
 \subsection{DBSCAN Parameter Estimation Heuristic} \label{dbscanheuristic}
 \input{modules/additional/dbscanheuristic}
 
+\newpage
 \section{Implementation}
 \subsection{Description}
-\input{modules/impl/desc}
+\input{modules/impl/desc} \label{implementation}
 \subsection{Dependencies}
 \input{modules/impl/libraries}
 
+\newpage
 \section{Evaluation Module}
 \subsection{Implementation}
 \input{modules/Indices/Implementation_ind}
@@ -220,15 +225,13 @@ Finally we tried to estimate the best parameter combinations for each dataset.
 \input{modules/Indices/Hom_score}
 \subsubsection{Adjusted Mutual Index}
 \input{modules/Indices/NMI}
-\subsubsection{Justification}
-\input{modules/Indices/justification}
 \subsection{Internal Scoring Methods}
 \subsubsection{Definition}
 \input{modules/Indices/internal_def}
 \subsubsection{Silhouette Score}
 \input{modules/Indices/Silhouette_Score}
 
-
+\newpage
 \section{Web Frontend and User Manual}
 \input{modules/web_frontend/user_manual}
 

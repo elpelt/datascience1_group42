@@ -1,10 +1,14 @@
-To determine the distance between two items the Manhattan distance, also referred to as taxicab distance, may be used. This distance measure assumes a n-dimensional vector space with a fixed cartesian coordinate system. It is defined as following: \cite{Craw2010}
-$$d(x,y)= ||x-y||_1 = \sum\limits_{i=1}^{n}|x_i - y_i|$$
+To determine the distance between two items the Manhattan distance, also referred to as taxicab distance, may be used. This distance measure assumes a n-dimensional vector space with a fixed cartesian coordinate system. It is defined as following \cite{Craw2010}:
+\begin{align}
+	d(x,y) = ||x-y||_1 = \sum\limits_{i=1}^{n}|x_i - y_i|
+\end{align}
 where x and y are vectors
-$$x = (x_1, x_2,..., x_n) \text{ and } y = (y_1, y_2,..., y_n)$$
+\begin{align*}
+	x = (x_1, x_2,..., x_n) \text{ and } y = (y_1, y_2,..., y_n)
+\end{align*}
 
-The Manhattan distance is, like the Euclidean distance, part of the $L_p-metrics$ (see 2.2), where the value for $p$ is set to 1.
-Assuming a two dimensional space, the distance between two points is the shortest path between them with the restriction of only being able to move vertically and horizontally.
+The Manhattan distance is, like the Euclidean distance, part of the $L_p-metrics$ (see section \ref{lpmetric}), where the value for $p$ is set to 1.
+Assuming a two dimensional space, the distance between two points is the shortest path between them with the restriction of only being able to move vertically and horizontally.\\
 Prove of axioms described in section \ref{def_DM}:\\
 \begin{enumerate}
 	\item Identity of indiscernibles:\\
@@ -14,6 +18,6 @@ Prove of axioms described in section \ref{def_DM}:\\
 	\item Triangle inequality:\\
 	$|x-y| \leq |x-z|+|z-y|$ holds true for any $x,y,z \in \mathbb{R}$
 	This means that for $\sum\limits_{i=1}^{n}|x_i - y_i| = \sum\limits_{i=1}^{n}|x_i - z_i| + \sum\limits_{i=1}^{n}|z_i - y_i|$ the equation $|x_i - y_i| \leq |x_i - z_i| + |z_i - y_i|$ is true for each i which in turn shows that the axiom is fulfilled.
-	\item Non Negativity:\\
+	\item Non-Negativity:\\
 	This condition is trivial since the Manhattan distance is a sum of absolute values and can therefore never be negative.
 \end{enumerate}

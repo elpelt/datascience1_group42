@@ -1,4 +1,4 @@
-A distance measure is a function $d(x, y)$ that calculates a real value between two points in a space, containing two sets of points. If $d(x, y)$ satisfies the following three axioms the distance measure is classified as a \textit{metric}:
+A distance measure is a function $d(x, y)$ that calculates a real value between two points in a space. If $d(x, y)$ satisfies the following three axioms the distance measure is classified as a \textit{metric}:
 \begin{subequations} \label{metricaxioms}
     \begin{align}
         d(x, y) &= 0 \Leftrightarrow x = y &&\text{Identity of indiscernibles}\\
@@ -6,9 +6,9 @@ A distance measure is a function $d(x, y)$ that calculates a real value between 
         d(x, y) &\leq d(x, z) + d(z, y) &&\text{Triangle inequality}
 %
 \intertext{
-    The triangle-inequality imposes the condition that a distance reflects the shortest path between two points. Thus, it is not possible to achieve a distance improvement by traveling via an intermediate point $z$. \cite{MMDS} \endgraf
-    Moreover all axioms enforce non negative distances as an additional condition.
+    The triangle-inequality imposes the condition that a distance reflects the shortest path between two points. Thus it is not possible to achieve a distance improvement by traveling via an intermediate point $z$ \cite{MMDS}. \endgraf
+    Moreover all axioms enforce non-negative distances as an additional condition.
 }
-        d(x, y) &\geq 0 &&\text{Non Negativity} \label{metricnonnegative}
+        d(x, y) &\geq 0 &&\text{Non-Negativity} \label{metricnonnegative}
     \end{align}
 \end{subequations}

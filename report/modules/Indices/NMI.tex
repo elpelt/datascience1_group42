@@ -1,5 +1,5 @@
-The \acrshort{ami} is an external cluster valdidation method, in order to calculate the informativeness of a partition computed by a clustering algorithm. It is an adjustment of the \acrfull{mi} to account for chance \cite{scikitlearn}. This score is upper bounded by 1 and is expected to be 0 for random partitions. The score is calculated as following: \cite{ari_form}
+The \acrshort{ami} is an external cluster validation method, in order to calculate the information content of a partitioning computed by a clustering algorithm. It is an adjustment of the \acrfull{mi} to account for chance \cite{scikitlearn}. This scores upper boundary is 1 and is expected to be 0 for random partitions, but can also be negative. The score is calculated as following \cite{ari_form}:
 \begin{align}
-    AMI_{max}(U,V) &= \frac{NMI_{max}(U,V)-E\{NMI_{max}(U,V)\}}{1-E\{NMI_{max}(U,V)\}}\\ &= \frac{I(U,V)-E\{I(U,V)\}}{max\{H(U), H(V)\}-E\{I(U,V)\}}
+    AMI_{max}(U,V) &= \frac{NMI_{max}(U,V)-E\{NMI_{max}(U,V)\}}{1-E\{NMI_{max}(U,V)\}}\\&= \frac{I(U,V)-E\{I(U,V)\}}{max\{H(U), H(V)\}-E\{I(U,V)\}} \nonumber
 \end{align}
-$NMI$ stands for Normalized \acrshort{mi}, which is the \acrshort{mi} normalized to values in the range of 0 to 1 \cite{scikitlearn}. $E\{I(U,V)\}$ is the calculated expected index and $I(U,V)$ the actual Index \cite{ari_form}.
+\textit{NMI} stands for Normalized \acrshort{mi}, which is the \acrshort{mi} normalized to values in the range of 0 to 1 \cite{scikitlearn}. $E\{I(U,V)\}$ is the calculated expected index and $I(U,V)$ the actual Index \cite{ari_form}.

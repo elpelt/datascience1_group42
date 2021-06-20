@@ -9,16 +9,16 @@ It is based on the Cosine Similarity (cosine between two vectors $x$ and $y$), w
 The Cosine Similarity, however, is not a distance as it is defined for positive values only. Therefore it has to be converted to the normalized angle between $x$ and $y$ as followed \cite{cosdist}: \\
 
 \begin{equation}
-	\text{Angular Cosine distance} = \frac{\arccos({\text{cosine similarity})}}{\pi}
+	\text{Angular Cosine Distance} = \frac{\arccos({\text{Cosine Similarity})}}{\pi}
 \end{equation}  
 
-Note, that if $x$ or $y$ are zero vectors, the cosine similarity would not be defined. To prevent a division by zero the Cosine Similarity is set to 1 in this special case (based on the implementation of the pairwise distance in scikit-learn \cite{scikitlearn}). 
+Note, that if $x$ or $y$ are zero vectors, the Cosine Similarity would not be defined. To prevent a division by zero the Cosine Similarity is set to 1 in this special case (based on the implementation of the pairwise distance in scikit-learn \cite{scikitlearn}). 
 
 The axioms for a distance measure are fulfilled for the Angular Cosine distance \cite{MMDS}: \\
 
 \begin{enumerate}
 	\item Identity of indiscernibles:\\
-	Two vectors can have a Angular cosine distance of 0 if and only if they are located in the same direction. (This applies also to vectors that are multiples of one another and therefore are in the same direction.) 
+	Two vectors can have a Angular Cosine distance of 0 if and only if they are located in the same direction. (This applies also to vectors that are multiples of one another and therefore are in the same direction.) 
 	\item Symmetry: \\
 	Symmetry is obviously given by the equality to measure an angle between $x$ and $y$ and an angle between $y$ and $x$. 
 	\item Triangle inequality: \\

@@ -1,5 +1,5 @@
 The Homogeneity Score is an external clustering index to determine the quality of a calculated clustering in comparison to a preexisting grouping of items.
-It is defined as following: \cite{rosenberg2007v}\\
+It is defined as following \cite{rosenberg2007v}:\\
 
 \begin{align}
     h = 1 - \frac{H(C|K)}{H(C)}
@@ -10,4 +10,4 @@ where
 \end{align}
 
 Here, C represents the true cluster labels of the datapoints and K represents the labels predicted by the clustering algorithm. $n_{ck}$ is the number of items in a cluster $k$, which are labeled $c$, i.e. share the same label. $n_k$ stands for the total number of labels present in cluster $k$.
-When each cluster $k$ contains only items with the same label $c$, the Homogeneity Score equals one.
+When each cluster $k$ contains only items with the same label, the Homogeneity Score equals one.
