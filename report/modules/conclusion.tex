@@ -3,7 +3,7 @@
 
 For Wine and Housevotes datasets we found that a clustering with the Chebyshev distance produces clusterings with consideribly low scores for all evaluated indices. 
 For Iris and Wine datasets ARI scores for the used \Gls{glos:K-Algorithms} have a peak for k=3 (\autoref{fig:comparison_iris}, \autoref{fig:comparison_wine}), which corresponds to the true number of labels in these datasets.  
-By comparing different clustering algorithms for the Wine dataset \autoref{fig:comparison_wine} we found that the K-median algorithm is more unstable for this specific dataset than K-means and K-medoids as small peturbations of k can lead to remarkable differences in the resulting clustering scores. 
+By comparing different clustering algorithms for the Wine dataset \autoref{fig:comparison_wine} we found that the K-median algorithm is more unstable for this specific dataset than K-means and K-Medoids as small peturbations of k can lead to remarkable differences in the resulting clustering scores. 
 
 In our test cases the Angular Cosine distance always took the longest computation time for all clustering algorithms and datasets. The Euclidean distance had longer runtimes than Manhattan distance and Chebyshev distance. This is reasonable as for the Angular Cosine distance three sums and a square root need to be computed. The runtime for Euclidean distance is higher than for Manhattan or Chebyshev as a computation of an additional square root is necessary.\\
 The fastest algorithm is DBSCAN, whereas K-Medoids takes the longest time to compute for all datasets besides Iris (where K-Medians with Cosine distance took extraordinary long). The runtime increases with the number of samples $n$ in the dataset. 
