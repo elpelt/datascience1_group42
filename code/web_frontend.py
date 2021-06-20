@@ -88,11 +88,24 @@ cluster = create_cluster(cluster_algo, cluster_dist, dataset, seed)
 datasetinformation = st.beta_expander("dataset information")
 datasetinformation.write(f"This dataset has a dimension of {len(cluster.datadf.columns)} and {len(cluster.datadf)} samples.")
 if dataset == "diabetes":
-    datasetinformation.write(f"It has no pre-classification. Please use interal cluster validation!")
+    datasetinformation.write("It has no pre-classification. Please use interal cluster validation!")
 else:
     datasetinformation.write(f"It is classified in {max(cluster.labels)} clusters.")
-datasetinformation.write(f"It contains the following datatypes:")
+datasetinformation.write("It contains the following datatypes:")
 datasetinformation.write(pd.DataFrame(cluster.datadf.dtypes).transpose())
+datasetinformation.write("Data Head:")
+datasetinformation.write(cluster.datadf.head())
+if dataset == "housevotes":
+    datasetinformation.write("No mean, due to no numerical values!")
+    datasetinformation.write("*Note: One Hot Encoding was performed to calculate cluster.*")
+else:
+    datasetinformation.write("Data Mean:")
+    datasetinformation.write(pd.DataFrame(cluster.datadf.median()).transpose())
+if dataset == "wine":
+    datasetinformation.write("*Note: StandardScaler was used to normalize data.*")
+elif dataset == "diabetes":
+    datasetinformation.write("*Note: Each of the 10 feature variables have been mean centered and scaled by the standard deviation times n_samples (i.e. the sum of squares of each column totals 1).*")
+
 
 @st.cache()
 def clustering(cluster, params, cluster_algo):
@@ -238,6 +251,7 @@ def plotting():
                 xpm.append(m["xp"])
                 ypm.append(m["yp"])
                 c.append(i+1)
+
             
             acenters = pd.DataFrame({"xt":xtm, "yt":ytm, "xp":xpm, "yp":ypm, "c":c})
 

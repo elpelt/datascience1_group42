@@ -47,6 +47,19 @@ Bradley Efron, Trevor Hastie, Iain Johnstone, and Robert Tibshirani.
 \newblock Least angle regression.
 \newblock {\em The Annals of Statistics}, 32:407--499, 2004.
 
+\bibitem{scikit-learn-extra}
+scikit-learn-extra.
+\newblock \url{https://github.com/scikit-learn-contrib/scikit-learn-extra},
+  2021.
+
+\bibitem{santini2016advantages}
+Marina Santini.
+\newblock Advantages \& disadvantages of k-means and hierarchical clustering
+  (unsupervised learning).
+\newblock {\em URL: http://santini.
+  se/teaching/ml/2016/Lect\_10/10c\_Unsupervise dMethods. pdf (Accesed 17.04.
+  2019)}, 2016.
+
 \bibitem{Jin2010}
 Xin Jin and Jiawei Han.
 \newblock {\em K-Medoids Clustering}, pages 564--565.
@@ -57,11 +70,6 @@ Leonard Kaufman and Peter~J Rousseeuw.
 \newblock {\em Finding groups in data: an introduction to cluster analysis},
   volume 344.
 \newblock John Wiley \& Sons, 2009.
-
-\bibitem{scikit-learn-extra}
-scikit-learn-extra.
-\newblock \url{https://github.com/scikit-learn-contrib/scikit-learn-extra},
-  2021.
 
 \bibitem{kmed}
 Christopher Whelan, Greg Harrell, and Jin Wang.
@@ -193,6 +201,14 @@ Nguyen~Xuan Vinh, Julien Epps, and James Bailey.
 \newblock Information theoretic measures for clusterings comparison: Variants,
   properties, normalization and correction for chance.
 \newblock {\em Journal of Machine Learning Research}, 11:2837--2854, 2010.
+
+\bibitem{sil_score}
+{Abhishek Mishra}.
+\newblock Understanding silhouette scoring.
+\newblock
+  \url{https://datascience.foundation/datatalk/understanding-silhouette-scoring},
+  2020.
+\newblock Accessed: 16th June 2021.
 
 \bibitem{nofreelunch}
 David Wolpert.
