@@ -86,6 +86,9 @@ def create_cluster(cluster_algo, cluster_dist, dataset, seed):
 
 cluster = create_cluster(cluster_algo, cluster_dist, dataset, seed)
 
+df_types = pd.DataFrame(cluster.datadf.dtypes)
+df_types = df_types.replace("object", "string")
+
 datasetinformation = st.beta_expander("dataset information")
 datasetinformation.write(f"The {dataset} dataset has a dimension of {len(cluster.datadf.columns)} and {len(cluster.datadf)} samples.")
 if dataset == "diabetes":
@@ -93,7 +96,7 @@ if dataset == "diabetes":
 else:
     datasetinformation.write(f"It is classified in {max(cluster.labels)} clusters.")
 datasetinformation.write("It contains the following datatypes:")
-datasetinformation.write(pd.DataFrame(cluster.datadf.dtypes).transpose())
+datasetinformation.write(df_types.transpose())
 datasetinformation.write("Data Head:")
 datasetinformation.write(cluster.datadf.head())
 if dataset == "housevotes":
