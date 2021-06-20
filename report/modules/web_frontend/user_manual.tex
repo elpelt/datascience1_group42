@@ -1,7 +1,7 @@
 The web frontend is designed to provide an intuitive exploration of the different datasets, clustering algorithms and distances. In an interactive interface multiple clustering settings can be chosen and a visualisation of the results is directly generated. 
 A cluster-table is used to store previous calculated results, which can be plotted within the evaluation module. \\
 The checkbox "Use precalculated results (with random seed for reproduction)" at the top of the page (see \autoref{fig:parameters} A), which is set by default, allows the use of precalculated clustering results, which have been computed beforehand (with a random seed value) and are stored in the github repository. This was done for reproduction and runtime purposes. The second checkbox "use interactive charts" (see \autoref{fig:parameters} B), also set by default, allows the option for interactive projection plots for \acrshort{pca}, \acrshort{t-SNE}, and the evaluation module.  \\
-The user can choose between four datasets (see \autoref{fig:parameters} C), four distance measures (see \autoref{fig:parameters} E) and four different algorithms (see \autoref{fig:parameters} D) via a drop-down menu. If kmeans, kmedian or kmedoids is chosen a value for the parameter k between 1 and 10 has to be set (see \autoref{fig:parameters} F) The default value for k is 3. If DBSCAN is chosen the user has to define a value for epsilon and the minimal number of nearest points (see \autoref{fig:dbscan_para} A). The parameter settings can be adjusted with an interactive slider widget. \\
+The user can choose between four datasets (see \autoref{fig:parameters} C), four distance measures (see \autoref{fig:parameters} E) and four different algorithms (see \autoref{fig:parameters} D) via a drop-down menu. If kmeans, kmedian or kmedoids is chosen a value for the parameter k between 1 and 10 has to be set (see \autoref{fig:parameters} F) The default value for k is 3. If DBSCAN is chosen the user has to define a value for epsilon and the minimal number of nearest points (see \autoref{fig:dbscan_para} A). Additionally a link to a webpage implementing the DBSCAN heuristic helping with estimating the values for epsilon and minPts is shown. A short manual for this page is given in section \ref{heuristicmanual.} The parameter settings can be adjusted with an interactive slider widget. \\
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{modules/web_frontend/eingabe_letters}
@@ -52,6 +52,10 @@ For the evaluation of the clustering results, one of five clustering indices can
 	\caption{Barplot for evaluation comparison. Kmeans, euclidean, k=3, iris, and \acrshort{ari} as example.}\label{fig:eval_bar}
 \end{figure}
 
-
 Ancillary streamlit settings can be found at the upper right corner. Additional explanatory texts provide help and more information. \\
 
+
+\subsection{DBSCAN Heuristic Page} \label{heuristicmanual}
+The webpage for calculating the sorted k-dist graph for the DBSCAN heuristic is build similarly to the main apps page described above.
+A simple form is presented were dataset, distance measure and the k value can be chosen using drop-down menus or sliders. (Note: k in this case is not ne number of clusters. k stands for the k-nearest neighbour to any point)
+Only when pressing the "Calculate kdist Graph" the sorted k-dist graph is calculated and plotted below.

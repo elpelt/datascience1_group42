@@ -36,6 +36,7 @@ seed = None
 
 seaplots = st.checkbox('Use interactive charts', value=True)
 
+st.write("User Manual to this webpage: https://elpelt.github.io/datascience1_group42/docs/usermanual.pdf")
 
 # result handler for set seed clusters
 resulthandler = Results("./code/results")
