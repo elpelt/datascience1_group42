@@ -86,7 +86,7 @@ def create_cluster(cluster_algo, cluster_dist, dataset, seed):
 cluster = create_cluster(cluster_algo, cluster_dist, dataset, seed)
 
 datasetinformation = st.beta_expander("dataset information")
-datasetinformation.write(f"The {datset} dataset has a dimension of {len(cluster.datadf.columns)} and {len(cluster.datadf)} samples.")
+datasetinformation.write(f"The {dataset} dataset has a dimension of {len(cluster.datadf.columns)} and {len(cluster.datadf)} samples.")
 if dataset == "diabetes":
     datasetinformation.write("It has no pre-classification. Please use interal cluster validation!")
 else:
