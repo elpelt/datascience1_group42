@@ -1,30 +1,30 @@
 
-The angular cosine distance gives the (normalized) angle between two points $x$ and $y$ represented as vectors in an $n$-dimensional space. It does not make a difference between a vector and a multiple of that vector. The cosine distance can be calculated by applying the arc-cosine function to the cosine of the angle $\theta$ between $x$ and $y$ \cite{MMDS}. \\
-It is based on the cosine similarity (cosine between two vectors $x$ and $y$), which is definied as: \\
+The Angular Cosine distance gives the (normalized) angle between two points $x$ and $y$ represented as vectors in an $n$-dimensional space. It does not make a difference between a vector and a multiple of that vector. The Angular Cosine distance can be calculated by applying the arc-cosine function to the cosine of the angle $\theta$ between $x$ and $y$ \cite{MMDS}. \\
+It is based on the Cosine Similarity (cosine between two vectors $x$ and $y$), which is definied as: \\
 
 \begin{equation}
-	\text{cosine similarity} = \frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}}
+	\text{Cosine Similarity} = \frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2 \sum_{i=1}^{n} y_i^2}}
 \end{equation}  
 
-The cosine similarity, however, is not a distance as it is defined for positive values only. Therefore it has to be converted to the normalized angle between $x$ and $y$ as followed \cite{cosdist}: \\
+The Cosine Similarity, however, is not a distance as it is defined for positive values only. Therefore it has to be converted to the normalized angle between $x$ and $y$ as followed \cite{cosdist}: \\
 
 \begin{equation}
-	\text{angular cosine distance} = \frac{\arccos({\text{cosine similarity})}}{\pi}
+	\text{Angular Cosine distance} = \frac{\arccos({\text{cosine similarity})}}{\pi}
 \end{equation}  
 
-Note, that if $x$ or $y$ are zero vectors, the cosine similarity would not be defined. To prevent a division by zero the cosine similarity is set to 1 in this special case (based on the implementation of the pairwise distance in scikit-learn \cite{scikitlearn}). 
+Note, that if $x$ or $y$ are zero vectors, the cosine similarity would not be defined. To prevent a division by zero the Cosine Similarity is set to 1 in this special case (based on the implementation of the pairwise distance in scikit-learn \cite{scikitlearn}). 
 
-The axioms for a distance measure are fulfilled for the cosine distance \cite{MMDS}: \\
+The axioms for a distance measure are fulfilled for the Angular Cosine distance \cite{MMDS}: \\
 
 \begin{enumerate}
 	\item Identity of indiscernibles:\\
-	Two vectors can have a cosine distance of 0 if and only if they are located in the same direction. (This applies also to vectors that are multiples of one another and therefore are in the same direction.) 
+	Two vectors can have a Angular cosine distance of 0 if and only if they are located in the same direction. (This applies also to vectors that are multiples of one another and therefore are in the same direction.) 
 	\item Symmetry: \\
 	Symmetry is obviously given by the equality to measure an angle between $x$ and $y$ and an angle between $y$ and $x$. 
 	\item Triangle inequality: \\
 	A rotation from $x$ to $y$ can be explained by a rotation from $x$ to $z$ and then to $y$. Therefore a sum of these two rotations is always bigger or equal than the rotation directly from $x$ to $y$ 
 	\item No negative distances:\\
-	Regardless of the dimensionality of the space the values of the cosine distance are between 0 and 180 degrees, therefore no negative distances can occur. 
+	Regardless of the dimensionality of the space the values of the Angular Cosine distance are between 0 and 180 degrees, therefore no negative distances can occur. 
 	
 \end{enumerate}
 
