@@ -22,6 +22,7 @@ For every dataset detailed information can be retrieved via an expander widget. 
 \end{figure}
 
 Moreover the perplexity value for the \acrshort{t-SNE} projection can be set individually between 5 and 50 with a slider (see \autoref{fig:projection} A). The default value is 25. The \acrshort{t-SNE} and \acrshort{pca} plots are shown next to each other to allow a direct comparison of the lower-dimensional projections. For K-Medoids the medoid, for K-Means the mean, and for K-Medians the median for each cluster is marked as diamond (see \autoref{fig:projection} D). For the \acrshort{pca} plot both axes are labeled with the percentages of the first two component variances. To virtually interact with the plots, the button shown in \autoref{fig:projection} C can be clicked. Please note that this option is only available when the checkmark shown in \autoref{fig:parameters} B is set. Furthermore, this button provides the ability to save the plot in different formats.
+When hovering over points in the plots a small window pops up displaying the cluster label and point index.
 The calculated runtime is displayed right under the plots (see \autoref{fig:projection} B). This info is only accessible if precalculated results are not used (see \autoref{fig:parameters} A).
 The frontend is reloaded entirely if a parameter value is changed, a different setting is made or a button is clicked. 
 \begin{figure}[H]
@@ -39,7 +40,7 @@ The selected dataset can be viewed in a table format below the plots (see \autor
 \end{figure}
 
 All clustering results can be saved in a cluster table for comparison via the \textit{Add}-button button (see \autoref{fig:evaluation} A). To compare this result to clusterings with other settings, the \textit{Add}-button can be clicked repeatedly after desired adjustment of the clustering settings. To start over and compare further clustering indices, the \textit{Reset}-button (see \autoref{fig:evaluation} B) can be clicked. The previous display of resulting indices will be cleared as well as the clustering table.
-For the evaluation of the clustering results, one of five clustering indices can be chosen via a drop-down menu as shown in \autoref{fig:evaluation} C. An interactive barplot is displayed immediately, after adding a result to the cluster-table (see \autoref{fig:eval_bar}). A maximum reference value (1) is also always displayed (see \autoref{fig:eval_bar} A).
+For the evaluation of the clustering results, one of five clustering indices can be chosen via a drop-down menu as shown in \autoref{fig:evaluation} C. An interactive barplot is displayed immediately, after adding a result to the cluster-table (see \autoref{fig:eval_bar}). The maximum reference value of 1 for the scores is also always displayed (see \autoref{fig:eval_bar} A). When hovering over the bars the score and the selected parameters for calculating the score are shown. When clicking on a bar only this bar is shown. Multiple bars can be selected by pressing shift and clicking.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{modules/web_frontend/evaluation_letters}
@@ -48,16 +49,16 @@ For the evaluation of the clustering results, one of five clustering indices can
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{modules/web_frontend/eval_bar.png}
-	\caption{Barplot for evaluation comparison. Kmeans, euclidean, k=3, iris, and \acrshort{ari} as example.}\label{fig:eval_bar}
+	\includegraphics[width=0.75\textwidth]{modules/web_frontend/eval_bar.png}
+	\caption{Barplot for evaluation comparison. K-Means, Euclidean, k=3, Iris, and \acrshort{ari} used as example.}\label{fig:eval_bar}
 \end{figure}
 
 Ancillary streamlit settings can be found at the upper right corner. Additional explanatory texts provide help and more information. \\
 
 
 \subsection{DBSCAN Heuristic Page} \label{heuristicmanual}
-The webpage for calculating the sorted k-dist graph for the DBSCAN heuristic is build similarly to the main apps page described above.
-A simple form is presented were dataset, distance measure and the k value can be chosen using drop-down menus or sliders (see \autoref{fig:evaluation} A, B, C). (Note: k in this case is not the number of clusters. k stands for the k-nearest neighbour of any point)
+The web frontend for calculating the sorted k-dist graph for the DBSCAN heuristic is build similarly to the main applications web frontend described above.
+A simple form is presented where dataset, distance measure and the k value can be chosen using drop-down menus or sliders (see \autoref{fig:evaluation} A, B, C). (Note: k in this case is not the number of clusters. k stands for the k-nearest neighbour of any point)
 Only when clicking the \textit{Calculate kdist Graph}-button (see \autoref{fig:evaluation} D) the sorted k-dist graph is calculated and plotted (see \autoref{fig:evaluation} E).
 
 \begin{figure}[H]

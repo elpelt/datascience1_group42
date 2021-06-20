@@ -1,20 +1,17 @@
-
-
-
-For Wine and Housevotes datasets we found that a clustering with the Chebyshev distance produces clusterings with consideribly low scores for all evaluated indices. 
+For Wine and Housevotes datasets the Chebyshev distance produces clusterings with consideribly low scores for all evaluated indices. 
 For Iris and Wine datasets ARI scores for the used \Gls{glos:K-Algorithms} have a peak for k=3 (\autoref{fig:comparison_iris}, \autoref{fig:comparison_wine}), which corresponds to the true number of labels in these datasets.  
-By comparing different clustering algorithms for the Wine dataset \autoref{fig:comparison_wine} we found that the K-Medians algorithm is more unstable for this specific dataset than K-Means and K-Medoids as small peturbations of k can lead to remarkable differences in the resulting clustering scores. 
+By comparing different clustering algorithms for the Wine dataset \autoref{fig:comparison_wine} we can conclude that the K-Medians algorithm is more unstable for this specific dataset, than K-Means and K-Medoids, as small peturbations of k can lead to remarkable differences in the resulting clustering scores. 
 
-In our test cases the Angular Cosine distance always took the longest computation time for all clustering algorithms and datasets. The Euclidean distance had longer runtimes than Manhattan distance and Chebyshev distance. This is reasonable as for the Angular Cosine distance three sums and a square root need to be computed. The runtime for Euclidean distance is higher than for Manhattan or Chebyshev as a computation of an additional square root is necessary.\\
+In our test cases the Angular Cosine distance always took the longest computation time for all clustering algorithms and datasets. The Euclidean distance had longer runtimes than the Manhattan and Chebyshev distances. This is reasonable as for the Angular Cosine distance three sums and a square root need to be computed. The runtime for the Euclidean distance is higher than for Manhattan or Chebyshev as a computation of an additional square root is necessary.\\
 The fastest algorithm is DBSCAN, whereas K-Medoids takes the longest time to compute for all datasets besides Iris (where K-Medians with Angular Cosine distance took extraordinary long). The runtime increases with the number of samples $n$ in the dataset. 
 
-For the Iris dataset a clustering calculated by a K-Algorithm (with k=3, \autoref{fig:comparison_iris}) with the Angular Cosine distance gives the highest score values for all evaluated external scores. Therefore, the resulting clustering labels calculated with the Angular Cosine distance evidentely match the true labels in the most accurate way in comparison with all other considered distance measures. Comparing the performances of all \Gls{glos:K-Algorithms} we found that K-Medians and K-Means give slightly higher scores than K-Mediods. The results are very similar and differ only in a few differently assigned data points.
-A parameter combination for DBSCAN was found, where parts of the three clusters known (eps=0.4, minpts = 3, see \autoref{dbscaniris}) were indentified. However a large amount of noise had to be considered, making DBSCAN not viable for clustering this dataset. The 4-dist graph (see figure \autoref{dbscaniris}) also shows no visible valleys, as explained in section \ref{dbscanheuristic}, making it quite difficult to find a value for eps, where clusters can be clearly distinguished without risking a large amount of noise.
+For the Iris dataset a clustering calculated by a K-Algorithm (with k=3, \autoref{fig:comparison_iris}) with the Angular Cosine distance gives the highest score values for all evaluated external scores. Therefore, the resulting clustering labels calculated with the Angular Cosine distance evidentely match the true labels in the most accurate way in comparison with all other considered distance measures. By comparing the performances of all \Gls{glos:K-Algorithms} we can conclude that K-Medians and K-Means give slightly higher scores than K-Medoids. The results are very similar and differ only in a few differently assigned data points.
+A parameter combination for DBSCAN was found, where parts of the three known clusters (Eps=0.4, MinPts = 3, see \autoref{dbscaniris}) were indentified. However, a large amount of noise had to be considered making DBSCAN not viable for clustering this dataset. The 4-dist graph (see figure \autoref{dbscaniris}) also shows no visible valleys, as explained in section \ref{dbscanheuristic}, making it quite difficult to find a value for Eps, where clusters can be clearly distinguished without risking a large amount of noise.
 
 \begin{figure}[H]
-	\subfloat[DBSCAN, Euclidean Distance, eps=0.4, minPts=3]{{\includegraphics[width=0.4\textwidth]{../plots/dbscan/iris_euclidean_minpts_3_eps_04} }}
-	\subfloat[4-dist graph of the iris dataset for all distances]{{\includegraphics[width=0.6\textwidth]{../plots/dbscan/iris} }}
-	\caption{DBSCAN result and 4-dist graph for the iris dataset} 
+	\subfloat[DBSCAN, Euclidean Distance, Eps=0.4, MinPts=3]{{\includegraphics[width=0.4\textwidth]{../plots/dbscan/iris_euclidean_minpts_3_eps_04} }}
+	\subfloat[4-dist graph of the Iris dataset for all distances]{{\includegraphics[width=0.6\textwidth]{../plots/dbscan/iris} }}
+	\caption{DBSCAN result and 4-dist graph for the Iris dataset} 
 	\label{dbscaniris}
 \end{figure}
 
@@ -24,7 +21,7 @@ Finally, we would recommend to use the combination of the K-Means algorithm, the
 \begin{figure}[H]
 	\centering
 	\subfloat[K-Means, Angular Cosine Distance, k=3]{{\includegraphics[width=0.5\textwidth]{./images/iris_kmeans_cosine_k3} }}
-	\caption{PCA projections of clustering results with preferred parameters for Diabetes dataset}
+	\caption{PCA projections of clustering results with preferred parameters for Iris dataset}
 	\label{fig:iris_bestparams}
 \end{figure}
 
@@ -41,27 +38,27 @@ Therefore, we suggest to use the K-Means algorithm (k=3) together with the Eucli
 	\label{fig:wine_bestparams}
 \end{figure}
 
-For the Diabetes dataset the K-Medians algorithm with k=2 and the Manhattan distance performs the worst considering the Silhouette Score (\autoref{fig:comparison_diabetes}). The K-means algorithm along with the Euclidean, Manhattan or Angular Cosine distance, as well as the results of the K-Medians or K-medoids algorithm with Angular Cosine distance, give the highest scoring results. A visual inspection of the t-SNE projected data points leads to an assumption of two main clusters in the data. Those clusters are well captured by a DBSCAN-Clustering with $eps = 0.1$ and $minPts = 4$, but not with a K-Algorithms clustering (\autoref{fig:diabetestsne}). Therefore we would suggest to use a DBSCAN clustering approach for this dataset. 
+For the Diabetes dataset the K-Medians algorithm with k=2 and the Manhattan distance performs the worst considering the Silhouette Score (\autoref{fig:comparison_diabetes}). The K-Means algorithm along with the Euclidean, Manhattan or Angular Cosine distance, as well as the results of the K-Medians or K-Medoids algorithm with Angular Cosine distance, give the highest scoring results. A visual inspection of the t-SNE projected data points leads to an assumption of two main clusters in the data. Those clusters are well captured by a DBSCAN-Clustering with Eps = 0.1 and MinPts = 4, but not with a K-Algorithms clustering (\autoref{fig:diabetestsne}). Therefore we would suggest to use a DBSCAN clustering approach for this dataset. 
 
 \begin{figure}[H]
 	\centering
-	\subfloat[DBSCAN ($eps = 0.1$ and $minPts = 4$)]{{\includegraphics[width=0.45\textwidth]{./images/clustering_diabetes_dbscan_eps01_minpts4_tsne25} }}
+	\subfloat[DBSCAN (Eps = 0.1 and MinPts = 4)]{{\includegraphics[width=0.45\textwidth]{./images/clustering_diabetes_dbscan_eps01_minpts4_tsne25} }}
 	\subfloat[K-Means ($k=2$, Euclidean distance)]{{\includegraphics[width=0.45\textwidth]{./images/clustering_diabetes_kmeans_euclidean_k2_tsne25} }}  
 	\caption{t-SNE projections of clustering results with DBSCAN and K-Means for Diabetes dataset}
 	\label{fig:diabetestsne}
 \end{figure}
 
-For the Housevotes dataset (\autoref{fig:comparison_housevotes}) the Chebyshev distance performs the worst. The highest external scores for k=2 can be achieved with K-Means or K-Medians using the Euclidean, Manhattan or Cosine distance. Similarly to the Iris dataset, DBSCAN was not able to distinguish the two known groups without labeling a large amount of samples as noise. We suggest to select the K-Means algorithm (k=2) and in combination with the Euclidean distance (see \autoref{fig:housevotes_bestparams}) for the Housevote dataset. Looking at the ARI Score, this combination produces the highest score. Although for all other scores the combination of K-Medians and Cosine distance is slightly better, the difference is minimal (changes only in the second or third percentile). Additionally, the runtime for K-Means in this case is over 40 times faster than K-Medians, undermining the choice for this algorithm.
+For the Housevotes dataset (\autoref{fig:comparison_housevotes}) the Chebyshev distance performs the worst. The highest external scores for k=2 can be achieved with K-Means or K-Medians using the Euclidean, Manhattan or Cosine distance. Similarly to the Iris dataset, DBSCAN was not able to distinguish the two known groups without labeling a large amount of samples as noise. We suggest to select the K-Means algorithm (k=2) and in combination with the Euclidean distance (see \autoref{fig:housevotes_bestparams}) for the Housevotes dataset. Considering the ARI Score, this combination produces the highest score. Although for all other scores the combination of K-Medians and Angular Cosine distance is slightly better, the difference is minimal (changes only in the second or third percentile). Additionally, the runtime for K-Means in this case is over 40 times faster than K-Medians, undermining the choice for this algorithm.
 
 %Grafik, housevotes, k=2, Kmeans, euclidean
 
 \begin{figure}[H]
 	\centering
-	\subfloat[K-Means, Euclidean Distance, k=2]{{\includegraphics[width=0.5\textwidth]{./images/wine_kmeans_euclidean_k3} }}
+	\subfloat[K-Means, Euclidean Distance, k=2]{{\includegraphics[width=0.5\textwidth]{./images/housevotes_kmeans_euclidean_k2} }}
 	\caption{t-SNE projections of clustering results with preferred parameters for Housevotes dataset}
 	\label{fig:housevotes_bestparams}
 \end{figure}
 
-In general, our study is restricted to a small set of algorithms and distance measures. As a result, it can only provide a limited overview. A variety of additional algorithms, distance metrics, parameter settings and cluster evaluation measures could be considered to get a more exhaustive in-depth analysis. By including more datasets a more detailed comparison of the algorithms and distance measures and their behaviour on differently distributed data might be possible. Furthermore, even more clustering indices, particularly internal indices, could give further insights on the clustering quality. \\
+In general, our study is restricted to a small set of algorithms and distance measures. As a result, it can only provide a limited overview. A variety of additional algorithms, distance metrics, parameter settings and cluster evaluation measures could be considered to get a more exhaustive in-depth analysis. By including more datasets a more detailed comparison of the algorithms and distance measures and their behaviour on differently distributed data might be possible. Furthermore, even more clustering indices, particularly internal indices, could give further insights on the clustering quality.
 
-Finally, we did not find the best clustering algorithm or the superior distance measure which would give the best results on every dataset. This general problem in the field of Data Science is widely known as the "No Free Lunch Theorem" \cite{nofreelunch}. As specific requierements may differ for diverse use cases multiple algorithms and parameters should be explored and compared according to individual needs. 
+Finally, we did not find the best clustering algorithm or the superior distance measure which would give the best results on every dataset. This general problem in the field of Data Science is widely known as the \qq{No Free Lunch Theorem} \cite{nofreelunch}. As specific requirements may differ for diverse use cases multiple algorithms and parameters should be explored and compared according to individual needs. 
