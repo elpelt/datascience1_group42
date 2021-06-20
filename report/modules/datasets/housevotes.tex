@@ -5,7 +5,7 @@ Voted for, paired for, and announced for count as a yes vote (y in the dataset).
 Voted against, paired against, and announced against count as a no vote (n in the dataset).
 Voted present, voted present to avoid conflict of interest, and did not vote or otherwise make a position known are denoted as a unknown state (? in the dataset).\\
 \ \\
-The set consists of 435 data points and can be grouped into two classes, 267 democrats and 168 republicans.\\
+The set consists of 435 data points with 16 dimensions and can be grouped into two classes, 267 democrats and 168 republicans.\\
 \ \\
 The distance based cluster algorithms described in section \ref{algorithms} all need numerical data in order to find clusters. Therefore the categorical data of this dataset needs to be encoded in a way that accurately describes the distance between the datapoints. The voting data has no order and all voting results have the same distance to one another. Hence the dataset was one-hot-encoded.\\
 With \Gls{glos:onehotencoding} every attribute is represented as a binary vector. Each element of this vector represents a category value. The corresponding value of a sample is set to 1 in the binary vector. 
