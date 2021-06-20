@@ -27,17 +27,6 @@ The project depends on following python libraries:
 - [streamlit](https://streamlit.io)
 - [altair](https://altair-viz.github.io)
 
-# ToDos
-- [ ] Web Frontend Anleitung
-- [ ] Web Frontend Doxygen Doku?
-- [ ] Conclusion
-- [ ] Abstract
-- [ ] Informationen zum Datenset
-
-# Nice-To-Haves
-- [ ] Dendrogramm
-- [ ] Diskriminanzanalyse (Trennfähigste Variablen)
-
 # Authors
 * Niklas Conen
 * Jonas Elpelt
