@@ -8,10 +8,10 @@ The cluster algorithms themselves are implemented as child classes inheriting al
 \end{figure}
 
 Three different libraries were used for their implementations of the used cluster algorithms. 
-For kmeans and kmedians the pyclustering \cite{Novikov2019} implementations were used, because of their flexibility in setting custom distance measures. For Kmedoids the scikit learn extra \cite{scikit-learn-extra} implementation was used.
+For K-Means and K-Medians the pyclustering \cite{Novikov2019} implementations were used, because of their flexibility in setting custom distance measures. For K-Medoids the scikit learn extra \cite{scikit-learn-extra} implementation was used.
 DBSCAN is realised using the scikit learn implementation \cite{scikitlearn}.
 
-To reduce time spent on computing a class for organising already calculated resulsts as json files was created. All clustering results using the option of a predefined fixed seed are, if available, loaded from a file, or are calculated and then saved. Optionally cluster results can be bulk computed using a given script (\textit{result\_calculation.py}). Because of the large amount of possible parameter combinations of DBSCAN we decided to precompute only results for kmeans, kmedians and kmedoids with $k$ ranging from 1 to 10 for all distance measures.
+To reduce time spent on computing a class for organising already calculated resulsts as json files was created. All clustering results using the option of a predefined fixed seed are, if available, loaded from a file, or are calculated and then saved. Optionally cluster results can be bulk computed using a given script (\textit{result\_calculation.py}). Because of the large amount of possible parameter combinations of DBSCAN we decided to precompute only results for K-Means, K-Medians and K-Medoids with $k$ ranging from 1 to 10 for all distance measures.
 
 The calculation of cluster indices is packaged into a Indices class and uses scikit learn implementations of the different scoring methods. Clustering results used for index calculations are saved using a data structure called SessionState. This structure is written by Thiago Teixeira \cite{sessionstate} implementing a way of saving parameters per session. That is for example a browser tab in which the interface is opened. The variables saved in the SessionState are persistent until a session is closed, eventhough streamlits framework is designed in a way, where every page is a sequential python script being completely reloaded when an action is triggered. 
 
