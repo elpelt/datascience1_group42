@@ -65,10 +65,10 @@
 \newlabel{diabetes}{{3.4}{11}{Diabetes}{subsection.3.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Clustering Algorithms}{11}{section.4}\protected@file@percent }
 \newlabel{algorithms}{{4}{11}{Clustering Algorithms}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}K-Means}{11}{subsection.4.1}\protected@file@percent }
 \citation{MMDS}
 \citation{scikit-learn-extra}
 \citation{santini2016advantages}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}K-Means}{12}{subsection.4.1}\protected@file@percent }
 \citation{Jin2010}
 \citation{kaufman2009finding}
 \citation{scikit-learn-extra}
@@ -89,9 +89,9 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {density-reachable}}}{17}{subfigure.2.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {density-connected}}}{17}{subfigure.2.2}\protected@file@percent }
 \citation{dbscanrevisited}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Comparision of DBSCAN to kmeans on spatially complex clusters\relax }}{18}{figure.caption.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Comparision of DBSCAN to K-Means on spatially complex clusters\relax }}{18}{figure.caption.4}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:dbscanadv}{{3}{18}{Comparision of DBSCAN to kmeans on spatially complex clusters\relax }{figure.caption.4}{}}
+\newlabel{fig:dbscanadv}{{3}{18}{Comparision of DBSCAN to K-Means on spatially complex clusters\relax }{figure.caption.4}{}}
 \citation{tsne}
 \citation{wattenberg2016how}
 \citation{tsne_matlab}
@@ -172,23 +172,44 @@
 \citation{scikitlearn}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.3.2}Silhouette Score}{30}{subsubsection.7.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {8}Web Frontend and User Manual}{30}{section.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces First part of the web frontend. Setting options for clustering parameters.\relax }}{31}{figure.caption.7}\protected@file@percent }
-\newlabel{fig:parameters}{{6}{31}{First part of the web frontend. Setting options for clustering parameters.\relax }{figure.caption.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Second part of the web frontend. Projection results of a clustering.\relax }}{32}{figure.caption.8}\protected@file@percent }
-\newlabel{fig:projection}{{7}{32}{Second part of the web frontend. Projection results of a clustering.\relax }{figure.caption.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Third part of the web frontend. Evaluation of clustering results.\relax }}{33}{figure.caption.9}\protected@file@percent }
-\newlabel{fig:evaluation}{{8}{33}{Third part of the web frontend. Evaluation of clustering results.\relax }{figure.caption.9}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {9}Conclusion}{33}{section.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces First part of the web frontend. Setting options for clustering parameters for K-Means, K-Medians and K-Medoids.\relax }}{31}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:parameters}{{6}{31}{First part of the web frontend. Setting options for clustering parameters for K-Means, K-Medians and K-Medoids.\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Epsilon and minimal number of nearest points setting options for DBSCAN.\relax }}{32}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:dbscan_para}{{7}{32}{Epsilon and minimal number of nearest points setting options for DBSCAN.\relax }{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Displayed dataset information by expanding the box by clicking on the plus. Iris dataset as example.\relax }}{33}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:data_info}{{8}{33}{Displayed dataset information by expanding the box by clicking on the plus. Iris dataset as example.\relax }{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Second part of the web frontend. Projection results of a clustering.\relax }}{34}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:projection}{{9}{34}{Second part of the web frontend. Projection results of a clustering.\relax }{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Projection of dataset as expander. Iris dataset as example.\relax }}{35}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:data_info_pca}{{10}{35}{Projection of dataset as expander. Iris dataset as example.\relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Third part of the web frontend. Evaluation of clustering results.\relax }}{36}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:evaluation}{{11}{36}{Third part of the web frontend. Evaluation of clustering results.\relax }{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Barplot for evaluation comparison. Kmeans, euclidean, k=3, iris, and \acrshort {ari} as example.\relax }}{37}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:eval_bar}{{12}{37}{Barplot for evaluation comparison. Kmeans, euclidean, k=3, iris, and \acrshort {ari} as example.\relax }{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}DBSCAN Heuristic Page}{37}{subsection.8.1}\protected@file@percent }
+\newlabel{heuristicmanual}{{8.1}{37}{DBSCAN Heuristic Page}{subsection.8.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces DBSCAN heuristic settings\relax }}{38}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:heuristicfrontend}{{13}{38}{DBSCAN heuristic settings\relax }{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Conclusion}{38}{section.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces PCA projections of clustering results with preferred parameters for Diabetes dataset\relax }}{40}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:iris_bestparams}{{14}{40}{PCA projections of clustering results with preferred parameters for Diabetes dataset\relax }{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {K-Means, Cosine Distance, k=3}}}{40}{subfigure.14.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces PCA projections of clustering results with preferred parameters for Wine dataset\relax }}{41}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:wine_bestparams}{{15}{41}{PCA projections of clustering results with preferred parameters for Wine dataset\relax }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {K-Means, Euclidean Distance, k=3}}}{41}{subfigure.15.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces t-SNE projections of clustering results with DBSCAN and K-Means for Diabetes dataset\relax }}{42}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:diabetestsne}{{16}{42}{t-SNE projections of clustering results with DBSCAN and K-Means for Diabetes dataset\relax }{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {DBSCAN ($eps = 0.1$ and $minPts = 4$)}}}{42}{subfigure.16.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {K-Means ($k=2$, Euclidean distance)}}}{42}{subfigure.16.2}\protected@file@percent }
 \citation{nofreelunch}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces t-SNE projections of clustering results with DBSCAN and K-Means for Diabetes dataset\relax }}{35}{figure.caption.10}\protected@file@percent }
-\newlabel{fig:diabetestsne}{{9}{35}{t-SNE projections of clustering results with DBSCAN and K-Means for Diabetes dataset\relax }{figure.caption.10}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {DBSCAN ($eps = 0.1$ and $minPts = 4$)}}}{35}{subfigure.9.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {K-Means ($k=2$, Euclidean distance)}}}{35}{subfigure.9.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces t-SNE projections of clustering results with preferred parameters for Housevotes dataset\relax }}{43}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:housevotes_bestparams}{{17}{43}{t-SNE projections of clustering results with preferred parameters for Housevotes dataset\relax }{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {K-Means, Euclidean Distance, k=2}}}{43}{subfigure.17.1}\protected@file@percent }
 \gdef \LT@i {\LT@entry 
     {1}{49.75658pt}\LT@entry 
     {1}{246.00238pt}}
-\@writefile{toc}{\contentsline {section}{Glossary}{36}{section*.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{Acronyms}{36}{section*.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Glossary}{44}{section*.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Acronyms}{44}{section*.21}\protected@file@percent }
 \bibdata{bib.bib}
 \bibcite{MMDS}{1}
 \bibcite{Craw2010}{2}
@@ -223,119 +244,120 @@
 \bibcite{streamlit}{31}
 \bibcite{VanderPlas2018}{32}
 \bibcite{Satyanarayan2017}{33}
-\bibcite{ari}{34}
-\bibcite{rosenberg2007v}{35}
-\bibcite{ari_form}{36}
-\bibcite{sil_score}{37}
-\bibcite{nofreelunch}{38}
-\bibcite{winedata}{39}
-\bibcite{heuser2000lehrbuch}{40}
-\bibcite{harris2020array}{41}
+\bibcite{int_ext}{34}
+\bibcite{ari}{35}
+\bibcite{rosenberg2007v}{36}
+\bibcite{ari_form}{37}
+\bibcite{sil_score}{38}
+\bibcite{nofreelunch}{39}
+\bibcite{winedata}{40}
+\bibcite{heuser2000lehrbuch}{41}
+\bibcite{harris2020array}{42}
 \bibstyle{unsrt}
 \citation{*}
-\@writefile{toc}{\contentsline {section}{Appendices}{40}{section*.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A}Plots}{40}{appendix.1.A}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Comparison of different k values}{40}{subsection.1.A.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Comparison of clustering scores for K-means-clustering on Iris dataset\relax }}{42}{figure.caption.17}\protected@file@percent }
-\newlabel{fig:kmeans_iris}{{10}{42}{Comparison of clustering scores for K-means-clustering on Iris dataset\relax }{figure.caption.17}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{42}{subfigure.10.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{42}{subfigure.10.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{42}{subfigure.10.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{42}{subfigure.10.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{42}{subfigure.10.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Comparison of clustering scores for K-means-clustering on Wine dataset\relax }}{43}{figure.caption.18}\protected@file@percent }
-\newlabel{fig:kmeans_wine}{{11}{43}{Comparison of clustering scores for K-means-clustering on Wine dataset\relax }{figure.caption.18}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{43}{subfigure.11.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{43}{subfigure.11.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{43}{subfigure.11.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{43}{subfigure.11.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{43}{subfigure.11.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Comparison of clustering scores for K-means-clustering on Diabetes dataset\relax }}{44}{figure.caption.19}\protected@file@percent }
-\newlabel{fig:kmeans_diabetes}{{12}{44}{Comparison of clustering scores for K-means-clustering on Diabetes dataset\relax }{figure.caption.19}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Silhouette Score }}}{44}{subfigure.12.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Comparison of clustering scores for K-means-clustering on Housevotes dataset\relax }}{45}{figure.caption.20}\protected@file@percent }
-\newlabel{fig:kmeans_housevotes}{{13}{45}{Comparison of clustering scores for K-means-clustering on Housevotes dataset\relax }{figure.caption.20}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{45}{subfigure.13.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{45}{subfigure.13.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{45}{subfigure.13.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{45}{subfigure.13.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{45}{subfigure.13.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Comparison of clustering scores for K-medians-clustering on Iris dataset\relax }}{46}{figure.caption.21}\protected@file@percent }
-\newlabel{fig:kmedians_iris}{{14}{46}{Comparison of clustering scores for K-medians-clustering on Iris dataset\relax }{figure.caption.21}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{46}{subfigure.14.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{46}{subfigure.14.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{46}{subfigure.14.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{46}{subfigure.14.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{46}{subfigure.14.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Comparison of clustering scores for K-medians-clustering on Wine dataset\relax }}{47}{figure.caption.22}\protected@file@percent }
-\newlabel{fig:kmedians_wine}{{15}{47}{Comparison of clustering scores for K-medians-clustering on Wine dataset\relax }{figure.caption.22}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{47}{subfigure.15.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{47}{subfigure.15.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{47}{subfigure.15.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{47}{subfigure.15.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{47}{subfigure.15.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Comparison of clustering scores for K-medians-clustering on Diabetes dataset\relax }}{48}{figure.caption.23}\protected@file@percent }
-\newlabel{fig:kmedians_diabetes}{{16}{48}{Comparison of clustering scores for K-medians-clustering on Diabetes dataset\relax }{figure.caption.23}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Silhouette Score }}}{48}{subfigure.16.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Comparison of clustering scores for K-medians-clustering on Housevotes dataset\relax }}{49}{figure.caption.24}\protected@file@percent }
-\newlabel{fig:kmedians_housevotes}{{17}{49}{Comparison of clustering scores for K-medians-clustering on Housevotes dataset\relax }{figure.caption.24}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{49}{subfigure.17.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{49}{subfigure.17.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{49}{subfigure.17.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{49}{subfigure.17.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{49}{subfigure.17.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Comparison of clustering scores for K-medoids-clustering on Iris dataset\relax }}{50}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:kmedoids_iris}{{18}{50}{Comparison of clustering scores for K-medoids-clustering on Iris dataset\relax }{figure.caption.25}{}}
+\@writefile{toc}{\contentsline {section}{Appendices}{48}{section*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Plots}{48}{appendix.1.A}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Comparison of different k values}{48}{subsection.1.A.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Comparison of clustering scores for K-means-clustering on Iris dataset\relax }}{50}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:kmeans_iris}{{18}{50}{Comparison of clustering scores for K-means-clustering on Iris dataset\relax }{figure.caption.25}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{50}{subfigure.18.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{50}{subfigure.18.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{50}{subfigure.18.3}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{50}{subfigure.18.4}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{50}{subfigure.18.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Comparison of clustering scores for K-medoids-clustering on Wine dataset\relax }}{51}{figure.caption.26}\protected@file@percent }
-\newlabel{fig:kmedoids_wine}{{19}{51}{Comparison of clustering scores for K-medoids-clustering on Wine dataset\relax }{figure.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Comparison of clustering scores for K-means-clustering on Wine dataset\relax }}{51}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:kmeans_wine}{{19}{51}{Comparison of clustering scores for K-means-clustering on Wine dataset\relax }{figure.caption.26}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{51}{subfigure.19.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{51}{subfigure.19.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{51}{subfigure.19.3}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{51}{subfigure.19.4}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{51}{subfigure.19.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Comparison of clustering scores for K-medoids-clustering on Diabetes dataset\relax }}{52}{figure.caption.27}\protected@file@percent }
-\newlabel{fig:kmedoids_diabetes}{{20}{52}{Comparison of clustering scores for K-medoids-clustering on Diabetes dataset\relax }{figure.caption.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Comparison of clustering scores for K-means-clustering on Diabetes dataset\relax }}{52}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:kmeans_diabetes}{{20}{52}{Comparison of clustering scores for K-means-clustering on Diabetes dataset\relax }{figure.caption.27}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Silhouette Score }}}{52}{subfigure.20.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Comparison of clustering scores for K-medoids-clustering on Housevotes dataset\relax }}{53}{figure.caption.28}\protected@file@percent }
-\newlabel{fig:kmedoids_housevotes}{{21}{53}{Comparison of clustering scores for K-medoids-clustering on Housevotes dataset\relax }{figure.caption.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Comparison of clustering scores for K-means-clustering on Housevotes dataset\relax }}{53}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:kmeans_housevotes}{{21}{53}{Comparison of clustering scores for K-means-clustering on Housevotes dataset\relax }{figure.caption.28}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{53}{subfigure.21.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{53}{subfigure.21.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{53}{subfigure.21.3}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{53}{subfigure.21.4}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{53}{subfigure.21.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Comparison for given k value}{54}{subsection.1.A.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Comparison of clustering scores for Iris dataset (given k=3)\relax }}{55}{figure.caption.29}\protected@file@percent }
-\newlabel{fig:comparison_iris}{{22}{55}{Comparison of clustering scores for Iris dataset (given k=3)\relax }{figure.caption.29}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{55}{subfigure.22.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{55}{subfigure.22.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{55}{subfigure.22.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{55}{subfigure.22.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{55}{subfigure.22.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Comparison of clustering scores for Wine dataset (given k=3)\relax }}{56}{figure.caption.30}\protected@file@percent }
-\newlabel{fig:comparison_wine}{{23}{56}{Comparison of clustering scores for Wine dataset (given k=3)\relax }{figure.caption.30}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{56}{subfigure.23.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{56}{subfigure.23.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{56}{subfigure.23.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{56}{subfigure.23.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{56}{subfigure.23.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Comparison of clustering scores for Diabetes dataset (given k=2)\relax }}{57}{figure.caption.31}\protected@file@percent }
-\newlabel{fig:comparison_diabetes}{{24}{57}{Comparison of clustering scores for Diabetes dataset (given k=2)\relax }{figure.caption.31}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Silhouette Score }}}{57}{subfigure.24.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Comparison of clustering scores for Housevotes dataset (given k=2)\relax }}{58}{figure.caption.32}\protected@file@percent }
-\newlabel{fig:comparison_housevotes}{{25}{58}{Comparison of clustering scores for Housevotes dataset (given k=2)\relax }{figure.caption.32}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{58}{subfigure.25.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{58}{subfigure.25.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{58}{subfigure.25.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{58}{subfigure.25.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{58}{subfigure.25.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {B}Comparison of runtimes}{59}{appendix.1.B}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Runtimes for Iris dataset (in seconds)\relax }}{59}{table.caption.33}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Runtimes for Wine dataset (in seconds)\relax }}{59}{table.caption.34}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Runtimes for Diabetes dataset (in seconds)\relax }}{60}{table.caption.35}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Runtimes for Housevotes dataset (in seconds)\relax }}{60}{table.caption.36}\protected@file@percent }
-\gdef \@abspage@last{61}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Comparison of clustering scores for K-medians-clustering on Iris dataset\relax }}{54}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:kmedians_iris}{{22}{54}{Comparison of clustering scores for K-medians-clustering on Iris dataset\relax }{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{54}{subfigure.22.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{54}{subfigure.22.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{54}{subfigure.22.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{54}{subfigure.22.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{54}{subfigure.22.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Comparison of clustering scores for K-medians-clustering on Wine dataset\relax }}{55}{figure.caption.30}\protected@file@percent }
+\newlabel{fig:kmedians_wine}{{23}{55}{Comparison of clustering scores for K-medians-clustering on Wine dataset\relax }{figure.caption.30}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{55}{subfigure.23.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{55}{subfigure.23.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{55}{subfigure.23.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{55}{subfigure.23.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{55}{subfigure.23.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Comparison of clustering scores for K-medians-clustering on Diabetes dataset\relax }}{56}{figure.caption.31}\protected@file@percent }
+\newlabel{fig:kmedians_diabetes}{{24}{56}{Comparison of clustering scores for K-medians-clustering on Diabetes dataset\relax }{figure.caption.31}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Silhouette Score }}}{56}{subfigure.24.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Comparison of clustering scores for K-medians-clustering on Housevotes dataset\relax }}{57}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:kmedians_housevotes}{{25}{57}{Comparison of clustering scores for K-medians-clustering on Housevotes dataset\relax }{figure.caption.32}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{57}{subfigure.25.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{57}{subfigure.25.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{57}{subfigure.25.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{57}{subfigure.25.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{57}{subfigure.25.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Comparison of clustering scores for K-medoids-clustering on Iris dataset\relax }}{58}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:kmedoids_iris}{{26}{58}{Comparison of clustering scores for K-medoids-clustering on Iris dataset\relax }{figure.caption.33}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{58}{subfigure.26.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{58}{subfigure.26.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{58}{subfigure.26.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{58}{subfigure.26.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{58}{subfigure.26.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Comparison of clustering scores for K-medoids-clustering on Wine dataset\relax }}{59}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:kmedoids_wine}{{27}{59}{Comparison of clustering scores for K-medoids-clustering on Wine dataset\relax }{figure.caption.34}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{59}{subfigure.27.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{59}{subfigure.27.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{59}{subfigure.27.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{59}{subfigure.27.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{59}{subfigure.27.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Comparison of clustering scores for K-medoids-clustering on Diabetes dataset\relax }}{60}{figure.caption.35}\protected@file@percent }
+\newlabel{fig:kmedoids_diabetes}{{28}{60}{Comparison of clustering scores for K-medoids-clustering on Diabetes dataset\relax }{figure.caption.35}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Silhouette Score }}}{60}{subfigure.28.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Comparison of clustering scores for K-medoids-clustering on Housevotes dataset\relax }}{61}{figure.caption.36}\protected@file@percent }
+\newlabel{fig:kmedoids_housevotes}{{29}{61}{Comparison of clustering scores for K-medoids-clustering on Housevotes dataset\relax }{figure.caption.36}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{61}{subfigure.29.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{61}{subfigure.29.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{61}{subfigure.29.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{61}{subfigure.29.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{61}{subfigure.29.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Comparison for given k value}{62}{subsection.1.A.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Comparison of clustering scores for Iris dataset (given k=3)\relax }}{63}{figure.caption.37}\protected@file@percent }
+\newlabel{fig:comparison_iris}{{30}{63}{Comparison of clustering scores for Iris dataset (given k=3)\relax }{figure.caption.37}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{63}{subfigure.30.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{63}{subfigure.30.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{63}{subfigure.30.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{63}{subfigure.30.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{63}{subfigure.30.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Comparison of clustering scores for Wine dataset (given k=3)\relax }}{64}{figure.caption.38}\protected@file@percent }
+\newlabel{fig:comparison_wine}{{31}{64}{Comparison of clustering scores for Wine dataset (given k=3)\relax }{figure.caption.38}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{64}{subfigure.31.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{64}{subfigure.31.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{64}{subfigure.31.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{64}{subfigure.31.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{64}{subfigure.31.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces Comparison of clustering scores for Diabetes dataset (given k=2)\relax }}{65}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:comparison_diabetes}{{32}{65}{Comparison of clustering scores for Diabetes dataset (given k=2)\relax }{figure.caption.39}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Silhouette Score }}}{65}{subfigure.32.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {33}{\ignorespaces Comparison of clustering scores for Housevotes dataset (given k=2)\relax }}{66}{figure.caption.40}\protected@file@percent }
+\newlabel{fig:comparison_housevotes}{{33}{66}{Comparison of clustering scores for Housevotes dataset (given k=2)\relax }{figure.caption.40}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ARI }}}{66}{subfigure.33.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {AMI }}}{66}{subfigure.33.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Completeness Score }}}{66}{subfigure.33.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Homogeneity Score }}}{66}{subfigure.33.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Silhouette Score }}}{66}{subfigure.33.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B}Comparison of runtimes}{67}{appendix.1.B}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Runtimes for Iris dataset (in seconds)\relax }}{67}{table.caption.41}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Runtimes for Wine dataset (in seconds)\relax }}{67}{table.caption.42}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Runtimes for Diabetes dataset (in seconds)\relax }}{68}{table.caption.43}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Runtimes for Housevotes dataset (in seconds)\relax }}{68}{table.caption.44}\protected@file@percent }
+\gdef \@abspage@last{69}

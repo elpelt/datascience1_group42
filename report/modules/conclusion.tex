@@ -13,6 +13,7 @@ Finally, we would recommend to use the combination of the K-Means algorithm, the
 %Grafik Kmeans, cosine, k=3
 
 \begin{figure}[H]
+	\centering
 	\subfloat[K-Means, Cosine Distance, k=3]{{\includegraphics[width=0.5\textwidth]{./images/iris_kmeans_cosine_k3} }}
 	\caption{PCA projections of clustering results with preferred parameters for Diabetes dataset}
 	\label{fig:iris_bestparams}
@@ -23,6 +24,7 @@ Using the Chebyshev distance for the Wine dataset results in clusterings with th
 %Grafik wine, euclidean, k-means, k=2
 
 \begin{figure}[H]
+	\centering
 	\subfloat[K-Means, Euclidean Distance, k=3]{{\includegraphics[width=0.5\textwidth]{./images/wine_kmeans_euclidean_k3} }}
 	\caption{PCA projections of clustering results with preferred parameters for Wine dataset}
 	\label{fig:wine_bestparams}
@@ -31,6 +33,7 @@ Using the Chebyshev distance for the Wine dataset results in clusterings with th
 For the Diabetes dataset the K-medians algorithm with k=2 and the Manhattan distance performs the worst considering the Silhouette Score (\autoref{fig:comparison_diabetes}). The K-means algorithm along with the Euclidean, Manhattan or Cosine distance, as well as the results of the K-medians or K-medoids algorithm with Cosine distance, give the highest scoring results. A visual inspection of the t-SNE projected data points leads to an assumption of two main clusters in the data. Those clusters are well captured by a DBSCAN-Clustering with $eps = 0.1$ and $minPts = 4$, but not with a K-Algorithms-Clustering (\autoref{fig:diabetestsne}). Therefore we would suggest to use a DBSCAN-clustering approach for this dataset. 
 
 \begin{figure}[H]
+	\centering
 	\subfloat[DBSCAN ($eps = 0.1$ and $minPts = 4$)]{{\includegraphics[width=0.45\textwidth]{./images/clustering_diabetes_dbscan_eps01_minpts4_tsne25} }}
 	\subfloat[K-Means ($k=2$, Euclidean distance)]{{\includegraphics[width=0.45\textwidth]{./images/clustering_diabetes_kmeans_euclidean_k2_tsne25} }}  
 	\caption{t-SNE projections of clustering results with DBSCAN and K-Means for Diabetes dataset}
@@ -43,6 +46,7 @@ For the Housevotes dataset (\autoref{fig:comparison_housevotes}) the Chebyshev d
 %Grafik, housevotes, k=2, Kmeans, euclidean
 
 \begin{figure}[H]
+	\centering
 	\subfloat[K-Means, Euclidean Distance, k=2]{{\includegraphics[width=0.5\textwidth]{./images/wine_kmeans_euclidean_k3} }}
 	\caption{t-SNE projections of clustering results with preferred parameters for Housevotes dataset}
 	\label{fig:housevotes_bestparams}
